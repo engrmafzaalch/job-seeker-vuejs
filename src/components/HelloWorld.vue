@@ -1,113 +1,96 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li>
-        <a
-          href="https://vuejs.org"
-          target="_blank"
-        >
-          Core Docs
+  <div class="container-fluid" style="margin-top: '0px'">
+    <div class="header">
+      <div class="flex-x">
+        <a href="#default" class="logo">
+          <img src="../assets/Frame 1376 1.png" />
         </a>
-      </li>
-      <li>
-        <a
-          href="https://forum.vuejs.org"
-          target="_blank"
-        >
-          Forum
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://chat.vuejs.org"
-          target="_blank"
-        >
-          Community Chat
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://twitter.com/vuejs"
-          target="_blank"
-        >
-          Twitter
-        </a>
-      </li>
-      <br>
-      <li>
-        <a
-          href="http://vuejs-templates.github.io/webpack/"
-          target="_blank"
-        >
-          Docs for This Template
-        </a>
-      </li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li>
-        <a
-          href="http://router.vuejs.org/"
-          target="_blank"
-        >
-          vue-router
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vuex.vuejs.org/"
-          target="_blank"
-        >
-          vuex
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vue-loader.vuejs.org/"
-          target="_blank"
-        >
-          vue-loader
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-        >
-          awesome-vue
-        </a>
-      </li>
-    </ul>
+      </div>
+      <div class="header-right">
+        <a class="active" href="#home">Home</a>
+        <a href="#jobs">Jobs</a>
+        <a href="#my-application">My application</a>
+        <a href="#my-account">My Account</a>
+        <a class="bell-icon-header" href="#my-account"
+          ><i class="fas fa-bell"></i
+        ></a>
+        <a class="logout-button" href="#">Logout</a>
+      </div>
+    </div>
+    <Homepage />
   </div>
 </template>
 
 <script>
+import Homepage from "./Homepage";
 export default {
-  name: 'HelloWorld',
-  data () {
+  components: { Homepage },
+  name: "HelloWorld",
+  data() {
     return {
-      msg: 'Welcome to Your Vue.js App'
-    }
-  }
-}
+      msg: "Welcome to Your Vue.js App",
+    };
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
+.header {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background-color: "#FAFAFA";
+  padding: 10px 10px;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 5px 39px;
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 25px;
+  border-radius: 5px;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+.headera.logo {
+  font-size: 25px;
+  font-weight: bold;
 }
-a {
-  color: #42b983;
+.flex-x {
+  flex: auto;
 }
+.header a:hover {
+  /* background-color: grey; */
+  color: #0385f3;
+}
+.bell-icon-header {
+  color: #0385f3;
+}
+.logout-button {
+  text-align: center;
+  background-color: #ff4c68;
+  color: #ffffff !important;
+  height: 40px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+.headera.active {
+  background-color: green;
+  color: white;
+}
+.header-right {
+  float: right;
+}
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  .header-right {
+    float: none;
+  }
+}
+@import "~bootstrap/dist/css/bootstrap.css";
 </style>
