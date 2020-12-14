@@ -1,22 +1,26 @@
 <template>
-  <div class="mt-110 background-color-light">
-    <div class="pt-60">
-      <span class="label-top-hiring-companie">Top Hiring Companies</span>
-    </div>
-    <div class="pb-50">
-      <top-hiring-companies-cards />
-      <!-- <job-cards />
+  <div class="mt-100">
+    <!-- <input type="checkbox" id="switch" class="checkbox" />
+    <label for="switch" class="toggle">
+      <p>Recent Jobs Featured Jobs</p>
+    </label> -->
+    <!-- <div class="display-flex border-ligth-grey justify-content-center">
+      <div><span>Recent jobs</span></div>
+      <div><span> Featured jobs</span></div>
+    </div> -->
+
+    <div class="mb-50">
       <job-cards />
-      <job-cards /> -->
+      <job-cards />
+      <job-cards />
     </div>
   </div>
 </template>
 
 <script>
 import JobCards from "./JobCards.vue";
-import TopHiringCompaniesCards from "./TopHiringCompaniesCards.vue";
 export default {
-  components: { JobCards, TopHiringCompaniesCards },
+  components: { JobCards },
 };
 </script>
 
@@ -52,15 +56,8 @@ export default {
 .ml-10px {
   margin-left: 10px;
 }
-.pb-50 {
-  padding-bottom: 50px;
-}
-.label-top-hiring-companie {
-  font-family: Larsseit;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 48px;
-  color: #0385f3;
+.mb-50 {
+  margin-bottom: 50px;
 }
 hr {
   display: block;
@@ -74,12 +71,6 @@ hr {
 }
 .align-item-center {
   align-items: center;
-}
-.pt-60 {
-  padding-top: 60px;
-}
-.mt-110 {
-  margin-top: 110px;
 }
 .category-box {
   background: #fafafc;
@@ -108,9 +99,6 @@ hr {
   height: 189px;
   border-radius: 10px;
 }
-.background-color-light {
-  background: #f5faff;
-}
 .justify-content-center {
   justify-content: center;
 }
@@ -118,7 +106,49 @@ hr {
   border: 1px solid grey;
   padding: 10px;
 }
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 400px;
+  height: 52px;
+  background-color: #ffffff;
+  border-radius: 30px;
+  border: 2px solid #e5e5e5;
+}
+
+/* After slide changes */
+.toggle:after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 50px;
+  border-radius: 5%;
+  background-color: #0385f3;
+  top: 1px;
+  left: 1px;
+  transition: all 0.5s;
+}
 .mt-100 {
   margin-top: 100px;
+}
+/* Toggle text */
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+}
+
+/* Checkbox cheked effect */
+.checkbox:checked + .toggle::after {
+  left: 192px;
+}
+
+/* Checkbox cheked toggle label bg color */
+.checkbox:checked + .toggle {
+  background-color: #ffffff;
+}
+
+/* Checkbox vanished */
+.checkbox {
+  display: none;
 }
 </style>
