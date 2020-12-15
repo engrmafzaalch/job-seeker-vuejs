@@ -256,6 +256,18 @@ p {
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+  .job-title {
+    font-size: 12px;
+  }
+  .category-box {
+    font-size: 10px;
+    padding: 4px;
+  }
+  .border-browser-job {
+    width: 80px;
+    height: 35px;
+    font-size: 10px;
+  }
 }
 @media only screen and (min-width: 992px) and (max-width: 1025px) {
 }

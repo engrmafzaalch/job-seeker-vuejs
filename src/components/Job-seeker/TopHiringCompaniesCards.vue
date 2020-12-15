@@ -16,7 +16,10 @@
                   <img src="../../assets/Vector.png" />
                 </div>
                 <div>
-                  <img src="../../assets/Rectangle 11 (4).png" />
+                  <img
+                    class="image-tablet-height"
+                    src="../../assets/Rectangle 11 (4).png"
+                  />
                 </div>
                 <div class="pb-15">
                   <span class="companies-name-logo"> Google Inc. </span>
@@ -33,7 +36,10 @@
                   <img src="../../assets/Vector.png" />
                 </div>
                 <div>
-                  <img src="../../assets/Rectangle 11 (5).png" />
+                  <img
+                    class="image-tablet-height"
+                    src="../../assets/Rectangle 11 (5).png"
+                  />
                 </div>
                 <div class="pb-15">
                   <span class="companies-name-logo"> AT&T Inc. </span>
@@ -50,7 +56,10 @@
                   <img src="../../assets/Vector.png" />
                 </div>
                 <div>
-                  <img src="../../assets/Rectangle 11 (6).png" />
+                  <img
+                    class="image-tablet-height"
+                    src="../../assets/Rectangle 11 (6).png"
+                  />
                 </div>
                 <div class="pb-15">
                   <span class="companies-name-logo"> Dell </span>
@@ -67,7 +76,10 @@
                   <img src="../../assets/Vector.png" />
                 </div>
                 <div>
-                  <img src="../../assets/Rectangle 11 (4).png" />
+                  <img
+                    class="image-tablet-height"
+                    src="../../assets/Rectangle 11 (4).png"
+                  />
                 </div>
                 <div class="pb-15">
                   <span class="companies-name-logo"> Google Inc. </span>
@@ -146,7 +158,19 @@ export default {};
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
+  .tablet-margin-10 {
+    margin-top: 10px;
+  }
+  .companies-name-logo {
+    font-size: 22px;
+  }
+  .image-tablet-height {
+    height: 90px;
+  }
 }
 @media only screen and (min-width: 992px) and (max-width: 1025px) {
+  .tablet-margin-10 {
+    margin-top: 10px;
+  }
 }
 </style>
