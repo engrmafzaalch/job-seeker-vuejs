@@ -4,38 +4,40 @@
       <div class="row">
         <div class="col-2"></div>
         <div class="col-8">
-          <div class="profile-summary-text">Profile Summary</div>
+          <div class="profile-summary-text">Select Key Skills</div>
           <div class="display-flex width-100 text-align-initial">
-            <a-form-item
-              :validate-status="userNameError() ? 'error' : ''"
-              :help="userNameError() || ''"
-              class="width-100 mr-0"
-            >
-              <a-textarea
-                style="width: 100%"
-                :rows="4"
-                class="searchbox-style width-100"
-                v-decorator="[
-                  'userName',
-                  {
-                    rules: [
-                      {
-                        required: true,
-                        message: 'Please input your username!',
-                      },
-                    ],
-                  },
-                ]"
-                placeholder="Enter profile summary here"
-              >
-              </a-textarea>
+            <a-form-item class="width-100 mr-0">
+              <div class="dropbox">
+                <a-upload-dragger
+                  name="files"
+                  class="searchbox-style width-100"
+                  style="width: 100%"
+                  action="/upload.do"
+                >
+                  <p class="ant-upload-drag-icon">
+                    <a-icon type="inbox" class="color-drop-box" />
+                  </p>
+                  <p class="ant-upload-text upload-text-doc">
+                    Drop your Documents here , or browse
+                  </p>
+                  <p class="ant-upload-hint support-doc-text">
+                    Support: PDF, JPGS, DOcs.
+                  </p>
+                </a-upload-dragger>
+              </div>
             </a-form-item>
           </div>
-
           <hr />
 
           <div class="text-align-end">
             <a-form-item class="mr-0">
+              <a-button
+                type="primary"
+                @click="handlePrevious"
+                class="go-back-button-style mr-20"
+              >
+                Go Back
+              </a-button>
               <a-button
                 type="primary"
                 html-type="submit"
@@ -56,7 +58,7 @@ function hasErrors(fieldsError) {
   return Object.keys(fieldsError).some((field) => fieldsError[field]);
 }
 export default {
-  props: ["nextStep"],
+  props: ["nextStep", "previousStep"],
   data() {
     return {
       cssProps: {
@@ -75,6 +77,9 @@ export default {
     });
   },
   methods: {
+    handlePrevious() {
+      this.previousStep();
+    },
     // Only show error after a field is touched.
     userNameError() {
       const { getFieldError, isFieldTouched } = this.form;
@@ -99,8 +104,25 @@ export default {
 </script>
 
 <style>
+.color-drop-box {
+  color: #8b90a0 !important;
+}
 .text-align-initial {
   text-align: initial;
+}
+.mr-20 {
+  margin-right: 20px;
+}
+.go-back-button-style {
+  background: #fafafa;
+  border-radius: 4px;
+  width: 160px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  color: #8b90a0;
+  border: 1px solid #fafafa;
 }
 hr {
   display: block;
@@ -111,6 +133,20 @@ hr {
   border-top: 1px solid #f0f1f3;
   margin: 1em 0;
   padding: 0;
+}
+.support-doc-text {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  color: #8b90a0;
+}
+.upload-text-doc {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  color: #505565;
 }
 .text-align-end {
   text-align: end;

@@ -1,12 +1,42 @@
 <template>
   <div>
     <Header />
-    <div class="form-steps">
+    <div class="form-steps main-height">
       <a-steps :current="current">
         <a-step v-for="item in steps" :key="item.title" :title="item.title" />
       </a-steps>
       <div class="steps-content">
         <ProfileSummary :nextStep="next" v-if="steps[current].id === 1" />
+        <education-details
+          :nextStep="next"
+          :previousStep="prev"
+          v-if="steps[current].id === 2"
+        />
+        <experience-details
+          :nextStep="next"
+          :previousStep="prev"
+          v-if="steps[current].id === 3"
+        />
+        <projects
+          :nextStep="next"
+          :previousStep="prev"
+          v-if="steps[current].id === 4"
+        />
+        <documents
+          :nextStep="next"
+          :previousStep="prev"
+          v-if="steps[current].id === 5"
+        />
+        <key-skills
+          :nextStep="next"
+          :previousStep="prev"
+          v-if="steps[current].id === 6"
+        />
+        <personal-info
+          :nextStep="next"
+          :previousStep="prev"
+          v-if="steps[current].id === 7"
+        />
       </div>
       <!-- <div class="steps-action">
         <a-button
@@ -36,9 +66,25 @@
 import Footer from "./Footer";
 import ProfileSummary from "./ProfileSummary";
 import Header from "../Header.vue";
+import EducationDetails from "./EducationDetails.vue";
+import ExperienceDetails from "./ExperienceDetails.vue";
+import Projects from "./Projects.vue";
+import Documents from "../Documents.vue";
+import KeySkills from "./KeySkills.vue";
+import PersonalInfo from "./PersonalInfo.vue";
 export default {
   name: "RegistrationIndex",
-  components: { Footer, Header, ProfileSummary },
+  components: {
+    Footer,
+    Header,
+    ProfileSummary,
+    EducationDetails,
+    ExperienceDetails,
+    Projects,
+    Documents,
+    KeySkills,
+    PersonalInfo,
+  },
   data() {
     return {
       current: 0,
@@ -117,5 +163,8 @@ export default {
 }
 .display-flex {
   display: flex;
+}
+.main-height {
+  min-height: calc(100vh - 110px);
 }
 </style>
