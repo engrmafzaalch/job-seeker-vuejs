@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: infohob-frontend
+  name: infohob-frontend
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: infohob-frontend
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: infohob-frontend
+    spec:
+      containers:
+      - image: docker.io/pushkar0806/infohob-frontend
+        name: infohob-frontend
+        imagePullPolicy: Always
+        resources: {}
+        ports:
+          - containerPort: 8080 
+status: {}
