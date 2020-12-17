@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="background-header">
     <div class="container-fluid" style="margin-top: '0px'">
       <div class="header">
         <div class="flex-x">
@@ -54,6 +54,9 @@ export default {
   font-size: 15px;
   line-height: 25px;
   border-radius: 5px;
+}
+.background-header {
+  background: #fafafa;
 }
 .headera.logo {
   font-size: 25px;

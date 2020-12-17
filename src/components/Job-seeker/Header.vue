@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="background-header">
     <div class="container-fluid" style="margin-top: '0px'">
       <div class="header">
         <div class="flex-x">
@@ -41,6 +41,9 @@ export default {
   overflow: hidden;
   background-color: "#FAFAFA";
   padding: 10px 10px;
+}
+.background-header {
+  background: #fafafa;
 }
 .header a {
   float: left;

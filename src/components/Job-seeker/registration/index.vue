@@ -147,6 +147,14 @@ export default {
 .form-steps {
   padding: 50px;
 }
+.ant-steps-item-finish
+  > .ant-steps-item-container
+  > .ant-steps-item-tail::after {
+  background-color: red !important;
+}
+.ant-steps-item-finish .ant-steps-item-icon > .ant-steps-icon {
+  color: #ffffff;
+}
 .steps-content {
   /* margin-top: 16px; */
   /* border: 1px dashed #e9e9e9; */
