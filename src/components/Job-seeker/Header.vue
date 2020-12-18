@@ -8,8 +8,9 @@
           </a>
         </div>
         <div class="header-right">
-          <a class="active" href="#home">Home</a>
-          <a href="#jobs">Jobs</a>
+          <router-link to="/">Home</router-link>
+          <!-- <a class="active" href="#home">Home</a> -->
+          <router-link to="jobs">Jobs</router-link>
           <a href="#my-application">My application</a>
           <a href="#my-account">My Account</a>
           <a class="bell-icon-header" href="#my-account"
@@ -25,6 +26,7 @@
 <script>
 export default {
   name: "Header",
+  props: ["isLogin"],
   data() {
     return {
       msg: "Welcome to Your Vue.js App",

@@ -8,6 +8,7 @@ import '@fortawesome/fontawesome-free/css/all.css'
 import '@fortawesome/fontawesome-free/js/all.js'
 import Antd from "ant-design-vue";
 import "ant-design-vue/dist/antd.css";
+import './assets/css/main.css';
 Vue.use(Antd);
 Vue.config.productionTip = false
 

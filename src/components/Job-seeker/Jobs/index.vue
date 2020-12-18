@@ -4,7 +4,12 @@
     <div class="main-height">
       <div class="row m-0">
         <div class="col-3 p-0"><LeftSideMenu /></div>
-        <div class="col-9"></div>
+        <div class="col-6">
+          <middle-jobs-section />
+        </div>
+        <div class="col-3">
+          <right-side-featured-jobs />
+        </div>
       </div>
     </div>
     <Footer />
@@ -15,12 +20,16 @@
 import Footer from "./Footer";
 import Header from "../Header.vue";
 import LeftSideMenu from "./LeftSideFilterMenu";
+import RightSideFeaturedJobs from "./RightSideFeaturedJobs.vue";
+import MiddleJobsSection from "./MiddleJobsSection.vue";
 export default {
   name: "JobsIndex",
   components: {
     Footer,
     Header,
     LeftSideMenu,
+    RightSideFeaturedJobs,
+    MiddleJobsSection,
   },
   data() {
     return {

@@ -9,7 +9,7 @@
       </div>
     </div>
     <div
-      class="pt-30 display-flex justify-content-space-between align-item-center"
+      class="cursor-pointer pt-30 display-flex justify-content-space-between align-item-center"
       v-on:click="toggleCategory()"
     >
       <div><span class="industry-title-text">Industry</span></div>
@@ -64,7 +64,7 @@
       </div>
     </div>
     <div
-      class="pt-30 display-flex justify-content-space-between align-item-center"
+      class="pt-30 cursor-pointer display-flex justify-content-space-between align-item-center"
       v-on:click="toggleSalary()"
     >
       <div><span class="industry-title-text">Salary</span></div>
@@ -119,7 +119,7 @@
       </div>
     </div>
     <div
-      class="pt-30 display-flex justify-content-space-between align-item-center"
+      class="pt-30 cursor-pointer display-flex justify-content-space-between align-item-center"
       v-on:click="toggleExperience()"
     >
       <div><span class="industry-title-text">Experience</span></div>
@@ -148,7 +148,7 @@
       </div>
     </div>
     <div
-      class="pt-30 display-flex justify-content-space-between align-item-center"
+      class="pt-30 cursor-pointer display-flex justify-content-space-between align-item-center"
       v-on:click="toggleLocation()"
     >
       <div><span class="industry-title-text">Location</span></div>
@@ -165,8 +165,8 @@
     >
       <div class="location-radio">
         <a-radio-group @change="onChangeLocation" v-model="valueLocation">
-          <a-radio :value="1">A</a-radio>
-          <a-radio :value="2">B</a-radio>
+          <a-radio class="radio-label" :value="1">A</a-radio>
+          <a-radio class="radio-label" :value="2">B</a-radio>
         </a-radio-group>
       </div>
       <div class="padding-slider">
@@ -183,7 +183,7 @@
       </div>
     </div>
     <div
-      class="pt-30 display-flex justify-content-space-between align-item-center"
+      class="pt-30 cursor-pointer display-flex justify-content-space-between align-item-center"
       v-on:click="toggleTimePosted()"
     >
       <div><span class="industry-title-text">Time Posted</span></div>
@@ -212,7 +212,7 @@
       </div>
     </div>
     <div
-      class="pt-30 display-flex justify-content-space-between align-item-center"
+      class="pt-30 cursor-pointer display-flex justify-content-space-between align-item-center"
       v-on:click="toggleCompanySize()"
     >
       <div><span class="industry-title-text">Company size</span></div>
@@ -267,7 +267,7 @@
       </div>
     </div>
     <div
-      class="pt-30 display-flex justify-content-space-between align-item-center"
+      class="pt-30 cursor-pointer display-flex justify-content-space-between align-item-center"
       v-on:click="toggleJobType()"
     >
       <div><span class="industry-title-text">Company size</span></div>
@@ -278,25 +278,10 @@
       </div>
     </div>
     <div
-      class="time-posted-block expand-transition"
+      class="company-size-block expand-transition"
       v-if="toggleJobTypeOpt"
       transition="expand"
     >
-      <!-- <div class="display-flex justify-content-space-between"> 
-        <div class="boxes-job-type">
-            <span class="box-job-type-fonts">Full Time</span>
-          </div>
-          <div class="boxes-job-type not-selected">
-            <span class="box-job-type-fonts not-selected-job-type-fonts"
-              >Part Time</span
-            >
-          </div>
-          <div class="boxes-job-type not-selected">
-            <span class="box-job-type-fonts not-selected-job-type-fonts"
-              >Contract</span
-            >
-          </div>
-      </div> -->
       <div class="row m-0">
         <div class="col-6 prb-10 pl-0">
           <div class="boxes-job-type">
@@ -317,6 +302,15 @@
             >
           </div>
         </div>
+      </div>
+      <div class="ml-10px">
+        <hr />
+      </div>
+      <div class="text-align-initial">
+        <a-checkbox
+          class="text-align-initial checkbox-color-featured-jobs mt-10"
+          >Only Featured Jobs</a-checkbox
+        >
       </div>
     </div>
   </div>
@@ -346,6 +340,7 @@ export default {
             fontStyle: "normal",
             fontWeight: "normal",
             fontSize: "14px",
+            marginTop: "15px",
             color: "#505565",
             left: "5%",
           },
@@ -356,6 +351,8 @@ export default {
             fontFamily: "Open Sans",
             fontStyle: "normal",
             fontWeight: "normal",
+            marginTop: "15px",
+
             fontSize: "14px",
             color: "#505565",
             left: "95%",
@@ -369,6 +366,8 @@ export default {
             fontFamily: "Open Sans",
             fontStyle: "normal",
             fontWeight: "normal",
+            marginTop: "15px",
+
             fontSize: "14px",
             color: "#505565",
             left: "5%",
@@ -380,6 +379,8 @@ export default {
             fontFamily: "Open Sans",
             fontStyle: "normal",
             fontWeight: "normal",
+            marginTop: "15px",
+
             fontSize: "14px",
             color: "#505565",
             left: "98%",
@@ -394,6 +395,8 @@ export default {
             fontStyle: "normal",
             fontWeight: "normal",
             fontSize: "14px",
+            marginTop: "15px",
+
             color: "#505565",
             left: "5%",
           },
@@ -406,6 +409,8 @@ export default {
             fontWeight: "normal",
             fontSize: "14px",
             color: "#505565",
+            marginTop: "15px",
+
             left: "95%",
           },
           label: <strong>30+ Years</strong>,
@@ -465,6 +470,13 @@ export default {
 .pl-0 {
   padding-left: 0px;
 }
+.radio-label {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  color: #505565;
+}
 .p-0 {
   padding: 0;
 }
@@ -490,6 +502,19 @@ export default {
 .mt-10 {
   margin-top: 10px;
 }
+.checkbox-color-featured-jobs {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+
+  text-align: center;
+  text-decoration-line: underline;
+
+  color: #0084f4;
+}
 .checkbox-color {
   font-family: Open Sans;
   font-style: normal;
@@ -507,17 +532,17 @@ export default {
 .boxes-job-type {
   background: rgba(90, 170, 223, 0.04);
   border: 1px solid #0084f4;
-  padding: 14px 35px 14px 35px;
+  padding: 14px 27px 14px 34px;
 }
 .location-radio {
   text-align: initial !important;
   padding: 10px 20px 20px 0px;
 }
 .padding-slider {
-  padding: 0px 0px 25px 0px;
+  padding: 0px 0px 45px 0px;
 }
 .padding-slider-time-posted {
-  padding: 0px 0px 40px 0px;
+  padding: 0px 0px 70px 0px;
 }
 .ant-slider-handle {
   border-radius: 30% !important;
@@ -607,6 +632,11 @@ hr {
   padding-top: 15px;
   /* margin-left: 10px; */
 }
+.company-size-block {
+  background: #fafafa;
+  height: 200px;
+  padding-top: 15px;
+}
 .location-box {
   background: #fafafa;
   height: 170px;
@@ -628,5 +658,8 @@ hr {
 .expand-leave {
   height: 0;
   opacity: 0;
+}
+.cursor-pointer {
+  cursor: pointer;
 }
 </style> 
