@@ -29,7 +29,7 @@ spec:
               fieldPath: status.podIP
         - name: LOG_LEVEL
           value: info
-        image: https://registry.infohob.com/infohob-frontend
+        image: registry.infohob.com/infohob-frontend
         imagePullPolicy: "Always"
         name: jobseeker-frontend
         command:

@@ -34,7 +34,7 @@ node {
 
                 // Roll out to production
                 case "main":
-                    sh("sed -i.bak 's#https://registry.infohob.com/infohob-frontend#${imageTag}#' ./kubernetes/development/*.yaml")
+                    sh("sed -i.bak 's#registry.infohob.com/infohob-frontend#${imageTag}#' ./kubernetes/development/*.yaml")
                     sh("kubectl apply -f kubernetes/services/ --validate=false")
                     sh("kubectl apply -f kubernetes/development/ --validate=false")
                     break
