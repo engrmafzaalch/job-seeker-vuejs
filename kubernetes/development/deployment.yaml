@@ -6,6 +6,9 @@ metadata:
   name: jobseeker-frontend
 spec:
   replicas: 1
+  selector:
+    matchLabels:
+      app: jobseeker-frontend
   strategy:
     type: RollingUpdate
   template:
