@@ -1,5 +1,5 @@
 <template>
-  <div class="display-flex">
+  <div class="display-flex display-block-mobile">
     <div class="left-side-search-box">
       <div class="title-font">
         <span> Aenean euismod bibendum laoreet </span>
@@ -91,7 +91,7 @@
             <div>button</div> -->
         </div>
       </div>
-      <div class="display-flex mt-40 flex-wrap align-item-center">
+      <div class="display-flex mt-40 tablet-mt flex-wrap align-item-center">
         <div class="display-flex flex-wrap ml-20 align-item-center">
           <div>
             <span class="past-searches-text">Past Searches</span>
@@ -117,7 +117,7 @@
         </div>
       </div>
     </div>
-    <div class="profile-box-parent">
+    <div class="profile-box-parent display-non-tablet">
       <div class="profile-box">
         <div class="display-flex align-item-center">
           <div>
@@ -406,7 +406,7 @@ hr {
 }
 .left-side-search-box {
   text-align: left;
-  width: 800px;
+  /* width: 800px; */
   padding: 100px 40px;
 }
 .second-title {
@@ -495,5 +495,136 @@ input[type="range"]::-ms-fill-lower {
 }
 input[type="range"]::-ms-fill-upper {
   background-color: #f0f1f3;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .tablet-mt {
+    margin-top: 30px;
+  }
+  .searchbox-style {
+    width: 100px;
+  }
+  .search-button-style {
+    width: initial;
+    font-size: 11px;
+  }
+  .display-non-tablet {
+    display: none;
+  }
+  .title-font {
+    font-size: 25px;
+  }
+  .second-title {
+    font-size: 18px;
+  }
+  .profile-name {
+    font-size: 15px;
+  }
+  .profile-job-title {
+    font-size: 12px;
+  }
+  .update-profile-green-box {
+    height: 70px;
+    padding: 4px 0px;
+  }
+  .update-profile-font {
+    font-size: 12px;
+  }
+  .acitivy-response-font {
+    font-size: 10px;
+  }
+  .no-of-opening {
+    font-size: 12px;
+  }
+  .incase-getting-hired-font {
+    font-size: 12px;
+  }
+  .profile-completeness-ratio {
+    font-size: 12px;
+  }
+  .profile-completeness-text {
+    font-size: 12px;
+  }
+  .profile-box {
+    width: 280px;
+    height: 390px;
+  }
+  .left-side-search-box {
+    width: 100%;
+    padding: 30px 0px;
+    display: block;
+  }
+  .past-searches-result {
+    padding: 8px 15px;
+  }
+  .profile-box-parent {
+    margin-top: 25px;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1025px) {
+  .searchbox-style {
+    width: 160px;
+  }
+  .tablet-mt {
+    margin-top: 20px;
+  }
+  .search-button-style {
+    width: initial;
+    font-size: 11px;
+  }
+  .left-side-search-box {
+    width: 80px;
+  }
+  .title-font {
+    font-size: 25px;
+  }
+  .second-title {
+    font-size: 18px;
+  }
+  .profile-name {
+    font-size: 15px;
+  }
+  .profile-job-title {
+    font-size: 12px;
+  }
+  .update-profile-green-box {
+    height: 70px;
+    padding: 4px 0px;
+  }
+  .update-profile-font {
+    font-size: 12px;
+  }
+  .acitivy-response-font {
+    font-size: 10px;
+  }
+  .no-of-opening {
+    font-size: 12px;
+  }
+  .incase-getting-hired-font {
+    font-size: 12px;
+  }
+  .profile-completeness-ratio {
+    font-size: 12px;
+  }
+  .profile-completeness-text {
+    font-size: 12px;
+  }
+  .profile-box {
+    width: 280px;
+    height: 390px;
+  }
+  .left-side-search-box {
+    width: 640px;
+  }
+  .profile-box-parent {
+    margin-top: 25px;
+  }
 }
 </style>

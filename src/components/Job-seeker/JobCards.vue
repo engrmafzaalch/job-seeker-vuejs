@@ -4,8 +4,8 @@
     <label for="switch" class="toggle">
       <p>Recent Jobs Featured Jobs</p>
     </label> -->
-    <div class="row">
-      <div class="col-12">
+    <div class="row m-0">
+      <div class="col-12 p-0">
         <div class="row mt-30px mlr-10">
           <div class="col-4">
             <div class="jobs-cards">
@@ -119,7 +119,7 @@ export default {};
 <style scoped>
 .pading-top-20px-right-80px {
   padding-top: 20px;
-  padding-right: 80px;
+  padding-right: 5px;
 }
 .mlr-10 {
   margin-left: 10px;
@@ -173,6 +173,7 @@ hr {
   border-radius: 2px;
   padding: 10px;
   color: #8b90a0;
+  font-size: 14px;
 }
 .justify-content-space-around {
   justify-content: space-around;
@@ -246,5 +247,28 @@ p {
 /* Checkbox vanished */
 .checkbox {
   display: none;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .job-title {
+    font-size: 12px;
+  }
+  .category-box {
+    font-size: 10px;
+    padding: 4px;
+  }
+  .border-browser-job {
+    width: 80px;
+    height: 35px;
+    font-size: 10px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1025px) {
 }
 </style>

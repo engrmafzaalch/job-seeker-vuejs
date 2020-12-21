@@ -4,7 +4,7 @@
       <div class="header">
         <div class="flex-x">
           <a href="#default" class="logo">
-            <img src="../assets/Frame 1376 1.png" />
+            <img src="../../assets/Frame 1376 1.png" />
           </a>
         </div>
         <div class="header-right">
@@ -19,15 +19,12 @@
         </div>
       </div>
     </div>
-    <Homepage />
   </div>
 </template>
 
 <script>
-import Homepage from "./Homepage";
 export default {
-  components: { Homepage },
-  name: "HelloWorld",
+  name: "Header",
   data() {
     return {
       msg: "Welcome to Your Vue.js App",

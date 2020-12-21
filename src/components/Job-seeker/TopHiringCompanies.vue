@@ -3,7 +3,8 @@
     <div class="pt-60">
       <span class="label-top-hiring-companie">Top Hiring Companies</span>
     </div>
-    <div class="mb-50">
+    <div class="pb-50">
+      <top-hiring-companies-cards />
       <!-- <job-cards />
       <job-cards />
       <job-cards /> -->
@@ -13,8 +14,9 @@
 
 <script>
 import JobCards from "./JobCards.vue";
+import TopHiringCompaniesCards from "./TopHiringCompaniesCards.vue";
 export default {
-  components: { JobCards },
+  components: { JobCards, TopHiringCompaniesCards },
 };
 </script>
 
@@ -50,8 +52,8 @@ export default {
 .ml-10px {
   margin-left: 10px;
 }
-.mb-50 {
-  margin-bottom: 50px;
+.pb-50 {
+  padding-bottom: 50px;
 }
 .label-top-hiring-companie {
   font-family: Larsseit;
