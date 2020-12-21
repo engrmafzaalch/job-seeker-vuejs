@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header />
     <div class="main-height">
       <div class="row m-0">
         <div class="col-3 p-0"><LeftSideMenu /></div>

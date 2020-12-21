@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header />
     <div class="form-steps main-height">
       <a-steps :current="current">
         <a-step v-for="item in steps" :key="item.title" :title="item.title" />

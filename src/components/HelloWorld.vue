@@ -1,26 +1,27 @@
 <template>
-  <div class="background-header">
-    <div class="container-fluid" style="margin-top: '0px'">
-      <div class="header">
-        <div class="flex-x">
-          <a href="#default" class="logo">
-            <img src="../assets/Frame 1376 1.png" />
-          </a>
-        </div>
-        <div class="header-right">
-          <a class="active" href="#home">Home</a>
-          <!-- <a href="#jobs">Jobs</a> -->
-          <router-link to="jobs">Jobs</router-link>
+  <div>
+    <!-- <div class="background-header">
+      <div class="container-fluid" style="margin-top: '0px'">
+        <div class="header">
+          <div class="flex-x">
+            <a href="#default" class="logo">
+              <img src="../assets/Frame 1376 1.png" />
+            </a>
+          </div>
+          <div class="header-right">
+            <a class="active" href="#home">Home</a>
+            <router-link to="jobs">Jobs</router-link>
 
-          <a href="#my-application">My application</a>
-          <a href="#my-account">My Account</a>
-          <a class="bell-icon-header" href="#my-account"
-            ><i class="fas fa-bell"></i
-          ></a>
-          <a class="logout-button" href="#">Logout</a>
+            <a href="#my-application">My application</a>
+            <a href="#my-account">My Account</a>
+            <a class="bell-icon-header" href="#my-account"
+              ><i class="fas fa-bell"></i
+            ></a>
+            <a class="logout-button" href="#">Logout</a>
+          </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <Homepage />
   </div>
 </template>
