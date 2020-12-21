@@ -37,7 +37,7 @@ spec:
         - "-c"
         - "npm start"
         ports:
-        - containerPort: 8080
+        - containerPort: 3000
           protocol: TCP
         resources:
           requests:
