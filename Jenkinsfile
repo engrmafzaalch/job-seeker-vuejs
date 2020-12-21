@@ -1,6 +1,6 @@
 node {
     try {
-        def project = 'https://registry.infohob.com'
+        def project = 'registry.infohob.com'
         def appName = 'infohob-frontend'
         def serviceName = 'infohob-frontend-v1'
         def feSvcName = "${serviceName}"
