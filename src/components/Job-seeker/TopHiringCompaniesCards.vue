@@ -16,10 +16,14 @@
                   <img src="../../assets/Vector.png" />
                 </div>
                 <div>
+<<<<<<< HEAD
+                  <img src="../../assets/Rectangle 11 (4).png" />
+=======
                   <img
                     class="image-tablet-height"
                     src="../../assets/Rectangle 11 (4).png"
                   />
+>>>>>>> 9a5b67ebb3ac644ac437502833ce575a152c8204
                 </div>
                 <div class="pb-15">
                   <span class="companies-name-logo"> Google Inc. </span>
@@ -36,10 +40,14 @@
                   <img src="../../assets/Vector.png" />
                 </div>
                 <div>
+<<<<<<< HEAD
+                  <img src="../../assets/Rectangle 11 (5).png" />
+=======
                   <img
                     class="image-tablet-height"
                     src="../../assets/Rectangle 11 (5).png"
                   />
+>>>>>>> 9a5b67ebb3ac644ac437502833ce575a152c8204
                 </div>
                 <div class="pb-15">
                   <span class="companies-name-logo"> AT&T Inc. </span>
@@ -56,10 +64,14 @@
                   <img src="../../assets/Vector.png" />
                 </div>
                 <div>
+<<<<<<< HEAD
+                  <img src="../../assets/Rectangle 11 (6).png" />
+=======
                   <img
                     class="image-tablet-height"
                     src="../../assets/Rectangle 11 (6).png"
                   />
+>>>>>>> 9a5b67ebb3ac644ac437502833ce575a152c8204
                 </div>
                 <div class="pb-15">
                   <span class="companies-name-logo"> Dell </span>
@@ -76,10 +88,14 @@
                   <img src="../../assets/Vector.png" />
                 </div>
                 <div>
+<<<<<<< HEAD
+                  <img src="../../assets/Rectangle 11 (4).png" />
+=======
                   <img
                     class="image-tablet-height"
                     src="../../assets/Rectangle 11 (4).png"
                   />
+>>>>>>> 9a5b67ebb3ac644ac437502833ce575a152c8204
                 </div>
                 <div class="pb-15">
                   <span class="companies-name-logo"> Google Inc. </span>
@@ -151,6 +167,8 @@ export default {};
   box-shadow: 0px 4px 60px rgba(53, 66, 85, 0.04);
   border-radius: 10px;
 }
+<<<<<<< HEAD
+=======
 @media only screen and (min-width: 320px) and (max-width: 479px) {
 }
 
@@ -173,4 +191,5 @@ export default {};
     margin-top: 10px;
   }
 }
+>>>>>>> 9a5b67ebb3ac644ac437502833ce575a152c8204
 </style>
