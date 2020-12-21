@@ -57,7 +57,6 @@
         </a-button>
       </div> -->
     </div>
-    <Footer />
   </div>
 </template>
 

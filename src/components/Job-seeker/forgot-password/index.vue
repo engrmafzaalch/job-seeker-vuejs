@@ -1,9 +1,9 @@
 <template>
-  <div class="height-login-card">
+  <div class="height-forgot-password-card">
     <div class="login-card pb-30">
       <div class="">
         <div>
-          <span class="admin-login-screen">Admin Login</span>
+          <span class="admin-login-screen">Forget Password</span>
         </div>
       </div>
       <div>
@@ -42,43 +42,7 @@
                     </a-form-item>
                   </div>
                 </div>
-
-                <div class="col-12 mt-30">
-                  <div class="display-flex width-100 text-align-initial">
-                    <a-form-item
-                      style="width: 100%; height: 48px; margin-right: 0px"
-                    >
-                      <a-input
-                        style="width: 100%; height: 48px"
-                        class="searchbox-style width-100 mr-0"
-                        v-decorator="[
-                          `password[${k}]`,
-                          {
-                            validateTrigger: ['change', 'blur'],
-                            rules: [
-                              {
-                                required: true,
-                                whitespace: true,
-                                message: 'Please input password this field.',
-                              },
-                            ],
-                          },
-                        ]"
-                        placeholder=" Password *"
-                      />
-                    </a-form-item>
-                  </div>
-                </div>
               </div>
-            </div>
-          </div>
-          <div class="col-12 mtb-22">
-            <div class="text-align-end">
-              <span class="forgot-password-text"
-                ><router-link to="forgot-password"
-                  >Forget Password ?</router-link
-                ></span
-              >
             </div>
           </div>
 
@@ -93,7 +57,7 @@
                   @click="handlePrevious"
                   class="go-back-button-style"
                 >
-                  Cancle
+                  Reset
                 </a-button>
               </div>
               <div class="col-6">
@@ -102,7 +66,7 @@
                   html-type="submit"
                   class="login-button-style"
                 >
-                  Login
+                  Reset Password
                 </a-button>
               </div>
             </div>
@@ -180,8 +144,8 @@ export default {
   margin-top: 22px;
   margin-bottom: 22px;
 }
-.height-login-card {
-  height: calc(100vh + 10px);
+.height-forgot-password-card {
+  height: calc(100vh - 150px);
 }
 .admin-login-screen {
   font-family: Open Sans;

@@ -3,14 +3,16 @@
     <!-- <img src="./assets/logo.png" /> -->
     <Header />
     <router-view />
+    <Footer />
   </div>
 </template>
 
 <script>
 import Header from "./components/Job-seeker/Header.vue";
+import Footer from "./components/Job-seeker/Jobs/Footer.vue";
 export default {
   name: "App",
-  components: { Header },
+  components: { Header, Footer },
 };
 </script>
 

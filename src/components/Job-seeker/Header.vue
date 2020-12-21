@@ -7,7 +7,7 @@
             <img src="../../assets/Frame 1376 1.png" />
           </a>
         </div>
-        <div class="header-right">
+        <div v-if="token" class="header-right">
           <router-link to="/">Home</router-link>
           <!-- <a class="active" href="#home">Home</a> -->
           <router-link to="jobs">Jobs</router-link>
@@ -31,6 +31,12 @@ export default {
     return {
       msg: "Welcome to Your Vue.js App",
     };
+  },
+  computed: {
+    token() {
+      console.log("in computed");
+      return localStorage.getItem("token");
+    },
   },
 };
 </script>
