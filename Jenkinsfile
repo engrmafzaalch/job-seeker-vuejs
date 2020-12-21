@@ -1,10 +1,10 @@
 node {
     try {
-        def project = 'infohob'
-        def appName = 'jobseeker-frontend'
-        def serviceName = 'jobseeker-frontend-v1'
+        def project = 'https://registry.infohob.com'
+        def appName = 'infohob-frontend'
+        def serviceName = 'infohob-frontend-v1'
         def feSvcName = "${serviceName}"
-         def tagNumber = 1000 + (env.BUILD_NUMBER as int)
+        def tagNumber = 1000 + (env.BUILD_NUMBER as int)
         def imageTag = "${project}/${appName}:${env.BRANCH_NAME}.${tagNumber}"
 
         checkout scm
