@@ -8,26 +8,22 @@
       </div>
       <div>
         <a-form layout="inline" :form="form" @submit="handleSubmit">
-          <div
-            class="row m-0"
-            v-for="k in form.getFieldValue('keys')"
-            :key="k"
-            :required="false"
-          >
+          <div class="row m-0">
             <div class="col-12">
               <div class="row">
                 <div class="col-12 mt-30">
                   <div class="display-flex width-100 text-align-initial">
                     <a-form-item
+                      :validate-status="userNameError() ? 'error' : ''"
+                      :help="userNameError() || ''"
                       style="width: 100%; height: 48px; margin-right: 0px"
                     >
                       <a-input
                         style="width: 100%; height: 48px"
                         class="searchbox-style width-100 mr-0"
                         v-decorator="[
-                          `email[${k}]`,
+                          `email`,
                           {
-                            validateTrigger: ['change', 'blur'],
                             rules: [
                               {
                                 required: true,
@@ -46,13 +42,16 @@
                 <div class="col-12 mt-30">
                   <div class="display-flex width-100 text-align-initial">
                     <a-form-item
+                      :validate-status="passwordError() ? 'error' : ''"
+                      :help="passwordError() || ''"
                       style="width: 100%; height: 48px; margin-right: 0px"
                     >
                       <a-input
                         style="width: 100%; height: 48px"
+                        type="password"
                         class="searchbox-style width-100 mr-0"
                         v-decorator="[
-                          `password[${k}]`,
+                          `password`,
                           {
                             validateTrigger: ['change', 'blur'],
                             rules: [
@@ -82,17 +81,10 @@
             </div>
           </div>
 
-          <a-form-item
-            class="display-flex mt-22"
-            v-bind="formItemLayoutWithOutLabel"
-          >
+          <a-form-item class="display-flex mt-22">
             <div class="row m-0 button-class">
               <div class="col-6">
-                <a-button
-                  type="primary"
-                  @click="handlePrevious"
-                  class="go-back-button-style"
-                >
+                <a-button type="primary" class="go-back-button-style">
                   Cancle
                 </a-button>
               </div>
@@ -101,6 +93,7 @@
                   type="primary"
                   html-type="submit"
                   class="login-button-style"
+                  :disabled="hasErrors(form.getFieldsError())"
                 >
                   Login
                 </a-button>
@@ -119,21 +112,19 @@ function hasErrors(fieldsError) {
 }
 let id = 0;
 export default {
-  beforeCreate() {
-    this.form = this.$form.createForm(this, { name: "dynamic_form_item" });
-    this.form.getFieldDecorator("keys", {
-      initialValue: [
-        {
-          degree: "",
-          college: "",
-          start_date: "",
-          end_date: "",
-          education_detail: "",
-        },
-      ],
-      preserve: true,
+  data() {
+    return {
+      hasErrors,
+      form: this.$form.createForm(this, { name: "horizontal_login" }),
+    };
+  },
+  mounted() {
+    this.$nextTick(() => {
+      // To disabled submit button at the beginning.
+      this.form.validateFields();
     });
   },
+
   methods: {
     userNameError() {
       const { getFieldError, isFieldTouched } = this.form;
@@ -146,10 +137,15 @@ export default {
     },
     handleSubmit(e) {
       e.preventDefault();
-      this.nextStep();
       this.form.validateFields((err, values) => {
         if (!err) {
           console.log("Received values of form: ", values);
+          // this.$store.dispatch("setToken", values.email);
+          // localStorage.setItem("token", values.email);
+          let email = values.email;
+          let password = values.password;
+          this.$store.dispatch("login", { email, password });
+          this.$router.push("/");
         }
       });
     },

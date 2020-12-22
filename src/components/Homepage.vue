@@ -28,6 +28,8 @@ export default {
   },
   data() {
     return {
+      rows: 100,
+      currentPage: 1,
       cssProps: {
         backgroundImage: `url(${require("@/assets/Header2x.jpg")})`,
         backgroundSize: "contain",
@@ -42,6 +44,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .main-div {
-  height: 640px;
+  min-height: 640px;
 }
 </style>
