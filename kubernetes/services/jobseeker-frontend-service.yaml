@@ -7,12 +7,11 @@ metadata:
 spec:
   type: NodePort
   ports:
-    # By default and for convenience, the `targetPort` is set to the same value as the `port` field.
-  - port: 3000
+  - name: http
+    port: 3000
+  - name: external
+    port: 30034
     targetPort: 3000
-    # Optional field
-    # By default and for convenience, the Kubernetes control plane will allocate a port from a range (default: 30000-32767)
-    nodePort: 30034
   selector:
     app: jobseeker-frontend
     tier: backend
