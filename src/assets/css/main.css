@@ -8,6 +8,12 @@
     display: table;
     border: 2px solid #232735;
 } */
+.ml-20{
+    margin-left: 20px;
+}
+.ml-80{
+    margin-left: 80px;
+}
 .text-align-end{
     text-align: end;
 }
@@ -98,4 +104,23 @@ color: #505565;
 
 .text-align-initial{
     text-align: initial;
+}
+.job-seeker-detailed-page-breadcumb-link > .ant-breadcrumb-link {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    color: #505565;
+  }
+  .active-color > .ant-breadcrumb-link {
+    color: #0385f3 !important;
+  }
+.mt-30{
+    margin-top: 30px;
+}
+.align-item-center{
+    align-items: center;
+}
+.justify-content-space-around{
+    justify-content: space-around;
 }

@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid main-div-height-job-seeker-list">
     <div class="text-align-right mt-50">
-      <a-button type="solid add-more-text-admin-job-seeker" @click="add">
+      <a-button type="solid add-more-text-admin-job-seeker">
         <span
           ><a-icon class="vertical-align-middle" type="plus" /> Add New Job
           Seeker</span

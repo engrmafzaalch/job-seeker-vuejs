@@ -59,11 +59,6 @@ export default {
   props: ["nextStep"],
   data() {
     return {
-      cssProps: {
-        backgroundImage: `url(${require("@/assets/Header2x.jpg")})`,
-        backgroundSize: "cover",
-        height: "inherit",
-      },
       hasErrors,
       form: this.$form.createForm(this, { name: "horizontal_login" }),
     };

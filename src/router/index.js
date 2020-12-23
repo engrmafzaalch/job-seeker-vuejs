@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import HomePageContainer from '@/components/HomePageContainer'
 import RegistrationIndex from '@/components/Job-seeker/registration'
 import JobsIndex from '@/components/Job-seeker/Jobs'
 import LoginIndex from '@/components/Job-seeker/login'
@@ -56,8 +56,8 @@ let router = new Router({
     },
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld,
+      name: 'HomePageContainer',
+      component: HomePageContainer,
       meta: {
         requiresAuth: true
       }
