@@ -36,8 +36,8 @@ spec:
         imagePullPolicy: "Always"
         name: jobseeker-frontend
         command:
-        - "/bin/bash"
-        - "-c"
+        # - "/bin/bash"
+        # - "-c"
         - "npm start"
         ports:
         - containerPort: 3000
