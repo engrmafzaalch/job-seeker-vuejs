@@ -42,7 +42,7 @@
 .b-pagination-pills .page-item .page-link{
     border-radius: 4px;
 }
-.ant-tabs-bar{
+.job-seeker-listing-tabs > .ant-tabs-bar{
     width: 300px;
     font-family: Open Sans;
 font-style: normal;
@@ -70,4 +70,28 @@ color: #0385F3;
 }
 .mb-40{
     margin-bottom: 40px;
+}
+thead[class*="ant-table-thead"] th{
+    background: #FAFDFF !important;
+    /* background-color: yellow !important; */
+  }
+
+  .ant-table-row >  td{
+    
+    font-family: Open Sans;
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 24px;
+/* identical to box height, or 133% */
+
+
+/* Text / 02 */
+
+color: #505565;
+    /* background-color: yellow !important; */
+  }
+
+  .ant-table-row >td:first-child:hover{
+    border-left: 2px solid rgba(3, 133, 243, 0.8);
 }
