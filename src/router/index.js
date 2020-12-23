@@ -6,6 +6,7 @@ import JobsIndex from '@/components/Job-seeker/Jobs'
 import LoginIndex from '@/components/Job-seeker/login'
 import ForgotPasswordIndex from '@/components/Job-seeker/forgot-password'
 import AdminJobSeeker from '@/components/admin-job-seeker'
+import AdminJobSeekerDetailedPage from '@/components/admin-job-seeker/job-seeker-detailed-view'
 import store from '../store/store.js'
 Vue.use(Router)
 
@@ -41,6 +42,14 @@ let router = new Router({
       path: '/admin/job-seeker',
       name: 'AdminJobSeeker',
       component: AdminJobSeeker,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/admin/job-seeker/:id',
+      name: 'AdminJobSeekerDetailedPage',
+      component: AdminJobSeekerDetailedPage,
       meta: {
         requiresAuth: true
       }

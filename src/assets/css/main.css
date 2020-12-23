@@ -95,3 +95,7 @@ color: #505565;
   .ant-table-row >td:first-child:hover{
     border-left: 2px solid rgba(3, 133, 243, 0.8);
 }
+
+.text-align-initial{
+    text-align: initial;
+}
