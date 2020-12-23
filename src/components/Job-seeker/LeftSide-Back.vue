@@ -192,11 +192,6 @@ function hasErrors(fieldsError) {
 export default {
   data() {
     return {
-      cssProps: {
-        backgroundImage: `url(${require("@/assets/Header2x.jpg")})`,
-        backgroundSize: "cover",
-        height: "inherit",
-      },
       hasErrors,
       form: this.$form.createForm(this, { name: "horizontal_login" }),
     };
@@ -217,6 +212,9 @@ export default {
     passwordError() {
       const { getFieldError, isFieldTouched } = this.form;
       return isFieldTouched("password") && getFieldError("password");
+    },
+    handleChange(e) {
+      console.log(e);
     },
     handleSubmit(e) {
       e.preventDefault();
