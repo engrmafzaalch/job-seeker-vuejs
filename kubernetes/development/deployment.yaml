@@ -35,10 +35,10 @@ spec:
         image: registry.infohob.com/infohob-frontend
         imagePullPolicy: "Always"
         name: jobseeker-frontend
-        command:
+        # command:
         # - "/bin/bash"
         # - "-c"
-        - "npm start"
+        # - "npm start"
         ports:
         - containerPort: 3000
           protocol: TCP
