@@ -1,31 +1,17 @@
-# apiVersion: v1
-# kind: Service
-# metadata:
-#   labels:
-#     app: jobseeker-frontend
-#   name: jobseeker-frontend
-# spec:
-#   type: NodePort
-#   ports:
-#   - port: 8080
-#     targetPort: 8080
-#     nodePort: 32400
-#     name: jobseeker-frontend
-#   selector:
-#     app: jobseeker-frontend
-#     tier: frontend
-#   sessionAffinity: None
-
 apiVersion: v1
 kind: Service
-metadata:  
+metadata:
+  labels:
+    app: jobseeker-frontend
   name: jobseeker-frontend
 spec:
-  selector:    
-    app: jobseeker-frontend
   type: NodePort
-  ports:  
-  - name: http
-    port: 8080
+  ports:
+  - port: 8080
     targetPort: 8080
-    protocol: TCP
+    nodePort: 32400
+    name: jobseeker-frontend
+  selector:
+    app: jobseeker-frontend
+    tier: frontend
+  sessionAffinity: None
