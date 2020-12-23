@@ -7,7 +7,7 @@
             <img src="../../assets/Frame 1376 1.png" />
           </a>
         </div>
-        <div class="header-right">
+        <div v-if="isLoggedIn" class="header-right">
           <router-link to="/">Home</router-link>
           <!-- <a class="active" href="#home">Home</a> -->
           <router-link to="jobs">Jobs</router-link>
@@ -16,7 +16,7 @@
           <a class="bell-icon-header" href="#my-account"
             ><i class="fas fa-bell"></i
           ></a>
-          <a class="logout-button" href="#">Logout</a>
+          <a class="logout-button" @click="logout" href="#">Logout</a>
         </div>
       </div>
     </div>
@@ -30,7 +30,31 @@ export default {
   data() {
     return {
       msg: "Welcome to Your Vue.js App",
+      token: this.$store.state.token,
     };
+  },
+  // computed: {
+  //   token() {
+  //     console.log("in computed");
+  //     return this.$store.state.token;
+  //   },
+  // },
+  computed: {
+    isLoggedIn: function () {
+      return this.$store.getters.isLoggedIn;
+    },
+  },
+  watch: {
+    token(newName) {
+      this.$store.state.token;
+    },
+  },
+  methods: {
+    logout: function () {
+      this.$store.dispatch("logout").then(() => {
+        this.$router.push("/job-seeker/login");
+      });
+    },
   },
 };
 </script>

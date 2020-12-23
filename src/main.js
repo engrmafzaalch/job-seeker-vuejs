@@ -9,7 +9,14 @@ import '@fortawesome/fontawesome-free/js/all.js'
 import Antd from "ant-design-vue";
 import "ant-design-vue/dist/antd.css";
 import './assets/css/main.css';
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import store from "./store/store";
 Vue.use(Antd);
+Vue.use(BootstrapVue)
+// Optionally install the BootstrapVue icon components plugin
+Vue.use(IconsPlugin)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
@@ -17,5 +24,7 @@ new Vue({
   el: '#app',
   router,
   components: { App },
+  store: store,
+  beforeCreate() { this.$store.commit('initialiseStore'); },
   template: '<App/>'
 })

@@ -8,7 +8,12 @@
     display: table;
     border: 2px solid #232735;
 } */
-
+.text-align-end{
+    text-align: end;
+}
+.ant-col {
+    width: 100%;
+  }
 .ant-slider-handle{
     width: 40px;
     height: 40px;
@@ -32,4 +37,37 @@
 }
 .ant-radio-inner::after{
     background-color: #222222;
+}
+
+.b-pagination-pills .page-item .page-link{
+    border-radius: 4px;
+}
+.ant-tabs-bar{
+    width: 300px;
+    font-family: Open Sans;
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+color: #0385F3;
+}
+.display-flex{
+    display: flex;
+}
+.text-align-right{
+    text-align: right;
+}
+.mt-50{
+    margin-top: 50px;
+}
+.vertical-align-middle{
+    vertical-align: middle;
+}
+.ml-10{
+    margin-left: 10px;
+}
+.mt-30{
+    margin-top: 30px;
+}
+.mb-40{
+    margin-bottom: 40px;
 }
