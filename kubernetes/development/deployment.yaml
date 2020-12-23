@@ -22,6 +22,8 @@ spec:
         - name: regcred
       containers:
       - env:
+        - name: 'PORT'
+          value: '8080'
         - name: NODE_NAME
           valueFrom:
             fieldRef:
