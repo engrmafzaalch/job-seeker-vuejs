@@ -11,7 +11,7 @@ RUN npm install
 COPY . .
 
 # Application port (optional)
-EXPOSE 3000
+EXPOSE 8080
 
 # Debugging port (optional)
 # For remote debugging, add this port to devspace.yaml: dev.ports[*].forward[*].port: 9229
