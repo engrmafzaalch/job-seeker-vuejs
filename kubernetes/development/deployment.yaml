@@ -16,7 +16,7 @@ spec:
       labels:
         app: jobseeker-frontend
         tier: frontend
-        env: dev
+        env: production
     spec:
       imagePullSecrets:
         - name: regcred
