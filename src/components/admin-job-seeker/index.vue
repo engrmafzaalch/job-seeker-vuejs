@@ -103,7 +103,9 @@
           :data-source="data"
           :pagination="pagination"
         >
-          <a slot="name" slot-scope="text">{{ text }}</a>
+          <span slot="name" @click="displayDetailed" slot-scope="text">{{
+            text
+          }}</span>
           <span class="table-header-title" slot="customTitle">NAME</span>
           <span class="table-header-title" slot="customTitleEmail"
             >EMAIL ADDRESS</span
@@ -420,6 +422,11 @@ export default {
         showSizeChange: (current, pageSize) => (this.pageSize = pageSize), // update display when changing the number of pages per page
       },
     };
+  },
+  methods: {
+    displayDetailed() {
+      this.$router.push("/admin/job-seeker/10");
+    },
   },
 };
 </script>

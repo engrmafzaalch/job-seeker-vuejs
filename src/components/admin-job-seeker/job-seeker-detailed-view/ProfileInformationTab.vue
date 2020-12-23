@@ -104,6 +104,14 @@
       </div>
     </div>
     <hr />
+    <div class="button-class display-flex">
+      <div>
+        <a-button type="primary" class="go-back-button-style"> Cancle</a-button>
+        <a-button type="primary" html-type="submit" class="login-button-style">
+          Approve Account
+        </a-button>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -112,6 +120,29 @@ export default {};
 </script>
 
 <style scoped>
+.go-back-button-style {
+  background: #fafafa;
+  border-radius: 4px;
+  /* width: 100%; */
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  color: #8b90a0;
+  height: 48px;
+  border: 1px solid #fafafa;
+}
+.login-button-style {
+  background: #0385f3;
+  border-radius: 4px;
+  /* width: 100%; */
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  height: 48px;
+  font-size: 14px;
+  color: #ffffff;
+}
 .display-info-title-job-seeker-detailed {
   font-family: Open Sans;
   font-style: normal;
