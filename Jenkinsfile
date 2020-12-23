@@ -1,30 +1,53 @@
 node {
-  try {
-    stage('Checkout') {
-      checkout scm
-    }
-    stage('Environment') {
-      sh 'git --version'
-      echo "Branch: ${env.BRANCH_NAME}"
-      sh 'docker -v'
-      sh 'printenv'
-    }
-    stage('Deploy'){
-      if(env.BRANCH_NAME == 'main'){
-        sh 'docker build -t infohob-frontend --no-cache .'
-        sh 'docker tag infohob-frontend localhost:8080/infohob-frontend'
-        sh 'docker push localhost:8080/infohob-frontend'
-        sh 'docker rmi -f infohob-frontend localhost:8080/infohob-frontend'
-      }
-    }
-    stage ('Deploy to Kubernetes') {
-        withCredentials([kubeconfigFile(credentialsId: 'kube-config', variable: 'KUBECONFIG')]) {
-            //sh 'kubectl create secret docker-registry regcred --docker-server=https://registry.blusalt.io/v2/_catalog --docker-username=blusalt --docker-password=ZZmWxWyNrf42MdLe --docker-email=gettosin4me@gmail.com'
-            sh "helm upgrade --install blusalt-sms-gateway ./helm --set image.repository=${env.REGISTRY_HOST}/blusalt-sms-gateway --set replicaCount=${env.REPLICAS}"
+    try {
+        def project = 'registry.infohob.com'
+        def appName = 'infohob-frontend'
+        def serviceName = 'infohob-frontend-v1'
+        def feSvcName = "${serviceName}"
+        def tagNumber = 1000 + (env.BUILD_NUMBER as int)
+        def imageTag = "${project}/${appName}:${env.BRANCH_NAME}.${tagNumber}"
+
+        checkout scm
+
+        stage('Check tools') {
+            sh("docker --version")
         }
+
+        stage('Build image') {
+            sh("docker build -t ${imageTag} .")
+        }
+
+        stage('Run tests') {
+            sh("npm install")
+        }
+
+        stage('Push image to registry') {
+            sh("docker push ${imageTag}")
+        }
+
+        stage("Deploy Application") {
+            switch (env.BRANCH_NAME) {
+                // Roll out to staging deployment
+                case "staging":
+                    // deploy project to staging server
+                    break
+
+                // Roll out to production
+                case "main":
+                    sh("sed -i.bak 's#registry.infohob.com/infohob-frontend#${imageTag}#' ./kubernetes/development/*.yaml")
+                    sh("kubectl apply -f kubernetes/services/ --validate=false")
+                    sh("kubectl apply -f kubernetes/development/ --validate=false")
+                    break
+                // Roll out a feature environment
+                default:
+                    echo "This is a feature branch!. We currently do not support deployment for feature branch thanks"
+            }
+        }
+    } catch (e) {
+        // If there was an exception thrown, the build failed
+        currentBuild.result = "FAILED"
+        throw e
+    } finally {
+        // Success or failure, always send notifications
     }
-  }
-  catch (err) {
-    throw err
-  }
 }

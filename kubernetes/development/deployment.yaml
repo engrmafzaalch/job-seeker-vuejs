@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: jobseeker-frontend
+  name: jobseeker-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jobseeker-frontend
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: jobseeker-frontend
+        tier: frontend
+        env: dev
+    spec:
+      imagePullSecrets:
+        - name: regcred
+      containers:
+      - env:
+        - name: NODE_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
+        - name: POD_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
+        - name: LOG_LEVEL
+          value: info
+        image: registry.infohob.com/infohob-frontend
+        imagePullPolicy: "Always"
+        name: jobseeker-frontend
+        command:
+        - "/bin/bash"
+        - "-c"
+        - "npm start"
+        ports:
+        - containerPort: 3000
+          protocol: TCP
+        resources:
+          requests:
+            cpu: 10m
+            memory: 256Mi
