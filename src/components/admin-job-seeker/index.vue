@@ -430,20 +430,16 @@ export default {
     };
   },
   mounted() {
-    // axios
-    //   .get(
-    //     "http://www.omdbapi.com/?s=indiana&apikey=XXXX&page=1&type=movie&Content-Type=application/json"
-    //   )
-    //   .then((response) => {
-    //     console.log(response);
-    //   })
-    //   .catch((error) => {
-    //     console.log(error);
-    //   });
+    axios
+      .get("http://167.99.198.38:32001/list/job/seeker?page=1&size=10")
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
     //api call for get job seeker listing
-    httpClient.get(
-      "http://www.omdbapi.com/?s=indiana&apikey=XXXX&page=1&type=movie&Content-Type=application/json"
-    );
+    // httpClient.get("http://167.99.198.38:32001/list/job/seeker?page=1&size=10");
   },
   computed: {
     ...mapState("loader", ["loading"]),
