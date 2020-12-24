@@ -77,6 +77,9 @@ color: #0385F3;
 .mb-40{
     margin-bottom: 40px;
 }
+.justify-content-flex-end{
+    justify-content: flex-end;
+}
 thead[class*="ant-table-thead"] th{
     background: #FAFDFF !important;
     /* background-color: yellow !important; */
@@ -123,4 +126,8 @@ color: #505565;
 }
 .justify-content-space-around{
     justify-content: space-around;
+}
+.justify-content-space-berween{
+    justify-content: space-between;
+
 }

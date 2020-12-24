@@ -13,6 +13,8 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 import store from "./store/store";
+import { setupInterceptors } from './utils/httpInterceptors';
+import axios from 'axios'
 Vue.use(Antd);
 Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin
@@ -25,6 +27,10 @@ new Vue({
   router,
   components: { App },
   store: store,
+  axios: axios,
   beforeCreate() { this.$store.commit('initialiseStore'); },
+  created() {
+    setupInterceptors(store);
+  },
   template: '<App/>'
 })
