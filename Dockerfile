@@ -15,7 +15,7 @@ EXPOSE 8080
 
 # Debugging port (optional)
 # For remote debugging, add this port to devspace.yaml: dev.ports[*].forward[*].port: 9229
-EXPOSE 9229
+# EXPOSE 9229
 
 # Container start command (DO NOT CHANGE and see note below)
 CMD ["npm", "start"]

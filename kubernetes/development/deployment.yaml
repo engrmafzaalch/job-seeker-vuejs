@@ -16,12 +16,14 @@ spec:
       labels:
         app: jobseeker-frontend
         tier: frontend
-        env: dev
+        env: production
     spec:
       imagePullSecrets:
         - name: regcred
       containers:
       - env:
+        - name: 'PORT'
+          value: '8080'
         - name: NODE_NAME
           valueFrom:
             fieldRef:
