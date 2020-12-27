@@ -7,7 +7,8 @@ export default new Vuex.Store({
     state: {
         status: '',
         token: localStorage.getItem('token') || '',
-        user: {}
+        user: {},
+        loading: false
     },
     mutations: {
         auth_request(state) {
@@ -25,6 +26,12 @@ export default new Vuex.Store({
             state.status = ''
             state.token = ''
         },
+        show(state) {
+            state.loading = true;
+        },
+        hide(state) {
+            state.loading = false;
+        }
     },
     actions: {
         login({ commit }, user) {
@@ -53,6 +60,12 @@ export default new Vuex.Store({
                 // delete axios.defaults.headers.common['Authorization']
                 resolve()
             })
+        },
+        show({ commit }) {
+            commit("show");
+        },
+        hide({ commit }) {
+            commit("hide");
         }
     },
     getters: {

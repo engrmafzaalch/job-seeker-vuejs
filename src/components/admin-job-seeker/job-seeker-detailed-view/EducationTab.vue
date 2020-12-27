@@ -1,109 +1,128 @@
 <template>
   <div class="border-box-profile-information">
     <div class="display-flex align-item-center">
-      <div>
-        <img src="../../../assets/Ellipse 5 (1).png" alt="" />
-      </div>
-      <div class="ml-20">
-        <span class="job-seeker-detailed-profile-text">Desirae Dias</span>
-      </div>
-      <div class="ml-80">
+      <div class="">
         <div>
           <span class="detailde-page-job-seeker-profile-info-header"
-            >Email Address</span
+            >Name of Educational Institution/School</span
           >
         </div>
         <div>
           <span class="detailde-page-job-seeker-profile-info-data-text"
-            >user@gmail.com</span
+            >Lorem ipsum dolor</span
           >
         </div>
       </div>
       <div class="ml-80">
         <div>
           <span class="detailde-page-job-seeker-profile-info-header"
-            >Contact Information</span
+            >Minimum Qualification</span
           >
         </div>
         <div>
           <span class="detailde-page-job-seeker-profile-info-data-text"
-            >+ 9988776655</span
+            >Diploma</span
           >
         </div>
       </div>
       <div class="ml-80">
         <div>
           <span class="detailde-page-job-seeker-profile-info-header"
-            >Location</span
+            >Start date</span
           >
         </div>
         <div>
           <span class="detailde-page-job-seeker-profile-info-data-text"
-            >Buenos Aires, Agentina</span
+            >Jul, 2019</span
+          >
+        </div>
+      </div>
+      <div class="ml-80">
+        <div>
+          <span class="detailde-page-job-seeker-profile-info-header"
+            >End date</span
+          >
+        </div>
+        <div>
+          <span class="detailde-page-job-seeker-profile-info-data-text"
+            >On-going</span
           >
         </div>
       </div>
     </div>
-    <hr />
-    <div>
+    <div class="mt-30">
       <div>
-        <span class="about-content-title">About</span>
+        <span class="about-content-title">Education details</span>
       </div>
       <div class="about-description">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
         bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra
         justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque
-        penatibus et magnis dis parturient. Sed nascetur ridiculus mus. Nam
-        fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci,
-        sed rhoncus pronin sapien nunc accuan eget.
+        penatibus et magnis dis parturient.
       </div>
     </div>
     <hr />
-    <div>
-      <div class="display-flex">
+    <div class="display-flex align-item-center">
+      <div class="">
         <div>
-          <span class="display-info-title-job-seeker-detailed"
-            >N.Y.S.C Number</span
+          <span class="detailde-page-job-seeker-profile-info-header"
+            >Name of Educational Institution/School</span
           >
         </div>
         <div>
-          <span class="display-info-job-seeker-detailed-info ml-80"
-            >A00 - 4672468</span
+          <span class="detailde-page-job-seeker-profile-info-data-text"
+            >Lorem ipsum dolor</span
+          >
+        </div>
+      </div>
+      <div class="ml-80">
+        <div>
+          <span class="detailde-page-job-seeker-profile-info-header"
+            >Minimum Qualification</span
+          >
+        </div>
+        <div>
+          <span class="detailde-page-job-seeker-profile-info-data-text"
+            >Diploma</span
+          >
+        </div>
+      </div>
+      <div class="ml-80">
+        <div>
+          <span class="detailde-page-job-seeker-profile-info-header"
+            >Start date</span
+          >
+        </div>
+        <div>
+          <span class="detailde-page-job-seeker-profile-info-data-text"
+            >Jul, 2019</span
+          >
+        </div>
+      </div>
+      <div class="ml-80">
+        <div>
+          <span class="detailde-page-job-seeker-profile-info-header"
+            >End date</span
+          >
+        </div>
+        <div>
+          <span class="detailde-page-job-seeker-profile-info-data-text"
+            >On-going</span
           >
         </div>
       </div>
     </div>
-    <hr />
-    <div>
-      <div class="display-flex">
-        <div>
-          <span class="display-info-title-job-seeker-detailed"
-            >Date of Birth</span
-          >
-        </div>
-        <div>
-          <span class="display-info-job-seeker-detailed-info ml-80"
-            >02 Mar 1990</span
-          >
-        </div>
+    <div class="mt-30 mb-40">
+      <div>
+        <span class="about-content-title">Education details</span>
+      </div>
+      <div class="about-description">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
+        bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra
+        justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque
+        penatibus et magnis dis parturient.
       </div>
     </div>
-    <hr />
-    <div>
-      <div class="display-flex">
-        <div>
-          <span class="display-info-title-job-seeker-detailed"
-            >LinkedIn Profile</span
-          >
-        </div>
-        <div>
-          <span class="display-info-job-seeker-detailed-info ml-80"
-            >https://www.linkedin.com/in/jane-doe 7a5a1019</span
-          >
-        </div>
-      </div>
-    </div>
-    <hr />
     <div class="button-class display-flex justify-content-flex-end">
       <div>
         <a-button type="primary" class="go-back-button-style"> Cancle</a-button>

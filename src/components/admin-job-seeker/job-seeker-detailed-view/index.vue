@@ -22,12 +22,12 @@
           <profile-information-tab />
         </a-tab-pane>
         <a-tab-pane key="2" tab="Education" force-render>
-          Content of Tab Pane 2
+          <education-tab />
         </a-tab-pane>
         <a-tab-pane key="3" tab="Experience and Skills">
-          Content of Tab Pane 3
+          <experience-and-skills-tab />
         </a-tab-pane>
-        <a-tab-pane key="4" tab="Projects"> Content of Tab Pane 3 </a-tab-pane>
+        <a-tab-pane key="4" tab="Projects"> <projects-tab /> </a-tab-pane>
         <a-tab-pane key="5" tab="Resume / CV">
           Content of Tab Pane 3
         </a-tab-pane>
@@ -37,9 +37,17 @@
 </template>
 
 <script>
+import EducationTab from "./EducationTab.vue";
+import ExperienceAndSkillsTab from "./ExperienceAndSkillsTab.vue";
 import ProfileInformationTab from "./ProfileInformationTab.vue";
+import ProjectsTab from "./ProjectsTab.vue";
 export default {
-  components: { ProfileInformationTab },
+  components: {
+    ProfileInformationTab,
+    EducationTab,
+    ExperienceAndSkillsTab,
+    ProjectsTab,
+  },
 };
 </script>
 
