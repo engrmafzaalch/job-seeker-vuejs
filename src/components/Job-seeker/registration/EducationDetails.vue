@@ -182,6 +182,7 @@
                 <a-button
                   type="primary"
                   html-type="submit"
+                  :disabled="hasErrors(form.getFieldsError())"
                   class="search-button-style"
                 >
                   Proceed
@@ -203,6 +204,10 @@ function hasErrors(fieldsError) {
   return Object.keys(fieldsError).some((field) => fieldsError[field]);
 }
 let id = 0;
+import axios from "axios";
+import { mapState } from "vuex";
+import loader from "../../helpers/loader";
+import httpClient from "../../../utils/httpclient";
 export default {
   props: ["nextStep", "previousStep"],
   data() {
@@ -248,6 +253,16 @@ export default {
       preserve: true,
     });
   },
+  mounted() {
+    axios
+      .get("http://167.99.198.38:32001/list/institution")
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  },
   methods: {
     // Only show error after a field is touched.
     handlePrevious() {
@@ -264,9 +279,26 @@ export default {
     },
     handleSubmit(e) {
       e.preventDefault();
-      this.nextStep();
       this.form.validateFields((err, values) => {
         if (!err) {
+          let obj = {
+            jobSeekerId: 1,
+            institutionId: 12,
+            startingDate: "2020-12-28T12:56:31.782Z",
+            completionDate: "2020-12-28T12:56:31.782Z",
+            courseOfStudy: "hbhbh",
+            cgpa: 0,
+            maxCgpa: 0,
+          };
+          axios
+            .post("http://167.99.198.38:32001/create/job/seeker/education", obj)
+            .then((response) => {
+              console.log(response);
+            })
+            .catch((error) => {
+              console.log(error);
+            });
+          this.nextStep();
           console.log("Received values of form: ", values);
         }
       });
