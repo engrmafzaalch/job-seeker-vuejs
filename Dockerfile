@@ -18,7 +18,9 @@ EXPOSE 8080
 # EXPOSE 9229
 
 # Container start command (DO NOT CHANGE and see note below)
-CMD ["npm", "start"]
+# CMD ["npm", "start"]
+
+CMD ["npm", "run", "dev"]
 
 # To start using a different `npm run [name]` command (e.g. to use nodemon + debugger),
 # edit devspace.yaml:
