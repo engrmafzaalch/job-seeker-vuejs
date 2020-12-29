@@ -1,28 +1,28 @@
 FROM node:13.12.0-alpine
 
-# Set working directory
-WORKDIR /app
+# use changes to package.json to force Docker not to use the cache
+# when we change our application's node.js dependencies:
+# ADD package.json /tmp/package.json
+# RUN cd /tmp && npm install
+# RUN mkdir -p /usr/src/jobseeker-frontend && cp -a /tmp/node_modules /usr/src/jobseeker-frontend
 
-# Add package.json to WORKDIR and install dependencies
-COPY package*.json ./
+# From here we load our application's code in, therefore the previous docker
+# "layer" thats been cached will be used if possible:
+RUN mkdir -p /usr/src/jobseeker-frontend
+ADD . /usr/src/jobseeker-frontend
+WORKDIR /usr/src/jobseeker-frontend
 RUN npm install
+RUN npm install -g serve
 
-# Add source code files to WORKDIR
-COPY . .
+# Build Vue.js app
+RUN npm run build
 
-# Application port (optional)
-EXPOSE 8080
+# Remove unused directories
+RUN rm -rf ./build
+RUN rm -rf ./src
+# RUN rm -rf ./dist
+# RUN rm -rf ./build
 
-# Debugging port (optional)
-# For remote debugging, add this port to devspace.yaml: dev.ports[*].forward[*].port: 9229
-# EXPOSE 9229
-
-# Container start command (DO NOT CHANGE and see note below)
-# CMD ["npm", "start"]
-
-CMD ["npm", "run", "dev"]
-
-# To start using a different `npm run [name]` command (e.g. to use nodemon + debugger),
-# edit devspace.yaml:
-# 1) remove: images.app.injectRestartHelper (or set to false)
-# 2) add this: images.app.cmd: ["npm", "run", "dev"]
+# EXPOSE 4001
+EXPOSE 4001
+CMD [ "npm", "start" ]
