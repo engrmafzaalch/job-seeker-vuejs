@@ -18,7 +18,6 @@ RUN npm install -g serve
 RUN npm run build
 
 # Remove unused directories
-RUN rm -rf ./build
 RUN rm -rf ./src
 # RUN rm -rf ./dist
 # RUN rm -rf ./build
