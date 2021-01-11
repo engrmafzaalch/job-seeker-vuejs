@@ -113,6 +113,7 @@ body {
   line-height: 39px;
 }
 .progression-content{
+  width: 100%;
   margin-top: 50px;
   padding-bottom: 50px;
 }

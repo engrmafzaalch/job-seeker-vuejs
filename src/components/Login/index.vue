@@ -13,14 +13,14 @@
               <div class="row">
                 <div class="col-12 mt-30">
                   <div class="display-flex width-100 text-align-initial">
-                    <a-form-item
+                    <div
                       :validate-status="userNameError() ? 'error' : ''"
                       :help="userNameError() || ''"
                       style="width: 100%; height: 48px; margin-right: 0px"
                     >
                       <a-input
-                        style="width: 100%; height: 48px"
-                        class="searchbox-style width-100 mr-0"
+                        style="height: 48px"
+                        class="searchbox-style"
                         v-decorator="[
                           `email`,
                           {
@@ -35,21 +35,21 @@
                         ]"
                         placeholder=" Email address *"
                       />
-                    </a-form-item>
+                    </div>
                   </div>
                 </div>
 
                 <div class="col-12 mt-30">
                   <div class="display-flex width-100 text-align-initial">
-                    <a-form-item
+                    <div
                       :validate-status="passwordError() ? 'error' : ''"
                       :help="passwordError() || ''"
                       style="width: 100%; height: 48px; margin-right: 0px"
                     >
                       <a-input
-                        style="width: 100%; height: 48px"
+                        style=""
                         type="password"
-                        class="searchbox-style width-100 mr-0"
+                        class="searchbox-style"
                         v-decorator="[
                           `password`,
                           {
@@ -65,7 +65,7 @@
                         ]"
                         placeholder=" Password *"
                       />
-                    </a-form-item>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -154,6 +154,7 @@ export default {
 </script>
 
 <style scoped>
+
 .login-card {
   position: absolute;
   padding: 32px;
