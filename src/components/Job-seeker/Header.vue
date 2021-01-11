@@ -1,4 +1,4 @@
-<template>
+    <template>
   <div class="background-header">
     <div class="container-fluid" style="margin-top: '0px'">
       <div class="header">
@@ -14,8 +14,7 @@
           <a href="#my-application">My application</a>
           <a href="#my-account">My Account</a>
           <a class="bell-icon-header" href="#my-account"
-            ><i class="fas fa-bell"></i
-          ></a>
+            ><i class="fas fa-bell"></i></a>
           <a class="logout-button" href="#">Logout</a>
         </div>
       </div>

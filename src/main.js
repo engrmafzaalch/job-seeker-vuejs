@@ -12,6 +12,7 @@ import './assets/css/main.css';
 Vue.use(Antd);
 Vue.config.productionTip = false
 
+import 'bootstrap/dist/css/bootstrap.css'
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
