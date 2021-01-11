@@ -3,37 +3,37 @@
   <div class="container-fluid">
     <div class="row">
     <ul class="progressbar">
-      <li :class="{ 'active' : step == 1}">Profile Summery</li>
-      <li :class="{ 'active' : step == 2}">Education</li>
-      <li :class="{ 'active' : step == 3}">Experience</li>
-      <li :class="{ 'active' : step == 4}">Projects</li>
-      <li :class="{ 'active' : step == 5}">Documents</li>
-      <li :class="{ 'active' : step == 6}">Key Skills</li>
-      <li :class="{ 'active' : step == 7}">My Profile</li>
+      <li :class="{ 'active' : $store.state.step == 1}">Profile Summery</li>
+      <li :class="{ 'active' : $store.state.step == 2}">Education</li>
+      <li :class="{ 'active' : $store.state.step == 3}">Experience</li>
+      <li :class="{ 'active' : $store.state.step == 4}">Projects</li>
+      <li :class="{ 'active' : $store.state.step == 5}">Documents</li>
+      <li :class="{ 'active' : $store.state.step == 6}">Key Skills</li>
+      <li :class="{ 'active' : $store.state.step == 7}">My Profile</li>
     </ul>
     </div>
   </div>
     <div class="row">
     <div class="progression-content">
-  <section v-if="step == 1">
-    <ProfileSummary :function="updateStep"/>
+  <section v-if="$store.state.step == 1">
+    <ProfileSummary/>
   </section>
-  <section v-if="step == 2">
+  <section v-if="$store.state.step == 2">
     <Education/>
   </section>
-  <section v-if="step == 3">
+  <section v-if="$store.state.step == 3">
     <Experience/>
   </section>
-  <section v-if="step == 4">
+  <section v-if="$store.state.step == 4">
     <Project/>
   </section>
-  <section v-if="step == 5">
+  <section v-if="$store.state.step == 5">
     <Documents/>
   </section>
-  <section v-if="step == 6">
+  <section v-if="$store.state.step == 6">
     <Skills/>
   </section>
-  <section v-if="step == 7">
+  <section v-if="$store.state.step == 7">
     <MyProfile/>
   </section>
     </div>
@@ -49,23 +49,11 @@ import Project from "./project";
 import Documents from "./documents";
 import Skills from "./skills";
 import MyProfile from "./myProfile";
+import {store} from "../../../store/store";
 
 export default {
   name : "Steps",
-
-  data(){
-    return{
-      step: 1,
-    }
-  },
-
-  methods:{
-    updateStep(steps)
-    {
-      data.step = steps
-    }
-  },
-
+  store,
   components : {
     ProfileSummary : ProfileSummary,
     Education : Education,

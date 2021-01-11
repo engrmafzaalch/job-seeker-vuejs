@@ -121,7 +121,7 @@
       <div class="profile-box">
         <div class="display-flex align-item-center">
           <div>
-            <img src="../../assets/Ellipse 5.png" />
+            <img src="../../assets/Ellipse5.png" />
           </div>
           <div>
             <div class="profile-name">Jaydon Lipshutz</div>

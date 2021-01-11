@@ -1,5 +1,5 @@
 <template>
-<div class="container vh-100">
+<div class="container ">
   <div class="row py-4">
     <div class="col-sm-6">
       <h2>My Account</h2>
@@ -16,7 +16,7 @@
         <div class="row">
           <div class="col-md-1">
             <div>
-              <img src="./Ellipse 5.png" alt="Profile Image" height="60" width="auto"/>
+              <img src="Ellipse 5.png" alt="Profile Image" height="60" width="auto"/>
             </div>
           </div>
           <div class="col-md-3">

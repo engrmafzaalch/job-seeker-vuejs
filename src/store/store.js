@@ -3,8 +3,10 @@ import Vuex from "vuex";
 //then you use Vuex
 Vue.use(Vuex);
 
-export default new Vuex.Store({
+export const store = new Vuex.Store({
     state: {
+        step:1,
+        tab:1,
         status: '',
         token: localStorage.getItem('token') || '',
         user: {}
@@ -25,6 +27,12 @@ export default new Vuex.Store({
             state.status = ''
             state.token = ''
         },
+      change(state, step) {
+        state.step = step
+      },
+      chagetab(state,tab){
+          state.tab = tab
+      }
     },
     actions: {
         login({ commit }, user) {
@@ -58,5 +66,7 @@ export default new Vuex.Store({
     getters: {
         isLoggedIn: state => !!state.token,
         authStatus: state => state.status,
+        steps: state => state.step,
+        tab: state => state.tab
     }
 });

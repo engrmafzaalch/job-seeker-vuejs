@@ -1,41 +1,14 @@
-    <template>
-  <div class="background-header">
-    <div class="container-fluid" style="margin-top: '0px'">
-      <div class="header">
-        <div class="flex-x">
-          <a href="#default" class="logo">
-            <img src="../../assets/Frame 1376 1.png" />
-          </a>
-        </div>
-        <div class="header-right">
-          <router-link to="/">Home</router-link>
-          <!-- <a class="active" href="#home">Home</a> -->
-          <router-link to="jobs">Jobs</router-link>
-          <router-link to="MyApplications">My application</router-link>
-          <router-link to="my-account">My Account</router-link>
-          <a class="bell-icon-header" href="#my-account"
-            ><i class="fas fa-bell"></i></a>
-          <a class="logout-button" href="#">Logout</a>
-        </div>
-      </div>
-    </div>
+<template>
+  <div>
+    <Homepage />
   </div>
 </template>
 
 <script>
+import Homepage from "./Homepage";
 export default {
-  name: "Header",
-  props: ["isLogin"],
-  data() {
-    return {
-      msg: "Welcome to Your Vue.js App",
-    };
-  },
-  methods:{
-    changeRoute(){
-
-    }
-  }
+  components: { Homepage },
+  name: "HomePageContainer",
 };
 </script>
 
@@ -48,9 +21,6 @@ export default {
   background-color: "#FAFAFA";
   padding: 10px 10px;
 }
-.background-header {
-  background: #fafafa;
-}
 .header a {
   float: left;
   color: black;
@@ -60,6 +30,9 @@ export default {
   font-size: 15px;
   line-height: 25px;
   border-radius: 5px;
+}
+.background-header {
+  background: #fafafa;
 }
 .headera.logo {
   font-size: 25px;

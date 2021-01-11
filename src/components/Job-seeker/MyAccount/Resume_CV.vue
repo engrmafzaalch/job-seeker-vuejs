@@ -13,7 +13,7 @@
             <div class="row pt-2">
               <div class="col-1">
                 <a href="#">
-                  <img class="mt-1" src="./Group.png" alt="Group" height="24" width="auto">
+                  <img class="mt-1" src="Group.png" alt="Group" height="24" width="auto">
                 </a>
               </div>
               <div class="col-6">
@@ -26,12 +26,12 @@
               </div>
               <div class="col-2">
                 <a href="#">
-                  <img class="float-right mt-1" src="./trash.png" height="20" width="auto">
+                  <img class="float-right mt-1" src="trash.png" height="20" width="auto">
                 </a>
               </div>
               <div class="col-2">
                 <a href="#">
-                  <img class="mr-2 mt-1" src="./download.png" height="20" width="auto">
+                  <img class="mr-2 mt-1" src="download.png" height="20" width="auto">
                 </a>
               </div>
             </div>
@@ -50,7 +50,7 @@
             <div class="row pt-2">
               <div class="col-1">
                 <a href="#">
-                  <img class="mt-1" src="./Group.png" alt="Group" height="24" width="auto">
+                  <img class="mt-1" src="Group.png" alt="Group" height="24" width="auto">
                 </a>
               </div>
               <div class="col-6">
@@ -63,12 +63,12 @@
               </div>
               <div class="col-2">
                 <a href="#">
-                  <img class="float-right mt-1" src="./trash.png" height="20" width="auto">
+                  <img class="float-right mt-1" src="trash.png" height="20" width="auto">
                 </a>
               </div>
               <div class="col-2">
                 <a href="#">
-                  <img class="mr-2 mt-1" src="./download.png" height="20" width="auto">
+                  <img class="mr-2 mt-1" src="download.png" height="20" width="auto">
                 </a>
               </div>
             </div>
@@ -87,7 +87,7 @@
             <div class="row pt-2">
               <div class="col-1">
                 <a href="#">
-                  <img class="mt-1" src="./Group.png" alt="Group" height="24" width="auto">
+                  <img class="mt-1" src="Group.png" alt="Group" height="24" width="auto">
                 </a>
               </div>
               <div class="col-6">
@@ -100,12 +100,12 @@
               </div>
               <div class="col-2">
                 <a href="#">
-                  <img class="float-right mt-1" src="./trash.png" height="20" width="auto">
+                  <img class="float-right mt-1" src="trash.png" height="20" width="auto">
                 </a>
               </div>
               <div class="col-2">
                 <a href="#">
-                  <img class="mr-2 mt-1" src="./download.png" height="20" width="auto">
+                  <img class="mr-2 mt-1" src="download.png" height="20" width="auto">
                 </a>
               </div>
             </div>

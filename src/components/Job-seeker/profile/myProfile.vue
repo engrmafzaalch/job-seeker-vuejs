@@ -75,7 +75,7 @@
     <div class="row float-right">
       <div class="col-12">
         <button class="btn btn-light mr-3 px-5">Go Back</button>
-        <button class="btn btn-primary px-5">Complete Profile</button>
+        <button class="btn btn-primary px-5" @click="changed(8)">Complete Profile</button>
       </div>
     </div>
   </div>
@@ -83,7 +83,12 @@
 
 <script>
 export default {
-  name: "MyProfile"
+  name: "MyProfile",
+  methods:{
+    changed: function(step) {
+      this.$store.commit('change', step)
+    }
+  }
 }
 </script>
 

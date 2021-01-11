@@ -9,7 +9,7 @@
         <label for="profile-summery" class="profile">Profile Summery</label>
         <textarea class="form-control" rows="6" id="profile-summery" name="text" placeholder="Enter Profile Summery here"></textarea>
       </div>
-      <button type="button" class="btn btn-primary float-right mt-5 px-5">Proceed</button>
+      <button type="button" class="btn btn-primary float-right mt-5 px-5" @click="changed(2)">Proceed</button>
     </fom>
   </div>
 </div>
@@ -18,7 +18,11 @@
 <script>
 export default {
 name: "ProfileSummary",
-  props: ['updateStep'],
+  methods:{
+    changed: function(step) {
+      this.$store.commit('change', step)
+    }
+  }
 }
 </script>
 

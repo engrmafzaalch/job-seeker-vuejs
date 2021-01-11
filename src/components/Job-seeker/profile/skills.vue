@@ -34,7 +34,7 @@
   <div class="row float-right buttonss">
     <div class="col-sm-12">
       <button class="btn btn-light px-5">Go Back</button>
-      <button class="btn btn-primary px-5">Proceed</button>
+      <button class="btn btn-primary px-5" @click="changed(7)">Proceed</button>
     </div>
   </div>
 </div>
@@ -42,7 +42,12 @@
 
 <script>
 export default {
-  name: "Skills"
+  name: "Skills",
+  methods:{
+    changed: function(step) {
+      this.$store.commit('change', step)
+    }
+  }
 }
 </script>
 
