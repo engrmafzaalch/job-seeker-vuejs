@@ -1,4 +1,4 @@
-<template>
+    <template>
   <div class="background-header">
     <div class="container-fluid" style="margin-top: '0px'">
       <div class="header">

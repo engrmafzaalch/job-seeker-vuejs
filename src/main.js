@@ -11,7 +11,12 @@ import "ant-design-vue/dist/antd.css";
 import './assets/css/main.css';
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
-import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
+import { BootstrapVue, IconsPlugin } from 'bootstrap-vue';
+import '../node_modules/jquery/dist/jquery.js';
+import '../node_modules/datatables.net-dt/css/jquery.dataTables.css';
+import '../node_modules/datatables.net/js/jquery.dataTables.min.js';
+import '../node_modules/datatables.net-dt/js/dataTables.dataTables.js';
+
 import store from "./store/store";
 Vue.use(Antd);
 Vue.use(BootstrapVue)
@@ -19,6 +24,7 @@ Vue.use(BootstrapVue)
 Vue.use(IconsPlugin)
 Vue.config.productionTip = false
 
+import 'bootstrap/dist/css/bootstrap.css'
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
