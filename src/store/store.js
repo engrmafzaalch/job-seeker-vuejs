@@ -30,7 +30,7 @@ export const store = new Vuex.Store({
       change(state, step) {
         state.step = step
       },
-      chagetab(state,tab){
+      changetab(state,tab){
           state.tab = tab
       }
     },

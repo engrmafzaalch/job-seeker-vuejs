@@ -2,36 +2,45 @@
 <div class="container vh-100">
   <index_myAccount/>
   <div class="tab_bar py-4">
-     <a-tabs v-bind:default-active-key="[$store.state.tab]" @change="callback">
-      <a-tab-pane  key="1" tab="Profile Summery"/>
-      <a-tab-pane key="2" tab="Education"/>
-      <a-tab-pane key="3" tab="Experience and Skills"/>
-      <a-tab-pane key="4" tab="Projects"/>
-      <a-tab-pane key="5" tab="Resume/CV"/>
+     <a-tabs v-bind:default-active-key="[$store.state.tab]" @changetab="callback">
+      <a-tab-pane  key="1" tab="Profile Summery" v-on:click="changetab(1)"/>
+      <a-tab-pane key="2" tab="Education" />
+      <a-tab-pane key="3" tab="Experience and Skills" />
+      <a-tab-pane key="4" tab="Projects" />
+      <a-tab-pane key="5" tab="Resume/CV" />
+       <div class="tabs-component">
+         <ul class="tabs-component-tabs">
+           <li class="tabs-component-tab">
+             <a class="tabs-component-tab-a">…</a>
+           </li>
+         </ul>
+         <div class="tabs-component-panels">
+           <section class="tabs-component-panel">
+             …
+           </section>
+         </div>
+       </div>
     </a-tabs>
   </div>
   <div class="row">
     <div class="progression-content">
       <section v-if="$store.state.tab == 1">
-        <ProfileSummary/>
+        <index_myAccount/>
       </section>
       <section v-if="$store.state.tab == 2">
-        <Education/>
+        <ProfileSummery/>
       </section>
       <section v-if="$store.state.tab == 3">
-        <Experience/>
+        <Education_in_MyAccount/>
       </section>
       <section v-if="$store.state.tab == 4">
-        <Project/>
+        <Experience_and_Skills/>
       </section>
       <section v-if="$store.state.tab == 5">
-        <Documents/>
+        <Projects/>
       </section>
       <section v-if="$store.state.tab == 6">
-        <Skills/>
-      </section>
-      <section v-if="$store.state.tab == 7">
-        <MyProfile/>
+        <Resume_CV/>
       </section>
     </div>
   </div>
@@ -45,10 +54,11 @@ import Education_in_MyAccount from "./Education_in_MyAccount";
 import Experience_and_Skills from "./Experience_and_Skills";
 import Projects from "./Projects";
 import Resume_CV from "./Resume_CV";
+import {store} from "../../../store/store";
 
 export default {
   name: "tabs",
-
+  store,
   components:{
     index_myAccount : index_myAccount,
     ProfileSummery : ProfileSummery,
@@ -56,8 +66,11 @@ export default {
     Experience_and_Skills : Experience_and_Skills,
     Projects : Projects,
     Resume_CV : Resume_CV
-
-
+  },
+  methods:{
+    changetab: function(tab) {
+      console.log("testtt", tab)
+    }
   }
 }
 

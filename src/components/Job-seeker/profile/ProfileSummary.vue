@@ -18,6 +18,7 @@
 <script>
 export default {
 name: "ProfileSummary",
+
   methods:{
     changed: function(step) {
       this.$store.commit('change', step)
