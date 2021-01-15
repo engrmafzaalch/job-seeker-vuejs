@@ -1,53 +1,96 @@
 <template>
-<div class="container vh-100">
-  <div class="row mt-5">
-    <div class="col-12">
-      <h4>Select Key Skills</h4>
-    </div>
-  </div>
-  <div class="row mt-2">
-    <div class="col-md-6">
-      <input
-        type="text"
-        class="form-control one"
-        id="search"
-        placeholder="Type in to Search or add new">
-    </div>
-  </div>
-  <div class="row mt-2">
-    <div class="col-sm-1">
-      <div class="d-flex close_button">
-      <div class="alert alert-secondary alert-dismissible fade show">
-        <button class="close" type="button" data-dismiss="alert">&times;</button>
-        C
+  <div class="container vh-100">
+    <div class="row mt-5">
+      <div class="col-12">
+        <h4>Select Key Skills</h4>
       </div>
-      <div class="col-md-1">
-        <div class="alert alert-secondary alert-dismissible fade show">
-          <button type="button" class="close" data-dismiss="alert">&times;</button>
-        C++
+    </div>
+    <a-form :form="form" @submit="handleSubmit">
+      <a-form-item>
+        <div class="row mt-2">
+          <div class="col-md-6">
+            <a-input
+              v-decorator="[
+                `Skill`,
+                {
+                rules: [
+                {
+                required: true,
+                whitespace: true,
+                message: 'Please Enter Skills in this field.',
+                },
+                       ],
+                },
+                      ]"
+              type="text" class="form-control one" id="search" placeholder="Type in to Search or add new">
+            </a-input>
+          </div>
+        </div>
+        <div class="row mt-2">
+          <div class="col-12">
+            <a-select
+              mode="multiple"
+              :default-value="['C', 'C++']"
+              style="width: 100%"
+              placeholder="Please select"
+              @change="handleChange"
+            >
+              <a-select-option v-for="i in 25" :key="(i + 9).toString(36) + i">
+                {{ (i + 9).toString(36) + i }}
+              </a-select-option>
+            </a-select>
+          </div>
+        </div>
+      </a-form-item>
+      <hr>
+      <div class="row float-right buttonss">
+        <div class="col-sm-12">
+          <button class="btn btn-light px-5">Go Back</button>
+          <button type="primary"
+                  html-type="submit"
+                  class="login-button-style btn btn-primary px-5"
+                  :disabled="hasErrors(form.getFieldsError())">
+            Proceed
+          </button>
         </div>
       </div>
-    </div>
-    </div>
+    </a-form>
   </div>
-  <hr>
-  <div class="row float-right buttonss">
-    <div class="col-sm-12">
-      <button class="btn btn-light px-5">Go Back</button>
-      <button class="btn btn-primary px-5" @click="changed(7)">Proceed</button>
-    </div>
-  </div>
-</div>
 </template>
 
 <script>
+function hasErrors(fieldsError) {
+  return Object.keys(fieldsError).some((field) => fieldsError[field]);
+}
+
 export default {
   name: "Skills",
-  methods:{
-    changed: function(step) {
-      this.$store.commit('change', step)
-    }
-  }
+  data() {
+    return {
+      hasErrors,
+      form: this.$form.createForm(this, { name: "Skill" }),
+    };
+  },
+
+  methods: {
+    userNameError() {
+      const { getFieldError, isFieldTouched } = this.form;
+      return isFieldTouched("userName") && getFieldError("userName");
+    },
+    // Only show error after a field is touched.
+    handleSubmit(e) {
+      e.preventDefault();
+      this.form.validateFields((err, values) => {
+        if (!err) {
+          console.log("Received values of form: ", values);
+        }
+      });
+    },
+    handleChange(value) {
+      console.log(`selected ${value}`);
+    },
+  },
+
 }
 </script>
 
