@@ -1,109 +1,36 @@
 <template>
   <div class="border-box-profile-information">
-    <div class="display-flex align-item-center">
+    <div class="">
+      <span class="skills-title-tab">Skills</span>
+    </div>
+    <div class="display-flex align-item-center mt-30">
       <div>
-        <img src="../../../assets/Ellipse 5 (1).png" alt="" />
+        <span class="key-skills-title">Key Skills</span>
       </div>
-      <div class="ml-20">
-        <span class="job-seeker-detailed-profile-text">Desirae Dias</span>
+      <div class="key-skills-rodund-circle-box ml-20">
+        <span class="key-skills-text-tab">c</span>
       </div>
-      <div class="ml-80">
-        <div>
-          <span class="detailde-page-job-seeker-profile-info-header"
-            >Email Address</span
-          >
-        </div>
-        <div>
-          <span class="detailde-page-job-seeker-profile-info-data-text"
-            >user@gmail.com</span
-          >
-        </div>
+      <div class="key-skills-rodund-circle-box ml-20">
+        <span class="key-skills-text-tab">C++</span>
       </div>
-      <div class="ml-80">
-        <div>
-          <span class="detailde-page-job-seeker-profile-info-header"
-            >Contact Information</span
-          >
-        </div>
-        <div>
-          <span class="detailde-page-job-seeker-profile-info-data-text"
-            >+ 9988776655</span
-          >
-        </div>
+      <div class="key-skills-rodund-circle-box ml-20">
+        <span class="key-skills-text-tab">JAVA</span>
       </div>
-      <div class="ml-80">
-        <div>
-          <span class="detailde-page-job-seeker-profile-info-header"
-            >Location</span
-          >
-        </div>
-        <div>
-          <span class="detailde-page-job-seeker-profile-info-data-text"
-            >Buenos Aires, Agentina</span
-          >
-        </div>
+      <div class="key-skills-rodund-circle-box ml-20">
+        <span class="key-skills-text-tab">SQL</span>
+      </div>
+      <div class="key-skills-rodund-circle-box ml-20">
+        <span class="key-skills-text-tab">Windows server-2008</span>
       </div>
     </div>
     <hr />
-    <div>
-      <div>
-        <span class="about-content-title">About</span>
-      </div>
-      <div class="about-description">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod
-        bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra
-        justo commodo. Proin sodales pulvinar sic tempor. Sociis natoque
-        penatibus et magnis dis parturient. Sed nascetur ridiculus mus. Nam
-        fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci,
-        sed rhoncus pronin sapien nunc accuan eget.
-      </div>
+
+    <div class="">
+      <span class="skills-title-tab">Experience </span>
     </div>
-    <hr />
-    <div>
-      <div class="display-flex">
-        <div>
-          <span class="display-info-title-job-seeker-detailed"
-            >N.Y.S.C Number</span
-          >
-        </div>
-        <div>
-          <span class="display-info-job-seeker-detailed-info ml-80"
-            >A00 - 4672468</span
-          >
-        </div>
-      </div>
-    </div>
-    <hr />
-    <div>
-      <div class="display-flex">
-        <div>
-          <span class="display-info-title-job-seeker-detailed"
-            >Date of Birth</span
-          >
-        </div>
-        <div>
-          <span class="display-info-job-seeker-detailed-info ml-80"
-            >02 Mar 1990</span
-          >
-        </div>
-      </div>
-    </div>
-    <hr />
-    <div>
-      <div class="display-flex">
-        <div>
-          <span class="display-info-title-job-seeker-detailed"
-            >LinkedIn Profile</span
-          >
-        </div>
-        <div>
-          <span class="display-info-job-seeker-detailed-info ml-80"
-            >https://www.linkedin.com/in/jane-doe 7a5a1019</span
-          >
-        </div>
-      </div>
-    </div>
-    <hr />
+    <experience-cards-tabs />
+    <experience-cards-tabs />
+
     <div class="button-class display-flex justify-content-flex-end">
       <div>
         <a-button type="primary" class="go-back-button-style"> Cancle</a-button>
@@ -118,10 +45,25 @@
 </template>
 
 <script>
-export default {};
+import ExperienceCardsTabs from "./ExperienceCardsTabs.vue";
+export default {
+  components: { ExperienceCardsTabs },
+};
 </script>
 
 <style scoped>
+.key-skills-text-tab {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  /* identical to box height, or 171% */
+
+  /* Text / 02 */
+
+  color: #505565;
+}
 .go-back-button-style {
   background: #fafafa;
   border-radius: 4px;
@@ -133,6 +75,47 @@ export default {};
   color: #8b90a0;
   height: 48px;
   border: 1px solid #fafafa;
+}
+.key-skills-title {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  /* identical to box height, or 171% */
+
+  display: flex;
+  align-items: center;
+
+  /* Text / 03 */
+
+  color: #8b90a0;
+}
+.key-skills-rodund-circle-box {
+  background: #fafafc;
+  /* UI / 03 */
+
+  border: 1px solid #f0f1f3;
+  border-radius: 24px;
+  align-items: center;
+  padding: 10px 32px;
+
+  position: static;
+  /* width: 73px; */
+  height: 44px;
+}
+.skills-title-tab {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  /* identical to box height, or 133% */
+
+  display: flex;
+  align-items: center;
+
+  color: #0385f3;
 }
 .login-button-style {
   background: #0385f3;

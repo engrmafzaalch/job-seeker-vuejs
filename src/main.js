@@ -18,6 +18,8 @@ import '../node_modules/datatables.net/js/jquery.dataTables.min.js';
 import '../node_modules/datatables.net-dt/js/dataTables.dataTables.js';
 
 import store from "./store/store";
+import { setupInterceptors } from './utils/httpInterceptors';
+import axios from 'axios'
 Vue.use(Antd);
 Vue.use(BootstrapVue)
 // Optionally install the BootstrapVue icon components plugin
@@ -31,6 +33,10 @@ new Vue({
   router,
   components: { App },
   store: store,
+  axios: axios,
   beforeCreate() { this.$store.commit('initialiseStore'); },
+  created() {
+    setupInterceptors(store);
+  },
   template: '<App/>'
 })

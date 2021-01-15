@@ -1,5 +1,6 @@
 <template>
   <div class="container-fluid main-div-height-job-seeker-list">
+    <!-- <loader :visible="loading" /> -->
     <div class="text-align-right mt-50">
       <a-button type="solid add-more-text-admin-job-seeker">
         <span
@@ -131,7 +132,7 @@
           <div
             class="table-header-title display-flex"
             slot="action"
-            slot-scope="text, record"
+            slot-scope=""
           >
             <div class="action-box-job-seeker ml-10">
               <i class="fa fa-eye" aria-hidden="true"></i>
@@ -161,6 +162,10 @@
   </div>
 </template>
 <script>
+import axios from "axios";
+import { mapState } from "vuex";
+import loader from "../helpers/loader";
+import httpClient from "../../utils/httpclient";
 const columns = [
   {
     dataIndex: "name",
@@ -410,6 +415,7 @@ const data = [
 
 export default {
   name: "AdminJobSeeker",
+  components: { loader },
   data() {
     return {
       data,
@@ -422,6 +428,21 @@ export default {
         showSizeChange: (current, pageSize) => (this.pageSize = pageSize), // update display when changing the number of pages per page
       },
     };
+  },
+  mounted() {
+    axios
+      .get("http://167.99.198.38:32001/list/job/seeker?page=1&size=10")
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    //api call for get job seeker listing
+    // httpClient.get("http://167.99.198.38:32001/list/job/seeker?page=1&size=10");
+  },
+  computed: {
+    ...mapState("loader", ["loading"]),
   },
   methods: {
     displayDetailed() {
