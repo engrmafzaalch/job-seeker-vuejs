@@ -1,15 +1,20 @@
 <template>
-  <div class="mt-100">
-    <div class="header">
-      <div class="header-right">
+  <div class="mt-100 ">
+    <div class="header ">
+      <div class="header-right ">
+        
         <a class="active" href="#home">About us</a>
         <a href="#jobs">Terms & Conditions</a>
         <a href="#my-application">Privacy Policy</a>
+      
+     
         <a href="#my-account">Blog</a>
         <a href="#my-account">Blog</a>
         <a href="#my-account">Reviews</a>
+       
         <a href="#my-account">Careers</a>
         <a href="#my-account">Contact us</a>
+    
       </div>
     </div>
     <div
@@ -172,4 +177,21 @@ export default {
   font-weight: 600;
   font-size: 18px;
 }
+@media only screen and (min-width: 320px) and (max-width: 479px) {
+  .header {
+    display: flex;
+    flex-direction: row;
+ 
+    /* flex:0 0 20px; */
+    align-items: center;
+    justify-content: center;
+   
+  }
+  .header-right   {
+
+font-size:10px;
+
+
+  }
+  }
 </style>

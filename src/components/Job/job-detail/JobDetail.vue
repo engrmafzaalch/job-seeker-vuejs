@@ -147,7 +147,7 @@
         <div class="jumbotron justify-content-center text-center">
           <div class="row">
             <div class="col-12">
-              <img src="../../Login/upload.png" height="40" width="42"/>
+              <!-- <img src="../..//upload.png" height="40" width="42"/> -->
             </div>
           </div>
           <div class="row">
@@ -289,7 +289,7 @@
             <div class="jumbotron">
               <div class="row">
                 <div class="col-12">
-                  <img src="../../Login/upload.png" height="40" width="42"/>
+                  <!-- <img src="../../Login/upload.png" height="40" width="42"/> -->
                 </div>
               </div>
               <div class="row">

@@ -19,7 +19,8 @@ import Resume_CV from "../components/Job-seeker/MyAccount/Resume_CV";
 import MyApplications from "../components/Job-seeker/MyApplications/MyApplications";
 import modal from "../components/Job/job-detail/modal";
 import Payments_2 from "../components/Payments-2/Payments_2";
-import AdminJobSeekerDetailedPage from '../components/admin-job-seeker/job-seeker-detailed-view'
+import AdminJobSeekerDetailedPage from '../components/admin-job-seeker/job-seeker-detailed-view';
+import JobDetail from '../components/Job/job-detail/JobDetail'
 import {store} from '../store/store'
 Vue.use(Router)
 
@@ -175,6 +176,14 @@ let router = new Router({
       path: '/Payemnts_2',
       name: 'Payments_2',
       component: Payments_2,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/jobdetail',
+      name: 'JobDetail',
+      component: JobDetail,
       meta: {
         requiresAuth: true
       }

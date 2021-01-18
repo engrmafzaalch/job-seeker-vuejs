@@ -1,6 +1,7 @@
 <template>
   <div class="display-flex display-block-mobile">
     <div class="left-side-search-box">
+      <div class="para">
       <div class="title-font">
         <span> Aenean euismod bibendum laoreet </span>
       </div>
@@ -9,6 +10,7 @@
           Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus
           accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor.
         </span>
+      </div>
       </div>
       <div class="search-box-all mt-30">
         <div class="searchbox-child-main">
@@ -118,7 +120,7 @@
       </div>
     </div>
     <div class="profile-box-parent display-non-tablet">
-      <div class="profile-box">
+      <div class="profile-box ">
         <div class="display-flex align-item-center">
           <div>
             <img src="../../assets/Ellipse5.png" />
@@ -498,6 +500,21 @@ input[type="range"]::-ms-fill-upper {
 }
 
 @media only screen and (min-width: 320px) and (max-width: 479px) {
+  .display-block-mobile{
+
+  }
+  .profile-box {
+    width: 100%;
+    height: 390px;
+  }
+  .title-font {
+    font-size: 10px;
+  }
+  .second-title {
+    font-size: 10px;
+  }
+
+
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {

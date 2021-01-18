@@ -7,7 +7,7 @@
     <div class="row m-0">
       <div class="col-12 p-0">
         <div class="row mt-30px mlr-10">
-          <div class="col-4">
+          <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
             <div class="jobs-cards">
               <div
                 class="display-flex pading-top-20px-right-80px align-item-center justify-content-space-around"
@@ -40,7 +40,7 @@
               </div>
             </div>
           </div>
-          <div class="col-4">
+          <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
             <div class="jobs-cards">
               <div
                 class="display-flex pading-top-20px-right-80px align-item-center justify-content-space-around"
@@ -73,7 +73,7 @@
               </div>
             </div>
           </div>
-          <div class="col-4">
+          <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
             <div class="jobs-cards">
               <div
                 class="display-flex pading-top-20px-right-80px align-item-center justify-content-space-around"
@@ -251,6 +251,7 @@ p {
 }
 
 @media only screen and (min-width: 320px) and (max-width: 479px) {
+  
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {

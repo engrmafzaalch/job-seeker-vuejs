@@ -4,10 +4,10 @@
     <label for="switch" class="toggle">
       <p>Recent Jobs Featured Jobs</p>
     </label> -->
-    <div class="row">
-      <div class="col-12">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center">
         <div class="row mt-30px mlr-10">
-          <div class="col-3">
+          <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
             <div class="jobs-cards">
               <div
                 class="pading-top-20px-right-80px align-item-center justify-content-space-around"
@@ -27,7 +27,7 @@
               </div>
             </div>
           </div>
-          <div class="col-3">
+          <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
             <div class="jobs-cards">
               <div
                 class="pading-top-20px-right-80px align-item-center justify-content-space-around"
@@ -47,7 +47,7 @@
               </div>
             </div>
           </div>
-          <div class="col-3">
+          <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
             <div class="jobs-cards">
               <div
                 class="pading-top-20px-right-80px align-item-center justify-content-space-around"
@@ -64,7 +64,7 @@
               </div>
             </div>
           </div>
-          <div class="col-3">
+          <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3">
             <div class="jobs-cards">
               <div
                 class="pading-top-20px-right-80px align-item-center justify-content-space-around"

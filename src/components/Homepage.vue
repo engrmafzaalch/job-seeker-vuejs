@@ -10,7 +10,7 @@
         </div>
         </div>
         <div class="row justify-content-center mt-4 pt-5">
-          <div class="col-4 mt-5 py-3 ">
+          <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 mt-5 py-3 ">
             <div class=" border borderRad  ">
             <div class="row justify-content-center text-center ">
              <div class="col-6 text-center">
@@ -28,9 +28,22 @@
 
             </div>
         </div>
+        <div class="row">
+          <div class="col-12">
         <recent-jobs />
-        <top-hiring-companies />
-        <talent-opportunity />
+</div>
+        </div>
+         <div class="row">
+          <div class="col-12">
+         <top-hiring-companies /> 
+</div>
+        </div>
+           <div class="row">
+          <div class="col-12">
+           <talent-opportunity /> 
+</div>
+        </div>
+      
       </div>
       <footer-card />
     </div>
@@ -96,7 +109,7 @@ color: #FFFFFF;
 }
 .feature1 {
 
-width:260px;
+max-width:260px;
 height: 70px;
 background: #0385F3;
 border-radius: 50px;

@@ -5,7 +5,7 @@
       <div class="mt-40 need-talent-text">
         <span> need talent? </span>
       </div>
-      <div class="mt-30">
+      <div class="mt-30 btnget">
         <button class=" btn btn-primary px-5 ml-4">Get Started Now</button>
       </div>
     </div>
@@ -15,7 +15,7 @@
       <div class="mt-40 need-talent-text">
         <span> want opportunities? </span>
       </div>
-      <div class="mt-30 text-center">
+      <div class="mt-30 btnget1 text-center">
         <button class=" btn btn-primary px-5">Get Started Now</button>
       </div>
     </div>
@@ -101,6 +101,23 @@ export default {};
   color: #0084f4;
 }
 @media only screen and (min-width: 320px) and (max-width: 479px) {
+    .need-talent-text {
+    font-size: 20px;
+    text-align: center;
+  }
+  .get-started-now {
+  
+    font-size: 12px;
+  }
+  .category-box {
+    font-size: 13px;
+  }
+  .btnget{
+    margin-right:30px;
+  }
+    .btnget1{
+    margin-top:4px;
+  }
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
