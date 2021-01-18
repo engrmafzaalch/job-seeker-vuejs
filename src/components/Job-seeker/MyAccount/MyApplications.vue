@@ -1,7 +1,7 @@
 <template>
-<div class="container-fluid vh-100">
+<div class="container-fluid">
   <div class="row py-3">
-    <div class="col-5">
+    <div class="col-md-5">
       <div class="row pt-3 pl-3">
         <div class="col-md-3 border border-light rounded mr-2 border_a">
           <div>
@@ -34,13 +34,13 @@
     <div class="col-md-4 font_c">
       <h3>My Applications</h3>
     </div>
-    <div class="col-md-3 font_c">
+    <div class="col-lg-3 font_c">
       <h3>Job Application Status</h3>
     </div>
     <div class="col-2 border border-light rounded border_a">
       <div class="row">
         <div class="col-md-2 mt-2">
-          <img src="info.png" height="24" width="24">
+          <img src="./info.png" height="24" width="24">
         </div>
         <div class="col-md-10 font_a">
           <div>
@@ -274,7 +274,7 @@
 
 <script>
 export default {
-  name: "MyApplications"
+  name: "MyApplication"
 }
 </script>
 

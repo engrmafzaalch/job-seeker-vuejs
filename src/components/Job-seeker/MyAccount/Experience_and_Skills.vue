@@ -1,5 +1,5 @@
 <template>
-<div class="container vh-100">
+<div class="container">
   <div class="row pt-4">
     <div class="col-12 card">
       <div class="card-body">
