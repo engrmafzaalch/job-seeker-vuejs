@@ -1,56 +1,67 @@
 <template>
-  <div class="container justify-content-center vh-100">
-    <div class="mt-3">
-      <a-form :form="form" @submit="handleSubmit">
-        <a-form-item>
-          <div class="form-group">
-            <label for="profile-summery" class="profile">Profile Summery</label>
-            <a-textarea
-              v-decorator="[
-                          `summary`,
+<div class="container ">
+<!--<div>-->
+<!--  <h3>Profile Summery</h3>-->
+<!--</div>-->
+  <div class="mt-3">
+    <a-form :form="form" @submit="handleSubmit">
+      <a-form-item>
+      <div class="form-group row">
+        <div class="col-12 col-md-12 col-lg-12 ">
+        <label for="profile-summery" class="profile">Profile Summery</label>
+        <a-textarea v-decorator="[
+                          `ProfileSummary`,
                           {
                             rules: [
                               {
                                 required: true,
                                 whitespace: true,
-                                message: 'Please input email this field.',
+                                message: 'Please Enter your Profile Summary in this field.',
                               },
                             ],
                           },
                         ]"
-              class="form-control" rows="6" id="profile-summery" name="text" placeholder="Enter Profile Summery here"></a-textarea>
-          </div>
-        </a-form-item>
-        <a-form-item>
-          <a-button  type="primary"
-                     html-type="submit"
-                     class="login-button-style float-right"
-                     :disabled="hasErrors(form.getFieldsError())">Proceed</a-button>
-        </a-form-item>
-      </a-form>
-    </div>
+                    class="form-control"
+                    rows="6"
+                    id="profile-summery"
+                    name="text"
+                    placeholder="Enter Profile Summary here"></a-textarea>
+        </div>
+      </div>
+      </a-form-item>
+      <div>
+      <button type="primary button"
+              html-type="submit"
+              class="login-button-style float-right btn btn-primary mt-5 px-5"
+              :disabled="hasErrors(form.getFieldsError())">Proceed</button>
+      </div>
+    </a-form>
   </div>
+</div>
 </template>
 
 <script>
 function hasErrors(fieldsError) {
   return Object.keys(fieldsError).some((field) => fieldsError[field]);
 }
-
 export default {
-  el: "ProfileSummary",
+name: "ProfileSummary",
 
   data() {
     return {
       hasErrors,
-      form: this.$form.createForm(this, { name: "summary" }),
+      form: this.$form.createForm(this, { name: "ProfileSummary" }),
     };
   },
 
-  methods: {
+  methods:{
+    changed: function(step) {
+      this.$store.commit('change', step)
+    },
+
     userNameError() {
-      const {getFieldError, isFieldTouched} = this.form;
-      return isFieldTouched("summary") && getFieldError("summary");
+      const { getFieldError, isFieldTouched } = this.form;
+      return isFieldTouched("userName") && getFieldError("userName");
     },
     // Only show error after a field is touched.
     handleSubmit(e) {
@@ -58,10 +69,16 @@ export default {
       this.form.validateFields((err, values) => {
         if (!err) {
           console.log("Received values of form: ", values);
+          this.$store.commit('change', 2)
         }
       });
     },
-  }}
+    onChange(date, dateString) {
+      console.log(date, dateString);
+    },
+
+  }
+}
 </script>
 
 <style scoped>
