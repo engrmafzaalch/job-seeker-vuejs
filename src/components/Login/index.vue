@@ -38,7 +38,6 @@
                     </div>
                   </div>
                 </div>
-
                 <div class="col-12 mt-30">
                   <div class="display-flex width-100 text-align-initial">
                     <div
@@ -140,8 +139,8 @@ export default {
       this.form.validateFields((err, values) => {
         if (!err) {
           console.log("Received values of form: ", values);
-          // this.$store.dispatch("setToken", values.email);
-          // localStorage.setItem("token", values.email);
+          this.$store.dispatch("setToken", values.email);
+          localStorage.setItem("token", values.email);
           let email = values.email;
           let password = values.password;
           this.$store.dispatch("login", { email, password });

@@ -15,7 +15,6 @@
                           {
                             rules: [
                               {
-                                required: true,
                                 whitespace: true,
                                 message: 'Please enter Education Details in this field.',
                               },
@@ -31,7 +30,6 @@
                           {
                             rules: [
                               {
-                                required: true,
                                 whitespace: true,
                                 message: 'Please enter Academics in this field.',
                               },
@@ -81,7 +79,6 @@
                           {
                             rules: [
                               {
-                                required: true,
                                 whitespace: true,
                                 message: 'Please Enter Educational Details in this field.',
                               },

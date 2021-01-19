@@ -15,7 +15,6 @@
                           {
                             rules: [
                               {
-                                required: true,
                                 whitespace: true,
                                 message: 'Please enter Project Title in this field.',
                               },
@@ -30,7 +29,6 @@
                           {
                             rules: [
                               {
-                                required: true,
                                 whitespace: true,
                                 message: 'Please enter Employer Name in this field.',
                               },
@@ -38,7 +36,8 @@
                           },
                         ]"
                     type="text" class="form-control" id="employer_name">
-              <option value="Employer Name">Employer Name</option>
+              <option value="" disabled selected hidden>Employer Name</option>
+              <option value="JS Labs">JS Labs</option>
             </select>
           </div>
         </div>
@@ -49,7 +48,6 @@
                           {
                             rules: [
                               {
-                                required: true,
                                 whitespace: true,
                                 message: 'Please enter CLient Name in this field.',
                               },
@@ -57,7 +55,8 @@
                           },
                         ]"
                     type="text" class="form-control" id="client_name">
-              <option value="Client Name">Client Name</option>
+              <option value="" disabled selected hidden>Client Name</option>
+              <option value="Usha">Usha</option>
             </select>
           </div>
           <div class="col-6">
@@ -66,7 +65,6 @@
                           {
                             rules: [
                               {
-                                required: true,
                                 whitespace: true,
                                 message: 'Please enter Project Status in this field.',
                               },
@@ -74,7 +72,8 @@
                           },
                         ]"
                     type="text" class="form-control" id="project_status">
-              <option value="Project Status">Project Status</option>
+              <option value="" disabled selected hidden>Project Status</option>
+              <option value="On Going">On Going</option>
             </select>
           </div>
         </div>
@@ -117,7 +116,6 @@
                           {
                             rules: [
                               {
-                                required: true,
                                 whitespace: true,
                                 message: 'Please Enter Educational Details in this field.',
                               },

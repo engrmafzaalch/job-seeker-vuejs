@@ -15,7 +15,6 @@
                           {
                             rules: [
                               {
-                                required: true,
                                 whitespace: true,
                                 message: 'Please enter Degree Details in this field.',
                               },
@@ -95,11 +94,20 @@ export default {
         if (!err) {
           console.log("Received values of form: ", values);
           this.$store.commit('change', 7)
+
+          axios
+            .post('http://167.99.198.38:32001/add/job/seeker/skill/set')
+            .then(response => (this.info = response.data.bpi))
+            .catch(error => console.log(error))
+
         }
       });
     },
     onChange(date, dateString) {
       console.log(date, dateString);
+    },
+    handleChange(value) {
+      console.log(`selected ${value}`);
     },
   },
 }

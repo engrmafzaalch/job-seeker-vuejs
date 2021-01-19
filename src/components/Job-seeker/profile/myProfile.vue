@@ -15,7 +15,6 @@
                           {
                             rules: [
                               {
-                                required: true,
                                 whitespace: true,
                                 message: 'Please input Name in this field.',
                               },
@@ -30,7 +29,6 @@
                           {
                             rules: [
                               {
-                                required: true,
                                 whitespace: true,
                                 message: 'Please input Email Address in this field.',
                               },
@@ -38,7 +36,8 @@
                           },
                         ]"
                     type="text" class="form-control" id="email_address">
-              <option value="Email Address">Email Address</option>
+              <option value="" disabled selected hidden>Email Address</option>
+              <option value="sikandarcapital@gmail.com">sikandarcapital@gmail.com</option>
             </select>
           </div>
         </div>
@@ -49,7 +48,6 @@
                           {
                             rules: [
                               {
-                                required: true,
                                 whitespace: true,
                                 message: 'Please input City this field.',
                               },
@@ -57,7 +55,8 @@
                           },
                         ]"
                     type="text" class="form-control" id="city">
-              <option value="City">City</option>
+              <option value="" disabled selected hidden>City</option>
+              <option value="Lahore">Lahore</option>
             </select>
           </div>
           <div class="col-6">
@@ -66,7 +65,6 @@
                           {
                             rules: [
                               {
-                                required: true,
                                 whitespace: true,
                                 message: 'Please input Country this field.',
                               },
@@ -74,7 +72,8 @@
                           },
                         ]"
                     type="text" class="form-control" id="country">
-              <option value="Country">Country</option>
+              <option value="" disabled selected hidden>Country</option>
+              <option value="Nigeria">Nigeria</option>
             </select>
           </div>
         </div>
@@ -85,7 +84,6 @@
                           {
                             rules: [
                               {
-                                required: true,
                                 whitespace: true,
                                 message: 'Please input Mobile Number this field.',
                               },
@@ -100,7 +98,6 @@
                           {
                             rules: [
                               {
-                                required: true,
                                 whitespace: true,
                                 message: 'Please input LinkedIN Profile this field.',
                               },
@@ -118,28 +115,27 @@
         <div class="row my-2">
           <div class="col-4">
             <select v-decorator="[
-                          `day`,
+                          `Day`,
                           {
                             rules: [
                               {
-                                required: true,
                                 whitespace: true,
-                                message: 'Please input email this field.',
+                                message: 'Please select Day in this field.',
                               },
                             ],
                           },
                         ]"
                     class="form-control" id="day">
-              <option value="Day">Day</option>
+              <option value="" disabled selected hidden>Day</option>
+              <option value="1">1</option>
             </select>
           </div>
           <div class="col-4">
             <select v-decorator="[
-                          `month`,
+                          `Month`,
                           {
                             rules: [
                               {
-                                required: true,
                                 whitespace: true,
                                 message: 'Please input email this field.',
                               },
@@ -147,16 +143,16 @@
                           },
                         ]"
                     class="form-control" id="month">
-              <option value="Month">Month</option>
+              <option value="" disabled selected hidden>Month</option>
+              <option value="January">January</option>
             </select>
           </div>
           <div class="col-4">
             <select v-decorator="[
-                          `year`,
+                          `Year`,
                           {
                             rules: [
                               {
-                                required: true,
                                 whitespace: true,
                                 message: 'Please input email this field.',
                               },
@@ -164,7 +160,8 @@
                           },
                         ]"
                     type="text" class="form-control" id="year">
-              <option value="Year">Year</option>
+              <option value="" disabled selected hidden>Year</option>
+              <option value="2021">2021</option>
             </select>
           </div>
         </div>
@@ -180,7 +177,6 @@
                           {
                             rules: [
                               {
-                                required: true,
                                 whitespace: true,
                                 message: 'Please input N. Y. S. C Number this field.',
                               },
@@ -196,7 +192,7 @@
     <hr>
     <div class="row float-right">
       <div class="col-12">
-        <a-button class="btn btn-light mr-3 px-5">Go Back</a-button>
+        <a-button class="btn btn-light mr-3 px-5" @click="changed(6)">Go Back</a-button>
         <a-button
           type="primary"
           html-type="submit"
@@ -221,7 +217,7 @@ export default {
   data() {
     return {
       hasErrors,
-      form: this.$form.createForm(this, { name: "degree college endDate stratdate educationDetail" }),
+      form: this.$form.createForm(this, { name: "Name EmailAddress City Country MobileNumber LinkedIn Day Month Year NYSC" }),
     };
   },
 
