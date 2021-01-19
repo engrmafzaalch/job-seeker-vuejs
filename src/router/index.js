@@ -3,7 +3,7 @@ import Router from 'vue-router'
 import HomePageContainer from '../components/HomePageContainer'
 import RegistrationIndex from '../components/Job-seeker/registration'
 import JobsIndex from '../components/Job-seeker/Jobs'
-import LoginIndex from '../components/login/index'
+import LoginIndex from '../components/Login/index'
 import ForgotPasswordIndex from '../components/Job-seeker/forgot-password'
 import AdminJobSeeker from '../components/admin-job-seeker'
 import MyAccount from '../components/My-Account/account-details/index'
@@ -309,15 +309,15 @@ let router = new Router({
   ]
 })
 
-// router.beforeEach((to, from, next) => {
-//   if (to.matched.some(record => record.meta.requiresAuth)) {
-//     if (store.getters.isLoggedIn) {
-//       next()
-//       return
-//     }
-//     next('/job-seeker/login')
-//   } else {
-//     next()
-//   }
-// })
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    if (store.getters.isLoggedIn) {
+      next()
+      return
+    }
+    next('/job-seeker/login')
+  } else {
+    next()
+  }
+})
 export default router
