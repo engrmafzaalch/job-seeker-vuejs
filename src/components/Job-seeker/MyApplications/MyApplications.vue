@@ -37,7 +37,7 @@
     <div class="col-md-3 font_c">
       <h3>Job Application Status</h3>
     </div>
-    <div class="col-2 border border-light rounded border_a">
+    <div class="col-md-2 border border-light rounded border_a">
       <div class="row">
         <div class="col-md-2 mt-2">
           <img src="./info.png" height="24" width="24">
@@ -296,8 +296,9 @@ export default {
 
 .progressbar {
   counter-reset: step;
-  width: 800px;
-}
+  width: auto;
+
+  }
 
 .progressbar li {
   position: relative;

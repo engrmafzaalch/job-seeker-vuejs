@@ -16,7 +16,7 @@
         <div class="row">
           <div class="col-md-1">
             <div>
-              <img src="Ellipse 5.png" alt="Profile Image" height="60" width="auto"/>
+              <img src="./Ellipse 5.png" height="60" width="auto"/>
             </div>
           </div>
           <div class="col-md-3">

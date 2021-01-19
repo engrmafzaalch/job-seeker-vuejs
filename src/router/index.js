@@ -21,7 +21,21 @@ import modal from "../components/Job/job-detail/modal";
 import Payments_2 from "../components/Payments-2/Payments_2";
 import AdminJobSeekerDetailedPage from '../components/admin-job-seeker/job-seeker-detailed-view';
 import JobDetail from '../components/Job/job-detail/JobDetail'
+import JobDetail_2 from "../components/Job/job-detail/JobDetail_2";
+import accounts_detail from "../components/Job-seeker/MyAccount/accounts_detail";
+import change_password from "../components/Job-seeker/MyAccount/change_password";
+import index_myAccount_2 from "../components/Job-seeker/MyAccount/index_myAccount_2";
+import myAccount_4 from "../components/Job-seeker/MyAccount/myAccount_4";
+import reports from "../components/Job-seeker/MyAccount/reports";
+import index_payment_1 from "../components/payment/index_payment_1";
+import index_payment_3 from "../components/payment/index_payment_3";
+import posting_1 from "../components/posting/posting_1";
+import posting_4 from "../components/posting/posting_4";
+import Recruiter from "../components/Recruiter/Recruiter";
+import recruiter_1 from "../components/Recruiter/recruiter_1";
+import recruiter_3 from "../components/Recruiter/recruiter_3";
 import {store} from '../store/store'
+
 Vue.use(Router)
 
 let router = new Router({
@@ -173,7 +187,7 @@ let router = new Router({
       }
     },
     {
-      path: '/Payemnts_2',
+      path: '/Payemnt_2',
       name: 'Payments_2',
       component: Payments_2,
       meta: {
@@ -184,6 +198,110 @@ let router = new Router({
       path: '/jobdetail',
       name: 'JobDetail',
       component: JobDetail,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/jobdetail-2',
+      name: 'JobDetail_2',
+      component: JobDetail_2,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/accounts_detail',
+      name: 'accounts_detail',
+      component: accounts_detail,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/change_password',
+      name: 'change_password',
+      component: change_password,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/index_myAccount-2',
+      name: 'index_myAccount-2',
+      component: index_myAccount_2,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/MyAccount-4',
+      name: 'myAccount_4',
+      component: myAccount_4,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/reports',
+      name: 'reports',
+      component: reports,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/index_payment_1',
+      name: 'index_payment_1',
+      component: index_payment_1,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/index_payment_3',
+      name: 'index_payment-3',
+      component: index_payment_3,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/posting-1',
+      name: 'posting_1',
+      component: posting_1,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/posting-4',
+      name: 'posting_4',
+      component: posting_4,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/Recruiter',
+      name: 'Recruiter',
+      component: Recruiter,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/recruiter-1',
+      name: 'recruiter_1',
+      component: recruiter_1,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/recruiter-3',
+      name: 'recruiter_3',
+      component: recruiter_3,
       meta: {
         requiresAuth: true
       }

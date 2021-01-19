@@ -1,34 +1,17 @@
 <template>
   <div class="container">
+    <a-form :form="form" @submit="handleSubmit">
     <div class="row justify-content-center mt-3">
       <div class="col-12">
         <h4>Enter Experience Details</h4>
       </div>
     </div>
-    <a-form :form="form" @submit="handleSubmit">
       <a-form-item>
-        <div class="form-group">
-          <div class="row my-4">
-            <div class="col-md-6">
-              <a-input
-                v-decorator="[
+      <div class="form-group">
+        <div class="row my-4">
+          <div class="col-6">
+            <a-input v-decorator="[
                           `EmployerName`,
-                          {
-                            rules: [
-                              {
-                                required: true,
-                                whitespace: true,
-                                message: 'Please input email this field.',
-                              },
-                            ],
-                          },
-                        ]"
-                type="text" class="form-control" id="employer" placeholder="Employer Name"></a-input>
-            </div>
-            <div class="col-6">
-              <select
-                v-decorator="[
-                          `JobTitle`,
                           {
                             rules: [
                               {
@@ -39,157 +22,168 @@
                             ],
                           },
                         ]"
-                type="text" class="form-control" id="job_title">
-                <option value="0">Job Title</option>
-              </select>
-            </div>
+                     type="text" class="form-control" id="employer" placeholder="Employer Name"></a-input>
           </div>
-          <div class="row my-4">
-            <div class="col-6">
-              <select
-                v-decorator="[
+          <div class="col-6">
+            <select v-decorator="[
+                          `Job Title`,
+                          {
+                            rules: [
+                              {
+                                required: true,
+                                whitespace: true,
+                                message: 'Please enter Job Title this field.',
+                              },
+                            ],
+                          },
+                        ]"
+                    type="text" class="form-control" id="job_title">
+              <option value="Job Title">Job Title</option>
+            </select>
+          </div>
+        </div>
+        <div class="row my-4">
+          <div class="col-6">
+            <select v-decorator="[
                           `City`,
                           {
                             rules: [
                               {
                                 required: true,
                                 whitespace: true,
-                                message: 'Please input email this field.',
+                                message: 'Please enter your CIty in this field.',
                               },
                             ],
                           },
                         ]"
-                type="text" class="form-control" id="city">
-                <option value="0">City</option>
-              </select>
-            </div>
-            <div class="col-6">
-              <select v-decorator="[
+                    type="text" class="form-control" id="city">
+              <option value="City">City</option>
+            </select>
+          </div>
+          <div class="col-6">
+            <select v-decorator="[
                           `Country`,
                           {
                             rules: [
                               {
                                 required: true,
                                 whitespace: true,
-                                message: 'Please input email this field.',
+                                message: 'Please enter your Country in this field.',
                               },
                             ],
                           },
                         ]"
-                      type="text" class="form-control" id="country">
-                <option value="0">Country</option>
-              </select>
-            </div>
+                    type="text" class="form-control" id="country">
+              <option value="Country">Country</option>
+            </select>
           </div>
-          <div class="row my-4">
-            <div class="col-6">
-              <select v-decorator="[
+        </div>
+        <div class="row my-4">
+          <div class="col-6">
+            <select v-decorator="[
                           `WorkType`,
                           {
                             rules: [
                               {
                                 required: true,
                                 whitespace: true,
-                                message: 'Please input email this field.',
+                                message: 'Please enter your Work Type in this field.',
                               },
                             ],
                           },
                         ]"
-                      type="text" class="form-control" id="work_type">
-                <option value="0">Work Type</option>
-              </select>
-            </div>
-            <div class="col-6">
-              <a-input v-decorator="[
+                    type="text" class="form-control" id="work_type">
+              <option value="Work Type">Work Type</option>
+            </select>
+          </div>
+          <div class="col-6">
+            <a-input v-decorator="[
                           `Salary`,
                           {
                             rules: [
                               {
                                 required: true,
                                 whitespace: true,
-                                message: 'Please input email this field.',
+                                message: 'Please input Salary in this field.',
                               },
                             ],
                           },
                         ]"
-                       type="text" class="form-control" id="salary" placeholder="Salary"></a-input>
-            </div>
+                     type="text" class="form-control" id="salary" placeholder="Salary"></a-input>
           </div>
-          <div class="row my-4">
-            <div class="col-6">
-              <a-input v-decorator="[
+        </div>
+        <div class="row my-4">
+          <div class="col-6">
+            <a-date-picker v-decorator="[
                           `EndDate`,
                           {
                             rules: [
                               {
-                                required: true,
+
                                 whitespace: true,
-                                message: 'Please input email this field.',
+                                message: 'Please enter Academics in this field.',
                               },
                             ],
                           },
                         ]"
-                       type="text" class="form-control" id="end_date" placeholder="End Date"></a-input>
-            </div>
-            <div class="col-6">
-              <a-input v-decorator="[
+                           class="w-100" @change="onChange" placeholder="End Date"/>
+          </div>
+          <div class="col-6">
+            <a-date-picker v-decorator="[
                           `StartDate`,
                           {
                             rules: [
                               {
-                                required: true,
+
                                 whitespace: true,
-                                message: 'Please input email this field.',
+                                message: 'Please enter Academics in this field.',
                               },
                             ],
                           },
                         ]"
-                       type="text" class="form-control" id="start_date" placeholder="Start Date">
-
-              </a-input>
-            </div>
+                           class="w-100" @change="onChange" placeholder="Start Date"/>
           </div>
-          <div class="row my-4">
-            <div class="col-md-6">
-              <a-textarea v-decorator="[
+        </div>
+        <div class="row my-4">
+          <div class="col-md-6">
+            <a-textarea v-decorator="[
                           `EducationDetails`,
                           {
                             rules: [
                               {
                                 required: true,
                                 whitespace: true,
-                                message: 'Please input email this field.',
+                                message: 'Please Educational Details in this field.',
                               },
                             ],
                           },
                         ]"
-                          class="form-control" name="text" id="education_details" cols="" rows="6" placeholder="Education Details"></a-textarea>
-            </div>
-          </div>
-          <div class="row justify-content-center text-center my-4">
-            <div class="col-12">
-              <a-button class="btn btn-light">
-                Add More Education
-              </a-button>
-            </div>
+                        class="form-control"
+                        name="text"
+                        id="education_details"
+                        cols="" rows="6"
+                        placeholder="Education Details"></a-textarea>
           </div>
         </div>
-      </a-form-item>
-      <hr>
-      <a-form-item>
-        <div class="row float-right">
+        <div class="row justify-content-center text-center my-4">
           <div class="col-12">
-            <a-button class="btn btn-light mr-3 px-5">Go Back</a-button>
-            <a-button
-              type="primary"
-              html-type="submit"
-              class="login-button-style btn btn-primary px-5"
-              :disabled="hasErrors(form.getFieldsError())">
-              Proceed
+            <a-button class="btn btn-light">
+              Add More Education
             </a-button>
           </div>
         </div>
+      </div>
       </a-form-item>
+    <hr>
+    <div class="row float-right">
+      <div class="col-12">
+        <a-button class="btn btn-light mr-3 px-5" @click="changed(2)">Go Back</a-button>
+        <a-button type="primary"
+                  html-type="submit"
+                  class="login-button-style btn btn-primary px-5"
+                  :disabled="hasErrors(form.getFieldsError())">Proceed</a-button>
+      </div>
+    </div>
     </a-form>
   </div>
 </template>
@@ -199,7 +193,7 @@ function hasErrors(fieldsError) {
   return Object.keys(fieldsError).some((field) => fieldsError[field]);
 }
 export default {
-  name: "experience",
+name: "experience",
 
   data() {
     return {
@@ -208,21 +202,23 @@ export default {
     };
   },
 
-  methods: {
-    userNameError() {
-      const { getFieldError, isFieldTouched } = this.form;
-      return isFieldTouched("userName") && getFieldError("userName");
+  methods:{
+    changed: function(step) {
+      this.$store.commit('change', step)
     },
-    // Only show error after a field is touched.
     handleSubmit(e) {
       e.preventDefault();
       this.form.validateFields((err, values) => {
         if (!err) {
           console.log("Received values of form: ", values);
+          this.$store.commit('change', 4)
         }
       });
     },
-  },
+    onChange(date, dateString) {
+      console.log(date, dateString);
+    },
+  }
 }
 </script>
 

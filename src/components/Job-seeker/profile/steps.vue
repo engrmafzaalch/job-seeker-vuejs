@@ -1,10 +1,8 @@
 <template>
   <div>
   <div class="container-fluid">
-    <div class="row justify-content-center text-center">
-      <div class="col-12">
-        <div class="stepsMargin">
-    <ul class="progressbar">
+    <div class="row">
+    <ul class="col-12 progressbar text-primary">
       <li :class="{ 'active' : $store.state.step == 1}">Profile Summery</li>
       <li :class="{ 'active' : $store.state.step == 2}">Education</li>
       <li :class="{ 'active' : $store.state.step == 3}">Experience</li>
@@ -14,11 +12,9 @@
       <li :class="{ 'active' : $store.state.step == 7}">My Profile</li>
     </ul>
     </div>
-    </div>
-    </div>
   </div>
     <div class="row">
-    <div class="progression-content col-12">
+    <div class="progression-content">
   <section v-if="$store.state.step == 1">
     <ProfileSummary/>
   </section>
@@ -149,25 +145,4 @@ body {
   /*   border-bottom: 1px dashed */
   /*border-color: #00E676;*/
 }
-@media only screen and (min-width: 320px) and (max-width: 479px) {
-  .progressbar li {
-  position: relative;
-  list-style: none;
-  float: left;
-  width:15%;
-  text-align: center;
-  font-size:8px;
-  align-items: center;
- 
-  justify-content: center;
-}
-.stepsMargin{
-
- margin-right: 10px;
-}
-}
-
-
-
-
 </style>
