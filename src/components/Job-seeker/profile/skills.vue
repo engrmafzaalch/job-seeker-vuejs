@@ -9,48 +9,22 @@
   </div>
   <div class="row mt-2">
     <div class="col-md-6">
-      <input
-        v-decorator="[
-                          `Skill`,
-                          {
-                            rules: [
-                              {
-                                whitespace: true,
-                                message: 'Please enter Degree Details in this field.',
-                              },
-                            ],
-                          },
-                        ]"
-        type="text"
-        class="form-control one"
-        id="search"
-        placeholder="Type in to Search or add new">
+      <a-select
+        v-decorator="[`Skill`,]"
+                mode="tags" style="width: 100%" placeholder="Type in to search or add new" @change="handleChange">
+        <a-select-option v-for="Skill in skillSet" v-bind:key="Skill.skillSetName">
+          {{Skill.skillSetName}}
+        </a-select-option>
+      </a-select>
     </div>
   </div>
-  <div class="row mt-2">
-    <div class="col-12">
-    <a-select
-      v-decorator="[
-                          `Skills`,
-                          {
-                            rules: [
-                              {
-                                whitespace: true,
-                                message: 'Please enter Degree Details in this field.',
-                              },
-                            ],
-                          },
-                        ]"
-      mode="multiple"
-      :default-value="['C', 'C++']"
-      placeholder="Please select"
-      @change="handleChange">
-      <a-select-option v-for="i in 25" :key="(i + 9).toString(36) + i">
-        {{ (i + 9).toString(36) + i }}
-      </a-select-option>
-    </a-select>
-    </div>
-  </div>
+      <div class="btn btn-light">
+        <span v-for="skill in listSkill">
+          <button class="alert-dismissible  m-1">
+            {{skill}} &times;
+          </button>
+        </span>
+      </div>
     </a-form-item>
   <hr>
   <div class="row float-right buttonss">
@@ -67,6 +41,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 function hasErrors(fieldsError) {
   return Object.keys(fieldsError).some((field) => fieldsError[field]);
 }
@@ -76,9 +52,27 @@ export default {
   data() {
     return {
       hasErrors,
-      form: this.$form.createForm(this, { name: "Skill Skills" }),
+      form: this.$form.createForm(this, { name: "Skill" }),
+      skillSet:[],
+      listSkill:[]
     };
   },
+
+  beforeCreate() {
+    axios.get('http://167.99.198.38:32001/list/skill/set', {
+      headers: {
+        'Authorization': `Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJFZ0NPRTB3ZDVEMjZfX0ZUZURmSmhNejlucndZYXM2czFGaE5EcHo2djFJIn0.eyJleHAiOjE2MTExNjgyMjMsImlhdCI6MTYxMTE2NDYyMywianRpIjoiNjg5MGM2ZDUtMjhkZS00ZDZmLTg3MzEtNjMxYzJkZDczNjYyIiwiaXNzIjoiaHR0cDovLzE3OC42Mi44Ny4xNjI6ODA4MC9hdXRoL3JlYWxtcy9tYXN0ZXIiLCJzdWIiOiI3ZDVhOTc2NC1kN2RiLTQ2ZTktYTdjMi01ZTdmNWZlOGUwMDYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhZG1pbi1jbGkiLCJzZXNzaW9uX3N0YXRlIjoiNGVjODM1OGItOTFkZS00N2ZiLWJlNWItYTEwN2Q4YWUwMDk4IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiSk9CU0VFS0VSIl19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IlRvbnkgQXlhYmFtIiwicHJlZmVycmVkX3VzZXJuYW1lIjoidG9ueUBnbWFpbC5jb20iLCJnaXZlbl9uYW1lIjoiVG9ueSIsImZhbWlseV9uYW1lIjoiQXlhYmFtIiwiZW1haWwiOiJ0b255QGdtYWlsLmNvbSJ9.crMCLYCS9rkn1wrybVLfPU2LPd9C3Z9r33gouUVb4cQ3iHp-jtQdVKWEZb9DNYBzx6yhvHk-kB4v3gPPlrgeci30E5OOXUH_Sw0tdaYANp42vgNLZZ39S5lUfZKkVpqTkR40rMY-3zTret0RZGJ6AbiVdk2XQW3Y66Jb0xeD3KJpexElPJ_JHLUFQH0quCiFa_BXDfEjgEK0vX33C0dhklEQ60m0gSfghTC00mO3ND6N4F5HAdpcRHPzlV50Q9FDJ8r80Jlppl6sgwECdG4pbQION-HNbzWvnG7ma5loTY7OTUFnu92AHBpidyoWpAz8z2lgh5uj39LdjryzZyydEw`
+      }
+    })
+      .then((res) => {
+        this.skillSet = res.data
+        console.log("data", res.data)
+      })
+      .catch((error) => {
+        console.error(error)
+      })
+  },
+
   methods:{
     changed: function(step) {
       this.$store.commit('change', step)
@@ -107,6 +101,7 @@ export default {
       console.log(date, dateString);
     },
     handleChange(value) {
+      this.listSkill = value;
       console.log(`selected ${value}`);
     },
   },
@@ -128,5 +123,12 @@ h4 {
 }
 .one {
   border-radius: 4px;
+}
+.btn_ {
+  height: auto;
+  width: auto;
+}
+.btn__ {
+  border-radius: 8px;
 }
 </style>

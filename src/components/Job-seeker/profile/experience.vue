@@ -37,7 +37,6 @@
                         ]"
                     type="text" class="form-control" id="job_title">
               <option value="" disabled selected hidden>Job Title</option>
-              <option value="Web Developer">Web Developer</option>
             </select>
           </div>
         </div>
@@ -49,14 +48,13 @@
                             rules: [
                               {
                                 whitespace: true,
-                                message: 'Please enter your CIty in this field.',
+                                message: 'Please enter your City in this field.',
                               },
                             ],
                           },
                         ]"
                     type="text" class="form-control" id="city">
               <option value="" disabled selected hidden>City</option>
-              <option value="Washington DC">Washington D.C</option>
             </select>
           </div>
           <div class="col-6">
@@ -73,7 +71,7 @@
                         ]"
                     type="text" class="form-control" id="country">
               <option value=""  disabled selected hidden>Country</option>
-              <option value="" v-for="country in countries" >{{country.countryName}}</option>
+              <option v-for="country in countries" >{{country.countryName}}</option>
             </select>
           </div>
         </div>
@@ -92,20 +90,11 @@
                         ]"
                     type="text" class="form-control" id="work_type">
               <option value="" disabled selected hidden>Work Type</option>
-              <option value="Developer">Developer</option>
             </select>
           </div>
           <div class="col-6">
             <a-input v-decorator="[
                           `Salary`,
-                          {
-                            rules: [
-                              {
-                                whitespace: true,
-                                message: 'Please input Salary in this field.',
-                              },
-                            ],
-                          },
                         ]"
                      type="text" class="form-control" id="salary" placeholder="Salary"></a-input>
           </div>
@@ -114,29 +103,12 @@
           <div class="col-6">
             <a-date-picker v-decorator="[
                           `EndDate`,
-                          {
-                            rules: [
-                              {
-                                whitespace: true,
-                                message: 'Please enter Academics in this field.',
-                              },
-                            ],
-                          },
                         ]"
                            class="w-100" @change="onChange" placeholder="End Date"/>
           </div>
           <div class="col-6">
             <a-date-picker v-decorator="[
                           `StartDate`,
-                          {
-                            rules: [
-                              {
-
-                                whitespace: true,
-                                message: 'Please enter Academics in this field.',
-                              },
-                            ],
-                          },
                         ]"
                            class="w-100" @change="onChange" placeholder="Start Date"/>
           </div>
@@ -204,7 +176,7 @@ name: "experience",
   beforeCreate() {
     axios.get('http://167.99.198.38:32001/list/countries', {
       headers: {
-        'Authorization': `Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJFZ0NPRTB3ZDVEMjZfX0ZUZURmSmhNejlucndZYXM2czFGaE5EcHo2djFJIn0.eyJleHAiOjE2MTEwNjgyNzIsImlhdCI6MTYxMTA2NDY3MiwianRpIjoiZjEzNWJmMTMtYzExZi00MmRjLWFhZDgtNWM0YWE3NWIyYjU1IiwiaXNzIjoiaHR0cDovLzE3OC42Mi44Ny4xNjI6ODA4MC9hdXRoL3JlYWxtcy9tYXN0ZXIiLCJzdWIiOiI3ZDVhOTc2NC1kN2RiLTQ2ZTktYTdjMi01ZTdmNWZlOGUwMDYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhZG1pbi1jbGkiLCJzZXNzaW9uX3N0YXRlIjoiM2E4MDllNjItZDZiOC00Y2JjLWJiNTUtNGE0ZTgwZWIxOWE4IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiSk9CU0VFS0VSIl19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IlRvbnkgQXlhYmFtIiwicHJlZmVycmVkX3VzZXJuYW1lIjoidG9ueUBnbWFpbC5jb20iLCJnaXZlbl9uYW1lIjoiVG9ueSIsImZhbWlseV9uYW1lIjoiQXlhYmFtIiwiZW1haWwiOiJ0b255QGdtYWlsLmNvbSJ9.Te1EIAVljTARLhISIfvJ8OC1eUoX3EaIZGh7yk4S7OzWH4AgtWvNgGWxrFMgH8wm5KLFuhCbQIBanPMJBtpbVSHa29DC306m0xHv1vvBESZ9KouVRlGGzl-zIcUjKUadsVCOzNP3Id9nmCDMWwJYp0AZ3-50k8zFq1htxqtWzNWTrK_hKIJ6_vx42jpMuNsArpUU7ULl-8bHgEbCJR2zKTd3AE1IRP80AANwGVHDTYKZntUkyS9193FRCj6jJCoVCVg-1DJ_VywHo1XN8mVFM6UP8pvuO6Rc3IAgDVJnu_pFB8Job-mXx8jQE-E4YA1LiDlAQXwfEc4oAEjWE2RpPA`
+        'Authorization': `Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJFZ0NPRTB3ZDVEMjZfX0ZUZURmSmhNejlucndZYXM2czFGaE5EcHo2djFJIn0.eyJleHAiOjE2MTExNzU5ODIsImlhdCI6MTYxMTE3MjM4MiwianRpIjoiMjE0NzNmMmUtZmQxNi00ZTZjLTkxYmEtMzVjM2FjZmE2NTAzIiwiaXNzIjoiaHR0cDovLzE3OC42Mi44Ny4xNjI6ODA4MC9hdXRoL3JlYWxtcy9tYXN0ZXIiLCJzdWIiOiI3ZDVhOTc2NC1kN2RiLTQ2ZTktYTdjMi01ZTdmNWZlOGUwMDYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhZG1pbi1jbGkiLCJzZXNzaW9uX3N0YXRlIjoiNTI5YTRkNDAtNWI2NS00NDNkLThkMmUtODE2ODYxNmU3ZjRlIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiSk9CU0VFS0VSIl19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IlRvbnkgQXlhYmFtIiwicHJlZmVycmVkX3VzZXJuYW1lIjoidG9ueUBnbWFpbC5jb20iLCJnaXZlbl9uYW1lIjoiVG9ueSIsImZhbWlseV9uYW1lIjoiQXlhYmFtIiwiZW1haWwiOiJ0b255QGdtYWlsLmNvbSJ9.FsNvDBdvi8obI-sUl1c5kXTAeqAdxqMja1nKDAp8YTcMMNNA37MQtojbzgBdu0mwJjXT-8frZ-j2MvLmIy1Txcq6iADEVd9QnXGqKv8uAEaQZHT9SMONf3UT9zuNmdamtbJCUV1gJKdAKQ5OgJwPFffwY6nJbM6i7dbIaLyQIcJ8_DhvdyMpJoOKWx0r_1SjRYZfdsjedOpYVqGchhlfVtBiCGZEMHwH92TRxa2WnzpPMBQQ1reXZVEnlP6_pfy9eyHP3wut9sglSKbxA7UfSKIyNu69iNsMTWBYw3D_Y_nvIH4458BdFRt_GwAtkFtdmNr4xWp_a_0cyD-ZzSUjtw`
       }
     })
       .then((res) => {
@@ -224,6 +196,10 @@ name: "experience",
       e.preventDefault();
       this.form.validateFields((err, values) => {
         if (!err) {
+          let StartDate = values.StartDate.toDate()
+          let EndDate = values.EndDate.toDate()
+          values.StartDate = StartDate
+          values.EndDate = EndDate
           console.log("Received values of form: ", values);
           this.$store.commit('change', 4)
 
@@ -232,7 +208,7 @@ name: "experience",
             method: 'post',
             url: 'http://167.99.198.38:32001/add/job/seeker/work/experience',
             headers: {
-              'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJFZ0NPRTB3ZDVEMjZfX0ZUZURmSmhNejlucndZYXM2czFGaE5EcHo2djFJIn0.eyJleHAiOjE2MTEwNjgyNzIsImlhdCI6MTYxMTA2NDY3MiwianRpIjoiZjEzNWJmMTMtYzExZi00MmRjLWFhZDgtNWM0YWE3NWIyYjU1IiwiaXNzIjoiaHR0cDovLzE3OC42Mi44Ny4xNjI6ODA4MC9hdXRoL3JlYWxtcy9tYXN0ZXIiLCJzdWIiOiI3ZDVhOTc2NC1kN2RiLTQ2ZTktYTdjMi01ZTdmNWZlOGUwMDYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhZG1pbi1jbGkiLCJzZXNzaW9uX3N0YXRlIjoiM2E4MDllNjItZDZiOC00Y2JjLWJiNTUtNGE0ZTgwZWIxOWE4IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiSk9CU0VFS0VSIl19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IlRvbnkgQXlhYmFtIiwicHJlZmVycmVkX3VzZXJuYW1lIjoidG9ueUBnbWFpbC5jb20iLCJnaXZlbl9uYW1lIjoiVG9ueSIsImZhbWlseV9uYW1lIjoiQXlhYmFtIiwiZW1haWwiOiJ0b255QGdtYWlsLmNvbSJ9.Te1EIAVljTARLhISIfvJ8OC1eUoX3EaIZGh7yk4S7OzWH4AgtWvNgGWxrFMgH8wm5KLFuhCbQIBanPMJBtpbVSHa29DC306m0xHv1vvBESZ9KouVRlGGzl-zIcUjKUadsVCOzNP3Id9nmCDMWwJYp0AZ3-50k8zFq1htxqtWzNWTrK_hKIJ6_vx42jpMuNsArpUU7ULl-8bHgEbCJR2zKTd3AE1IRP80AANwGVHDTYKZntUkyS9193FRCj6jJCoVCVg-1DJ_VywHo1XN8mVFM6UP8pvuO6Rc3IAgDVJnu_pFB8Job-mXx8jQE-E4YA1LiDlAQXwfEc4oAEjWE2RpPA',
+              'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJFZ0NPRTB3ZDVEMjZfX0ZUZURmSmhNejlucndZYXM2czFGaE5EcHo2djFJIn0.eyJleHAiOjE2MTExNzE2ODIsImlhdCI6MTYxMTE2ODA4MiwianRpIjoiMTRhMzA1YmUtYWVlNi00MjI1LTkwY2EtNWJhYmRmMjY2NDhkIiwiaXNzIjoiaHR0cDovLzE3OC42Mi44Ny4xNjI6ODA4MC9hdXRoL3JlYWxtcy9tYXN0ZXIiLCJzdWIiOiI3ZDVhOTc2NC1kN2RiLTQ2ZTktYTdjMi01ZTdmNWZlOGUwMDYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhZG1pbi1jbGkiLCJzZXNzaW9uX3N0YXRlIjoiMjc0MmFmMDktOWExYy00YWU2LTgxZWEtMTFmMzVjNjI0NzFlIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiSk9CU0VFS0VSIl19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IlRvbnkgQXlhYmFtIiwicHJlZmVycmVkX3VzZXJuYW1lIjoidG9ueUBnbWFpbC5jb20iLCJnaXZlbl9uYW1lIjoiVG9ueSIsImZhbWlseV9uYW1lIjoiQXlhYmFtIiwiZW1haWwiOiJ0b255QGdtYWlsLmNvbSJ9.JQg1P9Rf3d6ZwSJcbNfu7mcWXz2bF47aU1FX1qoe-YVfQjGfbXQ78CMvgv4ZoxE7ilmOZSQTYasbwQ1caX9XvIsBVK6Q96yqvFyfrY6evY1NUipXM59_Fa7-30A9z_5BQGGhMvtQtHLUa0AYxAkq4Jw1xoLlBiCFeY9mIffh4XQXTpxIRccFpOO4q3kFSrQOEdwFaxG1Pk36RNh8AteMXPvuF8VYpC3p1zZg1CJgNN9OG1b8DBO7V5fdNS8N-Yj4ZA9OTZkDVySArok1JayCOl58qLimJ2N5o4LoU1otZTvna1IR4pq7H1OzUt876VO0tCnOisdOfU0Js8T8UeQmQA',
               'Content-Type': 'application/json'
             },
             data : data

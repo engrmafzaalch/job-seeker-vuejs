@@ -45,29 +45,12 @@
               <a-date-picker
                 v-decorator="[
                           `EndDate`,
-                          {
-                            rules: [
-                              {
-                                whitespace: true,
-                                message: 'Please enter Academics in this field.',
-                              },
-                            ],
-                          },
                         ]"
                              class="w-100" @change="onChange" placeholder="End Date"/>
             </div>
             <div class="col-6">
               <a-date-picker v-decorator="[
                           `StartDate`,
-                          {
-                            rules: [
-                              {
-
-                                whitespace: true,
-                                message: 'Please enter Academics in this field.',
-                              },
-                            ],
-                          },
                         ]"
                              class="w-100" @change="onChange" placeholder="Start Date"/>
             </div>
@@ -121,6 +104,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 function hasErrors(fieldsError) {
   return Object.keys(fieldsError).some((field) => fieldsError[field]);
 }
@@ -147,13 +132,37 @@ export default {
       e.preventDefault();
       this.form.validateFields((err, values) => {
         if (!err) {
+          let StartDate = values.StartDate.toDate()
+          let EndDate = values.EndDate.toDate()
+          values.StartDate = StartDate
+          values.EndDate = EndDate
           console.log("Received values of form: ", values);
           this.$store.commit('change', 3)
         }
       });
+
+      var data = values
+      var config = {
+        method: 'post',
+        url: 'http://167.99.198.38:32001/create/job/seeker/education',
+        headers: {
+          'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJFZ0NPRTB3ZDVEMjZfX0ZUZURmSmhNejlucndZYXM2czFGaE5EcHo2djFJIn0.eyJleHAiOjE2MTExMzE0MDQsImlhdCI6MTYxMTEyNzgwNCwianRpIjoiZjFkMWRiNDAtZTkwNi00ODc4LTlmODEtZTg2YzdiOTk0OGEwIiwiaXNzIjoiaHR0cDovLzE3OC42Mi44Ny4xNjI6ODA4MC9hdXRoL3JlYWxtcy9tYXN0ZXIiLCJzdWIiOiI3ZDVhOTc2NC1kN2RiLTQ2ZTktYTdjMi01ZTdmNWZlOGUwMDYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhZG1pbi1jbGkiLCJzZXNzaW9uX3N0YXRlIjoiZjk1NDViZmUtOGM5Ny00NGMyLWJjYjMtNTllZjEzYTNhYjE5IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiSk9CU0VFS0VSIl19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IlRvbnkgQXlhYmFtIiwicHJlZmVycmVkX3VzZXJuYW1lIjoidG9ueUBnbWFpbC5jb20iLCJnaXZlbl9uYW1lIjoiVG9ueSIsImZhbWlseV9uYW1lIjoiQXlhYmFtIiwiZW1haWwiOiJ0b255QGdtYWlsLmNvbSJ9.C_GBe1m9lSsJ0k_Ir1n1BMbuSBZdRyVqV43G6rCDzAgUGI4XP-kA8z0HyVSTRFNp6ZJHZ2vfckCsXfhMRNcwMlVoO7aZILf3ek2VOcIHjLPvRXVO6Khk_7iPHqMxxw5hgj8gwV5ljBZOMvbTKuuKziTeaJaGKIoi8nz5UiUeIFLGAS2eBexjO5D16AJGIZ4qW0-PPDLgQjrE3q5RBk2sCEWXpfw5eRXS52Ik22_8jCI589vFfy5XTeUxHPxTR1Hl67-Mw4PKS3SY1ZmkE46r_yGbpqAkS3KdchgOWZcJqmiQId_dUgGZGgfuAFJIdlSggfO2AGYmcxh65KBkkPh1eQ',
+          'Content-Type': 'application/json'
+        },
+        data : data
+      };
+      axios(config)
+        .then(function (response) {
+          console.log(JSON.stringify(response.data));
+
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+
     },
     onChange(date, dateString) {
-      console.log(date, dateString);
+      console.log("date", dateString);
     },
   },
 }

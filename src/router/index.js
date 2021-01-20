@@ -187,7 +187,7 @@ let router = new Router({
       }
     },
     {
-      path: '/Payemnt_2',
+      path: '/Payment_2',
       name: 'Payments_2',
       component: Payments_2,
       meta: {

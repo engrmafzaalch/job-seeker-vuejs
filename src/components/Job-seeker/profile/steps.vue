@@ -65,6 +65,21 @@ export default {
     MyProfile : MyProfile
   },
 
+  beforeCreate() {
+    axios.get('http://167.99.198.38:32001/list/countries', {
+      headers: {
+        'Authorization': `Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJFZ0NPRTB3ZDVEMjZfX0ZUZURmSmhNejlucndZYXM2czFGaE5EcHo2djFJIn0.eyJleHAiOjE2MTEwNzQ1MjEsImlhdCI6MTYxMTA3MDkyMSwianRpIjoiMTE3NGVhYTgtNTdlNy00NWRjLWEwMzAtNTMxZDM5MWRjYTVkIiwiaXNzIjoiaHR0cDovLzE3OC42Mi44Ny4xNjI6ODA4MC9hdXRoL3JlYWxtcy9tYXN0ZXIiLCJzdWIiOiI3ZDVhOTc2NC1kN2RiLTQ2ZTktYTdjMi01ZTdmNWZlOGUwMDYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhZG1pbi1jbGkiLCJzZXNzaW9uX3N0YXRlIjoiY2YyNzA2ZjItZDQ3Mi00NDIzLWI5NjktZjViMDVlOTA5NTk4IiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiSk9CU0VFS0VSIl19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IlRvbnkgQXlhYmFtIiwicHJlZmVycmVkX3VzZXJuYW1lIjoidG9ueUBnbWFpbC5jb20iLCJnaXZlbl9uYW1lIjoiVG9ueSIsImZhbWlseV9uYW1lIjoiQXlhYmFtIiwiZW1haWwiOiJ0b255QGdtYWlsLmNvbSJ9.L7IcpRXeXb9B3KI-N5PNMChdDBVzYcKHxvTE5Xb0UYXQs0fpyhKnMfL7K2JCRc1uTR8eEffhxuXLuPa4Zs2-XcwUi-fTFQVoT8WZFdw98cBa_vlDEU9yeXbyKtyFfJnbFL8gRK-C8oenru_V4492cpEhwZjad62vIpx-1uctk63IcNbXv94mtrmq8lVfZJVwsoFgwIXWcYdrCuKEwI5amlH3fMN3mRMtwoNPqzfMshqUbikHPAFj-fuRRvfyYcNfMkWv0zq36eoa-dreP-TyZVuAlQc0wfO8BX1OwCiNJAjCZxhjiIMu9QxiP2Wwv-7t1hUsJZ4lhx0x1evkttZGSA`
+      }
+    })
+      .then((res) => {
+        this.countries = res.data
+        console.log("data", res.data)
+      })
+      .catch((error) => {
+        console.error(error)
+      })
+  },
+
 }
 </script>
 

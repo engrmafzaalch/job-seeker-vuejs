@@ -73,7 +73,7 @@
                         ]"
                     type="text" class="form-control" id="country">
               <option value="" disabled selected hidden>Country</option>
-              <option value="Nigeria">Nigeria</option>
+              <option v-for="country in countries" >{{country.countryName}}</option>
             </select>
           </div>
         </div>
@@ -207,6 +207,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 function hasErrors(fieldsError) {
   return Object.keys(fieldsError).some((field) => fieldsError[field]);
 }
@@ -218,7 +220,23 @@ export default {
     return {
       hasErrors,
       form: this.$form.createForm(this, { name: "Name EmailAddress City Country MobileNumber LinkedIn Day Month Year NYSC" }),
+      countries : []
     };
+  },
+
+  beforeCreate() {
+    axios.get('http://167.99.198.38:32001/list/countries', {
+      headers: {
+        'Authorization': `Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJFZ0NPRTB3ZDVEMjZfX0ZUZURmSmhNejlucndZYXM2czFGaE5EcHo2djFJIn0.eyJleHAiOjE2MTExNzU5ODIsImlhdCI6MTYxMTE3MjM4MiwianRpIjoiMjE0NzNmMmUtZmQxNi00ZTZjLTkxYmEtMzVjM2FjZmE2NTAzIiwiaXNzIjoiaHR0cDovLzE3OC42Mi44Ny4xNjI6ODA4MC9hdXRoL3JlYWxtcy9tYXN0ZXIiLCJzdWIiOiI3ZDVhOTc2NC1kN2RiLTQ2ZTktYTdjMi01ZTdmNWZlOGUwMDYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhZG1pbi1jbGkiLCJzZXNzaW9uX3N0YXRlIjoiNTI5YTRkNDAtNWI2NS00NDNkLThkMmUtODE2ODYxNmU3ZjRlIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiSk9CU0VFS0VSIl19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IlRvbnkgQXlhYmFtIiwicHJlZmVycmVkX3VzZXJuYW1lIjoidG9ueUBnbWFpbC5jb20iLCJnaXZlbl9uYW1lIjoiVG9ueSIsImZhbWlseV9uYW1lIjoiQXlhYmFtIiwiZW1haWwiOiJ0b255QGdtYWlsLmNvbSJ9.FsNvDBdvi8obI-sUl1c5kXTAeqAdxqMja1nKDAp8YTcMMNNA37MQtojbzgBdu0mwJjXT-8frZ-j2MvLmIy1Txcq6iADEVd9QnXGqKv8uAEaQZHT9SMONf3UT9zuNmdamtbJCUV1gJKdAKQ5OgJwPFffwY6nJbM6i7dbIaLyQIcJ8_DhvdyMpJoOKWx0r_1SjRYZfdsjedOpYVqGchhlfVtBiCGZEMHwH92TRxa2WnzpPMBQQ1reXZVEnlP6_pfy9eyHP3wut9sglSKbxA7UfSKIyNu69iNsMTWBYw3D_Y_nvIH4458BdFRt_GwAtkFtdmNr4xWp_a_0cyD-ZzSUjtw`
+      }
+    })
+      .then((res) => {
+        this.countries = res.data
+        console.log("data", res.data)
+      })
+      .catch((error) => {
+        console.error(error)
+      })
   },
 
   methods: {

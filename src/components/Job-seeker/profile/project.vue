@@ -81,30 +81,12 @@
           <div class="col-6">
             <a-date-picker v-decorator="[
                           `EndDate`,
-                          {
-                            rules: [
-                              {
-
-                                whitespace: true,
-                                message: 'Please enter Academics in this field.',
-                              },
-                            ],
-                          },
                         ]"
                            class="w-100" @change="onChange" placeholder="End Date"/>
           </div>
           <div class="col-6">
             <a-date-picker v-decorator="[
                           `StartDate`,
-                          {
-                            rules: [
-                              {
-
-                                whitespace: true,
-                                message: 'Please enter Academics in this field.',
-                              },
-                            ],
-                          },
                         ]"
                            class="w-100" @change="onChange" placeholder="Start Date"/>
           </div>
@@ -179,6 +161,10 @@ export default {
       e.preventDefault();
       this.form.validateFields((err, values) => {
         if (!err) {
+          let EndDate = values.EndDate.toDate()
+          let StartDate = values.StartDate.toDate()
+          values.EndDate = EndDate
+          values.StartDate = StartDate
           console.log("Received values of form: ", values);
           this.$store.commit('change', 5)
         }
