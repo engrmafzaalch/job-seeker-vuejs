@@ -51,7 +51,7 @@
                               {
                                 required: true,
                                 whitespace: true,
-                                message: 'Please enter your CIty in this field.',
+                                message: 'Please enter your City in this field.',
                               },
                             ],
                           },
@@ -121,7 +121,7 @@
                               {
 
                                 whitespace: true,
-                                message: 'Please enter Academics in this field.',
+                                message: 'Please Select the End Date in this field.',
                               },
                             ],
                           },
@@ -136,7 +136,7 @@
                               {
 
                                 whitespace: true,
-                                message: 'Please enter Academics in this field.',
+                                message: 'Please Select Start Date in this field.',
                               },
                             ],
                           },
