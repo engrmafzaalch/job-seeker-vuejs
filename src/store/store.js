@@ -5,7 +5,7 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store({
     state: {
-        step:1,
+        step:3,
         tab:1,
         status: '',
         token: localStorage.getItem('token') || '',
