@@ -18,7 +18,7 @@ import Projects from "../components/Job-seeker/MyAccount/Projects";
 import Resume_CV from "../components/Job-seeker/MyAccount/Resume_CV";
 import MyApplications from "../components/Job-seeker/MyApplications/MyApplications";
 import modal from "../components/Job/job-detail/modal";
-import Payments_2 from "../components/Payments-2/Payments_2";
+import Payments_2 from "../components/payment/Payments_2";
 import AdminJobSeekerDetailedPage from '../components/admin-job-seeker/job-seeker-detailed-view';
 import JobDetail from '../components/Job/job-detail/JobDetail'
 import JobDetail_2 from "../components/Job/job-detail/JobDetail_2";
@@ -187,7 +187,7 @@ let router = new Router({
       }
     },
     {
-      path: '/Payment_2',
+      path: '/Payment-2',
       name: 'Payments_2',
       component: Payments_2,
       meta: {
@@ -227,7 +227,7 @@ let router = new Router({
       }
     },
     {
-      path: '/index_myAccount-2',
+      path: '/MyAccount-2',
       name: 'index_myAccount-2',
       component: index_myAccount_2,
       meta: {
@@ -251,7 +251,7 @@ let router = new Router({
       }
     },
     {
-      path: '/index_payment_1',
+      path: '/Payment-1',
       name: 'index_payment_1',
       component: index_payment_1,
       meta: {
@@ -259,7 +259,7 @@ let router = new Router({
       }
     },
     {
-      path: '/index_payment_3',
+      path: '/Payment-3',
       name: 'index_payment-3',
       component: index_payment_3,
       meta: {

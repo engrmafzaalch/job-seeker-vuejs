@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid">
+  <div class="container-fluid vh-100">
     <div class="wrapper">
       <div class="job-heading">
         <h1 class="job-heading-inr">Job Details</h1>
