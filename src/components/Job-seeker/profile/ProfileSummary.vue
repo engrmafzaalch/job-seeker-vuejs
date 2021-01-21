@@ -14,7 +14,6 @@
                           {
                             rules: [
                               {
-                                required: true,
                                 whitespace: true,
                                 message: 'Please Enter your Profile Summary in this field.',
                               },

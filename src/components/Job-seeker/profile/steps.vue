@@ -50,6 +50,7 @@ import Documents from "./documents";
 import Skills from "./skills";
 import MyProfile from "./myProfile";
 import {store} from "../../../store/store";
+import axios from "axios";
 
 export default {
   name : "Steps",
@@ -62,7 +63,23 @@ export default {
     Documents : Documents,
     Skills : Skills,
     MyProfile : MyProfile
-  }
+  },
+
+  beforeCreate() {
+    axios.get('http://167.99.198.38:32001/list/countries', {
+      headers: {
+        'Authorization': `Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJFZ0NPRTB3ZDVEMjZfX0ZUZURmSmhNejlucndZYXM2czFGaE5EcHo2djFJIn0.eyJleHAiOjE2MTEyMzAwMTksImlhdCI6MTYxMTIyNjQxOSwianRpIjoiMTU2YWM2OTktZjNiNS00MDQ1LWIwYWEtMzJlZTNmNTQ0Mjc0IiwiaXNzIjoiaHR0cDovLzE3OC42Mi44Ny4xNjI6ODA4MC9hdXRoL3JlYWxtcy9tYXN0ZXIiLCJzdWIiOiI3ZDVhOTc2NC1kN2RiLTQ2ZTktYTdjMi01ZTdmNWZlOGUwMDYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhZG1pbi1jbGkiLCJzZXNzaW9uX3N0YXRlIjoiNDM3MmU1ZmUtOTA5Zi00YTQwLWE4MzYtMzk0NzMxYjBmM2RiIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiSk9CU0VFS0VSIl19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IlRvbnkgQXlhYmFtIiwicHJlZmVycmVkX3VzZXJuYW1lIjoidG9ueUBnbWFpbC5jb20iLCJnaXZlbl9uYW1lIjoiVG9ueSIsImZhbWlseV9uYW1lIjoiQXlhYmFtIiwiZW1haWwiOiJ0b255QGdtYWlsLmNvbSJ9.oriQrwqrbp8R94vQJcl2XuY4wlRYcCzelIAaZiSfz78B-ryUGQU3p4lpkRGZpdU_lrBRgUTB4kteIp5uHfb2XQ9iUnghKuwIIMR46jOBmDptk8P1sNHIVEYq-61XMHmfQrwyPnkY2ufxRVCWv8wV0onKrHSD6jepwvp8Opkm-4xZY5ZaRpAVzGAJwj-WRNVI3NPg5wOsCUgTzhXyguBAHko_uMoXug-oHOKiMStoyjQ068McwaoHKiu93SWZ6fxNS0IQwmw6Q4MG2KuKMiyCGNd8fjxPjEOXNsF1TUifyGHXq2zRHU4hbP92QBDShRaANqONZEK6pQLnQeM3e0PQig`
+      }
+    })
+      .then((res) => {
+        this.countries = res.data
+        console.log("data", res.data)
+      })
+      .catch((error) => {
+        console.error(error)
+      })
+  },
+
 }
 </script>
 

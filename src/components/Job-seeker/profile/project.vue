@@ -15,7 +15,6 @@
                           {
                             rules: [
                               {
-                                required: true,
                                 whitespace: true,
                                 message: 'Please enter Project Title in this field.',
                               },
@@ -30,7 +29,6 @@
                           {
                             rules: [
                               {
-                                required: true,
                                 whitespace: true,
                                 message: 'Please enter Employer Name in this field.',
                               },
@@ -38,7 +36,8 @@
                           },
                         ]"
                     type="text" class="form-control" id="employer_name">
-              <option value="Employer Name">Employer Name</option>
+              <option value="" disabled selected hidden>Employer Name</option>
+              <option value="JS Labs">JS Labs</option>
             </select>
           </div>
         </div>
@@ -49,7 +48,6 @@
                           {
                             rules: [
                               {
-                                required: true,
                                 whitespace: true,
                                 message: 'Please enter CLient Name in this field.',
                               },
@@ -57,7 +55,8 @@
                           },
                         ]"
                     type="text" class="form-control" id="client_name">
-              <option value="Client Name">Client Name</option>
+              <option value="" disabled selected hidden>Client Name</option>
+              <option value="Usha">Usha</option>
             </select>
           </div>
           <div class="col-6">
@@ -66,7 +65,6 @@
                           {
                             rules: [
                               {
-                                required: true,
                                 whitespace: true,
                                 message: 'Please enter Project Status in this field.',
                               },
@@ -74,7 +72,8 @@
                           },
                         ]"
                     type="text" class="form-control" id="project_status">
-              <option value="Project Status">Project Status</option>
+              <option value="" disabled selected hidden>Project Status</option>
+              <option value="On Going">On Going</option>
             </select>
           </div>
         </div>
@@ -82,30 +81,12 @@
           <div class="col-6">
             <a-date-picker v-decorator="[
                           `EndDate`,
-                          {
-                            rules: [
-                              {
-
-                                whitespace: true,
-                                message: 'Please enter Academics in this field.',
-                              },
-                            ],
-                          },
                         ]"
                            class="w-100" @change="onChange" placeholder="End Date"/>
           </div>
           <div class="col-6">
             <a-date-picker v-decorator="[
                           `StartDate`,
-                          {
-                            rules: [
-                              {
-
-                                whitespace: true,
-                                message: 'Please enter Academics in this field.',
-                              },
-                            ],
-                          },
                         ]"
                            class="w-100" @change="onChange" placeholder="Start Date"/>
           </div>
@@ -117,7 +98,6 @@
                           {
                             rules: [
                               {
-                                required: true,
                                 whitespace: true,
                                 message: 'Please Enter Educational Details in this field.',
                               },
@@ -181,6 +161,10 @@ export default {
       e.preventDefault();
       this.form.validateFields((err, values) => {
         if (!err) {
+          let EndDate = values.EndDate.toDate()
+          let StartDate = values.StartDate.toDate()
+          values.EndDate = EndDate
+          values.StartDate = StartDate
           console.log("Received values of form: ", values);
           this.$store.commit('change', 5)
         }

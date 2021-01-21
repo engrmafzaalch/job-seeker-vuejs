@@ -15,7 +15,6 @@
                           {
                             rules: [
                               {
-                                required: true,
                                 whitespace: true,
                                 message: 'Please enter Education Details in this field.',
                               },
@@ -31,7 +30,6 @@
                           {
                             rules: [
                               {
-                                required: true,
                                 whitespace: true,
                                 message: 'Please enter Academics in this field.',
                               },
@@ -47,29 +45,12 @@
               <a-date-picker
                 v-decorator="[
                           `EndDate`,
-                          {
-                            rules: [
-                              {
-                                whitespace: true,
-                                message: 'Please enter Academics in this field.',
-                              },
-                            ],
-                          },
                         ]"
                              class="w-100" @change="onChange" placeholder="End Date"/>
             </div>
             <div class="col-6">
               <a-date-picker v-decorator="[
                           `StartDate`,
-                          {
-                            rules: [
-                              {
-
-                                whitespace: true,
-                                message: 'Please enter Academics in this field.',
-                              },
-                            ],
-                          },
                         ]"
                              class="w-100" @change="onChange" placeholder="Start Date"/>
             </div>
@@ -81,7 +62,6 @@
                           {
                             rules: [
                               {
-                                required: true,
                                 whitespace: true,
                                 message: 'Please Enter Educational Details in this field.',
                               },
@@ -124,6 +104,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 function hasErrors(fieldsError) {
   return Object.keys(fieldsError).some((field) => fieldsError[field]);
 }
@@ -150,13 +132,37 @@ export default {
       e.preventDefault();
       this.form.validateFields((err, values) => {
         if (!err) {
+          let StartDate = values.StartDate.toDate()
+          let EndDate = values.EndDate.toDate()
+          values.StartDate = StartDate
+          values.EndDate = EndDate
           console.log("Received values of form: ", values);
           this.$store.commit('change', 3)
         }
       });
+
+      var data = values
+      var config = {
+        method: 'post',
+        url: 'http://167.99.198.38:32001/create/job/seeker/education',
+        headers: {
+          'Authorization': 'Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJFZ0NPRTB3ZDVEMjZfX0ZUZURmSmhNejlucndZYXM2czFGaE5EcHo2djFJIn0.eyJleHAiOjE2MTEyMzAwMTksImlhdCI6MTYxMTIyNjQxOSwianRpIjoiMTU2YWM2OTktZjNiNS00MDQ1LWIwYWEtMzJlZTNmNTQ0Mjc0IiwiaXNzIjoiaHR0cDovLzE3OC42Mi44Ny4xNjI6ODA4MC9hdXRoL3JlYWxtcy9tYXN0ZXIiLCJzdWIiOiI3ZDVhOTc2NC1kN2RiLTQ2ZTktYTdjMi01ZTdmNWZlOGUwMDYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhZG1pbi1jbGkiLCJzZXNzaW9uX3N0YXRlIjoiNDM3MmU1ZmUtOTA5Zi00YTQwLWE4MzYtMzk0NzMxYjBmM2RiIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiSk9CU0VFS0VSIl19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IlRvbnkgQXlhYmFtIiwicHJlZmVycmVkX3VzZXJuYW1lIjoidG9ueUBnbWFpbC5jb20iLCJnaXZlbl9uYW1lIjoiVG9ueSIsImZhbWlseV9uYW1lIjoiQXlhYmFtIiwiZW1haWwiOiJ0b255QGdtYWlsLmNvbSJ9.oriQrwqrbp8R94vQJcl2XuY4wlRYcCzelIAaZiSfz78B-ryUGQU3p4lpkRGZpdU_lrBRgUTB4kteIp5uHfb2XQ9iUnghKuwIIMR46jOBmDptk8P1sNHIVEYq-61XMHmfQrwyPnkY2ufxRVCWv8wV0onKrHSD6jepwvp8Opkm-4xZY5ZaRpAVzGAJwj-WRNVI3NPg5wOsCUgTzhXyguBAHko_uMoXug-oHOKiMStoyjQ068McwaoHKiu93SWZ6fxNS0IQwmw6Q4MG2KuKMiyCGNd8fjxPjEOXNsF1TUifyGHXq2zRHU4hbP92QBDShRaANqONZEK6pQLnQeM3e0PQig',
+          'Content-Type': 'application/json'
+        },
+        data : data
+      };
+      axios(config)
+        .then(function (response) {
+          console.log(JSON.stringify(response.data));
+
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+
     },
     onChange(date, dateString) {
-      console.log(date, dateString);
+      console.log("date", dateString);
     },
   },
 }

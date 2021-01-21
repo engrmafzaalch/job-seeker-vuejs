@@ -15,7 +15,6 @@
                           {
                             rules: [
                               {
-                                required: true,
                                 whitespace: true,
                                 message: 'Please input Name in this field.',
                               },
@@ -30,7 +29,6 @@
                           {
                             rules: [
                               {
-                                required: true,
                                 whitespace: true,
                                 message: 'Please input Email Address in this field.',
                               },
@@ -38,7 +36,8 @@
                           },
                         ]"
                     type="text" class="form-control" id="email_address">
-              <option value="Email Address">Email Address</option>
+              <option value="" disabled selected hidden>Email Address</option>
+              <option value="sikandarcapital@gmail.com">sikandarcapital@gmail.com</option>
             </select>
           </div>
         </div>
@@ -49,7 +48,6 @@
                           {
                             rules: [
                               {
-                                required: true,
                                 whitespace: true,
                                 message: 'Please input City this field.',
                               },
@@ -57,7 +55,8 @@
                           },
                         ]"
                     type="text" class="form-control" id="city">
-              <option value="City">City</option>
+              <option value="" disabled selected hidden>City</option>
+              <option value="Lahore">Lahore</option>
             </select>
           </div>
           <div class="col-6">
@@ -66,7 +65,6 @@
                           {
                             rules: [
                               {
-                                required: true,
                                 whitespace: true,
                                 message: 'Please input Country this field.',
                               },
@@ -74,7 +72,8 @@
                           },
                         ]"
                     type="text" class="form-control" id="country">
-              <option value="Country">Country</option>
+              <option value="" disabled selected hidden>Country</option>
+              <option v-for="country in countries" >{{country.countryName}}</option>
             </select>
           </div>
         </div>
@@ -85,7 +84,6 @@
                           {
                             rules: [
                               {
-                                required: true,
                                 whitespace: true,
                                 message: 'Please input Mobile Number this field.',
                               },
@@ -100,7 +98,6 @@
                           {
                             rules: [
                               {
-                                required: true,
                                 whitespace: true,
                                 message: 'Please input LinkedIN Profile this field.',
                               },
@@ -118,28 +115,27 @@
         <div class="row my-2">
           <div class="col-4">
             <select v-decorator="[
-                          `day`,
+                          `Day`,
                           {
                             rules: [
                               {
-                                required: true,
                                 whitespace: true,
-                                message: 'Please input email this field.',
+                                message: 'Please select Day in this field.',
                               },
                             ],
                           },
                         ]"
                     class="form-control" id="day">
-              <option value="Day">Day</option>
+              <option value="" disabled selected hidden>Day</option>
+              <option value="1">1</option>
             </select>
           </div>
           <div class="col-4">
             <select v-decorator="[
-                          `month`,
+                          `Month`,
                           {
                             rules: [
                               {
-                                required: true,
                                 whitespace: true,
                                 message: 'Please input email this field.',
                               },
@@ -147,16 +143,16 @@
                           },
                         ]"
                     class="form-control" id="month">
-              <option value="Month">Month</option>
+              <option value="" disabled selected hidden>Month</option>
+              <option value="January">January</option>
             </select>
           </div>
           <div class="col-4">
             <select v-decorator="[
-                          `year`,
+                          `Year`,
                           {
                             rules: [
                               {
-                                required: true,
                                 whitespace: true,
                                 message: 'Please input email this field.',
                               },
@@ -164,7 +160,8 @@
                           },
                         ]"
                     type="text" class="form-control" id="year">
-              <option value="Year">Year</option>
+              <option value="" disabled selected hidden>Year</option>
+              <option value="2021">2021</option>
             </select>
           </div>
         </div>
@@ -180,7 +177,6 @@
                           {
                             rules: [
                               {
-                                required: true,
                                 whitespace: true,
                                 message: 'Please input N. Y. S. C Number this field.',
                               },
@@ -196,7 +192,7 @@
     <hr>
     <div class="row float-right">
       <div class="col-12">
-        <a-button class="btn btn-light mr-3 px-5">Go Back</a-button>
+        <a-button class="btn btn-light mr-3 px-5" @click="changed(6)">Go Back</a-button>
         <a-button
           type="primary"
           html-type="submit"
@@ -211,6 +207,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 function hasErrors(fieldsError) {
   return Object.keys(fieldsError).some((field) => fieldsError[field]);
 }
@@ -221,8 +219,24 @@ export default {
   data() {
     return {
       hasErrors,
-      form: this.$form.createForm(this, { name: "degree college endDate stratdate educationDetail" }),
+      form: this.$form.createForm(this, { name: "Name EmailAddress City Country MobileNumber LinkedIn Day Month Year NYSC" }),
+      countries : []
     };
+  },
+
+  beforeCreate() {
+    axios.get('http://167.99.198.38:32001/list/countries', {
+      headers: {
+        'Authorization': `Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJFZ0NPRTB3ZDVEMjZfX0ZUZURmSmhNejlucndZYXM2czFGaE5EcHo2djFJIn0.eyJleHAiOjE2MTEyMzAwMTksImlhdCI6MTYxMTIyNjQxOSwianRpIjoiMTU2YWM2OTktZjNiNS00MDQ1LWIwYWEtMzJlZTNmNTQ0Mjc0IiwiaXNzIjoiaHR0cDovLzE3OC42Mi44Ny4xNjI6ODA4MC9hdXRoL3JlYWxtcy9tYXN0ZXIiLCJzdWIiOiI3ZDVhOTc2NC1kN2RiLTQ2ZTktYTdjMi01ZTdmNWZlOGUwMDYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhZG1pbi1jbGkiLCJzZXNzaW9uX3N0YXRlIjoiNDM3MmU1ZmUtOTA5Zi00YTQwLWE4MzYtMzk0NzMxYjBmM2RiIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiSk9CU0VFS0VSIl19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IlRvbnkgQXlhYmFtIiwicHJlZmVycmVkX3VzZXJuYW1lIjoidG9ueUBnbWFpbC5jb20iLCJnaXZlbl9uYW1lIjoiVG9ueSIsImZhbWlseV9uYW1lIjoiQXlhYmFtIiwiZW1haWwiOiJ0b255QGdtYWlsLmNvbSJ9.oriQrwqrbp8R94vQJcl2XuY4wlRYcCzelIAaZiSfz78B-ryUGQU3p4lpkRGZpdU_lrBRgUTB4kteIp5uHfb2XQ9iUnghKuwIIMR46jOBmDptk8P1sNHIVEYq-61XMHmfQrwyPnkY2ufxRVCWv8wV0onKrHSD6jepwvp8Opkm-4xZY5ZaRpAVzGAJwj-WRNVI3NPg5wOsCUgTzhXyguBAHko_uMoXug-oHOKiMStoyjQ068McwaoHKiu93SWZ6fxNS0IQwmw6Q4MG2KuKMiyCGNd8fjxPjEOXNsF1TUifyGHXq2zRHU4hbP92QBDShRaANqONZEK6pQLnQeM3e0PQig`
+      }
+    })
+      .then((res) => {
+        this.countries = res.data
+        console.log("data", res.data)
+      })
+      .catch((error) => {
+        console.error(error)
+      })
   },
 
   methods: {
