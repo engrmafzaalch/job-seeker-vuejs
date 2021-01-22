@@ -1,10 +1,10 @@
     <template id="navBar">
 <div class="mb-5">
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top background-header " ref="navbar">
+    <nav class="navbar navbar-expand-lg navbar-light background-header header" ref="navbar">
          <a class="navbar-brand " href="#" >
             <img src="../../assets/Frame 1376 1.png" />
           </a>
-        <button class="navbar-toggler" type="button"  
+        <button class="navbar-toggler" type="button"
             @click.stop="toggleNavbar()">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -16,7 +16,7 @@
                 <li class="nav-item">
                     <a class="nav-link" > <router-link to="jobs">Jobs</router-link></a>
                 </li>
-               
+
                 <li class="nav-item">
                     <a class="nav-link disabled">  <router-link to="MyApplications">My application</router-link></a>
                 </li>
@@ -31,7 +31,7 @@
                 <a class="logout-button" href="#">Logout</a>
                 </li>
             </ul>
-         
+
         </div>
     </nav>
     </div>
@@ -58,7 +58,7 @@ export default {
   },
   methods: {
     toggleNavbar() {
-        
+
         let curr = this.collapseClasses
         this.collapseClasses = {
             ...curr,
@@ -68,8 +68,8 @@ export default {
                 show:false
             }
         }
-        
-        
+
+
         setTimeout(()=>{
             let navHeight = this.$refs.mynav.clientHeight
             console.log(navHeight)

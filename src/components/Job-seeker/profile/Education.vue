@@ -3,71 +3,37 @@
     <a-form :form="form" @submit="handleSubmit">
       <div class="row justify-content-center mt-3">
         <div class="col-12">
-          <h4>Enter Education Details</h4>
+          <h4 class="pl-1">Enter Education Details</h4>
         </div>
       </div>
       <a-form-item>
-        <div class="form-group">
-          <div class="row my-4">
-            <div class="col-6">
-              <a-input v-decorator="[
-                          `Degree`,
-                          {
-                            rules: [
-                              {
-                                whitespace: true,
-                                message: 'Please enter Education Details in this field.',
-                              },
-                            ],
-                          },
-                        ]"
+        <div class="form-group ml-1">
+          <div class="row my-2">
+            <div class="col-sm-6">
+              <a-input v-decorator="[`Degree`,]"
                        type="text" class="form-control" id="degree" placeholder="Degree/Certification">
               </a-input>
             </div>
-            <div class="col-6">
-              <a-input v-decorator="[
-                          `College`,
-                          {
-                            rules: [
-                              {
-                                whitespace: true,
-                                message: 'Please enter Academics in this field.',
-                              },
-                            ],
-                          },
-                        ]"
+            <div class="col-sm-6">
+              <a-input v-decorator="[`College`,]"
                        type="text" class="form-control" id="college" placeholder="College/University/Academy">
               </a-input>
             </div>
           </div>
-          <div class="row my-4">
-            <div class="col-6">
+          <div class="row my-2">
+            <div class="col-sm-6">
               <a-date-picker
-                v-decorator="[
-                          `EndDate`,
-                        ]"
+                v-decorator="[`EndDate`,]"
                              class="w-100" @change="onChange" placeholder="End Date"/>
             </div>
-            <div class="col-6">
-              <a-date-picker v-decorator="[
-                          `StartDate`,
-                        ]"
+            <div class="col-sm-6">
+              <a-date-picker v-decorator="[`StartDate`,]"
                              class="w-100" @change="onChange" placeholder="Start Date"/>
             </div>
           </div>
-          <div class="row my-4">
+          <div class="row my-2">
             <div class="col-md-6">
-              <a-textarea v-decorator="[
-                          `EducationDetail`,
-                          {
-                            rules: [
-                              {
-                                whitespace: true,
-                                message: 'Please Enter Educational Details in this field.',
-                              },
-                            ],
-                          },
-                        ]"
+              <a-textarea v-decorator="[`EducationDetail`,]"
                           class="form-control"
                           name="text"
                           id="education_details"
@@ -78,7 +44,7 @@
               </a-textarea>
             </div>
           </div>
-          <div class="row justify-content-center text-center my-4">
+          <div class="row justify-content-center text-center my-2">
             <div class="col-12">
               <button class="btn btn-light">
                 Add More Education

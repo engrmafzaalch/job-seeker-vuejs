@@ -3,107 +3,53 @@
     <a-form :form="form" @submit="handleSubmit">
     <div class="row justify-content-center mt-3">
       <div class="col-12">
-        <h4>Enter Project Details</h4>
+        <h4 class="pl-2">Enter Project Details</h4>
       </div>
     </div>
       <a-form-item>
-      <div class="form-group">
-        <div class="row my-4">
-          <div class="col-6">
-            <input v-decorator="[
-                          `ProjectTitle`,
-                          {
-                            rules: [
-                              {
-                                whitespace: true,
-                                message: 'Please enter Project Title in this field.',
-                              },
-                            ],
-                          },
-                        ]"
+      <div class="form-group ml-2">
+        <div class="row my-2">
+          <div class="col-sm-6">
+            <input v-decorator="[`ProjectTitle`,]"
                    type="text" class="form-control" id="project_title" placeholder="Project Title">
           </div>
-          <div class="col-6">
-            <select v-decorator="[
-                          `EmployerName`,
-                          {
-                            rules: [
-                              {
-                                whitespace: true,
-                                message: 'Please enter Employer Name in this field.',
-                              },
-                            ],
-                          },
-                        ]"
+          <div class="col-sm-6">
+            <select v-decorator="[`EmployerName`,]"
                     type="text" class="form-control" id="employer_name">
               <option value="" disabled selected hidden>Employer Name</option>
               <option value="JS Labs">JS Labs</option>
             </select>
           </div>
         </div>
-        <div class="row my-4">
-          <div class="col-6">
-            <select v-decorator="[
-                          `ClientName`,
-                          {
-                            rules: [
-                              {
-                                whitespace: true,
-                                message: 'Please enter CLient Name in this field.',
-                              },
-                            ],
-                          },
-                        ]"
+        <div class="row my-2">
+          <div class="col-sm-6">
+            <select v-decorator="[`ClientName`,]"
                     type="text" class="form-control" id="client_name">
               <option value="" disabled selected hidden>Client Name</option>
               <option value="Usha">Usha</option>
             </select>
           </div>
-          <div class="col-6">
-            <select v-decorator="[
-                          `ProjectStatus`,
-                          {
-                            rules: [
-                              {
-                                whitespace: true,
-                                message: 'Please enter Project Status in this field.',
-                              },
-                            ],
-                          },
-                        ]"
+          <div class="col-sm-6">
+            <select v-decorator="[`ProjectStatus`,]"
                     type="text" class="form-control" id="project_status">
               <option value="" disabled selected hidden>Project Status</option>
               <option value="On Going">On Going</option>
             </select>
           </div>
         </div>
-        <div class="row my-4">
-          <div class="col-6">
-            <a-date-picker v-decorator="[
-                          `EndDate`,
-                        ]"
+        <div class="row my-2">
+          <div class="col-sm-6">
+            <a-date-picker v-decorator="[`EndDate`,]"
                            class="w-100" @change="onChange" placeholder="End Date"/>
           </div>
-          <div class="col-6">
-            <a-date-picker v-decorator="[
-                          `StartDate`,
-                        ]"
+          <div class="col-sm-6">
+            <a-date-picker v-decorator="[`StartDate`,]"
                            class="w-100" @change="onChange" placeholder="Start Date"/>
           </div>
         </div>
-        <div class="row my-4">
+        <div class="row my-2">
           <div class="col-md-6">
-            <a-textarea v-decorator="[
-                          `EducationDetail`,
-                          {
-                            rules: [
-                              {
-                                whitespace: true,
-                                message: 'Please Enter Educational Details in this field.',
-                              },
-                            ],
-                          },
-                        ]"
+            <a-textarea v-decorator="[`EducationDetail`,]"
                         class="form-control"
                         name="text"
                         id="education_details"
@@ -111,7 +57,7 @@
                         placeholder="Education Details"></a-textarea>
           </div>
         </div>
-        <div class="row justify-content-center text-center my-4">
+        <div class="row justify-content-center text-center my-2">
           <div class="col-12">
             <a-button class="btn btn-light">
               Add More Education

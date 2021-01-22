@@ -3,12 +3,11 @@
   <a-form :form="form" @submit="handleSubmit">
   <div class="row mt-4">
     <div class="col-12">
-      <h4>Upload Documents</h4>
+      <h4 class="ml-2">Upload Documents</h4>
     </div>
   </div>
-  <div v-decorator="[
-            `File`,]"
-       class="jumbotron">
+  <div v-decorator="[`File`,]"
+       class="jumbotron ml-2">
     <div class="row mb-2">
       <div class="col-12 text-center">
         <a href="#">

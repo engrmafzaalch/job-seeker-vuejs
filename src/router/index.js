@@ -139,7 +139,7 @@ let router = new Router({
       }
     },
     {
-      path: '/Education_in_MyAccount',
+      path: '/Education_MyAccount',
       name: 'Education_in_MyAccount',
       component: Education_in_MyAccount,
       meta: {
@@ -196,14 +196,6 @@ let router = new Router({
     },
     {
       path: '/jobdetail',
-      name: 'JobDetail',
-      component: JobDetail,
-      meta: {
-        requiresAuth: true
-      }
-    },
-    {
-      path: '/jobdetail-2',
       name: 'JobDetail_2',
       component: JobDetail_2,
       meta: {

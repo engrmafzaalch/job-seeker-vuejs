@@ -4,31 +4,33 @@
     <a-form-item>
   <div class="row mt-5">
     <div class="col-12">
-      <h4>Select Key Skills</h4>
+      <h4 class="ml-2">Select Key Skills</h4>
     </div>
   </div>
   <div class="row mt-2">
-    <div class="col-md-6">
+    <div class="col-sm-6">
       <a-select
         v-decorator="[`Skill`,]"
-                mode="tags" style="width: 100%" placeholder="Type in to search or add new" @change="handleChange">
+                mode="tags" class="ml-2" style="width: 100%" placeholder="Type in to search or add new" @change="handleChange">
         <a-select-option v-for="Skill in skillSet" v-bind:key="Skill.skillSetName">
           {{Skill.skillSetName}}
         </a-select-option>
       </a-select>
     </div>
   </div>
-      <div class="btn btn-light">
+      <div class="row btn btn-light ml-2 mt-2">
+        <div class="col-12">
         <span v-for="skill in listSkill">
-          <button class="alert-dismissible  m-1">
+          <button class="mr-1">
             {{skill}} &times;
           </button>
         </span>
+        </div>
       </div>
     </a-form-item>
   <hr>
   <div class="row float-right buttonss">
-    <div class="col-sm-12">
+    <div class="col-12">
       <button class="btn btn-light px-5" @click="changed(5)">Go Back</button>
       <button type="primary"
               html-type="submit"

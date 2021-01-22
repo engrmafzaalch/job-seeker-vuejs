@@ -1,5 +1,5 @@
 <template>
-  <div class="container justify-content-center vh-100">
+  <div class="container justify-content-center">
     <a-button type="primary" @click="showModal" class="button_ my-5 px-5">
       Apply
     </a-button>

@@ -7,24 +7,15 @@
     <a-form :form="form" @submit="handleSubmit">
       <a-form-item>
       <div class="form-group row">
-        <div class="col-12 col-md-12 col-lg-12 ">
+        <div class="col-md-10 col-lg-12 col-sm-10 ml-1">
         <label for="profile-summery" class="profile">Profile Summery</label>
-        <a-textarea v-decorator="[
-                          `ProfileSummary`,
-                          {
-                            rules: [
-                              {
-                                whitespace: true,
-                                message: 'Please Enter your Profile Summary in this field.',
-                              },
-                            ],
-                          },
-                        ]"
+        <a-textarea v-decorator="[`ProfileSummary`,]"
                     class="form-control"
                     rows="6"
                     id="profile-summery"
                     name="text"
-                    placeholder="Enter Profile Summary here"></a-textarea>
+                    placeholder="Enter Profile Summary here">
+        </a-textarea>
         </div>
       </div>
       </a-form-item>

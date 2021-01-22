@@ -1,9 +1,9 @@
 <template>
-<div class="container-fluid vh-100">
+<div class="container-fluid">
   <div class="row py-3">
-    <div class="col-5">
+    <div class="col-sm-5">
       <div class="row pt-3 pl-3">
-        <div class="col-md-3 border border-light rounded mr-2 border_a">
+        <div class="col-md-3 border border-light rounded m-2 border_a">
           <div>
             <span class="font_c">25</span>
           </div>
@@ -11,7 +11,7 @@
             <span class="text-black-50 font_b">Applications</span>
           </div>
         </div>
-        <div class="col-md-3 border border-light rounded mr-2 border_a">
+        <div class="col-md-3 border border-light rounded m-2 border_a">
           <div>
             <span class="font_c">05</span>
           </div>
@@ -19,7 +19,7 @@
             <span class="text-black-50 font_b">Shortlisted</span>
           </div>
         </div>
-        <div class="col-md-4 border border-light rounded border_a">
+        <div class="col-md-4 border border-light rounded m-2 border_a">
           <div>
             <span class="font_c">15</span>
           </div>
@@ -30,36 +30,14 @@
       </div>
     </div>
   </div>
-  <div class="row pl-2">
-    <div class="col-md-4 font_c">
+  <div class="row">
+    <div class="col-4 font_c">
       <h3>My Applications</h3>
-    </div>
-    <div class="col-md-3 font_c">
-      <h3>Job Application Status</h3>
-    </div>
-    <div class="col-md-2 border border-light rounded border_a">
-      <div class="row">
-        <div class="col-md-2 mt-2">
-          <img src="./info.png" height="24" width="24">
-        </div>
-        <div class="col-md-10 font_a">
-          <div>
-            <span>Not getting views on your CV?</span>
-          </div>
-          <div>
-            <span>Keep your profile updated</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-2">
-      <button class="btn btn-primary">
-        Update Profile
-      </button>
     </div>
   </div>
   <div class="row pt-2 pl-3">
-    <div class="col-md-4 mt-3 card">
+
+    <div class="col-lg-4 mt-3 card">
       <div class="card-body">
         <div class="row">
           <div class="col-12">
@@ -173,7 +151,28 @@
     </div>
 <!--    <div class="col-1">-->
 <!--    </div>-->
-    <div class="col-md-6 ml-3">
+    <div class="col-md-7 ml-2 mt-lg-n5 mt-xl-n5 mt-sm-5">
+      <div class="row">
+      <div class="col-lg-5 font_c">
+        <h3>Job Application Status</h3>
+      </div>
+      <div class="col-10 col-md-4 border border-light rounded border_a">
+        <div class="row">
+          <div class="col-2 mt-1">
+            <img src="./info.png" height="24" width="24">
+          </div>
+          <div class="col-10 font_e">
+            <span>Not getting views on your CV?</span><br>
+            <span>Keep your profile updated</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 mt-sm-2 mt-xs-2">
+        <button class="btn btn-primary">
+          Update Profile
+        </button>
+      </div>
+      </div>
       <hr>
       <div class="row ">
         <div class="col-md-6">
@@ -184,8 +183,10 @@
             <span class="text-black-50 font_a">Google India Private Limited</span>
           </div>
         </div>
-        <div class="col-md-6">
-          <button type="button" class="btn border border-primary text-primary float-right">
+        <div class="col-3">
+        </div>
+        <div class="col-lg-3">
+          <button type="button" class="btn border border-primary text-primary">
             View Similar Jobs
           </button>
         </div>
@@ -242,7 +243,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-md-2 pr-2">
+        <div class="col-md-2 ml-2 mr-2">
           <div class="font_c">
             <span>150</span>
           </div>
@@ -250,7 +251,7 @@
             <span class="text-black-50">Total Applications</span>
           </div>
         </div>
-        <div class="col-md-2 pr-2">
+        <div class="col-md-3 ml-2 mr-2">
           <div class="font_c">
             <span>150</span>
           </div>
@@ -258,7 +259,7 @@
             <span class="text-black-50">Applications Viewed</span>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="col-md-3 ml-2 mr-2">
           <div class="font_c">
             <span>8</span>
           </div>
@@ -368,9 +369,13 @@ export default {
 }
 .font_c {
   font-size: 24px;
+  font-weight: bold;
 }
 .font_d {
   font-size: 18px;
   font-weight: bold;
+}
+.font_e {
+  font-size: 11px;
 }
 </style>

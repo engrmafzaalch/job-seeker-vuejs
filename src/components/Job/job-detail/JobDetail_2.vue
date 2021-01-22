@@ -13,7 +13,7 @@
             <div class="col-sm-2">
               <img class="ml-2" src="./google-icon.png" height="80" width="78"/>
             </div>
-            <div class="col-8 ml-4">
+            <div class="col-md-8 ml-4">
               <div class="row">
                 <div class="col-md-9">
                   <h2 class="one">Business Analyst</h2>
@@ -266,6 +266,34 @@
           </a-modal>
         </div>
       </div>
+
+<!--      <div>-->
+<!--        <div>-->
+<!--          <a-button type="primary" @click="showModal" class="button_ px-5">-->
+<!--            Success-->
+<!--          </a-button>-->
+<!--          <a-modal v-model="visible" @ok="handleOk" :footer="null">-->
+<!--            <div class="row my-2">-->
+<!--              <div class="col-12 text-center">-->
+<!--                <img src="./tick mark.png" height="64" width="65"/>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="row my-3">-->
+<!--              <div class="col-12 text-center">-->
+<!--                <p>You have successfully applied for <br>-->
+<!--                  "Business Analyst Position" at Google India Private Limited-->
+<!--                </p>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="row my-3">-->
+<!--              <div class="col-12 text-center">-->
+<!--                <button type="button" class="btn btn-primary px-5">Go to Your Applications</button>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </a-modal>-->
+<!--        </div>-->
+<!--      </div>-->
+
       <div class="row">
         <div class="col-12">
           <p>or apply via Email</p>

@@ -1,7 +1,7 @@
 <template>
-<div class="container vh-100">
-  <div class="row py-4">
-    <div class="col-12 card">
+<div class="container">
+  <div class="row">
+    <div class="col-12 card ml-3">
       <div class="card-body">
         <div class="row py-2">
           <div class="col-md-4">
@@ -43,11 +43,11 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-12 py-2">
+          <div class="col-lg-9 py-2">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Aenean euismod bibendum laoreet.
-              Proin gravida dolor sit amet lacus <br> accumsan et viverra justo commodo.
+              Proin gravida dolor sit amet lacus accumsan et viverra justo commodo.
               Proin sodales pulvinar sic tempor.
               Sociis natoque penatibus et magnis dis parturient.
             </p>
@@ -95,10 +95,10 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-12 py-2">
+          <div class="col-lg-9 py-2">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus <br>
+              Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus
               accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor.
               Sociis natoque penatibus et magnis dis parturient.
             </p>
@@ -117,7 +117,7 @@
 
 <script>
 export default {
-name: "Education_in_MyAccount"
+name: "Education_MyAccount"
 }
 </script>
 

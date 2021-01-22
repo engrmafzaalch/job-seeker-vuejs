@@ -1,6 +1,6 @@
 <template>
-<div class="container pt-5">
-  <div class="row mt-5">
+<div class="container">
+  <div class="row">
     <div class="col-12 card">
       <div class="card-body">
         <div class="row pt-3">
@@ -9,7 +9,7 @@
           </div>
         </div>
         <div class="row pt-4">
-          <div class="col-12">
+          <div class="col-lg-9">
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Nunc a fermentum odio. Curabitur vulputate tellus tellus,
@@ -26,35 +26,42 @@
               Nullam et auctor metus, in iaculis purus.
               Pellentesque habitant morbi tristique senectus et netus et
               malesuada fames ac turpis egestas.
-              Cras quis mauris id lacus ultricies rhoncus.
+              Cras quis mauris id lacus ultricies rhoncus. <a href="#">READ MORE</a>
             </p>
           </div>
         </div>
         <hr>
         <div class="row py-4">
-          <div class="col-sm-2">
+          <div class="col-md-2">
             <span class="text-black-50">N.Y.S.C Number</span>
           </div>
-          <div class="col-sm-10">
-            <span class="ny ml-2">A00 - 4672468</span>
+          <div class="col-md-10">
+            <span class="ny">A00 - 4672468</span>
           </div>
         </div>
         <hr>
         <div class="row py-4">
-          <div class="col-sm-2">
+          <div class="col-md-2">
             <span class="text-black-50">Date of Birth</span>
           </div>
-          <div class="col-sm-10">
+          <div class="col-md-10">
             <span class="ny">02 March 1990</span>
           </div>
         </div>
         <hr>
         <div class="row pt-4 pb-5 mb-5">
-          <div class="col-sm-2">
+          <div class="col-md-2">
             <span class="text-black-50">LinkedIn Profile</span>
           </div>
-          <div class="col-sm-10">
-            <a href="#" class="ml-2">https://www.linkedin.com/in/jane-doe 7a5a1019</a>
+          <div class="col-md-10">
+            <a href="#" class="">https://www.linkedin.com/in/jane-doe 7a5a1019</a>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <a-button type="primary" class="float-right">
+              Edit Details
+            </a-button>
           </div>
         </div>
       </div>

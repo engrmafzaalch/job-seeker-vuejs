@@ -2,39 +2,19 @@
   <div class="container">
     <div class="row justify-content-center mt-3">
       <div class="col-12">
-        <h4>Enter Personal Information</h4>
+        <h4 class="ml-1">Enter Personal Information</h4>
       </div>
     </div>
     <a-form :form="form" @submit="handleSubmit">
       <a-form-item>
-      <div class="form-group">
+      <div class="form-group ml-1">
         <div class="row my-4">
-          <div class="col-6">
-            <a-input v-decorator="[
-                          `Name`,
-                          {
-                            rules: [
-                              {
-                                whitespace: true,
-                                message: 'Please input Name in this field.',
-                              },
-                            ],
-                          },
-                        ]"
+          <div class="col-sm-6">
+            <a-input v-decorator="[`Name`,]"
                      type="text" class="form-control" id="name" placeholder="Name"></a-input>
           </div>
-          <div class="col-6">
-            <select v-decorator="[
-                          `EmailAddress`,
-                          {
-                            rules: [
-                              {
-                                whitespace: true,
-                                message: 'Please input Email Address in this field.',
-                              },
-                            ],
-                          },
-                        ]"
+          <div class="col-sm-6">
+            <select v-decorator="[`EmailAddress`,]"
                     type="text" class="form-control" id="email_address">
               <option value="" disabled selected hidden>Email Address</option>
               <option value="sikandarcapital@gmail.com">sikandarcapital@gmail.com</option>
@@ -42,35 +22,15 @@
           </div>
         </div>
         <div class="row my-4">
-          <div class="col-6">
-            <select v-decorator="[
-                          `City`,
-                          {
-                            rules: [
-                              {
-                                whitespace: true,
-                                message: 'Please input City this field.',
-                              },
-                            ],
-                          },
-                        ]"
+          <div class="col-sm-6">
+            <select v-decorator="[`City`,]"
                     type="text" class="form-control" id="city">
               <option value="" disabled selected hidden>City</option>
               <option value="Lahore">Lahore</option>
             </select>
           </div>
-          <div class="col-6">
-            <select v-decorator="[
-                          `Country`,
-                          {
-                            rules: [
-                              {
-                                whitespace: true,
-                                message: 'Please input Country this field.',
-                              },
-                            ],
-                          },
-                        ]"
+          <div class="col-sm-6">
+            <select v-decorator="[`Country`,]"
                     type="text" class="form-control" id="country">
               <option value="" disabled selected hidden>Country</option>
               <option v-for="country in countries" >{{country.countryName}}</option>
@@ -78,32 +38,12 @@
           </div>
         </div>
         <div class="row my-4">
-          <div class="col-6">
-            <a-input v-decorator="[
-                          `MobileNumber`,
-                          {
-                            rules: [
-                              {
-                                whitespace: true,
-                                message: 'Please input Mobile Number this field.',
-                              },
-                            ],
-                          },
-                        ]"
+          <div class="col-sm-6">
+            <a-input v-decorator="[`MobileNumber`,]"
                      type="text" class="form-control" id="mobile_number" placeholder="Mobile Number"></a-input>
           </div>
-          <div class="col-6">
-            <a-input v-decorator="[
-                          `LinkedIn`,
-                          {
-                            rules: [
-                              {
-                                whitespace: true,
-                                message: 'Please input LinkedIN Profile this field.',
-                              },
-                            ],
-                          },
-                        ]"
+          <div class="col-sm-6">
+            <a-input v-decorator="[`LinkedIn`,]"
                      type="text" class="form-control" id="linked_in" placeholder="Linked-In Profile URL"></a-input>
           </div>
         </div>
@@ -113,52 +53,22 @@
           </div>
         </div>
         <div class="row my-2">
-          <div class="col-4">
-            <select v-decorator="[
-                          `Day`,
-                          {
-                            rules: [
-                              {
-                                whitespace: true,
-                                message: 'Please select Day in this field.',
-                              },
-                            ],
-                          },
-                        ]"
+          <div class="col-sm-4">
+            <select v-decorator="[`Day`,]"
                     class="form-control" id="day">
               <option value="" disabled selected hidden>Day</option>
               <option value="1">1</option>
             </select>
           </div>
-          <div class="col-4">
-            <select v-decorator="[
-                          `Month`,
-                          {
-                            rules: [
-                              {
-                                whitespace: true,
-                                message: 'Please input email this field.',
-                              },
-                            ],
-                          },
-                        ]"
+          <div class="col-sm-4">
+            <select v-decorator="[`Month`,]"
                     class="form-control" id="month">
               <option value="" disabled selected hidden>Month</option>
               <option value="January">January</option>
             </select>
           </div>
-          <div class="col-4">
-            <select v-decorator="[
-                          `Year`,
-                          {
-                            rules: [
-                              {
-                                whitespace: true,
-                                message: 'Please input email this field.',
-                              },
-                            ],
-                          },
-                        ]"
+          <div class="col-sm-4">
+            <select v-decorator="[`Year`,]"
                     type="text" class="form-control" id="year">
               <option value="" disabled selected hidden>Year</option>
               <option value="2021">2021</option>
@@ -190,13 +100,13 @@
       </a-form-item>
 
     <hr>
-    <div class="row float-right">
+    <div class="row float-right ml-1">
       <div class="col-12">
         <a-button class="btn btn-light mr-3 px-5" @click="changed(6)">Go Back</a-button>
         <a-button
           type="primary"
           html-type="submit"
-          class="login-button-style btn btn-primary px-5"
+          class="login-button-style btn btn-primary px-5 mt-2"
           :disabled="hasErrors(form.getFieldsError())">
           Complete Profile
         </a-button>
