@@ -49,7 +49,7 @@
           </div>
         </div>
         <hr>
-        <div class="row pt-4 pb-5 mb-5">
+        <div class="row pt-4 mb-5">
           <div class="col-md-2">
             <span class="text-black-50">LinkedIn Profile</span>
           </div>
@@ -59,9 +59,9 @@
         </div>
         <div class="row">
           <div class="col-12">
-            <a-button type="primary" class="float-right">
+            <button type="button" class="btn btn-primary float-right px-5">
               Edit Details
-            </a-button>
+            </button>
           </div>
         </div>
       </div>
@@ -77,6 +77,11 @@ name: "ProfileSummery"
 </script>
 
 <style scoped>
+@media screen and (max-width: 350px){
+button {
+  width: 100%;
+}
+}
 .about {
   font-size: 14px;
 }

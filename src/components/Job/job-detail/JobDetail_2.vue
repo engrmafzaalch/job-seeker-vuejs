@@ -157,11 +157,11 @@
             </div>
           </div>
           <div class="row">
-              <span class="border border-light rounded bg-light px-2 mx-2">C</span>
-              <span class="border border-light rounded bg-light px-2 mx-2">C++</span>
-              <span class="border border-light rounded bg-light px-2 mx-2">JAVA</span>
-              <span class="border border-light rounded bg-light px-2 mx-2">SQL</span>
-              <span class="border border-light rounded bg-light px-2 mx-2">Windows Server - 2008</span>
+            <div class="border_ text-center m-1">C</div>
+            <div class="border_ text-center m-1">C++</div>
+            <div class="border_ text-center m-1">JAVA</div>
+            <div class="border_ text-center m-1">SQL</div>
+            <div class="border_ text-center m-1">Windows Server-2008</div>
           </div>
 
           <hr>
@@ -318,8 +318,7 @@
           <p class="description float-left" style="font-weight: bold">Jobs You Might Be Interested In</p>
         </div>
       </div>
-      <div class="row">
-        <div class="col-12 card position-relative">
+        <div class="card position-relative">
           <div class="card-body">
             <div class="position-absolute new_feature_box">
               New
@@ -348,10 +347,8 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="row mt-3">
-        <div class="col-12 card">
+        <div class="card mt-2">
           <div class="card-body">
             <div class="row">
               <div class="col-12">
@@ -377,10 +374,8 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="row mt-3">
-        <div class="col-12 card">
+        <div class="card mt-2">
           <div class="card-body">
             <div class="row">
               <div class="col-12">
@@ -406,10 +401,8 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="row mt-3">
-        <div class="col-12 card">
+        <div class="card mt-2">
           <div class="card-body">
             <div class="row">
               <div class="col-12">
@@ -435,10 +428,8 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="row mt-3">
-        <div class="col-12 card">
+        <div class="card mt-2">
           <div class="card-body">
             <div class="row">
               <div class="col-12">
@@ -464,10 +455,8 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="row mt-3">
-        <div class="col-12 card">
+        <div class="card mt-2">
           <div class="card-body">
             <div class="row">
               <div class="col-12">
@@ -493,10 +482,8 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="row mt-3">
-        <div class="col-12 card">
+        <div class="card mt-2">
           <div class="card-body">
             <div class="row">
               <div class="col-12">
@@ -522,10 +509,8 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="row mt-3">
-        <div class="col-12 card">
+        <div class="card mt-2">
           <div class="card-body">
             <div class="row">
               <div class="col-12">
@@ -551,10 +536,8 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="row mt-3">
-        <div class="col-12 card">
+        <div class="card mt-2">
           <div class="card-body">
             <div class="row">
               <div class="col-12">
@@ -580,7 +563,6 @@
             </div>
           </div>
         </div>
-      </div>
 
     </div>
   </div>
@@ -611,6 +593,7 @@ export default {
 <style scoped>
 .container {
   font-family: "Open Sans";
+  padding-bottom: 50px;
 }
 .business_analyst_job {
   font-size: 14px;
@@ -673,6 +656,11 @@ export default {
   background: #ff4c68;
   border-radius: 2px;
   color: #FAFAFA;
+}
+.border_ {
+  border-radius: 24px;
+  background-color: #FAFAFC;
+  padding: 10px;
 }
 /*.color_new_feature_job_text {*/
 /*  font-family: Open Sans;*/

@@ -104,9 +104,9 @@
             </p>
           </div>
         </div>
-        <div class="row float-right py-3">
+        <div class="row">
           <div class="col-12">
-            <button class="btn btn-primary px-5">Edit Details</button>
+            <button type="button" class="btn btn-primary px-5 float-right">Edit Details</button>
           </div>
         </div>
       </div>
@@ -122,6 +122,11 @@ name: "Education_MyAccount"
 </script>
 
 <style scoped>
+@media screen and (max-width: 350px){
+  button {
+    width: 100%;
+  }
+}
 .font_b {
   font-weight: bold;
   font-size: 16px;

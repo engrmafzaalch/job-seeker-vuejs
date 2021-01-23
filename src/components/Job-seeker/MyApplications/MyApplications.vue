@@ -2,7 +2,7 @@
 <div class="container-fluid">
   <div class="row py-3">
     <div class="col-sm-5">
-      <div class="row pt-3 pl-3">
+      <div class="row pt-3">
         <div class="col-md-3 border border-light rounded m-2 border_a">
           <div>
             <span class="font_c">25</span>
@@ -35,10 +35,10 @@
       <h3>My Applications</h3>
     </div>
   </div>
-  <div class="row pt-2 pl-3">
+  <div class="row pt-2">
 
-    <div class="col-lg-4 mt-3 card">
-      <div class="card-body">
+    <div class="col-lg-4 mt-3">
+      <div class="card card-body">
         <div class="row">
           <div class="col-12">
             <div>
@@ -54,8 +54,8 @@
             <img src="./map-pin.png" height="20" width="22"/>
             <span class="text-black-50 font_a">Ibadan & Oyo State</span>
           </div>
-          <div class="col-md-5 border border-light rounded">
-            <span class="text-primary font_b">Recruiter last online 24 mins ago</span>
+          <div class="col-md-5">
+            <span class="text-primary border border-light rounded font_b pb-1 recruiter_last_online">Recruiter last online 24 mins ago</span>
           </div>
         </div>
 
@@ -76,8 +76,8 @@
             <img src="./map-pin.png" height="20" width="22"/>
             <span class="text-black-50 font_a">Ibadan & Oyo State</span>
           </div>
-          <div class="col-md-5 border border-light rounded">
-            <span class="text-primary font_b">Recruiter last online 24 mins ago</span>
+          <div class="col-md-5">
+            <span class="text-primary border border-light rounded font_b pb-1 recruiter_last_online">Recruiter last online 24 mins ago</span>
           </div>
         </div>
 
@@ -98,8 +98,8 @@
             <img src="./map-pin.png" height="20" width="22"/>
             <span class="text-black-50 font_a">Ibadan & Oyo State</span>
           </div>
-          <div class="col-md-5 border border-light rounded">
-            <span class="text-primary font_b">Recruiter last online 24 mins ago</span>
+          <div class="col-md-5">
+            <span class="text-primary border border-light rounded font_b pb-1 recruiter_last_online">Recruiter last online 24 mins ago</span>
           </div>
         </div>
 
@@ -120,8 +120,8 @@
             <img src="./map-pin.png" height="20" width="22"/>
             <span class="text-black-50 font_a">Ibadan & Oyo State</span>
           </div>
-          <div class="col-md-5 border border-light rounded">
-            <span class="text-primary font_b">Recruiter last online 24 mins ago</span>
+          <div class="col-md-5">
+            <span class="text-primary border border-light rounded font_b pb-1 recruiter_last_online">Recruiter last online 24 mins ago</span>
           </div>
         </div>
 
@@ -142,8 +142,8 @@
             <img src="./map-pin.png" height="20" width="22"/>
             <span class="text-black-50 font_a">Ibadan & Oyo State</span>
           </div>
-          <div class="col-md-5 border border-light rounded">
-            <span class="text-primary font_b">Recruiter last online 24 mins ago</span>
+          <div class="col-md-5">
+            <span class="text-primary border border-light rounded font_b pb-1 recruiter_last_online">Recruiter last online 24 mins ago</span>
           </div>
         </div>
 
@@ -151,27 +151,30 @@
     </div>
 <!--    <div class="col-1">-->
 <!--    </div>-->
-    <div class="col-md-7 ml-2 mt-lg-n5 mt-xl-n5 mt-sm-5">
+    <div class="col-lg-7">
+      <div class="ml-xl-2 mt-lg-n5 mt-xl-n5 mt-sm-5">
       <div class="row">
-      <div class="col-lg-5 font_c">
-        <h3>Job Application Status</h3>
-      </div>
-      <div class="col-10 col-md-4 border border-light rounded border_a">
-        <div class="row">
-          <div class="col-2 mt-1">
-            <img src="./info.png" height="24" width="24">
-          </div>
-          <div class="col-10 font_e">
-            <span>Not getting views on your CV?</span><br>
-            <span>Keep your profile updated</span>
+        <div class="col-lg-5 font_c">
+          <h3>Job Application Status</h3>
+        </div>
+        <div class="col-lg-4">
+          <div class="border border-light rounded border_a pl-4 pt-1 pb-2 pr-md-0">
+            <div class="row">
+              <div class="mt-1">
+                <img src="./info.png" height="24" width="24">
+              </div>
+              <div class="font_e ml-2">
+                <span>Not getting views on your CV?</span><br>
+                <span>Keep your profile updated</span>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-lg-3 mt-sm-2 mt-xs-2">
-        <button class="btn btn-primary">
-          Update Profile
-        </button>
-      </div>
+        <div class="col-lg-3">
+          <button class="btn btn-primary button_">
+            Update Profile
+          </button>
+        </div>
       </div>
       <hr>
       <div class="row ">
@@ -186,18 +189,18 @@
         <div class="col-3">
         </div>
         <div class="col-lg-3">
-          <button type="button" class="btn border border-primary text-primary">
+          <button type="button" class="btn border border-primary text-primary button_">
             View Similar Jobs
           </button>
         </div>
       </div>
       <div class="row py-4">
-        <div class="col-md-9">
+        <div class="col-lg-8">
           <img src="./map-pin.png" height="20" width="22"/>
           <span class="text-black-50 font_a">Ibadan & Oyo State</span>
         </div>
-        <div class="col-md-3 border border-light rounded">
-          <span class="text-primary font_b">Recruiter last online 24 mins ago</span>
+        <div class="col-lg-4">
+          <span class="text-primary border border-light rounded font_b pb-1 recruiter_last_online">Recruiter last online 24 mins ago</span>
         </div>
       </div>
       <hr>
@@ -268,6 +271,7 @@
           </div>
         </div>
       </div>
+      </div>
     </div>
   </div>
 </div>
@@ -294,6 +298,9 @@ export default {
 /*  font-family: 'Roboto', sans-serif;*/
 /*  margin-top: 20%;*/
 /*}*/
+.container-fluid {
+  padding-bottom: 50px;
+}
 
 .progressbar {
   counter-reset: step;
@@ -377,5 +384,16 @@ export default {
 }
 .font_e {
   font-size: 11px;
+}
+.recruiter_last_online {
+  background-color:  #FAFDFF;
+}
+@media screen and (max-width: 992px){
+h3 {
+margin-top: 30px;
+}
+  .button_ {
+    margin-top: 20px;
+  }
 }
 </style>

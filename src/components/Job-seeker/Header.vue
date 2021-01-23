@@ -97,8 +97,9 @@ export default {
 .header {
   display: flex;
   align-items: center;
-  overflow: hidden;
-  background-color: "#FAFAFA";
+  /*overflow: hidden;*/
+  z-index: 1;
+  background-color: #FAFAFA;
   padding: 10px 10px;
 }
 .background-header {
@@ -156,7 +157,7 @@ export default {
     float: none;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 900px) {
+@media only screen and (min-width: 320px) and (max-width: 990px) {
   .navbar-nav {
   background-color:white;
   color:black;

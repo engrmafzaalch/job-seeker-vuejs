@@ -8,12 +8,12 @@
     </div>
       <a-form-item>
       <div class="form-group ml-2">
-        <div class="row my-2">
+        <div class="row">
           <div class="col-sm-6">
             <input v-decorator="[`ProjectTitle`,]"
                    type="text" class="form-control" id="project_title" placeholder="Project Title">
           </div>
-          <div class="col-sm-6">
+          <div class="col-sm-6 py-2 py-sm-0">
             <select v-decorator="[`EmployerName`,]"
                     type="text" class="form-control" id="employer_name">
               <option value="" disabled selected hidden>Employer Name</option>
@@ -21,15 +21,15 @@
             </select>
           </div>
         </div>
-        <div class="row my-2">
-          <div class="col-sm-6">
+        <div class="row mt-n2 mt-sm-1">
+          <div class="col-sm-6 mt-2">
             <select v-decorator="[`ClientName`,]"
                     type="text" class="form-control" id="client_name">
               <option value="" disabled selected hidden>Client Name</option>
               <option value="Usha">Usha</option>
             </select>
           </div>
-          <div class="col-sm-6">
+          <div class="col-sm-6 mt-2">
             <select v-decorator="[`ProjectStatus`,]"
                     type="text" class="form-control" id="project_status">
               <option value="" disabled selected hidden>Project Status</option>
@@ -37,8 +37,8 @@
             </select>
           </div>
         </div>
-        <div class="row my-2">
-          <div class="col-sm-6">
+        <div class="row date">
+          <div class="col-sm-6 mt-1 mt-sm-0">
             <a-date-picker v-decorator="[`EndDate`,]"
                            class="w-100" @change="onChange" placeholder="End Date"/>
           </div>
@@ -47,8 +47,8 @@
                            class="w-100" @change="onChange" placeholder="Start Date"/>
           </div>
         </div>
-        <div class="row my-2">
-          <div class="col-md-6">
+        <div class="row Education">
+          <div class="col-md-6 my-1">
             <a-textarea v-decorator="[`EducationDetail`,]"
                         class="form-control"
                         name="text"
@@ -69,10 +69,10 @@
     <hr>
     <div class="row float-right">
       <div class="col-12">
-        <a-button class="btn btn-light mr-3 px-5" @click="changed(3)">Go Back</a-button>
+        <a-button class="btn btn-light px-4" @click="changed(3)">Go Back</a-button>
         <a-button type="primary"
                   html-type="submit"
-                  class="login-button-style btn btn-primary px-5"
+                  class="login-button-style btn btn-primary px-4"
                   :disabled="hasErrors(form.getFieldsError())">Proceed</a-button>
       </div>
     </div>
@@ -124,5 +124,12 @@ export default {
 </script>
 
 <style scoped>
-
+@media screen and (min-width: 572px){
+.date {
+  margin-top: 10px;
+}
+  .Education {
+    margin-top: 5px;
+  }
+}
 </style>

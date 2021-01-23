@@ -2,7 +2,7 @@
 <div class="container">
   <a-form :form="form" @submit="handleSubmit">
     <a-form-item>
-  <div class="row mt-5">
+  <div class="row">
     <div class="col-12">
       <h4 class="ml-2">Select Key Skills</h4>
     </div>
@@ -29,12 +29,12 @@
       </div>
     </a-form-item>
   <hr>
-  <div class="row float-right buttonss">
+  <div class="row float-right">
     <div class="col-12">
-      <button class="btn btn-light px-5" @click="changed(5)">Go Back</button>
+      <button class="btn btn-light px-4" @click="changed(5)">Go Back</button>
       <button type="primary"
               html-type="submit"
-              class="login-button-style btn btn-primary px-5"
+              class="btn btn-primary px-4"
               :disabled="hasErrors(form.getFieldsError())">Proceed</button>
     </div>
   </div>

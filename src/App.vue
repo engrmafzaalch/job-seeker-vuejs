@@ -22,6 +22,7 @@ export default {
 </script>
 
 <style>
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans&display=swap);
 #app {
   font-family: "Open Sans";
   -webkit-font-smoothing: antialiased;

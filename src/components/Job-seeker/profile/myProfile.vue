@@ -1,14 +1,14 @@
 <template>
   <div class="container">
-    <div class="row justify-content-center mt-3">
+    <div class="row justify-content-center">
       <div class="col-12">
-        <h4 class="ml-1">Enter Personal Information</h4>
+        <h4>Enter Personal Information</h4>
       </div>
     </div>
     <a-form :form="form" @submit="handleSubmit">
       <a-form-item>
-      <div class="form-group ml-1">
-        <div class="row my-4">
+      <div class="form-group">
+        <div class="row">
           <div class="col-sm-6">
             <a-input v-decorator="[`Name`,]"
                      type="text" class="form-control" id="name" placeholder="Name"></a-input>
@@ -21,7 +21,7 @@
             </select>
           </div>
         </div>
-        <div class="row my-4">
+        <div class="row">
           <div class="col-sm-6">
             <select v-decorator="[`City`,]"
                     type="text" class="form-control" id="city">
@@ -37,7 +37,7 @@
             </select>
           </div>
         </div>
-        <div class="row my-4">
+        <div class="row">
           <div class="col-sm-6">
             <a-input v-decorator="[`MobileNumber`,]"
                      type="text" class="form-control" id="mobile_number" placeholder="Mobile Number"></a-input>
@@ -52,7 +52,7 @@
             <h6>Date of Birth</h6>
           </div>
         </div>
-        <div class="row my-2">
+        <div class="row">
           <div class="col-sm-4">
             <select v-decorator="[`Day`,]"
                     class="form-control" id="day">
@@ -75,7 +75,7 @@
             </select>
           </div>
         </div>
-        <div class="row py-2">
+        <div class="row">
           <div class="col-12">
             <h6>N. Y. S. C. Number</h6>
           </div>
@@ -100,13 +100,13 @@
       </a-form-item>
 
     <hr>
-    <div class="row float-right ml-1">
+    <div class="row float-right">
       <div class="col-12">
-        <a-button class="btn btn-light mr-3 px-5" @click="changed(6)">Go Back</a-button>
+        <a-button class="btn btn-light px-3" @click="changed(6)">Go Back</a-button>
         <a-button
           type="primary"
           html-type="submit"
-          class="login-button-style btn btn-primary px-5 mt-2"
+          class="btn btn-primary px-3"
           :disabled="hasErrors(form.getFieldsError())">
           Complete Profile
         </a-button>
@@ -170,5 +170,27 @@ export default {
 </script>
 
 <style scoped>
-
+@media screen{
+select {
+  margin-top: 5px;
+}
+  input {
+    margin-top: 5px;
+    height: 38px;
+  }
+h6 {
+  margin-top: 10px;
+}
+/*h4 {*/
+/*  margin-top: 10px;*/
+/*}*/
+}
+@media screen and (max-width: 260px){
+.btn-primary {
+  margin-top: 5px;
+}
+  button {
+    width: 100%;
+  }
+}
 </style>

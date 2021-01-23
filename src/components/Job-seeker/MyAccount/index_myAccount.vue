@@ -5,9 +5,9 @@
       <h2>My Account</h2>
     </div>
     <div class="col-sm-6">
-      <button type="button" class="btn btn-primary float-right">
+      <a-button type="primary" class="float-right">
         Update Profile
-      </button>
+      </a-button>
     </div>
   </div>
   <div class="row">
@@ -69,6 +69,16 @@ export default {
 </script>
 
 <style scoped>
+@media screen and (max-width: 300px){
+button {
+  width: 100%;
+}
+  h2 {
+    width: 100%;
+    font-size: 24px ;
+    text-align: center;
+  }
+}
 .name_head {
   font-weight: bold;
   font-size: 20px;

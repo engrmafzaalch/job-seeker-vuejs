@@ -30,10 +30,10 @@
   <hr>
   <div class="row float-right">
     <div class="col-12">
-      <button class="btn btn-light px-5" @click="changed(4)"">Go Back</button>
+      <button class="btn btn-light px-4" @click="changed(4)"">Go Back</button>
       <button type="primary"
               html-type="submit"
-              class="login-button-style btn btn-primary px-5"
+              class="login-button-style btn btn-primary px-4"
               :disabled="hasErrors(form.getFieldsError())">Proceed</button>
     </div>
   </div>

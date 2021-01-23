@@ -9,7 +9,7 @@
           </div>
         </div>
         <div class="row pb-2">
-          <div class="col-xl-4 border border-light rounded">
+          <div class="col-lg-4 border border-light rounded">
             <div class="row pt-2">
               <div class="col-1">
                 <a href="#">
@@ -46,7 +46,7 @@
           </div>
         </div>
         <div class="row pb-2">
-          <div class="col-xl-4 border border-light rounded">
+          <div class="col-lg-4 border border-light rounded">
             <div class="row pt-2">
               <div class="col-1">
                 <a href="#">
@@ -83,7 +83,7 @@
           </div>
         </div>
         <div class="row pb-2">
-          <div class="col-xl-4 border border-light rounded">
+          <div class="col-lg-4 border border-light rounded">
             <div class="row pt-2">
               <div class="col-1">
                 <a href="#">
@@ -114,11 +114,8 @@
 
         <hr class="py-2">
         <div class="row">
-          <div class="col-10">
-
-          </div>
-          <div class="col-lg-2">
-            <button class="btn btn-primary btn-block">
+          <div class="col-12">
+            <button class="btn btn-primary float-right px-5">
               Edit Details
             </button>
           </div>

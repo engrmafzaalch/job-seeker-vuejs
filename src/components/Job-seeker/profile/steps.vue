@@ -13,7 +13,6 @@
     </ul>
     </div>
   </div>
-    <div class="row">
     <div class="progression-content">
   <section v-if="$store.state.step == 1">
     <ProfileSummary/>
@@ -36,7 +35,6 @@
   <section v-if="$store.state.step == 7">
     <MyProfile/>
   </section>
-    </div>
     </div>
   </div>
 </template>
