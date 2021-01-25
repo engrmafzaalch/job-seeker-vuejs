@@ -4,24 +4,24 @@
     <a-form-item>
   <div class="row">
     <div class="col-12">
-      <h4 class="ml-2">Select Key Skills</h4>
+      <h4 class="">Select Key Skills</h4>
     </div>
   </div>
-  <div class="row mt-2">
-    <div class="col-sm-6">
+  <div class="row">
+    <div class="col-sm-7">
       <a-select
         v-decorator="[`Skill`,]"
-                mode="tags" class="ml-2" style="width: 100%" placeholder="Type in to search or add new" @change="handleChange">
+                mode="tags" class="py-3" style="width: 100%" placeholder="Type in to search or add new" @change="handleChange">
         <a-select-option v-for="Skill in skillSet" v-bind:key="Skill.skillSetName">
           {{Skill.skillSetName}}
         </a-select-option>
       </a-select>
     </div>
   </div>
-      <div class="row btn btn-light ml-2 mt-2">
+      <div class="row">
         <div class="col-12">
         <span v-for="skill in listSkill">
-          <button class="mr-1">
+          <button class="btn btn-light rounded mr-1">
             {{skill}} &times;
           </button>
         </span>
@@ -31,10 +31,10 @@
   <hr>
   <div class="row float-right">
     <div class="col-12">
-      <button class="btn btn-light px-4" @click="changed(5)">Go Back</button>
+      <button class="btn btn-light buttonss px-5" @click="changed(5)">Go Back</button>
       <button type="primary"
               html-type="submit"
-              class="btn btn-primary px-4"
+              class="btn btn-primary buttonss px-5"
               :disabled="hasErrors(form.getFieldsError())">Proceed</button>
     </div>
   </div>
@@ -132,5 +132,11 @@ h4 {
 }
 .btn__ {
   border-radius: 8px;
+}
+@media screen and (max-width: 351px){
+.buttonss {
+  width: 100%;
+  margin-bottom: 5px;
+}
 }
 </style>

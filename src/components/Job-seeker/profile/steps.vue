@@ -93,14 +93,14 @@ body {
 
   color: #0385F3;
   /*background: #2979FF;*/
-  font-family: 'Roboto', sans-serif;
+  font-family: Open Sans;
 }
 
 .progressbar {
   counter-reset: step;
   display: flex;
   min-width: -webkit-fill-available;
-  padding-top: 40px;
+  padding-top: 20px;
 }
 
 .progressbar li {
@@ -108,6 +108,7 @@ body {
   list-style: none;
   float: left;
   width:15%;
+
   text-align: center;
 }
 
@@ -159,5 +160,62 @@ body {
   /*   background:  #00E676; */
   /*   border-bottom: 1px dashed */
   /*border-color: #00E676;*/
+}
+@media screen and (max-width: 462px){
+  .progressbar li {
+    position: relative;
+    list-style: none;
+    float: left;
+    width:15%;
+  font-size: 10px;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 372px){
+  .progressbar li {
+    position: relative;
+    list-style: none;
+    float: left;
+    width:15%;
+    font-size: 9px;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 340px){
+  .progressbar li {
+    position: relative;
+    list-style: none;
+    float: left;
+    width:15%;
+    font-size: 8px;
+    text-align: center;
+  }
+  .progressbar li:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 30px;
+    height: 30px;
+    border: 1px solid ;
+    display: block;
+    text-align: center;
+    margin: 0 auto 10px auto;
+    border-radius: 50%;
+    background-color: white;
+
+    /* Center # in circle */
+    line-height: 28px;
+  }
+  .progressbar li:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 0px;
+    /*   background: orange ; */
+    top: 15px; /*half of height Parent (li) */
+    left: -50%;
+    z-index: -1;
+    border: 1px dashed;
+    border-color: grey;
+  }
 }
 </style>

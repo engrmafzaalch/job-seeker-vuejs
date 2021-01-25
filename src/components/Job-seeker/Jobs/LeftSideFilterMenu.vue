@@ -1,17 +1,17 @@
 <template>
-  <div class="background-left-side-menu">
+  <div class="container background-left-side-menu">
     <div
-      class="display-flex justify-content-space-between align-item-center pt-30"
-    >
-      <div><span class="filters-title-text">Filters</span></div>
-      <div>
+      class="row display-flex justify-content-space-between align-item-center pt-30">
+      <div class="col-lg-6">
+        <span class="filters-title-text">Filters</span>
+      </div>
+      <div class="col-lg-6">
         <span class="no-of-filters-apply-text">4 Filters applied</span>
       </div>
     </div>
     <div
       class="cursor-pointer pt-30 display-flex justify-content-space-between align-item-center"
-      v-on:click="toggleCategory()"
-    >
+      v-on:click="toggleCategory()">
       <div><span class="industry-title-text">Industry</span></div>
       <div>
         <span class="no-of-filters-apply-text"
@@ -308,9 +308,9 @@
       </div>
       <div class="text-align-initial">
         <a-checkbox
-          class="text-align-initial checkbox-color-featured-jobs mt-10"
-          >Only Featured Jobs</a-checkbox
-        >
+          class="text-align-initial checkbox-color-featured-jobs mt-10">
+          Only Featured Jobs
+        </a-checkbox>
       </div>
     </div>
   </div>
@@ -662,4 +662,9 @@ hr {
 .cursor-pointer {
   cursor: pointer;
 }
-</style> 
+/*@media screen and (max-width: 766px){*/
+/*.container {*/
+/*  width: 100%;*/
+/*}*/
+/*}*/
+</style>

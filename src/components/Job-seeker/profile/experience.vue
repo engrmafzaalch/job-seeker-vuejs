@@ -11,56 +11,56 @@
         <div class="row">
           <div class="col-sm-6">
             <a-input v-decorator="[`EmployerName`,]"
-                     type="text" class="form-control" id="employer" placeholder="Employer Name"></a-input>
+                     type="text" class="form-control my-2 py-3" id="employer" placeholder="Employer Name"></a-input>
           </div>
-          <div class="col-sm-6  py-1 py-sm-0">
+          <div class="col-sm-6">
             <select v-decorator="[`Job Title`,]"
-                    type="text" class="form-control" id="job_title">
+                    type="text" class="form-control my-2" id="job_title">
               <option value="" disabled selected hidden>Job Title</option>
             </select>
           </div>
         </div>
-        <div class="row pt-1 pt-sm-0">
-          <div class="col-sm-6 mt-2">
+        <div class="row">
+          <div class="col-sm-6">
             <select v-decorator="[`City`,]"
-                    type="text" class="form-control" id="city">
+                    type="text" class="form-control my-2" id="city">
               <option value="" disabled selected hidden>City</option>
             </select>
           </div>
-          <div class="col-sm-6 py-2 py-sm-0 mt-2">
+          <div class="col-sm-6">
             <select v-decorator="[`Country`,]"
-                    type="text" class="form-control" id="country">
+                    type="text" class="form-control my-2" id="country">
               <option value=""  disabled selected hidden>Country</option>
               <option v-for="country in countries" >{{country.countryName}}</option>
             </select>
           </div>
         </div>
         <div class="row py-1">
-          <div class="col-sm-6 mt-1">
+          <div class="col-sm-6">
             <select v-decorator="[`WorkType`,]"
-                    type="text" class="form-control" id="work_type">
+                    type="text" class="my-2 form-control" id="work_type">
               <option value="" disabled selected hidden>Work Type</option>
             </select>
           </div>
-          <div class="col-sm-6 py-1 py-sm-0 mt-1">
+          <div class="col-sm-6">
             <a-input v-decorator="[`Salary`,]"
-                     type="text" class="form-control py-3" id="salary" placeholder="Salary"></a-input>
+                     type="text" class="form-control py-3 my-2" id="salary" placeholder="Salary"></a-input>
           </div>
         </div>
         <div class="row">
           <div class="col-sm-6">
             <a-date-picker v-decorator="[`EndDate`,]"
-                           class="w-100" @change="onChange" placeholder="End Date"/>
+                           class="my-2 w-100" @change="onChange" placeholder="End Date"/>
           </div>
           <div class="col-sm-6">
             <a-date-picker v-decorator="[`StartDate`,]"
-                           class="w-100" @change="onChange" placeholder="Start Date"/>
+                           class="my-2 w-100" @change="onChange" placeholder="Start Date"/>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-6 py-2">
+          <div class="col-md-6">
             <a-textarea v-decorator="[`EducationDetails`,]"
-                        class="form-control"
+                        class="my-2 form-control"
                         name="text"
                         id="education_details"
                         cols="" rows="6"
@@ -69,9 +69,9 @@
         </div>
         <div class="row justify-content-center text-center my-3">
           <div class="col-12">
-            <a-button class="btn btn-light">
+            <button class="btn btn-light">
               Add More Education
-            </a-button>
+            </button>
           </div>
         </div>
       </div>
@@ -79,7 +79,7 @@
     <hr>
     <div class="row float-right">
       <div class="col-12">
-        <a-button class="btn btn-light px-4" @click="changed(2)">Go Back</a-button>
+        <a-button class="login-button-style btn btn-light px-4" @click="changed(2)">Go Back</a-button>
         <a-button type="primary"
                   html-type="submit"
                   class="login-button-style btn btn-primary px-4"
@@ -168,5 +168,10 @@ name: "experience",
 </script>
 
 <style scoped>
-
+@media screen and (max-width: 240px){
+.login-button-style{
+  width: 100%;
+  margin-bottom: 5px;
+}
+}
 </style>

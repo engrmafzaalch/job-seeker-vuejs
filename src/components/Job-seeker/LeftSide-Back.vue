@@ -1,17 +1,22 @@
 <template>
-  <div class="display-flex display-block-mobile">
+  <div class="container-fluid display-flex display-block-mobile">
     <div class="left-side-search-box">
       <div class="para">
-      <div class="title-font">
-        <span> Aenean euismod bibendum laoreet </span>
-      </div>
-      <div class="second-title">
-        <span>
-          Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus
-          accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor.
-        </span>
+      <div class="row">
+        <div class="col-12">
+        <span class="title-font"> Aenean euismod bibendum laoreet </span>
       </div>
       </div>
+        <div class="row">
+          <div class="col-12">
+            <span class="second-title">
+              Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus
+              accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor.
+            </span>
+          </div>
+      </div>
+      </div>
+      <div class="row">
       <div class="search-box-all mt-30">
         <div class="searchbox-child-main">
           <a-form layout="inline" :form="form" @submit="handleSubmit">
@@ -93,6 +98,7 @@
             <div>button</div> -->
         </div>
       </div>
+    </div>
       <div class="display-flex mt-40 tablet-mt flex-wrap align-item-center">
         <div class="display-flex flex-wrap ml-20 align-item-center">
           <div>

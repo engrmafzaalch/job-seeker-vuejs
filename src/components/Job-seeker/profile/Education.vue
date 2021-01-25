@@ -8,33 +8,33 @@
       </div>
       <a-form-item>
         <div class="form-group ml-1">
-          <div class="row my-2">
+          <div class="row">
             <div class="col-sm-6">
               <a-input v-decorator="[`Degree`,]"
-                       type="text" class="form-control" id="degree" placeholder="Degree/Certification">
+                       type="text" class="my-2 form-control" id="degree" placeholder="Degree/Certification">
               </a-input>
             </div>
             <div class="col-sm-6">
               <a-input v-decorator="[`College`,]"
-                       type="text" class="form-control" id="college" placeholder="College/University/Academy">
+                       type="text" class="my-2 form-control" id="college" placeholder="College/University/Academy">
               </a-input>
             </div>
           </div>
-          <div class="row my-2">
+          <div class="row">
             <div class="col-sm-6">
               <a-date-picker
                 v-decorator="[`EndDate`,]"
-                             class="w-100" @change="onChange" placeholder="End Date"/>
+                             class="my-2 w-100" @change="onChange" placeholder="End Date"/>
             </div>
             <div class="col-sm-6">
               <a-date-picker v-decorator="[`StartDate`,]"
-                             class="w-100" @change="onChange" placeholder="Start Date"/>
+                             class="my-2 w-100" @change="onChange" placeholder="Start Date"/>
             </div>
           </div>
-          <div class="row my-2">
+          <div class="row">
             <div class="col-md-6">
               <a-textarea v-decorator="[`EducationDetail`,]"
-                          class="form-control"
+                          class="form-control my-2"
                           name="text"
                           id="education_details"
                           cols=""
@@ -56,7 +56,7 @@
       <hr>
       <div class="row float-right">
         <div class="col-12">
-          <a-button class="btn btn-light px-4" @click="changed(1)">Go Back</a-button>
+          <a-button class="login-button-style btn btn-light px-4" @click="changed(1)">Go Back</a-button>
           <a-button type="primary"
                     html-type="submit"
                     class="login-button-style btn btn-primary px-4"
@@ -135,5 +135,10 @@ export default {
 </script>
 
 <style scoped>
-
+@media screen and (max-width: 242px) {
+  .login-button-style {
+    margin-bottom: 5px ;
+    width: 100%;
+  }
+}
 </style>

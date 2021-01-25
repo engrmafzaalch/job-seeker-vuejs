@@ -1,5 +1,5 @@
 <template>
-  <div class="box-main-jobs-feature mtb-25 position-relative">
+  <div class="container box-main-jobs-feature mtb-25 position-relative">
     <div v-if="isFeatured" class="position-absolute new-featured-box-main-jobs">
       <div><span class="color-new-featured-job-text">Featured</span></div>
     </div>

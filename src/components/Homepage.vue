@@ -31,21 +31,21 @@
         <div class="row">
           <div class="col-12">
         <recent-jobs />
-</div>
+          </div>
         </div>
          <div class="row">
           <div class="col-12">
-         <top-hiring-companies /> 
-</div>
+         <top-hiring-companies />
+          </div>
         </div>
-           <div class="row">
+        <div class="row">
           <div class="col-12">
-           <talent-opportunity /> 
-</div>
+           <talent-opportunity />
+          </div>
         </div>
-      
+
       </div>
-      <footer-card />
+<!--      <footer-card />-->
     </div>
   </div>
 </template>

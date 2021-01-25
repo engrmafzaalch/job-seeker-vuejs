@@ -1,5 +1,5 @@
     <template id="navBar">
-<div class="mb-5">
+<div class="">
     <nav class="navbar navbar-expand-lg navbar-light background-header header" ref="navbar">
          <a class="navbar-brand " href="#" >
             <img src="../../assets/Frame 1376 1.png" />

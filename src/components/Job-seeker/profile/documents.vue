@@ -1,39 +1,39 @@
 <template>
 <div class="container">
   <a-form :form="form" @submit="handleSubmit">
-  <div class="row mt-4">
+  <div class="row">
     <div class="col-12">
-      <h4 class="ml-2">Upload Documents</h4>
+      <h4 class="">Upload Documents</h4>
     </div>
   </div>
   <div v-decorator="[`File`,]"
-       class="jumbotron ml-2">
-    <div class="row mb-2">
+       class="jumbotron">
+    <div class="row">
       <div class="col-12 text-center">
         <a href="#">
           <img src="./upload.png" class="h-40 w-auto"/>
         </a>
       </div>
     </div>
-    <div class="row py-2">
+    <div class="row">
       <div class="col-12">
         <input type="file" multiple :name="DropYourFileshere" :disabled="isSaving" @change="filesChange($event.target.name, $event.target.files); fileCount = $event.target.files.length"
-          accept="image/*" class="input-file"/>
+          accept="/*" class="input-file py-2"/>
       </div>
     </div>
-    <div class="row py-2">
+    <div class="row">
       <div class="col-12 text-center">
-        <h6 class="support">SUPPORT: PDF, JPGS, DOCS</h6>
+        <h6 class="support py-2">SUPPORT: PDF, JPGS, DOCS</h6>
       </div>
     </div>
   </div>
   <hr>
   <div class="row float-right">
     <div class="col-12">
-      <button class="btn btn-light px-4" @click="changed(4)"">Go Back</button>
+      <button class="login-button-style btn btn-light px-5" @click="changed(4)"">Go Back</button>
       <button type="primary"
               html-type="submit"
-              class="login-button-style btn btn-primary px-4"
+              class="login-button-style btn btn-primary px-5"
               :disabled="hasErrors(form.getFieldsError())">Proceed</button>
     </div>
   </div>

@@ -3,54 +3,54 @@
     <a-form :form="form" @submit="handleSubmit">
     <div class="row justify-content-center mt-3">
       <div class="col-12">
-        <h4 class="pl-2">Enter Project Details</h4>
+        <h4 class="">Enter Project Details</h4>
       </div>
     </div>
       <a-form-item>
-      <div class="form-group ml-2">
+      <div class="form-group">
         <div class="row">
           <div class="col-sm-6">
             <input v-decorator="[`ProjectTitle`,]"
-                   type="text" class="form-control" id="project_title" placeholder="Project Title">
+                   type="text" class="my-2 form-control" id="project_title" placeholder="Project Title">
           </div>
-          <div class="col-sm-6 py-2 py-sm-0">
+          <div class="col-sm-6">
             <select v-decorator="[`EmployerName`,]"
-                    type="text" class="form-control" id="employer_name">
+                    type="text" class="my-2 form-control" id="employer_name">
               <option value="" disabled selected hidden>Employer Name</option>
               <option value="JS Labs">JS Labs</option>
             </select>
           </div>
         </div>
-        <div class="row mt-n2 mt-sm-1">
-          <div class="col-sm-6 mt-2">
+        <div class="row">
+          <div class="col-sm-6">
             <select v-decorator="[`ClientName`,]"
-                    type="text" class="form-control" id="client_name">
+                    type="text" class="my-2 form-control" id="client_name">
               <option value="" disabled selected hidden>Client Name</option>
               <option value="Usha">Usha</option>
             </select>
           </div>
-          <div class="col-sm-6 mt-2">
+          <div class="col-sm-6">
             <select v-decorator="[`ProjectStatus`,]"
-                    type="text" class="form-control" id="project_status">
+                    type="text" class="my-2 form-control" id="project_status">
               <option value="" disabled selected hidden>Project Status</option>
               <option value="On Going">On Going</option>
             </select>
           </div>
         </div>
         <div class="row date">
-          <div class="col-sm-6 mt-1 mt-sm-0">
+          <div class="col-sm-6">
             <a-date-picker v-decorator="[`EndDate`,]"
-                           class="w-100" @change="onChange" placeholder="End Date"/>
+                           class="my-2 w-100" @change="onChange" placeholder="End Date"/>
           </div>
           <div class="col-sm-6">
             <a-date-picker v-decorator="[`StartDate`,]"
-                           class="w-100" @change="onChange" placeholder="Start Date"/>
+                           class="my-2 w-100" @change="onChange" placeholder="Start Date"/>
           </div>
         </div>
         <div class="row Education">
-          <div class="col-md-6 my-1">
+          <div class="col-md-6">
             <a-textarea v-decorator="[`EducationDetail`,]"
-                        class="form-control"
+                        class="my-2 form-control"
                         name="text"
                         id="education_details"
                         cols="" rows="6"
@@ -69,10 +69,10 @@
     <hr>
     <div class="row float-right">
       <div class="col-12">
-        <a-button class="btn btn-light px-4" @click="changed(3)">Go Back</a-button>
+        <a-button class="login-button-style btn btn-light px-5" @click="changed(3)">Go Back</a-button>
         <a-button type="primary"
                   html-type="submit"
-                  class="login-button-style btn btn-primary px-4"
+                  class="login-button-style btn btn-primary px-5"
                   :disabled="hasErrors(form.getFieldsError())">Proceed</a-button>
       </div>
     </div>
@@ -130,6 +130,12 @@ export default {
 }
   .Education {
     margin-top: 5px;
+  }
+}
+@media screen and (max-width: 337px){
+  .login-button-style{
+    width: 100%;
+    margin-bottom: 5px;
   }
 }
 </style>

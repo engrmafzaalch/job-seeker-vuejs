@@ -17,7 +17,7 @@
             <select v-decorator="[`EmailAddress`,]"
                     type="text" class="form-control" id="email_address">
               <option value="" disabled selected hidden>Email Address</option>
-              <option value="sikandarcapital@gmail.com">sikandarcapital@gmail.com</option>
+              <option value="none">none</option>
             </select>
           </div>
         </div>
@@ -55,21 +55,21 @@
         <div class="row">
           <div class="col-sm-4">
             <select v-decorator="[`Day`,]"
-                    class="form-control" id="day">
+                    class="form-control one" id="day">
               <option value="" disabled selected hidden>Day</option>
               <option value="1">1</option>
             </select>
           </div>
           <div class="col-sm-4">
             <select v-decorator="[`Month`,]"
-                    class="form-control" id="month">
+                    class="form-control one two" id="month">
               <option value="" disabled selected hidden>Month</option>
               <option value="January">January</option>
             </select>
           </div>
           <div class="col-sm-4">
             <select v-decorator="[`Year`,]"
-                    type="text" class="form-control" id="year">
+                    type="text" class="form-control one two" id="year">
               <option value="" disabled selected hidden>Year</option>
               <option value="2021">2021</option>
             </select>
@@ -102,11 +102,11 @@
     <hr>
     <div class="row float-right">
       <div class="col-12">
-        <a-button class="btn btn-light px-3" @click="changed(6)">Go Back</a-button>
+        <a-button class="btn btn-light px-5" @click="changed(6)">Go Back</a-button>
         <a-button
           type="primary"
           html-type="submit"
-          class="btn btn-primary px-3"
+          class="btn btn-primary px-5"
           :disabled="hasErrors(form.getFieldsError())">
           Complete Profile
         </a-button>
@@ -170,12 +170,22 @@ export default {
 </script>
 
 <style scoped>
+.one {
+  padding-right: 0px;
+  padding-left: 15px;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.two {
+  padding-right: 15px;
+  padding-left: 10px;
+}
 @media screen{
 select {
-  margin-top: 5px;
+  margin: 10px 0px;
 }
   input {
-    margin-top: 5px;
+    margin: 10px 0px;
     height: 38px;
   }
 h6 {
@@ -185,7 +195,7 @@ h6 {
 /*  margin-top: 10px;*/
 /*}*/
 }
-@media screen and (max-width: 260px){
+@media screen and (max-width: 391px){
 .btn-primary {
   margin-top: 5px;
 }

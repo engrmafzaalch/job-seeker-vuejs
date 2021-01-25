@@ -1,5 +1,5 @@
 <template>
-  <div class="padding-main-jobs-section">
+  <div class="container padding-main-jobs-section">
     <div class="display-flex justify-content-space-between text-align-center">
       <div class="display-flex justify-content-space-between text-align-center">
         <div>
@@ -7,18 +7,18 @@
             >1-10 of 12,000 “Developer” Jobs</span
           >
         </div>
-        <div class="ml-15">
+        <div class="">
           <span class="modify-search-text">Modify Search</span>
         </div>
       </div>
       <div class="display-flex justify-content-space-between text-align-center">
-        <div><span class="sort-by-relevant">Sort by :Relevant</span></div>
-        <div class="ml-22">
+        <div><span class="sort-by-relevant">Sort by: Relevant</span></div>
+        <div class="">
           <img src="../../../assets/Vector (3).png" alt="" />
         </div>
       </div>
     </div>
-    <div class="mt-44">
+    <div class="">
       <middle-jobs-card :isFeatured="true" :image="`Rectangle 11 (9).png`" />
       <middle-jobs-card :isFeatured="true" :image="`Rectangle 11 (12).png`" />
       <middle-jobs-card :isFeatured="false" :image="`Rectangle 11 (13).png`" />
@@ -132,4 +132,9 @@ export default {
 .text-align-center {
   text-align: center;
 }
+/*@media screen and (max-width: 991px) and (min-width: 767px){*/
+/*.container {*/
+/*  width: 100%;*/
+/*}*/
+/*}*/
 </style>

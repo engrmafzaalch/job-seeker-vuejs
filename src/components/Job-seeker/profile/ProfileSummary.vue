@@ -81,4 +81,10 @@ name: "ProfileSummary",
 .profile {
   font-size: 18px;
 }
+label {
+  font-weight: bold;
+}
+.login-button-style {
+  font-size: 14px;
+}
 </style>
