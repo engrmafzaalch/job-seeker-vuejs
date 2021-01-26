@@ -70,6 +70,7 @@ export default {
         backgroundImage: `url(${require("@/assets/Header2x.jpg")})`,
         backgroundSize: "contain",
         height: "inherit",
+        width: "auto",
         backgroundRepeatY: "no-repeat",
       },
     };

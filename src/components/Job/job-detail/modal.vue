@@ -12,7 +12,7 @@
       <div class="row my-3">
         <div class="col-12 text-center">
           <p>You have successfully applied for <br>
-"Business Analyst Position" at Google India Private Limited
+            "Business Analyst Position" at Google India Private Limited
           </p>
         </div>
       </div>

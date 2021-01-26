@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid display-flex display-block-mobile">
     <div class="row">
-      <div class="col-md-8">
+      <div class="col-lg-8">
         <div class="left-side-search-box">
           <div class="para">
             <div class="row">
@@ -19,16 +19,15 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-12">
-            <div class="search-box-all mt-30">
+            <div class="">
+            <div class="search-box-all mt-3">
               <div class="searchbox-child-main">
                 <a-form layout="inline" :form="form" @submit="handleSubmit">
                   <div class="display-flex">
-                    <div>
+                    <div class="col-4">
                       <a-form-item
                         :validate-status="userNameError() ? 'error' : ''"
-                        :help="userNameError() || ''"
-                      >
+                        :help="userNameError() || ''" class="search-box">
                         <a-input
                           class="searchbox-style"
                           v-decorator="[
@@ -42,22 +41,19 @@
                             ],
                           },
                         ]"
-                          placeholder="Job title or keywords"
-                        >
+                          placeholder="Job title or keywords">
                           <a-icon
                             slot="prefix"
                             type="search"
-                            style="color: rgba(0, 0, 0, 0.25)"
-                          />
+                            style="color: rgba(0, 0, 0, 0.25)"/>
                         </a-input>
                       </a-form-item>
                     </div>
 
-                    <div>
+                    <div class="col-3">
                       <a-form-item
                         :validate-status="userNameError() ? 'error' : ''"
-                        :help="userNameError() || ''"
-                      >
+                        :help="userNameError() || ''" class="search-box">
                         <a-select
                           class="dropdwon-fonts"
                           default-value="Job Category"
@@ -68,11 +64,10 @@
                         </a-select>
                       </a-form-item>
                     </div>
-                    <div>
+                    <div class="col-3">
                       <a-form-item
                         :validate-status="userNameError() ? 'error' : ''"
-                        :help="userNameError() || ''"
-                      >
+                        :help="userNameError() || ''" class="search-box">
                         <a-select
                           class="dropdwon-fonts"
                           default-value="Location"
@@ -83,16 +78,17 @@
                         </a-select>
                       </a-form-item>
                     </div>
-                    <a-form-item>
-                      <a-button
-                        type="primary"
-                        html-type="submit"
-                        class="search-button-style"
-                        :disabled="hasErrors(form.getFieldsError())"
-                      >
-                        Search
-                      </a-button>
-                    </a-form-item>
+                    <div class="col-2">
+                      <a-form-item>
+                        <a-button
+                          type="primary"
+                          html-type="submit"
+                          class="search-button-style search-box"
+                          :disabled="hasErrors(form.getFieldsError())">
+                          Search
+                        </a-button>
+                      </a-form-item>
+                    </div>
                   </div>
                 </a-form>
                 <!-- <div>input type 1</div>
@@ -105,28 +101,24 @@
         </div>
 
           <div class="row">
-          <div class="display-flex mt-40 tablet-mt flex-wrap align-item-center">
-            <div class="display-flex flex-wrap ml-20 align-item-center">
-              <div>
+          <div class="display-flex tablet-mt flex-wrap align-item-center mt-2">
+            <div class="display-flex flex-wrap align-item-center">
+              <div class="col-md-2">
                 <span class="past-searches-text">Past Searches</span>
               </div>
-              <div class="past-searches-result ml-10px mt-10">
-                <span
-                >Business analyst -
-                  <span class="result-in-green">(07 new)</span></span
-                >
+              <div class="col-lg-4 past-searches-result">
+                <span>Business analyst -
+                  <span class="result-in-green">(07 new)</span>
+                </span>
               </div>
-              <div class="past-searches-result ml-10px mt-10">
-                <span
-                >Product Manager -
-                  <span class="result-in-green">(07 new)</span></span
-                >
+              <div class="col-md-3 past-searches-result">
+                <span>Product Manager -
+                  <span class="result-in-green">(07 new)</span></span>
               </div>
-              <div class="past-searches-result ml-10px mt-10">
-                <span
-                >Sales executive -
-                  <span class="result-in-green">(07 new)</span></span
-                >
+              <div class="col-md-3 past-searches-result">
+                <span>Sales executive -
+                  <span class="result-in-green">(07 new)</span>
+                </span>
               </div>
             </div>
           </div>
@@ -249,8 +241,12 @@ export default {
   },
 };
 </script>
+
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+/*.container-fluid {*/
+/*  background-image: url("../../assets/Header2x.jpg");*/
+/*}*/
 .mt-40 {
   margin-top: 40px;
 }
@@ -296,6 +292,7 @@ export default {
   color: #ffffff;
   border: 0;
   width: 120px;
+  margin-right: 20px;
 }
 .dropdwon-fonts {
   font-family: SF UI Display;
@@ -478,250 +475,262 @@ hr {
   font-size: 16px;
   color: #0385f3;
 }
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-  input[type="range"] {
-    overflow: hidden;
-    width: 100%;
-    -webkit-appearance: none;
-    background-color: #f0f1f3;
-  }
 
-  input[type="range"]::-webkit-slider-runnable-track {
-    height: 6px;
-    -webkit-appearance: none;
-    color: #13bba4;
-    margin-top: -1px;
-  }
+.search-box {
+  margin-left: -10px;
 
-  input[type="range"]::-webkit-slider-thumb {
-    width: 10px;
-    -webkit-appearance: none;
-    height: 10px;
-    cursor: ew-resize;
-    /* background: #434343; */
-    box-shadow: -80px 0 0 80px #01e37e;
-  }
-}
-/** FF*/
-input[type="range"]::-moz-range-progress {
-  background-color: #01e37e;
-}
-input[type="range"]::-moz-range-track {
-  background-color: #f0f1f3;
-}
-/* IE*/
-input[type="range"]::-ms-fill-lower {
-  background-color: #01e37e;
-}
-input[type="range"]::-ms-fill-upper {
-  background-color: #f0f1f3;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 479px) {
-  .display-block-mobile{
-
-  }
+@media screen and (max-width: 768px){
   .profile-box {
-    width: 100%;
-    height: 390px;
-  }
-  .title-font {
-    font-size: 10px;
-  }
-  .second-title {
-    font-size: 10px;
-  }
-
-
-}
-
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-  .tablet-mt {
-    margin-top: 30px;
-  }
-  .searchbox-style {
-    width: 100px;
-  }
-  .search-button-style {
-    width: initial;
-    font-size: 11px;
-  }
-  .display-non-tablet {
-    display: none;
-  }
-  .title-font {
-    font-size: 25px;
-  }
-  .second-title {
-    font-size: 18px;
-  }
-  .profile-name {
-    font-size: 15px;
-  }
-  .profile-job-title {
-    font-size: 12px;
-  }
-  .update-profile-green-box {
-    height: 70px;
-    padding: 4px 0px;
-  }
-  .update-profile-font {
-    font-size: 12px;
-  }
-  .acitivy-response-font {
-    font-size: 10px;
-  }
-  .no-of-opening {
-    font-size: 12px;
-  }
-  .incase-getting-hired-font {
-    font-size: 12px;
-  }
-  .profile-completeness-ratio {
-    font-size: 12px;
-  }
-  .profile-completeness-text {
-    font-size: 12px;
-  }
-  .profile-box {
-    width: 280px;
-    height: 390px;
-  }
-  .left-side-search-box {
-    width: 100%;
-    padding: 30px 0px;
-    display: block;
-  }
-  .past-searches-result {
-    padding: 8px 15px;
-  }
-  .profile-box-parent {
-    margin-top: 25px;
+    border: solid grey;
+    border-radius: 8px;
   }
 }
+/*@media screen and (-webkit-min-device-pixel-ratio: 0) {*/
+/*  input[type="range"] {*/
+/*    overflow: hidden;*/
+/*    width: 100%;*/
+/*    -webkit-appearance: none;*/
+/*    background-color: #f0f1f3;*/
+/*  }*/
 
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .tablet-mt {
-    margin-top: 30px;
-  }
-  .searchbox-style {
-    width: 100px;
-  }
-  .search-button-style {
-    width: initial;
-    font-size: 11px;
-  }
-  .display-non-tablet {
-    display: none;
-  }
-  .title-font {
-    font-size: 25px;
-  }
-  .second-title {
-    font-size: 18px;
-  }
-  .profile-name {
-    font-size: 15px;
-  }
-  .profile-job-title {
-    font-size: 12px;
-  }
-  .update-profile-green-box {
-    height: 70px;
-    padding: 4px 0px;
-  }
-  .update-profile-font {
-    font-size: 12px;
-  }
-  .acitivy-response-font {
-    font-size: 10px;
-  }
-  .no-of-opening {
-    font-size: 12px;
-  }
-  .incase-getting-hired-font {
-    font-size: 12px;
-  }
-  .profile-completeness-ratio {
-    font-size: 12px;
-  }
-  .profile-completeness-text {
-    font-size: 12px;
-  }
-  .profile-box {
-    width: 280px;
-    height: 390px;
-  }
-  .left-side-search-box {
-    width: 100%;
-    padding: 30px 0px;
-    display: block;
-  }
-  .past-searches-result {
-    padding: 8px 15px;
-  }
-  .profile-box-parent {
-    margin-top: 25px;
-  }
-}
+/*  input[type="range"]::-webkit-slider-runnable-track {*/
+/*    height: 6px;*/
+/*    -webkit-appearance: none;*/
+/*    color: #13bba4;*/
+/*    margin-top: -1px;*/
+/*  }*/
 
-@media only screen and (min-width: 992px) and (max-width: 1025px) {
-  .searchbox-style {
-    width: 160px;
-  }
-  .tablet-mt {
-    margin-top: 20px;
-  }
-  .search-button-style {
-    width: initial;
-    font-size: 11px;
-  }
-  .left-side-search-box {
-    width: 80px;
-  }
-  .title-font {
-    font-size: 25px;
-  }
-  .second-title {
-    font-size: 18px;
-  }
-  .profile-name {
-    font-size: 15px;
-  }
-  .profile-job-title {
-    font-size: 12px;
-  }
-  .update-profile-green-box {
-    height: 70px;
-    padding: 4px 0px;
-  }
-  .update-profile-font {
-    font-size: 12px;
-  }
-  .acitivy-response-font {
-    font-size: 10px;
-  }
-  .no-of-opening {
-    font-size: 12px;
-  }
-  .incase-getting-hired-font {
-    font-size: 12px;
-  }
-  .profile-completeness-ratio {
-    font-size: 12px;
-  }
-  .profile-completeness-text {
-    font-size: 12px;
-  }
-  .profile-box {
-    width: 280px;
-    height: 390px;
-  }
-  .left-side-search-box {
-    width: 640px;
-  }
-  .profile-box-parent {
-    margin-top: 25px;
-  }
-}
+/*  input[type="range"]::-webkit-slider-thumb {*/
+/*    width: 10px;*/
+/*    -webkit-appearance: none;*/
+/*    height: 10px;*/
+/*    cursor: ew-resize;*/
+/*    !* background: #434343; *!*/
+/*    box-shadow: -80px 0 0 80px #01e37e;*/
+/*  }*/
+/*}*/
+/*!** FF*!*/
+/*input[type="range"]::-moz-range-progress {*/
+/*  background-color: #01e37e;*/
+/*}*/
+/*input[type="range"]::-moz-range-track {*/
+/*  background-color: #f0f1f3;*/
+/*}*/
+/*!* IE*!*/
+/*input[type="range"]::-ms-fill-lower {*/
+/*  background-color: #01e37e;*/
+/*}*/
+/*input[type="range"]::-ms-fill-upper {*/
+/*  background-color: #f0f1f3;*/
+/*}*/
+
+/*@media only screen and (min-width: 320px) and (max-width: 479px) {*/
+/*  .display-block-mobile{*/
+
+/*  }*/
+/*  .profile-box {*/
+/*    width: 100%;*/
+/*    height: 390px;*/
+/*  }*/
+/*  .title-font {*/
+/*    font-size: 10px;*/
+/*  }*/
+/*  .second-title {*/
+/*    font-size: 10px;*/
+/*  }*/
+
+
+/*}*/
+
+/*@media only screen and (min-width: 480px) and (max-width: 767px) {*/
+/*  .tablet-mt {*/
+/*    margin-top: 30px;*/
+/*  }*/
+/*  .searchbox-style {*/
+/*    width: 100px;*/
+/*  }*/
+/*  .search-button-style {*/
+/*    width: initial;*/
+/*    font-size: 11px;*/
+/*  }*/
+/*  .display-non-tablet {*/
+/*    display: none;*/
+/*  }*/
+/*  .title-font {*/
+/*    font-size: 25px;*/
+/*  }*/
+/*  .second-title {*/
+/*    font-size: 18px;*/
+/*  }*/
+/*  .profile-name {*/
+/*    font-size: 15px;*/
+/*  }*/
+/*  .profile-job-title {*/
+/*    font-size: 12px;*/
+/*  }*/
+/*  .update-profile-green-box {*/
+/*    height: 70px;*/
+/*    padding: 4px 0px;*/
+/*  }*/
+/*  .update-profile-font {*/
+/*    font-size: 12px;*/
+/*  }*/
+/*  .acitivy-response-font {*/
+/*    font-size: 10px;*/
+/*  }*/
+/*  .no-of-opening {*/
+/*    font-size: 12px;*/
+/*  }*/
+/*  .incase-getting-hired-font {*/
+/*    font-size: 12px;*/
+/*  }*/
+/*  .profile-completeness-ratio {*/
+/*    font-size: 12px;*/
+/*  }*/
+/*  .profile-completeness-text {*/
+/*    font-size: 12px;*/
+/*  }*/
+/*  .profile-box {*/
+/*    width: 280px;*/
+/*    height: 390px;*/
+/*  }*/
+/*  .left-side-search-box {*/
+/*    width: 100%;*/
+/*    padding: 30px 0px;*/
+/*    display: block;*/
+/*  }*/
+/*  .past-searches-result {*/
+/*    padding: 8px 15px;*/
+/*  }*/
+/*  .profile-box-parent {*/
+/*    margin-top: 25px;*/
+/*  }*/
+/*}*/
+
+/*@media only screen and (min-width: 768px) and (max-width: 991px) {*/
+/*  .tablet-mt {*/
+/*    margin-top: 30px;*/
+/*  }*/
+/*  .searchbox-style {*/
+/*    width: 100px;*/
+/*  }*/
+/*  .search-button-style {*/
+/*    width: initial;*/
+/*    font-size: 11px;*/
+/*  }*/
+/*  .display-non-tablet {*/
+/*    display: none;*/
+/*  }*/
+/*  .title-font {*/
+/*    font-size: 25px;*/
+/*  }*/
+/*  .second-title {*/
+/*    font-size: 18px;*/
+/*  }*/
+/*  .profile-name {*/
+/*    font-size: 15px;*/
+/*  }*/
+/*  .profile-job-title {*/
+/*    font-size: 12px;*/
+/*  }*/
+/*  .update-profile-green-box {*/
+/*    height: 70px;*/
+/*    padding: 4px 0px;*/
+/*  }*/
+/*  .update-profile-font {*/
+/*    font-size: 12px;*/
+/*  }*/
+/*  .acitivy-response-font {*/
+/*    font-size: 10px;*/
+/*  }*/
+/*  .no-of-opening {*/
+/*    font-size: 12px;*/
+/*  }*/
+/*  .incase-getting-hired-font {*/
+/*    font-size: 12px;*/
+/*  }*/
+/*  .profile-completeness-ratio {*/
+/*    font-size: 12px;*/
+/*  }*/
+/*  .profile-completeness-text {*/
+/*    font-size: 12px;*/
+/*  }*/
+/*  .profile-box {*/
+/*    width: 280px;*/
+/*    height: 390px;*/
+/*  }*/
+/*  .left-side-search-box {*/
+/*    width: 100%;*/
+/*    padding: 30px 0px;*/
+/*    display: block;*/
+/*  }*/
+/*  .past-searches-result {*/
+/*    padding: 8px 15px;*/
+/*  }*/
+/*  .profile-box-parent {*/
+/*    margin-top: 25px;*/
+/*  }*/
+/*}*/
+
+/*@media only screen and (min-width: 992px) and (max-width: 1025px) {*/
+/*  .searchbox-style {*/
+/*    width: 160px;*/
+/*  }*/
+/*  .tablet-mt {*/
+/*    margin-top: 20px;*/
+/*  }*/
+/*  .search-button-style {*/
+/*    width: initial;*/
+/*    font-size: 11px;*/
+/*  }*/
+/*  .left-side-search-box {*/
+/*    width: 80px;*/
+/*  }*/
+/*  .title-font {*/
+/*    font-size: 25px;*/
+/*  }*/
+/*  .second-title {*/
+/*    font-size: 18px;*/
+/*  }*/
+/*  .profile-name {*/
+/*    font-size: 15px;*/
+/*  }*/
+/*  .profile-job-title {*/
+/*    font-size: 12px;*/
+/*  }*/
+/*  .update-profile-green-box {*/
+/*    height: 70px;*/
+/*    padding: 4px 0px;*/
+/*  }*/
+/*  .update-profile-font {*/
+/*    font-size: 12px;*/
+/*  }*/
+/*  .acitivy-response-font {*/
+/*    font-size: 10px;*/
+/*  }*/
+/*  .no-of-opening {*/
+/*    font-size: 12px;*/
+/*  }*/
+/*  .incase-getting-hired-font {*/
+/*    font-size: 12px;*/
+/*  }*/
+/*  .profile-completeness-ratio {*/
+/*    font-size: 12px;*/
+/*  }*/
+/*  .profile-completeness-text {*/
+/*    font-size: 12px;*/
+/*  }*/
+/*  .profile-box {*/
+/*    width: 280px;*/
+/*    height: 390px;*/
+/*  }*/
+/*  .left-side-search-box {*/
+/*    width: 640px;*/
+/*  }*/
+/*  .profile-box-parent {*/
+/*    margin-top: 25px;*/
+/*  }*/
+/*}*/
 </style>

@@ -87,4 +87,9 @@ export default {
     width: 60%;
   }
 }
+@media screen and (max-width: 250px){
+  .left-side-menu {
+    width: 100%;
+  }
+}
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="container background-left-side-menu">
+  <div class="container-fluid background-left-side-menu">
     <div
       class="row display-flex justify-content-space-between align-item-center pt-30">
       <div class="col-lg-6">
@@ -26,27 +26,27 @@
     >
       <a-checkbox-group @change="onChange">
         <a-row>
-          <a-col :span="24" class="text-align-initial"
-            ><a-checkbox
+          <a-col :span="24" class="text-align-initial">
+            <a-checkbox
               class="text-align-initial checkbox-color mt-10"
-              value="A"
-              >Industry A</a-checkbox
-            ></a-col
-          >
-          <a-col :span="24" class="text-align-initial"
-            ><a-checkbox
+              value="A">
+              Industry A
+            </a-checkbox>
+          </a-col>
+          <a-col :span="24" class="text-align-initial">
+            <a-checkbox
               class="text-align-initial checkbox-color mt-10"
-              value="A"
-              >Industry B</a-checkbox
-            ></a-col
-          >
-          <a-col :span="24" class="text-align-initial"
-            ><a-checkbox
+              value="A">
+              Industry B
+            </a-checkbox>
+          </a-col>
+          <a-col :span="24" class="text-align-initial">
+            <a-checkbox
               class="text-align-initial checkbox-color mt-10"
-              value="A"
-              >Industry C</a-checkbox
-            ></a-col
-          >
+              value="A">
+              Industry C
+            </a-checkbox>
+          </a-col>
           <a-col :span="24" class="text-align-initial"
             ><a-checkbox
               class="text-align-initial checkbox-color mt-10"
@@ -667,4 +667,9 @@ hr {
 /*  width: 100%;*/
 /*}*/
 /*}*/
+@media screen and (max-width: 250px){
+  .container-fluid {
+    width: 100%;
+  }
+}
 </style>

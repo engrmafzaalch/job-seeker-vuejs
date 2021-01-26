@@ -3,16 +3,22 @@
     <div class="display-flex justify-content-space-between text-align-center">
       <div class="display-flex justify-content-space-between text-align-center">
         <div>
-          <span class="total-no-featured-jobs"
-            >1-10 of 12,000 “Developer” Jobs</span
-          >
+          <span class="total-no-featured-jobs">
+            1-10 of 12,000 “Developer” Jobs
+          </span>
         </div>
         <div class="ml-2">
-          <span class="modify-search-text">Modify Search</span>
+          <span class="modify-search-text">
+            Modify Search
+          </span>
         </div>
       </div>
       <div class="display-flex justify-content-space-between text-align-center">
-        <div><span class="sort-by-relevant">Sort by: Relevant</span></div>
+        <div>
+          <span class="sort-by-relevant">
+            Sort by: Relevant
+          </span>
+        </div>
         <div class="">
           <img src="../../../assets/Vector (3).png" alt="" />
         </div>
@@ -88,6 +94,7 @@ export default {
   font-weight: normal;
   font-size: 14px;
   color: #4e4e5a;
+  margin-right: 1px;
 }
 .ml-22 {
   margin-left: 22px;

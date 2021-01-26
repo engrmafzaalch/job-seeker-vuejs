@@ -10,15 +10,15 @@
       <div class="card">
         <div class="card-body">
           <div class="row">
-            <div class="col-sm-2">
-              <img class="ml-2" src="./google-icon.png" height="80" width="78"/>
+            <div class="col-lg-2">
+              <img class="ml-2" src="./google-icon.png" height="80" width="auto"/>
             </div>
             <div class="col-md-10">
               <div class="row">
                 <div class="col-md-9">
-                  <h2 class="one ml-2">Business Analyst</h2>
+                  <h2 class="one">Business Analyst</h2>
                 </div>
-                <div class="col-md-3">
+                <div class="col-sm-3">
                   <p class="border text-white border-primary text-center part_time py-1 ml-2">Part Time</p>
                 </div>
               </div>
@@ -109,12 +109,12 @@
           </div>
           <div class="row education_data">
             <div class="col-12">
-              <div>
-              <span style="font-weight: bold">UD:</span>
+              <div class="mb-3">
+              <span style="font-weight: bold">UD :</span>
               <span class="text-muted">B.Tech</span>
               </div>
               <div>
-                <span style="font-weight: bold">PG:</span>
+                <span style="font-weight: bold">PG :</span>
                 <span class="text-muted">Post Graduation Not Required</span>
               </div>
             </div>
@@ -132,20 +132,25 @@
               <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
             </div>
           </div>
+
           <div class="row">
             <div class="col-12 unorder_list">
+
+              <div>
+                  <input type="checkbox" checked>
+                  <span class="ml-2">Laboris laboris nostrud consect etur magna.</span>
+              </div>
+
+              <div>
+                  <input type="checkbox" checked>
+                  <span class="ml-2">Laboris laboris nostrud consect etur magna. Aliqua sint dolore esse ut occaecat do.</span>
+              </div>
+
               <div>
                 <input type="checkbox" checked>
-                <span>Laboris laboris nostrud consect etur magna.</span>
+                <span class="ml-2">Laboris laboris nostrud consect etur magna.</span>
               </div>
-              <div>
-                <input type="checkbox" checked>
-                <span>Laboris laboris nostrud consect etur magna. Aliqua sint dolore esse ut occaecat do.</span>
-              </div>
-              <div>
-                <input type="checkbox" checked>
-                <span>Laboris laboris nostrud consect etur magna.</span>
-              </div>
+
             </div>
           </div>
 
@@ -156,6 +161,7 @@
               <h3>Skills</h3>
             </div>
           </div>
+
           <div class="row">
             <div class="border_ text-center m-1">C</div>
             <div class="border_ text-center m-1">C++</div>
@@ -251,15 +257,35 @@
             </div>
             <div class="row">
               <div class="col-6">
-                <button class="btn btn-light btn-block">
+                <a-button class="btn-block" @click="hideModal">
                   Cancel
-                </button>
+                </a-button>
               </div>
               <div class="col-6">
 
-                <button class="btn btn-primary btn-block">
+                <a-button @click="showModal1" type="primary" class="btn-block">
                   Apply
-                </button>
+                </a-button>
+
+                <a-modal v-model="visible1" :footer="null">
+                  <div class="row my-2">
+                    <div class="col-12 text-center">
+                      <img src="./tick mark.png" height="64" width="65"/>
+                    </div>
+                  </div>
+                  <div class="row my-3">
+                    <div class="col-12 text-center">
+                      <p>You have successfully applied for <br>
+                        "Business Analyst Position" at Google India Private Limited
+                      </p>
+                    </div>
+                  </div>
+                  <div class="row my-3">
+                    <div class="col-12 text-center">
+                      <a-button @click="hideModal1" type="primary" class="px-5">Go to Your Applications</a-button>
+                    </div>
+                  </div>
+                </a-modal>
 
               </div>
             </div>
@@ -267,32 +293,6 @@
         </div>
       </div>
 
-<!--      <div>-->
-<!--        <div>-->
-<!--          <a-button type="primary" @click="showModal" class="button_ px-5">-->
-<!--            Success-->
-<!--          </a-button>-->
-<!--          <a-modal v-model="visible" @ok="handleOk" :footer="null">-->
-<!--            <div class="row my-2">-->
-<!--              <div class="col-12 text-center">-->
-<!--                <img src="./tick mark.png" height="64" width="65"/>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--            <div class="row my-3">-->
-<!--              <div class="col-12 text-center">-->
-<!--                <p>You have successfully applied for <br>-->
-<!--                  "Business Analyst Position" at Google India Private Limited-->
-<!--                </p>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--            <div class="row my-3">-->
-<!--              <div class="col-12 text-center">-->
-<!--                <button type="button" class="btn btn-primary px-5">Go to Your Applications</button>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--          </a-modal>-->
-<!--        </div>-->
-<!--      </div>-->
 
       <div class="row">
         <div class="col-12">
@@ -304,6 +304,7 @@
           <a href="mailto:Careers@google.com" class="email">Careers@google.com</a>
         </div>
       </div>
+
       <div class="row">
         <div class="col-12">
           <div style="display: flex">
@@ -313,12 +314,14 @@
           </div>
         </div>
       </div>
+
       <div class="row mt-3">
         <div class="col-12">
           <p class="description float-left" style="font-weight: bold">Jobs You Might Be Interested In</p>
         </div>
       </div>
-        <div class="card position-relative">
+
+        <div class="card position-relative featured-jobs">
           <div class="card-body">
             <div class="position-absolute new_feature_box">
               New
@@ -348,7 +351,7 @@
           </div>
         </div>
 
-        <div class="card mt-2">
+        <div class="card mt-2 featured-jobs">
           <div class="card-body">
             <div class="row">
               <div class="col-12">
@@ -375,7 +378,7 @@
           </div>
         </div>
 
-        <div class="card mt-2">
+        <div class="card mt-2 featured-jobs">
           <div class="card-body">
             <div class="row">
               <div class="col-12">
@@ -402,7 +405,7 @@
           </div>
         </div>
 
-        <div class="card mt-2">
+        <div class="card mt-2 featured-jobs">
           <div class="card-body">
             <div class="row">
               <div class="col-12">
@@ -429,7 +432,7 @@
           </div>
         </div>
 
-        <div class="card mt-2">
+        <div class="card mt-2 featured-jobs">
           <div class="card-body">
             <div class="row">
               <div class="col-12">
@@ -456,7 +459,7 @@
           </div>
         </div>
 
-        <div class="card mt-2">
+        <div class="card mt-2 featured-jobs">
           <div class="card-body">
             <div class="row">
               <div class="col-12">
@@ -483,7 +486,7 @@
           </div>
         </div>
 
-        <div class="card mt-2">
+        <div class="card mt-2 featured-jobs">
           <div class="card-body">
             <div class="row">
               <div class="col-12">
@@ -510,7 +513,7 @@
           </div>
         </div>
 
-        <div class="card mt-2">
+        <div class="card mt-2 featured-jobs">
           <div class="card-body">
             <div class="row">
               <div class="col-12">
@@ -537,7 +540,7 @@
           </div>
         </div>
 
-        <div class="card mt-2">
+        <div class="card mt-2 featured-jobs">
           <div class="card-body">
             <div class="row">
               <div class="col-12">
@@ -576,15 +579,26 @@ export default {
   data() {
     return {
       visible: false,
+      visible1: false,
     };
   },
   methods: {
     showModal() {
       this.visible = true;
     },
+    hideModal() {
+      this.visible = false;
+    },
     handleOk(e) {
       console.log(e);
       this.visible = false;
+    },
+    showModal1() {
+      this.visible = false;
+      this.visible1 = true;
+    },
+    hideModal1() {
+      this.visible1 = false;
     },
   },
 };
@@ -660,7 +674,7 @@ export default {
 .border_ {
   border-radius: 24px;
   background-color: #FAFAFC;
-  padding: 10px;
+  padding: 10px 25px;
 }
 /*.color_new_feature_job_text {*/
 /*  font-family: Open Sans;*/
@@ -668,4 +682,11 @@ export default {
 /*  font-weight: 600;*/
 /*  font-size: 14px;*/
 /*}*/
+li {
+  margin-bottom: 10px;
+}
+
+.featured-jobs {
+  margin: 20px 0px;
+}
 </style>
