@@ -13,13 +13,13 @@
             <div class="col-sm-2">
               <img class="ml-2" src="./google-icon.png" height="80" width="78"/>
             </div>
-            <div class="col-md-8 ml-4">
+            <div class="col-md-10">
               <div class="row">
                 <div class="col-md-9">
-                  <h2 class="one">Business Analyst</h2>
+                  <h2 class="one ml-2">Business Analyst</h2>
                 </div>
-                <div class="col-lg-3">
-                  <p class="border text-white border-primary text-center part_time py-1">Part Time</p>
+                <div class="col-md-3">
+                  <p class="border text-white border-primary text-center part_time py-1 ml-2">Part Time</p>
                 </div>
               </div>
               <div class="row two">

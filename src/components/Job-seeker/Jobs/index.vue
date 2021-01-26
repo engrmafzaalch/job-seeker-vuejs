@@ -1,11 +1,11 @@
 <template>
-  <div class="container">
+  <div class="container-fluid">
     <div class="main-height">
       <div class="row">
-        <div class="col-lg-3 p-0 left-side-menu">
+        <div class="col-lg-2 p-0 left-side-menu">
           <LeftSideMenu />
         </div>
-        <div class="col-lg-6 middle-jobs-section">
+        <div class="col-lg-7 middle-jobs-section">
           <middle-jobs-section />
         </div>
         <div class="col-lg-3 right-side-jobs">
@@ -79,12 +79,12 @@ export default {
 /*.main-height {*/
 /*  min-height: calc(100vh - 110px);*/
 /*}*/
-/*@media screen and (max-width: 991px) and (min-width: 765px){*/
-/*.left-side-menu {*/
-/*  width: 40%;*/
-/*}*/
-/*  .middle-jobs-section {*/
-/*    width: 60%;*/
-/*  }*/
-/*}*/
+@media screen and (max-width: 991px) and (min-width: 765px){
+.left-side-menu {
+  width: 40%;
+}
+  .middle-jobs-section {
+    width: 60%;
+  }
+}
 </style>

@@ -5,7 +5,7 @@
       <div class="col-lg-6">
         <span class="filters-title-text">Filters</span>
       </div>
-      <div class="col-lg-6">
+      <div class="col-xl-6">
         <span class="no-of-filters-apply-text">4 Filters applied</span>
       </div>
     </div>

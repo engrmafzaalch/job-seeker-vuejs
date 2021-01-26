@@ -1,195 +1,207 @@
 <template>
   <div class="container-fluid display-flex display-block-mobile">
-    <div class="left-side-search-box">
-      <div class="para">
-      <div class="row">
-        <div class="col-12">
-        <span class="title-font"> Aenean euismod bibendum laoreet </span>
-      </div>
-      </div>
-        <div class="row">
-          <div class="col-12">
-            <span class="second-title">
-              Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus
-              accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor.
-            </span>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="left-side-search-box">
+          <div class="para">
+            <div class="row">
+              <div class="col-12">
+                <span class="title-font"> Aenean euismod bibendum laoreet </span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <span class="second-title">
+                  Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus
+                  accumsan et viverra justo commodo. Proin sodales pulvinar sic tempor.
+                </span>
+              </div>
+            </div>
           </div>
-      </div>
-      </div>
-      <div class="row">
-      <div class="search-box-all mt-30">
-        <div class="searchbox-child-main">
-          <a-form layout="inline" :form="form" @submit="handleSubmit">
-            <div class="display-flex">
-              <div>
-                <a-form-item
-                  :validate-status="userNameError() ? 'error' : ''"
-                  :help="userNameError() || ''"
-                >
-                  <a-input
-                    class="searchbox-style"
-                    v-decorator="[
-                      'userName',
-                      {
-                        rules: [
+          <div class="row">
+            <div class="col-12">
+            <div class="search-box-all mt-30">
+              <div class="searchbox-child-main">
+                <a-form layout="inline" :form="form" @submit="handleSubmit">
+                  <div class="display-flex">
+                    <div>
+                      <a-form-item
+                        :validate-status="userNameError() ? 'error' : ''"
+                        :help="userNameError() || ''"
+                      >
+                        <a-input
+                          class="searchbox-style"
+                          v-decorator="[
+                          'userName',
                           {
-                            required: true,
-                            message: 'Please input your username!',
+                            rules: [
+                              {
+                                required: true,
+                                message: 'Please input your username!',
+                              },
+                            ],
                           },
-                        ],
-                      },
-                    ]"
-                    placeholder="Job title or keywords"
-                  >
-                    <a-icon
-                      slot="prefix"
-                      type="search"
-                      style="color: rgba(0, 0, 0, 0.25)"
-                    />
-                  </a-input>
-                </a-form-item>
-              </div>
+                        ]"
+                          placeholder="Job title or keywords"
+                        >
+                          <a-icon
+                            slot="prefix"
+                            type="search"
+                            style="color: rgba(0, 0, 0, 0.25)"
+                          />
+                        </a-input>
+                      </a-form-item>
+                    </div>
 
+                    <div>
+                      <a-form-item
+                        :validate-status="userNameError() ? 'error' : ''"
+                        :help="userNameError() || ''"
+                      >
+                        <a-select
+                          class="dropdwon-fonts"
+                          default-value="Job Category"
+                          @change="handleChange"
+                        >
+                          <a-select-option value="jack"> Jack </a-select-option>
+                          <a-select-option value="lucy"> Lucy </a-select-option>
+                        </a-select>
+                      </a-form-item>
+                    </div>
+                    <div>
+                      <a-form-item
+                        :validate-status="userNameError() ? 'error' : ''"
+                        :help="userNameError() || ''"
+                      >
+                        <a-select
+                          class="dropdwon-fonts"
+                          default-value="Location"
+                          @change="handleChange"
+                        >
+                          <a-select-option value="jack"> Jack </a-select-option>
+                          <a-select-option value="lucy"> Lucy </a-select-option>
+                        </a-select>
+                      </a-form-item>
+                    </div>
+                    <a-form-item>
+                      <a-button
+                        type="primary"
+                        html-type="submit"
+                        class="search-button-style"
+                        :disabled="hasErrors(form.getFieldsError())"
+                      >
+                        Search
+                      </a-button>
+                    </a-form-item>
+                  </div>
+                </a-form>
+                <!-- <div>input type 1</div>
+                  <div>input type 2</div>
+                  <div>input type 3</div>
+                  <div>button</div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+          <div class="row">
+          <div class="display-flex mt-40 tablet-mt flex-wrap align-item-center">
+            <div class="display-flex flex-wrap ml-20 align-item-center">
               <div>
-                <a-form-item
-                  :validate-status="userNameError() ? 'error' : ''"
-                  :help="userNameError() || ''"
+                <span class="past-searches-text">Past Searches</span>
+              </div>
+              <div class="past-searches-result ml-10px mt-10">
+                <span
+                >Business analyst -
+                  <span class="result-in-green">(07 new)</span></span
                 >
-                  <a-select
-                    class="dropdwon-fonts"
-                    default-value="Job Category"
-                    @change="handleChange"
-                  >
-                    <a-select-option value="jack"> Jack </a-select-option>
-                    <a-select-option value="lucy"> Lucy </a-select-option>
-                  </a-select>
-                </a-form-item>
+              </div>
+              <div class="past-searches-result ml-10px mt-10">
+                <span
+                >Product Manager -
+                  <span class="result-in-green">(07 new)</span></span
+                >
+              </div>
+              <div class="past-searches-result ml-10px mt-10">
+                <span
+                >Sales executive -
+                  <span class="result-in-green">(07 new)</span></span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="profile-box-parent display-non-tablet">
+          <div class="profile-box ">
+            <div class="display-flex align-item-center">
+              <div>
+                <img src="../../assets/Ellipse5.png" />
               </div>
               <div>
-                <a-form-item
-                  :validate-status="userNameError() ? 'error' : ''"
-                  :help="userNameError() || ''"
-                >
-                  <a-select
-                    class="dropdwon-fonts"
-                    default-value="Location"
-                    @change="handleChange"
-                  >
-                    <a-select-option value="jack"> Jack </a-select-option>
-                    <a-select-option value="lucy"> Lucy </a-select-option>
-                  </a-select>
-                </a-form-item>
+                <div class="profile-name">Jaydon Lipshutz</div>
+                <div class="profile-job-title">UI / UX Designer</div>
               </div>
-              <a-form-item>
-                <a-button
-                  type="primary"
-                  html-type="submit"
-                  class="search-button-style"
-                  :disabled="hasErrors(form.getFieldsError())"
+            </div>
+            <hr />
+            <div class="display-flex justify-content-between align-item-center">
+              <div>
+                <span class="profile-completeness-text">Profile completeness</span>
+              </div>
+              <div>
+                <span class="profile-completeness-ratio">Medium - (60%)</span>
+              </div>
+            </div>
+            <div>
+              <input min="0" type="range" readonly />
+            </div>
+            <div class="display-flex update-profile-green-box">
+              <div>
+                <i
+                  class="fa fa-exclamation-circle color-green"
+                  aria-hidden="true"
+                ></i>
+              </div>
+              <div>
+                <span class="update-profile-font">Update profile</span>
+              </div>
+              <div>
+                <span class="incase-getting-hired-font"
+                >Increase changes of getting hired</span
                 >
-                  Search
-                </a-button>
-              </a-form-item>
+              </div>
             </div>
-          </a-form>
-          <!-- <div>input type 1</div>
-            <div>input type 2</div>
-            <div>input type 3</div>
-            <div>button</div> -->
-        </div>
-      </div>
-    </div>
-      <div class="display-flex mt-40 tablet-mt flex-wrap align-item-center">
-        <div class="display-flex flex-wrap ml-20 align-item-center">
-          <div>
-            <span class="past-searches-text">Past Searches</span>
-          </div>
-          <div class="past-searches-result ml-10px mt-10">
-            <span
-              >Business analyst -
-              <span class="result-in-green">(07 new)</span></span
-            >
-          </div>
-          <div class="past-searches-result ml-10px mt-10">
-            <span
-              >Product Manager -
-              <span class="result-in-green">(07 new)</span></span
-            >
-          </div>
-          <div class="past-searches-result ml-10px mt-10">
-            <span
-              >Sales executive -
-              <span class="result-in-green">(07 new)</span></span
-            >
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="profile-box-parent display-non-tablet">
-      <div class="profile-box ">
-        <div class="display-flex align-item-center">
-          <div>
-            <img src="../../assets/Ellipse5.png" />
-          </div>
-          <div>
-            <div class="profile-name">Jaydon Lipshutz</div>
-            <div class="profile-job-title">UI / UX Designer</div>
-          </div>
-        </div>
-        <hr />
-        <div class="display-flex justify-content-between align-item-center">
-          <div>
-            <span class="profile-completeness-text">Profile completeness</span>
-          </div>
-          <div>
-            <span class="profile-completeness-ratio">Medium - (60%)</span>
-          </div>
-        </div>
-        <div>
-          <input min="0" type="range" readonly />
-        </div>
-        <div class="display-flex update-profile-green-box">
-          <div>
-            <i
-              class="fa fa-exclamation-circle color-green"
-              aria-hidden="true"
-            ></i>
-          </div>
-          <div>
-            <span class="update-profile-font">Update profile</span>
-          </div>
-          <div>
-            <span class="incase-getting-hired-font"
-              >Increase changes of getting hired</span
-            >
-          </div>
-        </div>
-        <div class="display-flex mt-20">
-          <div>
-            <span class="acitivy-response-font">Activity & Responses</span>
-          </div>
-        </div>
-        <div class="display-flex mt-10">
-          <div class="box-div-actvity">
-            <div class="">
-              <span class="no-of-opening">20</span>
+            <div class="display-flex mt-20">
+              <div>
+                <span class="acitivy-response-font">Activity & Responses</span>
+              </div>
             </div>
-            <div class="">
-              <span class="shortlisted-you-font">Shortlisted You</span>
-            </div>
-          </div>
-          <div class="box-div-actvity ml-10px">
-            <div class="">
-              <span class="no-of-opening">20</span>
-            </div>
-            <div class="">
-              <span class="shortlisted-you-font">Shortlisted You</span>
+            <div class="display-flex mt-10">
+              <div class="box-div-actvity">
+                <div class="">
+                  <span class="no-of-opening">20</span>
+                </div>
+                <div class="">
+                  <span class="shortlisted-you-font">Shortlisted You</span>
+                </div>
+              </div>
+              <div class="box-div-actvity ml-10px">
+                <div class="">
+                  <span class="no-of-opening">120</span>
+                </div>
+                <div class="">
+                  <span class="shortlisted-you-font">New Openings</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div></div>
   </div>
 </template>
 
@@ -524,6 +536,68 @@ input[type="range"]::-ms-fill-upper {
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
+  .tablet-mt {
+    margin-top: 30px;
+  }
+  .searchbox-style {
+    width: 100px;
+  }
+  .search-button-style {
+    width: initial;
+    font-size: 11px;
+  }
+  .display-non-tablet {
+    display: none;
+  }
+  .title-font {
+    font-size: 25px;
+  }
+  .second-title {
+    font-size: 18px;
+  }
+  .profile-name {
+    font-size: 15px;
+  }
+  .profile-job-title {
+    font-size: 12px;
+  }
+  .update-profile-green-box {
+    height: 70px;
+    padding: 4px 0px;
+  }
+  .update-profile-font {
+    font-size: 12px;
+  }
+  .acitivy-response-font {
+    font-size: 10px;
+  }
+  .no-of-opening {
+    font-size: 12px;
+  }
+  .incase-getting-hired-font {
+    font-size: 12px;
+  }
+  .profile-completeness-ratio {
+    font-size: 12px;
+  }
+  .profile-completeness-text {
+    font-size: 12px;
+  }
+  .profile-box {
+    width: 280px;
+    height: 390px;
+  }
+  .left-side-search-box {
+    width: 100%;
+    padding: 30px 0px;
+    display: block;
+  }
+  .past-searches-result {
+    padding: 8px 15px;
+  }
+  .profile-box-parent {
+    margin-top: 25px;
+  }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {

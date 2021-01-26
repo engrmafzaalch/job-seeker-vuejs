@@ -7,7 +7,7 @@
             >1-10 of 12,000 “Developer” Jobs</span
           >
         </div>
-        <div class="">
+        <div class="ml-2">
           <span class="modify-search-text">Modify Search</span>
         </div>
       </div>
@@ -20,15 +20,6 @@
     </div>
     <div class="">
       <middle-jobs-card :isFeatured="true" :image="`Rectangle 11 (9).png`" />
-      <middle-jobs-card :isFeatured="true" :image="`Rectangle 11 (12).png`" />
-      <middle-jobs-card :isFeatured="false" :image="`Rectangle 11 (13).png`" />
-      <middle-jobs-card :isFeatured="false" :image="`Rectangle 11 (14).png`" />
-      <middle-jobs-card :isFeatured="false" :image="`Rectangle 11 (14).png`" />
-      <middle-jobs-card :isFeatured="false" :image="`Rectangle 11 (14).png`" />
-      <middle-jobs-card :isFeatured="false" :image="`Rectangle 11 (14).png`" />
-      <middle-jobs-card :isFeatured="true" :image="`Rectangle 11 (14).png`" />
-      <middle-jobs-card :isFeatured="true" :image="`Rectangle 11 (14).png`" />
-      <middle-jobs-card :isFeatured="true" :image="`Rectangle 11 (14).png`" />
     </div>
     <!-- <div class="mt-44">
       <div class="display-flex align-item-center">

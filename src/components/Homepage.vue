@@ -4,7 +4,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-<div class="">
+      <div class="">
         <left-side-back />
         </div>
         </div>
@@ -23,8 +23,8 @@
                       <span class="feature ">Featured Jobs</span>
                         </div>
                </div>
-</div>
-</div>
+          </div>
+          </div>
 
             </div>
         </div>
@@ -45,7 +45,7 @@
         </div>
 
       </div>
-<!--      <footer-card />-->
+        <!--      <footer-card />-->
     </div>
   </div>
 </template>
