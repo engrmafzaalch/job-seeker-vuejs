@@ -115,14 +115,6 @@ let router = new Router({
       }
     },
     {
-      path: '/index_myAccount',
-      name: 'index_myAccount',
-      component: index_myAccount,
-      meta: {
-        requiresAuth: true
-      }
-    },
-    {
       path: '/tabs',
       name: 'tabs',
       component: tabs,

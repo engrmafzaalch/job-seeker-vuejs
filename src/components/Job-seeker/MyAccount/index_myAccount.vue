@@ -44,7 +44,7 @@
               <span class="text-black-50">Contact Information</span>
             </div>
             <div>
-              <span class="years">+9988776655</span>
+              <span class="number">+9988776655</span>
             </div>
           </div>
           <div class="col-md-2">
@@ -85,6 +85,10 @@ button {
 }
 .years {
   font-size: 13px;
+  font-weight: bold;
+}
+.number {
+  font-size: 12px;
   font-weight: bold;
 }
 </style>
