@@ -1,8 +1,9 @@
 <template>
+  <div class="container">
   <div class="height-forgot-password-card">
     <div class="login-card pb-30">
-      <div class="">
-        <div>
+      <div class="row">
+        <div class="col-12">
           <span class="admin-login-screen">Forget Password</span>
         </div>
       </div>
@@ -75,6 +76,7 @@
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <script>

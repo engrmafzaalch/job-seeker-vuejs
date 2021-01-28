@@ -38,6 +38,9 @@ import tab from "../components/admin-job-seeker/job-seeker-detailed-view/Job See
 import MyAccount_3 from "../components/admin-job-seeker/MyAccount/MyAccount_3";
 import {store} from '../store/store'
 import tab_PostingDetails from "../components/posting/tab_PostingDetails";
+import tab_Recruiter from "../components/Recruiter/tab_Recruiter";
+import ModalRecruiter_6 from "../components/Recruiter/ModalRecruiter_6";
+import MyAccount_6 from "../components/admin-job-seeker/My-Account/MyAccount_6";
 
 Vue.use(Router)
 
@@ -278,6 +281,14 @@ let router = new Router({
       }
     },
     {
+      path: '/Recruiter-List',
+      name: 'tab_Recruiter',
+      component: tab_Recruiter,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
       path: '/Recruiter',
       name: 'Recruiter',
       component: Recruiter,
@@ -313,6 +324,22 @@ let router = new Router({
       path: '/Posting-Details',
       name: 'tab_PostingDetails',
       component: tab_PostingDetails,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/Modal-Recruiter-6',
+      name: 'ModalRecruiter_6',
+      component: ModalRecruiter_6,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/MyAccount-6',
+      name: 'MyAccount_6',
+      component: MyAccount_6,
       meta: {
         requiresAuth: true
       }

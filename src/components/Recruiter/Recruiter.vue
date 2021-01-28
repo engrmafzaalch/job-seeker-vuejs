@@ -6,17 +6,17 @@
                  Nav tabs
 
      =================================== -->
-    <ul class="nav nav-tabs nav-justified" role="tablist">
-      <li class="nav-item">
-        <a class="nav-link active" id="details-tab" data-toggle="tab" href="#details" role="tab" aria-controls="details" aria-selected="true"> Details</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="postings-tab" data-toggle="tab" href="#postings" role="tab" aria-controls="postings" aria-selected="false"> Postings</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" id="payments-tab" data-toggle="tab" href="#payments" role="tab" aria-controls="payments" aria-selected="false"> Payments</a>
-      </li>
-    </ul>
+<!--    <ul class="nav nav-tabs nav-justified" role="tablist">-->
+<!--      <li class="nav-item">-->
+<!--        <a class="nav-link active" id="details-tab" data-toggle="tab" href="#details" role="tab" aria-controls="details" aria-selected="true"> Details</a>-->
+<!--      </li>-->
+<!--      <li class="nav-item">-->
+<!--        <a class="nav-link" id="postings-tab" data-toggle="tab" href="#postings" role="tab" aria-controls="postings" aria-selected="false"> Postings</a>-->
+<!--      </li>-->
+<!--      <li class="nav-item">-->
+<!--        <a class="nav-link" id="payments-tab" data-toggle="tab" href="#payments" role="tab" aria-controls="payments" aria-selected="false"> Payments</a>-->
+<!--      </li>-->
+<!--    </ul>-->
 
     <!--===================================
 
