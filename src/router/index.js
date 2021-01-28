@@ -41,6 +41,10 @@ import tab_PostingDetails from "../components/posting/tab_PostingDetails";
 import tab_Recruiter from "../components/Recruiter/tab_Recruiter";
 import ModalRecruiter_6 from "../components/Recruiter/ModalRecruiter_6";
 import MyAccount_6 from "../components/admin-job-seeker/My-Account/MyAccount_6";
+import MyAccount_7 from "../components/admin-job-seeker/My-Account/MyAccount_7";
+import MyAccount_8 from "../components/admin-job-seeker/My-Account/MyAccount_8";
+import MyAccount_9 from "../components/admin-job-seeker/My-Account/MyAccount_9";
+import MyAccount_10 from "../components/admin-job-seeker/My-Account/MyAccount_10";
 
 Vue.use(Router)
 
@@ -340,6 +344,38 @@ let router = new Router({
       path: '/MyAccount-6',
       name: 'MyAccount_6',
       component: MyAccount_6,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/MyAccount-7',
+      name: 'MyAccount_7',
+      component: MyAccount_7,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/MyAccount-8',
+      name: 'MyAccount_8',
+      component: MyAccount_8,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/MyAccount-9',
+      name: 'MyAccount_9',
+      component: MyAccount_9,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/MyAccount-10',
+      name: 'MyAccount_10',
+      component: MyAccount_10,
       meta: {
         requiresAuth: true
       }
