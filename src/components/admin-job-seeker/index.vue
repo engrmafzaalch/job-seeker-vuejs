@@ -1,12 +1,9 @@
 <template>
-  <div class="container-fluid main-div-height-job-seeker-list">
-    <div class="text-align-right mt-50">
-      <a-button type="solid add-more-text-admin-job-seeker">
-        <span
-          ><a-icon class="vertical-align-middle" type="plus" /> Add New Job
-          Seeker</span
-        >
-      </a-button>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-12 float-right ">
+        <Add_New_Job_Seeker_Button/>
+      </div>
     </div>
 
     <a-tabs class="job-seeker-listing-tabs" default-active-key="1" size="large">
@@ -28,8 +25,8 @@
             </div>
             <div>
               <span class="total-number-title-text-job-seeker-admin"
-                >Newly Joined In July</span
-              >
+                >Newly Joined In July
+              </span>
             </div>
           </div>
           <div class="box-job-seeker-admin inner-div-css ml-10">
@@ -156,11 +153,42 @@
           </div>
         </a-table>
       </a-tab-pane>
-      <a-tab-pane key="2" tab="Settings"> Content of tab 2 </a-tab-pane>
+      <a-tab-pane key="2" tab="Settings">
+        <div class="row">
+          <div class="col-12">
+            <h5>Do we need administrator approval for Jobseeker account ?</h5>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <div class="radio-button my-3">
+              <a-radio-group v-model="value" @change="onChange">
+                <a-radio :value="1" class="border border-secondary rounded radio1">
+                  Yes
+                </a-radio>
+                <a-radio :value="2" class="border border-secondary rounded radio2">
+                  No
+                </a-radio>
+              </a-radio-group>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <button class="btn btn-light">Cancel</button>
+            <button class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </a-tab-pane>
     </a-tabs>
   </div>
 </template>
+
 <script>
+import Add_New_Job_Seeker_Button from "./Add_New_Job_Seeker_Button";
+
 const columns = [
   {
     dataIndex: "name",
@@ -168,6 +196,7 @@ const columns = [
     slots: { title: "customTitle" },
     scopedSlots: { customRender: "name" },
   },
+
   {
     dataIndex: "email",
     key: "email",
@@ -410,8 +439,12 @@ const data = [
 
 export default {
   name: "AdminJobSeeker",
+  components:{
+    Add_New_Job_Seeker_Button: Add_New_Job_Seeker_Button,
+  },
   data() {
     return {
+      value: 1,
       data,
       columns,
       pagination: {
@@ -427,100 +460,131 @@ export default {
     displayDetailed() {
       this.$router.push("/admin/job-seeker/10");
     },
+    onChange(e) {
+      console.log('radio checked', e.target.value);
+    },
   },
 };
 </script>
+
 <style scoped>
 .main-div-height-job-seeker-list {
-  min-height: calc(100vh - 240px);
+min-height: calc(100vh - 240px);
 }
 .add-more-text-admin-job-seeker {
-  background: #0385f3;
-  border-radius: 4px;
-  align-items: center;
-  color: #ffffff;
+background: #0385f3;
+border-radius: 4px;
+align-items: center;
+color: #ffffff;
 }
 .table-header-title {
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 14px;
-  color: #8b90a0;
+font-family: Open Sans;
+font-style: normal;
+font-weight: 600;
+font-size: 14px;
+color: #8b90a0;
 }
 .action-box-job-seeker {
-  background: #fafafc;
-  /* UI / 03 */
+background: #fafafc;
+/* UI / 03 */
 
-  border: 1px solid #f0f1f3;
-  border-radius: 2px;
-  width: 40px;
-  padding-left: 10px;
-  height: 40px;
-  border-radius: 4px;
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  /* text-align: center; */
-  display: inline-flex;
-  align-items: center;
-  /* align-items: unset; */
-  vertical-align: middle;
+border: 1px solid #f0f1f3;
+border-radius: 2px;
+width: 40px;
+padding-left: 10px;
+height: 40px;
+border-radius: 4px;
+font-family: Open Sans;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+/* text-align: center; */
+display: inline-flex;
+align-items: center;
+/* align-items: unset; */
+vertical-align: middle;
 }
 .tags-class-job-listing {
-  width: 152px;
-  height: 44px;
-  border-radius: 4px;
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  text-align: center;
-  display: inline-flex;
-  align-items: center;
-  /* align-items: unset; */
-  vertical-align: middle;
+width: 152px;
+height: 44px;
+border-radius: 4px;
+font-family: Open Sans;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+text-align: center;
+display: inline-flex;
+align-items: center;
+/* align-items: unset; */
+vertical-align: middle;
 }
 .no-of-total-category {
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 24px;
-  color: #505565;
+font-family: Open Sans;
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+color: #505565;
 }
 .total-number-title-text-job-seeker-admin {
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  color: #8b90a0;
+font-family: Open Sans;
+font-style: normal;
+font-weight: normal;
+font-size: 12px;
+color: #8b90a0;
 }
 .box-job-seeker-admin {
-  background: #fafdff;
-  /* Primary/blue */
+background: #fafdff;
+/* Primary/blue */
 
-  border: 1px solid #f0f1f3;
-  box-sizing: border-box;
-  border-radius: 8px;
-  width: 200px;
-  height: 96px;
+border: 1px solid #f0f1f3;
+box-sizing: border-box;
+border-radius: 8px;
+width: 180px;
+height: 96px;
 }
 .inner-div-css {
-  padding: 19px 0px 20px 20px;
-  text-align: initial;
+padding: 19px 0px 20px 20px;
+text-align: initial;
+display: inline-block;
 }
 .searchbox-style {
-  width: 420px;
-  /* height: 48px; */
-  border-radius: 4px;
-  background: #ffffff;
-  color: #8b90a0;
-  font-family: SF UI Display;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
+width: 420px;
+/* height: 48px; */
+border-radius: 4px;
+background: #ffffff;
+color: #8b90a0;
+font-family: SF UI Display;
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
 }
 .text-align-initial {
-  text-align: initial;
+text-align: initial;
+}
+.border {
+  width: 270px;
+  padding: 20px 30px;
+}
+.radio1 {
+  background: rgba(90, 170, 223, 0.04);
+}
+.btn {
+  padding: 10px 108px;
+}
+@media screen and (min-width: 768px){
+  .btn-primary {
+    margin-left: 9px;
+  }
+  .btn {
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .border {
+    margin-bottom: 10px;
+  }
+  .btn-primary {
+    margin: 10px 0px;
+  }
 }
 </style>

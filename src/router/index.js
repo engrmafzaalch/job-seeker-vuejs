@@ -34,7 +34,10 @@ import posting_4 from "../components/posting/posting_4";
 import Recruiter from "../components/Recruiter/Recruiter";
 import recruiter_1 from "../components/Recruiter/recruiter_1";
 import recruiter_3 from "../components/Recruiter/recruiter_3";
+import tab from "../components/admin-job-seeker/job-seeker-detailed-view/Job Seeker Details/tab";
+import MyAccount_3 from "../components/admin-job-seeker/MyAccount/MyAccount_3";
 import {store} from '../store/store'
+import tab_PostingDetails from "../components/posting/tab_PostingDetails";
 
 Vue.use(Router)
 
@@ -74,14 +77,14 @@ let router = new Router({
         requiresAuth: true
       }
     },
-    {
-      path: '/admin/job-seeker/:id',
-      name: 'AdminJobSeekerDetailedPage',
-      component: AdminJobSeekerDetailedPage,
-      meta: {
-        requiresAuth: true
-      }
-    },
+    // {
+    //   path: '/admin/job-seeker/:id',
+    //   name: 'AdminJobSeekerDetailedPage',
+    //   component: AdminJobSeekerDetailedPage,
+    //   meta: {
+    //     requiresAuth: true
+    //   }
+    // },
     {
       path: '/',
       name: 'HomePageContainer',
@@ -118,6 +121,14 @@ let router = new Router({
       path: '/tabs',
       name: 'tabs',
       component: tabs,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/admin/job-seeker/tabs',
+      name: 'tabs',
+      component: tab,
       meta: {
         requiresAuth: true
       }
@@ -286,6 +297,22 @@ let router = new Router({
       path: '/recruiter-3',
       name: 'recruiter_3',
       component: recruiter_3,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/MyAccount-3',
+      name: 'MyAccount_3',
+      component: MyAccount_3,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/Posting-Details',
+      name: 'tab_PostingDetails',
+      component: tab_PostingDetails,
       meta: {
         requiresAuth: true
       }
