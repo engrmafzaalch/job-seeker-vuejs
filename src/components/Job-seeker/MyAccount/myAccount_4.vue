@@ -319,6 +319,7 @@ name: "myAccount_4"
   align-items: center;
   justify-content: space-between;
   position: relative;
+  flex-wrap: wrap;
 }
 
 .container-fluid .tab-content .tab-content-inner .message-wrapper .meassage{
@@ -484,6 +485,7 @@ name: "myAccount_4"
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   border-bottom: 1px solid #C4C4C4;
   padding: 16px 60px 16px 60px;
 }
@@ -636,5 +638,32 @@ name: "myAccount_4"
   text-align: center;
   justify-content: center;
   margin-top: 20px;
+}
+
+@media (min-width: 320px) and (max-width: 1024px) {
+
+  .container-fluid .tab-content .tab-content-inner .row-custom{
+  margin: 20px 0 0px 0;
+}
+
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .first-col{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #C4C4C4;
+  padding: 16px 0px 16px 60px;
+}
+
+.container-fluid{
+  padding: 0 15px !important;
+  margin-top: 32px;
+}
+
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile{
+  padding: 0 0px 0 0 !important;
+}
+
+
 }
 </style>

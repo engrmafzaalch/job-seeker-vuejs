@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid vh-100">
+  <div class="container-fluid">
     <div class="wrapper">
       <div class="job-heading">
         <h1 class="job-heading-inr">Job Details</h1>
@@ -47,6 +47,62 @@
           <div class="years">
             <p class="years-inr">Fresh</p>
             <p class="years-inr">10+ Year</p>
+          </div>
+        </div>
+      </div>
+      <div class="first-tag">
+        <div class="input-outer-tag">
+          <label for="Industry">Industry</label>
+          <input class="input tag-input__text" type="text" placeholder="Type in to search or add new" @keydown.enter='addTag'
+                 @keydown.188='addTag'/>
+          <div v-for='(tag, index) in tags' :key='tag' class='tag-input__tag'>
+            {{ tag }}
+            <span @click='removeTag(index)'><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11 1L1 11" stroke="#FF4C68" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1 1L11 11" stroke="#FF4C68" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</span>
+          </div>
+        </div>
+        <div class="input-outer">
+          <label for="Education / Qualification">Education / Qualification</label>
+          <input class="input tag-input__text" type="text" placeholder="Type in to search or add new" @keydown.enter='addTag'
+                 @keydown.188='addTag'/>
+          <div v-for='(tag, index) in tags' :key='tag' class='tag-input__tag'>
+            {{ tag }}
+            <span @click='removeTag(index)'><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11 1L1 11" stroke="#FF4C68" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1 1L11 11" stroke="#FF4C68" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</span>
+          </div>
+        </div>
+      </div>
+      <div class="first-tag">
+        <div class="input-outer-tag">
+          <label for="Education / Qualification">Education / Qualification</label>
+          <input class="input tag-input__text" type="text" placeholder="Type in to search or add new" @keydown.enter='addTag'
+                 @keydown.188='addTag'/>
+          <div v-for='(tag, index) in tags' :key='tag' class='tag-input__tag'>
+            {{ tag }}
+            <span @click='removeTag(index)'><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11 1L1 11" stroke="#FF4C68" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1 1L11 11" stroke="#FF4C68" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></span>
+
+          </div>
+        </div>
+        <div class="input-outer">
+          <label for="Skills">Skills</label>
+          <input class="input tag-input__text" type="text" placeholder="Type in to search or add new" @keydown.enter='addTag'
+                 @keydown.188='addTag'/>
+          <div v-for='(tag, index) in tags' :key='tag' class='tag-input__tag'>
+            {{ tag }}
+            <span @click='removeTag(index)'><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11 1L1 11" stroke="#FF4C68" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1 1L11 11" stroke="#FF4C68" stroke-linecap="round" stroke-linejoin="round"/>
+</svg></span>
+
           </div>
         </div>
       </div>
@@ -177,6 +233,40 @@ export default {
 
 }
 
+.tag-input {
+  width: 100%;
+  border: 1px solid #FAFDFF;
+  font-size: 0.9em;
+  height: 50px;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+
+.tag-input__tag {
+  /*height: 30px;*/
+  float: left;
+  margin-right: 10px;
+  background-color: #FAFDFF;
+  margin-top: 10px;
+  line-height: 30px;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+.tag-input__tag > span {
+  cursor: pointer;
+  opacity: 1;
+  margin-left: 8px;
+}
+
+.tag-input__text {
+  border: none;
+  outline: none;
+  /*font-size: 0.9em;*/
+  /*line-height: 50px;*/
+  background: none;
+}
+
 
 .container-fluid{
 
@@ -186,7 +276,7 @@ export default {
   width: 990px;
 }
 .job-heading{
-
+margin: 32px 0 24px 0;
 }
 .job-heading-inr{
   font-size: 32px;
@@ -197,6 +287,12 @@ export default {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.first-tag{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-bottom: 32px;
 }
 .pad-bottom{
   padding: 0 0 32px 0;
@@ -228,6 +324,10 @@ select:focus{
 .input-outer{
   width: 100%;
   padding-left: 30px;
+}
+.input-outer-tag{
+  width: 100%;
+  /*padding-left: 30px;*/
 }
 .input{
   width: 100%;
@@ -268,7 +368,7 @@ select:focus{
   width: 49% !important;
 }
 .progress-custom{
-
+  width: 100%;
 }
 .span{
   border: 2px solid #0385F3;
@@ -322,6 +422,76 @@ select:focus{
   padding: 32px 0;
   border-top: 1px solid #F0F1F3;
   border-bottom: 1px solid #F0F1F3;
+}
+.company-heading{
+  margin-bottom: 24px;
+}
+
+.five .featured{
+  margin-bottom: 20px;
+}
+.five .featured-desc{
+  margin-bottom: 24px;
+}
+
+
+@media (min-width: 320px) and (max-width: 1024px) {
+  .wrapper{
+    width: 100%;
+  }
+  .first{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.first-tag{
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-bottom: 32px;
+}
+
+.input-outer{
+  width: 100%;
+  padding-left: 0;
+  padding-top: 30px;
+}
+
+.second{
+  flex-wrap: wrap;
+}
+.experience-otr-second{
+  padding-left: 0;
+  padding-top: 30px;
+}
+.first-tag{
+  flex-wrap: wrap;
+}
+
+.fifty{
+  width: 100% !important;
+}
+
+.progress .fifty{
+  width: 100% im !important;
+}
+
+.main-lable{
+  width: 150px;
+}
+ 
+  
+}
+
+@media (min-width: 320px) and (max-width: 500px) {
+  .main-lable{
+  width: 100%;
+}
+.left{
+  margin-left: 0;
+  margin-top: 30px;
+}
 }
 
 

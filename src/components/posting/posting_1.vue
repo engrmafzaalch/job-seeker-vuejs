@@ -24,7 +24,7 @@
           <div class="left-btn">
             <div class="inner-left-content">
               <strong>20,000</strong>
-              <p>Payment Received so far</p>
+              <p>Payment Received</p>
             </div>
           </div>
         </div>
@@ -57,7 +57,7 @@
           <div class="left-btn">
             <div class="inner-left-content">
               <strong>20,000</strong>
-              <p>Payment Received so far</p>
+              <p>Payment Received</p>
             </div>
           </div>
         </div>
@@ -65,7 +65,7 @@
           <div class="left-btn">
             <div class="inner-left-content">
               <strong>20,000</strong>
-              <p>Payment Received so far</p>
+              <p>Payment Received</p>
             </div>
           </div>
         </div>
@@ -228,6 +228,8 @@ $.each(dataSet, function(i, data) {
 
 $(document).ready(function() {
  const t = $('#example2').DataTable( {
+    "scrollY": true,
+        "scrollX": 320,
     data: dataSet,
    pagingType: 'numbers',
    language: {
@@ -408,8 +410,8 @@ $(document).ready(function() {
   border: 1px solid #F0F1F3;
   box-sizing: border-box;
   border-radius: 8px;
-  display: inline-flex;
   padding: 20px 40px 20px 20px;
+  min-width: 170px !important;
 }
 /*.container-fluid .wrapper .payment-btn .left-btn .inner-left-content{*/
 /*  margin-left: 20px;*/
@@ -501,7 +503,7 @@ select:focus{
   align-items: center;
   justify-content: space-between;
   position: relative;
-  padding: 20px 40px 48px 38px;
+  padding: 20px 40px 48px 15px;
 }
 
 /*.container-fluid .wrapper .message-wrapper .left-table-header .input-outer{*/
@@ -598,6 +600,24 @@ select:focus{
   height: 35px;
   display: inline-block;
   padding: 0
+}
+
+@media (min-width: 320px) and (max-width: 1200px) {
+  .container-fluid .wrapper .payment-btn{
+  flex-wrap: wrap;
+}
+.container-fluid{
+  padding: 0 15px !important;
+}
+.container-fluid .wrapper .payment-btn .left-btn{
+  margin-bottom: 15px;
+}
+}
+
+@media (min-width: 320px) and (max-width: 768px){
+  .container-fluid .wrapper .message-wrapper .input-outer{
+  width: 100%;
+}
 }
 
 </style>

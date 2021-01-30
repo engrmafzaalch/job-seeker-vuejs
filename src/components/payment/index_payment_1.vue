@@ -131,7 +131,7 @@
 
 <script>
 export default {
-  name: "index_payment_1"
+  name: "index_payment-1"
 }
 
 
@@ -181,6 +181,8 @@ $.each(dataSet, function(i, data) {
 
 $(document).ready(function() {
  const t = $('#example2').DataTable( {
+   "scrollY": true,
+        "scrollX": 320,
     data: dataSet,
    pagingType: 'numbers',
    language: {
@@ -208,12 +210,12 @@ $(document).ready(function() {
     "orderClasses": false,
     columns: [
       { title: "#" },
-      { title: "Support User" },
-      { title: "User Email" },
-      { title: "Created On" },
-      { title: "Last Login" },
-      { title: "Ticket Handled" },
-      { title: "Action" },
+      { title: "Paid By" },
+      { title: "Paid Via" },
+      { title: "Amount" },
+      { title: "Points" },
+      { title: "Date" },
+      { title: "" },
     ],
   } );
   t.on('order.dt search.dt', function() {
@@ -281,6 +283,7 @@ $(document).ready(function() {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  flex-wrap: wrap;
 }
 .container-fluid .wrapper .tabs-btn .new-payment{
   display: flex;
@@ -423,7 +426,7 @@ $(document).ready(function() {
   align-items: center;
   justify-content: space-between;
   position: relative;
-  padding: 20px 40px 48px 38px;
+  padding: 20px 0 48px 0;
 }
 
 /*.container-fluid .wrapper .message-wrapper .left-table-header .input-outer{*/
@@ -433,6 +436,7 @@ $(document).ready(function() {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 
@@ -521,5 +525,33 @@ select:focus{
   display: inline-block;
   padding: 0
 }
+
+@media (min-width: 320px) and (max-width: 1200px) {
+  .container-fluid{
+  padding: 0 15px !important;
+}
+}
+
+@media (min-width: 320px) and (max-width: 992px){
+  .container-fluid .wrapper .tabs-btn .new-payment{
+   margin-bottom: 20px;
+  }
+
+  .container-fluid .wrapper .message-wrapper .input-outer{
+    margin-bottom: 20px;
+  }
+  .container-fluid .wrapper .payment-btn{
+    flex-wrap: wrap;
+  }
+
+  .container-fluid .wrapper .payment-btn .right-btn{
+    margin: 20px 0 0 0;
+  }
+  .container-fluid .wrapper .message-wrapper .input-outer{
+    width: 100%;
+  }
+}
+
+
 
 </style>

@@ -83,6 +83,9 @@
             </div>
           </div>
         </div>
+         <div class="action">
+        <a class="action-btn approve-btn" href="">Save Changes</a>
+      </div>
       </div>
     </div>
   </div>
@@ -99,6 +102,23 @@ export default {
 <style scoped>
 .container-fluid{
   padding: 0 80px !important;
+}
+
+
+.action{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 32px 0 30px 100px;
+}
+.approve-btn{
+  padding: 12px 0;
+  width: 235px;
+  background: #0385F3;
+  text-align: center;
+  border-radius: 4px;
+  color: white;
+  margin-left: 10px;
 }
 
 
