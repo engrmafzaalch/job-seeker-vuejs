@@ -102,6 +102,7 @@ name: "accounts_detail"
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   padding: 20px 40px;
   border: 1px solid #F0F1F3;
   box-sizing: border-box;
@@ -146,6 +147,24 @@ name: "accounts_detail"
 .action{
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+
+@media (min-width: 320px) and (max-width: 768px) {
+
+.container-fluid .wrapper{
+  padding: 0 15px;
+  margin-top: 48px;
+}
+}
+
+@media (min-width: 320px) and (max-width: 450px) {
+.second{
+  margin-left: 0px;
+  margin-top: 10px;
+}
+
 }
 </style>

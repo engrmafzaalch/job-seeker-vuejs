@@ -11,7 +11,7 @@
             <a class="nav-link" id="support-messages-tab" data-toggle="tab" href="#support-messages" role="tab" aria-controls="support-messages" aria-selected="false">Settings</a>
           </li>
         </ul>
-        <a href="#" class="new-payment">
+        <a href="#" class="new-payment" @click="showModal">
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M8 1V15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             <path d="M1 8H15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -126,12 +126,84 @@
         </thead>
       </table>
     </div>
+      <a-modal v-model="visible" title="Basic Modal" @ok="handleOk">
+      <div class="box">
+    <div class="select-otr child">
+      <select>
+        <option value="volvo">Select Recruiter</option>
+        <option value="saab">Saab</option>
+        <option value="opel">Opel</option>
+        <option value="audi">Audi</option>
+      </select>
+      <img class="arrow" src="../../assets/arrow.png" alt="">
+    </div>
+    <div class="input-outer child">
+      <input class="input" type="text" placeholder="Amount Paid">
+      <img class="search-icon" src="../../assets/n-icon.png" alt="n-icon">
+    </div>
+    <div class="input-outer child">
+      <input class="input" type="text" placeholder="Transaction Number">
+    </div>
+    <a-upload-dragger
+    name="file"
+    :multiple="true"
+    action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+    @change="handleChange"
+  >
+    <p class="ant-upload-drag-icon">
+     <svg width="42" height="40" viewBox="0 0 42 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M41.524 4.2693C41.3066 1.86922 39.3101 0 36.9029 0H4.89974L4.68621 0.00496338L4.47569 0.0196781C2.1049 0.239839 0.259277 2.26181 0.259277 4.69847V35.3015L0.264175 35.5176L0.278703 35.7307C0.496077 38.1308 2.49258 40 4.89974 40H36.9029L37.1165 39.995L37.327 39.9803C39.6978 39.7602 41.5434 37.7382 41.5434 35.3015V4.69847L41.5385 4.48242L41.524 4.2693ZM2.42824 9.39604H39.3743V35.3015L39.3695 35.4598L39.3546 35.6219C39.201 36.8526 38.1549 37.8038 36.903 37.8038H4.89977L4.74345 37.7989L4.58339 37.7838C3.36782 37.6282 2.42841 36.5691 2.42841 35.3015L2.42824 9.39604ZM28.0132 25.2025C28.5255 25.2025 28.9607 25.5644 29.0717 26.0661L29.0914 26.1843L29.0977 26.3006V29.901C29.0977 30.4197 28.7403 30.8604 28.2448 30.9727L28.1281 30.9927L28.0132 30.9991H13.7895C13.2772 30.9991 12.842 30.6372 12.731 30.1355L12.7113 30.0173L12.705 29.901V26.3006C12.705 25.6944 13.1908 25.2025 13.7895 25.2025C14.3018 25.2025 14.737 25.5644 14.848 26.0661L14.8678 26.1843L14.8741 26.3006L14.8736 28.802H26.9279L26.9286 26.3006C26.9286 25.7752 27.2935 25.3357 27.7806 25.2279L27.895 25.209L28.0132 25.2025ZM21.185 16.2433C21.0551 16.2125 20.919 16.2086 20.7715 16.2264C20.7196 16.2333 20.6743 16.2421 20.6261 16.2548C20.4321 16.3051 20.2707 16.389 20.1389 16.5224C20.185 16.4908 20.2033 16.4783 20.2234 16.4725C20.2366 16.4687 20.2506 16.4678 20.2737 16.4662L20.1354 16.5242L16.5795 20.1246L16.491 20.2264L16.4204 20.3319C16.1643 20.7648 16.2247 21.3181 16.5795 21.6774L16.674 21.7625L16.7754 21.8346C17.1934 22.0964 17.7503 22.0429 18.1131 21.6756L19.8168 19.9495V26.3006L19.8231 26.417L19.8428 26.5351C19.9538 27.0368 20.389 27.3987 20.9013 27.3987L21.0194 27.3923L21.1337 27.3734C21.6206 27.2657 21.9858 26.8266 21.9876 26.3013L21.9876 19.9545L23.6895 21.6774L23.7911 21.7671L23.9147 21.8502C24.0838 21.9488 24.2689 21.9982 24.4572 21.9982C24.7425 21.9982 25.0179 21.8851 25.2231 21.6774C25.6462 21.249 25.6462 20.553 25.2231 20.1246L21.6672 16.5242L21.5754 16.4438L21.5007 16.3917L21.4636 16.369L21.3765 16.3228L21.3301 16.2909L21.185 16.2433ZM36.903 2.19622H4.89977C3.64788 2.19622 2.60179 3.14737 2.44813 4.37813L2.4332 4.54019L2.42841 4.69847L2.42824 7.2H39.3743V4.69847C39.3743 3.37426 38.3523 2.28646 37.0652 2.20155L36.903 2.19622ZM5.98433 4.69847C5.98433 4.092 5.49876 3.60036 4.89978 3.60036C4.3008 3.60036 3.81523 4.092 3.81523 4.69847C3.81523 5.30494 4.3008 5.79658 4.89978 5.79658C5.49876 5.79658 5.98433 5.30494 5.98433 4.69847ZM8.45563 3.60036C9.05462 3.60036 9.54019 4.092 9.54019 4.69847C9.54019 5.30494 9.05462 5.79658 8.45563 5.79658C7.85665 5.79658 7.37108 5.30494 7.37108 4.69847C7.37108 4.092 7.85665 3.60036 8.45563 3.60036ZM13.0961 4.69847C13.0961 4.092 12.6106 3.60036 12.0116 3.60036C11.4126 3.60036 10.927 4.092 10.927 4.69847C10.927 5.30494 11.4126 5.79658 12.0116 5.79658C12.6106 5.79658 13.0961 5.30494 13.0961 4.69847Z" fill="#A1A4B1"/>
+</svg>
+
+    </p>
+    <p class="ant-upload-text">
+    <b> Drop Payment Reciepts here , or <span style="color: #0385F3">browse</span></b>
+    </p>
+    <p class="ant-upload-hint">
+      Support: PDF, JPGS, DOcs
+    </p>
+  </a-upload-dragger>
+      <div class="last-li list child">
+      <div class="action">
+        <a class="action-btn cancel-btn" href="">Cancel</a>
+        <a class="action-btn approve-btn" href="">Add Payment</a>
+      </div>
+    </div>
+  </div>
+    </a-modal>
   </div>
 </template>
 
 <script>
+import Payments_2 from './Payments_2.vue';
 export default {
-  name: "index_payment-1"
+  components: { Payments_2 },
+  name: "index_payment-1",
+  data() {
+    return {
+      visible: false,
+    };
+  },
+  methods: {
+    showModal() {
+      this.visible = true;
+    },
+    handleOk(e) {
+      console.log(e);
+      this.visible = false;
+    },
+    handleChange(info) {
+      const status = info.file.status;
+      if (status !== 'uploading') {
+        console.log(info.file, info.fileList);
+      }
+      if (status === 'done') {
+        this.$message.success(`${info.file.name} file uploaded successfully.`);
+      } else if (status === 'error') {
+        this.$message.error(`${info.file.name} file upload failed.`);
+      }
+    },
+  },
 }
 
 
@@ -276,6 +348,144 @@ $(document).ready(function() {
 </script>
 
 <style scoped>
+
+.box{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+li{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+ul{
+  padding: 0;
+  margin: 0;
+}
+p{
+  padding: 0;
+  margin: 0;
+}
+
+h1,h2,h3,h4,h5,h6{
+  padding: 0;
+  margin: 0;
+}
+/* .box{
+  margin: 100px auto;
+  width: 576px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 32px 48px;
+  border: 1px solid #8B90A0;
+} */
+
+.box .select-otr{
+  position: relative;
+  border: 1px solid #A1A4B1;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.box .child:not(:last-child){
+  margin-bottom: 20px;
+}
+
+.box .select-otr select{
+  width: 100%;
+  border-radius: 4px;
+  color: #8B90A0;
+  background: #FFFFFF;
+  padding: 12px 16px;
+  border: none;
+  appearance: none;
+}
+
+.box select:focus{
+  outline: none;
+}
+
+.box .select-otr .arrow{
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translate(0, -50%);
+}
+
+
+.input-outer{
+  position: relative;
+  width: 100%;
+}
+
+.box .input-outer .input{
+  width: 100%;
+  padding: 12px 16px;
+  color: #8B90A0;
+  border-radius: 4px;
+  border: 1px solid #8B90A0;
+  outline: none;
+  box-shadow: none;
+}
+
+.box .input-outer .input::placeholder{
+  color: #8B90A0;
+}
+
+.box .input-outer .search-icon{
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translate(0, -50%);
+}
+
+.box .input-outer .input{
+  width: 100%;
+  padding: 12px 16px;
+  color: #8B90A0;
+  border-radius: 4px;
+  border: 1px solid #8B90A0;
+  outline: none;
+  box-shadow: none;
+}
+
+.box .last-li .action{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.box .last-li .action .cancel-btn{
+  padding: 12px 0;
+  width: 100%;
+  background: #FAFAFA;
+  text-align: center;
+  border-radius: 4px;
+  color: #8B90A0;
+  margin-right: 10px;
+}
+
+.box .last-li .action .approve-btn{
+  padding: 12px 0;
+  width: 100%;
+  background: #0385F3;
+  text-align: center;
+  border-radius: 4px;
+  color: white;
+}
+
+.action{
+  margin-top: 20px;
+}
+.box .last-li .action .action-btn{
+
+}
 .container-fluid{
   padding: 0 80px !important;
 }

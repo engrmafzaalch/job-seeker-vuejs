@@ -87,6 +87,7 @@ name: "reports"
   width: 480px;
   padding: 32px;
   margin-bottom: 10px;
+  flex-wrap: wrap;
 }
 .registration{
   display: flex;
@@ -99,6 +100,7 @@ name: "reports"
   width: 551px;
   padding: 32px;
   margin-bottom: 10px;
+  flex-wrap: wrap;
 }
 .approve-btn{
   display: flex;
@@ -128,6 +130,38 @@ name: "reports"
   display: flex;
   justify-content: flex-start;
   align-items: center;
+}
+
+@media (min-width: 320px) and (max-width: 1024px) {
+  .container-fluid .wrapper{
+  padding: 0 15px !important;
+}
+
+.container-fluid .wrapper .payment-received .action{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.container-fluid .wrapper .registration .action{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.registration{
+  width: 100%;
+}
+
+.approve-btn{
+  margin-left: 0;
+}
+.container-fluid .wrapper .payment-received{
+  width: 100%;
+}
+
 }
 
 </style>

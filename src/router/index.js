@@ -235,6 +235,22 @@ let router = new Router({
       }
     },
     {
+      path: '/accounts_detail',
+      name: 'accounts_detail',
+      component: accounts_detail,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/change_password',
+      name: 'change_password',
+      component: change_password,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
       path: '/reports',
       name: 'reports',
       component: reports,

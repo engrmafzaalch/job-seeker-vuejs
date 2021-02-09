@@ -91,4 +91,11 @@ name: "change_password"
   color: white;
   margin-left: 10px;
 }
+
+@media (min-width: 320px) and (max-width: 1024px) {
+  .container .wrapper{
+  width: 100% !important;
+  margin: 0 auto;
+}
+}
 </style>
