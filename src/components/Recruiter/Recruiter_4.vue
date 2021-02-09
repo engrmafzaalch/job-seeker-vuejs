@@ -1,35 +1,18 @@
 <template>
   <div class="container-fluid">
     <div class="wrapper">
-      <div class="tabs-btn">
-        <ul class="nav nav-tabs nav-justified" role="tablist">
-          <div class="slider"></div>
-          <li class="nav-item">
-            <a class="nav-link active" id="account-details-tab" data-toggle="tab" href="#account-details" role="tab" aria-controls="account-details" aria-selected="true">Payments</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" id="support-messages-tab" data-toggle="tab" href="#support-messages" role="tab" aria-controls="support-messages" aria-selected="false">Settings</a>
-          </li>
-        </ul>
-<!--        <a href="#" class="new-payment">-->
-<!--          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">-->
-<!--            <path d="M8 1V15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>-->
-<!--            <path d="M1 8H15" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>-->
-<!--          </svg>-->
-<!--          Record New Payment-->
-<!--        </a>-->
-      </div>
+
       <div class="payment-btn">
         <div class="col-lg-2">
           <div class="left-btn">
             <div class="inner-left-content">
               <strong>20,000</strong>
-              <p>Payment Received</p>
+              <p>Payment Received so far</p>
             </div>
           </div>
         </div>
         <div class="col-lg-2">
-        <div class="left-btn">
+          <div class="left-btn">
             <div class="inner-left-content">
               <strong>20,000</strong>
               <div class="price-left">
@@ -51,13 +34,13 @@
                 </div>
               </div>
             </div>
-        </div>
+          </div>
         </div>
         <div class="col-lg-2">
           <div class="left-btn">
             <div class="inner-left-content">
               <strong>20,000</strong>
-              <p>Payment Received</p>
+              <p>Payment Received so far</p>
             </div>
           </div>
         </div>
@@ -65,7 +48,7 @@
           <div class="left-btn">
             <div class="inner-left-content">
               <strong>20,000</strong>
-              <p>Payment Received</p>
+              <p>Payment Received so far</p>
             </div>
           </div>
         </div>
@@ -141,21 +124,21 @@
             <path d="M29 27H35" stroke="#0385F3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             <rect y="1" width="48" height="44" rx="4" stroke="#F0F1F3"/>
           </svg>
-<!--          <div class="select-otr">-->
-<!--            <select>-->
-<!--              <option value="volvo">Today</option>-->
-<!--              <option value="saab">Mon</option>-->
-<!--              <option value="opel">Tue</option>-->
-<!--              <option value="audi">Wed</option>-->
-<!--              <option value="saab">Thur</option>-->
-<!--              <option value="opel">Fri</option>-->
-<!--              <option value="audi">Sat</option>-->
-<!--              <option value="audi">Sun</option>-->
-<!--            </select>-->
-<!--            <svg class="arrow" width="10" height="5" viewBox="0 0 10 5" fill="none" xmlns="http://www.w3.org/2000/svg">-->
-<!--              <path d="M0 0L5 5L10 0H0Z" fill="#A1A4B1"/>-->
-<!--            </svg>-->
-<!--          </div>-->
+          <!--          <div class="select-otr">-->
+          <!--            <select>-->
+          <!--              <option value="volvo">Today</option>-->
+          <!--              <option value="saab">Mon</option>-->
+          <!--              <option value="opel">Tue</option>-->
+          <!--              <option value="audi">Wed</option>-->
+          <!--              <option value="saab">Thur</option>-->
+          <!--              <option value="opel">Fri</option>-->
+          <!--              <option value="audi">Sat</option>-->
+          <!--              <option value="audi">Sun</option>-->
+          <!--            </select>-->
+          <!--            <svg class="arrow" width="10" height="5" viewBox="0 0 10 5" fill="none" xmlns="http://www.w3.org/2000/svg">-->
+          <!--              <path d="M0 0L5 5L10 0H0Z" fill="#A1A4B1"/>-->
+          <!--            </svg>-->
+          <!--          </div>-->
         </div>
 
       </div>
@@ -163,12 +146,12 @@
         <thead class="table-head">
         <tr>
           <th>#</th>
-          <th>Support User</th>
-          <th>User Email</th>
-          <th>CreatedOn</th>
+          <th>Name</th>
+          <th>Email Address</th>
+          <th>Registration No</th>
           <th>Last Login</th>
-          <th>Ticket Handled</th>
-          <th>Action</th>
+          <th>Status</th>
+          <th></th>
         </tr>
         </thead>
       </table>
@@ -178,10 +161,8 @@
 
 <script>
 export default {
-  name: "posting_1"
+  name: "Recruiter_4"
 }
-
-
 var dataSet = [
   [ "Tiger Nixon", "System Architect", "Edinburgh", "5421", "2011/04/25", "$320,800" ],
   [ "Garrett Winters", "Accountant", "Tokyo", "8422", "2011/07/25", "$170,750" ],
@@ -226,42 +207,41 @@ $.each(dataSet, function(i, data) {
 })
 
 $(document).ready(function() {
- const t = $('#example2').DataTable( {
-    "scrollY": true,
-        "scrollX": 320,
+  const t = $('#example2').DataTable( {
     data: dataSet,
-   pagingType: 'numbers',
-   language: {
-     //"info": "Displaying (_PAGE_) of _PAGES_",   // https://datatables.net/reference/option/language
-     paginate: {
-       next: '<span class="paginate_button previous icon-right"><img src="src/assets/Vector-right.svg" alt="<"></span>',
-       previous: '<span class="paginate_button next icon-left"><img src="src/assets/Vector-left.svg" alt=">"></span>'
-     },
-   },
+    pagingType: 'numbers',
+    language: {
+      //"info": "Displaying (_PAGE_) of _PAGES_",   // https://datatables.net/reference/option/language
+      paginate: {
+        next: '<span class="paginate_button previous icon-right"><img src="src/assets/Vector-right.svg" alt="<"></span>',
+        previous: '<span class="paginate_button next icon-left"><img src="src/assets/Vector-left.svg" alt=">"></span>'
+      },
+    },
 
-   'columnDefs': [
-     {  className: "my_second_class", targets: 6 },
-     {
-       'targets': 6,
-       'render': function(data, type, row) {
-         //return x('p');
-         return 1;
-
-
-       }
+    'columnDefs': [
+      {  className: "my_second_class", targets: 6 },
+      {  className: "my_second_status", targets: 5 },
+      {
+        'targets': 6,
+        'render': function(data, type, row) {
+          //return x('p');
+          return 1;
 
 
-     }
-   ],
+        }
+
+
+      }
+    ],
     "orderClasses": false,
     columns: [
       { title: "#" },
-      { title: "Support User" },
-      { title: "User Email" },
-      { title: "Created On" },
+      { title: "Name" },
+      { title: "Email Address" },
+      { title: "Registration No" },
       { title: "Last Login" },
-      { title: "Ticket Handled" },
-      { title: "Action" },
+      { title: "Status" },
+      { title: "" },
     ],
   } );
   t.on('order.dt search.dt', function() {
@@ -308,17 +288,6 @@ $(document).ready(function() {
     t.search(this.value).draw();
   });
 } );
-
-// $('.wrapper .nav-tabs a').click(function() {
-//   let position = $(this).parent().position();
-//   let width = $(this).parent().width();
-//   $(".wrapper .slider").css({'left':+ position.left,"width":width});
-// });
-// let actWidth = $('.wrapper .nav-tabs').find('.active').parent('li').width();
-// let actPosition = $('.wrapper .nav-tabs .active').position();
-// $('.wrapper .slider').css({'left':+ actPosition.left,'width': actWidth});
-
-
 </script>
 
 <style scoped>
@@ -409,8 +378,8 @@ $(document).ready(function() {
   border: 1px solid #F0F1F3;
   box-sizing: border-box;
   border-radius: 8px;
+  display: inline-flex;
   padding: 20px 40px 20px 20px;
-  min-width: 170px !important;
 }
 /*.container-fluid .wrapper .payment-btn .left-btn .inner-left-content{*/
 /*  margin-left: 20px;*/
@@ -502,7 +471,7 @@ select:focus{
   align-items: center;
   justify-content: space-between;
   position: relative;
-  padding: 20px 40px 48px 15px;
+  padding: 20px 40px 48px 38px;
 }
 
 /*.container-fluid .wrapper .message-wrapper .left-table-header .input-outer{*/
@@ -599,24 +568,6 @@ select:focus{
   height: 35px;
   display: inline-block;
   padding: 0
-}
-
-@media (min-width: 320px) and (max-width: 1200px) {
-  .container-fluid .wrapper .payment-btn{
-  flex-wrap: wrap;
-}
-.container-fluid{
-  padding: 0 15px !important;
-}
-.container-fluid .wrapper .payment-btn .left-btn{
-  margin-bottom: 15px;
-}
-}
-
-@media (min-width: 320px) and (max-width: 768px){
-  .container-fluid .wrapper .message-wrapper .input-outer{
-  width: 100%;
-}
 }
 
 </style>

@@ -4,16 +4,13 @@
   >
     <div class="container-fluid text-align-initial">
       <a-breadcrumb>
-        <a-breadcrumb-item class="job-seeker-detailed-page-breadcumb-link"
-          >JOB SEEKER LIST</a-breadcrumb-item
-        >
-        <a-breadcrumb-item class="job-seeker-detailed-page-breadcumb-link"
-          ><a>JOB SEEKER A</a></a-breadcrumb-item
-        >
+        <a-breadcrumb-item class="job-seeker-detailed-page-breadcumb-link">
+          JOB SEEKER LIST</a-breadcrumb-item>
+        <a-breadcrumb-item class="job-seeker-detailed-page-breadcumb-link">
+          <a>JOB SEEKER A</a>
+        </a-breadcrumb-item>
         <a-breadcrumb-item
-          class="job-seeker-detailed-page-breadcumb-link active-color"
-          ><a href="">DETAILS</a></a-breadcrumb-item
-        >
+          class="job-seeker-detailed-page-breadcumb-link active-color"><a href="">DETAILS</a></a-breadcrumb-item>
       </a-breadcrumb>
     </div>
     <div class="text-align-initial mt-30">

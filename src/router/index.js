@@ -34,7 +34,17 @@ import posting_4 from "../components/posting/posting_4";
 import Recruiter from "../components/Recruiter/Recruiter";
 import recruiter_1 from "../components/Recruiter/recruiter_1";
 import recruiter_3 from "../components/Recruiter/recruiter_3";
+import tab from "../components/admin-job-seeker/job-seeker-detailed-view/Job Seeker Details/tab";
+import MyAccount_3 from "../components/admin-job-seeker/MyAccount/MyAccount_3";
 import {store} from '../store/store'
+import tab_PostingDetails from "../components/posting/tab_PostingDetails";
+import tab_Recruiter from "../components/Recruiter/tab_Recruiter";
+import ModalRecruiter_6 from "../components/Recruiter/ModalRecruiter_6";
+import MyAccount_6 from "../components/admin-job-seeker/My-Account/MyAccount_6";
+import MyAccount_7 from "../components/admin-job-seeker/My-Account/MyAccount_7";
+import MyAccount_8 from "../components/admin-job-seeker/My-Account/MyAccount_8";
+import MyAccount_9 from "../components/admin-job-seeker/My-Account/MyAccount_9";
+import MyAccount_10 from "../components/admin-job-seeker/My-Account/MyAccount_10";
 
 Vue.use(Router)
 
@@ -74,14 +84,14 @@ let router = new Router({
         requiresAuth: true
       }
     },
-    {
-      path: '/admin/job-seeker/:id',
-      name: 'AdminJobSeekerDetailedPage',
-      component: AdminJobSeekerDetailedPage,
-      meta: {
-        requiresAuth: true
-      }
-    },
+    // {
+    //   path: '/admin/job-seeker/:id',
+    //   name: 'AdminJobSeekerDetailedPage',
+    //   component: AdminJobSeekerDetailedPage,
+    //   meta: {
+    //     requiresAuth: true
+    //   }
+    // },
     {
       path: '/',
       name: 'HomePageContainer',
@@ -115,17 +125,17 @@ let router = new Router({
       }
     },
     {
-      path: '/index_myAccount',
-      name: 'index_myAccount',
-      component: index_myAccount,
+      path: '/tabs',
+      name: 'tabs',
+      component: tabs,
       meta: {
         requiresAuth: true
       }
     },
     {
-      path: '/tabs',
+      path: '/admin/job-seeker/tabs',
       name: 'tabs',
-      component: tabs,
+      component: tab,
       meta: {
         requiresAuth: true
       }
@@ -291,6 +301,14 @@ let router = new Router({
       }
     },
     {
+      path: '/Recruiter-List',
+      name: 'tab_Recruiter',
+      component: tab_Recruiter,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
       path: '/Recruiter',
       name: 'Recruiter',
       component: Recruiter,
@@ -310,6 +328,70 @@ let router = new Router({
       path: '/recruiter-3',
       name: 'recruiter_3',
       component: recruiter_3,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/MyAccount-3',
+      name: 'MyAccount_3',
+      component: MyAccount_3,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/Posting-Details',
+      name: 'tab_PostingDetails',
+      component: tab_PostingDetails,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/Modal-Recruiter-6',
+      name: 'ModalRecruiter_6',
+      component: ModalRecruiter_6,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/MyAccount-6',
+      name: 'MyAccount_6',
+      component: MyAccount_6,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/MyAccount-7',
+      name: 'MyAccount_7',
+      component: MyAccount_7,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/MyAccount-8',
+      name: 'MyAccount_8',
+      component: MyAccount_8,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/MyAccount-9',
+      name: 'MyAccount_9',
+      component: MyAccount_9,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/MyAccount-10',
+      name: 'MyAccount_10',
+      component: MyAccount_10,
       meta: {
         requiresAuth: true
       }
