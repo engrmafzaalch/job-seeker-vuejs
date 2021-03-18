@@ -61,14 +61,13 @@ export default {
   },
 
   beforeCreate() {
-    axios.get('http://167.99.198.38:32001/list/skill/set', {
+    axios.get('192.241.137.124:8000/api/v1/skills', {
       headers: {
-        'Authorization': `Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJFZ0NPRTB3ZDVEMjZfX0ZUZURmSmhNejlucndZYXM2czFGaE5EcHo2djFJIn0.eyJleHAiOjE2MTEyMzAwMTksImlhdCI6MTYxMTIyNjQxOSwianRpIjoiMTU2YWM2OTktZjNiNS00MDQ1LWIwYWEtMzJlZTNmNTQ0Mjc0IiwiaXNzIjoiaHR0cDovLzE3OC42Mi44Ny4xNjI6ODA4MC9hdXRoL3JlYWxtcy9tYXN0ZXIiLCJzdWIiOiI3ZDVhOTc2NC1kN2RiLTQ2ZTktYTdjMi01ZTdmNWZlOGUwMDYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhZG1pbi1jbGkiLCJzZXNzaW9uX3N0YXRlIjoiNDM3MmU1ZmUtOTA5Zi00YTQwLWE4MzYtMzk0NzMxYjBmM2RiIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiSk9CU0VFS0VSIl19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IlRvbnkgQXlhYmFtIiwicHJlZmVycmVkX3VzZXJuYW1lIjoidG9ueUBnbWFpbC5jb20iLCJnaXZlbl9uYW1lIjoiVG9ueSIsImZhbWlseV9uYW1lIjoiQXlhYmFtIiwiZW1haWwiOiJ0b255QGdtYWlsLmNvbSJ9.oriQrwqrbp8R94vQJcl2XuY4wlRYcCzelIAaZiSfz78B-ryUGQU3p4lpkRGZpdU_lrBRgUTB4kteIp5uHfb2XQ9iUnghKuwIIMR46jOBmDptk8P1sNHIVEYq-61XMHmfQrwyPnkY2ufxRVCWv8wV0onKrHSD6jepwvp8Opkm-4xZY5ZaRpAVzGAJwj-WRNVI3NPg5wOsCUgTzhXyguBAHko_uMoXug-oHOKiMStoyjQ068McwaoHKiu93SWZ6fxNS0IQwmw6Q4MG2KuKMiyCGNd8fjxPjEOXNsF1TUifyGHXq2zRHU4hbP92QBDShRaANqONZEK6pQLnQeM3e0PQig`
+        'Authorization': `Bearer ${localStorage.getItem('token')}`,
       }
     })
       .then((res) => {
         this.skillSet = res.data
-        console.log("data", res.data)
       })
       .catch((error) => {
         console.error(error)
@@ -90,11 +89,30 @@ export default {
         if (!err) {
           console.log("Received values of form: ", values);
           this.$store.commit('change', 7)
+            var data = values
 
-          axios
-            .post('http://167.99.198.38:32001/add/job/seeker/skill/set')
-            .then(response => (this.info = response.data.bpi))
-            .catch(error => console.log(error))
+          console.log("data body", data)
+         var config = {
+            method: 'post',
+            url: 'http://192.241.137.124:8000/api/v1/skill',
+            headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`,
+              'Content-Type': 'application/json'
+            },
+            data : data
+          };
+          axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+
+          // axios.post('http://192.241.137.124:8000/api/v1/skill')
+          //   .then(response => (this.info = response.data))
+          //   .catch(error => console.log(error))
 
         }
       });

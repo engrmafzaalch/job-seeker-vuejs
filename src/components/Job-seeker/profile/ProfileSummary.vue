@@ -20,10 +20,11 @@
       </div>
       </a-form-item>
       <div>
-      <button type="primary button"
-              html-type="submit"
-              class="login-button-style float-right btn btn-primary mt-5 px-5"
-              :disabled="hasErrors(form.getFieldsError())">Proceed</button>
+          <a-button type="primary"
+                    html-type="submit"
+                    class="login-button-style btn btn-primary px-4"
+                    :disabled="hasErrors(form.getFieldsError())">Proceed
+          </a-button>
       </div>
     </a-form>
   </div>
@@ -31,6 +32,8 @@
 </template>
 
 <script>
+import axios from "axios";
+console.log('ye link h ' , process.env.VUE_ROOT_URL);
 function hasErrors(fieldsError) {
   return Object.keys(fieldsError).some((field) => fieldsError[field]);
 }
@@ -60,14 +63,33 @@ name: "ProfileSummary",
         if (!err) {
           console.log("Received values of form: ", values);
           this.$store.commit('change', 2)
+     var data = values
+      var config = {
+        method: 'post',
+        url: 'http://192.241.137.124:8000/api/v1/profile',
+        headers: {
+          'Authorization':  `Bearer ${localStorage.getItem('token')}`,
+          'Content-Type': 'application/json'
+        },
+        data : data
+      };
+       axios(config)
+        .then(function (response) {
+          console.log(JSON.stringify(response.data));
+
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
         }
       });
+     
     },
     onChange(date, dateString) {
       console.log(date, dateString);
     },
 
-  }
+  },
 }
 </script>
 

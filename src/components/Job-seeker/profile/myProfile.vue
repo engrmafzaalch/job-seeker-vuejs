@@ -10,11 +10,11 @@
       <div class="form-group">
         <div class="row">
           <div class="col-sm-6">
-            <a-input v-decorator="[`Name`,]"
+            <a-input v-decorator="[`name`,]"
                      type="text" class="form-control" id="name" placeholder="Name"></a-input>
           </div>
           <div class="col-sm-6">
-            <select v-decorator="[`EmailAddress`,]"
+            <select v-decorator="[`emailAddress`,]"
                     type="text" class="form-control" id="email_address">
               <option value="" disabled selected hidden>Email Address</option>
               <option value="none">none</option>
@@ -23,14 +23,14 @@
         </div>
         <div class="row">
           <div class="col-sm-6">
-            <select v-decorator="[`City`,]"
+            <select v-decorator="[`city`,]"
                     type="text" class="form-control" id="city">
               <option value="" disabled selected hidden>City</option>
               <option value="Lahore">Lahore</option>
             </select>
           </div>
           <div class="col-sm-6">
-            <select v-decorator="[`Country`,]"
+            <select v-decorator="[`country`,]"
                     type="text" class="form-control" id="country">
               <option value="" disabled selected hidden>Country</option>
               <option v-for="country in countries" >{{country.countryName}}</option>
@@ -39,11 +39,11 @@
         </div>
         <div class="row">
           <div class="col-sm-6">
-            <a-input v-decorator="[`MobileNumber`,]"
+            <a-input v-decorator="[`mobileNumber`,]"
                      type="text" class="form-control" id="mobile_number" placeholder="Mobile Number"></a-input>
           </div>
           <div class="col-sm-6">
-            <a-input v-decorator="[`LinkedIn`,]"
+            <a-input v-decorator="[`linkedIn`,]"
                      type="text" class="form-control" id="linked_in" placeholder="Linked-In Profile URL"></a-input>
           </div>
         </div>
@@ -54,21 +54,21 @@
         </div>
         <div class="row">
           <div class="col-sm-4">
-            <select v-decorator="[`Day`,]"
+            <select v-decorator="[`day`,]"
                     class="form-control one" id="day">
               <option value="" disabled selected hidden>Day</option>
               <option value="1">1</option>
             </select>
           </div>
           <div class="col-sm-4">
-            <select v-decorator="[`Month`,]"
+            <select v-decorator="[`month`,]"
                     class="form-control one two" id="month">
               <option value="" disabled selected hidden>Month</option>
               <option value="January">January</option>
             </select>
           </div>
           <div class="col-sm-4">
-            <select v-decorator="[`Year`,]"
+            <select v-decorator="[`year`,]"
                     type="text" class="form-control one two" id="year">
               <option value="" disabled selected hidden>Year</option>
               <option value="2021">2021</option>
@@ -83,7 +83,7 @@
           <div class="row">
             <div class="col-md-6">
               <a-input v-decorator="[
-                          `NYSC`,
+                          `nysc`,
                           {
                             rules: [
                               {
@@ -129,15 +129,15 @@ export default {
   data() {
     return {
       hasErrors,
-      form: this.$form.createForm(this, { name: "Name EmailAddress City Country MobileNumber LinkedIn Day Month Year NYSC" }),
+      form: this.$form.createForm(this, { name: "name emailAddress city country mobileNumber linkedIn day month year nysc" }),
       countries : []
     };
   },
 
   beforeCreate() {
-    axios.get('http://167.99.198.38:32001/list/countries', {
+    axios.get('http://192.241.137.124:8000/api/v1/countries', {
       headers: {
-        'Authorization': `Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJFZ0NPRTB3ZDVEMjZfX0ZUZURmSmhNejlucndZYXM2czFGaE5EcHo2djFJIn0.eyJleHAiOjE2MTEyMzAwMTksImlhdCI6MTYxMTIyNjQxOSwianRpIjoiMTU2YWM2OTktZjNiNS00MDQ1LWIwYWEtMzJlZTNmNTQ0Mjc0IiwiaXNzIjoiaHR0cDovLzE3OC42Mi44Ny4xNjI6ODA4MC9hdXRoL3JlYWxtcy9tYXN0ZXIiLCJzdWIiOiI3ZDVhOTc2NC1kN2RiLTQ2ZTktYTdjMi01ZTdmNWZlOGUwMDYiLCJ0eXAiOiJCZWFyZXIiLCJhenAiOiJhZG1pbi1jbGkiLCJzZXNzaW9uX3N0YXRlIjoiNDM3MmU1ZmUtOTA5Zi00YTQwLWE4MzYtMzk0NzMxYjBmM2RiIiwiYWNyIjoiMSIsInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIiwiSk9CU0VFS0VSIl19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IlRvbnkgQXlhYmFtIiwicHJlZmVycmVkX3VzZXJuYW1lIjoidG9ueUBnbWFpbC5jb20iLCJnaXZlbl9uYW1lIjoiVG9ueSIsImZhbWlseV9uYW1lIjoiQXlhYmFtIiwiZW1haWwiOiJ0b255QGdtYWlsLmNvbSJ9.oriQrwqrbp8R94vQJcl2XuY4wlRYcCzelIAaZiSfz78B-ryUGQU3p4lpkRGZpdU_lrBRgUTB4kteIp5uHfb2XQ9iUnghKuwIIMR46jOBmDptk8P1sNHIVEYq-61XMHmfQrwyPnkY2ufxRVCWv8wV0onKrHSD6jepwvp8Opkm-4xZY5ZaRpAVzGAJwj-WRNVI3NPg5wOsCUgTzhXyguBAHko_uMoXug-oHOKiMStoyjQ068McwaoHKiu93SWZ6fxNS0IQwmw6Q4MG2KuKMiyCGNd8fjxPjEOXNsF1TUifyGHXq2zRHU4hbP92QBDShRaANqONZEK6pQLnQeM3e0PQig`
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
       }
     })
       .then((res) => {
@@ -150,6 +150,9 @@ export default {
   },
 
   methods: {
+    changed: function(step) {
+      this.$store.commit('change', step)
+    },
     userNameError() {
       const { getFieldError, isFieldTouched } = this.form;
       return isFieldTouched("userName") && getFieldError("userName");
@@ -161,6 +164,26 @@ export default {
         if (!err) {
           console.log("Received values of form: ", values);
           this.$store.commit('change', 8)
+           var data = values
+
+          console.log("data body", data)
+         var config = {
+            method: 'post',
+            url: 'http://192.241.137.124:8000/api/v1/profile',
+            headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`,
+              'Content-Type': 'application/json'
+            },
+            data : data
+          };
+          axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
         }
       });
     },

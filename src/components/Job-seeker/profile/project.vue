@@ -10,11 +10,11 @@
       <div class="form-group">
         <div class="row">
           <div class="col-sm-6">
-            <input v-decorator="[`ProjectTitle`,]"
+            <input v-decorator="[`projectTitle`,]"
                    type="text" class="my-2 form-control" id="project_title" placeholder="Project Title">
           </div>
           <div class="col-sm-6">
-            <select v-decorator="[`EmployerName`,]"
+            <select v-decorator="[`employerName`,]"
                     type="text" class="my-2 form-control" id="employer_name">
               <option value="" disabled selected hidden>Employer Name</option>
               <option value="JS Labs">JS Labs</option>
@@ -23,14 +23,14 @@
         </div>
         <div class="row">
           <div class="col-sm-6">
-            <select v-decorator="[`ClientName`,]"
+            <select v-decorator="[`clientName`,]"
                     type="text" class="my-2 form-control" id="client_name">
               <option value="" disabled selected hidden>Client Name</option>
               <option value="Usha">Usha</option>
             </select>
           </div>
           <div class="col-sm-6">
-            <select v-decorator="[`ProjectStatus`,]"
+            <select v-decorator="[`projectStatus`,]"
                     type="text" class="my-2 form-control" id="project_status">
               <option value="" disabled selected hidden>Project Status</option>
               <option value="On Going">On Going</option>
@@ -39,22 +39,22 @@
         </div>
         <div class="row date">
           <div class="col-sm-6">
-            <a-date-picker v-decorator="[`EndDate`,]"
+            <a-date-picker v-decorator="[`endDate`,]"
                            class="my-2 w-100" @change="onChange" placeholder="End Date"/>
           </div>
           <div class="col-sm-6">
-            <a-date-picker v-decorator="[`StartDate`,]"
+            <a-date-picker v-decorator="[`startDate`,]"
                            class="my-2 w-100" @change="onChange" placeholder="Start Date"/>
           </div>
         </div>
         <div class="row Education">
           <div class="col-md-6">
-            <a-textarea v-decorator="[`EducationDetail`,]"
+            <a-textarea v-decorator="[`projectDetail`,]"
                         class="my-2 form-control"
                         name="text"
                         id="education_details"
                         cols="" rows="6"
-                        placeholder="Education Details"></a-textarea>
+                        placeholder="Project Details"></a-textarea>
           </div>
         </div>
         <div class="row justify-content-center text-center my-2">
@@ -81,6 +81,7 @@
 </template>
 
 <script>
+import axios from "axios";
 function hasErrors(fieldsError) {
   return Object.keys(fieldsError).some((field) => fieldsError[field]);
 }
@@ -90,7 +91,7 @@ export default {
   data() {
     return {
       hasErrors,
-      form: this.$form.createForm(this, { name: "Degree College EndDate StratDate EducationDetail" }),
+      form: this.$form.createForm(this, { name: "projectTitle employerName clientName projectStatus endDate stratDate projectDetail" }),
     };
   },
 
@@ -107,12 +108,32 @@ export default {
       e.preventDefault();
       this.form.validateFields((err, values) => {
         if (!err) {
-          let EndDate = values.EndDate.toDate()
-          let StartDate = values.StartDate.toDate()
-          values.EndDate = EndDate
-          values.StartDate = StartDate
+          let endDate = values.endDate.toDate()
+          let startDate = values.startDate.toDate()
+          values.endDate = endDate
+          values.startDate = startDate
           console.log("Received values of form: ", values);
           this.$store.commit('change', 5)
+           var data = values
+
+          console.log("data body", data)
+         var config = {
+            method: 'post',
+            url: 'http://192.241.137.124:8000/api/v1/project',
+            headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`,
+              'Content-Type': 'application/json'
+            },
+            data : data
+          };
+          axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
         }
       });
     },
