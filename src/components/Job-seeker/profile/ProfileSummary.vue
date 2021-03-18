@@ -9,7 +9,7 @@
       <div class="form-group row">
         <div class="col-md-10 col-lg-12 col-sm-10 ml-1">
         <label for="profile-summery" class="profile">Profile Summery</label>
-        <a-textarea v-decorator="[`ProfileSummary`,]"
+        <a-textarea v-decorator="[`profileSummary`,]"
                     class="form-control"
                     rows="6"
                     id="profile-summery"
@@ -38,12 +38,12 @@ function hasErrors(fieldsError) {
   return Object.keys(fieldsError).some((field) => fieldsError[field]);
 }
 export default {
-name: "ProfileSummary",
+name: "profileSummary",
 
   data() {
     return {
       hasErrors,
-      form: this.$form.createForm(this, { name: "ProfileSummary" }),
+      form: this.$form.createForm(this, { name: "profileSummary" }),
     };
   },
 
