@@ -97,13 +97,13 @@
         </div>
         <a-table
           :columns="columns"
-          :data-source="data"
+          :data-source=this.users
           :pagination="pagination"
         >
           <span slot="name" @click="displayDetailed" slot-scope="text">{{
             text
           }}</span>
-          <span class="table-header-title" slot="customTitle">NAME</span>
+          <span class="table-header-title" slot="customTitle">Name</span>
           <span class="table-header-title" slot="customTitleEmail"
             >EMAIL ADDRESS</span
           >
@@ -113,9 +113,6 @@
           <span class="table-header-title" slot="customTitleLastLoginDate"
             >LAST LOGIN</span
           >
-          <!-- <span class="table-header-title" slot="customTitleStatus"
-            >STATUS</span
-          > -->
           <span slot="status" slot-scope="status">
             <a-tag
               :key="status"
@@ -131,7 +128,9 @@
             slot-scope="text, record"
           >
             <div class="action-box-job-seeker ml-10">
-              <i class="fa fa-eye" aria-hidden="true"></i>
+              <router-link to= '/admin/job-seeker/tabs'>
+              <i class="fa fa-eye" aria-hidden="true" ></i>
+              </router-link>
             </div>
             <div class="action-box-job-seeker ml-10">
               <i
@@ -188,10 +187,11 @@
 
 <script>
 import Add_New_Job_Seeker_Button from "./Add_New_Job_Seeker_Button";
-
+import axios from "axios";
+console.log('userdata',this.users)
 const columns = [
   {
-    dataIndex: "name",
+    dataIndex: "firstName",
     key: "name",
     slots: { title: "customTitle" },
     scopedSlots: { customRender: "name" },
@@ -204,45 +204,23 @@ const columns = [
     scopedSlots: { customRender: "email" },
   },
   {
-    dataIndex: "registered_on",
+    dataIndex: "createdAt",
     key: "registered_on",
     slots: { title: "customTitleRegisteredData" },
     scopedSlots: { customRender: "registered_on" },
   },
   {
-    dataIndex: "last_login",
+    dataIndex: "updatedAt",
     key: "last_login",
     slots: { title: "customTitleLastLoginDate" },
     scopedSlots: { customRender: "last_login" },
   },
-  // {
-  //   dataIndex: "status",
-  //   key: "status",
-  //   slots: { title: "customTitleStatus" },
-  //   scopedSlots: { customRender: "status" },
-  // },
   {
     title: "Status",
     key: "status",
     dataIndex: "status",
     scopedSlots: { customRender: "status" },
   },
-  // {
-  //   title: "Age",
-  //   dataIndex: "age",
-  //   key: "age",
-  // },
-  // {
-  //   title: "Address",
-  //   dataIndex: "address",
-  //   key: "address",
-  // },
-  // {
-  //   title: "Tags",
-  //   key: "tags",
-  //   dataIndex: "tags",
-  //   scopedSlots: { customRender: "tags" },
-  // },
   {
     title: "Action",
     key: "action",
@@ -253,188 +231,6 @@ const columns = [
 ];
 
 const data = [
-  {
-    key: "1",
-    id: "1",
-    name: "John Brown",
-    email: "rowg@gmail.com",
-    registered_on: "31 Dec 2020",
-    last_login: "24 jan 2019",
-    status: "active",
-    age: 32,
-    address: "New York No. 1 Lake Park",
-    tags: ["nice", "developer"],
-    is_approved: "yes",
-  },
-  {
-    key: "2",
-    id: "2",
-    name: "Jim Green",
-    email: "rowg@gmail.com",
-    registered_on: "31 Dec 2020",
-    last_login: "24 jan 2019",
-    status: "Inactive",
-    age: 42,
-    address: "London No. 1 Lake Park",
-    tags: ["loser"],
-  },
-  {
-    is_approved: "yes",
-    key: "3",
-    id: "3",
-    name: "Joe Black",
-    email: "rowg@gmail.com",
-    registered_on: "31 Dec 2020",
-    last_login: "24 jan 2019",
-    status: "active",
-    age: 32,
-    address: "Sidney No. 1 Lake Park",
-    tags: ["cool", "teacher"],
-    is_approved: "yes",
-  },
-  {
-    key: "4",
-    id: "4",
-    name: "Joe Black",
-    email: "rowg@gmail.com",
-    registered_on: "31 Dec 2020",
-    last_login: "24 jan 2019",
-    status: "Inactive",
-    age: 32,
-    address: "Sidney No. 1 Lake Park",
-    tags: ["cool", "teacher"],
-    is_approved: "yes",
-  },
-  {
-    key: "5",
-    id: "5",
-    name: "Joe Black",
-    email: "rowg@gmail.com",
-    registered_on: "31 Dec 2020",
-    last_login: "24 jan 2019",
-    status: "active",
-    age: 32,
-    address: "Sidney No. 1 Lake Park",
-    tags: ["cool", "teacher"],
-    is_approved: "yes",
-  },
-  {
-    key: "6",
-    id: "6",
-    name: "Joe Black",
-    email: "rowg@gmail.com",
-    registered_on: "31 Dec 2020",
-    last_login: "24 jan 2019",
-    status: "Inactive",
-    age: 32,
-    address: "Sidney No. 1 Lake Park",
-    tags: ["cool", "teacher"],
-    is_approved: "yes",
-  },
-  {
-    key: "7",
-    id: "7",
-    name: "Joe Black",
-    email: "rowg@gmail.com",
-    registered_on: "31 Dec 2020",
-    last_login: "24 jan 2019",
-    status: "Inactive",
-    age: 32,
-    address: "Sidney No. 1 Lake Park",
-    tags: ["cool", "teacher"],
-    is_approved: "yes",
-  },
-  {
-    key: "8",
-    id: "8",
-    name: "Joe Black",
-    email: "rowg@gmail.com",
-    registered_on: "31 Dec 2020",
-    last_login: "24 jan 2019",
-    status: "active",
-    age: 32,
-    address: "Sidney No. 1 Lake Park",
-    tags: ["cool", "teacher"],
-    is_approved: "yes",
-  },
-  {
-    key: "9",
-    id: "9",
-    name: "Joe Black",
-    email: "rowg@gmail.com",
-    registered_on: "31 Dec 2020",
-    last_login: "24 jan 2019",
-    status: "active",
-    age: 32,
-    address: "Sidney No. 1 Lake Park",
-    tags: ["cool", "teacher"],
-    is_approved: "yes",
-  },
-  {
-    key: "10",
-    id: "10",
-    name: "Joe Black",
-    email: "rowg@gmail.com",
-    registered_on: "31 Dec 2020",
-    last_login: "24 jan 2019",
-    status: "active",
-    age: 32,
-    address: "Sidney No. 1 Lake Park",
-    tags: ["cool", "teacher"],
-    is_approved: "yes",
-  },
-  {
-    key: "11",
-    id: "11",
-    name: "Joe Black",
-    email: "rowg@gmail.com",
-    registered_on: "31 Dec 2020",
-    last_login: "24 jan 2019",
-    status: "active",
-    age: 32,
-    address: "Sidney No. 1 Lake Park",
-    tags: ["cool", "teacher"],
-    is_approved: "yes",
-  },
-  {
-    key: "12",
-    id: "12",
-    name: "Joe Black",
-    email: "rowg@gmail.com",
-    registered_on: "31 Dec 2020",
-    last_login: "24 jan 2019",
-    status: "active",
-    age: 32,
-    address: "Sidney No. 1 Lake Park",
-    tags: ["cool", "teacher"],
-    is_approved: "yes",
-  },
-  {
-    key: "13",
-    id: "13",
-    name: "Joe Black",
-    email: "rowg@gmail.com",
-    registered_on: "31 Dec 2020",
-    last_login: "24 jan 2019",
-    status: "active",
-    age: 32,
-    address: "Sidney No. 1 Lake Park",
-    tags: ["cool", "teacher"],
-    is_approved: "yes",
-  },
-  {
-    key: "14",
-    id: "14",
-    name: "Joe Black",
-    email: "rowg@gmail.com",
-    registered_on: "31 Dec 2020",
-    last_login: "24 jan 2019",
-    status: "active",
-    age: 32,
-    address: "Sidney No. 1 Lake Park",
-    tags: ["cool", "teacher"],
-    is_approved: "yes",
-  },
 ];
 
 export default {
@@ -442,6 +238,7 @@ export default {
   components:{
     Add_New_Job_Seeker_Button: Add_New_Job_Seeker_Button,
   },
+
   data() {
     return {
       value: 1,
@@ -454,9 +251,29 @@ export default {
         showTotal: (total) => `Total ${total} items`, // show total
         showSizeChange: (current, pageSize) => (this.pageSize = pageSize), // update display when changing the number of pages per page
       },
+      users:[],
+
     };
   },
+    beforeCreate() {
+      axios.get('http://192.241.137.124:8000/api/v1/users', {
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        }
+      })
+        .then((res) => {
+          this.users = res.data
+          console.log("data", res.data)
+        })
+        .catch((error) => {
+          console.error(error)
+        })
+    },
   methods: {
+    // viewButton(){
+    //   // this.users="";
+    //   path: '/admin/job-seeker/tabs';
+    // },
     displayDetailed() {
       this.$router.push("/admin/job-seeker/10");
     },

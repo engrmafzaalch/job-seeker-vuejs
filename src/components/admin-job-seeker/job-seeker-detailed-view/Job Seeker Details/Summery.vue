@@ -124,9 +124,11 @@
 </template>
 
 <script>
+
 import MyAccount from "./MyAccount";
 export default {
 name: "Summery",
+
 
 }
 </script>

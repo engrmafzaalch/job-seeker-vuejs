@@ -145,7 +145,7 @@ let router = new Router({
       name: 'ProfileSummery',
       component: ProfileSummery,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
