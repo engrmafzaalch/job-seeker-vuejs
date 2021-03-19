@@ -28,7 +28,7 @@
             ><i class="fas fa-bell bell-icon-header"></i></a>
                 </li>
                   <li class="nav-item">
-                <a class="logout-button" href="#">Logout</a>
+                <a class="logout-button"  @click="logout" href="#">Logout</a>
                 </li>
             </ul>
 
@@ -57,6 +57,13 @@ export default {
     };
   },
   methods: {
+    logout: function () {
+      this.$store.dispatch("logout").then(() => {
+
+        this.$router.push("/job-seeker/login");
+        window.location.reload();
+      });
+    },
     toggleNavbar() {
 
         let curr = this.collapseClasses

@@ -107,7 +107,7 @@
         <div class="row">
           <div class="col-6"></div>
           <div class="col-md-3">
-            <button type="button" class="btn btn-light btn-block float-right">Cancel</button>
+            <button type="button" class="btn btn-light btn-block float-right" @click="redirectToHome()">Cancel</button>
           </div>
           <div class="col-md-3">
             <button type="button" class="btn btn-primary btn-block">
@@ -122,9 +122,42 @@
 </template>
 
 <script>
-export default {
-name: "Education"
+import axios from "axios";
+
+function hasErrors(fieldsError) {
+  return Object.keys(fieldsError).some((field) => fieldsError[field]);
 }
+export default {
+  name: "Education",
+  data() {
+    return {
+      hasErrors,
+      form: this.$form.createForm(this, { name: "degree college coompletionDate stratDate educationDetail" }),
+      education : {}
+    };
+  },
+
+  beforeCreate() {
+    axios.get(`http://192.241.137.124:8000/api/v1/education/${this.$route.params.id}`, {
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      }
+    })
+      .then((res) => {
+        this.education = res.data
+        // alert("data", JSON.stringify(res.data));
+      })
+      .catch((error) => {
+        console.error(error)
+      })
+  },
+  methods: {
+    redirectToHome() {
+      this.$router.push({path: '/admin/job-seeker'});
+    },
+  },
+};
+
 </script>
 
 <style scoped>

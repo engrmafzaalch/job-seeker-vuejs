@@ -118,7 +118,7 @@
         <div class="row">
           <div class="col-6"></div>
           <div class="col-md-3">
-            <button type="button" class="btn btn-light btn-block float-right">Cancel</button>
+            <button type="button" class="btn btn-light btn-block float-right" @click="redirectToHome()">Cancel</button>
           </div>
           <div class="col-md-3">
             <button type="button" class="btn btn-primary btn-block">
@@ -135,9 +135,27 @@
 </template>
 
 <script>
+// import axios from "axios";
+
+// function hasErrors(fieldsError) {
+//   return Object.keys(fieldsError).some((field) => fieldsError[field]);
+// }
 export default {
-  name: "Resume"
-}
+  name: "resume",
+
+
+  data() {
+    return {
+
+    };
+  },
+
+  methods: {
+    redirectToHome() {
+      this.$router.push({path: '/admin/job-seeker'});
+    },
+  },
+};
 </script>
 
 <style scoped>

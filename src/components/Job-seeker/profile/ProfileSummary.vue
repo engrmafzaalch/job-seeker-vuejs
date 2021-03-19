@@ -1,4 +1,4 @@
-<template>
+  <template>
 <div class="container ">
 <!--<div>-->
 <!--  <h3>Profile Summery</h3>-->
@@ -54,7 +54,7 @@ name: "profileSummary",
 
     userNameError() {
       const { getFieldError, isFieldTouched } = this.form;
-      return isFieldTouched("userName") && getFieldError("userName");
+      return isFieldTouched("username") && getFieldError("username");
     },
     // Only show error after a field is touched.
     handleSubmit(e) {
@@ -83,7 +83,7 @@ name: "profileSummary",
         });
         }
       });
-     
+
     },
     onChange(date, dateString) {
       console.log(date, dateString);

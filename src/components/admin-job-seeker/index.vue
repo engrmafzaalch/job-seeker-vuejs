@@ -128,7 +128,9 @@
             slot-scope="text, record"
           >
             <div class="action-box-job-seeker ml-10">
-              <router-link to= '/admin/job-seeker/tabs'>
+
+              <router-link
+                :to="{name: 'tab', params: { id: record.id },}">
               <i class="fa fa-eye" aria-hidden="true" ></i>
               </router-link>
             </div>
@@ -188,7 +190,6 @@
 <script>
 import Add_New_Job_Seeker_Button from "./Add_New_Job_Seeker_Button";
 import axios from "axios";
-console.log('userdata',this.users)
 const columns = [
   {
     dataIndex: "firstName",
@@ -216,7 +217,7 @@ const columns = [
     scopedSlots: { customRender: "last_login" },
   },
   {
-    title: "Status",
+    title: "status",
     key: "status",
     dataIndex: "status",
     scopedSlots: { customRender: "status" },
@@ -224,7 +225,7 @@ const columns = [
   {
     title: "Action",
     key: "action",
-    dataIndex: "action",
+    dataIndex: "id",
 
     scopedSlots: { customRender: "action" },
   },
@@ -263,17 +264,13 @@ export default {
       })
         .then((res) => {
           this.users = res.data
-          console.log("data", res.data)
+
         })
         .catch((error) => {
           console.error(error)
         })
     },
   methods: {
-    // viewButton(){
-    //   // this.users="";
-    //   path: '/admin/job-seeker/tabs';
-    // },
     displayDetailed() {
       this.$router.push("/admin/job-seeker/10");
     },

@@ -12,7 +12,7 @@
             </div>
           </div>
           <div class="col-md-4">
-            <span class="name_head line_height">Desirae Dias</span>
+            <span class="name_head line_height">{{ profile.firstName }}</span>
           </div>
 
           <div class="col-md-2">
@@ -20,7 +20,7 @@
               <span class="text-black-50">Email Address</span>
             </div>
             <div>
-              <span class="years">user@gmail.com</span>
+              <span class="years">{{ profile.email }}</span>
             </div>
           </div>
           <div class="col-md-2">
@@ -28,7 +28,7 @@
               <span class="text-black-50">Contact Information</span>
             </div>
             <div>
-              <span class="number">+9988776655</span>
+              <span class="number">{{ profile.phoneNumber }}</span>
             </div>
           </div>
           <div class="col-md-2">
@@ -36,7 +36,7 @@
               <span class="text-black-50">Location</span>
             </div>
             <div>
-              <span class="years">Buenos Aires, Agentina</span>
+              <span class="years">{{ profile.resAddress }}</span>
             </div>
           </div>
         </div>
@@ -89,10 +89,10 @@
 
         <div class="row py-4">
           <div class="col-md-2">
-            <span class="text-black-50">Date of Birth</span>
+            <span class="text-black-50">D.O.B</span>
           </div>
           <div class="col-md-10">
-            <span class="ny">02 March 1990</span>
+            <span class="ny">{{ profile.dob }}</span>
           </div>
         </div>
 
@@ -109,7 +109,7 @@
         <div class="row">
           <div class="col-6"></div>
           <div class="col-md-3">
-            <button type="button" class="btn btn-light btn-block float-right">Cancel</button>
+            <button type="button" class="btn btn-light btn-block float-right" @click="redirectToHome()">Cancel</button>
           </div>
           <div class="col-md-3">
             <button type="button" class="btn btn-primary btn-block">
@@ -126,11 +126,44 @@
 <script>
 
 import MyAccount from "./MyAccount";
+import axios from "axios";
+
+function hasErrors(fieldsError) {
+  return Object.keys(fieldsError).some((field) => fieldsError[field]);
+}
 export default {
 name: "Summery",
 
 
-}
+  data() {
+    return {
+      hasErrors,
+      form: this.$form.createForm(this, { name: "name emailAddress city country mobileNumber linkedIn day month year nysc" }),
+      profile : {}
+    };
+  },
+
+  beforeCreate() {
+    axios.get(`http://192.241.137.124:8000/api/v1/user/${this.$route.params.id}`, {
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      }
+    })
+      .then((res) => {
+        this.profile = res.data
+       // alert("data", JSON.stringify(res.data));
+      })
+      .catch((error) => {
+        console.error(error)
+      })
+  },
+  methods: {
+    redirectToHome() {
+      this.$router.push({path: '/admin/job-seeker'});
+    },
+  },
+};
+
 </script>
 
 <style scoped>

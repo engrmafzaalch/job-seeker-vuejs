@@ -133,8 +133,9 @@ let router = new Router({
       }
     },
     {
-      path: '/admin/job-seeker/tabs',
-      name: 'tabs',
+      path: '/admin/:id',
+      // params:'data',
+      name: 'tab',
       component: tab,
       meta: {
         requiresAuth: true

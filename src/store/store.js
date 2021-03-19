@@ -43,6 +43,7 @@ export const store = new Vuex.Store({
                     .then(resp => {
                         const token = resp.data.token
                         const user = resp.data.user
+                      alert(user)
                 localStorage.setItem('token', token)
                 axios.defaults.headers.common['Authorization'] = token
                 commit('auth_success', user.email, user)

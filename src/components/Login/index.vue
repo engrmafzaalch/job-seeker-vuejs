@@ -18,6 +18,7 @@
                       :help="userNameError() || ''"
                       style="width: 100%; height: 48px; margin-right: 0px"
                     >
+                      <a-form-item>
                       <a-input
                         style="height: 48px"
                         class="searchbox-style"
@@ -35,6 +36,7 @@
                         ]"
                         placeholder=" Email address *"
                       />
+                      </a-form-item>
                     </div>
                   </div>
                 </div>
@@ -45,6 +47,7 @@
                       :help="passwordError() || ''"
                       style="width: 100%; height: 48px; margin-right: 0px"
                     >
+                      <a-form-item>
                       <a-input
                         style=""
                         type="password"
@@ -64,6 +67,7 @@
                         ]"
                         placeholder=" Password *"
                       />
+                      </a-form-item>
                     </div>
                   </div>
                 </div>
@@ -106,6 +110,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 function hasErrors(fieldsError) {
   return Object.keys(fieldsError).some((field) => fieldsError[field]);
 }
@@ -127,7 +133,7 @@ export default {
   methods: {
     userNameError() {
       const { getFieldError, isFieldTouched } = this.form;
-      return isFieldTouched("userName") && getFieldError("userName");
+      return isFieldTouched("username") && getFieldError("username");
     },
     // Only show error after a field is touched.
     passwordError() {
@@ -140,11 +146,29 @@ export default {
         if (!err) {
           console.log("Received values of form: ", values);
           this.$store.dispatch("setToken", values.email);
-          localStorage.setItem("token", values.email);
+
           let email = values.email;
           let password = values.password;
           this.$store.dispatch("login", { email, password });
           this.$router.push("/");
+          var data = data
+          var config = {
+            method: 'post',
+            url: `http://192.241.137.124:8000/api/v1/user/login?username=${email}&password=${password}`,
+            headers: {
+              'Authorization':  `Bearer ${localStorage.getItem('token')}`,
+              'Content-Type': 'application/json'
+            },
+            data : data
+          };
+          axios(config)
+            .then(function (response) {
+              console.log(response.data)
+              localStorage.setItem("token", response.data.access_token);
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
         }
       });
     },
