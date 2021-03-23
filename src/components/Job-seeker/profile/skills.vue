@@ -10,7 +10,7 @@
   <div class="row">
     <div class="col-sm-7">
       <a-select
-        v-decorator="[`Skill`,]"
+        v-decorator="[`skills`,]"
                 mode="tags" class="py-3" style="width: 100%" placeholder="Type in to search or add new" @change="handleChange">
         <a-select-option v-for="Skill in skillSet" v-bind:key="Skill.skillSetName">
           {{Skill.skillSetName}}
@@ -54,14 +54,14 @@ export default {
   data() {
     return {
       hasErrors,
-      form: this.$form.createForm(this, { name: "Skill" }),
+      form: this.$form.createForm(this, { name: "skills" }),
       skillSet:[],
       listSkill:[]
     };
   },
 
   beforeCreate() {
-    axios.get('192.241.137.124:8000/api/v1/skills', {
+    axios.get(`${process.env.VUE_ROOT_URL}/skills`, {
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('token')}`,
       }
@@ -94,7 +94,7 @@ export default {
           console.log("data body", data)
          var config = {
             method: 'post',
-            url: 'http://192.241.137.124:8000/api/v1/skill',
+            url: `${process.env.VUE_ROOT_URL}/skill`,
             headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`,
               'Content-Type': 'application/json'

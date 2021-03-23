@@ -12,8 +12,7 @@
                   name="files"
                   class="searchbox-style width-100"
                   style="width: 100%"
-                  action="/upload.do"
-                >
+                  action="/upload.do">
                   <p class="ant-upload-drag-icon">
                     <a-icon type="inbox" class="color-drop-box" />
                   </p>

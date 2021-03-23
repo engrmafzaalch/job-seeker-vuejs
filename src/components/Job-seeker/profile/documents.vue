@@ -30,16 +30,17 @@
   <hr>
   <div class="row float-right">
     <div class="col-12">
-      <button class="login-button-style btn btn-light px-5" @click="changed(4)"">Go Back</button>
+      <button class="login-button-style btn btn-light px-5" @click="changed(4)">Go Back</button>
       <button type="primary"
               html-type="submit"
               class="login-button-style btn btn-primary px-5"
-              :disabled="hasErrors(form.getFieldsError())">Proceed</button>
+               :disabled="hasErrors(form.getFieldsError())">Proceed</button>
     </div>
   </div>
   </a-form>
 </div>
 </template>
+
 
 <script>
 import axios from "axios";
@@ -71,6 +72,26 @@ name: "Documents",
         if (!err) {
           console.log("Received values of form: ", values);
           this.$store.commit('change', 6)
+           var data = values
+
+          console.log("data body", data)
+         var config = {
+            method: 'post',
+            url: `${process.env.VUE_ROOT_URL}/certificate`,
+            headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`,
+              'Content-Type': 'application/json'
+            },
+            data : data
+          };
+          axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
         }
       });
     },

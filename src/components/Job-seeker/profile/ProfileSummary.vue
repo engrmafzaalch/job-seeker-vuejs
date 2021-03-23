@@ -9,7 +9,9 @@
       <div class="form-group row">
         <div class="col-md-10 col-lg-12 col-sm-10 ml-1">
         <label for="profile-summery" class="profile">Profile Summery</label>
-        <a-textarea v-decorator="[`profileSummary`,]"
+        <a-textarea v-decorator="[`profileSummary`, 
+         { rules: [{ required: true, message: 'Please input your name' }] },
+        ]"
                     class="form-control"
                     rows="6"
                     id="profile-summery"
@@ -66,7 +68,7 @@ name: "profileSummary",
      var data = values
       var config = {
         method: 'post',
-        url: 'http://192.241.137.124:8000/api/v1/profile',
+        url: `${process.env.VUE_ROOT_URL}/profile`,
         headers: {
           'Authorization':  `Bearer ${localStorage.getItem('token')}`,
           'Content-Type': 'application/json'

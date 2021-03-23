@@ -135,7 +135,7 @@ export default {
   },
 
   beforeCreate() {
-    axios.get('http://192.241.137.124:8000/api/v1/countries', {
+    axios.get(`${process.env.VUE_ROOT_URL}/countries`, {
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('token')}`
       }
@@ -169,7 +169,7 @@ export default {
           console.log("data body", data)
          var config = {
             method: 'post',
-            url: 'http://192.241.137.124:8000/api/v1/profile',
+            url: `${process.env.VUE_ROOT_URL}/profile`,
             headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`,
               'Content-Type': 'application/json'

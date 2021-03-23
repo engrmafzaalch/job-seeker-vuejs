@@ -4,7 +4,7 @@
     <div class="row">
     <ul class="col-12 progressbar text-primary">
       <li :class="{ 'active' : $store.state.step == 1}">Profile Summery</li>
-      <li :class="{ 'active' : $store.state.step == 2}">Education</li>
+      <li :class="{ 'active' : $store.state.step == 2 }">Education</li>
       <li :class="{ 'active' : $store.state.step == 3}">Experience</li>
       <li :class="{ 'active' : $store.state.step == 4}">Projects</li>
       <li :class="{ 'active' : $store.state.step == 5}">Documents</li>
@@ -62,20 +62,20 @@ export default {
     Skills : Skills,
     MyProfile : MyProfile
   },
-
+ 
   beforeCreate() {
-    axios.get('http://192.241.137.124:8000/api/v1/countries', {
-      headers: {
-        'Authorization': `Bearer ${localStorage.getItem('token')}`
-      }
-    })
-      .then((res) => {
-        this.countries = res.data
-        console.log("data", res.data)
-      })
-      .catch((error) => {
-        console.error(error)
-      })
+    // axios.get('http://192.241.137.124:8000/api/v1/countries', {
+    //   headers: {
+    //     'Authorization': `Bearer ${localStorage.getItem('token')}`
+    //   }
+    // })
+    //   .then((res) => {
+    //     this.countries = res.data
+    //     console.log("data", res.data)
+    //   })
+    //   .catch((error) => {
+    //     console.error(error)
+    //   })
   },
 
 }
