@@ -33,7 +33,7 @@
             <select v-decorator="[`country`,]"
                     type="text" class="form-control" id="country">
               <option value="" disabled selected hidden>Country</option>
-              <option v-for="country in countries" >{{country.countryName}}</option>
+              <!-- <option v-for="country in countries" >{{country.countryName}}</option> -->
             </select>
           </div>
         </div>

@@ -178,7 +178,7 @@ import axios from "axios";
         description:
           'Projects details are added',
         onClick: () => {
-          console.log('Notification Clicked!');
+          console.log('Notification Click!');
         },
       });
               }
