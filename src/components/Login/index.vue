@@ -51,7 +51,7 @@
                       <a-input
                         style=""
                         type="password"
-                        class="searchbox-style"
+                        class="searchbox-style1"
                         v-decorator="[
                           `password`,
                           {
@@ -76,33 +76,32 @@
           </div>
           <div class="col-12 mtb-22">
             <div class="text-align-end">
-              <span class="forgot-password-text"
-                ><router-link to="forgot-password"
-                  >Forget Password ?</router-link
-                ></span
-              >
+                <router-link to="forgot-password"
+                  >Forget Password ?</router-link>
             </div>
           </div>
 
-          <a-form-item class="display-flex mt-22">
+
             <div class="row m-0 button-class">
               <div class="col-6">
                 <a-button type="primary" class="go-back-button-style">
                   Cancle
                 </a-button>
               </div>
+
               <div class="col-6">
                 <a-button
                   type="primary"
                   html-type="submit"
                   class="login-button-style"
                   :disabled="hasErrors(form.getFieldsError())"
+                  @click="openNotification()"
                 >
                   Login
                 </a-button>
               </div>
+
             </div>
-          </a-form-item>
         </a-form>
       </div>
     </div>
@@ -111,7 +110,7 @@
 
 <script>
 import axios from "axios";
-
+import {notification } from 'antd';
 function hasErrors(fieldsError) {
   return Object.keys(fieldsError).some((field) => fieldsError[field]);
 }
@@ -146,25 +145,27 @@ export default {
         if (!err) {
           console.log("Received values of form: ", values);
           this.$store.dispatch("setToken", values.email);
-
           let email = values.email;
           let password = values.password;
           this.$store.dispatch("login", { email, password });
-          this.$router.push("/");
+          this.$router.push("/admin/job-seeker");
           var data = data
           var config = {
             method: 'post',
-            url: `http://192.241.137.124:8000/api/v1/user/login?username=${email}&password=${password}`,
+            url: `${process.env.VUE_ROOT_URL}/user/login?username=${email}&password=${password}`,
             headers: {
               'Authorization':  `Bearer ${localStorage.getItem('token')}`,
               'Content-Type': 'application/json'
             },
             data : data
           };
+          var statusCode  ;
           axios(config)
             .then(function (response) {
-              console.log(response.data)
-              localStorage.setItem("token", response.data.access_token);
+              console.log(response)
+              statusCode=response.status
+              localStorage.setItem("token", response.data.token);
+              localStorage.setItem("user", JSON.stringify(response.data.loggedInUserInfo));
             })
             .catch(function (error) {
               console.log(error);
@@ -172,12 +173,44 @@ export default {
         }
       });
     },
+    // openNotification() {
+    //   console.log("statuscode",statusCode)
+    //   if (this.status.code===201) {
+    //     this.$notification.open({
+    //       message: 'Error',
+    //       description:
+    //         'Enter the required Field',
+    //       onClick: () => {
+    //         console.log('Notification Clicked!');
+    //       },
+    //     });
+    //   }
+    //   else{
+    //     this.$notification.open({
+    //       message: 'Education detail',
+    //       description:
+    //         'Education details are added',
+    //       onClick: () => {
+    //         console.log('Notification Clicked!');
+    //       },
+    //     });
+    //   }
+    // },
+    openNotification() {
+      this.$notification.open({
+        message: 'Success',
+        description:
+          'Login Successullqy',
+        onClick: () => {
+          console.log('Notification Clicked!');
+        },
+      });
+    },
   },
 };
 </script>
 
 <style scoped>
-
 .login-card {
   position: absolute;
   padding: 32px;
@@ -303,7 +336,17 @@ hr {
 .searchbox-style {
   /* width: 700px; */
   /*; */
-  width: 100%;
+  width: 235%;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #8b90a0;
+  font-family: SF UI Display;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+}
+.searchbox-style1{
+  width: 218%;
   border-radius: 4px;
   background: #ffffff;
   color: #8b90a0;
@@ -316,7 +359,7 @@ hr {
   background: #fafafa;
   border-radius: 4px;
   width: 100%;
-  font-family: Open Sans;
+  font-fami: Open Sans;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;

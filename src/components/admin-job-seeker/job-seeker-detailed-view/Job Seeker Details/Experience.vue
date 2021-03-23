@@ -164,7 +164,7 @@ export default {
   },
 
   beforeCreate() {
-    axios.get(`http://192.241.137.124:8000/api/v1/experience/${this.$route.params.id}`, {
+    axios.get(`${process.env.VUE_ROOT_URL}/experience/${this.$route.params.id}`, {
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('token')}`
       }

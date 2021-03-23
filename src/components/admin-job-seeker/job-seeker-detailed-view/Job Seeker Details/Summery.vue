@@ -144,13 +144,14 @@ name: "Summery",
   },
 
   beforeCreate() {
-    axios.get(`http://192.241.137.124:8000/api/v1/user/${this.$route.params.id}`, {
+    axios.get(`${process.env.VUE_ROOT_URL}/user/${this.$route.params.id}`, {
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('token')}`
       }
     })
       .then((res) => {
         this.profile = res.data
+        console.log(this.profile)
        // alert("data", JSON.stringify(res.data));
       })
       .catch((error) => {

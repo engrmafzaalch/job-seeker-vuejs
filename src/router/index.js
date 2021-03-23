@@ -4,6 +4,7 @@ import HomePageContainer from '../components/HomePageContainer'
 import RegistrationIndex from '../components/Job-seeker/registration'
 import JobsIndex from '../components/Job-seeker/Jobs'
 import LoginIndex from '../components/Login/index'
+import Signup from "../components/Signup/Signup";
 import ForgotPasswordIndex from '../components/Job-seeker/forgot-password'
 import AdminJobSeeker from '../components/admin-job-seeker'
 import MyAccount from '../components/My-Account/account-details/index'
@@ -46,6 +47,7 @@ import MyAccount_8 from "../components/admin-job-seeker/My-Account/MyAccount_8";
 import MyAccount_9 from "../components/admin-job-seeker/My-Account/MyAccount_9";
 import MyAccount_10 from "../components/admin-job-seeker/My-Account/MyAccount_10";
 
+
 Vue.use(Router)
 
 let router = new Router({
@@ -72,6 +74,12 @@ let router = new Router({
       component: LoginIndex
     },
     {
+      path: '/job-seeker/Signup',
+      name: 'Signup',
+      component: Signup
+    },
+
+    {
       path: '/job-seeker/forgot-password',
       name: 'ForgotPasswordIndex',
       component: ForgotPasswordIndex
@@ -81,7 +89,7 @@ let router = new Router({
       name: 'AdminJobSeeker',
       component: AdminJobSeeker,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     // {

@@ -27,8 +27,15 @@
                  <a class="bell-icon-header nav-link " href="#my-account"
             ><i class="fas fa-bell bell-icon-header"></i></a>
                 </li>
+             <li>
+                <router-link to="/job-seeker/Signup">
+                <a  class="Signup-button" v-if="users.id==undefined">SignUp</a>
+                </router-link>
+              </li>
                   <li class="nav-item">
-                <a class="logout-button"  @click="logout" href="#">Logout</a>
+                    <router-link to="/job-seeker/login" >
+                <a class="logout-button" @click="getData()">Logout</a>
+                    </router-link>
                 </li>
             </ul>
 
@@ -43,6 +50,7 @@ export default {
   props: ["isLogin"],
  data() {
     return {
+      users: [],
         collapseClasses: {
             'navbar-collapse':true,
             collapse:true,
@@ -56,16 +64,36 @@ export default {
       msg: "Welcome to Your Vue.js App",
     };
   },
+  mounted(){
+    // const user = JSON.parse(localStorage.getItem("user"));
+    // console.log(user);
+
+    if (localStorage.getItem("user")){
+      this.users = JSON.parse(localStorage.getItem("user"))
+      // alert(this.users);
+
+    }
+  },
   methods: {
-    logout: function () {
-      this.$store.dispatch("logout").then(() => {
 
-        this.$router.push("/job-seeker/login");
-        window.location.reload();
-      });
+    // getData() {
+    //
+    //   if (localStorage.getItem("user")){
+    //     this.user = alert(JSON.parse(localStorage.getItem("user")))
+    //   }
+    //   localStorage.removeItem('token');
+    //   localStorage.removeItem('user');
+    // },
+    getData(){
+      // window.location.reload();
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+
+      this.$router.push("/");
+
     },
-    toggleNavbar() {
 
+    toggleNavbar() {
         let curr = this.collapseClasses
         this.collapseClasses = {
             ...curr,
@@ -75,8 +103,6 @@ export default {
                 show:false
             }
         }
-
-
         setTimeout(()=>{
             let navHeight = this.$refs.mynav.clientHeight
             console.log(navHeight)
@@ -91,9 +117,6 @@ export default {
             }
         },340)
     },
-    changeRoute(){
-
-    }
   }
 
 };
@@ -140,6 +163,14 @@ export default {
   color: #0385f3;
 }
 .logout-button {
+  text-align: center;
+  background-color: #ff4c68;
+  color: #ffffff !important;
+  height: 40px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
+.Signup-button {
   text-align: center;
   background-color: #ff4c68;
   color: #ffffff !important;

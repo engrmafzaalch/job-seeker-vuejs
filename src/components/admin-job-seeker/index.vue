@@ -257,7 +257,7 @@ export default {
     };
   },
     beforeCreate() {
-      axios.get('http://192.241.137.124:8000/api/v1/users', {
+      axios.get(`${process.env.VUE_ROOT_URL}/users`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }

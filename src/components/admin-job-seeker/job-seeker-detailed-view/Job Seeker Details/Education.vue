@@ -77,7 +77,7 @@
               <span class="text-black-50 font-a">Start Date</span>
             </div>
             <div class="py-2">
-              <span class="font_b">Jul, 2019</span>
+              <span class="font_b">date</span>
             </div>
           </div>
           <div class="col-md-3">
@@ -85,7 +85,7 @@
               <span class="font-a text-black-50">End Date</span>
             </div>
             <div class="py-2">
-              <span class="font_b">On-going</span>
+              <span class="font_b">data</span>
             </div>
           </div>
         </div>
@@ -138,7 +138,7 @@ export default {
   },
 
   beforeCreate() {
-    axios.get(`http://192.241.137.124:8000/api/v1/education/${this.$route.params.id}`, {
+    axios.get(`${process.env.VUE_ROOT_URL}/education/${this.$route.params.id}`, {
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('token')}`
       }
