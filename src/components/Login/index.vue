@@ -140,6 +140,7 @@ export default {
       return isFieldTouched("password") && getFieldError("password");
     },
     handleSubmit(e) {
+
       e.preventDefault();
       this.form.validateFields((err, values) => {
         if (!err) {
@@ -148,8 +149,9 @@ export default {
           let email = values.email;
           let password = values.password;
           this.$store.dispatch("login", { email, password });
-          this.$router.push("/admin/job-seeker");
+
           var data = data
+          var that=this
           var config = {
             method: 'post',
             url: `${process.env.VUE_ROOT_URL}/user/login?username=${email}&password=${password}`,
@@ -159,17 +161,20 @@ export default {
             },
             data : data
           };
-          var statusCode  ;
           axios(config)
             .then(function (response) {
-              console.log(response)
-              statusCode=response.status
-              localStorage.setItem("token", response.data.token);
-              localStorage.setItem("user", JSON.stringify(response.data.loggedInUserInfo));
+              if(response.status == "201"){
+                console.log('responsedata',response.status)
+                localStorage.setItem("token", response.data.token);
+                localStorage.setItem("user", JSON.stringify(response.data.loggedInUserInfo));
+                that.$router.push("/admin/job-seeker");
+                window.location.reload();
+              }
             })
             .catch(function (error) {
               console.log(error);
             });
+
         }
       });
     },
