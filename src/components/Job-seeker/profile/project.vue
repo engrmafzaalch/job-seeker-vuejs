@@ -182,8 +182,7 @@ import axios from "axios";
         },
       });
               }
-    },
-          
+    }, 
            changed: function(step) {
       this.$store.commit('change', step)
     },
@@ -192,7 +191,6 @@ import axios from "axios";
                 this.tickets = [...Array(this.tickets.length + numberOfTickets).keys()].map(i => this.tickets[i] || {});
             },
             onSubmit(e) {
-             
                 // set all fields to touched
                
                 this.$v.$touch();
@@ -204,8 +202,7 @@ import axios from "axios";
                 alert("SUCCESS!! :-)\n\n" + JSON.stringify(this.$data));
                  this.$store.commit('change', 5)
                  var data = JSON.stringify(this.$data)
-                   let startDate = data.startDate.toDate()
-                   console.log("this is date" ,startDate)
+                
         var config = {
         method: 'post',
        url: `${process.env.VUE_ROOT_URL}/project`,

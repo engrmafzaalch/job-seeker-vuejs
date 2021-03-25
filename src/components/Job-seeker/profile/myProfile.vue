@@ -10,28 +10,28 @@
       <div class="form-group">
         <div class="row">
           <div class="col-sm-6">
-            <a-input v-decorator="[`name`,]"
+            <a-input v-decorator="[`name`,
+              { rules: [{ required: true, message: '' }] } ]"
                      type="text" class="form-control" id="name" placeholder="Name"></a-input>
           </div>
           <div class="col-sm-6">
-            <select v-decorator="[`emailAddress`,]"
-                    type="text" class="form-control" id="email_address">
-              <option value="" disabled selected hidden>Email Address</option>
-              <option value="none">none</option>
-            </select>
+             <a-input v-decorator="[`email`,
+             ]"
+                     type="text" class="form-control" id="email" placeholder="Email"></a-input>
           </div>
         </div>
         <div class="row">
           <div class="col-sm-6">
-            <select v-decorator="[`city`,]"
-                    type="text" class="form-control" id="city">
+            <select v-decorator="[`city`,
+             ]"
+                     class="form-control" id="city">
               <option value="" disabled selected hidden>City</option>
               <option value="Lahore">Lahore</option>
             </select>
           </div>
           <div class="col-sm-6">
             <select v-decorator="[`country`,]"
-                    type="text" class="form-control" id="country">
+                    class="form-control" id="country">
               <option value="" disabled selected hidden>Country</option>
               <!-- <option v-for="country in countries" >{{country.countryName}}</option> -->
             </select>
@@ -40,11 +40,11 @@
         <div class="row">
           <div class="col-sm-6">
             <a-input v-decorator="[`mobileNumber`,]"
-                     type="text" class="form-control" id="mobile_number" placeholder="Mobile Number"></a-input>
+                     type="" class="form-control" id="mobile_number" placeholder="Mobile Number"></a-input>
           </div>
           <div class="col-sm-6">
             <a-input v-decorator="[`linkedIn`,]"
-                     type="text" class="form-control" id="linked_in" placeholder="Linked-In Profile URL"></a-input>
+                     type="url" class="form-control" id="linked_in" placeholder="Linked-In Profile URL"></a-input>
           </div>
         </div>
         <div class="row">
@@ -82,18 +82,8 @@
         </div>
           <div class="row">
             <div class="col-md-6">
-              <a-input v-decorator="[
-                          `nysc`,
-                          {
-                            rules: [
-                              {
-                                whitespace: true,
-                                message: 'Please input N. Y. S. C Number this field.',
-                              },
-                            ],
-                          },
-                        ]"
-                       type="text" class="form-control" id="nysc" placeholder="A00 - 0 - 0 - 0 - 0 - 0 - 0 - 0"></a-input>
+              <a-input v-decorator="[`nysc`,]"
+                       type="number" class="form-control" id="nysc" placeholder="A00 - 0 - 0 - 0 - 0 - 0 - 0 - 0"></a-input>
             </div>
           </div>
       </div>
@@ -159,9 +149,29 @@ export default {
     },
     // Only show error after a field is touched.
     handleSubmit(e) {
+      
       e.preventDefault();
       this.form.validateFields((err, values) => {
+        if (err)
+        {
+          this.$notification.open({
+        message: 'Profile detail',
+        description:
+          'Please enter required field',
+        onClick: () => {
+          console.log('Notification Clicked!');
+        },
+      }); 
+        }
         if (!err) {
+          this.$notification.open({
+        message: 'Profile detail',
+        description:
+          'Profile details are added',
+        onClick: () => {
+          console.log('Notification Clicked!');
+        },
+      });
           console.log("Received values of form: ", values);
           this.$store.commit('change', 8)
            var data = values

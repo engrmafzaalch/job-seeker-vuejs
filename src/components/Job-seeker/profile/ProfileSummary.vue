@@ -10,13 +10,14 @@
         <div class="col-md-10 col-lg-12 col-sm-10 ml-1">
         <label for="profile-summery" class="profile">Profile Summery</label>
         <a-textarea v-decorator="[`profileSummary`, 
-         { rules: [{ required: true, message: 'Please input your name' }] },
+         { rules: [{ required: true, message: 'Please input Profile summery' }] },
         ]"
                     class="form-control"
                     rows="6"
                     id="profile-summery"
                     name="text"
-                    placeholder="Enter Profile Summary here">
+                    placeholder="Enter Profile Summary here"
+                     >
         </a-textarea>
         </div>
       </div>
@@ -40,18 +41,36 @@ function hasErrors(fieldsError) {
   return Object.keys(fieldsError).some((field) => fieldsError[field]);
 }
 export default {
+
 name: "profileSummary",
 
   data() {
     return {
       hasErrors,
       form: this.$form.createForm(this, { name: "profileSummary" }),
+      
     };
+  },
+  beforeCreate() {
+    const user = JSON.parse(localStorage.getItem('user'));
+    axios.get(`${process.env.VUE_ROOT_URL}/profile/${user.user_id}`, {
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      }
+    })
+      .then((res) => {
+        this.summery = res.data
+        console.log("data of profile", res.data)
+      })
+      .catch((error) => {
+        console.error(error)
+      })
   },
 
   methods:{
     changed: function(step) {
       this.$store.commit('change', step)
+      
     },
 
     userNameError() {
@@ -60,12 +79,36 @@ name: "profileSummary",
     },
     // Only show error after a field is touched.
     handleSubmit(e) {
+
       e.preventDefault();
+      
       this.form.validateFields((err, values) => {
+        if (err){
+            this.$notification.open({
+        message: 'Profile Summery detail',
+        description:
+          'Please Enter the required field',
+        onClick: () => {
+          console.log('Notification Clicked!');
+        },
+      });
+        }
         if (!err) {
-          console.log("Received values of form: ", values);
+          this.$notification.open({
+        message: 'Profile Summery detail',
+        description:
+          'Profile Summery details are added',
+        onClick: () => {
+          console.log('Notification Clicked!');
+        },
+      });
+    const user =   JSON.parse(localStorage.getItem('user'))
+          console.log("Received user: ", values);
+          values.user_id = user.user_id;
+          console.log("Received user updated: ", values);
           this.$store.commit('change', 2)
      var data = values
+     console.log("User ",data);
       var config = {
         method: 'post',
         url: `${process.env.VUE_ROOT_URL}/profile`,

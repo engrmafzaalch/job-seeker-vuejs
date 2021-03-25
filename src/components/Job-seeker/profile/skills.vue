@@ -10,23 +10,17 @@
   <div class="row">
     <div class="col-sm-7">
       <a-select
-        v-decorator="[`skills`,]"
+        v-decorator="[`skills`,
+        { rules: [{ required: true, message: 'Please enter the skills' }] }, ]"
                 mode="tags" class="py-3" style="width: 100%" placeholder="Type in to search or add new" @change="handleChange">
         <a-select-option v-for="Skill in skillSet" v-bind:key="Skill.skillSetName">
           {{Skill.skillSetName}}
         </a-select-option>
+        
       </a-select>
+      
     </div>
   </div>
-      <div class="row">
-        <div class="col-12">
-        <span v-for="skill in listSkill">
-          <button class="btn btn-light rounded mr-1">
-            {{skill}} &times;
-          </button>
-        </span>
-        </div>
-      </div>
     </a-form-item>
   <hr>
   <div class="row float-right">
@@ -86,7 +80,26 @@ export default {
     handleSubmit(e) {
       e.preventDefault();
       this.form.validateFields((err, values) => {
+         if (err)
+        {
+          this.$notification.open({
+        message: 'Key Skills',
+        description:
+          'Please fill the required field',
+        onClick: () => {
+          console.log('Notification Clicked!');
+        },
+      }); 
+        }
         if (!err) {
+           this.$notification.open({
+        message: 'Skill',
+        description:
+          'Skills submitted',
+        onClick: () => {
+          console.log('Notification Clicked!');
+        },
+      }); 
           console.log("Received values of form: ", values);
           this.$store.commit('change', 7)
             var data = values

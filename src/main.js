@@ -17,7 +17,7 @@ import '../node_modules/datatables.net-dt/js/dataTables.dataTables.js';
 import Vuelidate from 'vuelidate'
 Vue.use(Vuelidate)
 
-
+let mySelected = ''
 
 Vue.use(Antd);
 Vue.config.productionTip = false
@@ -25,8 +25,10 @@ Vue.config.productionTip = false
 import 'bootstrap/dist/css/bootstrap.css'
 /* eslint-disable no-new */
 new Vue({
+  
   el: '#app',
   router,
   components: { App },
-  template: '<App/>'
+  template: '<App/>',
+  
 })
