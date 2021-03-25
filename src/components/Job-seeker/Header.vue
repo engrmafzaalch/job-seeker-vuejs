@@ -2,51 +2,53 @@
 <div class="">
 
   <nav v-if="users.id == null" class="navbar navbar-expand-lg navbar-light background-header header" ref="navbar">
-    <a class="navbar-brand " href="#" >
+    <a class="navbar-brand " href="">
       <img src="../../assets/Frame 1376 1.png" />
     </a>
     <button class="navbar-toggler" type="button"
             @click.stop="toggleNavbar()">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div :class="collapseClasses" id="navbarSupportedContent" :style="collapseStyle" ref="mynav">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" > <router-link to="/">Home</router-link></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" > <router-link to="jobs">Jobs</router-link></a>
-        </li>
+<!--    <div :class="collapseClasses" id="navbarSupportedContent" :style="collapseStyle" ref="mynav">-->
+<!--      <ul class="navbar-nav ml-auto">-->
+<!--        <li class="nav-item active">-->
+<!--          <a class="nav-link" > <router-link to="/">Home</router-link></a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--          <a class="nav-link" > <router-link to="jobs">Jobs</router-link></a>-->
+<!--        </li>-->
 
-<!--        <li class="nav-item">-->
-<!--          <a class="nav-link disabled">  <router-link to="MyApplications">My application</router-link></a>-->
+<!--&lt;!&ndash;        <li class="nav-item">&ndash;&gt;-->
+<!--&lt;!&ndash;          <a class="nav-link disabled">  <router-link to="MyApplications">My application</router-link></a>&ndash;&gt;-->
+<!--&lt;!&ndash;        </li>&ndash;&gt;-->
+<!--&lt;!&ndash;        <li class="nav-item">&ndash;&gt;-->
+<!--&lt;!&ndash;          <a class="nav-link " >   <router-link to="my-account">My Account</router-link></a>&ndash;&gt;-->
+<!--&lt;!&ndash;        </li>&ndash;&gt;-->
+<!--        <li class="nav-item mr-4 mt-1">-->
+<!--          <a class="bell-icon-header nav-link " href="#my-account"-->
+<!--          ><i class="fas fa-bell bell-icon-header"></i></a>-->
 <!--        </li>-->
-<!--        <li class="nav-item">-->
-<!--          <a class="nav-link " >   <router-link to="my-account">My Account</router-link></a>-->
-<!--        </li>-->
-        <li class="nav-item mr-4 mt-1">
-          <a class="bell-icon-header nav-link " href="#my-account"
-          ><i class="fas fa-bell bell-icon-header"></i></a>
-        </li>
-        <li>
-          <router-link to="/job-seeker/Signup">
-            <a  class="Signup-button">SignUp</a>
-          </router-link>
-<!--        </li>-->
-<!--        <li class="nav-item">-->
-<!--          <router-link to="/job-seeker/login" >-->
-<!--            <a class="logout-button" @click="getData()">Logout</a>-->
+<!--        <li>-->
+<!--          <router-link to="/job-seeker/Signup">-->
+<!--            <a  class="Signup-button">SignUp</a>-->
 <!--          </router-link>-->
-        </li>
-      </ul>
+<!--&lt;!&ndash;        </li>&ndash;&gt;-->
+<!--&lt;!&ndash;        <li class="nav-item">&ndash;&gt;-->
+<!--&lt;!&ndash;          <router-link to="/job-seeker/login" >&ndash;&gt;-->
+<!--&lt;!&ndash;            <a class="logout-button" @click="getData()">Logout</a>&ndash;&gt;-->
+<!--&lt;!&ndash;          </router-link>&ndash;&gt;-->
+<!--        </li>-->
+<!--      </ul>-->
 
-    </div>
+<!--    </div>-->
   </nav>
 
     <nav v-else class="navbar navbar-expand-lg navbar-light background-header header" ref="navbar">
-         <a class="navbar-brand " href="#" >
+         <a class="navbar-brand " >
+           <router-link to="/">
             <img src="../../assets/Frame 1376 1.png" />
-          </a>
+           </router-link>
+         </a>
         <button class="navbar-toggler" type="button"
             @click.stop="toggleNavbar()">
             <span class="navbar-toggler-icon"></span>
@@ -54,17 +56,20 @@
         <div :class="collapseClasses" id="navbarSupportedContent" :style="collapseStyle" ref="mynav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" > <router-link to="/">Home</router-link></a>
+                    <a class="nav-link" > <router-link to="/admin/job-seeker">Job Seekers</router-link></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" > <router-link to="jobs">Jobs</router-link></a>
+                    <a class="nav-link"> <router-link to="/Recruiter">Recruiters</router-link></a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link disabled">  <router-link to="MyApplications">My application</router-link></a>
+                    <a class="nav-link disabled">  <router-link to="/Posting-Details">Posting</router-link></a>
                 </li>
+              <li class="nav-item">
+                <a class="nav-link disabled">  <router-link to="/">Payments</router-link></a>
+              </li>
                  <li class="nav-item">
-                    <a class="nav-link " >   <router-link to="my-account">My Account</router-link></a>
+                    <a class="nav-link " >  <router-link to="/">My Account</router-link></a>
                 </li>
                  <li class="nav-item mr-4 mt-1">
                  <a class="bell-icon-header nav-link " href="#my-account"><i class="fas fa-bell bell-icon-header"></i></a>
@@ -75,9 +80,7 @@
 <!--                </router-link>-->
 <!--              </li>-->
                   <li class="nav-item">
-
                 <a class="logout-button" @click="getData()">Logout</a>
-
                 </li>
             </ul>
 

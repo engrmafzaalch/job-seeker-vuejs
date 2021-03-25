@@ -11,7 +11,7 @@
         <div class="display-flex mt-30 mb-40">
           <div class="box-job-seeker-admin inner-div-css">
             <div>
-              <span class="no-of-total-category">1202</span>
+              <span class="no-of-total-category">0</span>
             </div>
             <div>
               <span class="total-number-title-text-job-seeker-admin"
@@ -21,7 +21,7 @@
           </div>
           <div class="box-job-seeker-admin inner-div-css ml-10">
             <div>
-              <span class="no-of-total-category">250</span>
+              <span class="no-of-total-category">0</span>
             </div>
             <div>
               <span class="total-number-title-text-job-seeker-admin"
@@ -31,7 +31,7 @@
           </div>
           <div class="box-job-seeker-admin inner-div-css ml-10">
             <div>
-              <span class="no-of-total-category">125</span>
+              <span class="no-of-total-category">0</span>
             </div>
             <div>
               <span class="total-number-title-text-job-seeker-admin"
@@ -41,7 +41,7 @@
           </div>
           <div class="box-job-seeker-admin inner-div-css ml-10">
             <div>
-              <span class="no-of-total-category">150</span>
+              <span class="no-of-total-category">0</span>
             </div>
             <div>
               <span class="total-number-title-text-job-seeker-admin"
@@ -51,7 +51,7 @@
           </div>
           <div class="box-job-seeker-admin inner-div-css ml-10">
             <div>
-              <span class="no-of-total-category">90</span>
+              <span class="no-of-total-category">0</span>
             </div>
             <div>
               <span class="total-number-title-text-job-seeker-admin"
@@ -61,7 +61,7 @@
           </div>
           <div class="box-job-seeker-admin inner-div-css ml-10">
             <div>
-              <span class="no-of-total-category">120</span>
+              <span class="no-of-total-category">0</span>
             </div>
             <div>
               <span class="total-number-title-text-job-seeker-admin"
@@ -130,7 +130,7 @@
             <div class="action-box-job-seeker ml-10">
 
               <router-link
-                :to="{name: 'tab', params: { id: record.id },}">
+                :to="{name: 'tab', params: { id: record.user_id },}">
               <i class="fa fa-eye" aria-hidden="true" ></i>
               </router-link>
             </div>
@@ -192,7 +192,7 @@ import Add_New_Job_Seeker_Button from "./Add_New_Job_Seeker_Button";
 import axios from "axios";
 const columns = [
   {
-    dataIndex: "firstName",
+    dataIndex: "name",
     key: "name",
     slots: { title: "customTitle" },
     scopedSlots: { customRender: "name" },
@@ -257,14 +257,14 @@ export default {
     };
   },
     beforeCreate() {
-      axios.get(`${process.env.VUE_ROOT_URL}/users`, {
+      axios.get(`${process.env.VUE_ROOT_URL}/profiles`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
       })
         .then((res) => {
           this.users = res.data
-
+          console.log('alldata',this.users[0])
         })
         .catch((error) => {
           console.error(error)

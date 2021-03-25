@@ -149,7 +149,7 @@ export default {
           let email = values.email;
           let password = values.password;
           this.$store.dispatch("login", { email, password });
-
+        // this.$router.push("/");
           var data = data
           var that=this
           var config = {

@@ -9,107 +9,61 @@
             </div>
           </div>
         <div class="row">
-            <div class="col-md-2 one two">Key Skills</div>
+            <div  class="col-md-2 one two">Key Skills</div>
           <div class="col-10">
-            <div class="row">
-              <div class="border_ text-center m-1">C</div>
-              <div class="border_ text-center m-1">C++</div>
-              <div class="border_ text-center m-1">JAVA</div>
-              <div class="border_ text-center m-1">SQL</div>
-              <div class="border_ text-center m-1">Windows Server-2008</div>
+            <div  class="row">
+              <div v-if="skills && skills.skills" v-for="skill in skills.skills" class="border_ text-center m-1">{{skill}}</div>
+<!--              <div class="border_ text-center m-1">C++</div>-->
+<!--              <div class="border_ text-center m-1">JAVA</div>-->
+<!--              <div class="border_ text-center m-1">SQL</div>-->
+<!--              <div class="border_ text-center m-1">Windows Server-2008</div>-->
             </div>
           </div>
           </div>
         </div>
         <hr>
+<!--      v-for="skills in skills.skills"-->
+
+
 
         <div class="row">
           <div class="col-12 py-2">
             <h3 class="text-primary">Experience</h3>
           </div>
         </div>
-
-        <div class="row">
-            <div class="col-lg-2">
-              <span class="text-black-50 font_a">Employe Name</span><br>
-              <span class="font_b">ABC Private Limited</span>
-            </div>
-            <div class="col-lg-2">
-              <span class="text-black-50 font_a">Job Title</span><br>
-              <span class="font_b">Sr. Business Analyst</span>
-            </div>
-            <div class="col-lg-2">
-              <span class="text-black-50 font_a">Duration</span><br>
-              <span class="font_b">Jun-2020 till now</span>
-            </div>
-            <div class="col-lg-2">
-              <span class="text-black-50 font_a">Location</span><br>
-              <span class="font_b">Argentina, Buenos Aires</span>
-            </div>
-            <div class="col-lg-2">
-              <span class="text-black-50 font_a">Industry</span><br>
-              <span class="font_b">Healthcare</span>
-            </div>
-            <div class="col-lg-1">
-              <span class="text-black-50 font_a">Work Type</span><br>
-              <span class="font_b">Full Time</span>
-            </div>
-            <div class="col-lg-1">
-              <span class="text-black-50 font_a">Salary</span><br>
-              <span class="font_b">75,000</span>
-            </div>
-        </div>
-        <div class="row">
-          <div class="col-12 pt-4 pb-2">
-            <h6 class="text-black-50">Job Responsibility</h6>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-9 pb-2">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Aenean euismod bibendum laoreet.
-              Proin gravida dolor sit amet lacus
-              accumsan et viverra justo commodo.
-              Proin sodales pulvinar sic tempor.
-              Sociis natoque penatibus et magnis dis parturient.
-            </p>
-          </div>
-        </div>
-
+      <div  v-for="experience in experience">
         <hr>
-
-      <div class="row">
+      <div  class="row">
         <div class="col-lg-2">
           <span class="text-black-50 font_a">Employe Name</span><br>
-          <span class="font_b">ABC Private Limited</span>
+          <span class="font_b">{{experience.employerName}}</span>
         </div>
         <div class="col-lg-2">
           <span class="text-black-50 font_a">Job Title</span><br>
-          <span class="font_b">Sr. Business Analyst</span>
+          <span class="font_b">{{experience.jobTitle}}</span>
         </div>
         <div class="col-lg-2">
           <span class="text-black-50 font_a">Duration</span><br>
-          <span class="font_b">Jun-2020 till now</span>
+          <span class="font_b">{{experience.startDate}}</span>
         </div>
         <div class="col-lg-2">
           <span class="text-black-50 font_a">Location</span><br>
-          <span class="font_b">Argentina, Buenos Aires</span>
+          <span class="font_b">{{experience.city, experience.country}}</span>
         </div>
         <div class="col-lg-2">
           <span class="text-black-50 font_a">Industry</span><br>
-          <span class="font_b">Healthcare</span>
+          <span class="font_b">{{experience.workType}}</span>
         </div>
         <div class="col-lg-1">
           <span class="text-black-50 font_a">Work Type</span><br>
-          <span class="font_b">Full Time</span>
+          <span class="font_b">{{experience.companyName}}</span>
         </div>
         <div class="col-lg-1">
           <span class="text-black-50 font_a">Salary</span><br>
-          <span class="font_b">75,000</span>
+          <span class="font_b">{{experience.salary}}</span>
         </div>
       </div>
-      <div class="row">
+      <div  class="row">
         <div class="col-12 pt-4 pb-2">
           <h6 class="text-black-50">Job Responsibility</h6>
         </div>
@@ -117,14 +71,11 @@
       <div class="row">
         <div class="col-lg-9 pb-2">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Aenean euismod bibendum laoreet.
-            Proin gravida dolor sit amet lacus
-            accumsan et viverra justo commodo.
-            Proin sodales pulvinar sic tempor.
-            Sociis natoque penatibus et magnis dis parturient.
+            {{experience.jobDescription}}
           </p>
         </div>
+        <hr>
+      </div>
       </div>
 
       <div class="row">
@@ -158,7 +109,8 @@ export default {
     return {
       hasErrors,
       form: this.$form.createForm(this, { name: "employerName jobTitle city country workType salary endDate startDate jobDetails" }),
-      experience : {}
+      experience : {},
+      skills:{}
 
     };
   },
@@ -171,11 +123,27 @@ export default {
     })
       .then((res) => {
         this.experience = res.data
+        console.log('experience',res.data)
         // alert("data", JSON.stringify(res.data));
       })
       .catch((error) => {
         console.error(error)
       })
+
+    axios.get(`${process.env.VUE_ROOT_URL}/skills/${this.$route.params.id}`, {
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      }
+    })
+      .then((res) => {
+        this.skills = res.data
+        console.log('skills',res.data)
+        // alert("data", JSON.stringify(res.data));
+      })
+      .catch((error) => {
+        console.error(error)
+      })
+
   },
   methods: {
     redirectToHome() {

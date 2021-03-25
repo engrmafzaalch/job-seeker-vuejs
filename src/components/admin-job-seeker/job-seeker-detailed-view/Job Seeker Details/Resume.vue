@@ -25,12 +25,12 @@
                   <span class="text-black-50">182 KB</span>
                 </div>
               </div>
-              <div class="col-2">
+              <div class="col-2"  @click="deleteresume()">
                 <a href="#">
                   <img class="float-right mt-1" src="./trash.png" height="20" width="auto">
                 </a>
               </div>
-              <div class="col-2">
+              <div class="col-2" @click=" downloadresume()">
                 <a href="#">
                   <img class="mr-2 mt-1" src="./download.png" height="20" width="auto">
                 </a>
@@ -62,12 +62,12 @@
                   <span class="text-black-50">182 KB</span>
                 </div>
               </div>
-              <div class="col-2">
+              <div class="col-2"  @click="deleteresume()">
                 <a href="#">
                   <img class="float-right mt-1" src="./trash.png" height="20" width="auto">
                 </a>
               </div>
-              <div class="col-2">
+              <div class="col-2" @click=" downloadresume()">
                 <a href="#">
                   <img class="mr-2 mt-1" src="./download.png" height="20" width="auto">
                 </a>
@@ -99,13 +99,13 @@
                   <span class="text-black-50">182 KB</span>
                 </div>
               </div>
-              <div class="col-2">
+              <div class="col-2" @click="deleteresume()">
                 <a href="#">
                   <img class="float-right mt-1" src="./trash.png" height="20" width="auto">
                 </a>
               </div>
-              <div class="col-2">
-                <a href="#">
+              <div class="col-2" @click=" downloadresume()">
+                <a >
                   <img class="mr-2 mt-1" src="./download.png" height="20" width="auto">
                 </a>
               </div>
@@ -135,22 +135,40 @@
 </template>
 
 <script>
-// import axios from "axios";
+import axios from "axios";
 
-// function hasErrors(fieldsError) {
-//   return Object.keys(fieldsError).some((field) => fieldsError[field]);
-// }
 export default {
   name: "resume",
 
 
   data() {
     return {
-
+    resume:{}
     };
+  },
+  beforeCreate() {
+    axios.get(`${process.env.VUE_ROOT_URL}/resume/${this.$route.params.id}`, {
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      }
+    })
+      .then((res) => {
+        this.resume = res.data
+        console.log('projext',this.resume)
+        // alert("data", JSON.stringify(res.data));
+      })
+      .catch((error) => {
+        console.error(error)
+      })
   },
 
   methods: {
+    downloadresume(){
+           alert("successfully download");
+    },
+    deleteresume(){
+      alert("NYSC.pdf");
+    },
     redirectToHome() {
       this.$router.push({path: '/admin/job-seeker'});
     },
