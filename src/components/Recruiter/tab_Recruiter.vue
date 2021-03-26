@@ -16,7 +16,7 @@
 
 <script>
 import Recruiter from "./Recruiter";
-import recruiter_4 from "./recruiter_4";
+import recruiter_4 from "./Recruiter_4";
 import Recruiter_5 from "./Recruiter_5";
 export default {
   name: "tab_Recruiter",

@@ -14,8 +14,15 @@ import '../node_modules/datatables.net-dt/css/jquery.dataTables.css';
 import '../node_modules/datatables.net/js/jquery.dataTables.min.js';
 import '../node_modules/datatables.net-dt/js/dataTables.dataTables.js';
 
-import Vuelidate from 'vuelidate'
+import Vuelidate from 'vuelidate';
 Vue.use(Vuelidate)
+
+// Import component
+import Loading from 'vue-loading-overlay';
+// Import stylesheet
+import 'vue-loading-overlay/dist/vue-loading.css';
+// Init plugin
+Vue.use(Loading);
 
 let mySelected = ''
 
@@ -25,10 +32,10 @@ Vue.config.productionTip = false
 import 'bootstrap/dist/css/bootstrap.css'
 /* eslint-disable no-new */
 new Vue({
-  
+
   el: '#app',
   router,
   components: { App },
   template: '<App/>',
-  
+
 })

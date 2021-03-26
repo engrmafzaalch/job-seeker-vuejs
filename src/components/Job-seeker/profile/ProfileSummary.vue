@@ -1,5 +1,5 @@
 <template>
-<div class="container ">
+<div class="container">
 <!--<div>-->
 <!--  <h3>Profile Summery</h3>-->
 <!--</div>-->
@@ -9,7 +9,7 @@
       <div class="form-group row">
         <div class="col-md-10 col-lg-12 col-sm-10 ml-1">
         <label for="profile-summery" class="profile">Profile Summery</label>
-        <a-textarea v-decorator="[`profileSummary`, 
+        <a-textarea v-decorator="[`profileSummary`,
          { rules: [{ required: true, message: 'Please input Profile summery' }] },
         ]"
                     class="form-control"
@@ -26,7 +26,8 @@
           <a-button type="primary"
                     html-type="submit"
                     class="login-button-style btn btn-primary px-4"
-                    :disabled="hasErrors(form.getFieldsError())">Proceed
+                    :disabled="hasErrors(form.getFieldsError())"
+          >Proceed
           </a-button>
       </div>
     </a-form>
@@ -35,6 +36,9 @@
 </template>
 
 <script>
+import Loading from 'vue-loading-overlay';
+import 'vue-loading-overlay/dist/vue-loading.css';
+
 import axios from "axios";
 console.log('ye link h ' , process.env.VUE_ROOT_URL);
 function hasErrors(fieldsError) {
@@ -48,7 +52,7 @@ name: "profileSummary",
     return {
       hasErrors,
       form: this.$form.createForm(this, { name: "profileSummary" }),
-      
+
     };
   },
   beforeCreate() {
@@ -70,7 +74,7 @@ name: "profileSummary",
   methods:{
     changed: function(step) {
       this.$store.commit('change', step)
-      
+
     },
 
     userNameError() {
@@ -79,9 +83,8 @@ name: "profileSummary",
     },
     // Only show error after a field is touched.
     handleSubmit(e) {
-
       e.preventDefault();
-      
+
       this.form.validateFields((err, values) => {
         if (err){
             this.$notification.open({
@@ -94,12 +97,20 @@ name: "profileSummary",
       });
         }
         if (!err) {
+
+          console.log('open was clicked, will auto hide');
+          let loader = this.$loading.show({
+            loader: 'dots'
+          });
+          setTimeout(() => loader.hide(), 1000)
+
           this.$notification.open({
         message: 'Profile Summery detail',
         description:
           'Profile Summery details are added',
         onClick: () => {
           console.log('Notification Clicked!');
+
         },
       });
     const user =   JSON.parse(localStorage.getItem('user'))
@@ -128,13 +139,31 @@ name: "profileSummary",
         });
         }
       });
-     
+
     },
     onChange(date, dateString) {
       console.log(date, dateString);
     },
 
+    // open() {
+    //   console.log('open was clicked, will auto hide');
+    //   let loader = this.$loading.show({
+    //     loader: 'dots'
+    //   });
+    //   setTimeout(() => loader.hide(), 1000)
+    // },
+    // show() {
+    //   console.log('show was clicked, click to hide');
+    //   // do AJAX here
+    //   this.visible = true
+    // }
+
   },
+
+  // mounted () {
+  //
+  // }
+
 }
 </script>
 
