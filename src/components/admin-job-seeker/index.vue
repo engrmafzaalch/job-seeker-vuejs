@@ -72,32 +72,16 @@
         </div>
         <div class="text-align-initial">
           <a-form-item>
-            <a-input
+            <a-input-search
+              placeholder="input search text"
               class="searchbox-style"
-              v-decorator="[
-                'userName',
-                {
-                  rules: [
-                    {
-                      required: true,
-                      message: 'Please input your username!',
-                    },
-                  ],
-                },
-              ]"
-              placeholder="Search Job Seekers"
-            >
-              <a-icon
-                slot="prefix"
-                type="search"
-                style="color: rgba(0, 0, 0, 0.25)"
-              />
-            </a-input>
+              @search="fileredcolumns"
+            />
           </a-form-item>
         </div>
         <a-table
           :columns="columns"
-          :data-source=this.users
+          :data-source=this.filteredData
           :pagination="pagination"
         >
           <span slot="name" @click="displayDetailed" slot-scope="text">{{
@@ -253,6 +237,7 @@ export default {
         showSizeChange: (current, pageSize) => (this.pageSize = pageSize), // update display when changing the number of pages per page
       },
       users:[],
+      filteredData:[]
 
     };
   },
@@ -260,17 +245,28 @@ export default {
       axios.get(`${process.env.VUE_ROOT_URL}/profiles`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
-        }
+        },
       })
         .then((res) => {
           this.users = res.data
-          console.log('alldata',this.users[0])
+          this.filteredData= res.data
+          console.log('alldata',res.data[0])
         })
         .catch((error) => {
           console.error(error)
         })
     },
+
+  computed:{
+
+  },
   methods: {
+    fileredcolumns(search) {
+      console.log(JSON.stringify(this.users), search);
+      this.filteredData = this.users.filter(user => {
+        return !search || (user.name || "").toLowerCase().indexOf(search.toLowerCase()) > -1
+      })
+    },
     displayDetailed() {
       this.$router.push("/admin/job-seeker/10");
     },
@@ -362,6 +358,7 @@ text-align: initial;
 display: inline-block;
 }
 .searchbox-style {
+  margin-top: 15px;
 width: 420px;
 /* height: 48px; */
 border-radius: 4px;
