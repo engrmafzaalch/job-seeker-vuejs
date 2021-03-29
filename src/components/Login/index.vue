@@ -110,6 +110,8 @@
 
 <script>
 import axios from "axios";
+import Loading from 'vue-loading-overlay';
+import 'vue-loading-overlay/dist/vue-loading.css';
 import {notification } from 'antd';
 function hasErrors(fieldsError) {
   return Object.keys(fieldsError).some((field) => fieldsError[field]);
@@ -160,7 +162,11 @@ export default {
               'Content-Type': 'application/json'
             },
             data : data
+
           };
+          let loader = this.$loading.show({
+            loader: 'dots'
+          });
           axios(config)
             .then(function (response) {
               if(response.status == "201"){
@@ -169,9 +175,11 @@ export default {
                 localStorage.setItem("user", JSON.stringify(response.data.loggedInUserInfo));
                 that.$router.push("/admin/job-seeker");
                 window.location.reload();
+                setTimeout(() => loader.hide(), 500)
               }
             })
             .catch(function (error) {
+              // setTimeout(() => loader.hide(), 500)
               console.log(error);
             });
 

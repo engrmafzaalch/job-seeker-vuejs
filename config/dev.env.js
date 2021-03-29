@@ -4,5 +4,5 @@ const prodEnv = require('./prod.env')
 
 module.exports = merge(prodEnv, {
   NODE_ENV: '"development"',
-  VUE_ROOT_URL: '"http://9ac930ef93f5.ngrok.io/api/v1"',
+  VUE_ROOT_URL: '"http://7454eb5eec7a.ngrok.io/api/v1"',
 })

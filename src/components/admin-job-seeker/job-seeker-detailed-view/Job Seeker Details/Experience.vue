@@ -121,12 +121,17 @@ export default {
         'Authorization': `Bearer ${localStorage.getItem('token')}`
       }
     })
+    let loader = this.$loading.show({
+      loader: 'dots'
+    })
       .then((res) => {
+        setTimeout(() => loader.hide(), 1000)
         this.experience = res.data
         console.log('experience',res.data)
         // alert("data", JSON.stringify(res.data));
       })
       .catch((error) => {
+        setTimeout(() => loader.hide(), 1000)
         console.error(error)
       })
 
