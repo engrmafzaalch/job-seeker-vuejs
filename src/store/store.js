@@ -5,7 +5,7 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store({
     state: {
-        step:5,
+        step:1,
         tab:1,
         tabs:1,
         status: '',

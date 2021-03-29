@@ -43,7 +43,20 @@
           </div>
         </div>
       </div>
+       <div v-if="(fileList)" class="card">
+      <div class="card-header">List of Files</div>
+      <ul class="list-group list-group-flush">
+        <li
+          class="list-group-item"
+          v-for="(file, index) in fileList"
+          :key="index"
+        >
+        <a :href="file.path">{{ file.name }}</a>
+        </li>
+      </ul>
+    </div>
       <hr />
+         
       <div class="row float-right">
         <div class="col-12">
           <button
@@ -80,7 +93,26 @@ export default {
       hasErrors,
       form: this.$form.createForm(this, { name: "File" }),
       selectedFiles: [],
+      fileList:null
     };
+  },
+  beforeCreate() {
+    const user = JSON.parse(localStorage.getItem("user"));
+    axios
+      .get(`${process.env.VUE_ROOT_URL}/certificate/${user.user_id}`, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+      })
+      .then((res) => {
+        console.log(res.data);
+        this.fileList = res.data.certificates;
+        console.log("res of get req" ,this.fileList)
+
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   },
   methods: {
     selectFile() {
@@ -101,7 +133,7 @@ export default {
     // Only show error after a field is touched.
     handleSubmit(e) {
       var that = this;
-      console.log("Mar di billi", this.selectedFiles);
+      console.log("THESE FILES", this.selectedFiles);
       e.preventDefault();
 
       this.form.validateFields((err, values) => {
@@ -117,34 +149,35 @@ export default {
         // });
         //     }
         if (!err) {
-           const user =   JSON.parse(localStorage.getItem('user'))
-         
+          const user = JSON.parse(localStorage.getItem("user"));
+          console.log(this);
           this.selectedFiles.user_id = user.user_id;
-           console.log("Received user: ", this.selectedFiles);
-          let formData = new FormData();
-         
-          formData.append("file", this.selectedFiles );
+          //  console.log("Received user: ", this.selectedFiles);
+          // let formData = new FormData();
+          //  console.log("theses are formData" , formData)
 
-        
           this.$store.commit("change", 6);
-          var data = that.selectedFiles;
-          console.log('abcd', data)
-          console.log("data body", data);
+          // var data = that.selectedFiles;
+          // console.log("data body", data);
+
+          let formData = new FormData();
+          for (var i = 0; i < this.selectedFiles.length; i++) {
+            let file = this.selectedFiles[i];
+            formData.append("docs", file);
+          }
           var config = {
             method: "post",
-            url: `${process.env.VUE_ROOT_URL}/certificates`,
+            url: `${process.env.VUE_ROOT_URL}/certificates/0fd909cb-7bb8-4e6f-b9d2-166776cd552c`,
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
               "Content-Type": "multipart/form-data",
             },
-            data: this.selectedFiles,
-            
-          
+            data: formData,
           };
-          console.log("my data" ,data)
+          // console.log("my data" ,data)
           axios(config)
             .then(function (response) {
-              console.log(JSON.stringify("my response",response));
+              console.log(JSON.stringify("my response", response));
             })
             .catch(function (error) {
               console.log(error);

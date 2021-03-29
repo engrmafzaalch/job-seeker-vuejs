@@ -6,9 +6,9 @@
       <div class="form-group ml-1 col-12">
          <h4 class="pl-2">Enter Education Details </h4>
       <div 
-        v-for="(ticket, i) in tickets"
+        v-for="(ticket, i) in education"
         :key="i"
-        :set="(v = $v.tickets.$each[i])"
+        :set="(v = $v.education.$each[i])"
       >
       <div  v-if="(i>0)"  class="cross"  style="cursor:pointer;" @click="deleteItem(i)" >x</div>
            <h4 v-if="(i>0)"  class="pl-2">Enter Education Details {{ i + 1 }}</h4>
@@ -54,11 +54,11 @@
           </div>
           <div class="row">
           <div class="col-sm-6">
-            <a-date-picker v-decorator="[`coompletionDate`,]" 
-             v-model="ticket.coompletionDate"
-                      id="coompletionDate"
+            <a-date-picker v-decorator="[`completionDate`,]" 
+             v-model="ticket.completionDate"
+                      id="completionDate"
                         class="my-2 w-100" placeholder="End Date"
-                         :class="{ 'is-invalid': v.coompletionDate.$error }"
+                         :class="{ 'is-invalid': v.completionDate.$error }"
                          ></a-date-picker>
                           <div class="invalid-feedback">
                 <div v-if="!v.startDate.required">Date is required</div>
@@ -124,8 +124,8 @@ import axios from "axios";
     export default {
         data() {
             return {
-                tickets: [{
-                     coompletionDate:'',
+                education: [{
+                     completionDate:'',
                     startDate:'',
                     courseOfStudy: '',
                     institutionName: '',
@@ -136,11 +136,46 @@ import axios from "axios";
                 
             };
         },
+        beforeCreate() {
+    const user = JSON.parse(localStorage.getItem('user'));
+     let loader = this.$loading.show({
+        loader: 'dots'
+      });
+    axios.get(`${process.env.VUE_ROOT_URL}/education/${user.user_id}`, {
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      }
+    })
+      .then((res) => {
+        console.log("Education Data is here" , res.data)
+        this.education=res.data;
+          setTimeout(() => loader.hide(), 500)
+//         for (var i in  res.data) {
+        
+// } 
+      })
+      .catch((error) => {
+        console.error(error)
+               setTimeout(() => loader.hide(), 500)
+        if(res.status!==200 || res.status!==201 || res.status!==204 ){
+          this.$notification.open({
+        message: 'Profile Summery detail',
+        description:
+          'Something went wrong',
+        onClick: () => {
+          console.log('Notification Clicked!');
+        },
+      });
+        
+        }
+        
+      })
+  },
         validations: {
           
-            tickets: {
+            education: {
                 $each: {
-                   coompletionDate: {required},
+                   completionDate: {required},
                     startDate:{required},
                     courseOfStudy: { required },
                     institutionName: {required},
@@ -179,7 +214,7 @@ import axios from "axios";
     },
             onChangeTickets(value) {
                 const numberOfTickets = Number(value || 0);
-                this.tickets = [...Array(this.tickets.length + numberOfTickets).keys()].map(i => this.tickets[i] || {});
+                this.education = [...Array(this.education.length + numberOfTickets).keys()].map(i => this.education[i] || {});
             },
             onSubmit(e) {
               

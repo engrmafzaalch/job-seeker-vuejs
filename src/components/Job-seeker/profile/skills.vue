@@ -11,7 +11,7 @@
     <div class="col-sm-7">
       <a-select
         v-decorator="[`skills`,
-        { rules: [{ required: true, message: 'Please enter the skills' }] }, ]"
+        { initialValue:pastData, rules: [{ required: true, message: 'Please enter the skills' }] }, ]"
                 mode="tags" class="py-3" style="width: 100%" placeholder="Type in to search or add new" @change="handleChange">
         <a-select-option v-for="Skill in skillSet" v-bind:key="Skill.skillSetName">
           {{Skill.skillSetName}}
@@ -50,18 +50,22 @@ export default {
       hasErrors,
       form: this.$form.createForm(this, { name: "skills" }),
       skillSet:[],
-      listSkill:[]
+      listSkill:[],
+      pastData:[]
     };
   },
 
   beforeCreate() {
-    axios.get(`${process.env.VUE_ROOT_URL}/skills`, {
+    const user = JSON.parse(localStorage.getItem("user"));
+    axios.get(`${process.env.VUE_ROOT_URL}/skills/${user.user_id}`, {
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('token')}`,
       }
     })
       .then((res) => {
-        this.skillSet = res.data
+        this.pastData = res.data.skills
+        console.log("my skills are here" , res.data.skills)
+        console.log("YO YO ", pastData);
       })
       .catch((error) => {
         console.error(error)

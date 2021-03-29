@@ -11,7 +11,7 @@
         <div class="row">
           <div class="col-sm-6">
             <a-input v-decorator="[`name`,
-              { rules: [{ required: true, message: '' }] } ]"
+              { initialValue:name, rules: [{ required: true, message: '' }] } ]"
                      type="text" class="form-control" id="name" placeholder="Name"></a-input>
           </div>
           <div class="col-sm-6">
@@ -120,11 +120,43 @@ export default {
     return {
       hasErrors,
       form: this.$form.createForm(this, { name: "name emailAddress city country mobileNumber linkedIn day month year nysc" }),
-      countries : []
+      countries : [],
+      city: '',
+      country: '',
+      createdAt: '',
+      dob: '',
+      linkedIn: '',
+      mobileNo: '',
+      name: '',
+      nysc:'',
+      updatedAt:''
+      
     };
   },
 
   beforeCreate() {
+    const user = JSON.parse(localStorage.getItem('user'));
+    axios.get(`${process.env.VUE_ROOT_URL}/profile/${user.user_id}`, {
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      }
+    })
+      .then((res) => {
+        console.log("This is my res" ,res.data)
+        this.name = res.data.name;
+        this.linkedIn = res.data.linkedIn;
+        this.nysc = res.data.nysc;
+        this.mobileNo = res.data.mobileNo;
+        this.city = res.data.city;
+        this.country = res.data.country;
+        this.dob = res.data.dob;
+        this.name = res.data.name;
+        
+      })
+      .catch((error) => {
+        console.error(error)
+      })
+ 
     axios.get(`${process.env.VUE_ROOT_URL}/countries`, {
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('token')}`
