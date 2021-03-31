@@ -12,7 +12,7 @@
             </div>
           </div>
           <div class="col-md-4">
-            <span class="name_head line_height">Desirae Dias</span>
+            <span class="name_head line_height">{{ profile.name}}</span>
           </div>
 
           <div class="col-md-2">
@@ -20,7 +20,7 @@
               <span class="text-black-50">Email Address</span>
             </div>
             <div>
-              <span class="years">user@gmail.com</span>
+              <span class="years">{{ profile.email }}</span>
             </div>
           </div>
           <div class="col-md-2">
@@ -28,7 +28,7 @@
               <span class="text-black-50">Contact Information</span>
             </div>
             <div>
-              <span class="number">+9988776655</span>
+              <span class="number">{{ profile.mobileNo}}</span>
             </div>
           </div>
           <div class="col-md-2">
@@ -36,7 +36,7 @@
               <span class="text-black-50">Location</span>
             </div>
             <div>
-              <span class="years">Buenos Aires, Agentina</span>
+              <span class="years">{{ profile.country }}</span>
             </div>
           </div>
         </div>
@@ -53,24 +53,9 @@
         </div>
         <div class="row pt-4">
           <div class="col-lg-9">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Nunc a fermentum odio. Curabitur vulputate tellus tellus,
-              id porta orci aliquet non. Nullam commodo neque sit amet augue posuere,
-              sit amet ornare ligula suscipit. Integer volutpat, mi in rhoncus suscipit,
-              urna felis blandit ex, sed tincidunt libero est et mi.
-              Donec feugiat et ex eu aliquet. Morbi quis dui diam.
-              Phasellus viverra enim pellentesque nibh suscipit, eu porttitor orci sagittis.
-              Donec eleifend mauris elit, vitae ullamcorper felis pellentesque in.
-              Nulla sed est ac nulla sodales luctus non et dui.
-              Aliquam commodo vulputate lobortis. Cras mauris sem, blandit ut accumsan quis,
-              posuere nec mauris. Curabitur vitae molestie est.
-              Interdum et malesuada fames ac ante ipsum primis in faucibus.
-              Nullam et auctor metus, in iaculis purus.
-              Pellentesque habitant morbi tristique senectus et netus et
-              malesuada fames ac turpis egestas.
-              Cras quis mauris id lacus ultricies rhoncus. <a href="#">READ MORE</a>
-            </p>
+            <span>
+              {{profile.profileSummary}}. <a href="#">READ MORE</a>
+            </span>
           </div>
         </div>
 
@@ -81,7 +66,7 @@
             <span class="text-black-50">N.Y.S.C Number</span>
           </div>
           <div class="col-md-10">
-            <span class="ny">A00 - 4672468</span>
+            <span class="ny">{{profile.nysc}}</span>
           </div>
         </div>
 
@@ -89,10 +74,10 @@
 
         <div class="row py-4">
           <div class="col-md-2">
-            <span class="text-black-50">Date of Birth</span>
+            <span class="text-black-50">D.O.B</span>
           </div>
           <div class="col-md-10">
-            <span class="ny">02 March 1990</span>
+            <span class="ny">{{ profile.dob }}</span>
           </div>
         </div>
 
@@ -103,13 +88,13 @@
             <span class="text-black-50">LinkedIn Profile</span>
           </div>
           <div class="col-md-10">
-            <a href="#" class="">https://www.linkedin.com/in/jane-doe 7a5a1019</a>
+            <a href="#" class="">{{profile.linkedIn}}</a>
           </div>
         </div>
         <div class="row">
           <div class="col-6"></div>
           <div class="col-md-3">
-            <button type="button" class="btn btn-light btn-block float-right">Cancel</button>
+            <button type="button" class="btn btn-light btn-block float-right" @click="redirectToHome()">Cancel</button>
           </div>
           <div class="col-md-3">
             <button type="button" class="btn btn-primary btn-block">
@@ -124,11 +109,53 @@
 </template>
 
 <script>
+
 import MyAccount from "./MyAccount";
+import axios from "axios";
+
+function hasErrors(fieldsError) {
+  return Object.keys(fieldsError).some((field) => fieldsError[field]);
+}
 export default {
 name: "Summery",
 
-}
+
+  data() {
+    return {
+      hasErrors,
+      form: this.$form.createForm(this, { name: "name emailAddress city country mobileNumber linkedIn day month year nysc" }),
+      profile : {}
+    };
+  },
+
+  beforeCreate() {
+    axios.get(`${process.env.VUE_ROOT_URL}/profile/${this.$route.params.id}`, {
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      }
+    })
+    let loader = this.$loading.show({
+      loader: 'dots'
+    })
+      .then((res) => {
+
+        this.profile = res.data
+        setTimeout(() => loader.hide(), 500)
+        // console.log('alldata12',this.profile)
+       // alert("data", JSON.stringify(res.data));
+      })
+      .catch((error) => {
+        setTimeout(() => loader.hide(), 500)
+        console.error(error)
+      })
+  },
+  methods: {
+    redirectToHome() {
+      this.$router.push({path: '/admin/job-seeker'});
+    },
+  },
+};
+
 </script>
 
 <style scoped>

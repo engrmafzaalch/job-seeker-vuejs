@@ -9,19 +9,20 @@
             <h3 class="text-primary">Experience</h3>
           </div>
         </div>
-
+        <div v-for="project in project">
+          <hr>
         <div class="row">
           <div class="col-lg-2">
             <span class="text-black-50 font_a">Project Title</span><br>
-            <span class="font_b">ABC Private Limited</span>
+            <span class="font_b">{{project.projectTitle}}</span>
           </div>
           <div class="col-lg-2">
             <span class="text-black-50 font_a">Client Name</span><br>
-            <span class="font_b">Charlie Bergson</span>
+            <span class="font_b">{{project.clientName}}</span>
           </div>
           <div class="col-lg-2">
             <span class="text-black-50 font_a">Project Status</span><br>
-            <span class="font_b">Completed</span>
+            <span class="font_b">{{project.projectStatus}}</span>
           </div>
           <div class="col-lg-2">
             <span class="text-black-50 font_a">Duration</span><br>
@@ -29,11 +30,11 @@
           </div>
           <div class="col-lg-2">
             <span class="text-black-50 font_a">Start Date</span><br>
-            <span class="font_b">Jun - 2019</span>
+            <span class="font_b">{{project.startDate}}</span>
           </div>
           <div class="col-lg-2">
             <span class="text-black-50 font_a">Finished On</span><br>
-            <span class="font_b">Dec - 2020</span>
+            <span class="font_b">{{project.endDate}}</span>
           </div>
         </div>
         <div class="row">
@@ -44,66 +45,17 @@
         <div class="row">
           <div class="col-lg-9 pb-2">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Aenean euismod bibendum laoreet.
-              Proin gravida dolor sit amet lacus
-              accumsan et viverra justo commodo.
-              Proin sodales pulvinar sic tempor.
-              Sociis natoque penatibus et magnis dis parturient.
+              {{project.projectDetail}}
             </p>
           </div>
         </div>
 
-        <hr>
-
-        <div class="row">
-          <div class="col-lg-2">
-            <span class="text-black-50 font_a">Project Title</span><br>
-            <span class="font_b">ABC Private Limited</span>
-          </div>
-          <div class="col-lg-2">
-            <span class="text-black-50 font_a">Client Name</span><br>
-            <span class="font_b">Charlie Bergson</span>
-          </div>
-          <div class="col-lg-2">
-            <span class="text-black-50 font_a">Project Status</span><br>
-            <span class="font_b">Completed</span>
-          </div>
-          <div class="col-lg-2">
-            <span class="text-black-50 font_a">Duration</span><br>
-            <span class="font_b">1 Year 6 Months</span>
-          </div>
-          <div class="col-lg-2">
-            <span class="text-black-50 font_a">Start Date</span><br>
-            <span class="font_b">Jun - 2019</span>
-          </div>
-          <div class="col-lg-2">
-            <span class="text-black-50 font_a">Finished On</span><br>
-            <span class="font_b">Dec - 2020</span>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12 pt-4 pb-2">
-            <h6 class="text-black-50">Project Details</h6>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-9 pb-2">
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Aenean euismod bibendum laoreet.
-              Proin gravida dolor sit amet lacus
-              accumsan et viverra justo commodo.
-              Proin sodales pulvinar sic tempor.
-              Sociis natoque penatibus et magnis dis parturient.
-            </p>
-          </div>
         </div>
 
         <div class="row">
           <div class="col-6"></div>
           <div class="col-md-3">
-            <button type="button" class="btn btn-light btn-block float-right">Cancel</button>
+            <button type="button" class="btn btn-light btn-block float-right" @click="redirectToHome()">Cancel</button>
           </div>
           <div class="col-md-3">
             <button type="button" class="btn btn-primary btn-block">
@@ -119,9 +71,52 @@
 </template>
 
 <script>
-export default {
-  name: "Project"
+import axios from "axios";
+
+function hasErrors(fieldsError) {
+  return Object.keys(fieldsError).some((field) => fieldsError[field]);
 }
+export default {
+  name: "project",
+
+
+  data() {
+    return {
+      hasErrors,
+      form: this.$form.createForm(this, { name: "projectTitle employerName clientName projectStatus endDate stratDate projectDetail"}),
+      project : {}
+
+    };
+  },
+
+  beforeCreate() {
+    axios.get(`${process.env.VUE_ROOT_URL}/project/${this.$route.params.id}`, {
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      }
+    })
+    let loader = this.$loading.show({
+      loader: 'dots'
+    })
+      .then((res) => {
+        setTimeout(() => loader.hide(), 1000)
+
+        this.project = res.data
+        console.log('projext',this.project)
+        // alert("data", JSON.stringify(res.data));
+      })
+      .catch((error) => {
+        setTimeout(() => loader.hide(), 1000)
+
+        console.error(error)
+      })
+  },
+  methods: {
+    redirectToHome() {
+      this.$router.push({path: '/admin/job-seeker'});
+    },
+  },
+};
 </script>
 
 <style scoped>

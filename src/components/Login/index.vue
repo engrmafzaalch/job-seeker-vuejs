@@ -18,6 +18,7 @@
                       :help="userNameError() || ''"
                       style="width: 100%; height: 48px; margin-right: 0px"
                     >
+                      <a-form-item>
                       <a-input
                         style="height: 48px"
                         class="searchbox-style"
@@ -35,6 +36,7 @@
                         ]"
                         placeholder=" Email address *"
                       />
+                      </a-form-item>
                     </div>
                   </div>
                 </div>
@@ -45,10 +47,11 @@
                       :help="passwordError() || ''"
                       style="width: 100%; height: 48px; margin-right: 0px"
                     >
+                      <a-form-item>
                       <a-input
                         style=""
                         type="password"
-                        class="searchbox-style"
+                        class="searchbox-style1"
                         v-decorator="[
                           `password`,
                           {
@@ -64,6 +67,7 @@
                         ]"
                         placeholder=" Password *"
                       />
+                      </a-form-item>
                     </div>
                   </div>
                 </div>
@@ -72,33 +76,32 @@
           </div>
           <div class="col-12 mtb-22">
             <div class="text-align-end">
-              <span class="forgot-password-text"
-                ><router-link to="forgot-password"
-                  >Forget Password ?</router-link
-                ></span
-              >
+                <router-link to="forgot-password"
+                  >Forget Password ?</router-link>
             </div>
           </div>
 
-          <a-form-item class="display-flex mt-22">
+
             <div class="row m-0 button-class">
               <div class="col-6">
                 <a-button type="primary" class="go-back-button-style">
                   Cancle
                 </a-button>
               </div>
+
               <div class="col-6">
                 <a-button
                   type="primary"
                   html-type="submit"
                   class="login-button-style"
                   :disabled="hasErrors(form.getFieldsError())"
+                  @click="openNotification()"
                 >
                   Login
                 </a-button>
               </div>
+
             </div>
-          </a-form-item>
         </a-form>
       </div>
     </div>
@@ -106,6 +109,10 @@
 </template>
 
 <script>
+import axios from "axios";
+import Loading from 'vue-loading-overlay';
+import 'vue-loading-overlay/dist/vue-loading.css';
+import {notification } from 'antd';
 function hasErrors(fieldsError) {
   return Object.keys(fieldsError).some((field) => fieldsError[field]);
 }
@@ -127,7 +134,7 @@ export default {
   methods: {
     userNameError() {
       const { getFieldError, isFieldTouched } = this.form;
-      return isFieldTouched("userName") && getFieldError("userName");
+      return isFieldTouched("username") && getFieldError("username");
     },
     // Only show error after a field is touched.
     passwordError() {
@@ -135,17 +142,81 @@ export default {
       return isFieldTouched("password") && getFieldError("password");
     },
     handleSubmit(e) {
+
       e.preventDefault();
       this.form.validateFields((err, values) => {
         if (!err) {
           console.log("Received values of form: ", values);
           this.$store.dispatch("setToken", values.email);
-          localStorage.setItem("token", values.email);
           let email = values.email;
           let password = values.password;
           this.$store.dispatch("login", { email, password });
-          this.$router.push("/");
+        // this.$router.push("/");
+          var data = data
+          var that=this
+          var config = {
+            method: 'post',
+            url: `${process.env.VUE_ROOT_URL}/user/login?username=${email}&password=${password}`,
+            headers: {
+              'Authorization':  `Bearer ${localStorage.getItem('token')}`,
+              'Content-Type': 'application/json'
+            },
+            data : data
+
+          };
+          let loader = this.$loading.show({
+            loader: 'dots'
+          });
+          axios(config)
+            .then(function (response) {
+              if(response.status == "201"){
+                console.log('responsedata',response.status)
+                localStorage.setItem("token", response.data.token);
+                localStorage.setItem("user", JSON.stringify(response.data.loggedInUserInfo));
+                that.$router.push("/admin/job-seeker");
+                window.location.reload();
+                setTimeout(() => loader.hide(), 500)
+              }
+            })
+            .catch(function (error) {
+              // setTimeout(() => loader.hide(), 500)
+              console.log(error);
+            });
+
         }
+      });
+    },
+    // openNotification() {
+    //   console.log("statuscode",statusCode)
+    //   if (this.status.code===201) {
+    //     this.$notification.open({
+    //       message: 'Error',
+    //       description:
+    //         'Enter the required Field',
+    //       onClick: () => {
+    //         console.log('Notification Clicked!');
+    //       },
+    //     });
+    //   }
+    //   else{
+    //     this.$notification.open({
+    //       message: 'Education detail',
+    //       description:
+    //         'Education details are added',
+    //       onClick: () => {
+    //         console.log('Notification Clicked!');
+    //       },
+    //     });
+    //   }
+    // },
+    openNotification() {
+      this.$notification.open({
+        message: 'Success',
+        description:
+          'Login Successullqy',
+        onClick: () => {
+          console.log('Notification Clicked!');
+        },
       });
     },
   },
@@ -153,7 +224,6 @@ export default {
 </script>
 
 <style scoped>
-
 .login-card {
   position: absolute;
   padding: 32px;
@@ -279,7 +349,17 @@ hr {
 .searchbox-style {
   /* width: 700px; */
   /*; */
-  width: 100%;
+  width: 235%;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #8b90a0;
+  font-family: SF UI Display;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+}
+.searchbox-style1{
+  width: 218%;
   border-radius: 4px;
   background: #ffffff;
   color: #8b90a0;
@@ -292,7 +372,7 @@ hr {
   background: #fafafa;
   border-radius: 4px;
   width: 100%;
-  font-family: Open Sans;
+  font-fami: Open Sans;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;

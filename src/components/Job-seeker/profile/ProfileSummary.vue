@@ -7,16 +7,16 @@
       <div class="form-group row">
         <div class="col-md-10 col-lg-12 col-sm-10 ml-1">
         <label for="profile-summery" class="profile">Profile Summery</label>
-    
+
         <a-textarea v-decorator="[`profileSummary`,
-      
+
          { initialValue:profileSummary,rules: [{ required: true, message: 'Please input Profile summery' }] },
         ]"
                     class="form-control"
                     rows="6"
                     id="profile-summery"
                     name="text"
-                    placeholder="Enter Profile Summary here" 
+                    placeholder="Enter Profile Summary here"
                      >
         </a-textarea>
         </div>
@@ -48,8 +48,8 @@ export default {
 
 name: "profileSummary",
 
-  data() { 
-  
+  data() {
+
     return {
       hasErrors,
       form: this.$form.createForm(this, { name: "profileSummary" }),
@@ -87,8 +87,8 @@ name: "profileSummary",
         },
       });
           }
-          
-        
+
+
 
       })
   },
@@ -108,7 +108,7 @@ name: "profileSummary",
         });
       }, 1000);
     },
-    
+
     changed: function(step) {
       this.$store.commit('change', step)
 
@@ -135,12 +135,12 @@ name: "profileSummary",
         }
         if (!err) {
 
-           
+
 
 
           console.log('open was clicked, will auto hide');
-          
-         
+
+
 
     const user =   JSON.parse(localStorage.getItem('user'))
           console.log("Received user: ", values);
@@ -164,24 +164,24 @@ name: "profileSummary",
       });
        axios(config)
         .then(function (response) {
-          
+
           setTimeout(() => loader.hide(), 1000)
           console.log(JSON.stringify(response.data));
-          
-           
+
+
         })
         .catch(function (error) {
-       
+
            setTimeout(() => loader.hide(), 1000)
-         
+
           console.log(error);
         });
 
 
-       
 
 
-       
+
+
 
 
 

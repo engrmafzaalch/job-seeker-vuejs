@@ -11,7 +11,7 @@
         <div class="display-flex mt-30 mb-40">
           <div class="box-job-seeker-admin inner-div-css">
             <div>
-              <span class="no-of-total-category">1202</span>
+              <span class="no-of-total-category">0</span>
             </div>
             <div>
               <span class="total-number-title-text-job-seeker-admin"
@@ -21,7 +21,7 @@
           </div>
           <div class="box-job-seeker-admin inner-div-css ml-10">
             <div>
-              <span class="no-of-total-category">250</span>
+              <span class="no-of-total-category">0</span>
             </div>
             <div>
               <span class="total-number-title-text-job-seeker-admin"
@@ -31,7 +31,7 @@
           </div>
           <div class="box-job-seeker-admin inner-div-css ml-10">
             <div>
-              <span class="no-of-total-category">125</span>
+              <span class="no-of-total-category">0</span>
             </div>
             <div>
               <span class="total-number-title-text-job-seeker-admin"
@@ -41,7 +41,7 @@
           </div>
           <div class="box-job-seeker-admin inner-div-css ml-10">
             <div>
-              <span class="no-of-total-category">150</span>
+              <span class="no-of-total-category">0</span>
             </div>
             <div>
               <span class="total-number-title-text-job-seeker-admin"
@@ -51,7 +51,7 @@
           </div>
           <div class="box-job-seeker-admin inner-div-css ml-10">
             <div>
-              <span class="no-of-total-category">90</span>
+              <span class="no-of-total-category">0</span>
             </div>
             <div>
               <span class="total-number-title-text-job-seeker-admin"
@@ -61,7 +61,7 @@
           </div>
           <div class="box-job-seeker-admin inner-div-css ml-10">
             <div>
-              <span class="no-of-total-category">120</span>
+              <span class="no-of-total-category">0</span>
             </div>
             <div>
               <span class="total-number-title-text-job-seeker-admin"
@@ -72,38 +72,22 @@
         </div>
         <div class="text-align-initial">
           <a-form-item>
-            <a-input
+            <a-input-search
+              placeholder="input search text"
               class="searchbox-style"
-              v-decorator="[
-                'userName',
-                {
-                  rules: [
-                    {
-                      required: true,
-                      message: 'Please input your username!',
-                    },
-                  ],
-                },
-              ]"
-              placeholder="Search Job Seekers"
-            >
-              <a-icon
-                slot="prefix"
-                type="search"
-                style="color: rgba(0, 0, 0, 0.25)"
-              />
-            </a-input>
+              @search="fileredcolumns"
+            />
           </a-form-item>
         </div>
         <a-table
           :columns="columns"
-          :data-source="data"
+          :data-source=this.filteredData
           :pagination="pagination"
         >
           <span slot="name" @click="displayDetailed" slot-scope="text">{{
             text
           }}</span>
-          <span class="table-header-title" slot="customTitle">NAME</span>
+          <span class="table-header-title" slot="customTitle">Name</span>
           <span class="table-header-title" slot="customTitleEmail"
             >EMAIL ADDRESS</span
           >
@@ -113,9 +97,6 @@
           <span class="table-header-title" slot="customTitleLastLoginDate"
             >LAST LOGIN</span
           >
-          <!-- <span class="table-header-title" slot="customTitleStatus"
-            >STATUS</span
-          > -->
           <span slot="status" slot-scope="status">
             <a-tag
               :key="status"
@@ -131,7 +112,11 @@
             slot-scope="text, record"
           >
             <div class="action-box-job-seeker ml-10">
-              <i class="fa fa-eye" aria-hidden="true"></i>
+
+              <router-link
+                :to="{name: 'tab', params: { id: record.user_id },}">
+              <i class="fa fa-eye" aria-hidden="true" ></i>
+              </router-link>
             </div>
             <div class="action-box-job-seeker ml-10">
               <i
@@ -188,7 +173,7 @@
 
 <script>
 import Add_New_Job_Seeker_Button from "./Add_New_Job_Seeker_Button";
-
+import axios from "axios";
 const columns = [
   {
     dataIndex: "name",
@@ -204,237 +189,33 @@ const columns = [
     scopedSlots: { customRender: "email" },
   },
   {
-    dataIndex: "registered_on",
+    dataIndex: "createdAt",
     key: "registered_on",
     slots: { title: "customTitleRegisteredData" },
     scopedSlots: { customRender: "registered_on" },
   },
   {
-    dataIndex: "last_login",
+    dataIndex: "updatedAt",
     key: "last_login",
     slots: { title: "customTitleLastLoginDate" },
     scopedSlots: { customRender: "last_login" },
   },
-  // {
-  //   dataIndex: "status",
-  //   key: "status",
-  //   slots: { title: "customTitleStatus" },
-  //   scopedSlots: { customRender: "status" },
-  // },
   {
-    title: "Status",
+    title: "status",
     key: "status",
     dataIndex: "status",
     scopedSlots: { customRender: "status" },
   },
-  // {
-  //   title: "Age",
-  //   dataIndex: "age",
-  //   key: "age",
-  // },
-  // {
-  //   title: "Address",
-  //   dataIndex: "address",
-  //   key: "address",
-  // },
-  // {
-  //   title: "Tags",
-  //   key: "tags",
-  //   dataIndex: "tags",
-  //   scopedSlots: { customRender: "tags" },
-  // },
   {
     title: "Action",
     key: "action",
-    dataIndex: "action",
+    dataIndex: "id",
 
     scopedSlots: { customRender: "action" },
   },
 ];
 
 const data = [
-  {
-    key: "1",
-    id: "1",
-    name: "John Brown",
-    email: "rowg@gmail.com",
-    registered_on: "31 Dec 2020",
-    last_login: "24 jan 2019",
-    status: "active",
-    age: 32,
-    address: "New York No. 1 Lake Park",
-    tags: ["nice", "developer"],
-    is_approved: "yes",
-  },
-  {
-    key: "2",
-    id: "2",
-    name: "Jim Green",
-    email: "rowg@gmail.com",
-    registered_on: "31 Dec 2020",
-    last_login: "24 jan 2019",
-    status: "Inactive",
-    age: 42,
-    address: "London No. 1 Lake Park",
-    tags: ["loser"],
-  },
-  {
-    is_approved: "yes",
-    key: "3",
-    id: "3",
-    name: "Joe Black",
-    email: "rowg@gmail.com",
-    registered_on: "31 Dec 2020",
-    last_login: "24 jan 2019",
-    status: "active",
-    age: 32,
-    address: "Sidney No. 1 Lake Park",
-    tags: ["cool", "teacher"],
-    is_approved: "yes",
-  },
-  {
-    key: "4",
-    id: "4",
-    name: "Joe Black",
-    email: "rowg@gmail.com",
-    registered_on: "31 Dec 2020",
-    last_login: "24 jan 2019",
-    status: "Inactive",
-    age: 32,
-    address: "Sidney No. 1 Lake Park",
-    tags: ["cool", "teacher"],
-    is_approved: "yes",
-  },
-  {
-    key: "5",
-    id: "5",
-    name: "Joe Black",
-    email: "rowg@gmail.com",
-    registered_on: "31 Dec 2020",
-    last_login: "24 jan 2019",
-    status: "active",
-    age: 32,
-    address: "Sidney No. 1 Lake Park",
-    tags: ["cool", "teacher"],
-    is_approved: "yes",
-  },
-  {
-    key: "6",
-    id: "6",
-    name: "Joe Black",
-    email: "rowg@gmail.com",
-    registered_on: "31 Dec 2020",
-    last_login: "24 jan 2019",
-    status: "Inactive",
-    age: 32,
-    address: "Sidney No. 1 Lake Park",
-    tags: ["cool", "teacher"],
-    is_approved: "yes",
-  },
-  {
-    key: "7",
-    id: "7",
-    name: "Joe Black",
-    email: "rowg@gmail.com",
-    registered_on: "31 Dec 2020",
-    last_login: "24 jan 2019",
-    status: "Inactive",
-    age: 32,
-    address: "Sidney No. 1 Lake Park",
-    tags: ["cool", "teacher"],
-    is_approved: "yes",
-  },
-  {
-    key: "8",
-    id: "8",
-    name: "Joe Black",
-    email: "rowg@gmail.com",
-    registered_on: "31 Dec 2020",
-    last_login: "24 jan 2019",
-    status: "active",
-    age: 32,
-    address: "Sidney No. 1 Lake Park",
-    tags: ["cool", "teacher"],
-    is_approved: "yes",
-  },
-  {
-    key: "9",
-    id: "9",
-    name: "Joe Black",
-    email: "rowg@gmail.com",
-    registered_on: "31 Dec 2020",
-    last_login: "24 jan 2019",
-    status: "active",
-    age: 32,
-    address: "Sidney No. 1 Lake Park",
-    tags: ["cool", "teacher"],
-    is_approved: "yes",
-  },
-  {
-    key: "10",
-    id: "10",
-    name: "Joe Black",
-    email: "rowg@gmail.com",
-    registered_on: "31 Dec 2020",
-    last_login: "24 jan 2019",
-    status: "active",
-    age: 32,
-    address: "Sidney No. 1 Lake Park",
-    tags: ["cool", "teacher"],
-    is_approved: "yes",
-  },
-  {
-    key: "11",
-    id: "11",
-    name: "Joe Black",
-    email: "rowg@gmail.com",
-    registered_on: "31 Dec 2020",
-    last_login: "24 jan 2019",
-    status: "active",
-    age: 32,
-    address: "Sidney No. 1 Lake Park",
-    tags: ["cool", "teacher"],
-    is_approved: "yes",
-  },
-  {
-    key: "12",
-    id: "12",
-    name: "Joe Black",
-    email: "rowg@gmail.com",
-    registered_on: "31 Dec 2020",
-    last_login: "24 jan 2019",
-    status: "active",
-    age: 32,
-    address: "Sidney No. 1 Lake Park",
-    tags: ["cool", "teacher"],
-    is_approved: "yes",
-  },
-  {
-    key: "13",
-    id: "13",
-    name: "Joe Black",
-    email: "rowg@gmail.com",
-    registered_on: "31 Dec 2020",
-    last_login: "24 jan 2019",
-    status: "active",
-    age: 32,
-    address: "Sidney No. 1 Lake Park",
-    tags: ["cool", "teacher"],
-    is_approved: "yes",
-  },
-  {
-    key: "14",
-    id: "14",
-    name: "Joe Black",
-    email: "rowg@gmail.com",
-    registered_on: "31 Dec 2020",
-    last_login: "24 jan 2019",
-    status: "active",
-    age: 32,
-    address: "Sidney No. 1 Lake Park",
-    tags: ["cool", "teacher"],
-    is_approved: "yes",
-  },
 ];
 
 export default {
@@ -442,6 +223,7 @@ export default {
   components:{
     Add_New_Job_Seeker_Button: Add_New_Job_Seeker_Button,
   },
+
   data() {
     return {
       value: 1,
@@ -454,9 +236,37 @@ export default {
         showTotal: (total) => `Total ${total} items`, // show total
         showSizeChange: (current, pageSize) => (this.pageSize = pageSize), // update display when changing the number of pages per page
       },
+      users:[],
+      filteredData:[]
+
     };
   },
+    beforeCreate() {
+      axios.get(`${process.env.VUE_ROOT_URL}/profiles`, {
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        },
+      })
+        .then((res) => {
+          this.users = res.data
+          this.filteredData= res.data
+          console.log('alldata',res.data[0])
+        })
+        .catch((error) => {
+          console.error(error)
+        })
+    },
+
+  computed:{
+
+  },
   methods: {
+    fileredcolumns(search) {
+      console.log(JSON.stringify(this.users), search);
+      this.filteredData = this.users.filter(user => {
+        return !search || (user.name || "").toLowerCase().indexOf(search.toLowerCase()) > -1
+      })
+    },
     displayDetailed() {
       this.$router.push("/admin/job-seeker/10");
     },
@@ -548,6 +358,7 @@ text-align: initial;
 display: inline-block;
 }
 .searchbox-style {
+  margin-top: 15px;
 width: 420px;
 /* height: 48px; */
 border-radius: 4px;
