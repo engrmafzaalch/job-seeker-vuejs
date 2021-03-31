@@ -226,7 +226,7 @@ import axios from "axios";
                 if (this.$v.$invalid) return;
 
                 // display form values on success
-                 alert("SUCCESS!! :-)\n\n" + JSON.stringify(this.$data));
+                //  alert("SUCCESS!! :-)\n\n" + JSON.stringify(this.$data));
                  this.$store.commit('change', 3)
                  var data = JSON.stringify(this.$data)
 
@@ -239,7 +239,7 @@ import axios from "axios";
                   item.user_id = user.user_id
                   temp.push(item);
                 })
-                alert(JSON.stringify(temp));
+                // alert(JSON.stringify(temp));
               }
                   var config = {
         method: 'post',

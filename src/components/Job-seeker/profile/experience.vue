@@ -207,9 +207,9 @@ export default {
           console.log('Notification Clicked!');
         },
       });
-        
+
         }
-        
+
       });
   },
   validations: {
@@ -262,7 +262,7 @@ export default {
       if (this.$v.$invalid) return;
 
       // display form values on success
-      alert("SUCCESS!! :-)\n\n" + JSON.stringify(this.$data));
+      // alert("SUCCESS!! :-)\n\n" + JSON.stringify(this.$data));
       this.$store.commit("change", 4);
       var data = JSON.stringify(this.$data);
       var config = {
@@ -301,28 +301,28 @@ export default {
 </script>
 <!--<template>
   <div class="container education" >
-       <form @submit="handleSubmit">   
-               
-   
+       <form @submit="handleSubmit">
+
+
      <h4 class="pl-2">Enter Experience Details</h4>
       <div class="previous"
       v-for="(info, counter) in infoExp"
       v-bind:key="counter">
-    
+
       <div class="row justify-content-center mt-3">
          <div class="col-12">
-         
+
           <h4  v-if="(counter>0)" class="pl-1">Enter Experience Details<span class="text-muted">{{counter}}</span> </h4>
         </div>
          <div class="form-group ml-1 col-12">
       <div  class="form-group ml-1 col-12">
-       
-       
+
+
           <span class="cross" v-if="(counter>0)" style="cursor:pointer;"  @click="deleteItem(counter) ">x</span>
-      
 
 
-         
+
+
               <div class="row">
           <div class="col-sm-6">
             <a-input v-decorator="[`employerName`,]"
@@ -337,7 +337,7 @@ export default {
               <option value="senior dev" >senior dev</option>
             </select>
           </div>
-        </div> 
+        </div>
            <div class="row">
           <div class="col-sm-6">
             <select v-decorator="[`city`,]" v-model="info.city"
@@ -377,16 +377,16 @@ export default {
           </div>
         </div>
 
-           
+
            </div>
       </div>
-      
+
         </div>
-        
+
       </div>
-      
-      
-       
+
+
+
        <div class="row float-right">
         <div class="col-12">
           <a-button class="login-button-style btn btn-light px-4" @click="changed(2)">Go Back</a-button>
@@ -394,18 +394,18 @@ export default {
                    html-type="submit"
                    class="login-button-style btn btn-primary px-4"
                   @click="handleSubmit"
-                  
+
                      >Proceed
           </a-button>
         </div>
-        
+
 
         </div>
          </form>
          <button class="btn btn-light mx-auto" @click="addItem">Add more Education</button>
        <hr>
   </div>
-</template> 
+</template>
 
 
 <script>
@@ -421,23 +421,23 @@ export default {
     msg: String
   },
 
-  
+
   data(){
     return {
       hasErrors,
        countries:[],
        infoExp:[
        {
-         employerName:'', 
-         jobTitle:'', 
-         city:'', 
-         country:'', 
+         employerName:'',
+         jobTitle:'',
+         city:'',
+         country:'',
          endDate:'',
          startDate:'',
         jobDescriptions:''
        }
      ]
-    
+
     }
   },
   beforeCreate() {
@@ -454,20 +454,20 @@ export default {
         console.error(error)
       })
   },
-  
+
   methods : {
     addItem(){
       this.infoExp.push({
-       employerName:'', 
-         jobTitle:'', 
-         city:'', 
-         country:'', 
+       employerName:'',
+         jobTitle:'',
+         city:'',
+         country:'',
          endDate:'',
          startDate:'',
         jobDescriptions:''
       })
     },
-    
+
     deleteItem(counter){
       this.infoEdu.splice(counter,1);
 
@@ -483,16 +483,16 @@ export default {
     // Only show error after a field is touched.
     handleSubmit(e) {
       console.log(JSON.stringify(this.infoEdu))
-      
+
         e.preventDefault();
-      
+
                console.log("Received values of form: ", JSON.stringify(this.infoExp));
             // //  alert('!err function runs')
             // let startDate = values.startDate.toDate()
             // let coompletionDate = values.coompletionDate.toDate()
             // values.startDate = startDate
             // values.coompletionDate = coompletionDate
-            
+
             // console.log("Received values of form: ", values);
            this.$store.commit('change', 4)
             var data = JSON.stringify(this.infoExp)
@@ -535,7 +535,7 @@ export default {
   .cross{
     margin-left: 900px;
   }
- .mx-auto 
+ .mx-auto
   {
     margin-right: auto !important;
     margin-left: auto !important;

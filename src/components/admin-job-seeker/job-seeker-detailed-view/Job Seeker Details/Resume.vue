@@ -173,7 +173,7 @@ export default {
 
   methods: {
     downloadresume(){
-           alert("successfully download");
+           // alert("successfully download");
            axios({
              url:"http://9ac930ef93f5.ngrok.io/static/uploads/0fd909cb-7bb8-4e6f-b9d2-166776cd552c-docs-1616925141741.pdf",
              method:'get',
@@ -190,7 +190,7 @@ export default {
       })
     },
     deleteresume(){
-      alert("NYSC.pdf");
+      // alert("NYSC.pdf");
     },
     redirectToHome() {
       this.$router.push({path: '/admin/job-seeker'});
