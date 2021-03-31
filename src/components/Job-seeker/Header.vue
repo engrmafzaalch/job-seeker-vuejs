@@ -69,7 +69,7 @@
                 <a class="nav-link disabled">  <router-link to="/">Payments</router-link></a>
               </li>
                  <li class="nav-item">
-                    <a class="nav-link " >  <router-link to="/">My Account</router-link></a>
+                    <a class="nav-link " >  <router-link to="my-account">My Account</router-link></a>
                 </li>
                  <li class="nav-item mr-4 mt-1">
                  <a class="bell-icon-header nav-link " href="#my-account"><i class="fas fa-bell bell-icon-header"></i></a>

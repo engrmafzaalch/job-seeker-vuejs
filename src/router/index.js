@@ -10,7 +10,6 @@ import AdminJobSeeker from '../components/admin-job-seeker'
 import MyAccount from '../components/My-Account/account-details/index'
 import support_messages from '../components/My-Account/support-messages/support-messages'
 import Steps from "../components/Job-seeker/profile/steps";
-import index_myAccount from "../components/Job-seeker/MyAccount/index_myAccount";
 import tabs from "../components/Job-seeker/MyAccount/tabs";
 import ProfileSummery from "../components/Job-seeker/MyAccount/ProfileSummery";
 import Experience_and_Skills from "../components/Job-seeker/MyAccount/Experience_and_Skills";
@@ -21,7 +20,6 @@ import MyApplications from "../components/Job-seeker/MyApplications/MyApplicatio
 import modal from "../components/Job/job-detail/modal";
 import Payments_2 from "../components/payment/Payments_2";
 import AdminJobSeekerDetailedPage from '../components/admin-job-seeker/job-seeker-detailed-view';
-import JobDetail from '../components/Job/job-detail/JobDetail'
 import JobDetail_2 from "../components/Job/job-detail/JobDetail_2";
 import accounts_detail from "../components/Job-seeker/MyAccount/accounts_detail";
 import change_password from "../components/Job-seeker/MyAccount/change_password";
@@ -92,14 +90,14 @@ let router = new Router({
         requiresAuth: false
       }
     },
-    // {
-    //   path: '/admin/job-seeker/:id',
-    //   name: 'AdminJobSeekerDetailedPage',
-    //   component: AdminJobSeekerDetailedPage,
-    //   meta: {
-    //     requiresAuth: true
-    //   }
-    // },
+     {
+       path: '/admin/job-seeker/:id',
+       name: 'AdminJobSeekerDetailedPage',
+       component: AdminJobSeekerDetailedPage,
+       meta: {
+         requiresAuth: true
+       }
+     },
     {
       path: '/',
       name: 'HomePageContainer',

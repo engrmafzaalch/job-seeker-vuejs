@@ -199,9 +199,9 @@ export default {
           console.log('Notification Clicked!');
         },
       });
-        
+
         }
-        
+
       });
   },
   validations: {
@@ -295,23 +295,23 @@ export default {
 </script>
 <!--<template>
   <div class="container education" >
-       <form @submit="handleSubmit">   
+       <form @submit="handleSubmit">
      <h4 class="pl-1">Enter Project Details</h4>
       <div class="previous"
       v-for="(info, counter) in infoPro"
       v-bind:key="counter">
-    
+
       <div class="row justify-content-center mt-3">
          <div class="col-12">
-         
+
           <h4  v-if="(counter>0)" class="pl-1">Enter Project Details<span class="text-muted">{{counter}}</span> </h4>
         </div>
          <div class="form-group ml-1 col-12">
       <div  class="form-group ml-1 col-12">
-       
-       
+
+
           <span class="cross" v-if="(counter>0)" style="cursor:pointer;"  @click="deleteItem(counter) ">x</span>
-      
+
 
  <div class="row">
           <div class="col-sm-6">
@@ -366,13 +366,13 @@ export default {
         </div>
            </div>
       </div>
-      
+
         </div>
-        
+
       </div>
-      
-      
-       
+
+
+
        <div class="row float-right">
         <div class="col-12">
           <a-button class="login-button-style btn btn-light px-4" @click="changed(3)">Go Back</a-button>
@@ -380,19 +380,19 @@ export default {
                    html-type="submit"
                    class="login-button-style btn btn-primary px-4"
                   @click="handleSubmit"
-                  
+
                      >Proceed
           </a-button>
         </div>
-        
+
 
         </div>
          </form>
          <button class="btn btn-light mx-auto" @click="addItem">Add more Education</button>
        <hr>
   </div>
-</template> 
-    
+</template>
+
 
 <script>
 import axios from "axios";
@@ -411,23 +411,23 @@ export default {
       hasErrors,
        infoPro:[
        {
-         projectTitle:'', 
-         employerName:'', 
-         endDate:'', 
-         startDate:'', 
+         projectTitle:'',
+         employerName:'',
+         endDate:'',
+         startDate:'',
          projectDetail:'',
        }
      ]
-    
+
     }
   },
   methods : {
     addItem(){
       this.infoPro.push({
-      projectTitle:'', 
-         employerName:'', 
-         endDate:'', 
-         startDate:'', 
+      projectTitle:'',
+         employerName:'',
+         endDate:'',
+         startDate:'',
          projectDetail:'',
       })
     },
@@ -446,16 +446,16 @@ export default {
     // Only show error after a field is touched.
     handleSubmit(e) {
       console.log(JSON.stringify(this.infoPro))
-      
+
         e.preventDefault();
-      
+
                console.log("Received values of form: ", JSON.stringify(this.infoPro));
             // //  alert('!err function runs')
             // let startDate = values.startDate.toDate()
             // let coompletionDate = values.coompletionDate.toDate()
             // values.startDate = startDate
             // values.coompletionDate = coompletionDate
-            
+
             // console.log("Received values of form: ", values);
            this.$store.commit('change', 5)
             var data = JSON.stringify(this.infoPro)
@@ -498,7 +498,7 @@ export default {
   .cross{
     margin-left: 900px;
   }
- .mx-auto 
+ .mx-auto
   {
     margin-right: auto !important;
     margin-left: auto !important;
@@ -580,7 +580,7 @@ export default {
         <div class="row justify-content-center text-center my-2">
           <div class="col-12">
             <a-button class="btn btn-light">
-              Add More Education
+              Add More Projects
             </a-button>
           </div>
         </div>
