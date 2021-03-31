@@ -25,7 +25,7 @@
       <div>
           <a-button type="primary"
                     html-type="submit"
-                    class="login-button-style btn btn-primary px-4"
+                    class="login-button-style btn btn-primary px-4 float-right"
                     :disabled="hasErrors(form.getFieldsError())"
           >Proceed
           </a-button>
@@ -177,12 +177,30 @@ name: "profileSummary",
           console.log(error);
         });
 
+          var config1 = {
+            method: 'put',
+            url: `${process.env.VUE_ROOT_URL}/profile/${user.user_id}`,
+            headers: {
+              'Authorization':  `Bearer ${localStorage.getItem('token')}`,
+              'Content-Type': 'application/json'
+            },
+            data : data
+
+          };
+          axios(config1)
+            .then(function (response) {
+
+              setTimeout(() => loader.hide(), 1000)
+              console.log(JSON.stringify(response.data));
 
 
+            })
+            .catch(function (error) {
 
+              setTimeout(() => loader.hide(), 1000)
 
-
-
+              console.log(error);
+            });
 
 
         }
