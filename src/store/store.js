@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import axios from 'axios';
 //then you use Vuex
 Vue.use(Vuex);
 
