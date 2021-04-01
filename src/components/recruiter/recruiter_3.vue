@@ -7,7 +7,7 @@
             <li class="profile-recutier list">
               <div class="recurtier-main">
                 <div class="img-otr">
-                  <img class="img-inr" src="./user-img.png" alt="user">
+                  <img class="img-inr" src="../../assets/user-img.png" alt="user">
                 </div>
                 <div class="recruiter-otr">
                   <h6 class="recruiter-head">Recruiter A</h6>

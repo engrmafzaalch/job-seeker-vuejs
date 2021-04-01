@@ -241,7 +241,7 @@
             <div class="jumbotron justify-content-center text-center">
               <div class="row">
                 <div class="col-12">
-                  <img src="../../Job-seeker/profile/upload.png" height="40" width="42"/>
+                  <img src="../../../assets/upload.png" height="40" width="42"/>
                 </div>
               </div>
               <div class="row">

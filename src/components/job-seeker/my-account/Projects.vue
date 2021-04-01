@@ -130,17 +130,6 @@ export default {
 .card {
   width: 1400px;
 }
-/*.border_ {*/
-/*  border-radius: 24px;*/
-/*}*/
-/*.list_ {*/
-/*  list-style: none;*/
-/*  display: inline;*/
-/*  margin-left: -38px;*/
-/*}*/
-/*.list_ li {*/
-/*  display: inline-block;*/
-/*}*/
 .font_a {
   font-size: 12px;
 }
