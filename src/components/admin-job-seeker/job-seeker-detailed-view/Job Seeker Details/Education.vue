@@ -84,8 +84,8 @@ export default {
   beforeCreate() {
     let loader = this.$loading.show({
       loader: 'dots'
-    })
-    setTimeout(() => loader.hide(), 500)
+    });
+    setTimeout(() => loader.hide(), 500);
     axios.get(`${process.env.VUE_ROOT_URL}/education/${this.$route.params.id}`, {
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('token')}`

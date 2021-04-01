@@ -49,13 +49,13 @@
                     >
                       <a-form-item>
                       <a-input
-                        style=""
+                        style="height: 48px"
                         type="password"
-                        class="searchbox-style1"
+                        class="searchbox-style"
                         v-decorator="[
                           `password`,
                           {
-                            validateTrigger: ['change', 'blur'],
+
                             rules: [
                               {
                                 required: true,
@@ -158,7 +158,6 @@ export default {
           axios(config)
             .then(function (response) {
               if(response.status == "201"){
-                console.log('responsedata',response.status)
                 localStorage.setItem("token", response.data.token);
                 localStorage.setItem("user", JSON.stringify(response.data.loggedInUserInfo));
                 that.$router.push("/admin/job-seeker");
@@ -314,16 +313,6 @@ hr {
   /* width: 700px; */
   /*; */
   width: 235%;
-  border-radius: 4px;
-  background: #ffffff;
-  color: #8b90a0;
-  font-family: SF UI Display;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-}
-.searchbox-style1{
-  width: 218%;
   border-radius: 4px;
   background: #ffffff;
   color: #8b90a0;
