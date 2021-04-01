@@ -156,17 +156,15 @@ export default {
         'Authorization': `Bearer ${localStorage.getItem('token')}`
       }
     })
-    let loader = this.$loading.show({
-      loader: 'dots'
-    })
+
       .then((res) => {
-        setTimeout(() => loader.hide(), 1000)
+        // setTimeout(() => loader.hide(), 1000)
         this.resume = res.data
         console.log('projext',this.resume)
         // alert("data", JSON.stringify(res.data));
       })
       .catch((error) => {
-        setTimeout(() => loader.hide(), 1000)
+        // setTimeout(() => loader.hide(), 1000)
         console.error(error)
       })
   },
