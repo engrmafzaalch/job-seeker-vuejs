@@ -186,29 +186,6 @@ export default {
         }
       });
     },
-    // openNotification() {
-    //   console.log("statuscode",statusCode)
-    //   if (this.status.code===201) {
-    //     this.$notification.open({
-    //       message: 'Error',
-    //       description:
-    //         'Enter the required Field',
-    //       onClick: () => {
-    //         console.log('Notification Clicked!');
-    //       },
-    //     });
-    //   }
-    //   else{
-    //     this.$notification.open({
-    //       message: 'Education detail',
-    //       description:
-    //         'Education details are added',
-    //       onClick: () => {
-    //         console.log('Notification Clicked!');
-    //       },
-    //     });
-    //   }
-    // },
     openNotification() {
       this.$notification.open({
         message: 'Success',
