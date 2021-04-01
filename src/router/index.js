@@ -35,7 +35,7 @@ import recruiter_1 from "../components/Recruiter/recruiter_1";
 import recruiter_3 from "../components/Recruiter/recruiter_3";
 import tab from "../components/admin-job-seeker/job-seeker-detailed-view/Job Seeker Details/tab";
 import MyAccount_3 from "../components/admin-job-seeker/MyAccount/MyAccount_3";
-import {store} from '../store/store'
+import {index} from '../store/store'
 import tab_PostingDetails from "../components/posting/tab_PostingDetails";
 import tab_Recruiter from "../components/Recruiter/tab_Recruiter";
 import ModalRecruiter_6 from "../components/Recruiter/ModalRecruiter_6";
@@ -76,7 +76,6 @@ let router = new Router({
       name: 'Signup',
       component: Signup
     },
-
     {
       path: '/job-seeker/forgot-password',
       name: 'ForgotPasswordIndex',
@@ -408,7 +407,7 @@ let router = new Router({
 
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
-    if (store.getters.isLoggedIn) {
+    if (index.getters.isLoggedIn) {
       next()
       return
     }

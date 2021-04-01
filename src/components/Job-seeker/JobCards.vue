@@ -13,7 +13,7 @@
                 class="display-flex pading-top-20px-right-80px align-item-center justify-content-space-around"
               >
                 <div>
-                  <img src="../../assets/Rectangle 11.png" />
+                  <img src="../../assets/Rectangle-11.png" />
                 </div>
                 <div>
                   <div><span class="job-title">Front-end Developer</span></div>
@@ -251,7 +251,7 @@ p {
 }
 
 @media only screen and (min-width: 320px) and (max-width: 479px) {
-  
+
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {

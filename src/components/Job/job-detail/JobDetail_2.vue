@@ -11,7 +11,7 @@
         <div class="card-body">
           <div class="row">
             <div class="col-lg-2">
-              <img class="ml-2" src="./google-icon.png" height="80" width="auto"/>
+              <img class="ml-2" src="../../../assets/google-icon.png" height="80" width="auto"/>
             </div>
             <div class="col-md-10">
               <div class="row">
@@ -24,15 +24,15 @@
               </div>
               <div class="row two">
                 <div class="col-lg-4">
-                  <img src="./map-pin.svg" alt="map pin"/>
+                  <img src="../../../assets/map-pin.svg" alt="map pin"/>
                   <span class="text-black-50 ml-1">Abuja , Nigeria</span>
                 </div>
                 <div class="col-lg-4">
-                  <img src="./clock.svg" alt="clock"/>
+                  <img src="../../../assets/clock.svg" alt="clock"/>
                   <span class="text-black-50 ml-1">2 Hours Ago</span>
                 </div>
                 <div class="col-lg-4">
-                  <img src="./dollar-sign.svg" alt="dollar sign">
+                  <img src="../../../assets/dollar-sign.svg" alt="dollar sign">
                   <span class="text-black-50 ml-1">2000 - 6000</span>
                 </div>
               </div>
@@ -270,7 +270,7 @@
                 <a-modal v-model="visible1" :footer="null">
                   <div class="row my-2">
                     <div class="col-12 text-center">
-                      <img src="./tick mark.png" height="64" width="65"/>
+                      <img src="../../../assets/tick-mark.png" height="64" width="65"/>
                     </div>
                   </div>
                   <div class="row my-3">
@@ -308,9 +308,9 @@
       <div class="row">
         <div class="col-12">
           <div style="display: flex">
-            <button type="button" class="btn btn-light px-4 mr-2"><img src="./share.svg" alt="share" class="mr-2">Share</button>
-            <button type="button" class="btn btn-light px-4 mr-2"><img src="./tweeter.svg" alt="tweeter" class="mr-2">Tweet</button>
-            <button type="button" class="btn btn-light px-4"><img src="./save.svg" alt="save" class="mr-2">Save</button>
+            <button type="button" class="btn btn-light px-4 mr-2"><img src="../../../assets/share.svg" alt="share" class="mr-2">Share</button>
+            <button type="button" class="btn btn-light px-4 mr-2"><img src="../../../assets/tweeter.svg" alt="tweeter" class="mr-2">Tweet</button>
+            <button type="button" class="btn btn-light px-4"><img src="../../../assets/save.svg" alt="save" class="mr-2">Save</button>
           </div>
         </div>
       </div>
@@ -329,7 +329,7 @@
             <div class="row">
               <div class="col-12">
                 <div>
-                  <img src="./Rectangle 11.png" height="60" width="60"/>
+                  <img src="../../../assets/Rectangle-11.png" height="60" width="60"/>
                   <span class="pt-3 pl-2 front_end_developer">Front-end Developer</span>
                 </div>
               </div>
@@ -337,13 +337,13 @@
             <div class="row mt-3">
               <div class="col-lg-6">
                 <div>
-                  <img src="./map-pin-light.svg" alt="map pin" height="16" width="15"/>
+                  <img src="../../../assets/map-pin-light.svg" alt="map pin" height="16" width="15"/>
                   <span class="pl-2 text-muted location">Abuja , Nigeria</span>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div>
-                    <img src="./dollar-sign-light.svg" alt="dollar sign">
+                    <img src="../../../assets/dollar-sign-light.svg" alt="dollar sign">
                     <span class="text-muted location">2000 - 6000</span>
                 </div>
               </div>
@@ -356,7 +356,7 @@
             <div class="row">
               <div class="col-12">
                 <div>
-                  <img src="./Rectangle 11.png" height="60" width="60"/>
+                  <img src="../../../assets/Rectangle-11.png" height="60" width="60"/>
                   <span class="pt-3 pl-2 front_end_developer">Front-end Developer</span>
                 </div>
               </div>
@@ -364,13 +364,13 @@
             <div class="row mt-3">
               <div class="col-lg-6">
                 <div>
-                  <img src="./map-pin-light.svg" alt="map pin" height="16" width="15"/>
+                  <img src="../../../assets/map-pin-light.svg" alt="map pin" height="16" width="15"/>
                   <span class="pl-2 text-muted location">Abuja , Nigeria</span>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div>
-                  <img src="./dollar-sign-light.svg" alt="dollar sign">
+                  <img src="../../../assets/dollar-sign-light.svg" alt="dollar sign">
                   <span class="text-muted location">2000 - 6000</span>
                 </div>
               </div>
@@ -383,7 +383,7 @@
             <div class="row">
               <div class="col-12">
                 <div>
-                  <img src="./Rectangle 11.png" height="60" width="60"/>
+                  <img src="../../../assets/Rectangle-11.png" height="60" width="60"/>
                   <span class="pt-3 pl-2 front_end_developer">Front-end Developer</span>
                 </div>
               </div>
@@ -391,13 +391,13 @@
             <div class="row mt-3">
               <div class="col-lg-6">
                 <div>
-                  <img src="./map-pin-light.svg" alt="map pin" height="16" width="15"/>
+                  <img src="../../../assets/map-pin-light.svg" alt="map pin" height="16" width="15"/>
                   <span class="pl-2 text-muted location">Abuja , Nigeria</span>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div>
-                  <img src="./dollar-sign-light.svg" alt="dollar sign">
+                  <img src="../../../assets/dollar-sign-light.svg" alt="dollar sign">
                   <span class="text-muted location">2000 - 6000</span>
                 </div>
               </div>
@@ -410,7 +410,7 @@
             <div class="row">
               <div class="col-12">
                 <div>
-                  <img src="./Rectangle 11.png" height="60" width="60"/>
+                  <img src="../../../assets/Rectangle-11.png" height="60" width="60"/>
                   <span class="pt-3 pl-2 front_end_developer">Front-end Developer</span>
                 </div>
               </div>
@@ -418,13 +418,13 @@
             <div class="row mt-3">
               <div class="col-lg-6">
                 <div>
-                  <img src="./map-pin-light.svg" alt="map pin" height="16" width="15"/>
+                  <img src="../../../assets/map-pin-light.svg" alt="map pin" height="16" width="15"/>
                   <span class="pl-2 text-muted location">Abuja , Nigeria</span>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div>
-                  <img src="./dollar-sign-light.svg" alt="dollar sign">
+                  <img src="../../../assets/dollar-sign-light.svg" alt="dollar sign">
                   <span class="text-muted location">2000 - 6000</span>
                 </div>
               </div>
@@ -437,7 +437,7 @@
             <div class="row">
               <div class="col-12">
                 <div>
-                  <img src="./Rectangle 11.png" height="60" width="60"/>
+                  <img src="../../../assets/Rectangle-11.png" height="60" width="60"/>
                   <span class="pt-3 pl-2 front_end_developer">Front-end Developer</span>
                 </div>
               </div>
@@ -445,13 +445,13 @@
             <div class="row mt-3">
               <div class="col-lg-6">
                 <div>
-                  <img src="./map-pin-light.svg" alt="map pin" height="16" width="15"/>
+                  <img src="../../../assets/map-pin-light.svg" alt="map pin" height="16" width="15"/>
                   <span class="pl-2 text-muted location">Abuja , Nigeria</span>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div>
-                  <img src="./dollar-sign-light.svg" alt="dollar sign">
+                  <img src="../../../assets/dollar-sign-light.svg" alt="dollar sign">
                   <span class="text-muted location">2000 - 6000</span>
                 </div>
               </div>
@@ -464,7 +464,7 @@
             <div class="row">
               <div class="col-12">
                 <div>
-                  <img src="./Rectangle 11.png" height="60" width="60"/>
+                  <img src="../../../assets/Rectangle-11.png" height="60" width="60"/>
                   <span class="pt-3 pl-2 front_end_developer">Front-end Developer</span>
                 </div>
               </div>
@@ -472,13 +472,13 @@
             <div class="row mt-3">
               <div class="col-lg-6">
                 <div>
-                  <img src="./map-pin-light.svg" alt="map pin" height="16" width="15"/>
+                  <img src="../../../assets/map-pin-light.svg" alt="map pin" height="16" width="15"/>
                   <span class="pl-2 text-muted location">Abuja , Nigeria</span>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div>
-                  <img src="./dollar-sign-light.svg" alt="dollar sign">
+                  <img src="../../../assets/dollar-sign-light.svg" alt="dollar sign">
                   <span class="text-muted location">2000 - 6000</span>
                 </div>
               </div>
@@ -491,7 +491,7 @@
             <div class="row">
               <div class="col-12">
                 <div>
-                  <img src="./Rectangle 11.png" height="60" width="60"/>
+                  <img src="../../../assets/Rectangle-11.png" height="60" width="60"/>
                   <span class="pt-3 pl-2 front_end_developer">Front-end Developer</span>
                 </div>
               </div>
@@ -499,13 +499,13 @@
             <div class="row mt-3">
               <div class="col-lg-6">
                 <div>
-                  <img src="./map-pin-light.svg" alt="map pin" height="16" width="15"/>
+                  <img src="../../../assets/map-pin-light.svg" alt="map pin" height="16" width="15"/>
                   <span class="pl-2 text-muted location">Abuja , Nigeria</span>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div>
-                  <img src="./dollar-sign-light.svg" alt="dollar sign">
+                  <img src="../../../assets/dollar-sign-light.svg" alt="dollar sign">
                   <span class="text-muted location">2000 - 6000</span>
                 </div>
               </div>
@@ -518,7 +518,7 @@
             <div class="row">
               <div class="col-12">
                 <div>
-                  <img src="./Rectangle 11.png" height="60" width="60"/>
+                  <img src="../../../assets/Rectangle-11.png" height="60" width="60"/>
                   <span class="pt-3 pl-2 front_end_developer">Front-end Developer</span>
                 </div>
               </div>
@@ -526,13 +526,13 @@
             <div class="row mt-3">
               <div class="col-lg-6">
                 <div>
-                  <img src="./map-pin-light.svg" alt="map pin" height="16" width="15"/>
+                  <img src="../../../assets/map-pin-light.svg" alt="map pin" height="16" width="15"/>
                   <span class="pl-2 text-muted location">Abuja , Nigeria</span>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div>
-                  <img src="./dollar-sign-light.svg" alt="dollar sign">
+                  <img src="../../../assets/dollar-sign-light.svg" alt="dollar sign">
                   <span class="text-muted location">2000 - 6000</span>
                 </div>
               </div>
@@ -545,7 +545,7 @@
             <div class="row">
               <div class="col-12">
                 <div>
-                  <img src="./Rectangle 11.png" height="60" width="60"/>
+                  <img src="../../../assets/Rectangle-11.png" height="60" width="60"/>
                   <span class="pt-3 pl-2 front_end_developer">Front-end Developer</span>
                 </div>
               </div>
@@ -553,13 +553,13 @@
             <div class="row mt-3">
               <div class="col-lg-6">
                 <div>
-                  <img src="./map-pin-light.svg" alt="map pin" height="16" width="15"/>
+                  <img src="../../../assets/map-pin-light.svg" alt="map pin" height="16" width="15"/>
                   <span class="pl-2 text-muted location">Abuja , Nigeria</span>
                 </div>
               </div>
               <div class="col-lg-6">
                 <div>
-                  <img src="./dollar-sign-light.svg" alt="dollar sign">
+                  <img src="../../../assets/dollar-sign-light.svg" alt="dollar sign">
                   <span class="text-muted location">2000 - 6000</span>
                 </div>
               </div>

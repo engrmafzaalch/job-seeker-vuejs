@@ -10,16 +10,16 @@
 <script>
 import Header from "./components/Job-seeker/Header.vue";
 import Footer from "./components/Job-seeker/Jobs/Footer.vue";
-import { store } from './store/store'
+import { index } from './store/store'
 
 export default {
   name: "App",
   mounted(){
     console.log('ye link h ' , process.env.VUE_ROOT_URL);
   },
-  store,
+  store: index,
   components: { Header, Footer },
-  
+
 };
 
 </script>

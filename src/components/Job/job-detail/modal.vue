@@ -6,7 +6,7 @@
     <a-modal v-model="visible" @ok="handleOk" :footer="null">
       <div class="row my-2">
         <div class="col-12 text-center">
-          <img src="./tick mark.png" height="64" width="65"/>
+          <img src="../../../assets/tick-mark.png" height="64" width="65"/>
         </div>
       </div>
       <div class="row my-3">

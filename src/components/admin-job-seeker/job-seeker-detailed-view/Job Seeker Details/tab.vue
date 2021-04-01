@@ -28,30 +28,11 @@
       </a-tab-pane>
     </a-tabs>
   </div>
-<!--  <div class="row">-->
-<!--    <div class="progression-content">-->
-<!--      <section v-if="$store.state.tab == 1">-->
-<!--        <ProfileSummery/>-->
-<!--      </section>-->
-<!--      <section v-if="$store.state.tab == 2">-->
-<!--        <Education_in_MyAccount/>-->
-<!--      </section>-->
-<!--      <section v-if="$store.state.tab == 3">-->
-<!--        <Experience_and_Skills/>-->
-<!--      </section>-->
-<!--      <section v-if="$store.state.tab == 4">-->
-<!--        <Projects/>-->
-<!--      </section>-->
-<!--      <section v-if="$store.state.tab == 5">-->
-<!--        <Resume_CV/>-->
-<!--      </section>-->
-<!--    </div>-->
-<!--  </div>-->
 </div>
 </template>
 
 <script>
-import {store} from "../../../../store/store";
+import {index} from "../../../../store/store";
 import MyAccount from "./MyAccount";
 import Summery from "./Summery";
 import Education from "./Education";
@@ -61,7 +42,7 @@ import Resume from "./Resume";
 
 export default {
   name: "tabs",
-  store,
+  store: index,
   components:{
     MyAccount : MyAccount,
     Summery : Summery,

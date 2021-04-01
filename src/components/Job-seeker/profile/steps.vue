@@ -47,12 +47,12 @@ import Project from "./project";
 import Documents from "./documents";
 import Skills from "./skills";
 import MyProfile from "./myProfile";
-import {store} from "../../../store/store";
+import {index} from "../../../store/store";
 import axios from "axios";
 
 export default {
   name : "Steps",
-  store,
+  store: index,
   components : {
     ProfileSummary : ProfileSummary,
     Education : Education,
@@ -62,7 +62,7 @@ export default {
     Skills : Skills,
     MyProfile : MyProfile
   },
- 
+
   beforeCreate() {
     // axios.get('http://192.241.137.124:8000/api/v1/countries', {
     //   headers: {

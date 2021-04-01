@@ -49,11 +49,11 @@ import Education_in_MyAccount from "./Education_in_MyAccount";
 import Experience_and_Skills from "./Experience_and_Skills";
 import Projects from "./Projects";
 import Resume_CV from "./Resume_CV";
-import {store} from "../../../store/store";
+import {index} from "../../../store/store";
 
 export default {
   name: "tabs",
-  store,
+  store: index,
   components:{
     index_myAccount : index_myAccount,
     ProfileSummery : ProfileSummery,

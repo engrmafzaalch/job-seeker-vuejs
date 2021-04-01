@@ -5,7 +5,7 @@
       <div class="card-body">
         <div class="row">
           <div class="col-md-2">
-            <img src="../Job/job-detail/google-icon.png" height="80" width="78"/>
+            <img src="../../assets/google-icon.png" height="80" width="78"/>
           </div>
           <div class="col-md-10">
             <div class="row">
@@ -18,15 +18,15 @@
             </div>
             <div class="row two">
               <div class="col-lg-4">
-                <img src="../Job/job-detail/map-pin.svg" alt="map pin"/>
+                <img src="../../assets/map-pin.svg" alt="map pin"/>
                 <span class="text-black-50 ml-1">Abuja , Nigeria</span>
               </div>
               <div class="col-lg-4">
-                <img src="../Job/job-detail/clock.svg" alt="clock"/>
+                <img src="../../assets/clock.svg" alt="clock"/>
                 <span class="text-black-50 ml-1">2 Hours Ago</span>
               </div>
               <div class="col-lg-4">
-                <img src="../Job/job-detail/dollar-sign.svg" alt="dollar sign">
+                <img src="../../assets/dollar-sign.svg" alt="dollar sign">
                 <span class="text-black-50 ml-1">2000 - 6000</span>
               </div>
             </div>
