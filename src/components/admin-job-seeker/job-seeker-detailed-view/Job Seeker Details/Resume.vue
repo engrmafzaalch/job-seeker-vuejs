@@ -72,7 +72,7 @@ export default {
     let loader = this.$loading.show({
       loader: 'dots'
     })
-    setTimeout(() => loader.hide(), 1000)
+    setTimeout(() => loader.hide(), 500)
     axios.get(`${process.env.VUE_ROOT_URL}/certificate/${this.$route.params.id}`, {
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -80,9 +80,19 @@ export default {
     })
       .then((res) => {
         this.resume = res.data
+        if(this.resume.certificates.length!==0){
+          var temp =[];
+          var fileNam = [];
+          this.resume.certificates.map(item=>{
+            temp = item.split('/');
+            console.log(temp[3]);
+            fileNam.push(temp[3]);
+          })
+          this.fileNames = fileNam;
+        }
       })
       .catch((error) => {
-        setTimeout(() => loader.hide(), 1000)
+        setTimeout(() => loader.hide(), 500)
         console.error(error)
       })
   },
@@ -104,15 +114,15 @@ export default {
       })
     },
     deleteresume(){
+      // this.resume ='',
       axios({
-        url:"http://192.241.137.124:8000/static/uploads/" + '1617273469978-louis-hansel-shotsoflouis-8qT_cml7M68-unsplash.jpg',
+        url:"http://192.241.137.124:8000/static/uploads/1617273469978-louis-hansel-shotsoflouis-8qT_cml7M68-unsplash.jpg",
         method:'DELETE',
-
       })
         .then((res)=>{
           this.resume.splice('1617273469978-louis-hansel-shotsoflouis-8qT_cml7M68-unsplash.jpg', 1)
-          alert("NYSC.pdf");
         })
+      alert("NYSC.pdf");
     },
     redirectToHome() {
       this.$router.push({path: '/admin/job-seeker'});

@@ -24,15 +24,9 @@
                         class="searchbox-style"
                         v-decorator="[
                           `email`,
-                          {
-                            rules: [
-                              {
-                                required: true,
-                                whitespace: true,
-                                message: 'Please input email this field.',
-                              },
-                            ],
-                          },
+                        { rules:
+                        [{ required: true, message: 'Please input your Email!' }]
+                        },
                         ]"
                         placeholder=" Email address *"
                       />
@@ -54,16 +48,9 @@
                         class="searchbox-style"
                         v-decorator="[
                           `password`,
-                          {
-
-                            rules: [
-                              {
-                                required: true,
-                                whitespace: true,
-                                message: 'Please input password this field.',
-                              },
-                            ],
-                          },
+                          { rules:
+                          [{ required: true, message: 'Please input your password!' }]
+                           },
                         ]"
                         placeholder=" Password *"
                       />
@@ -312,7 +299,7 @@ hr {
 .searchbox-style {
   /* width: 700px; */
   /*; */
-  width: 235%;
+  width: 218%;
   border-radius: 4px;
   background: #ffffff;
   color: #8b90a0;
