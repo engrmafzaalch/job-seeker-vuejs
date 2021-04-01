@@ -1,8 +1,8 @@
 <template>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-12 float-right ">
-        <Add_New_Job_Seeker_Button/>
+      <div class="col-12 float-right d-none" >
+        <Add_New_Job_Seeker_Button />
       </div>
     </div>
 
@@ -217,10 +217,10 @@ const columns = [
 const data = [
 ];
 export default {
-  // name: "AdminJobSeeker",
-  // components:{
-  //   Add_New_Job_Seeker_Button: Add_New_Job_Seeker_Button,
-  // },
+  name: "AdminJobSeeker",
+  components:{
+    Add_New_Job_Seeker_Button: Add_New_Job_Seeker_Button,
+  },
 
   data() {
     return {
@@ -236,7 +236,6 @@ export default {
       },
       users:[],
       filteredData:[]
-
     };
   },
     beforeCreate() {
