@@ -51,11 +51,11 @@
 </template>
 
 <script>
-import FooterCard from "./Job-seeker/FooterCard.vue";
-import LeftSideBack from "./Job-seeker/LeftSide-Back.vue";
-import RecentJobs from "./Job-seeker/RecentJobs.vue";
-import TalentOpportunity from "./Job-seeker/TalentOpportunity.vue";
-import TopHiringCompanies from "./Job-seeker/TopHiringCompanies.vue";
+import FooterCard from "./job-seeker/FooterCard.vue";
+import LeftSideBack from "./job-seeker/LeftSide-Back.vue";
+import RecentJobs from "./job-seeker/RecentJobs.vue";
+import TalentOpportunity from "./job-seeker/TalentOpportunity.vue";
+import TopHiringCompanies from "./job-seeker/TopHiringCompanies.vue";
 export default {
   components: {
     LeftSideBack,

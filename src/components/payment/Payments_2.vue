@@ -11,7 +11,7 @@
     </div>
     <div class="input-outer child">
       <input class="input" type="text" placeholder="Amount Paid">
-      <img class="search-icon" src="n-icon.png" alt="n-icon">
+      <img class="search-icon" src="../../assets/n-icon.png" alt="n-icon">
     </div>
     <div class="input-outer child">
       <input class="input" type="text" placeholder="Transaction Number">

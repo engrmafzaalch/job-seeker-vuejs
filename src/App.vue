@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import Header from "./components/Job-seeker/Header.vue";
-import Footer from "./components/Job-seeker/Jobs/Footer.vue";
+import Header from "./components/job-seeker/Header.vue";
+import Footer from "./components/job-seeker/jobs/Footer.vue";
 import { index } from './store/store'
 
 export default {

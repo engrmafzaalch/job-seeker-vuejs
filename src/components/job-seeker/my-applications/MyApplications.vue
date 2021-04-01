@@ -51,7 +51,7 @@
         </div>
         <div class="row py-3">
           <div class="col-md-7">
-            <img src="./map-pin.png" height="20" width="22"/>
+            <img src="../../../assets/map-pin.png" height="20" width="22"/>
             <span class="text-black-50 font_a">Ibadan & Oyo State</span>
           </div>
           <div class="col-md-5">
@@ -73,7 +73,7 @@
         </div>
         <div class="row py-3">
           <div class="col-md-7">
-            <img src="./map-pin.png" height="20" width="22"/>
+            <img src="../../../assets/map-pin.png" height="20" width="22"/>
             <span class="text-black-50 font_a">Ibadan & Oyo State</span>
           </div>
           <div class="col-md-5">
@@ -95,7 +95,7 @@
         </div>
         <div class="row py-3">
           <div class="col-md-7">
-            <img src="./map-pin.png" height="20" width="22"/>
+            <img src="../../../assets/map-pin.png" height="20" width="22"/>
             <span class="text-black-50 font_a">Ibadan & Oyo State</span>
           </div>
           <div class="col-md-5">
@@ -117,7 +117,7 @@
         </div>
         <div class="row py-3">
           <div class="col-md-7">
-            <img src="./map-pin.png" height="20" width="22"/>
+            <img src="../../../assets/map-pin.png" height="20" width="22"/>
             <span class="text-black-50 font_a">Ibadan & Oyo State</span>
           </div>
           <div class="col-md-5">
@@ -139,7 +139,7 @@
         </div>
         <div class="row pt-3">
           <div class="col-md-7">
-            <img src="./map-pin.png" height="20" width="22"/>
+            <img src="../../../assets/map-pin.png" height="20" width="22"/>
             <span class="text-black-50 font_a">Ibadan & Oyo State</span>
           </div>
           <div class="col-md-5">
@@ -161,7 +161,7 @@
           <div class="border border-light rounded border_a pl-4 pt-1 pb-2 pr-md-0">
             <div class="row">
               <div class="mt-1">
-                <img src="./info.png" height="24" width="24">
+                <img src="../../../assets/info.png" height="24" width="24">
               </div>
               <div class="font_e ml-2">
                 <span>Not getting views on your CV?</span><br>
@@ -196,7 +196,7 @@
       </div>
       <div class="row py-4">
         <div class="col-lg-8">
-          <img src="./map-pin.png" height="20" width="22"/>
+          <img src="../../../assets/map-pin.png" height="20" width="22"/>
           <span class="text-black-50 font_a">Ibadan & Oyo State</span>
         </div>
         <div class="col-lg-4">

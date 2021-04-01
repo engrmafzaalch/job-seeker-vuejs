@@ -16,7 +16,7 @@
         <div class="row">
           <div class="col-12 text-center">
             <a href="#">
-              <img src="./upload.png" class="h-40 w-auto" />
+              <img src="../../../assets/upload.png" class="h-40 w-auto" />
             </a>
           </div>
         </div>
