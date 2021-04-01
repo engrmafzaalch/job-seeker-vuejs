@@ -144,7 +144,6 @@ import jspdf from 'jspdf';
 export default {
   name: "resume",
 
-
   data() {
     return {
     resume:{}
@@ -156,7 +155,6 @@ export default {
         'Authorization': `Bearer ${localStorage.getItem('token')}`
       }
     })
-
       .then((res) => {
         // setTimeout(() => loader.hide(), 1000)
         this.resume = res.data

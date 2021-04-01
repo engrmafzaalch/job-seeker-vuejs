@@ -134,18 +134,13 @@ name: "Summery",
         'Authorization': `Bearer ${localStorage.getItem('token')}`
       }
     })
-    let loader = this.$loading.show({
-      loader: 'dots'
-    })
       .then((res) => {
 
         this.profile = res.data
-        setTimeout(() => loader.hide(), 500)
-        // console.log('alldata12',this.profile)
-       // alert("data", JSON.stringify(res.data));
+        // setTimeout(() => loader.hide(), 500)
       })
       .catch((error) => {
-        setTimeout(() => loader.hide(), 500)
+        // setTimeout(() => loader.hide(), 500)
         console.error(error)
       })
   },
