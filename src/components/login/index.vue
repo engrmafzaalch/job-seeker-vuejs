@@ -24,6 +24,9 @@
                         class="searchbox-style"
                         v-decorator="[
                           `email`,
+                        { rules:
+                        [{ required: true, message: 'Please input your Email!' }]
+                        },
                         ]"
                         placeholder=" Email address *"
                       />
@@ -45,6 +48,9 @@
                         class="searchbox-style"
                         v-decorator="[
                           `password`,
+                          { rules:
+                          [{ required: true, message: 'Please input your password!' }]
+                           },
                         ]"
                         placeholder=" Password *"
                       />
