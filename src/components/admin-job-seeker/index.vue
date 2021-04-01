@@ -118,13 +118,13 @@
               <i class="fa fa-eye" aria-hidden="true" ></i>
               </router-link>
             </div>
-            <div class="action-box-job-seeker ml-10">
-              <i
-                class="fa fa-pencil-square-o"
-                key="pencil"
-                aria-hidden="true"
-              ></i>
-            </div>
+<!--            <div class="action-box-job-seeker ml-10">-->
+<!--              <i-->
+<!--                class="fa fa-pencil-square-o"-->
+<!--                key="pencil"-->
+<!--                aria-hidden="true"-->
+<!--              ></i>-->
+<!--            </div>-->
             <div class="action-box-job-seeker ml-10">
               <i
                 class="fa fa-pencil-square-o"
@@ -204,25 +204,23 @@ const columns = [
     title: "status",
     key: "status",
     dataIndex: "status",
+    slots: { title: "customeTitleStatusData" },
     scopedSlots: { customRender: "status" },
   },
   {
     title: "Action",
     key: "action",
     dataIndex: "id",
-
     scopedSlots: { customRender: "action" },
   },
 ];
-
 const data = [
 ];
-
 export default {
-  name: "AdminJobSeeker",
-  components:{
-    Add_New_Job_Seeker_Button: Add_New_Job_Seeker_Button,
-  },
+  // name: "AdminJobSeeker",
+  // components:{
+  //   Add_New_Job_Seeker_Button: Add_New_Job_Seeker_Button,
+  // },
 
   data() {
     return {
