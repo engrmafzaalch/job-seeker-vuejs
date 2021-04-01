@@ -7,7 +7,7 @@
         <div v-for="resumeItem in resume" >
         <div class="row">
           <div class="col-12" >
-            <h3 class="text-primary head_">{{resume.certificates}}</h3>
+            <h3 class="text-primary head_">CV.Pdf</h3>
           </div>
         </div>
         <div class="row pb-2">
@@ -104,7 +104,15 @@ export default {
       })
     },
     deleteresume(){
-      alert("NYSC.pdf");
+      axios({
+        url:"http://192.241.137.124:8000/static/uploads/" + '1617273469978-louis-hansel-shotsoflouis-8qT_cml7M68-unsplash.jpg',
+        method:'DELETE',
+
+      })
+        .then((res)=>{
+          this.resume.splice('1617273469978-louis-hansel-shotsoflouis-8qT_cml7M68-unsplash.jpg', 1)
+          alert("NYSC.pdf");
+        })
     },
     redirectToHome() {
       this.$router.push({path: '/admin/job-seeker'});
