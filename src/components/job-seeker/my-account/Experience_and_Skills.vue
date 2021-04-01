@@ -157,14 +157,6 @@ export default {
   background-color: #FAFAFC;
   padding: 10px;
 }
-/*.list_ {*/
-/*  list-style: none;*/
-/*  display: inline;*/
-/*  margin-left: -38px;*/
-/*}*/
-/*.list_ li {*/
-/*  display: inline-block;*/
-/*}*/
 .font_a {
   font-size: 12px;
 }
