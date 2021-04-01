@@ -5,10 +5,10 @@
     <div class="col-12 card">
       <div class="card-body">
 <!--        loop can be used at here-->
-        <div >
+        <div v-for="resumes in resumes">
         <div class="row">
           <div class="col-12" >
-            <h3 class="text-primary head_">CV</h3>
+            <h3 class="text-primary head_">{{resumes}}</h3>
           </div>
         </div>
         <div class="row pb-2">
