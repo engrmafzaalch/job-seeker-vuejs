@@ -141,11 +141,10 @@ name: "Summery",
       },
     })
       .then((res) => {
-
         this.profile = res.data
       })
       .catch((error) => {
-        // setTimeout(() => loader.hide(), 500)
+        setTimeout(() => loader.hide(), 500)
         console.error(error)
       })
   },

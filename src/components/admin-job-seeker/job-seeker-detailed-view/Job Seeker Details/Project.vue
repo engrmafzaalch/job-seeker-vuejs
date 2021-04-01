@@ -78,8 +78,6 @@ function hasErrors(fieldsError) {
 }
 export default {
   name: "project",
-
-
   data() {
     return {
       hasErrors,
@@ -88,7 +86,6 @@ export default {
 
     };
   },
-
   beforeCreate() {
     axios.get(`${process.env.VUE_ROOT_URL}/project/${this.$route.params.id}`, {
       headers: {

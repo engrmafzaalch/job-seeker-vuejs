@@ -127,7 +127,6 @@ export default {
         })
         setTimeout(() => loader.hide(), 1000)
         this.experience = res.data
-        console.log('experience',res.data)
       })
       .catch((error) => {
 
@@ -145,7 +144,6 @@ export default {
         })
         setTimeout(() => loader.hide(), 500)
         this.skills = res.data
-        console.log('skills',res.data)
       })
       .catch((error) => {
         console.error(error)

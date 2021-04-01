@@ -4,11 +4,10 @@
   <div class="row">
     <div class="col-12 card">
       <div class="card-body">
-<!--        loop can be used at here-->
         <div v-for="resumeItem in resume" >
         <div class="row">
           <div class="col-12" >
-            <h3 class="text-primary head_">{{resumeItem}}</h3>
+            <h3 class="text-primary head_">{{resume.certificates}}</h3>
           </div>
         </div>
         <div class="row pb-2">
@@ -80,9 +79,7 @@ export default {
       }
     })
       .then((res) => {
-
         this.resume = res.data
-        console.log('projext',this.resume)
       })
       .catch((error) => {
         setTimeout(() => loader.hide(), 1000)
