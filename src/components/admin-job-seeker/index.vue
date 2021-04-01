@@ -15,7 +15,7 @@
             </div>
             <div>
               <span class="total-number-title-text-job-seeker-admin"
-                >Total Job Seekers</span
+              >Total Job Seekers</span
               >
             </div>
           </div>
@@ -25,7 +25,7 @@
             </div>
             <div>
               <span class="total-number-title-text-job-seeker-admin"
-                >Newly Joined In July
+              >Newly Joined In July
               </span>
             </div>
           </div>
@@ -35,7 +35,7 @@
             </div>
             <div>
               <span class="total-number-title-text-job-seeker-admin"
-                >Male Job Seekers</span
+              >Male Job Seekers</span
               >
             </div>
           </div>
@@ -45,7 +45,7 @@
             </div>
             <div>
               <span class="total-number-title-text-job-seeker-admin"
-                >Female Job Seekers</span
+              >Female Job Seekers</span
               >
             </div>
           </div>
@@ -55,7 +55,7 @@
             </div>
             <div>
               <span class="total-number-title-text-job-seeker-admin"
-                >Active this Month</span
+              >Active this Month</span
               >
             </div>
           </div>
@@ -65,7 +65,7 @@
             </div>
             <div>
               <span class="total-number-title-text-job-seeker-admin"
-                >Active this Month</span
+              >Active this Month</span
               >
             </div>
           </div>
@@ -85,17 +85,17 @@
           :pagination="pagination"
         >
           <span slot="name" @click="displayDetailed" slot-scope="text">{{
-            text
-          }}</span>
+              text
+            }}</span>
           <span class="table-header-title" slot="customTitle">Name</span>
           <span class="table-header-title" slot="customTitleEmail"
-            >EMAIL ADDRESS</span
+          >EMAIL ADDRESS</span
           >
           <span class="table-header-title" slot="customTitleRegisteredData"
-            >REGISTERED ON</span
+          >REGISTERED ON</span
           >
           <span class="table-header-title" slot="customTitleLastLoginDate"
-            >LAST LOGIN</span
+          >LAST LOGIN</span
           >
           <span slot="status" slot-scope="status">
             <a-tag
@@ -115,7 +115,7 @@
 
               <router-link
                 :to="{name: 'tab', params: { id: record.user_id },}">
-              <i class="fa fa-eye" aria-hidden="true" ></i>
+                <i class="fa fa-eye" aria-hidden="true"></i>
               </router-link>
             </div>
             <div class="action-box-job-seeker ml-10">
@@ -174,53 +174,53 @@
 <script>
 import Add_New_Job_Seeker_Button from "./Add_New_Job_Seeker_Button";
 import axios from "axios";
+
 const columns = [
   {
     dataIndex: "name",
     key: "name",
-    slots: { title: "customTitle" },
-    scopedSlots: { customRender: "name" },
+    slots: {title: "customTitle"},
+    scopedSlots: {customRender: "name"},
   },
 
   {
     dataIndex: "email",
     key: "email",
-    slots: { title: "customTitleEmail" },
-    scopedSlots: { customRender: "email" },
+    slots: {title: "customTitleEmail"},
+    scopedSlots: {customRender: "email"},
   },
   {
     dataIndex: "createdAt",
     key: "registered_on",
-    slots: { title: "customTitleRegisteredData" },
-    scopedSlots: { customRender: "registered_on" },
+    slots: {title: "customTitleRegisteredData"},
+    scopedSlots: {customRender: "registered_on"},
   },
   {
     dataIndex: "updatedAt",
     key: "last_login",
-    slots: { title: "customTitleLastLoginDate" },
-    scopedSlots: { customRender: "last_login" },
+    slots: {title: "customTitleLastLoginDate"},
+    scopedSlots: {customRender: "last_login"},
   },
   {
     title: "status",
     key: "status",
     dataIndex: "status",
-    scopedSlots: { customRender: "status" },
+    scopedSlots: {customRender: "status"},
   },
   {
     title: "Action",
     key: "action",
     dataIndex: "id",
 
-    scopedSlots: { customRender: "action" },
+    scopedSlots: {customRender: "action"},
   },
 ];
 
-const data = [
-];
+const data = [];
 
 export default {
   name: "AdminJobSeeker",
-  components:{
+  components: {
     Add_New_Job_Seeker_Button: Add_New_Job_Seeker_Button,
   },
 
@@ -236,33 +236,27 @@ export default {
         showTotal: (total) => `Total ${total} items`, // show total
         showSizeChange: (current, pageSize) => (this.pageSize = pageSize), // update display when changing the number of pages per page
       },
-      users:[],
-      filteredData:[]
+      users: [],
+      filteredData: []
 
     };
   },
-    beforeCreate() {
-      axios.get(`${process.env.VUE_ROOT_URL}/profiles`, {
-        headers: {
-          'Authorization': `Bearer ${localStorage.getItem('token')}`
-        },
+  beforeCreate() {
+    axios.get(`${process.env.VUE_ROOT_URL}/profiles`, {
+      headers: {
+        'Authorization': `Bearer ${localStorage.getItem('token')}`
+      },
+    })
+      .then((res) => {
+        this.users = res.data
+        this.filteredData = res.data
       })
-        .then((res) => {
-          this.users = res.data
-          this.filteredData= res.data
-          console.log('alldata',res.data[0])
-        })
-        .catch((error) => {
-          console.error(error)
-        })
-    },
-
-  computed:{
-
+      .catch((error) => {
+        console.error(error)
+      })
   },
   methods: {
     fileredcolumns(search) {
-      console.log(JSON.stringify(this.users), search);
       this.filteredData = this.users.filter(user => {
         return !search || (user.name || "").toLowerCase().indexOf(search.toLowerCase()) > -1
       })
@@ -279,121 +273,138 @@ export default {
 
 <style scoped>
 .main-div-height-job-seeker-list {
-min-height: calc(100vh - 240px);
+  min-height: calc(100vh - 240px);
 }
+
 .add-more-text-admin-job-seeker {
-background: #0385f3;
-border-radius: 4px;
-align-items: center;
-color: #ffffff;
+  background: #0385f3;
+  border-radius: 4px;
+  align-items: center;
+  color: #ffffff;
 }
+
 .table-header-title {
-font-family: Open Sans;
-font-style: normal;
-font-weight: 600;
-font-size: 14px;
-color: #8b90a0;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  color: #8b90a0;
 }
+
 .action-box-job-seeker {
-background: #fafafc;
-/* UI / 03 */
+  background: #fafafc;
+  /* UI / 03 */
 
-border: 1px solid #f0f1f3;
-border-radius: 2px;
-width: 40px;
-padding-left: 10px;
-height: 40px;
-border-radius: 4px;
-font-family: Open Sans;
-font-style: normal;
-font-weight: 600;
-font-size: 16px;
-/* text-align: center; */
-display: inline-flex;
-align-items: center;
-/* align-items: unset; */
-vertical-align: middle;
+  border: 1px solid #f0f1f3;
+  border-radius: 2px;
+  width: 40px;
+  padding-left: 10px;
+  height: 40px;
+  border-radius: 4px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  /* text-align: center; */
+  display: inline-flex;
+  align-items: center;
+  /* align-items: unset; */
+  vertical-align: middle;
 }
+
 .tags-class-job-listing {
-width: 152px;
-height: 44px;
-border-radius: 4px;
-font-family: Open Sans;
-font-style: normal;
-font-weight: 600;
-font-size: 16px;
-text-align: center;
-display: inline-flex;
-align-items: center;
-/* align-items: unset; */
-vertical-align: middle;
+  width: 152px;
+  height: 44px;
+  border-radius: 4px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  /* align-items: unset; */
+  vertical-align: middle;
 }
-.no-of-total-category {
-font-family: Open Sans;
-font-style: normal;
-font-weight: 600;
-font-size: 24px;
-color: #505565;
-}
-.total-number-title-text-job-seeker-admin {
-font-family: Open Sans;
-font-style: normal;
-font-weight: normal;
-font-size: 12px;
-color: #8b90a0;
-}
-.box-job-seeker-admin {
-background: #fafdff;
-/* Primary/blue */
 
-border: 1px solid #f0f1f3;
-box-sizing: border-box;
-border-radius: 8px;
-width: 180px;
-height: 96px;
+.no-of-total-category {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  color: #505565;
 }
+
+.total-number-title-text-job-seeker-admin {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  color: #8b90a0;
+}
+
+.box-job-seeker-admin {
+  background: #fafdff;
+  /* Primary/blue */
+
+  border: 1px solid #f0f1f3;
+  box-sizing: border-box;
+  border-radius: 8px;
+  width: 180px;
+  height: 96px;
+}
+
 .inner-div-css {
-padding: 19px 0px 20px 20px;
-text-align: initial;
-display: inline-block;
+  padding: 19px 0px 20px 20px;
+  text-align: initial;
+  display: inline-block;
 }
+
 .searchbox-style {
   margin-top: 15px;
-width: 420px;
-/* height: 48px; */
-border-radius: 4px;
-background: #ffffff;
-color: #8b90a0;
-font-family: SF UI Display;
-font-style: normal;
-font-weight: 500;
-font-size: 14px;
+  width: 420px;
+  /* height: 48px; */
+  border-radius: 4px;
+  background: #ffffff;
+  color: #8b90a0;
+  font-family: SF UI Display;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
 }
+
 .text-align-initial {
-text-align: initial;
+  text-align: initial;
 }
+
 .border {
   width: 270px;
   padding: 20px 30px;
 }
+
 .radio1 {
   background: rgba(90, 170, 223, 0.04);
 }
+
 .btn {
   padding: 10px 108px;
 }
-@media screen and (min-width: 768px){
+
+@media screen and (min-width: 768px) {
   .btn-primary {
     margin-left: 9px;
   }
+
   .btn {
     margin-top: 20px;
   }
 }
+
 @media screen and (max-width: 767px) {
   .border {
     margin-bottom: 10px;
   }
+
   .btn-primary {
     margin: 10px 0px;
   }
