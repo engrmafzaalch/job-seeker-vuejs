@@ -121,17 +121,16 @@ export default {
         'Authorization': `Bearer ${localStorage.getItem('token')}`
       }
     })
-    let loader = this.$loading.show({
-      loader: 'dots'
-    })
       .then((res) => {
+        let loader = this.$loading.show({
+          loader: 'dots'
+        })
         setTimeout(() => loader.hide(), 1000)
         this.experience = res.data
         console.log('experience',res.data)
-        // alert("data", JSON.stringify(res.data));
       })
       .catch((error) => {
-        setTimeout(() => loader.hide(), 1000)
+
         console.error(error)
       })
 
@@ -141,9 +140,12 @@ export default {
       }
     })
       .then((res) => {
+        let loader = this.$loading.show({
+          loader: 'dots'
+        })
+        setTimeout(() => loader.hide(), 500)
         this.skills = res.data
         console.log('skills',res.data)
-        // alert("data", JSON.stringify(res.data));
       })
       .catch((error) => {
         console.error(error)

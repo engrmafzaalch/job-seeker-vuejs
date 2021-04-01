@@ -95,12 +95,11 @@ export default {
         'Authorization': `Bearer ${localStorage.getItem('token')}`
       }
     })
-    let loader = this.$loading.show({
-      loader: 'dots'
-    })
       .then((res) => {
-        setTimeout(() => loader.hide(), 1000)
-
+        let loader = this.$loading.show({
+          loader: 'dots'
+        })
+        setTimeout(() => loader.hide(), 500)
         this.project = res.data
         console.log('projext',this.project)
         // alert("data", JSON.stringify(res.data));

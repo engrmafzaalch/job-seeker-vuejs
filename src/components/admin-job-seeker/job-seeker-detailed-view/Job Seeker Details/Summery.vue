@@ -112,6 +112,8 @@
 
 import MyAccount from "./MyAccount";
 import axios from "axios";
+import Loading from 'vue-loading-overlay';
+import 'vue-loading-overlay/dist/vue-loading.css';
 
 function hasErrors(fieldsError) {
   return Object.keys(fieldsError).some((field) => fieldsError[field]);
@@ -129,23 +131,21 @@ name: "Summery",
   },
 
   beforeCreate() {
+    let loader = this.$loading.show({
+      loader: 'dots'
+    })
+    setTimeout(() => loader.hide(), 500)
     axios.get(`${process.env.VUE_ROOT_URL}/profile/${this.$route.params.id}`, {
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('token')}`
-      }
-    })
-    let loader = this.$loading.show({
-      loader: 'dots'
+      },
     })
       .then((res) => {
 
         this.profile = res.data
-        setTimeout(() => loader.hide(), 500)
-        // console.log('alldata12',this.profile)
-       // alert("data", JSON.stringify(res.data));
       })
       .catch((error) => {
-        setTimeout(() => loader.hide(), 500)
+        // setTimeout(() => loader.hide(), 500)
         console.error(error)
       })
   },

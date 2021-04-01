@@ -80,15 +80,12 @@
                   >Forget Password ?</router-link>
             </div>
           </div>
-
-
             <div class="row m-0 button-class">
               <div class="col-6">
                 <a-button type="primary" class="go-back-button-style">
                   Cancle
                 </a-button>
               </div>
-
               <div class="col-6">
                 <a-button
                   type="primary"
@@ -100,14 +97,12 @@
                   Login
                 </a-button>
               </div>
-
             </div>
         </a-form>
       </div>
     </div>
   </div>
 </template>
-
 <script>
 import axios from "axios";
 import Loading from 'vue-loading-overlay';
@@ -126,32 +121,26 @@ export default {
   },
   mounted() {
     this.$nextTick(() => {
-      // To disabled submit button at the beginning.
       this.form.validateFields();
     });
   },
-
   methods: {
     userNameError() {
       const { getFieldError, isFieldTouched } = this.form;
       return isFieldTouched("username") && getFieldError("username");
     },
-    // Only show error after a field is touched.
     passwordError() {
       const { getFieldError, isFieldTouched } = this.form;
       return isFieldTouched("password") && getFieldError("password");
     },
     handleSubmit(e) {
-
       e.preventDefault();
       this.form.validateFields((err, values) => {
         if (!err) {
-          console.log("Received values of form: ", values);
           this.$store.dispatch("setToken", values.email);
           let email = values.email;
           let password = values.password;
           this.$store.dispatch("login", { email, password });
-        // this.$router.push("/");
           var data = data
           var that=this
           var config = {
@@ -162,7 +151,6 @@ export default {
               'Content-Type': 'application/json'
             },
             data : data
-
           };
           let loader = this.$loading.show({
             loader: 'dots'
@@ -179,36 +167,12 @@ export default {
               }
             })
             .catch(function (error) {
-              // setTimeout(() => loader.hide(), 500)
+              setTimeout(() => loader.hide(), 500)
               console.log(error);
             });
-
         }
       });
     },
-    // openNotification() {
-    //   console.log("statuscode",statusCode)
-    //   if (this.status.code===201) {
-    //     this.$notification.open({
-    //       message: 'Error',
-    //       description:
-    //         'Enter the required Field',
-    //       onClick: () => {
-    //         console.log('Notification Clicked!');
-    //       },
-    //     });
-    //   }
-    //   else{
-    //     this.$notification.open({
-    //       message: 'Education detail',
-    //       description:
-    //         'Education details are added',
-    //       onClick: () => {
-    //         console.log('Notification Clicked!');
-    //       },
-    //     });
-    //   }
-    // },
     openNotification() {
       this.$notification.open({
         message: 'Success',

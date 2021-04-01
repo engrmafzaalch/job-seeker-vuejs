@@ -82,24 +82,23 @@ export default {
       education : {}
     };
   },
-
   beforeCreate() {
+    let loader = this.$loading.show({
+      loader: 'dots'
+    })
+    setTimeout(() => loader.hide(), 500)
     axios.get(`${process.env.VUE_ROOT_URL}/education/${this.$route.params.id}`, {
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('token')}`
       }
     })
-    let loader = this.$loading.show({
-      loader: 'dots'
-    })
       .then((res) => {
-        setTimeout(() => loader.hide(), 500)
         this.education = res.data
         console.log('resdata4', this.education)
         // alert("data", JSON.stringify(res.data));
       })
       .catch((error) => {
-        setTimeout(() => loader.hide(), 500)
+        // setTimeout(() => loader.hide(), 500)
         console.error(error)
       })
   },
