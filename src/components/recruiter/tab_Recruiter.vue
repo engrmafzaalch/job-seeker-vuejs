@@ -5,7 +5,7 @@
         <Recruiter/>
       </a-tab-pane>
       <a-tab-pane key="2" tab="Postings" force-render>
-        <recruiter_4/>
+        <Recruiter_4/>
       </a-tab-pane>
       <a-tab-pane key="3" tab="Payments">
         <Recruiter_5/>
@@ -16,13 +16,13 @@
 
 <script>
 import Recruiter from "./Recruiter";
-import recruiter_4 from "./Recruiter_4";
+import Recruiter_4 from "./Recruiter_4";
 import Recruiter_5 from "./Recruiter_5";
 export default {
   name: "tab_Recruiter",
   components: {
     Recruiter : Recruiter,
-    recruiter_4 : recruiter_4,
+    Recruiter_4 : Recruiter_4,
     Recruiter_5 : Recruiter_5,
   },
   data() {
