@@ -87,11 +87,9 @@ export default {
           var fileNam = [];
           this.resume.certificates.map(item=>{
             temp = item.split('/');
-            console.log(temp[3]);
             fileNam.push(temp[3]);
           })
           this.fileNames = fileNam;
-          console.log('fileNames',this.fileNames)
         }
       })
       .catch((error) => {
@@ -105,16 +103,30 @@ export default {
            axios({
              url:`${process.env.VUE_ROOT_URL}/certificate/${this.$route.params.id}/${resumeItem}`,
              method:'get',
+             responseType:'blob',
+             headers: {
+               'Authorization': `Bearer ${localStorage.getItem('token')}`
+             }
            })
       .then((res)=>{
-        alert("Successfully Downloaded",resumeItem);
+        const url = window.URL.createObjectURL(new Blob([res.data]));
+        const link = document.createElement('a');
+        link.href = url;
+        link.setAttribute('download', resumeItem);
+        document.body.appendChild(link);
+        alert(resumeItem);
+        link.click();
       })
     },
     deleteresume(resumeItem){
-      axios({
-        url:`${process.env.VUE_ROOT_URL}/certificate/${this.$route.params.id}/${resumeItem}`,
-        method:'Delete',
-      })
+      // this.resume ='',
+      // axios({
+      //   url:"http://192.241.137.124:8000/static/uploads/1617273469978-louis-hansel-shotsoflouis-8qT_cml7M68-unsplash.jpg",
+      //   method:'DELETE',
+      // })
+      //   .then((res)=>{
+      //     this.resume.splice('1617273469978-louis-hansel-shotsoflouis-8qT_cml7M68-unsplash.jpg', 1)
+      //   })
       alert(resumeItem);
     },
     redirectToHome() {
