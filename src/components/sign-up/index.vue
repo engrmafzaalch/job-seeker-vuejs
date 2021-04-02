@@ -166,7 +166,7 @@ export default {
               that.$notification.open({
                 message: 'Failed',
                 description:
-                  'Soething went wrong.'
+                  'Something went wrong.'
               });
               console.log(error);
             });
