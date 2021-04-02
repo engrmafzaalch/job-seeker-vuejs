@@ -91,7 +91,7 @@
           </a-checkbox>
         </a-form-item>
         <a-form-item class="btn">
-          <a-button type="primary" html-type="submit" class="go-back-button-style" @click="openNotification">
+          <a-button type="primary" html-type="submit" class="go-back-button-style">
             Register
           </a-button>
         </a-form-item>
@@ -106,6 +106,7 @@ import axios from "axios";
 export default {
   data() {
     return {
+      data:{},
       confirmDirty: false,
       formItemLayout: {
         labelCol: {
@@ -140,24 +141,33 @@ export default {
       this.form.validateFieldsAndScroll((err, values) => {
         if (!err) {
           const that = this;
-          this.$router.push({path: '/job-seeker/login'});
-          var data = values
+          this.data = values
           var config = {
             method: 'post',
             url: `${process.env.VUE_ROOT_URL}/user/signup`,
             headers: {
-              'Authorization': `Bearer ${localStorage.getItem('token')}`,
               'Content-Type': 'application/json'
             },
-            data: data
+            data: this.data
           };
           axios(config)
             .then(function (response) {
-                localStorage.setItem('user_id', response.data.userData.id);
+              if(response.status===200||response.status===201){
+                that.$notification.open({
+                  message: 'Success',
+                  description:
+                    'You have SignUp Successfully.'
+                });
                 that.$router.push({path: '/job-seeker/login'});
+              }
               }
             )
             .catch(function (error) {
+              that.$notification.open({
+                message: 'Failed',
+                description:
+                  'Soething went wrong.'
+              });
               console.log(error);
             });
         }
@@ -183,14 +193,6 @@ export default {
         form.validateFields(['confirm'], {force: true});
       }
       callback();
-    },
-
-    openNotification() {
-      this.$notification.open({
-        message: 'Success',
-        description:
-          'You have SignUp Successfully.'
-      });
     },
   },
 

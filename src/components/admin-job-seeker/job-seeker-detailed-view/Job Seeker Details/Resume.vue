@@ -119,15 +119,24 @@ export default {
       })
     },
     deleteresume(resumeItem){
-      // this.resume ='',
-      // axios({
-      //   url:"http://192.241.137.124:8000/static/uploads/1617273469978-louis-hansel-shotsoflouis-8qT_cml7M68-unsplash.jpg",
-      //   method:'DELETE',
-      // })
-      //   .then((res)=>{
-      //     this.resume.splice('1617273469978-louis-hansel-shotsoflouis-8qT_cml7M68-unsplash.jpg', 1)
-      //   })
-      alert(resumeItem);
+      axios({
+        url:`${process.env.VUE_ROOT_URL}/certificate/${this.$route.params.id}/${resumeItem}`,
+        method:'delete',
+        responseType:'blob',
+        headers: {
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        }
+      })
+        .then((res)=>{
+          const url = window.URL.createObjectURL(new Blob([res.data]));
+          const link = document.createElement('a');
+          link.href = url;
+          link.setAttribute('delete', resumeItem);
+          document.body.appendChild(link);
+          alert(resumeItem);
+          link.click();
+        })
+
     },
     redirectToHome() {
       this.$router.push({path: '/admin/job-seeker'});
