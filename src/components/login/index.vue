@@ -20,6 +20,7 @@
                     >
                       <a-form-item>
                       <a-input
+
                         style="height: 48px"
                         class="searchbox-style"
                         v-decorator="[
@@ -159,15 +160,28 @@ export default {
         }
       });
     },
-    openNotification() {
-      this.$notification.open({
-        message: 'Success',
-        description:
-          'Login Successullqy',
-        onClick: () => {
-          console.log('Notification Clicked!');
-        },
-      });
+    openNotification(email, password) {
+      if (!email, !password) {
+        this.$notification.open({
+          message: 'Success',
+          description:
+            'Login Successullqy',
+          onClick: () => {
+            console.log('Notification Clicked!');
+          },
+        });
+      }else {
+        // alert('Please enter the fields');
+        this.$notification.open({
+          message: 'Failed',
+          description:
+            'Login failed',
+          onClick: () => {
+            console.log('Notification Clicked!');
+          },
+        });
+      }
+
     },
   },
 };
