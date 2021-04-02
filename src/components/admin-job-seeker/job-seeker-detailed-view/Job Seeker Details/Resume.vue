@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col-12 card">
       <div class="card-body">
-        <div v-for="resumeItem in resume" >
+        <div v-for="resumeItem in fileNames" >
         <div class="row">
           <div class="col-12" >
             <h3 class="text-primary head_">CV.Pdf</h3>
@@ -23,15 +23,15 @@
                   <span>CV.pdf</span>
                 </div>
                 <div>
-                  <span class="text-black-50" >{{resume.certificates}}</span>
+                  <span class="text-black-50" >{{resumeItem}}</span>
                 </div>
               </div>
-              <div class="col-2"  @click="deleteresume()">
+              <div class="col-2"  @click="deleteresume(resumeItem)">
                 <a href="#">
                   <img class="float-right mt-1" src="../../../../assets/trash.png" height="20" width="auto">
                 </a>
               </div>
-              <div class="col-2" @click=" downloadresume()">
+              <div class="col-2" @click=" downloadresume(resumeItem)">
                 <a href="#">
                   <img class="mr-2 mt-1" src="../../../../assets/download.png" height="20" width="auto">
                 </a>
@@ -65,7 +65,8 @@ export default {
   name: "resume",
   data() {
     return {
-    resume:{}
+    resume:{},
+      fileNames:[]
     };
   },
   beforeCreate() {
@@ -80,6 +81,7 @@ export default {
     })
       .then((res) => {
         this.resume = res.data
+        console.log(res.data)
         if(this.resume.certificates.length!==0){
           var temp =[];
           var fileNam = [];
@@ -89,6 +91,7 @@ export default {
             fileNam.push(temp[3]);
           })
           this.fileNames = fileNam;
+          console.log('fileNames',this.fileNames)
         }
       })
       .catch((error) => {
@@ -97,32 +100,22 @@ export default {
       })
   },
   methods: {
-    downloadresume(){
+    downloadresume(resumeItem){
+      console.log('resumeItem', resumeItem)
            axios({
-             url:"http://192.241.137.124:8000/static/uploads/1617273469978-louis-hansel-shotsoflouis-8qT_cml7M68-unsplash.jpg",
+             url:`${process.env.VUE_ROOT_URL}/certificate/${this.$route.params.id}/${resumeItem}`,
              method:'get',
-             responseType:'blob',
            })
       .then((res)=>{
-        const url = window.URL.createObjectURL(new Blob([res.data]));
-        const link = document.createElement('a');
-        link.href = url;
-        link.setAttribute('download', '1617273469978-louis-hansel-shotsoflouis-8qT_cml7M68-unsplash.jpg');
-        document.body.appendChild(link);
-        alert("Successfully Downloaded");
-        link.click();
+        alert("Successfully Downloaded",resumeItem);
       })
     },
-    deleteresume(){
-      // this.resume ='',
+    deleteresume(resumeItem){
       axios({
-        url:"http://192.241.137.124:8000/static/uploads/1617273469978-louis-hansel-shotsoflouis-8qT_cml7M68-unsplash.jpg",
-        method:'DELETE',
+        url:`${process.env.VUE_ROOT_URL}/certificate/${this.$route.params.id}/${resumeItem}`,
+        method:'Delete',
       })
-        .then((res)=>{
-          this.resume.splice('1617273469978-louis-hansel-shotsoflouis-8qT_cml7M68-unsplash.jpg', 1)
-        })
-      alert("NYSC.pdf");
+      alert(resumeItem);
     },
     redirectToHome() {
       this.$router.push({path: '/admin/job-seeker'});
