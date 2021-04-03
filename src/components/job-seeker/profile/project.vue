@@ -259,6 +259,17 @@ export default {
       this.$store.commit("change", 5);
       var data = JSON.stringify(this.$data);
 
+      const user =   JSON.parse(localStorage.getItem('user'))
+
+      var temp = [];
+      if(this.$data.project.length!==0){
+        this.$data.project.map(item=>{
+          item.user_id = user.user_id
+          temp.push(item);
+        })
+        // alert(JSON.stringify(temp));
+      }
+
       var config = {
         method: "post",
         url: `${process.env.VUE_ROOT_URL}/project`,
@@ -266,13 +277,37 @@ export default {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
           "Content-Type": "application/json",
         },
-        data: data,
+        data: {project: temp},
       };
       axios(config)
         .then(function (response) {
           console.log(response.data);
         })
         .catch(function (error) {
+          console.log(error);
+        });
+
+      var config1 = {
+        method: 'put',
+        url: `${process.env.VUE_ROOT_URL}/project/${user.user_id}`,
+        headers: {
+          'Authorization':  `Bearer ${localStorage.getItem('token')}`,
+          'Content-Type': 'application/json'
+        },
+        data : {project: temp}
+      };
+      axios(config1)
+        .then(function (response) {
+
+          setTimeout(() => loader.hide(), 1000)
+          console.log(JSON.stringify(response.data));
+
+
+        })
+        .catch(function (error) {
+
+          setTimeout(() => loader.hide(), 1000)
+
           console.log(error);
         });
     },

@@ -8,8 +8,8 @@
       </div>
       <div
         v-decorator="[
-          `File`,
-          { rules: [{ required: true, message: 'Please input your name' }] },
+          `selectedFiles`,
+          { selectedFiles: [{ required: true, message: 'Please input your name' }] },
         ]"
         class="jumbotron"
       >
@@ -51,7 +51,7 @@
           v-for="(file, index) in fileList"
           :key="index"
         >
-        <a :href="file.path">{{ file.name }}</a>
+        <a :href="file">{{ file }}</a>
         </li>
       </ul>
     </div>
@@ -93,7 +93,7 @@ export default {
       hasErrors,
       form: this.$form.createForm(this, { name: "File" }),
       selectedFiles: [],
-      fileList:null
+      fileList: [],
     };
   },
   beforeCreate() {
@@ -106,7 +106,14 @@ export default {
       })
       .then((res) => {
         console.log(res.data);
-        this.fileList = res.data.certificates;
+        var fileNames=[];
+        if (res.data.certificates.length !=0 ){
+          res.data.certificates.map(item =>{
+            let fileName = item.split('/');
+            fileNames.push(fileName[3]);
+          })
+        }
+        this.fileList = fileNames;
         console.log("res of get req" ,this.fileList)
 
       })
@@ -167,7 +174,7 @@ export default {
           }
           var config = {
             method: "post",
-            url: `${process.env.VUE_ROOT_URL}/certificates/0fd909cb-7bb8-4e6f-b9d2-166776cd552c`,
+            url: `${process.env.VUE_ROOT_URL}/certificates/${user.user_id}`,
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
               "Content-Type": "multipart/form-data",
@@ -176,6 +183,24 @@ export default {
           };
           // console.log("my data" ,data)
           axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify("my response", response));
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+
+          var config1 = {
+            method: "put",
+            url: `${process.env.VUE_ROOT_URL}/certificate/${user.user_id}`,
+            headers: {
+              Authorization: `Bearer ${localStorage.getItem("token")}`,
+              "Content-Type": "multipart/form-data",
+            },
+            data: formData,
+          };
+          // console.log("my data" ,data)
+          axios(config1)
             .then(function (response) {
               console.log(JSON.stringify("my response", response));
             })
