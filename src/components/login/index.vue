@@ -70,9 +70,11 @@
           </div>
             <div class="row m-0 button-class">
               <div class="col-6">
+                <router-link to="/job-seeker/Signup">
                 <a-button type="primary" class="go-back-button-style">
-                  Cancle
+                  Sign Up
                 </a-button>
+                </router-link>
               </div>
               <div class="col-6">
                 <a-button

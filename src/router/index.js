@@ -125,6 +125,17 @@ let router = new Router({
       path: '/my-account',
       name: 'Steps',
       component: Steps,
+      beforeEnter:(to, from, next) => {
+        if (roles.includes('app-admin')) {
+          if (index.getters.isLoggedIn) {
+            next()
+            return
+          }
+          next('/job-seeker/login')
+        } else {
+          next()
+        }
+      },
       meta: {
         requiresAuth: true
       }
