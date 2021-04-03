@@ -15,7 +15,8 @@
                      type="text" class="form-control" id="name" placeholder="Name"></a-input>
           </div>
           <div class="col-sm-6">
-             <a-input v-decorator="[`email`,
+             <a-input v-decorator="[`emailAddress`,
+             { initialValue:emailAddress, rules: [{ required: true, message: '' }] }
              ]"
                      type="text" class="form-control" id="email" placeholder="Email"></a-input>
           </div>
@@ -23,14 +24,15 @@
         <div class="row">
           <div class="col-sm-6">
             <select v-decorator="[`city`,
-             ]"
+             { initialValue:city, rules: [{ required: true, message: '' }] }]"
                      class="form-control" id="city">
               <option value="" disabled selected hidden>City</option>
               <option value="Lahore">Lahore</option>
             </select>
           </div>
           <div class="col-sm-6">
-            <select v-decorator="[`country`,]"
+            <select v-decorator="[`countries`,
+            { initialValue:countries }]"
                     class="form-control" id="country">
               <option value="" disabled selected hidden>Country</option>
               <!-- <option v-for="country in countries" >{{country.countryName}}</option> -->
@@ -39,11 +41,13 @@
         </div>
         <div class="row">
           <div class="col-sm-6">
-            <a-input v-decorator="[`mobileNumber`,]"
+            <a-input v-decorator="[`mobileNo`,
+            { initialValue:mobileNo, rules: [{ required: true, message: '' }] }]"
                      type="" class="form-control" id="mobile_number" placeholder="Mobile Number"></a-input>
           </div>
           <div class="col-sm-6">
-            <a-input v-decorator="[`linkedIn`,]"
+            <a-input v-decorator="[`linkedIn`,
+            { initialValue:linkedIn, rules: [{ required: true, message: '' }] }]"
                      type="url" class="form-control" id="linked_in" placeholder="Linked-In Profile URL"></a-input>
           </div>
         </div>
@@ -54,21 +58,24 @@
         </div>
         <div class="row">
           <div class="col-sm-4">
-            <select v-decorator="[`day`,]"
+            <select v-decorator="[`day`,
+            { initialValue:day, rules: [{ required: true, message: '' }] }]"
                     class="form-control one" id="day">
               <option value="" disabled selected hidden>Day</option>
               <option value="1">1</option>
             </select>
           </div>
           <div class="col-sm-4">
-            <select v-decorator="[`month`,]"
+            <select v-decorator="[`month`,
+            { initialValue:month, rules: [{ required: true, message: '' }] }]"
                     class="form-control one two" id="month">
               <option value="" disabled selected hidden>Month</option>
               <option value="January">January</option>
             </select>
           </div>
           <div class="col-sm-4">
-            <select v-decorator="[`year`,]"
+            <select v-decorator="[`year`,
+            { initialValue:year, rules: [{ required: true, message: '' }] }]"
                     type="text" class="form-control one two" id="year">
               <option value="" disabled selected hidden>Year</option>
               <option value="2021">2021</option>
@@ -82,7 +89,8 @@
         </div>
           <div class="row">
             <div class="col-md-6">
-              <a-input v-decorator="[`nysc`,]"
+              <a-input v-decorator="[`nysc`,
+              { initialValue:nysc, rules: [{ required: true, message: '' }] } ]"
                        type="number" class="form-control" id="nysc" placeholder="A00 - 0 - 0 - 0 - 0 - 0 - 0 - 0"></a-input>
             </div>
           </div>
@@ -119,18 +127,21 @@ export default {
   data() {
     return {
       hasErrors,
-      form: this.$form.createForm(this, { name: "name emailAddress city country mobileNumber linkedIn day month year nysc" }),
+      form: this.$form.createForm(this, { name: "name emailAddress city countries mobileNumber linkedIn day month year nysc" }),
       countries : [],
       city: '',
       country: '',
       createdAt: '',
-      dob: '',
+      day: '',
+      month: '',
+      year: '',
       linkedIn: '',
       mobileNo: '',
       name: '',
-      nysc:'',
+      emailAddress: '',
+      nysc: '',
       updatedAt:''
-      
+
     };
   },
 
@@ -151,12 +162,12 @@ export default {
         this.country = res.data.country;
         this.dob = res.data.dob;
         this.name = res.data.name;
-        
+
       })
       .catch((error) => {
         console.error(error)
       })
- 
+
     axios.get(`${process.env.VUE_ROOT_URL}/countries`, {
       headers: {
         'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -181,7 +192,7 @@ export default {
     },
     // Only show error after a field is touched.
     handleSubmit(e) {
-      
+
       e.preventDefault();
       this.form.validateFields((err, values) => {
         if (err)
@@ -193,7 +204,7 @@ export default {
         onClick: () => {
           console.log('Notification Clicked!');
         },
-      }); 
+      });
         }
         if (!err) {
           this.$notification.open({
@@ -208,10 +219,11 @@ export default {
           this.$store.commit('change', 8)
            var data = values
 
-          console.log("data body", data)
+          const user =   JSON.parse(localStorage.getItem('user'))
+
          var config = {
-            method: 'post',
-            url: `${process.env.VUE_ROOT_URL}/profile`,
+            method: 'put',
+            url: `${process.env.VUE_ROOT_URL}/profile/${user.user_id}`,
             headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`,
               'Content-Type': 'application/json'
@@ -226,6 +238,7 @@ export default {
             .catch(function (error) {
               console.log(error);
             });
+
         }
       });
     },

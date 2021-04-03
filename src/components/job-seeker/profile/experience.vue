@@ -135,7 +135,7 @@
           @click="onChangeTickets(1)"
           type="button"
         >
-          Add more Projects
+          Add more Experience
         </button>
       </div>
       <hr />
@@ -265,6 +265,18 @@ export default {
       // alert("SUCCESS!! :-)\n\n" + JSON.stringify(this.$data));
       this.$store.commit("change", 4);
       var data = JSON.stringify(this.$data);
+
+      const user =   JSON.parse(localStorage.getItem('user'))
+
+      var temp = [];
+      if(this.$data.experience.length!==0){
+        this.$data.experience.map(item=>{
+          item.user_id = user.user_id
+          temp.push(item);
+        })
+        // alert(JSON.stringify(temp));
+      }
+
       var config = {
         method: "post",
         url: `${process.env.VUE_ROOT_URL}/experience`,
@@ -272,7 +284,7 @@ export default {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
           "Content-Type": "application/json",
         },
-        data: data,
+        data: {experience: temp},
       };
       axios(config)
         .then(function (response) {
@@ -281,6 +293,31 @@ export default {
         .catch(function (error) {
           console.log(error);
         });
+
+      var config1 = {
+        method: 'put',
+        url: `${process.env.VUE_ROOT_URL}/experience/${user.user_id}`,
+        headers: {
+          'Authorization':  `Bearer ${localStorage.getItem('token')}`,
+          'Content-Type': 'application/json'
+        },
+        data : {experience: temp}
+      };
+      axios(config1)
+        .then(function (response) {
+
+          setTimeout(() => loader.hide(), 1000)
+          console.log(JSON.stringify(response.data));
+
+
+        })
+        .catch(function (error) {
+
+          setTimeout(() => loader.hide(), 1000)
+
+          console.log(error);
+        });
+
     },
     onReset() {
       // reset form validation errors

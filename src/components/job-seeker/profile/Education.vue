@@ -96,7 +96,7 @@
        </div>
 
 
-          <button class="btn btn-light mx-auto" @click="onChangeTickets(1)" type="button">Add more Projects</button>
+          <button class="btn btn-light mx-auto" @click="onChangeTickets(1)" type="button">Add more Education</button>
 
 
 
@@ -111,7 +111,6 @@
           <button class="login-button-style btn btn-primary px-5"  @click="openNotification">Proceed</button>
 
         </div>
-
 
   </form>
 </div>
@@ -231,7 +230,6 @@ import axios from "axios";
                  var data = JSON.stringify(this.$data)
 
               const user =   JSON.parse(localStorage.getItem('user'))
-              console.log("Received user: ", values);
 
               var temp = [];
               if(this.$data.education.length!==0){
@@ -239,16 +237,15 @@ import axios from "axios";
                   item.user_id = user.user_id
                   temp.push(item);
                 })
-                // alert(JSON.stringify(temp));
               }
-                  var config = {
+        var config = {
         method: 'post',
        url: `${process.env.VUE_ROOT_URL}/education`,
         headers: {
           'Authorization':  `Bearer ${localStorage.getItem('token')}`,
           'Content-Type': 'application/json'
         },
-        data : data
+        data : {education:temp}
       };
        axios(config)
         .then(function (response) {
@@ -258,6 +255,31 @@ import axios from "axios";
         .catch(function (error) {
           console.log(error);
         });
+
+        var config1 = {
+          method: 'put',
+          url: `${process.env.VUE_ROOT_URL}/education/${user.user_id}`,
+          headers: {
+            'Authorization':  `Bearer ${localStorage.getItem('token')}`,
+            'Content-Type': 'application/json'
+          },
+          data : {education: temp}
+
+        };
+        axios(config1)
+          .then(function (response) {
+
+            setTimeout(() => loader.hide(), 1000)
+            console.log(JSON.stringify(response.data));
+
+
+          })
+          .catch(function (error) {
+
+            setTimeout(() => loader.hide(), 1000)
+
+            console.log(error);
+          });
 
     },
             onReset() {

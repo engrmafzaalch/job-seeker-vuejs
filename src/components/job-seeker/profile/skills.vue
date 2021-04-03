@@ -16,9 +16,9 @@
         <a-select-option v-for="Skill in skillSet" v-bind:key="Skill.skillSetName">
           {{Skill.skillSetName}}
         </a-select-option>
-        
+
       </a-select>
-      
+
     </div>
   </div>
     </a-form-item>
@@ -93,7 +93,7 @@ export default {
         onClick: () => {
           console.log('Notification Clicked!');
         },
-      }); 
+      });
         }
         if (!err) {
            this.$notification.open({
@@ -103,10 +103,13 @@ export default {
         onClick: () => {
           console.log('Notification Clicked!');
         },
-      }); 
+      });
           console.log("Received values of form: ", values);
           this.$store.commit('change', 7)
+          const user =   JSON.parse(localStorage.getItem('user'))
+          values.user_id = user.user_id;
             var data = values
+
 
           console.log("data body", data)
          var config = {
@@ -119,6 +122,24 @@ export default {
             data : data
           };
           axios(config)
+            .then(function (response) {
+              console.log(JSON.stringify(response.data));
+
+            })
+            .catch(function (error) {
+              console.log(error);
+            });
+
+          var config1 = {
+            method: 'put',
+            url: `${process.env.VUE_ROOT_URL}/skills/${user.user_id}`,
+            headers: {
+              'Authorization': `Bearer ${localStorage.getItem('token')}`,
+              'Content-Type': 'application/json'
+            },
+            data : data
+          };
+          axios(config1)
             .then(function (response) {
               console.log(JSON.stringify(response.data));
 
