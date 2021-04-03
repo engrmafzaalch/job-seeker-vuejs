@@ -26,7 +26,7 @@
                   <span class="text-black-50" >{{resumeItem}}</span>
                 </div>
               </div>
-              <div class="col-2"  @click="deleteresume(resumeItem)">
+              <div class="col-2 d-none"  @click="deleteresume(resumeItem)" >
                 <a href="#">
                   <img class="float-right mt-1" src="../../../../assets/trash.png" height="20" width="auto">
                 </a>

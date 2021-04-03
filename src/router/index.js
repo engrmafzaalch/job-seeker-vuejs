@@ -44,7 +44,7 @@ import MyAccount_7 from "../components/admin-job-seeker/My-Account/MyAccount_7";
 import MyAccount_8 from "../components/admin-job-seeker/My-Account/MyAccount_8";
 import MyAccount_9 from "../components/admin-job-seeker/My-Account/MyAccount_9";
 import MyAccount_10 from "../components/admin-job-seeker/My-Account/MyAccount_10";
-
+import {Role} from "../router/role";
 
 Vue.use(Router)
 
@@ -125,18 +125,19 @@ let router = new Router({
       path: '/my-account',
       name: 'Steps',
       component: Steps,
-      beforeEnter:(to, from, next) => {
-        if (roles.includes('app-admin')) {
-          if (index.getters.isLoggedIn) {
-            next()
-            return
-          }
-          next('/job-seeker/login')
-        } else {
-          next()
-        }
-      },
+      // beforeEnter:(to, from, next) => {
+      //   if (roles.includes('app-admin')) {
+      //     if (index.getters.isLoggedIn) {
+      //       next()
+      //       return
+      //     }
+      //     next('/job-seeker/login')
+      //   } else {
+      //     next()
+      //   }
+      // },
       meta: {
+        authorize: [Role.Admin],
         requiresAuth: true
       }
     },
