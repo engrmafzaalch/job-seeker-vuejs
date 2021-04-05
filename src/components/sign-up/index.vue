@@ -2,7 +2,7 @@
   <div class="height-login-card">
     <div class="login-card pb-30">
       <a-form :form="form" @submit="handleSubmit">
-
+        <h3 class="text-center text-black-50 my-3">Sign Up</h3>
         <a-form-item
           :label-col="formItemLayout.labelCol"
           :wrapper-col="formItemLayout.wrapperCol"
@@ -83,7 +83,17 @@
           />
         </a-form-item>
         <a-form-item class="agreement">
-          <a-checkbox v-decorator="['agreement', { valuePropName: 'checked' }]">
+          <a-checkbox   v-decorator="[
+          'agreement',
+          {
+            rules: [
+              {
+                required: true,
+                message: 'Please Check the Agreement!',
+              },
+            ],
+          },
+        ]">
             I have read the
             <a href="">
               agreement
@@ -200,11 +210,6 @@ export default {
 
 </script>
 <style>
-
-.height-login-card {
-  height: calc(100vh + 10px);
-}
-
 .login-card {
   position: absolute;
   padding: 32px;
