@@ -59,6 +59,8 @@
 </template>
 
 <script>
+import $ from 'jquery'
+
 export default {
   name: "Posting_3"
 };

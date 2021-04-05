@@ -176,6 +176,8 @@
 
 <script>
 import Payments_2 from './Payments_2.vue';
+import $ from 'jquery'
+
 export default {
   components: { Payments_2 },
   name: "index_payment-1",

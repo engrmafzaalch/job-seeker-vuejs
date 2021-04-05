@@ -47,6 +47,8 @@
 </template>
 
 <script>
+import $ from 'jquery'
+
 const columns = [
   {
     title: '#',

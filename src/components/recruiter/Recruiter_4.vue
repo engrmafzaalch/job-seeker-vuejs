@@ -160,6 +160,8 @@
 </template>
 
 <script>
+import $ from 'jquery'
+
 export default {
   name: "Recruiter_4"
 }

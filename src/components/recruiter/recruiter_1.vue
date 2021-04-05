@@ -177,6 +177,8 @@
 </template>
 
 <script>
+import $ from 'jquery'
+
 export default {
   name: "recruiter_1"
 }
