@@ -71,7 +71,7 @@
             <div class="row m-0 button-class">
               <div class="col-6">
                 <router-link to="/job-seeker/Signup">
-                <a-button type="primary" class="go-back-button-style">
+                <a-button type="primary" class="signupbtn">
                   Sign Up
                 </a-button>
                 </router-link>
@@ -82,7 +82,7 @@
                   html-type="submit"
                   class="login-button-style"
                   :disabled="hasErrors(form.getFieldsError())"
-                  @click="openNotification()"
+            
                 >
                   Login
                 </a-button>
@@ -322,10 +322,27 @@ hr {
   font-weight: 500;
   font-size: 14px;
 }
-.go-back-button-style {
-  background: #fafafa;
+.signupbtn{
+  background-color: #blue !important;
   border-radius: 4px;
   width: 100%;
+  color:white !important;
+  font-fami: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  color: white;
+  height: 48px;
+  border: 1px solid #fafafa;
+
+
+
+}
+.go-back-button-style {
+  background-color: #blue !important;
+  border-radius: 4px;
+  width: 100%;
+  color:white !important;
   font-fami: Open Sans;
   font-style: normal;
   font-weight: normal;

@@ -101,22 +101,23 @@
         </div>
 
           <div class="row">
-          <div class="display-flex tablet-mt flex-wrap align-item-center mt-2">
-            <div class="display-flex flex-wrap align-item-center">
-              <div class="col-md-2">
+          <div class="display-flex tablet-mt flex-wrap mt-2">
+            <div class="display-flex ">
+            
+              <div class="col-md-2 mt-2">
                 <span class="past-searches-text">Past Searches</span>
               </div>
-              <div class="col-lg-4 past-searches-result">
-                <span>Business analyst -
+              <div class="col-md-4 past-searches-result">
+                <span class="textad">Business analyst -
                   <span class="result-in-green">(07 new)</span>
                 </span>
               </div>
-              <div class="col-md-3 past-searches-result">
-                <span>Product Manager -
+              <div class="col-md-4 past-searches-result">
+                <span class="textad">Product Manager-
                   <span class="result-in-green">(07 new)</span></span>
               </div>
-              <div class="col-md-3 past-searches-result">
-                <span>Sales executive -
+              <div class="col-md-auto past-searches-result">
+                <span class="textad">Sales executive -
                   <span class="result-in-green">(07 new)</span>
                 </span>
               </div>
@@ -256,7 +257,7 @@ export default {
 .result-in-green {
   font-style: normal;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 8px;
   line-height: 160%;
   /* or 22px */
 
@@ -269,14 +270,21 @@ export default {
   background: rgba(35, 44, 58, 0.3);
   height: 38px;
   padding: 8px 32px;
+  font-size:14x ;
   color: #ffffff;
   border-radius: 50px;
+}
+.textad{
+font-size:11px !important;
+
+
 }
 .past-searches-text {
   font-family: Larsseit;
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 15px;
+  margin-top: 15px;
   color: #ffffff;
 }
 .flex-wrap {
