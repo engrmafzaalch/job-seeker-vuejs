@@ -91,13 +91,15 @@ export default {
         'Authorization': `Bearer ${localStorage.getItem('token')}`
       }
     })
+
       .then((res) => {
 
+        // setTimeout(() => loader.hide(), 500)
         this.education = res.data
         console.log('resdata4', this.education)
       })
       .catch((error) => {
-        setTimeout(() => loader.hide(), 500)
+        // setTimeout(() => loader.hide(), 500)
         console.error(error)
       })
   },

@@ -114,7 +114,7 @@ export default {
         link.href = url;
         link.setAttribute('download', resumeItem);
         document.body.appendChild(link);
-        alert(resumeItem);
+        console.log("filedata",res.data);
         link.click();
       })
     },
