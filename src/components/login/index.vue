@@ -7,7 +7,7 @@
         </div>
       </div>
       <div>
-        <a-form layout="inline" :form="form" @submit="handleSubmit">
+        <a-form layout="inline"  :form="form" @submit="handleSubmit">
           <div class="row m-0">
             <div class="col-12">
               <div class="row">
@@ -18,7 +18,7 @@
                       :help="userNameError() || ''"
                       style="width: 100%; height: 48px; margin-right: 0px"
                     >
-                      <a-form-item>
+                      <a-form-item :wrapper-col="{ span: 24  }">
                       <a-input
 
                         style="height: 48px"
@@ -42,7 +42,7 @@
                       :help="passwordError() || ''"
                       style="width: 100%; height: 48px; margin-right: 0px"
                     >
-                      <a-form-item>
+                      <a-form-item :wrapper-col="{ span: 24  }">
                       <a-input
                         style="height: 48px"
                         type="password"
@@ -315,7 +315,7 @@ hr {
 .searchbox-style {
   /* width: 700px; */
   /*; */
-  width: 218%;
+
   border-radius: 4px;
   background: #ffffff;
   color: #8b90a0;
