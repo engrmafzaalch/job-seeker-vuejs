@@ -106,7 +106,7 @@
           </a-checkbox>
         </a-form-item>
         <a-form-item class="btn">
-          <a-button type="primary" html-type="submit" class="go-back-button-style">
+          <a-button type="primary" html-type="submit" class="registerbtn">
             Register
           </a-button>
         </a-form-item>
@@ -239,7 +239,20 @@ export default {
   height: 48px;
   border: 1px solid #fafafa;
 }
+.registerbtn{
 
+  border-radius: 4px;
+  width: 100%;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  color: white;
+  height: 48px;
+  border: 1px solid #fafafa;
+}
+
+  
 .btn {
   margin-top: 10px;
 }
