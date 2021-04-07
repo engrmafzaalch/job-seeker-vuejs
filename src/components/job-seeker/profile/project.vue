@@ -186,7 +186,10 @@ export default {
       .then((res) => {
         console.log("MY projects are here" ,res.data);
         this.project = res.data
-      })
+
+        if(res.status==201) {
+          this.project = res.data
+        }      })
       .catch((error) => {
         console.error(error);
                setTimeout(() => loader.hide(), 500)
@@ -255,7 +258,6 @@ export default {
       if (this.$v.$invalid) return;
 
       // display form values on success
-      alert("SUCCESS!! :-)\n\n" + JSON.stringify(this.$data));
       this.$store.commit("change", 5);
       var data = JSON.stringify(this.$data);
 

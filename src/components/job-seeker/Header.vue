@@ -69,7 +69,7 @@
                 <a class="nav-link disabled">  <router-link to="/">Payments</router-link></a>
               </li>
                  <li class="nav-item">
-                    <a class="nav-link " >  <router-link to="my-account">My Account</router-link></a>
+                    <a class="nav-link " >  <router-link to="/my-account">My Account</router-link></a>
                 </li>
                  <li class="nav-item mr-4 mt-1">
                  <a class="bell-icon-header nav-link " href="#"><i class="fas fa-bell bell-icon-header"></i></a>
@@ -90,12 +90,17 @@
 </template>
 
 <script>
+import jwt_decode from "jwt-decode";
+import {Role} from "../../router/role";
+
 export default {
   name: "Header",
   props: ["isLogin"],
  data() {
     return {
       users: [],
+      token:{},
+      roleName:[],
         collapseClasses: {
             'navbar-collapse':true,
             collapse:true,
@@ -117,6 +122,26 @@ export default {
       this.users = JSON.parse(localStorage.getItem("user"))
       // alert(this.users);
 
+    }
+    if (localStorage.getItem("token")){
+      this.token = JSON.parse(localStorage.getItem("token"))
+
+      var decode = jwt_decode(this.token)
+      var roles = decode.realm_access.roles
+      console.log("roles",roles)
+      var Roless = Object.keys(Role);
+      debugger
+      var found = false;
+      var roleName = []
+      for (var i = 0; i < Roless.length; i++) {
+        if (roles.indexOf(Roless[i]) > -1) {
+          debugger
+          found = true;
+          roleName = Roless[i]
+          break;
+        }
+      }
+this.roleName = roleName
     }
   },
   methods: {

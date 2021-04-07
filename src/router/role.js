@@ -1,4 +1,4 @@
 export const Role = {
-  Admin: 'Admin',
-  jobseeker: 'jobseeker'
+  "app-admin": 'app-admin',
+  "app-jobseeker": 'app-jobseeker'
 }

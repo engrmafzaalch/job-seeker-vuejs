@@ -45,6 +45,8 @@ import MyAccount_8 from "../components/admin-job-seeker/My-Account/MyAccount_8";
 import MyAccount_9 from "../components/admin-job-seeker/My-Account/MyAccount_9";
 import MyAccount_10 from "../components/admin-job-seeker/My-Account/MyAccount_10";
 import {Role} from "../router/role";
+import jwt_decode from "jwt-decode"
+
 
 Vue.use(Router)
 
@@ -55,7 +57,7 @@ let router = new Router({
       name: 'RegistrationIndex',
       component: RegistrationIndex,
       meta: {
-        requiresAuth: true
+        requiresAuth: true,
       }
     },
     {
@@ -74,7 +76,8 @@ let router = new Router({
     {
       path: '/job-seeker/Signup',
       name: 'Signup',
-      component: Signup
+      component: Signup,
+
     },
     {
       path: '/job-seeker/forgot-password',
@@ -86,31 +89,34 @@ let router = new Router({
       name: 'AdminJobSeeker',
       component: AdminJobSeeker,
       meta: {
-        requiresAuth: false
+        requiresAuth: true,
+        authorize: [Role["app-admin"]]
       }
     },
-     {
-       path: '/admin/job-seeker/:id',
-       name: 'AdminJobSeekerDetailedPage',
-       component: AdminJobSeekerDetailedPage,
-       meta: {
-         requiresAuth: true
-       }
-     },
+    {
+      path: '/admin/job-seeker/:id',
+      name: 'AdminJobSeekerDetailedPage',
+      component: AdminJobSeekerDetailedPage,
+      meta: {
+        requiresAuth: true,
+        authorize: [Role["app-admin"]]
+
+      }
+    },
     {
       path: '/',
       name: 'HomePageContainer',
       component: HomePageContainer,
-      meta: {
-        requiresAuth: true
-      }
+
     },
     {
       path: '/myAccount',
       name: 'myAccount',
       component: MyAccount,
       meta: {
-        requiresAuth: true
+        requiresAuth: true,
+        authorize: [Role["app-jobseeker"]]
+
       }
     },
     {
@@ -125,20 +131,21 @@ let router = new Router({
       path: '/my-account',
       name: 'Steps',
       component: Steps,
-      // beforeEnter:(to, from, next) => {
-      //   if (roles.includes('app-admin')) {
-      //     if (index.getters.isLoggedIn) {
-      //       next()
-      //       return
-      //     }
-      //     next('/job-seeker/login')
-      //   } else {
-      //     next()
-      //   }
-      // },
+// beforeEnter:(to, from, next) => {
+// if (roles.includes('app-admin')) {
+// if (index.getters.isLoggedIn) {
+// next()
+// return
+// }
+// next('/job-seeker/login')
+// } else {
+// next()
+// }
+// },
       meta: {
-        authorize: [Role.Admin],
-        requiresAuth: true
+        requiresAuth: true,
+        authorize: [Role["app-admin"]]
+
       }
     },
     {
@@ -146,16 +153,18 @@ let router = new Router({
       name: 'tabs',
       component: tabs,
       meta: {
-        requiresAuth: true
+        requiresAuth: true,
+        authorize: [Role["app-admin"]]
       }
     },
     {
       path: '/admin/:id',
-      // params:'data',
+// params:'data',
       name: 'tab',
       component: tab,
       meta: {
-        requiresAuth: true
+        authorize: [Role["app-admin"]]
+
       }
     },
     {
@@ -163,7 +172,9 @@ let router = new Router({
       name: 'ProfileSummery',
       component: ProfileSummery,
       meta: {
-        requiresAuth: false
+        requiresAuth: true,
+
+
       }
     },
     {
@@ -203,7 +214,9 @@ let router = new Router({
       name: 'MyApplications',
       component: MyApplications,
       meta: {
-        requiresAuth: true
+        requiresAuth: true,
+        authorize: [Role["app-admin"]]
+
       }
     },
     {
@@ -219,7 +232,9 @@ let router = new Router({
       name: 'Payments_2',
       component: Payments_2,
       meta: {
-        requiresAuth: true
+        requiresAuth: true,
+        authorize: [Role["app-jobseeker"]]
+
       }
     },
     {
@@ -227,7 +242,9 @@ let router = new Router({
       name: 'JobDetail_2',
       component: JobDetail_2,
       meta: {
-        requiresAuth: true
+        requiresAuth: true,
+        authorize: [Role["app-jobseeker"]]
+
       }
     },
     {
@@ -235,7 +252,9 @@ let router = new Router({
       name: 'accounts_detail',
       component: accounts_detail,
       meta: {
-        requiresAuth: true
+        requiresAuth: true,
+        authorize: [Role["app-admin"]]
+
       }
     },
     {
@@ -243,7 +262,9 @@ let router = new Router({
       name: 'change_password',
       component: change_password,
       meta: {
-        requiresAuth: true
+        requiresAuth: true,
+        authorize: [Role["app-admin"]]
+
       }
     },
     {
@@ -251,7 +272,9 @@ let router = new Router({
       name: 'index_myAccount-2',
       component: index_myAccount_2,
       meta: {
-        requiresAuth: true
+        requiresAuth: true,
+        authorize: [Role["app-admin"]]
+
       }
     },
     {
@@ -259,31 +282,21 @@ let router = new Router({
       name: 'myAccount_4',
       component: myAccount_4,
       meta: {
-        requiresAuth: true
+        requiresAuth: true,
+        authorize: [Role["app-admin"]]
+
       }
     },
-    {
-      path: '/accounts_detail',
-      name: 'accounts_detail',
-      component: accounts_detail,
-      meta: {
-        requiresAuth: true
-      }
-    },
-    {
-      path: '/change_password',
-      name: 'change_password',
-      component: change_password,
-      meta: {
-        requiresAuth: true
-      }
-    },
+
+
     {
       path: '/reports',
       name: 'reports',
       component: reports,
       meta: {
-        requiresAuth: true
+        requiresAuth: true,
+        authorize: [Role["app-admin"]]
+
       }
     },
     {
@@ -291,7 +304,9 @@ let router = new Router({
       name: 'index_payment_1',
       component: index_payment_1,
       meta: {
-        requiresAuth: true
+        requiresAuth: true,
+        authorize: [Role["app-admin"]]
+
       }
     },
     {
@@ -299,7 +314,9 @@ let router = new Router({
       name: 'index_payment-3',
       component: index_payment_3,
       meta: {
-        requiresAuth: true
+        requiresAuth: true,
+        authorize: [Role["app-admin"]]
+
       }
     },
     {
@@ -307,7 +324,9 @@ let router = new Router({
       name: 'posting_1',
       component: posting_1,
       meta: {
-        requiresAuth: true
+        requiresAuth: true,
+        authorize: [Role["app-admin"]]
+
       }
     },
     {
@@ -315,7 +334,9 @@ let router = new Router({
       name: 'posting_4',
       component: posting_4,
       meta: {
-        requiresAuth: true
+        requiresAuth: true,
+        authorize: [Role["app-admin"]]
+
       }
     },
     {
@@ -323,7 +344,9 @@ let router = new Router({
       name: 'tab_Recruiter',
       component: tab_Recruiter,
       meta: {
-        requiresAuth: true
+        requiresAuth: true,
+        authorize: [Role["app-admin"]]
+
       }
     },
     {
@@ -331,7 +354,9 @@ let router = new Router({
       name: 'Recruiter',
       component: Recruiter,
       meta: {
-        requiresAuth: true
+        requiresAuth: true,
+        authorize: [Role["app-admin"]]
+
       }
     },
     {
@@ -339,7 +364,9 @@ let router = new Router({
       name: 'recruiter_1',
       component: recruiter_1,
       meta: {
-        requiresAuth: true
+        requiresAuth: true,
+        authorize: [Role["app-admin"]]
+
       }
     },
     {
@@ -347,7 +374,9 @@ let router = new Router({
       name: 'recruiter_3',
       component: recruiter_3,
       meta: {
-        requiresAuth: true
+        requiresAuth: true,
+        authorize: [Role["app-admin"]]
+
       }
     },
     {
@@ -355,7 +384,9 @@ let router = new Router({
       name: 'MyAccount_3',
       component: MyAccount_3,
       meta: {
-        requiresAuth: true
+        requiresAuth: true,
+        authorize: [Role["app-admin"]]
+
       }
     },
     {
@@ -363,23 +394,20 @@ let router = new Router({
       name: 'tab_PostingDetails',
       component: tab_PostingDetails,
       meta: {
-        requiresAuth: true
+        requiresAuth: true,
+        authorize: [Role["app-admin"]]
+
       }
     },
-    {
-      path: '/Modal-Recruiter-6',
-      name: 'ModalRecruiter_6',
-      component: ModalRecruiter_6,
-      meta: {
-        requiresAuth: true
-      }
-    },
+
     {
       path: '/MyAccount-6',
       name: 'MyAccount_6',
       component: MyAccount_6,
       meta: {
-        requiresAuth: true
+        requiresAuth: true,
+        authorize: [Role["app-admin"]]
+
       }
     },
     {
@@ -387,7 +415,9 @@ let router = new Router({
       name: 'MyAccount_7',
       component: MyAccount_7,
       meta: {
-        requiresAuth: true
+        requiresAuth: true,
+        authorize: [Role["app-admin"]]
+
       }
     },
     {
@@ -395,7 +425,9 @@ let router = new Router({
       name: 'MyAccount_8',
       component: MyAccount_8,
       meta: {
-        requiresAuth: true
+        requiresAuth: true,
+        authorize: [Role["app-admin"]]
+
       }
     },
     {
@@ -403,7 +435,9 @@ let router = new Router({
       name: 'MyAccount_9',
       component: MyAccount_9,
       meta: {
-        requiresAuth: true
+        requiresAuth: true,
+        authorize: [Role["app-admin"]]
+
       }
     },
     {
@@ -411,21 +445,89 @@ let router = new Router({
       name: 'MyAccount_10',
       component: MyAccount_10,
       meta: {
-        requiresAuth: true
+        requiresAuth: true,
+        authorize: [Role["app-admin"]]
+
       }
     },
   ]
 })
 
 router.beforeEach((to, from, next) => {
-  if (to.matched.some(record => record.meta.requiresAuth)) {
-    if (index.getters.isLoggedIn) {
+  var token = localStorage.getItem("token")
+  console.log("token",token)
+
+
+  debugger
+  if(token){
+    var decode = jwt_decode(token)
+    var roles = decode.realm_access.roles
+    console.log("roles",roles)
+    debugger
+    if (to.matched.some(record => record.meta.requiresAuth && record.meta.authorize)) {
+      debugger
+      if (index.getters.isLoggedIn) {
+        debugger
+
+        var Roless = Object.keys(Role);
+        debugger
+        var found = false;
+        var roleName = []
+        for (var i = 0; i < Roless.length; i++) {
+          if (roles.indexOf(Roless[i]) > -1) {
+            debugger
+            found = true;
+            roleName = Roless[i]
+            debugger
+            break;
+          }
+        }
+        console.log("roleName", roleName)
+          if(roleName !== Role["app-admin"]){
+            next()
+          }
+
+          debugger
+          if(roleName !== Role["app-jobseeker"]){
+            next()
+          }
+          debugger
+
+
+        return
+      }
+      next('/')
+    } else {
       next()
-      return
     }
-    next('/job-seeker/login')
-  } else {
+  }
+  else {
     next()
   }
+
 })
 export default router
+//
+// if (localStorage.getItem("token")){
+//   this.token = JSON.parse(localStorage.getItem("token"))
+//
+//   var decode = jwt_decode(this.token)
+//   var roles = decode.realm_access.roles
+//   console.log("roles",roles)
+//   var Roless = Object.keys(Role);
+//   debugger
+//   var found = false;
+//   var roleName = []
+//   for (var i = 0; i < Roless.length; i++) {
+//     if (roles.indexOf(Roless[i]) > -1) {
+//       debugger
+//       found = true;
+//       roleName = Roless[i]
+//       break;
+//     }
+//   }
+// }
+// this.roleName = roleName
+//
+// }
+

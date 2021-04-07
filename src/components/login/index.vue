@@ -12,7 +12,7 @@
             <div class="col-12">
               <div class="row">
                 <div class="col-12 mt-30">
-                  <div class="display-flex width-100 text-align-initial">
+                  <div class="">
                     <div
                       :validate-status="userNameError() ? 'error' : ''"
                       :help="userNameError() || ''"
@@ -190,6 +190,16 @@ export default {
 </script>
 
 <style scoped>
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
 .login-card {
   position: absolute;
   padding: 32px;
@@ -315,7 +325,10 @@ hr {
 .searchbox-style {
   /* width: 700px; */
   /*; */
-  width: 218%;
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+
   border-radius: 4px;
   background: #ffffff;
   color: #8b90a0;

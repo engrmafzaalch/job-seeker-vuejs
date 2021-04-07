@@ -36,7 +36,7 @@
               <span class="text-black-50">Location</span>
             </div>
             <div>
-              <span class="years">{{ profile.country }}</span>
+              <span class="years">{{ profile.city&&profile.country?(profile.city +","+profile.country) : "N/A" }}</span>
             </div>
           </div>
         </div>
@@ -54,7 +54,7 @@
         <div class="row pt-4">
           <div class="col-lg-9">
             <span>
-              {{profile.profileSummary}}. <a href="#">READ MORE</a>
+              {{profile.profileSummary}}
             </span>
           </div>
         </div>
@@ -77,7 +77,7 @@
             <span class="text-black-50">D.O.B</span>
           </div>
           <div class="col-md-10">
-            <span class="ny">{{ profile.dob }}</span>
+            <span class="ny">{{ profile.day&&profile.month&&profile.year?(profile.day +" "+ profile.month +" "+ profile.year): "N/A"}}</span>
           </div>
         </div>
 

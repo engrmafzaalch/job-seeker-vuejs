@@ -148,8 +148,12 @@ import axios from "axios";
     })
       .then((res) => {
         console.log("Education Data is here" , res.data)
-        this.education=res.data;
+
+
           setTimeout(() => loader.hide(), 500)
+        this.education=res.data
+        if(res.status==201){
+          this.education=res.data;}
 //         for (var i in  res.data) {
 
 // }

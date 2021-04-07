@@ -192,8 +192,13 @@ export default {
       })
       .then((res) => {
         console.log("this is my Experience", res.data);
-        this.experience = res.data;
+
+
            setTimeout(() => loader.hide(), 500)
+        this.experience = res.data;
+        if(res.status==201) {
+          this.experience = res.data;
+        }
       })
       .catch((error) => {
         console.error(error);
@@ -272,6 +277,7 @@ export default {
       if(this.$data.experience.length!==0){
         this.$data.experience.map(item=>{
           item.user_id = user.user_id
+          item.companyName = "jslabs"
           temp.push(item);
         })
         // alert(JSON.stringify(temp));
