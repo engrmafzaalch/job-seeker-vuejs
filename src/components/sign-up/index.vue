@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="row justify-content-center">
-    <div class="col-6">
+    <div class="col-6 mt-4">
     <div class="login-card pb-30">
       <a-form :form="form" @submit="handleSubmit">
         <h3 class="text-center text-black-50 my-3">Sign Up</h3>
