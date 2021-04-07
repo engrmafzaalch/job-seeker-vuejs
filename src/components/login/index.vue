@@ -95,9 +95,7 @@
 </template>
 <script>
 import axios from "axios";
-import Loading from 'vue-loading-overlay';
 import 'vue-loading-overlay/dist/vue-loading.css';
-import {notification } from 'antd';
 function hasErrors(fieldsError) {
   return Object.keys(fieldsError).some((field) => fieldsError[field]);
 }
@@ -109,11 +107,11 @@ export default {
       form: this.$form.createForm(this, { name: "horizontal_login" }),
     };
   },
-  mounted() {
-    this.$nextTick(() => {
-      this.form.validateFields();
-    });
-  },
+  // mounted() {
+  //   this.$nextTick(() => {
+  //     this.form.validateFields();
+  //   });
+  // },
   methods: {
     userNameError() {
       const { getFieldError, isFieldTouched } = this.form;
@@ -167,7 +165,7 @@ export default {
         this.$notification.open({
           message: 'Success',
           description:
-            'Login Successullqy',
+            'Login Successfully',
           onClick: () => {
             console.log('Notification Clicked!');
           },
