@@ -7,18 +7,18 @@
         </div>
       </div>
       <div>
-        <a-form layout="inline" :form="form" @submit="handleSubmit">
+        <a-form layout="inline"  :form="form" @submit="handleSubmit">
           <div class="row m-0">
             <div class="col-12">
               <div class="row">
                 <div class="col-12 mt-30">
-                  <div class="">
+                  <div class="display-flex width-100 text-align-initial">
                     <div
                       :validate-status="userNameError() ? 'error' : ''"
                       :help="userNameError() || ''"
                       style="width: 100%; height: 48px; margin-right: 0px"
                     >
-                      <a-form-item>
+                      <a-form-item :wrapper-col="{ span: 24  }">
                       <a-input
 
                         style="height: 48px"
@@ -42,7 +42,7 @@
                       :help="passwordError() || ''"
                       style="width: 100%; height: 48px; margin-right: 0px"
                     >
-                      <a-form-item>
+                      <a-form-item :wrapper-col="{ span: 24  }">
                       <a-input
                         style="height: 48px"
                         type="password"
@@ -71,7 +71,7 @@
             <div class="row m-0 button-class">
               <div class="col-6">
                 <router-link to="/job-seeker/Signup">
-                <a-button type="primary" class="go-back-button-style">
+                <a-button type="primary" class="signupbtn">
                   Sign Up
                 </a-button>
                 </router-link>
@@ -82,7 +82,7 @@
                   html-type="submit"
                   class="login-button-style"
                   :disabled="hasErrors(form.getFieldsError())"
-                  @click="openNotification()"
+            
                 >
                   Login
                 </a-button>
@@ -95,9 +95,7 @@
 </template>
 <script>
 import axios from "axios";
-import Loading from 'vue-loading-overlay';
 import 'vue-loading-overlay/dist/vue-loading.css';
-import {notification } from 'antd';
 function hasErrors(fieldsError) {
   return Object.keys(fieldsError).some((field) => fieldsError[field]);
 }
@@ -109,11 +107,11 @@ export default {
       form: this.$form.createForm(this, { name: "horizontal_login" }),
     };
   },
-  mounted() {
-    this.$nextTick(() => {
-      this.form.validateFields();
-    });
-  },
+  // mounted() {
+  //   this.$nextTick(() => {
+  //     this.form.validateFields();
+  //   });
+  // },
   methods: {
     userNameError() {
       const { getFieldError, isFieldTouched } = this.form;
@@ -167,7 +165,7 @@ export default {
         this.$notification.open({
           message: 'Success',
           description:
-            'Login Successullqy',
+            'Login Successfully',
           onClick: () => {
             console.log('Notification Clicked!');
           },
@@ -190,16 +188,6 @@ export default {
 </script>
 
 <style scoped>
-input[type=text], select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
-}
 .login-card {
   position: absolute;
   padding: 32px;
@@ -325,9 +313,6 @@ hr {
 .searchbox-style {
   /* width: 700px; */
   /*; */
-  width: 100%;
-  box-sizing: border-box;
-  resize: vertical;
 
   border-radius: 4px;
   background: #ffffff;
@@ -337,10 +322,27 @@ hr {
   font-weight: 500;
   font-size: 14px;
 }
-.go-back-button-style {
-  background: #fafafa;
+.signupbtn{
+  background-color: #blue !important;
   border-radius: 4px;
   width: 100%;
+  color:white !important;
+  font-fami: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  color: white;
+  height: 48px;
+  border: 1px solid #fafafa;
+
+
+
+}
+.go-back-button-style {
+  background-color: #blue !important;
+  border-radius: 4px;
+  width: 100%;
+  color:white !important;
   font-fami: Open Sans;
   font-style: normal;
   font-weight: normal;

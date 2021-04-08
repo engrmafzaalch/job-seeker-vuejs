@@ -90,7 +90,7 @@ let router = new Router({
       component: AdminJobSeeker,
       meta: {
         requiresAuth: true,
-        authorize: [Role["app-admin"]]
+        authorize: Role["app-admin"]
       }
     },
     {
@@ -454,6 +454,12 @@ let router = new Router({
 })
 
 router.beforeEach((to, from, next) => {
+
+
+  const { authorize } = to.meta;
+  const currentUser = localStorage.getItem("user")
+
+
   var token = localStorage.getItem("token")
   console.log("token",token)
 
@@ -464,10 +470,9 @@ router.beforeEach((to, from, next) => {
     var roles = decode.realm_access.roles
     console.log("roles",roles)
     debugger
-    if (to.matched.some(record => record.meta.requiresAuth && record.meta.authorize)) {
+    if (to.matched.some(record => record.meta.authorize &&record.meta.requiresAuth)) {
       debugger
-      if (index.getters.isLoggedIn) {
-        debugger
+
 
         var Roless = Object.keys(Role);
         debugger
@@ -483,6 +488,7 @@ router.beforeEach((to, from, next) => {
           }
         }
         console.log("roleName", roleName)
+
           if(roleName !== Role["app-admin"]){
             next()
           }
@@ -495,7 +501,7 @@ router.beforeEach((to, from, next) => {
 
 
         return
-      }
+
       next('/')
     } else {
       next()

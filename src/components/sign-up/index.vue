@@ -1,11 +1,15 @@
 <template>
-  <div class="height-login-card">
+  <div class="container">
+    <div class="row justify-content-center">
+    <div class="col-6 mt-4">
     <div class="login-card pb-30">
       <a-form :form="form" @submit="handleSubmit">
-
+        <h3 class="text-center text-black-50 my-3">Sign Up</h3>
+        <div class="row">
+          <div class="col-12">
         <a-form-item
-          :label-col="formItemLayout.labelCol"
-          :wrapper-col="formItemLayout.wrapperCol"
+         
+        :wrapper-col="{ span: 24  }"
         >
           <a-input
             v-decorator="[
@@ -16,8 +20,9 @@
             class="name"
           />
         </a-form-item>
-
-        <a-form-item v-bind="formItemLayout">
+        </div>
+          </div>
+        <a-form-item v-bind="formItemLayout" :wrapper-col="{ span: 24  }">
           <a-input
             v-decorator="[
           'emailAddress',
@@ -39,7 +44,7 @@
             class="name"
           />
         </a-form-item>
-        <a-form-item v-bind="formItemLayout" has-feedback>
+        <a-form-item v-bind="formItemLayout" has-feedback :wrapper-col="{ span: 24  }">
           <a-input
             v-decorator="[
           'password',
@@ -60,7 +65,7 @@
             class="name"
           />
         </a-form-item>
-        <a-form-item v-bind="formItemLayout" has-feedback>
+        <a-form-item v-bind="formItemLayout" has-feedback :wrapper-col="{ span: 24  }">
           <a-input
             v-decorator="[
           'confirm',
@@ -82,8 +87,18 @@
             class="name"
           />
         </a-form-item>
-        <a-form-item class="agreement">
-          <a-checkbox v-decorator="['agreement', { valuePropName: 'checked' }]">
+        <a-form-item class="agreement" :wrapper-col="{ span: 24  }">
+          <a-checkbox   v-decorator="[
+          'agreement',
+          {
+            rules: [
+              {
+                required: true,
+                message: 'Please Check the Agreement!',
+              },
+            ],
+          },
+        ]">
             I have read the
             <a href="">
               agreement
@@ -91,11 +106,13 @@
           </a-checkbox>
         </a-form-item>
         <a-form-item class="btn">
-          <a-button type="primary" html-type="submit" class="go-back-button-style">
+          <a-button type="primary" html-type="submit" class="registerbtn">
             Register
           </a-button>
         </a-form-item>
       </a-form>
+    </div>
+  </div>
     </div>
   </div>
 </template>
@@ -200,19 +217,12 @@ export default {
 
 </script>
 <style>
-
-.height-login-card {
-  height: calc(100vh + 10px);
-}
-
 .login-card {
-  position: absolute;
+
   padding: 32px;
   background: #ffffff;
   /* Elevation / 02 */
-  top: 30%;
-  left: 30%;
-  right: 30%;
+
   box-shadow: 0px 4px 20px rgba(115, 115, 115, 0.2);
   border-radius: 10px;
 }
@@ -229,7 +239,20 @@ export default {
   height: 48px;
   border: 1px solid #fafafa;
 }
+.registerbtn{
 
+  border-radius: 4px;
+  width: 100%;
+
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  color: white;
+  height: 48px;
+  border: 1px solid #fafafa;
+}
+
+  
 .btn {
   margin-top: 10px;
 }
@@ -239,6 +262,6 @@ export default {
 }
 
 .name {
-  width: 150%;
+  width: 100%;
 }
 </style>
