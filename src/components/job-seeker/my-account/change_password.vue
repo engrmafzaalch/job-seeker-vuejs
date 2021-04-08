@@ -25,39 +25,45 @@
 
 <script>
 export default {
-name: "change_password"
+  name: "change_password"
 }
 
 </script>
 
 <style scoped>
-.container{
+.container {
   margin-top: 48px;
 }
-.container .wrapper{
+
+.container .wrapper {
   width: 480px;
   margin: 0 auto;
 }
-.heading{
+
+.heading {
   margin-bottom: 32px;
 }
-.heading strong{
+
+.heading strong {
   font-size: 32px;
 }
 
-.input-outer{
+.input-outer {
   width: 100%;
 }
-.input-outer label{
+
+.input-outer label {
   font-size: 14px;
   font-weight: bold;
   margin-bottom: 9px;
 }
-.input-outer-tag{
+
+.input-outer-tag {
   width: 100%;
   /*padding-left: 30px;*/
 }
-.input{
+
+.input {
   width: 100%;
   padding: 12px 16px;
   color: #8B90A0;
@@ -68,13 +74,14 @@ name: "change_password"
   margin-bottom: 31px;
 }
 
-.container .wrapper .action{
+.container .wrapper .action {
   display: flex;
   align-items: center;
   justify-content: flex-end;
   padding: 32px 0 80px 0;
 }
-.cancel-btn{
+
+.cancel-btn {
   padding: 12px 0;
   width: 235px;
   background: #FAFAFA;
@@ -82,7 +89,8 @@ name: "change_password"
   border-radius: 4px;
   color: #8B90A0;
 }
-.approve-btn{
+
+.approve-btn {
   padding: 12px 0;
   width: 235px;
   background: #0385F3;
@@ -93,9 +101,9 @@ name: "change_password"
 }
 
 @media (min-width: 320px) and (max-width: 1024px) {
-  .container .wrapper{
-  width: 100% !important;
-  margin: 0 auto;
-}
+  .container .wrapper {
+    width: 100% !important;
+    margin: 0 auto;
+  }
 }
 </style>

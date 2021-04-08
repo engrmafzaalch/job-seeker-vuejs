@@ -72,11 +72,9 @@ export default {
       this.visible = false;
     },
     handleOk(e) {
-      console.log(e);
       this.visible = false;
     },
     onChange(e) {
-      console.log('radio checked', e.target.value);
     },
   },
 }

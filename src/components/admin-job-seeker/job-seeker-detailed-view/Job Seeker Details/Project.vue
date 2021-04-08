@@ -98,7 +98,6 @@ export default {
         })
         setTimeout(() => loader.hide(), 500)
         this.project = res.data
-        console.log('projext',this.project)
         // alert("data", JSON.stringify(res.data));
       })
       .catch((error) => {

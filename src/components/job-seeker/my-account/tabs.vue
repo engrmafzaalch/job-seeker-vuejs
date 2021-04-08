@@ -48,10 +48,8 @@ export default {
   },
   methods: {
     changetab: function (tab) {
-      console.log("testtt", tab)
     },
     callback(key) {
-      console.log(key);
     },
   }
 }

@@ -115,8 +115,7 @@ export default {
     };
   },
   mounted(){
-    // const user = JSON.parse(localStorage.getItem("user"));
-    // console.log(user);
+
 
     if (localStorage.getItem("user")){
       this.users = JSON.parse(localStorage.getItem("user"))
@@ -128,14 +127,11 @@ export default {
 
       var decode = jwt_decode(this.token)
       var roles = decode.realm_access.roles
-      console.log("roles",roles)
       var Roless = Object.keys(Role);
-      debugger
       var found = false;
       var roleName = []
       for (var i = 0; i < Roless.length; i++) {
         if (roles.indexOf(Roless[i]) > -1) {
-          debugger
           found = true;
           roleName = Roless[i]
           break;
@@ -175,7 +171,6 @@ this.roleName = roleName
         }
         setTimeout(()=>{
             let navHeight = this.$refs.mynav.clientHeight
-            console.log(navHeight)
             this.collapseStyle = {height:navHeight+'px'}
             this.collapseClasses = {
                 ...curr,

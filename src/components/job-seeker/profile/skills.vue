@@ -64,8 +64,6 @@ export default {
     })
       .then((res) => {
         this.pastData = res.data.skills
-        console.log("my skills are here" , res.data.skills)
-        console.log("YO YO ", pastData);
       })
       .catch((error) => {
         console.error(error)
@@ -90,9 +88,7 @@ export default {
         message: 'Key Skills',
         description:
           'Please fill the required field',
-        onClick: () => {
-          console.log('Notification Clicked!');
-        },
+
       });
         }
         if (!err) {
@@ -100,18 +96,14 @@ export default {
         message: 'Skill',
         description:
           'Skills submitted',
-        onClick: () => {
-          console.log('Notification Clicked!');
-        },
+
       });
-          console.log("Received values of form: ", values);
           this.$store.commit('change', 7)
           const user =   JSON.parse(localStorage.getItem('user'))
           values.user_id = user.user_id;
             var data = values
 
 
-          console.log("data body", data)
          var config = {
             method: 'post',
             url: `${process.env.VUE_ROOT_URL}/skill`,
@@ -123,11 +115,9 @@ export default {
           };
           axios(config)
             .then(function (response) {
-              console.log(JSON.stringify(response.data));
 
             })
             .catch(function (error) {
-              console.log(error);
             });
 
           var config1 = {
@@ -141,26 +131,18 @@ export default {
           };
           axios(config1)
             .then(function (response) {
-              console.log(JSON.stringify(response.data));
 
             })
             .catch(function (error) {
-              console.log(error);
             });
-
-          // axios.post('http://192.241.137.124:8000/api/v1/skill')
-          //   .then(response => (this.info = response.data))
-          //   .catch(error => console.log(error))
 
         }
       });
     },
     onChange(date, dateString) {
-      console.log(date, dateString);
     },
     handleChange(value) {
       this.listSkill = value;
-      console.log(`selected ${value}`);
     },
   },
 }

@@ -96,7 +96,6 @@ export default {
 
         // setTimeout(() => loader.hide(), 500)
         this.education = res.data
-        console.log('resdata4', this.education)
       })
       .catch((error) => {
         // setTimeout(() => loader.hide(), 500)

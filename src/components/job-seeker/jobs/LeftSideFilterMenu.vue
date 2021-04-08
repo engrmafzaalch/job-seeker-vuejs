@@ -15,7 +15,7 @@
       <div><span class="industry-title-text">Industry</span></div>
       <div>
         <span class="no-of-filters-apply-text"
-          ><img src="../../../assets/Vector (3).png" alt="" />
+        ><img src="../../../assets/Vector (3).png" alt=""/>
         </span>
       </div>
     </div>
@@ -48,11 +48,14 @@
             </a-checkbox>
           </a-col>
           <a-col :span="24" class="text-align-initial"
-            ><a-checkbox
+          >
+            <a-checkbox
               class="text-align-initial checkbox-color mt-10"
               value="A"
-              >Industry D</a-checkbox
-            ></a-col
+            >Industry D
+            </a-checkbox
+            >
+          </a-col
           >
         </a-row>
       </a-checkbox-group>
@@ -60,7 +63,7 @@
         <span class="more-plus">+20 More</span>
       </div>
       <div class="ml-10px">
-        <hr />
+        <hr/>
       </div>
     </div>
     <div
@@ -70,7 +73,7 @@
       <div><span class="industry-title-text">Salary</span></div>
       <div>
         <span class="no-of-filters-apply-text"
-          ><img src="../../../assets/Vector (3).png" alt="" />
+        ><img src="../../../assets/Vector (3).png" alt=""/>
         </span>
       </div>
     </div>
@@ -82,32 +85,44 @@
       <a-checkbox-group @change="onChange">
         <a-row>
           <a-col :span="24" class="text-align-initial"
-            ><a-checkbox
+          >
+            <a-checkbox
               class="text-align-initial checkbox-color mt-10"
               value="A"
-              >0-2 Lakh ₦ (200)</a-checkbox
-            ></a-col
+            >0-2 Lakh ₦ (200)
+            </a-checkbox
+            >
+          </a-col
           >
           <a-col :span="24" class="text-align-initial"
-            ><a-checkbox
+          >
+            <a-checkbox
               class="text-align-initial checkbox-color mt-10"
               value="A"
-              >2-5 Lakh ₦(96)</a-checkbox
-            ></a-col
+            >2-5 Lakh ₦(96)
+            </a-checkbox
+            >
+          </a-col
           >
           <a-col :span="24" class="text-align-initial"
-            ><a-checkbox
+          >
+            <a-checkbox
               class="text-align-initial checkbox-color mt-10"
               value="A"
-              >5-8 Lakh ₦(15)</a-checkbox
-            ></a-col
+            >5-8 Lakh ₦(15)
+            </a-checkbox
+            >
+          </a-col
           >
           <a-col :span="24" class="text-align-initial"
-            ><a-checkbox
+          >
+            <a-checkbox
               class="text-align-initial checkbox-color mt-10"
               value="A"
-              >8-12 Lakh ₦ (12)</a-checkbox
-            ></a-col
+            >8-12 Lakh ₦ (12)
+            </a-checkbox
+            >
+          </a-col
           >
         </a-row>
       </a-checkbox-group>
@@ -115,7 +130,7 @@
         <span class="more-plus">+20 More</span>
       </div>
       <div class="ml-10px">
-        <hr />
+        <hr/>
       </div>
     </div>
     <div
@@ -125,7 +140,7 @@
       <div><span class="industry-title-text">Experience</span></div>
       <div>
         <span class="no-of-filters-apply-text"
-          ><img src="../../../assets/Vector (3).png" alt="" />
+        ><img src="../../../assets/Vector (3).png" alt=""/>
         </span>
       </div>
     </div>
@@ -144,7 +159,7 @@
         />
       </div>
       <div class="ml-10px">
-        <hr />
+        <hr/>
       </div>
     </div>
     <div
@@ -154,7 +169,7 @@
       <div><span class="industry-title-text">Location</span></div>
       <div>
         <span class="no-of-filters-apply-text"
-          ><img src="../../../assets/Vector (3).png" alt="" />
+        ><img src="../../../assets/Vector (3).png" alt=""/>
         </span>
       </div>
     </div>
@@ -179,7 +194,7 @@
         />
       </div>
       <div class="ml-10px">
-        <hr />
+        <hr/>
       </div>
     </div>
     <div
@@ -189,7 +204,7 @@
       <div><span class="industry-title-text">Time Posted</span></div>
       <div>
         <span class="no-of-filters-apply-text"
-          ><img src="../../../assets/Vector (3).png" alt="" />
+        ><img src="../../../assets/Vector (3).png" alt=""/>
         </span>
       </div>
     </div>
@@ -208,7 +223,7 @@
         />
       </div>
       <div class="ml-10px">
-        <hr />
+        <hr/>
       </div>
     </div>
     <div
@@ -218,7 +233,7 @@
       <div><span class="industry-title-text">Company size</span></div>
       <div>
         <span class="no-of-filters-apply-text"
-          ><img src="../../../assets/Vector (3).png" alt="" />
+        ><img src="../../../assets/Vector (3).png" alt=""/>
         </span>
       </div>
     </div>
@@ -230,32 +245,44 @@
       <a-checkbox-group @change="onChangeCompanySize">
         <a-row>
           <a-col :span="24" class="text-align-initial"
-            ><a-checkbox
+          >
+            <a-checkbox
               class="text-align-initial checkbox-color mt-10"
               value="A"
-              >5-50 Employees</a-checkbox
-            ></a-col
+            >5-50 Employees
+            </a-checkbox
+            >
+          </a-col
           >
           <a-col :span="24" class="text-align-initial"
-            ><a-checkbox
+          >
+            <a-checkbox
               class="text-align-initial checkbox-color mt-10"
               value="A"
-              >50-80 Employees</a-checkbox
-            ></a-col
+            >50-80 Employees
+            </a-checkbox
+            >
+          </a-col
           >
           <a-col :span="24" class="text-align-initial"
-            ><a-checkbox
+          >
+            <a-checkbox
               class="text-align-initial checkbox-color mt-10"
               value="A"
-              >80-120 Employees</a-checkbox
-            ></a-col
+            >80-120 Employees
+            </a-checkbox
+            >
+          </a-col
           >
           <a-col :span="24" class="text-align-initial"
-            ><a-checkbox
+          >
+            <a-checkbox
               class="text-align-initial checkbox-color mt-10"
               value="A"
-              >120-400 Employees</a-checkbox
-            ></a-col
+            >120-400 Employees
+            </a-checkbox
+            >
+          </a-col
           >
         </a-row>
       </a-checkbox-group>
@@ -263,7 +290,7 @@
         <span class="more-plus">+5 More</span>
       </div>
       <div class="ml-10px">
-        <hr />
+        <hr/>
       </div>
     </div>
     <div
@@ -273,7 +300,7 @@
       <div><span class="industry-title-text">Company size</span></div>
       <div>
         <span class="no-of-filters-apply-text"
-          ><img src="../../../assets/Vector (3).png" alt="" />
+        ><img src="../../../assets/Vector (3).png" alt=""/>
         </span>
       </div>
     </div>
@@ -291,20 +318,20 @@
         <div class="col-6 p-0">
           <div class="boxes-job-type not-selected">
             <span class="box-job-type-fonts not-selected-job-type-fonts"
-              >Part Time</span
+            >Part Time</span
             >
           </div>
         </div>
         <div class="col-6 p-0">
           <div class="boxes-job-type not-selected">
             <span class="box-job-type-fonts not-selected-job-type-fonts"
-              >Contract</span
+            >Contract</span
             >
           </div>
         </div>
       </div>
       <div class="ml-10px">
-        <hr />
+        <hr/>
       </div>
       <div class="text-align-initial">
         <a-checkbox
@@ -467,9 +494,11 @@ export default {
   padding-right: 10px;
   padding-bottom: 10px;
 }
+
 .pl-0 {
   padding-left: 0px;
 }
+
 .radio-label {
   font-family: Open Sans;
   font-style: normal;
@@ -477,12 +506,15 @@ export default {
   font-size: 14px;
   color: #505565;
 }
+
 .p-0 {
   padding: 0;
 }
+
 .text-align-initial {
   text-align: initial !important;
 }
+
 .box-job-type-fonts {
   font-family: Open Sans;
   font-style: normal;
@@ -495,13 +527,16 @@ export default {
 
   color: #0084f4;
 }
+
 .background-left-side-menu {
   padding: 10px 20px 20px 20px;
   background: #fafafa;
 }
+
 .mt-10 {
   margin-top: 10px;
 }
+
 .checkbox-color-featured-jobs {
   font-family: Open Sans;
   font-style: normal;
@@ -515,6 +550,7 @@ export default {
 
   color: #0084f4;
 }
+
 .checkbox-color {
   font-family: Open Sans;
   font-style: normal;
@@ -529,24 +565,30 @@ export default {
 
   color: #8b90a0;
 }
+
 .boxes-job-type {
   background: rgba(90, 170, 223, 0.04);
   border: 1px solid #0084f4;
   padding: 14px 27px 14px 34px;
 }
+
 .location-radio {
   text-align: initial !important;
   padding: 10px 20px 20px 0px;
 }
+
 .padding-slider {
   padding: 0px 0px 45px 0px;
 }
+
 .padding-slider-time-posted {
   padding: 0px 0px 70px 0px;
 }
+
 .ant-slider-handle {
   border-radius: 30% !important;
 }
+
 .more-plus {
   font-family: Open Sans;
   font-style: normal;
@@ -560,6 +602,7 @@ export default {
 
   color: #0084f4;
 }
+
 hr {
   display: block;
   height: 1px;
@@ -570,16 +613,20 @@ hr {
   margin: 1em 0;
   padding: 0;
 }
+
 .pt-30 {
   padding-top: 30px;
 }
+
 .ptb-20 {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+
 .pt-70 {
   padding-top: 70px;
 }
+
 .not-selected {
   background: #ffffff;
   /* UI / 05 */
@@ -587,9 +634,11 @@ hr {
   border: 1px solid #a1a4b1;
   color: #8b90a0;
 }
+
 .not-selected-job-type-fonts {
   color: #8b90a0;
 }
+
 .industry-title-text {
   font-family: Open Sans;
   font-style: normal;
@@ -597,9 +646,11 @@ hr {
   font-size: 24px;
   color: #4e4e5a;
 }
+
 .display-flex {
   display: flex;
 }
+
 .filters-title-text {
   font-family: Open Sans;
   font-style: normal;
@@ -607,12 +658,15 @@ hr {
   font-size: 32px;
   color: #4e4e5a;
 }
+
 .justify-content-space-between {
   justify-content: space-between;
 }
+
 .align-item-center {
   align-items: center;
 }
+
 .no-of-filters-apply-text {
   font-family: Open Sans;
   font-style: normal;
@@ -620,54 +674,56 @@ hr {
   font-size: 16px;
   color: #0084f4;
 }
+
 .category {
   background: #fafafa;
   height: 220px;
   padding-top: 15px;
   /* margin-left: 10px; */
 }
+
 .experience-block {
   background: #fafafa;
   height: 140px;
   padding-top: 15px;
   /* margin-left: 10px; */
 }
+
 .company-size-block {
   background: #fafafa;
   height: 200px;
   padding-top: 15px;
 }
+
 .location-box {
   background: #fafafa;
   height: 170px;
   padding-top: 15px;
   /* margin-left: 10px; */
 }
+
 .time-posted-block {
   background: #fafafa;
   height: 160px;
   padding-top: 15px;
   /* margin-left: 10px; */
 }
+
 .expand-transition {
   transition: all 0.5s ease;
 }
-/* .expand-enter defines the starting state for entering */
-/* .expand-leave defines the ending state for leaving */
+
 .expand-enter,
 .expand-leave {
   height: 0;
   opacity: 0;
 }
+
 .cursor-pointer {
   cursor: pointer;
 }
-/*@media screen and (max-width: 766px){*/
-/*.container {*/
-/*  width: 100%;*/
-/*}*/
-/*}*/
-@media screen and (max-width: 250px){
+
+@media screen and (max-width: 250px) {
   .container-fluid {
     width: 100%;
   }

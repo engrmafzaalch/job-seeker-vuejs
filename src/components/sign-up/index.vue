@@ -8,7 +8,7 @@
         <div class="row">
           <div class="col-12">
         <a-form-item
-         
+
         :wrapper-col="{ span: 24  }"
         >
           <a-input
@@ -185,7 +185,6 @@ export default {
                 description:
                   'Something went wrong.'
               });
-              console.log(error);
             });
         }
       });
@@ -252,7 +251,7 @@ export default {
   border: 1px solid #fafafa;
 }
 
-  
+
 .btn {
   margin-top: 10px;
 }

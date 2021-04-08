@@ -81,7 +81,6 @@ export default {
     })
       .then((res) => {
         this.resume = res.data
-        console.log(res.data)
         if(this.resume.certificates.length!==0){
           var temp =[];
           var fileNam = [];
@@ -99,7 +98,6 @@ export default {
   },
   methods: {
     downloadresume(resumeItem){
-      console.log('resumeItem', resumeItem)
            axios({
              url:`${process.env.VUE_ROOT_URL}/certificate/${this.$route.params.id}/${resumeItem}`,
              method:'get',
@@ -114,7 +112,6 @@ export default {
         link.href = url;
         link.setAttribute('download', resumeItem);
         document.body.appendChild(link);
-        console.log("filedata",res.data);
         link.click();
       })
     },

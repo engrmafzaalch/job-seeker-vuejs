@@ -103,7 +103,7 @@
           <div class="row">
           <div class="display-flex tablet-mt flex-wrap mt-2">
             <div class="display-flex ">
-            
+
               <div class="col-md-2 mt-2">
                 <span class="past-searches-text">Past Searches</span>
               </div>
@@ -235,7 +235,6 @@ export default {
       e.preventDefault();
       this.form.validateFields((err, values) => {
         if (!err) {
-          console.log("Received values of form: ", values);
         }
       });
     },

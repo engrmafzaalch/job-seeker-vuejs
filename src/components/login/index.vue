@@ -82,7 +82,7 @@
                   html-type="submit"
                   class="login-button-style"
                   :disabled="hasErrors(form.getFieldsError())"
-            
+
                 >
                   Login
                 </a-button>
@@ -155,7 +155,6 @@ export default {
             })
             .catch(function (error) {
               setTimeout(() => loader.hide(), 500)
-              console.log(error);
             });
         }
       });
@@ -166,9 +165,7 @@ export default {
           message: 'Success',
           description:
             'Login Successfully',
-          onClick: () => {
-            console.log('Notification Clicked!');
-          },
+
         });
       }else {
         // alert('Please enter the fields');
@@ -176,9 +173,7 @@ export default {
           message: 'Failed',
           description:
             'Login failed',
-          onClick: () => {
-            console.log('Notification Clicked!');
-          },
+
         });
       }
 

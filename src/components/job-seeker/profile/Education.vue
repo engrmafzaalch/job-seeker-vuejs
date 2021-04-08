@@ -27,30 +27,7 @@
                       :class="{ 'is-invalid': v.institutionName.$error }"></a-input>
           </div>
 
-              <!-- <label>Name</label>
-              <input
-                type="text"
-                v-model="ticket.name"
-                class="form-control"
-                :class="{ 'is-invalid': v.name.$error }"
-              />
-              <div class="invalid-feedback">
-                <div>Name is required</div>
-              </div> -->
 
-            <!-- <div class="form-group col-6">
-              <label>Email</label>
-              <input
-                type="email"
-                v-model="ticket.email"
-                class="form-control"
-                :class="{ 'is-invalid': v.email.$error }"
-              />
-              <div class="invalid-feedback">
-                <div v-if="!v.email.required">Email is required</div>
-                <div v-if="!v.email.email">Email is invalid</div>
-              </div>
-            </div> -->
           </div>
           <div class="row">
           <div class="col-sm-6">
@@ -166,9 +143,7 @@ import axios from "axios";
         message: 'Profile Summery detail',
         description:
           'Something went wrong',
-        onClick: () => {
-          console.log('Notification Clicked!');
-        },
+
       });
 
         }
@@ -195,9 +170,7 @@ import axios from "axios";
         message: 'Error',
         description:
           'Enter the required Field',
-        onClick: () => {
-          console.log('Notification Clicked!');
-        },
+
       });
 
               }
@@ -206,9 +179,7 @@ import axios from "axios";
         message: 'Education detail',
         description:
           'Education details are added',
-        onClick: () => {
-          console.log('Notification Clicked!');
-        },
+
       });
               }
     },
@@ -253,11 +224,9 @@ import axios from "axios";
       };
        axios(config)
         .then(function (response) {
-          console.log((response.data));
 
         })
         .catch(function (error) {
-          console.log(error);
         });
 
         var config1 = {
@@ -274,7 +243,6 @@ import axios from "axios";
           .then(function (response) {
 
             setTimeout(() => loader.hide(), 1000)
-            console.log(JSON.stringify(response.data));
 
 
           })
@@ -282,7 +250,6 @@ import axios from "axios";
 
             setTimeout(() => loader.hide(), 1000)
 
-            console.log(error);
           });
 
     },

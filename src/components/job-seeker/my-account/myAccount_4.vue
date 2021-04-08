@@ -198,8 +198,10 @@
                   <div class="message-2nd-outer">
                     <h2 class="message-head">Message:</h2>
                     <p class="message-desc">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                      dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                      labore et
+                      dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                      aliqu
                       ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
                       dolore eu fugiat nulla pariatur.
                     </p>
@@ -216,7 +218,8 @@
                 </p>
               </div>
               <div class="comment-outer">
-                <textarea class="textarea" name="" cols="30" rows="5" placeholder="Enter your response here..."></textarea>
+                <textarea class="textarea" name="" cols="30" rows="5"
+                          placeholder="Enter your response here..."></textarea>
               </div>
               <div class="action">
                 <a class="send-btn" href="">Send</a>
@@ -231,90 +234,73 @@
 
 <script>
 export default {
-name: "myAccount_4"
+  name: "myAccount_4"
 }
 
 </script>
 
 <style scoped>
 
-.container-fluid{
+.container-fluid {
   padding: 0 80px !important;
   margin-top: 32px;
 }
 
-.container-fluid .tile{
+.container-fluid .tile {
 
 }
 
-.container-fluid{
+.container-fluid {
 
 }
 
-.container-fluid .nav-tabs{
+.container-fluid .nav-tabs {
   margin: 48px 0 32px 0;
-  position:relative;
-  border:none!important;
+  position: relative;
+  border: none !important;
   width: 600px;
 }
 
-.container-fluid .nav-tabs .active{
+.container-fluid .nav-tabs .active {
   border-bottom: 3px solid #0385F3 !important;
-  color:#0385F3!important;
+  color: #0385F3 !important;
   border-top: none;
   border-left: none;
   border-right: none;
 }
 
-/* #my-account .container-fluid .slider{
-    display:inline-block;
-    width:30px;
-    height:4px;
-    border-radius:3px;
-    background-color:#0385F3;
-    position:absolute;
-    z-index:1200;
-    bottom:0;
-    transition: .1s;
-} */
 
-.container-fluid .nav-tabs .nav-item{
-  margin:0px!important;
+.container-fluid .nav-tabs .nav-item {
+  margin: 0px !important;
 }
 
-.container-fluid .nav-tabs .nav-item .nav-link{
-  position:relative;
-  margin-right:0px!important;
-  padding: 12px 32px!important;
-  font-size:16px;
-  color:#8B90A0;
+.container-fluid .nav-tabs .nav-item .nav-link {
+  position: relative;
+  margin-right: 0px !important;
+  padding: 12px 32px !important;
+  font-size: 16px;
+  color: #8B90A0;
   border-bottom: 1px solid #8B90A0;
   font-size: 14px;
 }
 
-.container-fluid .nav-tabs .nav-item .nav-link:hover{
+.container-fluid .nav-tabs .nav-item .nav-link:hover {
   border-bottom: 3px solid #0385F3 !important;
   border-top: none;
   border-left: none;
   border-right: none;
 }
 
-/* #my-account .container-fluid .nav-tabs .nav-link {
-    border: none !important;
-    border-bottom: 1px solid #8B90A0 !important;
-} */
 
-
-
-.container-fluid .tab-content{
+.container-fluid .tab-content {
 
 }
 
-.container-fluid .tab-content .tab-content-inner{
+.container-fluid .tab-content .tab-content-inner {
 
 }
 
-.container-fluid .tab-content .tab-content-inner .message-wrapper{
+.container-fluid .tab-content .tab-content-inner .message-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -322,18 +308,18 @@ name: "myAccount_4"
   flex-wrap: wrap;
 }
 
-.container-fluid .tab-content .tab-content-inner .message-wrapper .meassage{
+.container-fluid .tab-content .tab-content-inner .message-wrapper .meassage {
   font-size: 32px;
   line-height: 48px;
   color: #505565;
 }
 
-.container-fluid .tab-content .tab-content-inner .message-wrapper .input-outer{
+.container-fluid .tab-content .tab-content-inner .message-wrapper .input-outer {
   position: relative;
   width: 420px;
 }
 
-.container-fluid .tab-content .tab-content-inner .message-wrapper .input-outer .input{
+.container-fluid .tab-content .tab-content-inner .message-wrapper .input-outer .input {
   width: 100%;
   padding: 12px 14px 12px 44px;
   color: #8B90A0;
@@ -343,50 +329,50 @@ name: "myAccount_4"
   box-shadow: none;
 }
 
-.container-fluid .tab-content .tab-content-inner .message-wrapper .input-outer .input::placeholder{
+.container-fluid .tab-content .tab-content-inner .message-wrapper .input-outer .input::placeholder {
   color: #8B90A0;
 }
 
-.container-fluid .tab-content .tab-content-inner .message-wrapper .input-outer .search-icon{
+.container-fluid .tab-content .tab-content-inner .message-wrapper .input-outer .search-icon {
   position: absolute;
   top: 50%;
   left: 16px;
   transform: translate(0, -50%);
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom{
+.container-fluid .tab-content .tab-content-inner .row-custom {
   margin: 20px 0 130px 0;
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile {
   padding: 0 40px 0 0 !important;
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner {
 
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner .main-profile-outer{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner .main-profile-outer {
   border: 1px solid #F0F1F3;
   padding: 0;
-  /* height: 917px;
-  overflow-y: scroll; */
-}
-
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner .main-profile-outer .main-without-hover{
 
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner .main-profile-outer .main-hover{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner .main-profile-outer .main-without-hover {
+
+}
+
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner .main-profile-outer .main-hover {
   border-right: 3px solid transparent;
   transition: .3s;
 }
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner .main-profile-outer .main-active{
+
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner .main-profile-outer .main-active {
   background: linear-gradient(270deg, rgba(3, 133, 243, 0.1) 0%, rgba(3, 133, 243, 0) 100%);
   border-right: 3.5px solid #0385F3;
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner .main-profile-outer .profile-inner{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner .main-profile-outer .profile-inner {
   border-bottom: 1px solid #F0F1F3;
   display: flex;
   align-items: center;
@@ -396,7 +382,7 @@ name: "myAccount_4"
   transition: .3s;
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner .main-profile-outer .first-li{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner .main-profile-outer .first-li {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -404,84 +390,84 @@ name: "myAccount_4"
   padding-bottom: 20px;
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner .main-profile-outer .first-li .from{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner .main-profile-outer .first-li .from {
   font-size: 14px;
   line-height: 24px;
   color: #8B90A0;
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner .main-profile-outer .first-li .respond{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner .main-profile-outer .first-li .respond {
   font-size: 14px;
   line-height: 24px;
   color: #8B90A0;
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner .main-profile-outer .first-li .respond .responded-by{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner .main-profile-outer .first-li .respond .responded-by {
   font-size: 14px;
   line-height: 24px;
   color: #8B90A0;
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner .main-profile-outer .first-li .respond .slash{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner .main-profile-outer .first-li .respond .slash {
   font-size: 14px;
   line-height: 24px;
   color: #8B90A0;
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner .main-profile-outer .first-li .responded-time{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner .main-profile-outer .first-li .responded-time {
   font-size: 14px;
   line-height: 24px;
   color: #8B90A0;
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner .main-profile-outer .profile-inner{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner .main-profile-outer .profile-inner {
 
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner .main-profile-outer .profile-inner .profile-name{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner .main-profile-outer .profile-inner .profile-name {
   display: flex;
   align-items: center;
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner .main-profile-outer .profile-inner .profile-name .img-outer{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner .main-profile-outer .profile-inner .profile-name .img-outer {
   width: 40px;
   height: 40px;
 }
 
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner .main-profile-outer .profile-inner .profile-name .img-outer .img-inner{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner .main-profile-outer .profile-inner .profile-name .img-outer .img-inner {
   border-radius: 100%;
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner .main-profile-outer .profile-inner .profile-name .profile-name-inner{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner .main-profile-outer .profile-inner .profile-name .profile-name-inner {
   padding-left: 20px;
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner .main-profile-outer .profile-inner .profile-info{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner .main-profile-outer .profile-inner .profile-info {
   padding-left: 60px;
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner .main-profile-outer .profile-inner .profile-info .channel{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner .main-profile-outer .profile-inner .profile-info .channel {
   font-size: 14px;
   line-height: 24px;
   color: #555555;
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner .main-profile-outer .profile-inner .profile-info .date{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile .col-profile-inner .main-profile-outer .profile-inner .profile-info .date {
   font-size: 14px;
   line-height: 24px;
   color: #555555;
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details {
 
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner {
 
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .first-col{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .first-col {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -490,147 +476,147 @@ name: "myAccount_4"
   padding: 16px 60px 16px 60px;
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .first-col .profile-name{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .first-col .profile-name {
   display: flex;
   align-items: center;
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .first-col .profile-name .img-outer{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .first-col .profile-name .img-outer {
   width: 40px;
   height: 40px;
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .first-col .profile-name .img-outer .img-inner{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .first-col .profile-name .img-outer .img-inner {
   border-radius: 100%;
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .first-col .profile-name .profile-name-inner{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .first-col .profile-name .profile-name-inner {
   font-size: 14px;
   line-height: 24px;
   color: #555555;
   padding-left: 20px;
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .first-col .respond-by{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .first-col .respond-by {
   display: flex;
   align-items: center;
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .first-col .respond-by .respond-by-inner{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .first-col .respond-by .respond-by-inner {
   color: #8B90A0;
   font-size: 14px;
   line-height: 24px;
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .first-col .respond-by .username{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .first-col .respond-by .username {
   color: black;
   font-size: 14px;
   line-height: 24px;
   margin-left: 5px;
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .first-col .respond-date{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .first-col .respond-date {
   display: flex;
   align-items: center;
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .first-col .respond-date .respond-date-inner{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .first-col .respond-date .respond-date-inner {
   color: #8B90A0;
   font-size: 14px;
   line-height: 24px;
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .first-col .respond-date .username{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .first-col .respond-date .username {
   color: black;
   font-size: 14px;
   line-height: 24px;
   margin-left: 5px;
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .second-message{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .second-message {
   padding: 40px 0px 32px 0px;
   margin: 0 60px;
   border-bottom: 1px solid #D3D4D8;
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .second-message .message-title{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .second-message .message-title {
 
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .second-message .message-title .title-inner{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .second-message .message-title .title-inner {
 
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .second-message .message-title .title-inner .title-head{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .second-message .message-title .title-inner .title-head {
   font-size: 18px;
   line-height: 24px;
   color: black;
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .second-message .message-title .title-inner .title-desc{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .second-message .message-title .title-inner .title-desc {
   font-size: 16px;
   line-height: 24px;
   color: #8B90A0;
   margin: 10px 0 32px 0;
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .second-message .message-title .message-2nd-outer{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .second-message .message-title .message-2nd-outer {
 
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .second-message .message-title .message-2nd-outer .message-head{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .second-message .message-title .message-2nd-outer .message-head {
   font-size: 18px;
   line-height: 24px;
   color: black;
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .second-message .message-title .message-2nd-outer .message-desc{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .second-message .message-title .message-2nd-outer .message-desc {
   font-size: 16px;
   line-height: 24px;
   color: #8B90A0;
   padding: 10px 0 0 0;
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .respond-outer{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .respond-outer {
   margin: 0 60px;
   padding: 32px 0 0 0;
 }
 
-#my-account .container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .respond-outer .respond-desc-inner{
+#my-account .container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .respond-outer .respond-desc-inner {
   font-size: 18px;
   line-height: 24px;
   color: #8B90A0;
   padding: 0 0 10px 0;
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .respond-outer .respond-desc-inner .user-name{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .respond-outer .respond-desc-inner .user-name {
   color: #0385F3;
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .respond-outer .respond-desc{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .respond-outer .respond-desc {
   font-size: 16px;
   line-height: 24px;
   color: #8B90A0;
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .comment-outer{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .comment-outer {
   padding: 48px 0 0 0;
   margin: 0 60px;
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .comment-outer .textarea{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .comment-outer .textarea {
   padding: 16px;
   border: 1px solid #A1A4B1;
   width: 100%;
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .action{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .action {
   display: flex;
   justify-content: flex-end;
   margin: 0 60px;
 }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .action .send-btn{
+.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .action .send-btn {
   padding: 16px 32px;
   background-color: #0385F3;
   color: white;
@@ -642,27 +628,27 @@ name: "myAccount_4"
 
 @media (min-width: 320px) and (max-width: 1024px) {
 
-  .container-fluid .tab-content .tab-content-inner .row-custom{
-  margin: 20px 0 0px 0;
-}
+  .container-fluid .tab-content .tab-content-inner .row-custom {
+    margin: 20px 0 0px 0;
+  }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .first-col{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  border-bottom: 1px solid #C4C4C4;
-  padding: 16px 0px 16px 60px;
-}
+  .container-fluid .tab-content .tab-content-inner .row-custom .col-profile-details .col-profile-details-inner .first-col {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #C4C4C4;
+    padding: 16px 0px 16px 60px;
+  }
 
-.container-fluid{
-  padding: 0 15px !important;
-  margin-top: 32px;
-}
+  .container-fluid {
+    padding: 0 15px !important;
+    margin-top: 32px;
+  }
 
-.container-fluid .tab-content .tab-content-inner .row-custom .col-profile{
-  padding: 0 0px 0 0 !important;
-}
+  .container-fluid .tab-content .tab-content-inner .row-custom .col-profile {
+    padding: 0 0px 0 0 !important;
+  }
 
 
 }

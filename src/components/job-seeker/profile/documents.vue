@@ -16,7 +16,7 @@
         <div class="row">
           <div class="col-12 text-center">
             <a href="#">
-              <img src="../../../assets/upload.png" class="h-40 w-auto" />
+              <img src="../../../assets/upload.png" class="h-40 w-auto"/>
             </a>
           </div>
         </div>
@@ -32,9 +32,7 @@
               @change="selectFile"
               accept="/*"
             />
-            <!-- <input type="file" id="files" ref="my_files" multiple :name="DropYourFileshere" :disabled="isSaving" @change="filesChange"
 
-          accept="/*" class="input-file py-2"/> -->
           </div>
         </div>
         <div class="row">
@@ -43,19 +41,19 @@
           </div>
         </div>
       </div>
-       <div v-if="(fileList)" class="card">
-      <div class="card-header">List of Files</div>
-      <ul class="list-group list-group-flush">
-        <li
-          class="list-group-item"
-          v-for="(file, index) in fileList"
-          :key="index"
-        >
-        <a :href="file">{{ file }}</a>
-        </li>
-      </ul>
-    </div>
-      <hr />
+      <div v-if="(fileList)" class="card">
+        <div class="card-header">List of Files</div>
+        <ul class="list-group list-group-flush">
+          <li
+            class="list-group-item"
+            v-for="(file, index) in fileList"
+            :key="index"
+          >
+            <a :href="file">{{ file }}</a>
+          </li>
+        </ul>
+      </div>
+      <hr/>
 
       <div class="row float-right">
         <div class="col-12">
@@ -83,15 +81,17 @@
 <script>
 import axios from "axios";
 import UploadService from "./services/UploadFilesService";
+
 function hasErrors(fieldsError) {
   return Object.keys(fieldsError).some((field) => fieldsError[field]);
 }
+
 export default {
   name: "Documents",
   data() {
     return {
       hasErrors,
-      form: this.$form.createForm(this, { name: "File" }),
+      form: this.$form.createForm(this, {name: "File"}),
       selectedFiles: [],
       fileList: [],
     };
@@ -105,16 +105,14 @@ export default {
         },
       })
       .then((res) => {
-        console.log(res.data);
-        var fileNames=[];
-        if (res.data.certificates.length !=0 ){
-          res.data.certificates.map(item =>{
+        var fileNames = [];
+        if (res.data.certificates.length != 0) {
+          res.data.certificates.map(item => {
             let fileName = item.split('/');
             fileNames.push(fileName[3]);
           })
         }
         this.fileList = fileNames;
-        console.log("res of get req" ,this.fileList)
 
       })
       .catch((error) => {
@@ -125,53 +123,35 @@ export default {
     selectFile() {
       this.selectedFiles = this.$refs.file.files;
     },
-    // filesChange:  ()=>{
-    //    this.files = this.$refs.my_files.files;
-    //    let file = this.files[0].name;
-    //    console.log(file);
-    // },
+
     changed: function (step) {
       this.$store.commit("change", step);
     },
     userNameError() {
-      const { getFieldError, isFieldTouched } = this.form;
+      const {getFieldError, isFieldTouched} = this.form;
       return isFieldTouched("userName") && getFieldError("userName");
     },
     // Only show error after a field is touched.
     handleSubmit(e) {
       var that = this;
-      console.log("THESE FILES", this.selectedFiles);
       e.preventDefault();
 
       this.form.validateFields((err, values) => {
-        //   if (err)
-        //   {
-        //     this.$notification.open({
-        //   message: 'Document Attachment',
-        //   description:
-        //     'Document is  not attached',
-        //   onClick: () => {
-        //     console.log('Notification Clicked!');
-        //   }
-        // });
-        //     }
         if (!err) {
           const user = JSON.parse(localStorage.getItem("user"));
-          console.log(this);
           this.selectedFiles.user_id = user.user_id;
-          //  console.log("Received user: ", this.selectedFiles);
-          // let formData = new FormData();
-          //  console.log("theses are formData" , formData)
+
 
           this.$store.commit("change", 6);
-          // var data = that.selectedFiles;
-          // console.log("data body", data);
+
 
           let formData = new FormData();
           for (var i = 0; i < this.selectedFiles.length; i++) {
             let file = this.selectedFiles[i];
             formData.append("docs", file);
           }
+
+
           var config = {
             method: "post",
             url: `${process.env.VUE_ROOT_URL}/certificates/${user.user_id}`,
@@ -181,13 +161,10 @@ export default {
             },
             data: formData,
           };
-          // console.log("my data" ,data)
           axios(config)
             .then(function (response) {
-              console.log(JSON.stringify("my response", response));
             })
             .catch(function (error) {
-              console.log(error);
             });
 
           var config1 = {
@@ -199,19 +176,15 @@ export default {
             },
             data: formData,
           };
-          // console.log("my data" ,data)
           axios(config1)
             .then(function (response) {
-              console.log(JSON.stringify("my response", response));
             })
             .catch(function (error) {
-              console.log(error);
             });
         }
       });
     },
     onChange(date, dateString) {
-      console.log("date", dateString);
     },
   },
 };
@@ -223,15 +196,18 @@ export default {
   font-style: normal;
   font-size: 16px;
 }
+
 .support {
   font-family: Open Sans;
   font-style: normal;
   font-size: 14px;
 }
+
 .container {
   font-family: Open Sans;
   font-style: normal;
 }
+
 .input-file {
   margin: auto;
 }

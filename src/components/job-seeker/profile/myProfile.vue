@@ -153,7 +153,6 @@ export default {
       }
     })
       .then((res) => {
-        console.log("This is my res" ,res.data)
         this.name = res.data.name;
         this.linkedIn = res.data.linkedIn;
         this.nysc = res.data.nysc;
@@ -175,7 +174,6 @@ export default {
     })
       .then((res) => {
         this.countries = res.data
-        console.log("data", res.data)
       })
       .catch((error) => {
         console.error(error)
@@ -201,9 +199,7 @@ export default {
         message: 'Profile detail',
         description:
           'Please enter required field',
-        onClick: () => {
-          console.log('Notification Clicked!');
-        },
+
       });
         }
         if (!err) {
@@ -211,11 +207,8 @@ export default {
         message: 'Profile detail',
         description:
           'Profile details are added',
-        onClick: () => {
-          console.log('Notification Clicked!');
-        },
+
       });
-          console.log("Received values of form: ", values);
           this.$store.commit('change', 8)
            var data = values
 
@@ -232,11 +225,9 @@ export default {
           };
           axios(config)
             .then(function (response) {
-              console.log(JSON.stringify(response.data));
 
             })
             .catch(function (error) {
-              console.log(error);
             });
 
         }

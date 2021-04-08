@@ -191,7 +191,6 @@ export default {
         },
       })
       .then((res) => {
-        console.log("this is my Experience", res.data);
 
 
            setTimeout(() => loader.hide(), 500)
@@ -208,9 +207,7 @@ export default {
         message: 'Profile Summery detail',
         description:
           'Something went wrong',
-        onClick: () => {
-          console.log('Notification Clicked!');
-        },
+
       });
 
         }
@@ -237,16 +234,13 @@ export default {
           message: "Error",
           description: "Enter the required Field",
           onClick: () => {
-            console.log("Notification Clicked!");
           },
         });
       } else {
         this.$notification.open({
           message: "Experience detail",
           description: "Experience details are added",
-          onClick: () => {
-            console.log("Notification Clicked!");
-          },
+
         });
       }
     },
@@ -294,10 +288,8 @@ export default {
       };
       axios(config)
         .then(function (response) {
-          console.log(response.data);
         })
         .catch(function (error) {
-          console.log(error);
         });
 
       var config1 = {
@@ -313,7 +305,6 @@ export default {
         .then(function (response) {
 
           setTimeout(() => loader.hide(), 1000)
-          console.log(JSON.stringify(response.data));
 
 
         })
@@ -321,7 +312,6 @@ export default {
 
           setTimeout(() => loader.hide(), 1000)
 
-          console.log(error);
         });
 
     },
@@ -342,449 +332,3 @@ export default {
   },
 };
 </script>
-<!--<template>
-  <div class="container education" >
-       <form @submit="handleSubmit">
-
-
-     <h4 class="pl-2">Enter Experience Details</h4>
-      <div class="previous"
-      v-for="(info, counter) in infoExp"
-      v-bind:key="counter">
-
-      <div class="row justify-content-center mt-3">
-         <div class="col-12">
-
-          <h4  v-if="(counter>0)" class="pl-1">Enter Experience Details<span class="text-muted">{{counter}}</span> </h4>
-        </div>
-         <div class="form-group ml-1 col-12">
-      <div  class="form-group ml-1 col-12">
-
-
-          <span class="cross" v-if="(counter>0)" style="cursor:pointer;"  @click="deleteItem(counter) ">x</span>
-
-
-
-
-              <div class="row">
-          <div class="col-sm-6">
-            <a-input v-decorator="[`employerName`,]"
-                     type="text" class="form-control my-2 py-3" id="employer" placeholder="Employer Name"
-                     v-model="info.employerName"></a-input>
-          </div>
-          <div class="col-sm-6">
-            <select v-decorator="[`jobTitle`,]" v-model="info.jobTitle"
-                    type="text" class="form-control my-2" id="job_title">
-              <option value="" disabled selected hidden >Job Title</option>
-              <option value="junior dev" >Junior dev</option>
-              <option value="senior dev" >senior dev</option>
-            </select>
-          </div>
-        </div>
-           <div class="row">
-          <div class="col-sm-6">
-            <select v-decorator="[`city`,]" v-model="info.city"
-                    type="text" class="form-control my-2" id="city">
-              <option value="" disabled selected hidden>City</option>
-            </select>
-          </div>
-          <div class="col-sm-6">
-            <select v-decorator="[`country`,]" v-model="info.country"
-                    type="text" class="form-control my-2" id="country">
-              <option value=""  disabled selected hidden>Country</option>
-              <option v-for="country in countries" >{{country.countryName}}</option>
-            </select>
-          </div>
-        </div>
-  <div class="row">
-          <div class="col-sm-6">
-            <a-date-picker v-decorator="[`endDate`,]"
-                           class="my-2 w-100" @change="onChange" placeholder="End Date"
-                            v-model="info.endDate"/>
-          </div>
-          <div class="col-sm-6">
-            <a-date-picker v-decorator="[`startDate`,]"
-                           class="my-2 w-100" @change="onChange" placeholder="Start Date"
-                            v-model="info.startDate"/>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <a-textarea v-decorator="[`jobDescriptions`,]"
-                        class="my-2 form-control"
-                        name="text"
-                        id="education_details"
-                        cols="" rows="6"
-                        placeholder="Job Description"
-                        v-model="info.jobDescriptions"></a-textarea>
-          </div>
-        </div>
-
-
-           </div>
-      </div>
-
-        </div>
-
-      </div>
-
-
-
-       <div class="row float-right">
-        <div class="col-12">
-          <a-button class="login-button-style btn btn-light px-4" @click="changed(2)">Go Back</a-button>
-          <a-button type="primary"
-                   html-type="submit"
-                   class="login-button-style btn btn-primary px-4"
-                  @click="handleSubmit"
-
-                     >Proceed
-          </a-button>
-        </div>
-
-
-        </div>
-         </form>
-         <button class="btn btn-light mx-auto" @click="addItem">Add more Education</button>
-       <hr>
-  </div>
-</template>
-
-
-<script>
-import axios from "axios";
-
-function hasErrors(fieldsError) {
-  return Object.keys(fieldsError).some((field) => fieldsError[field]);
-}
-
-export default {
-  name: 'education',
-  props: {
-    msg: String
-  },
-
-
-  data(){
-    return {
-      hasErrors,
-       countries:[],
-       infoExp:[
-       {
-         employerName:'',
-         jobTitle:'',
-         city:'',
-         country:'',
-         endDate:'',
-         startDate:'',
-        jobDescriptions:''
-       }
-     ]
-
-    }
-  },
-  beforeCreate() {
-    axios.get('http://192.241.137.124:8000/api/v1/countries', {
-      headers: {
-        'Authorization': `Bearer ${localStorage.getItem('token')}`
-      }
-    })
-      .then((res) => {
-        this.countries = res.data
-        console.log("data", res.data)
-      })
-      .catch((error) => {
-        console.error(error)
-      })
-  },
-
-  methods : {
-    addItem(){
-      this.infoExp.push({
-       employerName:'',
-         jobTitle:'',
-         city:'',
-         country:'',
-         endDate:'',
-         startDate:'',
-        jobDescriptions:''
-      })
-    },
-
-    deleteItem(counter){
-      this.infoEdu.splice(counter,1);
-
-    },
-        changed: function (step) {
-      this.$store.commit('change', step)
-    },
-
-    // userNameError() {
-    //   const { getFieldError, isFieldTouched } = this.form;
-    //   return isFieldTouched("userName") && getFieldError("userName");
-    // },
-    // Only show error after a field is touched.
-    handleSubmit(e) {
-      console.log(JSON.stringify(this.infoEdu))
-
-        e.preventDefault();
-
-               console.log("Received values of form: ", JSON.stringify(this.infoExp));
-            // //  alert('!err function runs')
-            // let startDate = values.startDate.toDate()
-            // let coompletionDate = values.coompletionDate.toDate()
-            // values.startDate = startDate
-            // values.coompletionDate = coompletionDate
-
-            // console.log("Received values of form: ", values);
-           this.$store.commit('change', 4)
-            var data = JSON.stringify(this.infoExp)
-      var config = {
-        method: 'post',
-       url: 'http://192.241.137.124:8000/api/v1/experience',
-        headers: {
-          'Authorization':  `Bearer ${localStorage.getItem('token')}`,
-          'Content-Type': 'application/json'
-        },
-        data : data
-      };
-       axios(config)
-        .then(function (response) {
-          console.log(JSON.stringify(response.data));
-
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-
-    },
-    onChange(date, dateString) {
-      console.log("date", dateString);
-    },
-  }
-
-  }
-
-</script>
-<style scoped>
-@media screen and (max-width: 242px) {
-  .login-button-style {
-    margin-bottom: 5px ;
-    width: 100%;
-  }
-  .alignBtn{
-        margin-left: 472px;
-  }
-  .cross{
-    margin-left: 900px;
-  }
- .mx-auto
-  {
-    margin-right: auto !important;
-    margin-left: auto !important;
-  }
-
-}
-</style>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- <template>
-  <div class="container">
-    <a-form :form="form" @submit="handleSubmit">
-    <div class="row justify-content-center mt-3">
-      <div class="col-12">
-        <h4 class="pl-2">Enter Experience Details</h4>
-      </div>
-    </div>
-      <a-form-item>
-      <div class="form-group ml-2">
-        <div class="row">
-          <div class="col-sm-6">
-            <a-input v-decorator="[`employerName`,]"
-                     type="text" class="form-control my-2 py-3" id="employer" placeholder="Employer Name"></a-input>
-          </div>
-          <div class="col-sm-6">
-            <select v-decorator="[`jobTitle`,]"
-                    type="text" class="form-control my-2" id="job_title">
-              <option value="" disabled selected hidden>Job Title</option>
-              <option value="junior dev" >Junior dev</option>
-              <option value="senior dev" >senior dev</option>
-            </select>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-6">
-            <select v-decorator="[`City`,]"
-                    type="text" class="form-control my-2" id="city">
-              <option value="" disabled selected hidden>City</option>
-            </select>
-          </div>
-          <div class="col-sm-6">
-            <select v-decorator="[`country`,]"
-                    type="text" class="form-control my-2" id="country">
-              <option value=""  disabled selected hidden>Country</option>
-              <option v-for="country in countries" >{{country.countryName}}</option>
-            </select>
-          </div>
-        </div>
-        <div class="row py-1">
-          <div class="col-sm-6">
-            <select v-decorator="[`workType`,]"
-                    type="text" class="my-2 form-control" id="work_type">
-              <option value="" disabled selected hidden>Work Type</option>
-               <option value="Full time">Full time</option>
-                <option value="Part time">Part time</option>
-
-            </select>
-          </div>
-          <div class="col-sm-6">
-            <a-input v-decorator="[`salary`,]"
-                     type="text" class="form-control py-3 my-2" id="salary" placeholder="Salary"></a-input>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-6">
-            <a-date-picker v-decorator="[`endDate`,]"
-                           class="my-2 w-100" @change="onChange" placeholder="End Date"/>
-          </div>
-          <div class="col-sm-6">
-            <a-date-picker v-decorator="[`startDate`,]"
-                           class="my-2 w-100" @change="onChange" placeholder="Start Date"/>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6">
-            <a-textarea v-decorator="[`jobDescriptions`,]"
-                        class="my-2 form-control"
-                        name="text"
-                        id="education_details"
-                        cols="" rows="6"
-                        placeholder="Job Description"></a-textarea>
-          </div>
-        </div>
-        <div class="row justify-content-center text-center my-3">
-          <div class="col-12">
-            <button class="btn btn-light">
-              Add More Education
-            </button>
-          </div>
-        </div>
-      </div>
-      </a-form-item>
-    <hr>
-    <div class="row float-right">
-      <div class="col-12">
-        <a-button class="login-button-style btn btn-light px-4" @click="changed(2)">Go Back</a-button>
-        <a-button type="primary"
-                  html-type="submit"
-                  class="login-button-style btn btn-primary px-4"
-                  :disabled="hasErrors(form.getFieldsError())">Proceed</a-button>
-      </div>
-    </div>
-    </a-form>
-  </div>
-</template>
-
-<script>
-import axios from "axios";
-
-function hasErrors(fieldsError) {
-  return Object.keys(fieldsError).some((field) => fieldsError[field]);
-}
-export default {
-name: "experience",
-
-  data() {
-    return {
-      hasErrors,
-      form: this.$form.createForm(this, { name: "employerName jobTitle city country workType salary endDate startDate jobDetails" }),
-      countries:[]
-    };
-  },
-
-  beforeCreate() {
-    axios.get('http://192.241.137.124:8000/api/v1/countries', {
-      headers: {
-        'Authorization': `Bearer ${localStorage.getItem('token')}`
-      }
-    })
-      .then((res) => {
-        this.countries = res.data
-        console.log("data", res.data)
-      })
-      .catch((error) => {
-        console.error(error)
-      })
-  },
-
-  methods:{
-    changed: function(step) {
-      this.$store.commit('change', step)
-    },
-    handleSubmit(e) {
-      e.preventDefault();
-      this.form.validateFields((err, values) => {
-        if (!err) {
-          let startDate = values.startDate.toDate()
-          let endDate = values.endDate.toDate()
-          values.startDate = startDate
-          values.endDate = endDate
-          console.log("Received values of form: ", values);
-          this.$store.commit('change', 4)
-
-          var data = values
-
-          console.log("data body", data)
-          var config = {
-            method: 'post',
-            url: 'http://192.241.137.124:8000/api/v1/experience',
-            headers: {
-            'Authorization': `Bearer ${localStorage.getItem('token')}`,
-              'Content-Type': 'application/json'
-            },
-            data : data
-          };
-          axios(config)
-            .then(function (response) {
-              console.log(JSON.stringify(response.data));
-
-            })
-            .catch(function (error) {
-              console.log(error);
-            });
-        }
-      });
-    },
-    onChange(date, dateString) {
-      console.log(date, dateString);
-    },
-  }
-}
-</script>
-
-<style scoped>
-@media screen and (max-width: 240px){
-.login-button-style{
-  width: 100%;
-  margin-bottom: 5px;
-}
-}
-</style>

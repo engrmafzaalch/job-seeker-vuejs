@@ -5,7 +5,7 @@
     </div>
     <div class="display-flex justify-content-space-between align-item-center">
       <div>
-        <img :src="require('@/assets/' + image + '')" alt="" />
+        <img :src="require('@/assets/' + image + '')" alt=""/>
       </div>
       <div class="mr-25">
         <span class="featured-jobs-right-title"> Front-end Developer </span>
@@ -51,6 +51,7 @@ export default {
   font-size: 14px;
   color: #fafafa;
 }
+
 .part-time-label-box {
   background: #0084f4;
   border-radius: 2px;
@@ -58,15 +59,19 @@ export default {
   height: 24px;
   align-items: center;
 }
+
 .ml-10 {
   margin-left: 10px;
 }
+
 .position-relative {
   position: relative;
 }
+
 .position-absolute {
   position: absolute;
 }
+
 .new-featured-box {
   text-align: center;
   padding: 0px 8px;
@@ -78,6 +83,7 @@ export default {
   background: #ff4c68;
   border-radius: 2px;
 }
+
 .color-new-featured-job-text {
   font-family: Open Sans;
   font-style: normal;
@@ -85,6 +91,7 @@ export default {
   font-size: 14px;
   color: #fafafa;
 }
+
 .featured-job-box {
   background: #ffffff;
   /* UI / 03 */
@@ -94,27 +101,35 @@ export default {
   border-radius: 10px;
   padding: 17px 21px 17px 21px;
 }
+
 .color-map-featured-jobs {
   color: #a1a4b1;
 }
+
 .mt-32 {
   margin-top: 32px;
 }
+
 .display-flex {
   display: flex;
 }
+
 .align-item-center {
   align-items: center;
 }
+
 .mt-30 {
   margin-top: 30px;
 }
+
 .justify-content-space-between {
   justify-content: space-between;
 }
+
 .mr-25 {
   margin-right: 25px;
 }
+
 .featured-jobs-right-title {
   font-family: Open Sans;
   font-style: normal;
@@ -122,6 +137,7 @@ export default {
   font-size: 16px;
   color: #000000;
 }
+
 .location-featured-jobs {
   font-family: Open Sans;
   font-style: normal;

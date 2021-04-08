@@ -260,7 +260,6 @@ export default {
   },
   methods: {
     handleChange(value) {
-      console.log(`selected ${value}`);
     },
   },
 }

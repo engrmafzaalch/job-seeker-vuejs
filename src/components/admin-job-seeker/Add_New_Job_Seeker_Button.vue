@@ -55,7 +55,6 @@ name: "Add_New_Job_Seeker_Button",
       this.visible = false;
     },
     handleOk(e) {
-      console.log(e);
       this.visible = false;
     },
   }

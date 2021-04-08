@@ -184,7 +184,6 @@ export default {
         },
       })
       .then((res) => {
-        console.log("MY projects are here" ,res.data);
         this.project = res.data
 
         if(res.status==201) {
@@ -198,9 +197,7 @@ export default {
         message: 'Profile Summery detail',
         description:
           'Something went wrong',
-        onClick: () => {
-          console.log('Notification Clicked!');
-        },
+
       });
 
         }
@@ -226,17 +223,13 @@ export default {
         this.$notification.open({
           message: "Error",
           description: "Please Enter the required Field",
-          onClick: () => {
-            console.log("Notification Clicked!");
-          },
+
         });
       } else {
         this.$notification.open({
           message: "Project details",
           description: "Projects details are added",
-          onClick: () => {
-            console.log("Notification Click!");
-          },
+
         });
       }
     },
@@ -283,10 +276,8 @@ export default {
       };
       axios(config)
         .then(function (response) {
-          console.log(response.data);
         })
         .catch(function (error) {
-          console.log(error);
         });
 
       var config1 = {

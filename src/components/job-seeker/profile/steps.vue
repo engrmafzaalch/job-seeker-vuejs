@@ -64,18 +64,7 @@ export default {
   },
 
   beforeCreate() {
-    // axios.get('http://192.241.137.124:8000/api/v1/countries', {
-    //   headers: {
-    //     'Authorization': `Bearer ${localStorage.getItem('token')}`
-    //   }
-    // })
-    //   .then((res) => {
-    //     this.countries = res.data
-    //     console.log("data", res.data)
-    //   })
-    //   .catch((error) => {
-    //     console.error(error)
-    //   })
+
   },
 
 }

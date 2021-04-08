@@ -247,7 +247,6 @@ export default {
         .then((res) => {
           this.users = res.data
           this.filteredData= res.data
-          console.log('alldata',res.data[0])
         })
         .catch((error) => {
           console.error(error)
@@ -259,7 +258,6 @@ export default {
   },
   methods: {
     fileredcolumns(search) {
-      console.log(JSON.stringify(this.users), search);
       this.filteredData = this.users.filter(user => {
         return !search || (user.name || "").toLowerCase().indexOf(search.toLowerCase()) > -1
       })

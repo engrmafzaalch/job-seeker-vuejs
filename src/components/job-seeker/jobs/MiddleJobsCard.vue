@@ -366,24 +366,28 @@ export default {
   border-radius: 2px;
   color: #FAFAFA;
 }
-@media screen and (max-width: 1037px){
+
+@media screen and (max-width: 1037px) {
   .web-development {
     width: 90px;
   }
 }
-@media screen and (max-width: 1315px) and (min-width: 991px){
-.front-end-developer {
-  padding-left: 20px;
+
+@media screen and (max-width: 1315px) and (min-width: 991px) {
+  .front-end-developer {
+    padding-left: 20px;
+  }
 }
+
+@media screen and (max-width: 768px) and (min-width: 332px) {
+  .web-development {
+    width: 200px;
+  }
 }
-@media screen and (max-width: 768px) and (min-width: 332px){
-.web-development {
-  width: 200px;
-}
-}
-@media screen and (max-width: 331px){
-.web-development {
-  width: 120px;
-}
+
+@media screen and (max-width: 331px) {
+  .web-development {
+    width: 120px;
+  }
 }
 </style>

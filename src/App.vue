@@ -15,7 +15,6 @@ import { index } from './store/store'
 export default {
   name: "App",
   mounted(){
-    console.log('ye link h ' , process.env.VUE_ROOT_URL);
   },
   store: index,
   components: { Header, Footer },

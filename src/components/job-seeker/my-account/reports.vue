@@ -1,31 +1,11 @@
 <template>
-<div class="container-fluid">
-  <div class="wrapper">
-    <div class="payment-received">
-      <div class="received-heading">
-        <strong>Payments Received</strong>
-        <a class="action-btn approve-btn" href="">
-          <span>Payment Received</span>
-          <span><svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M1.5 11L6.5 6L1.5 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-</span>
-        </a>
-      </div>
-    </div>
-    <div class="registration">
-      <div class="received-heading">
-        <strong>Registrations</strong>
-        <div class="action">
+  <div class="container-fluid">
+    <div class="wrapper">
+      <div class="payment-received">
+        <div class="received-heading">
+          <strong>Payments Received</strong>
           <a class="action-btn approve-btn" href="">
-            <span>Jobseeker Registrations</span>
-            <span><svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M1.5 11L6.5 6L1.5 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-</span>
-          </a>
-          <a class="action-btn approve-btn second" href="">
-            <span>Recruiter Registrations</span>
+            <span>Payment Received</span>
             <span><svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M1.5 11L6.5 6L1.5 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
@@ -33,50 +13,73 @@
           </a>
         </div>
       </div>
-    </div>
-    <div class="payment-received">
-      <div class="received-heading">
-        <strong>Registrations</strong>
-        <div class="action">
-          <a class="action-btn approve-btn" href="">
-            <span>Profile Shortlisting</span>
-            <span><svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <div class="registration">
+        <div class="received-heading">
+          <strong>Registrations</strong>
+          <div class="action">
+            <a class="action-btn approve-btn" href="">
+              <span>Jobseeker Registrations</span>
+              <span><svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M1.5 11L6.5 6L1.5 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 </span>
-          </a>
-          <a class="action-btn approve-btn second" href="">
-            <span>Job Postings</span>
-            <span><svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+            </a>
+            <a class="action-btn approve-btn second" href="">
+              <span>Recruiter Registrations</span>
+              <span><svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M1.5 11L6.5 6L1.5 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>
 </span>
-          </a>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="payment-received">
+        <div class="received-heading">
+          <strong>Registrations</strong>
+          <div class="action">
+            <a class="action-btn approve-btn" href="">
+              <span>Profile Shortlisting</span>
+              <span><svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1.5 11L6.5 6L1.5 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</span>
+            </a>
+            <a class="action-btn approve-btn second" href="">
+              <span>Job Postings</span>
+              <span><svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1.5 11L6.5 6L1.5 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 </template>
 
 <script>
 export default {
-name: "reports"
+  name: "reports"
 }
 
 </script>
 
 <style scoped>
-.container-fluid{
+.container-fluid {
 
 }
-.container-fluid .wrapper{
+
+.container-fluid .wrapper {
   padding: 0 80px;
 }
-.container-fluid .wrapper{
+
+.container-fluid .wrapper {
   margin-top: 48px;
 }
-.container-fluid .wrapper .payment-received{
+
+.container-fluid .wrapper .payment-received {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -89,7 +92,8 @@ name: "reports"
   margin-bottom: 10px;
   flex-wrap: wrap;
 }
-.registration{
+
+.registration {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -102,7 +106,8 @@ name: "reports"
   margin-bottom: 10px;
   flex-wrap: wrap;
 }
-.approve-btn{
+
+.approve-btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -113,54 +118,57 @@ name: "reports"
   color: white;
   margin-top: 32px;
 }
-.approve-btn svg{
-  margin-left: 10px;
-}
-.second{
+
+.approve-btn svg {
   margin-left: 10px;
 }
 
-.container-fluid .wrapper .payment-received .action{
+.second {
+  margin-left: 10px;
+}
+
+.container-fluid .wrapper .payment-received .action {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
-.container-fluid .wrapper .registration .action{
+.container-fluid .wrapper .registration .action {
   display: flex;
   justify-content: flex-start;
   align-items: center;
 }
 
 @media (min-width: 320px) and (max-width: 1024px) {
-  .container-fluid .wrapper{
-  padding: 0 15px !important;
-}
+  .container-fluid .wrapper {
+    padding: 0 15px !important;
+  }
 
-.container-fluid .wrapper .payment-received .action{
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-wrap: wrap;
-}
+  .container-fluid .wrapper .payment-received .action {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+  }
 
-.container-fluid .wrapper .registration .action{
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-wrap: wrap;
-}
+  .container-fluid .wrapper .registration .action {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+  }
 
-.registration{
-  width: 100%;
-}
+  .registration {
+    width: 100%;
+  }
 
-.approve-btn{
-  margin-left: 0;
-}
-.container-fluid .wrapper .payment-received{
-  width: 100%;
-}
+  .approve-btn {
+    margin-left: 0;
+  }
+
+  .container-fluid .wrapper .payment-received {
+    width: 100%;
+  }
 
 }
 

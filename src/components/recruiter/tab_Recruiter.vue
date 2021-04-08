@@ -30,7 +30,6 @@ export default {
   },
   methods: {
     callback(key) {
-      console.log(key);
     },
   },
 }

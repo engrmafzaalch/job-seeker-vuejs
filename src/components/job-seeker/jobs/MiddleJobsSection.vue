@@ -20,33 +20,21 @@
           </span>
         </div>
         <div class="">
-          <img src="../../../assets/Vector (3).png" alt="" />
+          <img src="../../../assets/Vector (3).png" alt=""/>
         </div>
       </div>
     </div>
     <div class="">
-      <middle-jobs-card :isFeatured="true" :image="`Rectangle 11 (9).png`" />
+      <middle-jobs-card :isFeatured="true" :image="`Rectangle 11 (9).png`"/>
     </div>
-    <!-- <div class="mt-44">
-      <div class="display-flex align-item-center">
-        <div class="box-pagination">
-          <span><i class="fas fa-caret-left"></i></span>
-        </div>
-        <div class="box-pagination"><span>1</span></div>
-        <div class="box-pagination"><span>2</span></div>
-        <div class="box-pagination"><span>3</span></div>
-        <div class="box-pagination">
-          <span><i class="fas fa-caret-right"></i></span>
-        </div>
-      </div>
-    </div> -->
   </div>
 </template>
 
 <script>
 import MiddleJobsCard from "./MiddleJobsCard";
+
 export default {
-  components: { MiddleJobsCard },
+  components: {MiddleJobsCard},
 };
 </script>
 
@@ -58,12 +46,15 @@ export default {
   border: 1px solid #a1a4b1;
   border-radius: 2px;
 }
+
 .position-relative {
   position: relative;
 }
+
 .position-absolute {
   position: absolute;
 }
+
 .new-featured-box-main-jobs {
   text-align: center;
   padding: 0px 8px;
@@ -75,6 +66,7 @@ export default {
   background: #ff4c68;
   border-radius: 2px;
 }
+
 .color-new-featured-job-text {
   font-family: Open Sans;
   font-style: normal;
@@ -82,12 +74,15 @@ export default {
   font-size: 14px;
   color: #fafafa;
 }
+
 .ml-15 {
   margin-left: 15px;
 }
+
 .mt-44 {
   margin-top: 44px;
 }
+
 .sort-by-relevant {
   font-family: Open Sans;
   font-style: normal;
@@ -96,12 +91,15 @@ export default {
   color: #4e4e5a;
   margin-right: 1px;
 }
+
 .ml-22 {
   margin-left: 22px;
 }
+
 .padding-main-jobs-section {
   padding: 64px 5px 0 5px;
 }
+
 .total-no-featured-jobs {
   font-family: Open Sans;
   font-style: normal;
@@ -109,9 +107,11 @@ export default {
   font-size: 16px;
   color: #8b90a0;
 }
+
 .display-flex {
   display: flex;
 }
+
 .modify-search-text {
   font-family: Open Sans;
   font-style: normal;
@@ -124,15 +124,13 @@ export default {
   color: #0084f4;
   text-decoration-line: underline;
 }
+
 .justify-content-space-between {
   justify-content: space-between;
 }
+
 .text-align-center {
   text-align: center;
 }
-/*@media screen and (max-width: 991px) and (min-width: 767px){*/
-/*.container {*/
-/*  width: 100%;*/
-/*}*/
-/*}*/
+
 </style>
