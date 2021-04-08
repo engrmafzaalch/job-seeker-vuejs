@@ -276,43 +276,39 @@ export default {
         })
         // alert(JSON.stringify(temp));
       }
-
-      var config = {
-        method: "post",
-        url: `${process.env.VUE_ROOT_URL}/experience`,
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-          "Content-Type": "application/json",
-        },
-        data: {experience: temp},
-      };
-      axios(config)
-        .then(function (response) {
-        })
-        .catch(function (error) {
-        });
-
-      var config1 = {
-        method: 'put',
-        url: `${process.env.VUE_ROOT_URL}/experience/${user.user_id}`,
-        headers: {
-          'Authorization':  `Bearer ${localStorage.getItem('token')}`,
-          'Content-Type': 'application/json'
-        },
-        data : {experience: temp}
-      };
-      axios(config1)
-        .then(function (response) {
-
-          setTimeout(() => loader.hide(), 1000)
-
-
-        })
-        .catch(function (error) {
-
-          setTimeout(() => loader.hide(), 1000)
-
-        });
+      if(this.$data.experience.length !== 0 && this.$data.experience[0].id) {
+        var config = {
+          method: "post",
+          url: `${process.env.VUE_ROOT_URL}/experience`,
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+            "Content-Type": "application/json",
+          },
+          data: {experience: temp},
+        };
+        axios(config)
+          .then(function (response) {
+          })
+          .catch(function (error) {
+          });
+      }else{
+        var config1 = {
+          method: 'put',
+          url: `${process.env.VUE_ROOT_URL}/experience/${user.user_id}`,
+          headers: {
+            'Authorization':  `Bearer ${localStorage.getItem('token')}`,
+            'Content-Type': 'application/json'
+          },
+          data : {experience: temp}
+        };
+        axios(config1)
+          .then(function (response) {
+            setTimeout(() => loader.hide(), 1000)
+          })
+          .catch(function (error) {
+            setTimeout(() => loader.hide(), 1000)
+          });
+      }
 
     },
     onReset() {
