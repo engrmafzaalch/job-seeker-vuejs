@@ -90,7 +90,7 @@ let router = new Router({
       component: AdminJobSeeker,
       meta: {
         requiresAuth: true,
-        authorize: Role["app-admin"]
+        authorize: [Role["app-admin"]]
       }
     },
     {
@@ -131,20 +131,9 @@ let router = new Router({
       path: '/my-account',
       name: 'Steps',
       component: Steps,
-// beforeEnter:(to, from, next) => {
-// if (roles.includes('app-admin')) {
-// if (index.getters.isLoggedIn) {
-// next()
-// return
-// }
-// next('/job-seeker/login')
-// } else {
-// next()
-// }
-// },
       meta: {
         requiresAuth: true,
-        authorize: [Role["app-admin"]]
+        authorize: [Role["app-admin"],Role["app-jobseeker"]]
 
       }
     },
@@ -455,85 +444,28 @@ let router = new Router({
 
 router.beforeEach((to, from, next) => {
 
-
-  const { authorize } = to.meta;
-  const currentUser = localStorage.getItem("user")
-
-
-  var token = localStorage.getItem("token")
-  console.log("token",token)
-
-
-  debugger
-  if(token){
-    var decode = jwt_decode(token)
-    var roles = decode.realm_access.roles
-    console.log("roles",roles)
-    debugger
-    if (to.matched.some(record => record.meta.authorize &&record.meta.requiresAuth)) {
-      debugger
-
-
-        var Roless = Object.keys(Role);
-        debugger
-        var found = false;
-        var roleName = []
-        for (var i = 0; i < Roless.length; i++) {
-          if (roles.indexOf(Roless[i]) > -1) {
-            debugger
-            found = true;
-            roleName = Roless[i]
-            debugger
-            break;
+  const {authorize, requiresAuth} = to.meta;
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    var token = localStorage.getItem("token")
+    if (token) {
+      var decode = jwt_decode(token)
+      var roles = decode.realm_access.roles
+      if (authorize && authorize.length) {
+        for (var i = 0; i < authorize.length; i++) {
+          if (roles.indexOf(authorize[i]) > -1) {
+            next();
+            return;
           }
         }
-        console.log("roleName", roleName)
-
-          if(roleName !== Role["app-admin"]){
-            next()
-          }
-
-          debugger
-          if(roleName !== Role["app-jobseeker"]){
-            next()
-          }
-          debugger
-
-
-        return
-
-      next('/')
-    } else {
-      next()
+        next("/")
+      }
+    }else{
+      next('job-seeker/login')
     }
-  }
-  else {
+  } else {
     next()
   }
 
 })
 export default router
-//
-// if (localStorage.getItem("token")){
-//   this.token = JSON.parse(localStorage.getItem("token"))
-//
-//   var decode = jwt_decode(this.token)
-//   var roles = decode.realm_access.roles
-//   console.log("roles",roles)
-//   var Roless = Object.keys(Role);
-//   debugger
-//   var found = false;
-//   var roleName = []
-//   for (var i = 0; i < Roless.length; i++) {
-//     if (roles.indexOf(Roless[i]) > -1) {
-//       debugger
-//       found = true;
-//       roleName = Roless[i]
-//       break;
-//     }
-//   }
-// }
-// this.roleName = roleName
-//
-// }
 
