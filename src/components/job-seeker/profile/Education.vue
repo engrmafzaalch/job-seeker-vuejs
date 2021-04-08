@@ -168,45 +168,47 @@ export default {
           temp.push(item);
         })
       }
-      var config = {
-        method: 'post',
-        url: `${process.env.VUE_ROOT_URL}/education`,
-        headers: {
-          'Authorization': `Bearer ${localStorage.getItem('token')}`,
-          'Content-Type': 'application/json'
-        },
-        data: {education: temp}
-      };
-      axios(config)
-        .then(function (response) {
-          console.log((response.data));
+      if(this.$data.education.length !== 0 && this.$data.education[0].id){
+        var config1 = {
+          method: 'put',
+          url: `${process.env.VUE_ROOT_URL}/education/${user.user_id}`,
+          headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`,
+            'Content-Type': 'application/json'
+          },
+          data: {education: temp}
 
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
+        };
+        axios(config1)
+          .then(function (response) {
 
-      var config1 = {
-        method: 'put',
-        url: `${process.env.VUE_ROOT_URL}/education/${user.user_id}`,
-        headers: {
-          'Authorization': `Bearer ${localStorage.getItem('token')}`,
-          'Content-Type': 'application/json'
-        },
-        data: {education: temp}
-
-      };
-      axios(config1)
-        .then(function (response) {
-
-          setTimeout(() => loader.hide(), 1000)
-          console.log(JSON.stringify(response.data));
+            setTimeout(() => loader.hide(), 1000)
+            console.log(JSON.stringify(response.data));
 
 
-        })
-        .catch(function (error) {
-          setTimeout(() => loader.hide(), 1000)
-        });
+          })
+          .catch(function (error) {
+            setTimeout(() => loader.hide(), 1000)
+          });
+      }else {
+        var config = {
+          method: 'post',
+          url: `${process.env.VUE_ROOT_URL}/education`,
+          headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`,
+            'Content-Type': 'application/json'
+          },
+          data: {education: temp}
+        };
+        axios(config)
+          .then(function (response) {
+            console.log((response.data));
+
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+      }
     },
     onReset() {
       // reset form validation errors
