@@ -266,21 +266,6 @@ export default {
       }
 
       if(this.$data.project.length !== 0 && this.$data.project[0].id) {
-        var config = {
-          method: "post",
-          url: `${process.env.VUE_ROOT_URL}/project`,
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-            "Content-Type": "application/json",
-          },
-          data: {project: temp},
-        };
-        axios(config)
-          .then(function (response) {
-          })
-          .catch(function (error) {
-          });
-      }else{
         var config1 = {
           method: 'put',
           url: `${process.env.VUE_ROOT_URL}/project/${user.user_id}`,
@@ -301,6 +286,21 @@ export default {
           .catch(function (error) {
             setTimeout(() => loader.hide(), 1000)
             console.log(error);
+          });
+      }else{
+        var config = {
+          method: "post",
+          url: `${process.env.VUE_ROOT_URL}/project`,
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+            "Content-Type": "application/json",
+          },
+          data: {project: temp},
+        };
+        axios(config)
+          .then(function (response) {
+          })
+          .catch(function (error) {
           });
       }
     },
