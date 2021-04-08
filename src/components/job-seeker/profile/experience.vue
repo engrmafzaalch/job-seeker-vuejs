@@ -43,7 +43,8 @@
                   placeholder="Employer Name"
                 >
                   <a-option value="" disabled selected hidden
-                    >Job Title</a-option
+                  >Job Title
+                  </a-option
                   >
                   <option value="junior dev">Junior dev</option>
                   <option value="senior dev">senior dev</option>
@@ -138,7 +139,7 @@
           Add more Experience
         </button>
       </div>
-      <hr />
+      <hr/>
       <div class="row float-right">
         <button
           class="login-button-style btn btn-light px-5"
@@ -161,7 +162,7 @@
 
 <script>
 import axios from "axios";
-import { required, email } from "vuelidate/lib/validators";
+import {required, email} from "vuelidate/lib/validators";
 
 export default {
   data() {
@@ -181,9 +182,9 @@ export default {
   },
   beforeCreate() {
     const user = JSON.parse(localStorage.getItem("user"));
-     let loader = this.$loading.show({
-        loader: 'dots'
-      });
+    let loader = this.$loading.show({
+      loader: 'dots'
+    });
     axios
       .get(`${process.env.VUE_ROOT_URL}/experience/${user.user_id}`, {
         headers: {
@@ -193,22 +194,22 @@ export default {
       .then((res) => {
 
 
-           setTimeout(() => loader.hide(), 500)
-        this.experience = res.data;
-        if(res.status==201) {
+        setTimeout(() => loader.hide(), 500)
+        res.data.length == 0 ?
+          this.experience :
           this.experience = res.data;
-        }
+
       })
       .catch((error) => {
         console.error(error);
-               setTimeout(() => loader.hide(), 500)
-        if(res.status!==200 || res.status!==201 || res.status!==204 ){
+        setTimeout(() => loader.hide(), 500)
+        if (res.status !== 200 || res.status !== 201 || res.status !== 204) {
           this.$notification.open({
-        message: 'Profile Summery detail',
-        description:
-          'Something went wrong',
+            message: 'Profile Summery detail',
+            description:
+              'Something went wrong',
 
-      });
+          });
 
         }
 
@@ -217,13 +218,13 @@ export default {
   validations: {
     experience: {
       $each: {
-        employerName: { required },
-        jobTitle: { required },
-        endDate: { required },
-        startDate: { required },
-        city: { required },
-        country: { required },
-        jobDescription: { required },
+        employerName: {required},
+        jobTitle: {required},
+        endDate: {required},
+        startDate: {required},
+        city: {required},
+        country: {required},
+        jobDescription: {required},
       },
     },
   },
@@ -265,26 +266,26 @@ export default {
       this.$store.commit("change", 4);
       var data = JSON.stringify(this.$data);
 
-      const user =   JSON.parse(localStorage.getItem('user'))
+      const user = JSON.parse(localStorage.getItem('user'))
 
       var temp = [];
-      if(this.$data.experience.length!==0){
-        this.$data.experience.map(item=>{
+      if (this.$data.experience.length !== 0) {
+        this.$data.experience.map(item => {
           item.user_id = user.user_id
           item.companyName = "jslabs"
           temp.push(item);
         })
         // alert(JSON.stringify(temp));
       }
-      if(this.$data.experience.length !== 0 && this.$data.experience[0].id) {
+      if (this.$data.experience.length !== 0 && this.$data.experience[0].id) {
         var config1 = {
           method: 'put',
           url: `${process.env.VUE_ROOT_URL}/experience/${user.user_id}`,
           headers: {
-            'Authorization':  `Bearer ${localStorage.getItem('token')}`,
+            'Authorization': `Bearer ${localStorage.getItem('token')}`,
             'Content-Type': 'application/json'
           },
-          data : {experience: temp}
+          data: {experience: temp}
         };
         axios(config1)
           .then(function (response) {
@@ -293,7 +294,7 @@ export default {
           .catch(function (error) {
             setTimeout(() => loader.hide(), 1000)
           });
-      }else{
+      } else {
         var config = {
           method: "post",
           url: `${process.env.VUE_ROOT_URL}/experience`,

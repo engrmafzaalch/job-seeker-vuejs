@@ -93,7 +93,7 @@ export default {
     };
   },
   async beforeCreate() {
-    try{
+    try {
       const user = JSON.parse(localStorage.getItem('user'));
       let loader = this.$loading.show({
         loader: 'dots'
@@ -104,9 +104,13 @@ export default {
         }
       });
       setTimeout(() => loader.hide(), 500)
-      this.education = res.data;
+      this.education
+      res.data.length == 0 ?
+        this.education :
+        this.education = res.data
 
-    }catch(error){
+
+    } catch (error) {
       setTimeout(() => loader.hide(), 500)
       this.$notification.open({
         message: 'Profile Summery detail',
@@ -168,7 +172,7 @@ export default {
           temp.push(item);
         })
       }
-      if(this.$data.education.length !== 0 && this.$data.education[0].id){
+      if (this.$data.education.length !== 0 && this.$data.education[0].id) {
         var config1 = {
           method: 'put',
           url: `${process.env.VUE_ROOT_URL}/education/${user.user_id}`,
@@ -190,7 +194,7 @@ export default {
           .catch(function (error) {
             setTimeout(() => loader.hide(), 1000)
           });
-      }else {
+      } else {
         var config = {
           method: 'post',
           url: `${process.env.VUE_ROOT_URL}/education`,

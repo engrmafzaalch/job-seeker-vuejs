@@ -1,4 +1,3 @@
-
 <template>
   <div class="container">
     <form @submit.prevent="onSubmit" @reset="onReset">
@@ -44,7 +43,8 @@
                   placeholder="Employer Name"
                 >
                   <a-option value="" disabled selected hidden
-                    >Job Title</a-option
+                  >Job Title
+                  </a-option
                   >
                   <option value="JS Labs">jslabs</option>
                 </select>
@@ -134,7 +134,7 @@
           Add more Projects
         </button>
       </div>
-      <hr />
+      <hr/>
       <div class="row float-right">
         <button
           class="login-button-style btn btn-light px-5"
@@ -157,7 +157,7 @@
 
 <script>
 import axios from "axios";
-import { required, email } from "vuelidate/lib/validators";
+import {required, email} from "vuelidate/lib/validators";
 
 export default {
   data() {
@@ -183,22 +183,26 @@ export default {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       })
-      .then((res) => {
-        this.project = res.data
 
-        if(res.status==201) {
+
+      .then((res) => {
+        this.project
+        res.data.length == 0 ?
+          this.project :
           this.project = res.data
-        }      })
+
+
+      })
       .catch((error) => {
         console.error(error);
-               setTimeout(() => loader.hide(), 500)
-        if(res.status!==200 || res.status!==201 || res.status!==204 ){
+        setTimeout(() => loader.hide(), 500)
+        if (res.status !== 200 || res.status !== 201 || res.status !== 204) {
           this.$notification.open({
-        message: 'Profile Summery detail',
-        description:
-          'Something went wrong',
+            message: 'Profile Summery detail',
+            description:
+              'Something went wrong',
 
-      });
+          });
 
         }
 
@@ -207,13 +211,13 @@ export default {
   validations: {
     project: {
       $each: {
-        clientName: { required },
-        employerName: { required },
-        endDate: { required },
-        projectDetail: { required },
-        projectStatus: { required },
-        projectTitle: { required },
-        startDate: { required },
+        clientName: {required},
+        employerName: {required},
+        endDate: {required},
+        projectDetail: {required},
+        projectStatus: {required},
+        projectTitle: {required},
+        startDate: {required},
       },
     },
   },
@@ -254,26 +258,26 @@ export default {
       this.$store.commit("change", 5);
       var data = JSON.stringify(this.$data);
 
-      const user =   JSON.parse(localStorage.getItem('user'))
+      const user = JSON.parse(localStorage.getItem('user'))
 
       var temp = [];
-      if(this.$data.project.length!==0){
-        this.$data.project.map(item=>{
+      if (this.$data.project.length !== 0) {
+        this.$data.project.map(item => {
           item.user_id = user.user_id
           temp.push(item);
         })
         // alert(JSON.stringify(temp));
       }
 
-      if(this.$data.project.length !== 0 && this.$data.project[0].id) {
+      if (this.$data.project.length !== 0 && this.$data.project[0].id) {
         var config1 = {
           method: 'put',
           url: `${process.env.VUE_ROOT_URL}/project/${user.user_id}`,
           headers: {
-            'Authorization':  `Bearer ${localStorage.getItem('token')}`,
+            'Authorization': `Bearer ${localStorage.getItem('token')}`,
             'Content-Type': 'application/json'
           },
-          data : {project: temp}
+          data: {project: temp}
         };
         axios(config1)
           .then(function (response) {
@@ -287,7 +291,7 @@ export default {
             setTimeout(() => loader.hide(), 1000)
             console.log(error);
           });
-      }else{
+      } else {
         var config = {
           method: "post",
           url: `${process.env.VUE_ROOT_URL}/project`,
