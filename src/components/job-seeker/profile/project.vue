@@ -265,44 +265,44 @@ export default {
         // alert(JSON.stringify(temp));
       }
 
-      var config = {
-        method: "post",
-        url: `${process.env.VUE_ROOT_URL}/project`,
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-          "Content-Type": "application/json",
-        },
-        data: {project: temp},
-      };
-      axios(config)
-        .then(function (response) {
-        })
-        .catch(function (error) {
-        });
+      if(this.$data.project.length !== 0 && this.$data.project[0].id) {
+        var config = {
+          method: "post",
+          url: `${process.env.VUE_ROOT_URL}/project`,
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+            "Content-Type": "application/json",
+          },
+          data: {project: temp},
+        };
+        axios(config)
+          .then(function (response) {
+          })
+          .catch(function (error) {
+          });
+      }else{
+        var config1 = {
+          method: 'put',
+          url: `${process.env.VUE_ROOT_URL}/project/${user.user_id}`,
+          headers: {
+            'Authorization':  `Bearer ${localStorage.getItem('token')}`,
+            'Content-Type': 'application/json'
+          },
+          data : {project: temp}
+        };
+        axios(config1)
+          .then(function (response) {
 
-      var config1 = {
-        method: 'put',
-        url: `${process.env.VUE_ROOT_URL}/project/${user.user_id}`,
-        headers: {
-          'Authorization':  `Bearer ${localStorage.getItem('token')}`,
-          'Content-Type': 'application/json'
-        },
-        data : {project: temp}
-      };
-      axios(config1)
-        .then(function (response) {
-
-          setTimeout(() => loader.hide(), 1000)
-          console.log(JSON.stringify(response.data));
+            setTimeout(() => loader.hide(), 1000)
+            console.log(JSON.stringify(response.data));
 
 
-        })
-        .catch(function (error) {
-
-          setTimeout(() => loader.hide(), 1000)
-
-          console.log(error);
-        });
+          })
+          .catch(function (error) {
+            setTimeout(() => loader.hide(), 1000)
+            console.log(error);
+          });
+      }
     },
     onReset() {
       // reset form validation errors
