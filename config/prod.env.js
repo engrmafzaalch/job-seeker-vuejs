@@ -1,5 +1,5 @@
 'use strict'
 module.exports = {
   NODE_ENV: '"production"',
-  VUE_ROOT_URL:'"http://192.241.137.124:8000/api/v1"'
+  VUE_ROOT_URL:"'https://jobportal.infohob.com/api/v1'"
 }
