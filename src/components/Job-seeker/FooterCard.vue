@@ -13,81 +13,81 @@
       </div>
     </div>
     <div
-      class="border-bottom pt-48px display-flex background-grey justify-content-space-around"
+      class="border-bottom pt-48px background-grey footer-container"
     >
-      <div>
+      <div class="footer-section">
         <div class="text-align-iniital">
           <span class="finds-job-footer-text">Find Jobs in</span>
         </div>
-        <div class="display-flex justify-content-space-between mt-24">
+        <div class="footer-text mt-24">
           <div>
             <span class="post-finds-jobs-in"> Business Analyst </span>
           </div>
           <div>
-            <span class="ml-40px post-finds-jobs-in"> Sr. Sales Manager </span>
+            <span class="mt-5 post-finds-jobs-in"> Sr. Sales Manager </span>
           </div>
         </div>
-        <div class="display-flex justify-content-space-between mt-24">
+        <div class="footer-text mt-24">
           <div>
             <span class="post-finds-jobs-in"> Java Developer </span>
           </div>
           <div>
-            <span class="ml-40px post-finds-jobs-in"> Fashion Designer </span>
+            <span class="mt-5 post-finds-jobs-in"> Fashion Designer </span>
           </div>
         </div>
-        <div class="display-flex justify-content-space-between mt-24">
+        <div class="footer-text mt-24">
           <div>
             <span class="post-finds-jobs-in"> Sr. Sales Executive </span>
           </div>
           <div>
-            <span class="ml-40px post-finds-jobs-in"> Sr. Admin </span>
+            <span class="mt-5 post-finds-jobs-in"> Sr. Admin </span>
           </div>
         </div>
-        <div class="display-flex justify-content-space-between mt-24">
+        <div class="footer-text mt-24">
           <div>
             <span class="post-finds-jobs-in"> Product Manager </span>
           </div>
           <div>
-            <span class="ml-40px post-finds-jobs-in">
+            <span class="mt-5 post-finds-jobs-in">
               Sr. Marketing Executive
             </span>
           </div>
         </div>
       </div>
-      <div>
+      <div class="footer-section">
         <div class="text-align-iniital">
           <span class="finds-job-footer-text">Find Jobs in</span>
         </div>
-        <div class="display-flex justify-content-space-between mt-24">
-          <div>
+        <div class="footer-text mt-24">
+          <div class="city">
             <span class="post-finds-jobs-in"> Nairobi </span>
           </div>
-          <div>
-            <span class="ml-40px post-finds-jobs-in"> Kampala </span>
+          <div class="city">
+            <span class="mt-5 post-finds-jobs-in"> Kampala </span>
           </div>
         </div>
-        <div class="display-flex justify-content-space-between mt-24">
-          <div>
+        <div class="footer-text mt-24">
+          <div class="city">
             <span class="post-finds-jobs-in"> Lagos </span>
           </div>
-          <div>
-            <span class="ml-40px post-finds-jobs-in"> Maputo </span>
+          <div class="city">
+            <span class="mt-5 post-finds-jobs-in"> Maputo </span>
           </div>
         </div>
-        <div class="display-flex justify-content-space-between mt-24">
-          <div>
+        <div class="footer-text mt-24">
+          <div class="city">
             <span class="post-finds-jobs-in"> Cape Town </span>
           </div>
-          <div>
-            <span class="ml-40px post-finds-jobs-in"> Casablanca </span>
+          <div class="city">
+            <span class="mt-5 post-finds-jobs-in"> Casablanca </span>
           </div>
         </div>
-        <div class="display-flex justify-content-space-between mt-24">
-          <div>
+        <div class="footer-text mt-24">
+          <div class="city">
             <span class="post-finds-jobs-in"> Accra </span>
           </div>
-          <div>
-            <span class="ml-40px post-finds-jobs-in"> Port Elizabeth </span>
+          <div class="city">
+            <span class=" post-finds-jobs-in"> Port Elizabeth </span>
           </div>
         </div>
       </div>
@@ -144,8 +144,8 @@ export default {
 .pt-48px {
   padding: 48px 0;
 }
-.ml-40px {
-  margin-left: 40px;
+.mt-5 {
+  margin-top: 10px!important;
 }
 .justify-content-space-between {
   justify-content: space-between;
@@ -171,5 +171,33 @@ export default {
   font-style: normal;
   font-weight: 600;
   font-size: 18px;
+}
+.footer-container{
+  padding:30px 80px;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap:wrap;
+}
+.footer-section{
+  flex:0 1 400px;
+  margin:10px 40px;
+}
+.footer-text{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap:wrap;
+}
+.city{
+  flex:1 1 auto;
+}
+@media only screen and (max-width: 767px) {
+  .header{
+    display:none;
+  }
+  .footer-container{
+    padding:30px 20px;
+  }
 }
 </style>

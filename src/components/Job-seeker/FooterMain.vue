@@ -93,4 +93,19 @@ export default {};
 .align-item-center {
   align-items: center;
 }
+@media only screen and (max-width: 767px) {
+  .padding-20px {
+    padding: 5px 0px 5px 0px!important;
+  }
+  .border-box-images {
+    padding: 5px;
+    margin-right: 5px;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .border-box-images {
+    padding: 2px;
+    margin-right: 3px;
+  }
+}
 </style>

@@ -3,7 +3,7 @@
     <!-- <img src="./assets/logo.png" /> -->
     <Header />
     <router-view />
-    <Footer />
+    <!-- <Footer /> -->
   </div>
 </template>
 
@@ -29,6 +29,11 @@ export default {
   /*text-align: center;*/
   color: #2c3e50;
   /* margin-top: 60px; */
+}
+.ant-form-item-control-wrapper{
+    display: inline-block;
+    vertical-align: top;
+    width: 100%!important;
 }
 @import "~bootstrap/dist/css/bootstrap.css";
 </style>

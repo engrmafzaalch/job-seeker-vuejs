@@ -1,6 +1,6 @@
 <template>
-  <div class="display-flex display-block-mobile">
-    <div class="left-side-search-box">
+  <div class="display-flex display-block-mobile hero-section">
+    <div class="left-side-search-box child1">
       <div class="title-font">
         <span> Aenean euismod bibendum laoreet </span>
       </div>
@@ -13,8 +13,8 @@
       <div class="search-box-all mt-30">
         <div class="searchbox-child-main">
           <a-form layout="inline" :form="form" @submit="handleSubmit">
-            <div class="display-flex">
-              <div>
+            <div class="search-btn-group">
+              <div class="search-btn2">
                 <a-form-item
                   :validate-status="userNameError() ? 'error' : ''"
                   :help="userNameError() || ''"
@@ -43,7 +43,7 @@
                 </a-form-item>
               </div>
 
-              <div>
+              <div class="search-btn1">
                 <a-form-item
                   :validate-status="userNameError() ? 'error' : ''"
                   :help="userNameError() || ''"
@@ -58,8 +58,9 @@
                   </a-select>
                 </a-form-item>
               </div>
-              <div>
-                <a-form-item
+              <div class="search-btn1">
+                <a-form-item 
+                  
                   :validate-status="userNameError() ? 'error' : ''"
                   :help="userNameError() || ''"
                 >
@@ -73,16 +74,18 @@
                   </a-select>
                 </a-form-item>
               </div>
-              <a-form-item>
-                <a-button
-                  type="primary"
-                  html-type="submit"
-                  class="search-button-style"
-                  :disabled="hasErrors(form.getFieldsError())"
-                >
-                  Search
-                </a-button>
-              </a-form-item>
+              <div class="search-btn1">
+                <a-form-item>
+                  <a-button
+                    type="primary"
+                    html-type="submit"
+                    class="search-button-style"
+                    :disabled="hasErrors(form.getFieldsError())"
+                  >
+                    Search
+                  </a-button>
+                </a-form-item>
+              </div>
             </div>
           </a-form>
           <!-- <div>input type 1</div>
@@ -117,7 +120,8 @@
         </div>
       </div>
     </div>
-    <div class="profile-box-parent display-non-tablet">
+    <!-- display-non-tablet -->
+    <div class="profile-box-parent child2">
       <div class="profile-box">
         <div class="display-flex align-item-center">
           <div>
@@ -283,10 +287,8 @@ export default {
   font-weight: 500;
   font-size: 14px;
   color: #8b90a0;
-  width: 100px;
 }
 .searchbox-style {
-  width: 220px;
   /* height: 48px; */
   border-radius: 4px;
   background: #ffffff;
@@ -294,6 +296,7 @@ export default {
   font-family: SF UI Display;
   font-style: normal;
   font-weight: 500;
+  width:100%;
   font-size: 14px;
 }
 .mt-30 {
@@ -399,6 +402,7 @@ hr {
 }
 .profile-box {
   height: 440px;
+  border: 1px solid #f0f1f3;
   width: 400px;
   border-radius: 8px;
   padding: 32px 20px 32px 20px;
@@ -507,9 +511,7 @@ input[type="range"]::-ms-fill-upper {
   .tablet-mt {
     margin-top: 30px;
   }
-  .searchbox-style {
-    width: 100px;
-  }
+
   .search-button-style {
     width: initial;
     font-size: 11px;
@@ -569,9 +571,6 @@ input[type="range"]::-ms-fill-upper {
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1025px) {
-  .searchbox-style {
-    width: 160px;
-  }
   .tablet-mt {
     margin-top: 20px;
   }
@@ -627,4 +626,85 @@ input[type="range"]::-ms-fill-upper {
     margin-top: 25px;
   }
 }
+.hero-section{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.hero-section .child1{
+  flex:0 1 902px;
+}
+.hero-section .child2{
+  flex:1 1 404px;
+}
+.search-btn-group{
+  display: flex;
+  flex-wrap: wrap;
+}
+.search-btn1{
+  flex:1 1 100px;
+  margin-right:10px;
+  
+}
+.search-btn2{
+  flex:2 2 200px;
+  margin-right:10px;
+}
+
+.ant-form-inline .ant-form-item {
+    display: inline-block;
+    margin-right: 16px;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+@media only screen and (max-width: 510px) {
+  .profile-box {
+   width: 291px; 
+  }
+  .title-font span{
+    font-size:36px;
+  }
+  .second-title{
+    font-size:17px;
+  }
+  .left-side-search-box{
+    padding: 30px 30px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .past-searches-result{
+    height: 25px;
+    padding: 1px 25px;
+  }
+    .left-side-search-box{
+    padding: 30px 30px;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .left-side-search-box{
+    padding: 30px 10px;
+  }
+}
+    
+@media only screen and (max-width: 767px) {
+  .hero-section .child2{
+    margin-top:0px;
+  }
+  .search-box-all {
+    max-width:600px;
+  }
+  .profile-box-parent {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+
+}
+
 </style>

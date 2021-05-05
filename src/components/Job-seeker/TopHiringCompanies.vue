@@ -1,6 +1,6 @@
 <template>
   <div class="mt-110 background-color-light">
-    <div class="pt-60">
+    <div class="pt-60 text-center">
       <span class="label-top-hiring-companie">Top Hiring Companies</span>
     </div>
     <div class="pb-50">

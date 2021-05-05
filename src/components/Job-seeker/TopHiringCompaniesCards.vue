@@ -1,16 +1,13 @@
 <template>
-  <div class="">
     <!-- <input type="checkbox" id="switch" class="checkbox" />
     <label for="switch" class="toggle">
       <p>Recent Jobs Featured Jobs</p>
     </label> -->
-    <div class="row">
-      <div class="col-12">
-        <div class="row mt-30px mlr-10">
-          <div class="col-3">
+    
+      <div class="compainy-container">
             <div class="jobs-cards">
               <div
-                class="pading-top-20px-right-80px align-item-center justify-content-space-around"
+                class="pading-top-20px-right-80px align-item-center justify-content-space-around text-center"
               >
                 <div class="text-align-left padding-right-20px">
                   <img src="../../assets/Vector.png" />
@@ -26,11 +23,10 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-3">
+
             <div class="jobs-cards">
               <div
-                class="pading-top-20px-right-80px align-item-center justify-content-space-around"
+                class="pading-top-20px-right-80px align-item-center justify-content-space-around text-center"
               >
                 <div class="text-align-left padding-right-20px">
                   <img src="../../assets/Vector.png" />
@@ -46,11 +42,10 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-3">
+
             <div class="jobs-cards">
               <div
-                class="pading-top-20px-right-80px align-item-center justify-content-space-around"
+                class="pading-top-20px-right-80px align-item-center justify-content-space-around text-center"
               >
                 <div class="text-align-left padding-right-20px">
                   <img src="../../assets/Vector.png" />
@@ -63,11 +58,10 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-3">
+
             <div class="jobs-cards">
               <div
-                class="pading-top-20px-right-80px align-item-center justify-content-space-around"
+                class="pading-top-20px-right-80px align-item-center justify-content-space-around text-center"
               >
                 <div class="text-align-left padding-right-20px">
                   <img src="../../assets/Vector.png" />
@@ -83,11 +77,7 @@
                 </div>
               </div>
             </div>
-          </div>
-        </div>
       </div>
-    </div>
-  </div>
 </template>
 
 <script>
@@ -141,17 +131,32 @@ export default {};
 .mt-60px {
   margin-top: 60px;
 }
+.compainy-container{
+  margin:0px 80px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+}
 .jobs-cards {
+  margin:10px;
+  flex:1 1 250px;
   background-color: #ffffff;
   border: 1px solid #f0f1f3;
   box-sizing: border-box;
   box-shadow: 0px 4px 60px rgba(53, 66, 85, 0.04);
   border-radius: 10px;
 }
-@media only screen and (min-width: 320px) and (max-width: 479px) {
+@media only screen and (max-width: 530px) {
+  .compainy-container{
+    margin:0px 30px;
+  }
 }
 
-@media only screen and (min-width: 480px) and (max-width: 767px) {
+@media only screen and (max-width: 480px) {
+  .compainy-container{
+    margin:0px 20px;
+  }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {

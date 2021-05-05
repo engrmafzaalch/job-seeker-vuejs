@@ -6,12 +6,9 @@
     </label> -->
     <div class="row m-0">
       <div class="col-12 p-0">
-        <div class="row mt-30px mlr-10">
-          <div class="col-4">
+        <div class=" job-container">
             <div class="jobs-cards">
-              <div
-                class="display-flex pading-top-20px-right-80px align-item-center justify-content-space-around"
-              >
+              <div class="display-flex pading-top-20px-right-80px align-item-center justify-content-space-around text-center">
                 <div>
                   <img src="../../assets/Rectangle 11.png" />
                 </div>
@@ -32,18 +29,18 @@
                 class="display-flex mt-20px align-item-center justify-content-space-around"
               >
                 <div>
-                  <div class="border-browser-job">Browse Job</div>
+                  <div class="border-browser-job text-center">Browse Job</div>
                 </div>
                 <div>
                   <span class="posted-ago-date-text"> Posted 2 days ago </span>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-4">
+          <!-- </div>
+          <div class="col-4"> -->
             <div class="jobs-cards">
               <div
-                class="display-flex pading-top-20px-right-80px align-item-center justify-content-space-around"
+                class="display-flex pading-top-20px-right-80px align-item-center justify-content-space-around text-center text-center"
               >
                 <div>
                   <img src="../../assets/Rectangle 11 (1).png" />
@@ -65,18 +62,18 @@
                 class="display-flex mt-20px align-item-center justify-content-space-around"
               >
                 <div>
-                  <div class="border-browser-job">Browse Job</div>
+                  <div class="border-browser-job text-center">Browse Job</div>
                 </div>
                 <div>
                   <span class="posted-ago-date-text"> Posted 2 days ago </span>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-4">
+          <!-- </div>
+          <div class="col-4"> -->
             <div class="jobs-cards">
               <div
-                class="display-flex pading-top-20px-right-80px align-item-center justify-content-space-around"
+                class="display-flex pading-top-20px-right-80px align-item-center justify-content-space-around text-center"
               >
                 <div>
                   <img src="../../assets/Rectangle 11 (2).png" />
@@ -98,7 +95,7 @@
                 class="display-flex mt-20px align-item-center justify-content-space-around"
               >
                 <div>
-                  <div class="border-browser-job">Browse Job</div>
+                  <div class="border-browser-job text-center">Browse Job</div>
                 </div>
                 <div>
                   <span class="posted-ago-date-text"> Posted 2 days ago </span>
@@ -108,7 +105,6 @@
           </div>
         </div>
       </div>
-    </div>
   </div>
 </template>
 
@@ -191,11 +187,21 @@ hr {
 .mt-60px {
   margin-top: 60px;
 }
+.job-container{
+  margin:0px 80px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+}
 .jobs-cards {
+  margin:10px;
+  flex:1 1 250px;
   border: 1px solid #f0f1f3;
   height: 189px;
   border-radius: 10px;
 }
+
 .justify-content-center {
   justify-content: center;
 }
@@ -249,12 +255,23 @@ p {
   display: none;
 }
 
-@media only screen and (min-width: 320px) and (max-width: 479px) {
-}
 
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-}
 
+@media only screen and (max-width: 610px) {
+  .job-container{
+    margin: 0px 22px;
+  }
+}
+@media only screen and (max-width: 479px) {
+   .job-container{
+    margin: 0px 10px;
+  }
+}
+@media only screen and (max-width: 380px) {
+   .job-container{
+    margin: 0px 5px;
+  }
+}
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .job-title {
     font-size: 12px;

@@ -1,6 +1,6 @@
 <template>
-  <div class="display-flex justtify-content-space-around mt-60 mb-100">
-    <div>
+  <div class="card-container">
+    <div class="card-child text-center">
       <div><span class="category-box">Companies</span></div>
       <div class="mt-40 need-talent-text">
         <span> need talent? </span>
@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class="vertical"></div>
-    <div>
+    <div class="card-child text-center">
       <div><span class="category-box">Talent</span></div>
       <div class="mt-40 need-talent-text">
         <span> want opportunities? </span>
@@ -100,11 +100,36 @@ export default {};
 }
 @media only screen and (min-width: 320px) and (max-width: 479px) {
 }
-
-@media only screen and (min-width: 480px) and (max-width: 767px) {
+.card-container{
+  margin:20px 80px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap:wrap;
+}
+.card-child{
+  margin:10px;
+  flex:1 1 250px;
+}
+@media only screen and (max-width: 767px) {
+  .vertical{
+    display: none;
+  }
 }
 
-@media only screen and (min-width: 768px) and (max-width: 991px) {
+@media only screen and (max-width: 768px) and (max-width: 991px) {
+  .need-talent-text span{
+    font-size: 20px;
+  }
+  .get-started-now {
+    width: 144px;
+    font-size: 12px;
+  }
+  .category-box {
+    font-size: 13px;
+  }
+}
+@media only screen and (max-width: 992px) and (max-width: 1025px) {
   .need-talent-text {
     font-size: 20px;
   }
@@ -116,16 +141,7 @@ export default {};
     font-size: 13px;
   }
 }
-@media only screen and (min-width: 992px) and (max-width: 1025px) {
-  .need-talent-text {
-    font-size: 20px;
-  }
-  .get-started-now {
-    width: 144px;
-    font-size: 12px;
-  }
-  .category-box {
-    font-size: 13px;
-  }
+@media only screen and (min-width: 68px) {
+
 }
 </style>

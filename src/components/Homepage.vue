@@ -1,6 +1,6 @@
 <template>
   <div class="main-div">
-    <div :style="cssProps">
+    <div class="bg-image">
       <div class="container-fluid">
         <left-side-back />
         <recent-jobs />
@@ -43,5 +43,16 @@ export default {
 <style scoped>
 .main-div {
   height: 640px;
+}
+.bg-image{
+  background-image: url(/static/img/Header2x.f0f86d2.jpg);
+  background-size: contain;
+  height: inherit;
+  background-repeat-y: no-repeat;
+}
+@media only screen and (max-width: 767px) {
+  .bg-image{
+    background-size: cover;
+  }
 }
 </style>
