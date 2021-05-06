@@ -651,9 +651,12 @@ input[type="range"]::-ms-fill-upper {
   }
 }
 .hero-section{
-  height: 70vh;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  /*height: 70vh;*/
+  /*min-height: 700px;*/
   background-image: url(/static/img/Header2x.f0f86d2.jpg);
-  background-size: contain;
+  background-size: cover;
   background-repeat-y: no-repeat;
   padding-left: 100px;
   padding-right: 100px;
