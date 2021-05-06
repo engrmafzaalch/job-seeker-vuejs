@@ -11,8 +11,8 @@
 
     <a-tabs class="job-seeker-listing-tabs" default-active-key="1" size="large">
       <a-tab-pane key="1" tab="Job Seeker List">
-        <div class="display-flex mt-30 mb-40">
-          <div class="box-job-seeker-admin inner-div-css">
+        <div class="number-card-container">
+          <div class="box-job-seeker-admin ">
             <div>
               <span class="no-of-total-category">1202</span>
             </div>
@@ -22,7 +22,7 @@
               >
             </div>
           </div>
-          <div class="box-job-seeker-admin inner-div-css ml-10">
+          <div class="box-job-seeker-admin  ">
             <div>
               <span class="no-of-total-category">250</span>
             </div>
@@ -32,7 +32,7 @@
               >
             </div>
           </div>
-          <div class="box-job-seeker-admin inner-div-css ml-10">
+          <div class="box-job-seeker-admin  ">
             <div>
               <span class="no-of-total-category">125</span>
             </div>
@@ -42,7 +42,7 @@
               >
             </div>
           </div>
-          <div class="box-job-seeker-admin inner-div-css ml-10">
+          <div class="box-job-seeker-admin  ">
             <div>
               <span class="no-of-total-category">150</span>
             </div>
@@ -52,7 +52,7 @@
               >
             </div>
           </div>
-          <div class="box-job-seeker-admin inner-div-css ml-10">
+          <div class="box-job-seeker-admin  ">
             <div>
               <span class="no-of-total-category">90</span>
             </div>
@@ -62,7 +62,7 @@
               >
             </div>
           </div>
-          <div class="box-job-seeker-admin inner-div-css ml-10">
+          <div class="box-job-seeker-admin  ">
             <div>
               <span class="no-of-total-category">120</span>
             </div>
@@ -133,24 +133,24 @@
             slot="action"
             slot-scope="text, record"
           >
-            <div class="action-box-job-seeker ml-10">
+            <div class="action-box-job-seeker ">
               <i class="fa fa-eye" aria-hidden="true"></i>
             </div>
-            <div class="action-box-job-seeker ml-10">
+            <div class="action-box-job-seeker ">
               <i
                 class="fa fa-pencil-square-o"
                 key="pencil"
                 aria-hidden="true"
               ></i>
             </div>
-            <div class="action-box-job-seeker ml-10">
+            <div class="action-box-job-seeker ">
               <i
                 class="fa fa-pencil-square-o"
                 key="pencil"
                 aria-hidden="true"
               ></i>
             </div>
-            <div class="action-box-job-seeker ml-10">
+            <div class="action-box-job-seeker ">
               <i class="fa fa-trash" key="pencil" aria-hidden="true"></i>
             </div>
           </div>
@@ -495,20 +495,8 @@ export default {
   font-size: 12px;
   color: #8b90a0;
 }
-.box-job-seeker-admin {
-  background: #fafdff;
-  /* Primary/blue */
 
-  border: 1px solid #f0f1f3;
-  box-sizing: border-box;
-  border-radius: 8px;
-  width: 200px;
-  height: 96px;
-}
-.inner-div-css {
-  padding: 19px 0px 20px 20px;
-  text-align: initial;
-}
+
 .searchbox-style {
   width: 420px;
   /* height: 48px; */
@@ -522,5 +510,39 @@ export default {
 }
 .text-align-initial {
   text-align: initial;
+}
+.number-card-container{
+  display:flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin:15px 0px;
+}
+.box-job-seeker-admin {
+  flex:0 1 200px; 
+  background: #fafdff;
+  padding: 19px 0px 20px 20px;
+  text-align: initial;
+  border: 1px solid #f0f1f3;
+  box-sizing: border-box;
+  border-radius: 8px;
+  height: 96px;
+  margin:5px;
+}
+.ant-spin-container{
+  margin: 3px 40px!important;
+  width:1244px!important;
+  overflow-x: scroll!important;
+}
+.text-align-initial{
+  margin: 3px 40px;
+}
+/* .ant-tabs{
+  overflow: auto!important;
+} */
+th{
+  min-width: 150px!important;
+}
+.ant-table-row-cell-last{
+  min-width: 150px!important;
 }
 </style>

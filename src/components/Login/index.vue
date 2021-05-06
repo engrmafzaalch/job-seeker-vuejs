@@ -156,15 +156,13 @@ export default {
 <style scoped>
 
 .login-card {
-  position: absolute;
+
+  max-width:540px;
   padding: 32px;
   background: #ffffff;
-  /* Elevation / 02 */
-  top: 30%;
-  left: 30%;
-  right: 30%;
   box-shadow: 0px 4px 20px rgba(115, 115, 115, 0.2);
   border-radius: 10px;
+  margin:30vh 30px;
 }
 .forgot-password-text {
   font-family: Open Sans;
@@ -179,6 +177,10 @@ export default {
 }
 .height-login-card {
   height: calc(100vh + 10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 .admin-login-screen {
   font-family: Open Sans;
@@ -280,6 +282,7 @@ hr {
 .searchbox-style {
   /* width: 700px; */
   /*; */
+  height: 48px;
   width: 100%;
   border-radius: 4px;
   background: #ffffff;

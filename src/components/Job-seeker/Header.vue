@@ -213,6 +213,8 @@ export default {
         transform: translate(-24px,-100%);
         padding: 9px 0px;
         width:100%;
+        z-index: 1000000000000;
+        border: 1px solid #f0f1f3;
         background-color:#FAFAFA;
         display: flex;
         justify-content:flex-start;
@@ -262,5 +264,4 @@ export default {
 .toggle .line3{
     transform:rotate(45deg) translate(-5px,-10px);
 }
-
 </style>
