@@ -2,11 +2,13 @@
   <div>
     <div class="main-height">
       <div class="row m-0">
-        <div class="col-3 p-0"><LeftSideMenu /></div>
-        <div class="col-6">
+        <div class="col-md-3 p-0">
+          <LeftSideMenu />
+        </div>
+        <div class="col-md-6">
           <middle-jobs-section />
         </div>
-        <div class="col-3">
+        <div class="col-md-3">
           <right-side-featured-jobs />
         </div>
       </div>

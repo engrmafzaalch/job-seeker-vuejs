@@ -3,7 +3,7 @@
     <div v-if="isFeatured" class="position-absolute new-featured-box-main-jobs">
       <div><span class="color-new-featured-job-text">Featured</span></div>
     </div>
-    <div class="part-time-label-box">
+    <div class="part-time-label-box text-center">
       <span class="part-time-text">Part TIme</span>
     </div>
     <div class="display-flex text-align-center justify-content-space-between">

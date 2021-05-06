@@ -1,6 +1,6 @@
 <template>
-  <div class="row hero-section ">
-    <div class="col-md-7 left-side-search-box child1">
+  <div class="row hero-section">
+    <div class="left-side-search-box child1">
       <div class="title-font">
         <span> Aenean euismod bibendum laoreet </span>
       </div>
@@ -123,7 +123,7 @@
       </div>
     </div>
     <!-- display-non-tablet -->
-    <div class="col-md-5 profile-box-parent child2">
+    <div class="profile-box-parent child2">
       <div class="ml-auto profile-box">
         <div class="display-flex align-item-center">
           <div>
@@ -187,7 +187,7 @@
         </div>
       </div>
     </div>
-    <div></div>
+    
   </div>
 </template>
 
@@ -283,7 +283,8 @@ export default {
   font-family: 'Open Sans', sans-serif;
   color: #ffffff;
   border: 0;
-  width: 120px;
+  width: 91%;
+  margin: 0px 10px;
   height: 48px;
 }
 .dropdwon-fonts {
@@ -423,7 +424,7 @@ hr {
   justify-content: space-between;
 }
 .profile-box {
-  /*height: 440px;*/
+  height: 440px;
   border: 1px solid #f0f1f3;
   width: 400px;
   border-radius: 8px;
@@ -651,16 +652,24 @@ input[type="range"]::-ms-fill-upper {
   }
 }
 .hero-section{
-  height: 70vh;
+  height: 80vh;
   background-image: url(/static/img/Header2x.f0f86d2.jpg);
   background-size: contain;
   background-repeat-y: no-repeat;
-  padding-left: 100px;
-  padding-right: 100px;
-  /*display:flex;*/
-  /*flex-wrap: wrap;*/
-  /*justify-content: center;*/
-  /*align-items: center;*/
+  padding:10px 80px;
+  display:flex;
+  /* flex-wrap: wrap; */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.hero-section .child1{
+  flex:0 1 824px!important;
+  margin-right:56px;
+}
+.hero-section .child2{
+  flex:0 1 440px!important;
+  margin:72px 0px;
 }
 .search-btn-group{
   display: flex;
@@ -668,7 +677,7 @@ input[type="range"]::-ms-fill-upper {
   column-gap: 10px;
 }
 .search-btn1{
-  /*flex:1 1 100px;*/
+  flex:1 1 100px;
 
 
 }
