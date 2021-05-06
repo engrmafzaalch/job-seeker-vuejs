@@ -1,9 +1,5 @@
 <template>
-    <!-- <input type="checkbox" id="switch" class="checkbox" />
-    <label for="switch" class="toggle">
-      <p>Recent Jobs Featured Jobs</p>
-    </label> -->
-    
+
       <div class="compainy-container">
             <div class="jobs-cards">
               <div
@@ -94,23 +90,6 @@ export default {};
 .padding-right-20px {
   padding-right: 20px;
 }
-.mlr-10 {
-  margin-left: 10px;
-  margin-right: 10px;
-}
-.pb-15 {
-  padding-bottom: 15px;
-}
-.mt-10px {
-  margin-top: 10px;
-}
-.ml-10px {
-  margin-left: 10px;
-}
-.mt-30px {
-  margin-top: 30px;
-}
-
 .align-item-center {
   align-items: center;
 }
@@ -125,12 +104,7 @@ export default {};
   font-size: 32px;
   color: #505565;
 }
-.display-flex {
-  display: flex;
-}
-.mt-60px {
-  margin-top: 60px;
-}
+
 .compainy-container{
   margin:0px 80px;
   display:flex;
@@ -173,6 +147,11 @@ export default {};
 @media only screen and (min-width: 992px) and (max-width: 1025px) {
   .tablet-margin-10 {
     margin-top: 10px;
+  }
+}
+@media only screen and (max-width: 768px)  {
+  .compainy-container{
+    margin:0px
   }
 }
 </style>

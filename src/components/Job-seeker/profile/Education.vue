@@ -11,6 +11,7 @@
           <div class="row my-4">
             <div class="col-6">
               <a-input
+
                 v-decorator="[
                           `degree`,
                           {
@@ -43,15 +44,17 @@
           </div>
           <div class="row my-4">
             <div class="col-6">
-              <a-date-picker class="w-100" @change="onChange" placeholder="End Date" />
+              <a-date-picker class="w-100 date-picker" @change="onChange" placeholder="End Date" />
             </div>
             <div class="col-6">
-              <a-date-picker class="w-100" @change="onChange" placeholder="Start Date"/>
+              <a-date-picker class="w-100 date-picker" @change="onChange" placeholder="Start Date"/>
             </div>
           </div>
           <div class="row my-4">
             <div class="col-md-6">
-              <a-textarea v-decorator="[
+              <a-textarea
+
+                v-decorator="[
                           `educationDetail`,
                           {
                             rules: [
@@ -62,7 +65,7 @@
                               },
                             ],
                           },
-                        ]" class="form-control" name="text" id="education_details" cols="" rows="6" placeholder="Education Details"></a-textarea>
+                        ]"  name="text" id="education_details"rows="6" placeholder="Education Details"></a-textarea>
             </div>
           </div>
           <div class="row justify-content-center text-center my-4">
@@ -135,5 +138,9 @@ export default {
 </script>
 
 <style scoped>
+.form-control{
+  height: 48px;
+}
+
 
 </style>

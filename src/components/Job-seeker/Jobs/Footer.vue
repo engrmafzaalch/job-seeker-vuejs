@@ -14,14 +14,14 @@
     </div>
     <div class="background-footer container-fluid padding-20px">
       <div
-        class="footer-main display-flex justify-content-space-between align-item-center"
+        class="footer-main display-flex  justify-content-space-between align-item-center"
       >
         <div>
           <div>
             <img src="../../../assets/Vector (1).png" />
           </div>
           <div class="">
-            <span class="logo-font-footer"> Infohob </span>
+            <span class="logo-font-footer"> Infohob</span>
           </div>
         </div>
         <div>

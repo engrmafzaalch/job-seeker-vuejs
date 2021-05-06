@@ -1,6 +1,6 @@
 <template>
-  <div class="display-flex display-block-mobile hero-section">
-    <div class="left-side-search-box child1">
+  <div class="row hero-section ">
+    <div class="col-md-7 left-side-search-box child1">
       <div class="title-font">
         <span> Aenean euismod bibendum laoreet </span>
       </div>
@@ -21,6 +21,7 @@
                 >
                   <a-input
                     class="searchbox-style"
+                    autocomplete="off"
                     v-decorator="[
                       'userName',
                       {
@@ -51,6 +52,7 @@
                   <a-select
                     class="dropdwon-fonts"
                     default-value="Job Category"
+
                     @change="handleChange"
                   >
                     <a-select-option value="jack"> Jack </a-select-option>
@@ -59,8 +61,8 @@
                 </a-form-item>
               </div>
               <div class="search-btn1">
-                <a-form-item 
-                  
+                <a-form-item
+
                   :validate-status="userNameError() ? 'error' : ''"
                   :help="userNameError() || ''"
                 >
@@ -94,24 +96,24 @@
             <div>button</div> -->
         </div>
       </div>
-      <div class="display-flex mt-40 tablet-mt flex-wrap align-item-center">
-        <div class="display-flex flex-wrap ml-20 align-item-center">
-          <div>
+      <div class="display-flex  tablet-mt flex-wrap align-item-center">
+        <div class="display-flex search-activity flex-wrap ml-20 align-item-center">
+          <div class="mt-30 past-searches">
             <span class="past-searches-text">Past Searches</span>
           </div>
-          <div class="past-searches-result ml-10px mt-10">
+          <div class="past-searches-result ml-10px mt-30">
             <span
               >Business analyst -
               <span class="result-in-green">(07 new)</span></span
             >
           </div>
-          <div class="past-searches-result ml-10px mt-10">
+          <div class="past-searches-result ml-10px mt-30">
             <span
               >Product Manager -
               <span class="result-in-green">(07 new)</span></span
             >
           </div>
-          <div class="past-searches-result ml-10px mt-10">
+          <div class="past-searches-result ml-10px mt-30">
             <span
               >Sales executive -
               <span class="result-in-green">(07 new)</span></span
@@ -121,8 +123,8 @@
       </div>
     </div>
     <!-- display-non-tablet -->
-    <div class="profile-box-parent child2">
-      <div class="profile-box">
+    <div class="col-md-5 profile-box-parent child2">
+      <div class="ml-auto profile-box">
         <div class="display-flex align-item-center">
           <div>
             <img src="../../assets/Ellipse5.png" />
@@ -165,7 +167,7 @@
             <span class="acitivy-response-font">Activity & Responses</span>
           </div>
         </div>
-        <div class="display-flex mt-10">
+        <div class="activity-box-wrapper">
           <div class="box-div-actvity">
             <div class="">
               <span class="no-of-opening">20</span>
@@ -234,7 +236,7 @@ export default {
 };
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style  scoped>
 .mt-40 {
   margin-top: 40px;
 }
@@ -261,7 +263,8 @@ export default {
   border-radius: 50px;
 }
 .past-searches-text {
-  font-family: Larsseit;
+  font-family: 'Open sans', sans-serif;
+  letter-spacing: 1px;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
@@ -273,24 +276,29 @@ export default {
 .search-button-style {
   background: #ff4c68;
   border-radius: 4px;
-  font-family: Open Sans;
   font-style: normal;
   font-weight: bold;
   font-size: 16px;
+  letter-spacing: 1px;
+  font-family: 'Open Sans', sans-serif;
   color: #ffffff;
   border: 0;
   width: 120px;
+  height: 48px;
 }
 .dropdwon-fonts {
-  font-family: SF UI Display;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
   color: #8b90a0;
+  padding-left: 10px;
+  border-left: 1px solid #D3D4D8;
+
 }
+
 .searchbox-style {
-  /* height: 48px; */
   border-radius: 4px;
+
   background: #ffffff;
   color: #8b90a0;
   font-family: SF UI Display;
@@ -335,12 +343,22 @@ export default {
   font-size: 16px;
   color: #505565;
 }
+.activity-box-wrapper{
+  display: flex;
+  column-gap: 8px;
+  margin-top: 10px;
+  justify-content: stretch;
+}
 .box-div-actvity {
   border: 1px solid #f0f1f3;
   padding: 2px 12px;
-  width: 150px;
+  width: 50%;
   text-align: initial;
   border-radius: 2px;
+  height: 84px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .acitivy-response-font {
   font-family: Open Sans;
@@ -380,6 +398,7 @@ hr {
   padding: 0;
 }
 .update-profile-green-box {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -395,13 +414,16 @@ hr {
   border-radius: 8px;
 }
 .profile-box-parent {
-  margin-top: 72px;
+  /*margin-top: 72px;*/
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
 .justify-content-between {
   justify-content: space-between;
 }
 .profile-box {
-  height: 440px;
+  /*height: 440px;*/
   border: 1px solid #f0f1f3;
   width: 400px;
   border-radius: 8px;
@@ -410,8 +432,9 @@ hr {
 }
 .left-side-search-box {
   text-align: left;
-  /* width: 800px; */
-  padding: 100px 40px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 .second-title {
   font-family: SF UI Display;
@@ -430,6 +453,7 @@ hr {
   font-size: 48px;
   line-height: 100%;
   color: #ffffff;
+  margin-bottom: 8px;
 }
 .align-item-center {
   align-items: center;
@@ -566,7 +590,7 @@ input[type="range"]::-ms-fill-upper {
     padding: 8px 15px;
   }
   .profile-box-parent {
-    margin-top: 25px;
+    /*margin-top: 25px;*/
   }
 }
 
@@ -623,46 +647,45 @@ input[type="range"]::-ms-fill-upper {
     width: 640px;
   }
   .profile-box-parent {
-    margin-top: 25px;
+    /*margin-top: 25px;*/
   }
 }
 .hero-section{
-  display:flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-.hero-section .child1{
-  flex:0 1 902px;
-}
-.hero-section .child2{
-  flex:1 1 404px;
+  height: 70vh;
+  background-image: url(/static/img/Header2x.f0f86d2.jpg);
+  background-size: contain;
+  background-repeat-y: no-repeat;
+  padding-left: 100px;
+  padding-right: 100px;
+  /*display:flex;*/
+  /*flex-wrap: wrap;*/
+  /*justify-content: center;*/
+  /*align-items: center;*/
 }
 .search-btn-group{
   display: flex;
   flex-wrap: wrap;
+  column-gap: 10px;
 }
 .search-btn1{
-  flex:1 1 100px;
-  margin-right:10px;
-  
+  /*flex:1 1 100px;*/
+
+
 }
 .search-btn2{
   flex:2 2 200px;
-  margin-right:10px;
+
 }
 
 .ant-form-inline .ant-form-item {
     display: inline-block;
-    margin-right: 16px;
+    margin-right: 0;
     margin-bottom: 0;
     width: 100%;
 }
 
 @media only screen and (max-width: 510px) {
-  .profile-box {
-   width: 291px; 
-  }
+
   .title-font span{
     font-size:36px;
   }
@@ -688,23 +711,67 @@ input[type="range"]::-ms-fill-upper {
     padding: 30px 10px;
   }
 }
-    
+
 @media only screen and (max-width: 767px) {
-  .hero-section .child2{
-    margin-top:0px;
+  .hero-section {
+    padding: 0;
+    background-size: cover;
+    height: unset;
   }
   .search-box-all {
     max-width:600px;
   }
   .profile-box-parent {
-    display:flex;
-    justify-content: center;
-    align-items: center;
+    /*display:flex;*/
+    justify-content: flex-end;
+    /*align-items: center;*/
+  }
+  .search-activity{
+    display: unset;
+  }
+  .past-searches-result{
+    margin-top: 0;
+    padding: 4px 10px ;
+    height: unset;
+    background: none;
+    margin-left: 0;
+  }
+  .profile-box-parent{
+    padding: 0 30px;
+    padding-bottom: 30px;
+  }
+  .profile-box {
+    width: 100%;
+  }
+  .past-searches{
+    margin-top: 0;
+    padding: 10px ;
+    background: none;
+    display: block;
+  }
+  .search-btn-group{
+    display: flex;
+    flex-direction: column;
+    flex: none;
+    /*padding: 10px;*/
+  }
+  .search-btn1,
+  .search-btn2{
+    flex: none;
+    margin-bottom: 4px;
+  }
+  .dropdwon-fonts{
+    padding-left: 0;
+    border: none;
+  }
+  .search-button-style{
+    width: 100%;
   }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
 
 }
+
 
 </style>

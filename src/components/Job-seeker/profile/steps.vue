@@ -1,15 +1,15 @@
 <template>
-  <div>
+  <div class="my-profile">
   <div class="container-fluid">
     <div class="row">
     <ul class="progressbar">
-      <li :class="{ 'active' : $store.state.step == 1}">Profile Summery</li>
-      <li :class="{ 'active' : $store.state.step == 2}">Education</li>
-      <li :class="{ 'active' : $store.state.step == 3}">Experience</li>
-      <li :class="{ 'active' : $store.state.step == 4}">Projects</li>
-      <li :class="{ 'active' : $store.state.step == 5}">Documents</li>
-      <li :class="{ 'active' : $store.state.step == 6}">Key Skills</li>
-      <li :class="{ 'active' : $store.state.step == 7}">My Profile</li>
+      <li :class="{ 'active' : $store.state.step == 1}"><span>Profile Summery</span></li>
+      <li :class="{ 'active' : $store.state.step == 2}"><span>Education</span></li>
+      <li :class="{ 'active' : $store.state.step == 3}"><span>Experience</span></li>
+      <li :class="{ 'active' : $store.state.step == 4}"><span>Projects</span></li>
+      <li :class="{ 'active' : $store.state.step == 5}"><span>Documents</span></li>
+      <li :class="{ 'active' : $store.state.step == 6}"><span>Key Skills</span></li>
+      <li :class="{ 'active' : $store.state.step == 7}"><span>My Profile</span></li>
     </ul>
     </div>
   </div>
@@ -144,5 +144,19 @@ body {
   /*   background:  #00E676; */
   /*   border-bottom: 1px dashed */
   /*border-color: #00E676;*/
+}
+@media only screen and (max-width: 767px){
+  .progressbar{
+    padding-left: 0;
+  }
+  .progressbar li span{
+    display: none ;
+  }
+  .progressbar li.active span{
+    display: block;
+  }
+  .my-profile{
+    padding: 0 15px;
+  }
 }
 </style>

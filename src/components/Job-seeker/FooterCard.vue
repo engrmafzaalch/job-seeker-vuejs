@@ -157,8 +157,8 @@ export default {
   display: flex;
   align-items: center;
   overflow: hidden;
-  background-color: "#FAFAFA";
-  padding: 10px 30px;
+  /*background-color: "#FAFAFA";*/
+  padding: 10px 100px;
   height: 80px;
   background: #232c3a;
 }
@@ -192,10 +192,23 @@ export default {
 .city{
   flex:1 1 auto;
 }
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 1024px) {
   .header{
-    display:none;
+    background: #354255;
+    height: unset;
+
   }
+  .header-right{
+    display:flex;
+    flex-direction: column;
+
+  }
+  .header-right a{
+    text-align: left;
+  }
+}
+@media only screen and (max-width: 767px) {
+
   .footer-container{
     padding:30px 20px;
   }

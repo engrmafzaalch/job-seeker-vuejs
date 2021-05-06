@@ -1,6 +1,6 @@
 <template>
   <div class="mt-110 background-color-light">
-    <div class="pt-60 text-center">
+    <div class="pt-60 text-center  mb-4">
       <span class="label-top-hiring-companie">Top Hiring Companies</span>
     </div>
     <div class="pb-50">
@@ -26,7 +26,6 @@ export default {
   padding-right: 80px;
 }
 .posted-ago-date-text {
-  font-family: SF UI Display;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -56,7 +55,6 @@ export default {
   padding-bottom: 50px;
 }
 .label-top-hiring-companie {
-  font-family: Larsseit;
   font-style: normal;
   font-weight: bold;
   font-size: 48px;

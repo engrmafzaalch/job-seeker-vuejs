@@ -245,5 +245,10 @@ export default {
 </script>
 
 <style scoped>
-
+.form-control{
+  height: 48px;
+}
+.btn{
+  height: 48px
+}
 </style>

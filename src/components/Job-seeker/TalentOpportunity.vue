@@ -32,17 +32,19 @@ export default {};
   height: 200px;
   position: absolute;
   left: 50%;
+
 }
 .get-started-now {
-  height: 42px;
+  height: 48px;
   width: 260px;
   vertical-align: text-top;
   background: #0385f3;
   border-radius: 4px;
-  font-family: Larsseit;
+  border: 1px solid #0385F3;
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
+  letter-spacing: 1px;
   /* identical to box height, or 16px */
 
   align-items: center;
@@ -101,6 +103,7 @@ export default {};
 @media only screen and (min-width: 320px) and (max-width: 479px) {
 }
 .card-container{
+  padding-bottom: 80px;
   margin:20px 80px;
   display:flex;
   justify-content: center;

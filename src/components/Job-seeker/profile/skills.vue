@@ -32,6 +32,7 @@
               mode="multiple"
               :default-value="['C', 'C++']"
               style="width: 100%"
+              class="dropdown-select"
               placeholder="Please select"
               @change="handleChange"
             >
@@ -103,6 +104,9 @@ h4 {
 }
 .buttonss {
   font-size: 14px;
+}
+.form-control{
+  height: 48px;
 }
 .close_button {
   border-radius: 4px;

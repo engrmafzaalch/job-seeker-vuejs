@@ -162,8 +162,7 @@
                               },
                             ],
                           },
-                        ]"
-                          class="form-control" name="text" id="education_details" cols="" rows="6" placeholder="Education Details"></a-textarea>
+                        ]" name="text" id="education_details" cols="" rows="6" placeholder="Education Details"></a-textarea>
             </div>
           </div>
           <div class="row justify-content-center text-center my-4">
@@ -227,5 +226,7 @@ export default {
 </script>
 
 <style scoped>
-
+.form-control{
+  height: 48px
+}
 </style>

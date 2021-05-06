@@ -2,9 +2,9 @@
 <template>
   <div class="background-footer container-fluid padding-20px">
     <div
-      class="footer-main display-flex justify-content-space-between align-item-center"
+      class="footer-main display-flex flex-column flex-sm-row justify-content-space-between align-item-center"
     >
-      <div>
+      <div class="mb-2 mb-sm-0">
         <div>
           <img src="../../assets/Vector (1).png" />
         </div>
@@ -12,10 +12,10 @@
           <span class="logo-font-footer"> Infohob </span>
         </div>
       </div>
-      <div>
-        <span class="ml-100px copy-right-text">© Copyright 2020 Infohob</span>
+      <div class="mb-2 mb-sm-0">
+        <span class=" copy-right-text">© Copyright 2020 Infohob</span>
       </div>
-      <div class="display-flex justify-content-space-between mr-50px">
+      <div class="display-flex justify-content-space-between">
         <div class="border-box-images">
           <img src="../../assets/Shape.png" />
         </div>
