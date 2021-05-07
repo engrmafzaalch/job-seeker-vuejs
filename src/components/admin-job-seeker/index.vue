@@ -11,8 +11,8 @@
 
     <a-tabs class="job-seeker-listing-tabs" default-active-key="1" size="large">
       <a-tab-pane key="1" tab="Job Seeker List">
-        <div class="display-flex mt-30 mb-40">
-          <div class="box-job-seeker-admin inner-div-css">
+        <div class="number-card-container">
+          <div class="box-job-seeker-admin ">
             <div>
               <span class="no-of-total-category">1202</span>
             </div>
@@ -22,7 +22,7 @@
               >
             </div>
           </div>
-          <div class="box-job-seeker-admin inner-div-css ml-10">
+          <div class="box-job-seeker-admin  ">
             <div>
               <span class="no-of-total-category">250</span>
             </div>
@@ -32,7 +32,7 @@
               >
             </div>
           </div>
-          <div class="box-job-seeker-admin inner-div-css ml-10">
+          <div class="box-job-seeker-admin  ">
             <div>
               <span class="no-of-total-category">125</span>
             </div>
@@ -42,7 +42,7 @@
               >
             </div>
           </div>
-          <div class="box-job-seeker-admin inner-div-css ml-10">
+          <div class="box-job-seeker-admin  ">
             <div>
               <span class="no-of-total-category">150</span>
             </div>
@@ -52,7 +52,7 @@
               >
             </div>
           </div>
-          <div class="box-job-seeker-admin inner-div-css ml-10">
+          <div class="box-job-seeker-admin  ">
             <div>
               <span class="no-of-total-category">90</span>
             </div>
@@ -62,7 +62,7 @@
               >
             </div>
           </div>
-          <div class="box-job-seeker-admin inner-div-css ml-10">
+          <div class="box-job-seeker-admin  ">
             <div>
               <span class="no-of-total-category">120</span>
             </div>
@@ -133,25 +133,34 @@
             slot="action"
             slot-scope="text, record"
           >
-            <div class="action-box-job-seeker ml-10">
-              <i class="fa fa-eye" aria-hidden="true"></i>
+            <div class="action-box-job-seeker ">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 12C1 12 5 4 12 4C19 4 23 12 23 12C23 12 19 20 12 20C5 20 1 12 1 12Z" stroke="#A1A4B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z" stroke="#A1A4B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+
             </div>
-            <div class="action-box-job-seeker ml-10">
-              <i
-                class="fa fa-pencil-square-o"
-                key="pencil"
-                aria-hidden="true"
-              ></i>
+            <div class="action-box-job-seeker ">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M11 4H4C3.46957 4 2.96086 4.21071 2.58579 4.58579C2.21071 4.96086 2 5.46957 2 6V20C2 20.5304 2.21071 21.0391 2.58579 21.4142C2.96086 21.7893 3.46957 22 4 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V13" stroke="#A1A4B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M18.5 2.50023C18.8978 2.1024 19.4374 1.87891 20 1.87891C20.5626 1.87891 21.1022 2.1024 21.5 2.50023C21.8978 2.89805 22.1213 3.43762 22.1213 4.00023C22.1213 4.56284 21.8978 5.1024 21.5 5.50023L12 15.0002L8 16.0002L9 12.0002L18.5 2.50023Z" stroke="#A1A4B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+
             </div>
-            <div class="action-box-job-seeker ml-10">
-              <i
-                class="fa fa-pencil-square-o"
-                key="pencil"
-                aria-hidden="true"
-              ></i>
+            <div class="action-box-job-seeker  success">
+              <svg width="18" height="13" viewBox="0 0 18 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17 1L6 12L1 7" stroke="#00BA67" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+
             </div>
-            <div class="action-box-job-seeker ml-10">
-              <i class="fa fa-trash" key="pencil" aria-hidden="true"></i>
+            <div class="action-box-job-seeker ">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 6H5H21" stroke="#A1A4B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="#A1A4B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M10 11V17" stroke="#A1A4B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M14 11V17" stroke="#A1A4B1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+
             </div>
           </div>
         </a-table>
@@ -441,43 +450,53 @@ export default {
   color: #ffffff;
 }
 .table-header-title {
-  font-family: Open Sans;
+  font-family: 'Open Sans',sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 14px;
   color: #8b90a0;
+  column-gap: 10px;
 }
 .action-box-job-seeker {
   background: #fafafc;
-  /* UI / 03 */
+
 
   border: 1px solid #f0f1f3;
-  border-radius: 2px;
   width: 40px;
-  padding-left: 10px;
   height: 40px;
   border-radius: 4px;
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 16px;
-  /* text-align: center; */
-  display: inline-flex;
+  /*!*font-family: Open Sans;*!*/
+  /*font-style: normal;*/
+  /*font-weight: 600;*/
+  /*font-size: 16px;*/
+  /*!* text-align: center; *!*/
+  display: flex;
   align-items: center;
-  /* align-items: unset; */
-  vertical-align: middle;
+  justify-content: center;
+  cursor: pointer;
+  /*!* align-items: unset; *!*/
+  /*vertical-align: middle;*/
+
+}
+.action-box-job-seeker.success{
+  background: rgba(0, 186, 103, 0.1);
+}
+.action-box-job-seeker.danger{
+  background:rgba(255, 76, 104, 0.1);
 }
 .tags-class-job-listing {
+  border: none;
   width: 152px;
   height: 44px;
   border-radius: 4px;
-  font-family: Open Sans;
+  font-family: 'Open Sans', sans-serif;
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
   text-align: center;
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: center;
   /* align-items: unset; */
   vertical-align: middle;
 }
@@ -495,20 +514,8 @@ export default {
   font-size: 12px;
   color: #8b90a0;
 }
-.box-job-seeker-admin {
-  background: #fafdff;
-  /* Primary/blue */
 
-  border: 1px solid #f0f1f3;
-  box-sizing: border-box;
-  border-radius: 8px;
-  width: 200px;
-  height: 96px;
-}
-.inner-div-css {
-  padding: 19px 0px 20px 20px;
-  text-align: initial;
-}
+
 .searchbox-style {
   width: 420px;
   /* height: 48px; */
@@ -522,5 +529,39 @@ export default {
 }
 .text-align-initial {
   text-align: initial;
+}
+.number-card-container{
+  display:flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin:15px 0px;
+}
+.box-job-seeker-admin {
+  flex:0 1 200px;
+  background: #fafdff;
+  padding: 19px 0px 20px 20px;
+  text-align: initial;
+  border: 1px solid #f0f1f3;
+  box-sizing: border-box;
+  border-radius: 8px;
+  height: 96px;
+  margin:5px;
+}
+.ant-spin-container{
+  margin: 3px 40px!important;
+  width:1244px!important;
+  overflow-x: scroll!important;
+}
+.text-align-initial{
+  margin: 3px 40px;
+}
+/* .ant-tabs{
+  overflow: auto!important;
+} */
+th{
+  min-width: 150px!important;
+}
+.ant-table-row-cell-last{
+  min-width: 150px!important;
 }
 </style>

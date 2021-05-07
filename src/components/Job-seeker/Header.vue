@@ -1,25 +1,34 @@
-    <template>
-  <div class="background-header">
-    <div class="container-fluid" style="margin-top: '0px'">
-      <div class="header">
+<template>
+  <nav class="" ref="nav">
+    <div class=" nav-top" >
+      <div class="header background-header">
+
         <div class="flex-x">
-          <a href="#default" class="logo">
+          <router-link to="/" class="logo">
             <img src="../../assets/Frame 1376 1.png" />
-          </a>
+          </router-link>
         </div>
-        <div class="header-right">
-          <router-link to="/">Home</router-link>
+
+        <div class="header-right" ref="navLinks" :class="{'opened': nav_state}">
+          <router-link to="/" active-class="active" exact>Home</router-link>
           <!-- <a class="active" href="#home">Home</a> -->
-          <router-link to="jobs">Jobs</router-link>
-          <router-link to="MyApplications">My application</router-link>
-          <router-link to="my-account">My Account</router-link>
+          <router-link to="/jobs"  active-class="active">Jobs</router-link>
+          <router-link to="/my-applications"  active-class="active">My application</router-link>
+          <router-link to="/my-account"  active-class="active">My Account</router-link>
           <a class="bell-icon-header" href="#my-account"
             ><i class="fas fa-bell"></i></a>
           <a class="logout-button" href="#">Logout</a>
         </div>
+
+        <div class="burger" @click="navCollapse()" ref="burger" :class="{nav_state:'toggle'}">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+
       </div>
     </div>
-  </div>
+  </nav>
 </template>
 
 <script>
@@ -29,11 +38,31 @@ export default {
   data() {
     return {
       msg: "Welcome to Your Vue.js App",
+      nav_state:false
     };
+  },
+  watch: {
+    '$route.path'(){
+      this.nav_state=false
+    }
   },
   methods:{
     changeRoute(){
 
+    },
+    navCollapse(){
+
+      if(!this.nav_state){
+        // this.$refs.nav.style.height='250px';
+        // this.$refs.navLinks.style.transform = 'translate(-10px,68%)';
+        // this.$refs.navLinks.style.display = 'flex';
+      }else{
+        // this.$refs.navLinks.style.transform = 'none';
+        // this.$refs.nav.style.height='85px';
+      }
+      this.$refs.burger.classList.toggle('toggle');
+      this.nav_state=!this.nav_state;
+      console.log(this.nav_state)
     }
   }
 };
@@ -41,12 +70,22 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.nav-top{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9;
+  box-shadow: 0px 4px 8px 0 #bebebe;
+  background-color: "#FAFAFA";
+
+}
 .header {
   display: flex;
   align-items: center;
   overflow: hidden;
   background-color: "#FAFAFA";
-  padding: 10px 10px;
+  padding: 10px 100px;
 }
 .background-header {
   background: #fafafa;
@@ -55,12 +94,21 @@ export default {
   float: left;
   color: black;
   text-align: center;
-  padding: 5px 39px;
+  padding: 5px 0;
+
   text-decoration: none;
   font-size: 15px;
   line-height: 25px;
   border-radius: 5px;
 }
+.header-right a{
+  padding: 5px 5px;
+  margin: 0 15px;
+}
+.header a:hover,
+.header a.active {
+  color: #0385F3;
+  }
 .headera.logo {
   font-size: 25px;
   font-weight: bold;
@@ -78,17 +126,19 @@ export default {
 .logout-button {
   text-align: center;
   background-color: #ff4c68;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: #ffffff !important;
   height: 40px !important;
   font-size: 14px !important;
   font-weight: 600 !important;
-}
-.headera.active {
-  background-color: green;
-  color: white;
+  padding: 5px 20px !important;
 }
 .header-right {
   float: right;
+  display: flex;
+  align-items: center;
 }
 @media screen and (max-width: 500px) {
   .header a {
@@ -99,6 +149,140 @@ export default {
   .header-right {
     float: none;
   }
+  nav .logo{
+    padding: 5px 35px;
+    justify-content: flex-start;
+    flex-direction: row;
+  }
 }
 @import "~bootstrap/dist/css/bootstrap.css";
+
+.nav-links li{
+    list-style:none;
+    margin-right: 17px;
+}
+.nav-links li a{
+    text-decoration:none;
+    font-weight:600;
+    color:white;
+    font-size:17px;
+    transform:uppercase;
+}
+.email h5{
+    font-size: medium;
+    font-family:"Open Sans", sans-serif;
+    font-weight: 600;
+}
+.burger{
+    display:none;
+    cursor:pointer;
+    justify-content: center;
+    flex-direction:column;
+    align-items: center;
+    flex:1 1 5%;
+}
+.burger div{
+    height:3px;
+    background-color:#3F4B6B;
+    width: 32px;
+    margin: 4px 3px;
+    transition:all 0.3s ease;
+}
+
+@media screen and (max-width:768px){
+
+    nav{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index:9;
+        height: 85px;
+        width:100%;
+        transition: height 0.5s ease-in;
+    }
+    .burger{
+        cursor:pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+    .logo{
+      padding-left: 12px !important;
+    }
+    .header-right{
+        position:absolute;
+      top: 80px;
+
+      left: 0;
+        /*transform: translate(-24px,-100%);*/
+        padding: 9px 0px;
+        width:100%;
+        z-index: 8;
+        border: 1px solid #f0f1f3;
+        background-color:#FAFAFA;
+        display: none;
+        justify-content:flex-start;
+        align-items:flex-start;
+        flex-direction:column;
+        transition: transform 0.3s ease-in;
+    }
+    .header-right.opened{
+      display: flex !important;
+    }
+
+    .nav-top>div{
+      width:100%;
+    }
+    .header{
+      padding: 10px;
+      width:100%;
+    }
+    .nav_state{
+      align-items: flex-end;
+      padding-right: 12px;
+    }
+    .nav-links li{
+        opacity:0;
+    }
+    .nav-links li a{
+        font-size:16.5px;
+    }
+    .header-right a{
+      margin-left:23px;
+    }
+    .logout-button{
+      /*margin-left: 55px!important;*/
+      width:calc( 100% - 46px );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: unset !important;
+    }
+}
+
+
+@keyframes navLinkFade{
+    0% {
+        opacity: 0;
+    }
+
+    1% {
+        opacity: 0;
+
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+/*.toggle .line1{*/
+/*    transform:rotate(-45deg) translate(-5px,10px);*/
+/*}*/
+/*.toggle .line2{*/
+/*    opacity:0;*/
+/*}*/
+/*.toggle .line3{*/
+/*    transform:rotate(45deg) translate(-5px,-10px);*/
+/*}*/
 </style>

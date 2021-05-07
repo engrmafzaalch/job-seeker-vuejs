@@ -30,6 +30,12 @@ export default {
   -moz-osx-font-smoothing: grayscale;
 
 }
+@media screen and (min-width:768px){
+  #app{
+    padding-top: 80px;
+  }
+}
+
 .ant-form-item-control-wrapper{
     display: inline-block;
     vertical-align: top;

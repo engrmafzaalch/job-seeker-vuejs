@@ -24,6 +24,7 @@ import {store} from '../store/store'
 Vue.use(Router)
 
 let router = new Router({
+  mode: 'history',
   routes: [
     {
       path: '/registration',
@@ -156,7 +157,7 @@ let router = new Router({
       }
     },
     {
-      path: '/MyApplications',
+      path: '/my-applications',
       name: 'MyApplications',
       component: MyApplications,
       meta: {

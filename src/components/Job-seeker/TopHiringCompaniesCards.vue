@@ -3,7 +3,7 @@
       <div class="compainy-container">
             <div class="jobs-cards">
               <div
-                class="pading-top-20px-right-80px align-item-center justify-content-space-around text-center"
+                class=" align-item-center justify-content-space-around text-center"
               >
                 <div class="text-align-left padding-right-20px">
                   <img src="../../assets/Vector.png" />
@@ -22,7 +22,7 @@
 
             <div class="jobs-cards">
               <div
-                class="pading-top-20px-right-80px align-item-center justify-content-space-around text-center"
+                class="align-item-center justify-content-space-around text-center"
               >
                 <div class="text-align-left padding-right-20px">
                   <img src="../../assets/Vector.png" />
@@ -41,7 +41,7 @@
 
             <div class="jobs-cards">
               <div
-                class="pading-top-20px-right-80px align-item-center justify-content-space-around text-center"
+                class=" align-item-center justify-content-space-around text-center"
               >
                 <div class="text-align-left padding-right-20px">
                   <img src="../../assets/Vector.png" />
@@ -57,7 +57,7 @@
 
             <div class="jobs-cards">
               <div
-                class="pading-top-20px-right-80px align-item-center justify-content-space-around text-center"
+                class=" align-item-center justify-content-space-around text-center"
               >
                 <div class="text-align-left padding-right-20px">
                   <img src="../../assets/Vector.png" />
@@ -120,6 +120,7 @@ export default {};
   box-sizing: border-box;
   box-shadow: 0px 4px 60px rgba(53, 66, 85, 0.04);
   border-radius: 10px;
+  padding: 22px;
 }
 @media only screen and (max-width: 530px) {
   .compainy-container{

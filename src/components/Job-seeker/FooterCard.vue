@@ -196,7 +196,7 @@ export default {
   .header{
     background: #354255;
     height: unset;
-
+    padding: 30px 16px 0 16px;
   }
   .header-right{
     display:flex;
@@ -205,12 +205,27 @@ export default {
   }
   .header-right a{
     text-align: left;
+    padding-left: 0;
+  }
+  .footer-text{
+    display: block;
+  }
+  .footer-text.mt-24{
+    margin-top: 12px;
+  }
+  .footer-text>div{
+    display: block;
+    margin-top: 12px;
+  }
+  .footer-section{
+    margin: 16px 0;
+  }
+  .footer-container{
+    padding: 30px 16px;
   }
 }
 @media only screen and (max-width: 767px) {
 
-  .footer-container{
-    padding:30px 20px;
-  }
+
 }
 </style>

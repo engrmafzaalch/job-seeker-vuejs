@@ -18,9 +18,15 @@ export default {
 </script>
 
 <style scoped>
+.container-fluid {
+  padding: 0 80px
+}
 @media only screen and  (max-width: 767px) {
   .col-md-4{
     padding: 0;
+  }
+  .container-fluid {
+    padding: 0 20px
   }
 }
 </style>

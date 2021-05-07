@@ -86,9 +86,9 @@ export default {};
 .category-box {
   background: rgba(90, 170, 223, 0.1);
   border-radius: 2px;
-  padding: 10px;
+  padding: 10px 20px;
   color: #8b90a0;
-  font-family: SF UI Display;
+  /*font-family: SF UI Display;*/
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -103,7 +103,7 @@ export default {};
 @media only screen and (min-width: 320px) and (max-width: 479px) {
 }
 .card-container{
-  padding-bottom: 80px;
+  padding: 60px 0;
   margin:20px 80px;
   display:flex;
   justify-content: center;

@@ -132,4 +132,9 @@ export default {
 .text-align-center {
   text-align: center;
 }
+@media  (max-width: 991px){
+  .padding-main-jobs-section{
+    padding:12px 5px 0 5px
+  }
+}
 </style>

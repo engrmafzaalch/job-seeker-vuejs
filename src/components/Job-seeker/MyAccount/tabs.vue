@@ -2,8 +2,8 @@
 <div class="container vh-100">
   <index_myAccount/>
   <div class="tab_bar py-4">
-     <a-tabs v-bind:default-active-key="[$store.state.tab]" @changetab="callback">
-      <a-tab-pane  key="1" tab="Profile Summery" v-on:click="changetab(1)"/>
+     <a-tabs :default-active-key="tab"  @change="changetab" >
+      <a-tab-pane  key="1" tab="Profile Summery" />
       <a-tab-pane key="2" tab="Education" />
       <a-tab-pane key="3" tab="Experience and Skills" />
       <a-tab-pane key="4" tab="Projects" />
@@ -24,22 +24,22 @@
   </div>
   <div class="row">
     <div class="progression-content">
-      <section v-if="$store.state.tab == 1">
-        <index_myAccount/>
-      </section>
-      <section v-if="$store.state.tab == 2">
+<!--      <section v-if="tab == 1">-->
+<!--        <index_myAccount/>-->
+<!--      </section>-->
+      <section v-if="tab == 1">
         <ProfileSummery/>
       </section>
-      <section v-if="$store.state.tab == 3">
+      <section v-if="tab == 2">
         <Education_in_MyAccount/>
       </section>
-      <section v-if="$store.state.tab == 4">
+      <section v-if="tab == 3">
         <Experience_and_Skills/>
       </section>
-      <section v-if="$store.state.tab == 5">
+      <section v-if="tab == 4">
         <Projects/>
       </section>
-      <section v-if="$store.state.tab == 6">
+      <section v-if="tab == 5">
         <Resume_CV/>
       </section>
     </div>
@@ -55,7 +55,7 @@ import Experience_and_Skills from "./Experience_and_Skills";
 import Projects from "./Projects";
 import Resume_CV from "./Resume_CV";
 import {store} from "../../../store/store";
-
+import {mapGetters} from 'vuex'
 export default {
   name: "tabs",
   store,
@@ -69,8 +69,11 @@ export default {
   },
   methods:{
     changetab: function(tab) {
-      console.log("testtt", tab)
+      this.$store.dispatch('CHANGE_TAB', tab)
     }
+  },
+  computed:{
+    ...mapGetters(['tab'])
   }
 }
 

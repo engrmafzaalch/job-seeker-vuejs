@@ -1,5 +1,5 @@
 <template>
-  <div class="background-left-side-menu">
+  <div class="background-left-side-menu" :class="{opened: showFilters}">
     <div
       class="display-flex justify-content-space-between align-item-center pt-30"
     >
@@ -318,6 +318,9 @@
 
 <script>
 export default {
+  props: [
+    'showFilters'
+  ],
   data() {
     return {
       toggleCat: true,
@@ -533,6 +536,10 @@ export default {
   background: rgba(90, 170, 223, 0.04);
   border: 1px solid #0084f4;
   padding: 14px 27px 14px 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
 }
 .location-radio {
   text-align: initial !important;
@@ -662,4 +669,37 @@ hr {
 .cursor-pointer {
   cursor: pointer;
 }
-</style> 
+
+@media  (max-width: 991px){
+  .background-left-side-menu{
+    display: none;
+    position: fixed;
+    top: 130px;
+    left: 0;
+    max-width: 400px;
+    z-index: 4;
+    width: 100%;
+    overflow: auto;
+    height: calc(100vh - 130px )
+
+  }
+  /* width */
+  .background-left-side-menu::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  /* Track */
+  .background-left-side-menu::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  .background-left-side-menu::-webkit-scrollbar-thumb {
+    background: #5f7582;
+    border-radius: 4px;
+  }
+  .background-left-side-menu.opened{
+   display: block
+ }
+}
+</style>

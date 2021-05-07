@@ -1,6 +1,6 @@
 <template>
-  <div class="row hero-section ">
-    <div class="col-md-7 left-side-search-box child1">
+  <div class="row hero-section">
+    <div class="left-side-search-box col-md-7 child1">
       <div class="title-font">
         <span> Aenean euismod bibendum laoreet </span>
       </div>
@@ -123,7 +123,7 @@
       </div>
     </div>
     <!-- display-non-tablet -->
-    <div class="col-md-5 profile-box-parent child2">
+    <div class="profile-box-parent col-md-5 child2">
       <div class="ml-auto profile-box">
         <div class="display-flex align-item-center">
           <div>
@@ -187,7 +187,7 @@
         </div>
       </div>
     </div>
-    <div></div>
+
   </div>
 </template>
 
@@ -283,7 +283,8 @@ export default {
   font-family: 'Open Sans', sans-serif;
   color: #ffffff;
   border: 0;
-  width: 120px;
+  width: 91%;
+  margin: 0px 10px;
   height: 48px;
 }
 .dropdwon-fonts {
@@ -423,9 +424,10 @@ hr {
   justify-content: space-between;
 }
 .profile-box {
-  /*height: 440px;*/
+  /*max-height: 440px;*/
   border: 1px solid #f0f1f3;
-  width: 400px;
+  max-width: 440px;
+  width: 100%;
   border-radius: 8px;
   padding: 32px 20px 32px 20px;
   background-color: #ffffff;
@@ -579,7 +581,7 @@ input[type="range"]::-ms-fill-upper {
   }
   .profile-box {
     width: 280px;
-    height: 390px;
+    /*height: 390px;*/
   }
   .left-side-search-box {
     width: 100%;
@@ -641,7 +643,7 @@ input[type="range"]::-ms-fill-upper {
   }
   .profile-box {
     width: 280px;
-    height: 390px;
+    /*height: 390px;*/
   }
   .left-side-search-box {
     width: 640px;
@@ -651,19 +653,24 @@ input[type="range"]::-ms-fill-upper {
   }
 }
 .hero-section{
-  padding-top: 60px;
-  padding-bottom: 60px;
-  /*height: 70vh;*/
-  /*min-height: 700px;*/
+
   background-image: url(/static/img/Header2x.f0f86d2.jpg);
   background-size: cover;
   background-repeat-y: no-repeat;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding:60px 80px;
   /*display:flex;*/
-  /*flex-wrap: wrap;*/
+  /*!* flex-wrap: wrap; *!*/
+  /*flex-direction: column;*/
   /*justify-content: center;*/
   /*align-items: center;*/
+}
+.hero-section .child1{
+  /*flex:0 1 824px!important;*/
+  /*margin-right:56px;*/
+}
+.hero-section .child2{
+  /*flex:0 1 440px!important;*/
+  /*margin:72px 0px;*/
 }
 .search-btn-group{
   display: flex;
@@ -671,7 +678,7 @@ input[type="range"]::-ms-fill-upper {
   column-gap: 10px;
 }
 .search-btn1{
-  /*flex:1 1 100px;*/
+  flex:1 1 100px;
 
 
 }
@@ -725,9 +732,7 @@ input[type="range"]::-ms-fill-upper {
     max-width:600px;
   }
   .profile-box-parent {
-    /*display:flex;*/
     justify-content: flex-end;
-    /*align-items: center;*/
   }
   .search-activity{
     display: unset;
@@ -752,6 +757,27 @@ input[type="range"]::-ms-fill-upper {
     background: none;
     display: block;
   }
+
+  .search-btn1,
+  .search-btn2{
+    /*flex: none;*/
+    /*margin-bottom: 4px;*/
+  }
+
+  .search-button-style{
+    /*width: 100%;*/
+    /*margin: 0;*/
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .hero-section {
+    padding: 40px 10px;
+  }
+  .profile-box {
+    margin: 0 auto;
+    margin-top: 30px;
+  }
   .search-btn-group{
     display: flex;
     flex-direction: column;
@@ -763,17 +789,15 @@ input[type="range"]::-ms-fill-upper {
     flex: none;
     margin-bottom: 4px;
   }
+
+  .search-button-style{
+    width: 100%;
+    margin: 0;
+  }
   .dropdwon-fonts{
     padding-left: 0;
     border: none;
   }
-  .search-button-style{
-    width: 100%;
-  }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-
 }
 
 

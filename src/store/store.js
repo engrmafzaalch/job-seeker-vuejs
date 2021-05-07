@@ -6,7 +6,7 @@ Vue.use(Vuex);
 export const store = new Vuex.Store({
     state: {
         step:1,
-        tab:1,
+        tab:'1',
         status: '',
         token: localStorage.getItem('token') || '',
         user: {}
@@ -30,8 +30,9 @@ export const store = new Vuex.Store({
       change(state, step) {
         state.step = step
       },
-      changetab(state,tab){
+      CHANGE_TAB(state,tab){
           state.tab = tab
+        console.log(tab)
       }
     },
     actions: {
@@ -54,6 +55,9 @@ export const store = new Vuex.Store({
                 // })
             })
         },
+      CHANGE_TAB({commit}, tab){
+        commit('CHANGE_TAB', tab)
+      },
         logout({ commit }) {
             return new Promise((resolve, reject) => {
                 commit('logout')

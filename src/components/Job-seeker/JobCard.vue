@@ -5,7 +5,7 @@
         <img src="../../assets/Rectangle 11.png"/>
       </div>
       <div>
-        <div class="mt-2 mt-sm-0"><span class="job-title">Front-end Developer</span></div>
+        <div class="mt-2 mt-sm-0 d-flex"><span class="job-title">Front-end Developer</span></div>
         <div class="display-flex mt-10px">
           <div class="category-box"><span>Web Development</span></div>
           <div class="category-box ml-10px">
@@ -47,7 +47,6 @@ export default {};
 }
 
 .posted-ago-date-text {
-  font-family: SF UI Display;
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
@@ -145,7 +144,7 @@ hr {
   border: 1px solid #f0f1f3;
   transition: all 0.3s ease-in-out;
   border-radius: 10px;
-  padding-bottom: 12px;
+  padding-bottom: 20px;
 }
 .jobs-cards:hover {
   box-shadow: 0 4px 10px 2px #e2effb;

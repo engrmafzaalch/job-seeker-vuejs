@@ -2,13 +2,19 @@
   <div>
     <div class="main-height">
       <div class="row m-0">
-        <div class="col-3 p-0"><LeftSideMenu /></div>
-        <div class="col-6">
+        <div class="col-lg-3 p-0">
+          <h6 class="mt-3 show-filter" @click="filters=!filters">
+            Show Filters
+          </h6>
+          <LeftSideMenu :show-filters="filters" />
+        </div>
+        <div class="col-lg-6">
           <middle-jobs-section />
         </div>
-        <div class="col-3">
+        <div class="col-lg-3">
           <right-side-featured-jobs />
         </div>
+        <div class="overlay" v-if="filters" @click="filters=!filters"></div>
       </div>
     </div>
   </div>
@@ -32,6 +38,7 @@ export default {
   data() {
     return {
       current: 0,
+      filters: false,
     };
   },
   methods: {
@@ -76,5 +83,34 @@ export default {
 }
 .main-height {
   min-height: calc(100vh - 110px);
+}
+.show-filter {
+  display: none;
+}
+.overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+}
+@media  (max-width: 991px){
+  .show-filter{
+    display: block;
+    cursor: pointer;
+    width: 150px;
+    margin-left: auto;
+    margin-top: 40px;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: right;
+    padding-right: 20px;
+    color: #4E4E5A;
+  }
+
 }
 </style>
