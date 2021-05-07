@@ -46,7 +46,7 @@
       <hr>
       <div class="row float-right buttonss">
         <div class="col-sm-12">
-          <button class="btn btn-light px-5">Go Back</button>
+          <button class="btn btn-light px-5" @click="$emit('prevStep')">Go Back</button>
           <button type="primary"
                   html-type="submit"
                   class="login-button-style btn btn-primary px-5"
@@ -84,6 +84,7 @@ export default {
       this.form.validateFields((err, values) => {
         if (!err) {
           console.log("Received values of form: ", values);
+          this.$emit('stepSuccess', values)
         }
       });
     },

@@ -25,8 +25,8 @@
     <hr>
     <div class="row float-right">
       <div class="col-12">
-        <button class="btn btn-light px-5">Go Back</button>
-        <button class="btn btn-primary px-5">Proceed</button>
+        <button class="btn btn-light px-5" @click="$emit('prevStep')">Go Back</button>
+        <button class="btn btn-primary px-5" @click="uploadFile">Proceed</button>
       </div>
     </div>
   </div>
@@ -34,7 +34,12 @@
 
 <script>
 export default {
-  name: "Documents"
+  name: "Documents",
+  methods: {
+    uploadFile(){
+      this.$emit('stepSuccess', {fileUrl: 'file url'})
+    }
+    }
 }
 </script>
 

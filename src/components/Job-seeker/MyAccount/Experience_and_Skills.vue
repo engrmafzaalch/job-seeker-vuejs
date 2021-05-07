@@ -1,21 +1,21 @@
 <template>
-<div class="container vh-100">
-  <div class="row pt-4">
+<div class="mx-4  vh-100">
+  <div class="row">
     <div class="col-12 card">
-      <div class="card-body">
+      <div class="card-body px-0 px-sm-3">
           <div class="row">
             <div class="col-12 mt-2">
               <h3 class="text-primary">Skills</h3>
             </div>
           </div>
         <div class="row">
-          <div class="col-12">
-            <span>Key Skills</span>
-            <span class="bg-light p-2 m-2 border_">C</span>
-            <span class="bg-light p-2 m-2 border_">C++</span>
-            <span class="bg-light p-2 m-2 border_">JAVA</span>
-            <span class="bg-light p-2 m-2 border_">SQL</span>
-            <span class="bg-light p-2 m-2 border_">Windows Server-2008</span>
+          <div class="col-12 ">
+            <span class="">Key Skills</span>
+            <span class="skill bg-light p-2 m-2 border_">C</span>
+            <span class="skill bg-light p-2 m-2 border_">C++</span>
+            <span class="skill bg-light p-2 m-2 border_">JAVA</span>
+            <span class="skill bg-light p-2 m-2 border_">SQL</span>
+            <span class="skill bg-light p-2 m-2 border_">Windows Server-2008</span>
           </div>
         </div>
         <hr>
@@ -26,33 +26,33 @@
           </div>
         </div>
 
-        <div>
+        <div class="w-100">
           <ul class="list_">
             <li class="pr-2">
               <span class="text-black-50 font_a">Employe Name</span><br>
               <span class="font_b">ABC Private Limited</span>
             </li>
-            <li class="pr-2 pl-5">
+            <li class="">
               <span class="text-black-50 font_a">Job Title</span><br>
               <span class="font_b">Sr. Business Analyst</span>
             </li>
-            <li class="pr-2 pl-2">
+            <li class="">
               <span class="text-black-50 font_a">Duration</span><br>
               <span class="font_b">Jun-2020 till now</span>
             </li>
-            <li class="pr-2 pl-2">
+            <li class="">
               <span class="text-black-50 font_a">Location</span><br>
               <span class="font_b">Argentina, Buenos Aires</span>
             </li>
-            <li class="pr-2 pl-2">
+            <li class="">
               <span class="text-black-50 font_a">Industry</span><br>
               <span class="font_b">Healthcare</span>
             </li>
-            <li class="pr-1 pl-2">
+            <li class="">
               <span class="text-black-50 font_a">Work Type</span><br>
               <span class="font_b">Full Time</span>
             </li>
-            <li class="pr-2 pl-1">
+            <li class="">
               <span class="text-black-50 font_a">Salary</span><br>
               <span class="font_b">75,000</span>
             </li>
@@ -84,27 +84,27 @@
               <span class="text-black-50 font_a">Employe Name</span><br>
               <span class="font_b">ABC Private Limited</span>
             </li>
-            <li class="pr-2 pl-5">
+            <li class="">
               <span class="text-black-50 font_a">Job Title</span><br>
               <span class="font_b">Sr. Business Analyst</span>
             </li>
-            <li class="pr-2 pl-2">
+            <li class="">
               <span class="text-black-50 font_a">Duration</span><br>
               <span class="font_b">Jun-2020 till now</span>
             </li>
-            <li class="pr-2 pl-2">
+            <li class="">
               <span class="text-black-50 font_a">Location</span><br>
               <span class="font_b">Argentina, Buenos Aires</span>
             </li>
-            <li class="pr-2 pl-2">
+            <li class="">
               <span class="text-black-50 font_a">Industry</span><br>
               <span class="font_b">Healthcare</span>
             </li>
-            <li class="pr-1 pl-2">
+            <li class="">
               <span class="text-black-50 font_a">Work Type</span><br>
               <span class="font_b">Full Time</span>
             </li>
-            <li class="pr-2 pl-1">
+            <li class="">
               <span class="text-black-50 font_a">Salary</span><br>
               <span class="font_b">75,000</span>
             </li>
@@ -154,8 +154,10 @@ export default {
 }
 .list_ {
   list-style: none;
-  display: inline;
-  margin-left: -38px;
+  display:flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-left: 0;
 }
 .list_ li {
   display: inline-block;
@@ -166,5 +168,24 @@ export default {
 .font_b {
   font-size: 14px;
   font-weight: bold;
+}
+.btn{
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  color: #FFFFFF;
+}
+
+
+@media (max-width: 768px) {
+  .skill{
+    display: inline-block;
+
+  }
+  .list_{
+    flex-direction: column;
+  }
 }
 </style>

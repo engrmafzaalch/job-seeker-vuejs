@@ -1,7 +1,7 @@
 <template>
 <div>
   <div class="container-fluid" style="margin-bottom:30px;">
-    <div class="row py-3">    
+    <div class="row py-3">
         <div class=" pt-3 tab-p tab-flex">
           <div class="box border border-light">
             <div>
@@ -30,7 +30,7 @@
         </div>
     </div>
   </div>
-  <div class="card-flex">    
+  <div class="card-flex">
     <div class="flex-child1" >
       <h3 class="heading-margin">My Applications</h3>
       <div class="card">
@@ -185,7 +185,7 @@
             <span class="text-black-50 font_a">Google India Private Limited</span>
           </div>
         </div>
-        <div class="col-md-6 mt-4 mb-4">
+        <div class="col-md-6 mt-4 mb-4 d-flex d-sm-block justify-content-center">
           <button type="button" class="btn border border-primary text-primary float-right">
             View Similar Jobs
           </button>
@@ -217,6 +217,7 @@
                 <span class="text-black-50">05 Jun'20 12:45 PM</span>
               </div>
             </li>
+            <span></span>
             <li class="active">
               <div>
                 <span>Recruiter viewed on</span>
@@ -225,6 +226,8 @@
                 <span class="text-black-50">10 Jun'20 12:45 PM</span>
               </div>
             </li>
+            <span></span>
+
             <li class="text-black-50">
               <div>
                 <span>Shortlisted On</span>
@@ -298,16 +301,18 @@ export default {
 .progressbar {
   counter-reset: step;
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 160px 1fr 160px 1fr 160px;
+  /*flex-wrap: wrap;*/
+  /*justify-content: space-around;*/
+  /*justify-content: center;*/
 }
 
 .progressbar li {
-  flex:0 1 225px;
+  width: 160px;
   position: relative;
   list-style: none;
-  float: left;
-  width: 33.3%;
+  /*float: left;*/
   text-align: center;
 }
 
@@ -323,20 +328,33 @@ export default {
   margin: 0 auto 10px auto;
   border-radius: 50%;
   background-color: white;
-
   /* Center # in circle */
   line-height: 30px;
 }
 
 .progressbar li:after {
-  content: "";
-  position: absolute;
-  width: 50%;
+  /*content: "";*/
+  /*position: absolute;*/
+  /*width: 100%;*/
+  /*height: 0px;*/
+  /*!*   background: orange ; *!*/
+  /*top: 50%; !*half of height Parent (li) *!*/
+  /*transform: translateY(-50%);*/
+  /*left: -100%;*/
+  /*z-index: -1;*/
+  /*border: 1px solid;*/
+  /*border-color: #5AAADF;*/
+}
+.progressbar > span{
+  width: 100%;
   height: 0px;
+  display: inline-block;
+  align-self: center;
   /*   background: orange ; */
-  top: 40px; /*half of height Parent (li) */
-  left: -25%;
-  z-index: -1;
+  /*top: 50%; !*half of height Parent (li) *!*/
+  /*transform: translateY(-50%);*/
+  /*left: -100%;*/
+  /*z-index: -1;*/
   border: 1px solid;
   border-color: #5AAADF;
 }
@@ -387,26 +405,30 @@ export default {
   flex:0 1 188px;
   width :200px;
   height:96px;
-  padding :20px;  
+  padding :20px;
   margin:5px;
   background: #FAFDFF;
 /* 8px */
 }
 
 .card-flex{
-  margin-left:50px;
+  /*margin-left:50px;*/
+  padding: 0 80px;
   display:flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: row;
-  flex-wrap: wrap;  
+  /*flex-wrap: wrap;*/
 }
 .flex-child1{
-  flex:0 1 491px;
+  /*flex:0 1 491px;*/
   margin-right: 50px;
+  max-width: 491px;
+  width: 100%;
 }
 .flex-child2{
-  flex:0 1 720px;
+  width:100%;
+  /*flex:0 1 720px;*/
 }
 .job-status-container{
   margin-left:20px;
@@ -414,35 +436,57 @@ export default {
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  flex-wrap: wrap;  
+  flex-wrap: wrap;
 }
 .job-status{
   flex:0 1 auto;
 }
 .tab-p{
-  padding-left: 40px;
+  /*padding-left: 40px;*/
+  padding: 0 80px;
 }
 @media screen and (max-width:1268px){
   .flex-child2{
     margin-top:40px;
   }
-  .tab-p{
-    padding-left: 1rem !important;
+}
+@media screen and (max-width:1024px) {
+  .progressbar li {
+    width: 150px;
   }
+  .flex-child1{
+    max-width: 100%;
+  }
+  .card-flex{
+    flex-direction: column;
+    }
 }
 @media screen and (max-width:768px){
 .card-flex{
-    margin:10px 20px;
-  }  
+    /*margin:10px 20px;*/
+  padding: 10px 20px;
+  }
+  .tab-p{
+    padding: 0 20px;
+  }
   .flex-child1{
-    
+
     margin-right:auto;
   }
   .flex-child2{
     margin-top:40px;
   }
+  .progressbar{
+    /*justify-content: center;*/
+    grid-template-columns: 1fr;
+  }
+  .progressbar>span{
+    border: none;
+
+  }
   .progressbar li {
-    flex:0 1 150px;
+    width: 200px;
+    flex: none;
   }
   .progressbar li {
     margin:20px 0px;
@@ -453,6 +497,17 @@ export default {
   .job-status{
     margin:10px 0px;
   }
+    .tab-flex{
+      display: flex;
+      column-gap: 12px;
+    }
+    .tab-flex .box{
+      width: unset;
+      flex: none;
+      margin: 0;
+      padding: 12px;
+    }
+
 }
   .heading-margin{
     margin-bottom:25px;

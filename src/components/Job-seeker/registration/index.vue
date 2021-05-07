@@ -1,11 +1,11 @@
 <template>
   <div>
     <div class="form-steps main-height">
-      <a-steps :current="current">
+      <a-steps :current="current" >
         <a-step v-for="item in steps" :key="item.title" :title="item.title" />
       </a-steps>
       <div class="steps-content">
-        <ProfileSummary :nextStep="next" v-if="steps[current].id === 1" />
+        <ProfileSummary @stepSuccess="saveStep" :nextStep="next" v-if="steps[current].id === 1" />
         <education-details
           :nextStep="next"
           :previousStep="prev"
@@ -129,6 +129,7 @@ export default {
           content: "Last-content",
         },
       ],
+      userData: {}
     };
   },
   methods: {
@@ -138,6 +139,10 @@ export default {
     prev() {
       this.current--;
     },
+    saveStep(data){
+      alert('emit')
+      console.log(data)
+    }
   },
 };
 </script>

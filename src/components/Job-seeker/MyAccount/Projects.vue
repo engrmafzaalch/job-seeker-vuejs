@@ -1,46 +1,43 @@
 <template>
-<div class="container vh-100">
-  <div class="row pt-4">
+<div class="mx-4  vh-100">
+  <div class="row">
     <div class="col-12 card">
-      <div class="card-body">
+      <div class="card-body px-0 px-sm-3">
+
+<!--        <div class="row">-->
+<!--          <div class="col-12 py-2">-->
+<!--            <h3 class="text-primary">Experience</h3>-->
+<!--          </div>-->
+<!--        </div>-->
 
         <div class="row">
-          <div class="col-12 py-2">
-            <h3 class="text-primary">Experience</h3>
-          </div>
-        </div>
-
-        <div class="row">
-          <div col-md-12>
+          <div class="col-12">
           <ul class="list_">
             <li class="pr-2">
-              <span class="text-black-50 font_a">Employe Name</span><br>
+              <span class="text-black-50 font_a">Project Title</span><br>
               <span class="font_b">ABC Private Limited</span>
             </li>
-            <li class="pr-2 pl-2">
-              <span class="text-black-50 font_a">Job Title</span><br>
-              <span class="font_b">Sr. Business Analyst</span>
+            <li class="">
+              <span class="text-black-50 font_a">Client Name</span><br>
+              <span class="font_b">Charlie Bergson</span>
             </li>
-            <li class="pr-2 pl-2">
+            <li class="">
+              <span class="text-black-50 font_a">Project Status</span><br>
+              <span class="font_b">Completed</span>
+            </li>
+            <li class="">
               <span class="text-black-50 font_a">Duration</span><br>
-              <span class="font_b">Jun-2020 till now</span>
+              <span class="font_b">1 Year 6 Months</span>
             </li>
-            <li class="pr-2 pl-2">
-              <span class="text-black-50 font_a">Location</span><br>
-              <span class="font_b">Argentina, Buenos Aires</span>
+            <li class="">
+              <span class="text-black-50 font_a">Start Date</span><br>
+              <span class="font_b">Jun - 2019</span>
             </li>
-            <li class="pr-2 pl-2">
-              <span class="text-black-50 font_a">Industry</span><br>
-              <span class="font_b">Healthcare</span>
+            <li class="">
+              <span class="text-black-50 font_a">Finished on</span><br>
+              <span class="font_b">Dec - 2020</span>
             </li>
-            <li class="pr-1 pl-2">
-              <span class="text-black-50 font_a">Work Type</span><br>
-              <span class="font_b">Full Time</span>
-            </li>
-            <li class="pr-2 pl-1">
-              <span class="text-black-50 font_a">Salary</span><br>
-              <span class="font_b">75,000</span>
-            </li>
+
           </ul>
         </div>
         </div>
@@ -66,36 +63,33 @@
 
         <div class="row pt-2">
           <div class="col-md-12">
-          <ul class="list_">
-            <li class="pr-2">
-              <span class="text-black-50 font_a">Employe Name</span><br>
-              <span class="font_b">ABC Private Limited</span>
-            </li>
-            <li class="pr-2 pl-5">
-              <span class="text-black-50 font_a">Job Title</span><br>
-              <span class="font_b">Sr. Business Analyst</span>
-            </li>
-            <li class="pr-2 pl-2">
-              <span class="text-black-50 font_a">Duration</span><br>
-              <span class="font_b">Jun-2020 till now</span>
-            </li>
-            <li class="pr-2 pl-2">
-              <span class="text-black-50 font_a">Location</span><br>
-              <span class="font_b">Argentina, Buenos Aires</span>
-            </li>
-            <li class="pr-2 pl-2">
-              <span class="text-black-50 font_a">Industry</span><br>
-              <span class="font_b">Healthcare</span>
-            </li>
-            <li class="pr-1 pl-2">
-              <span class="text-black-50 font_a">Work Type</span><br>
-              <span class="font_b">Full Time</span>
-            </li>
-            <li class="pr-2 pl-1">
-              <span class="text-black-50 font_a">Salary</span><br>
-              <span class="font_b">75,000</span>
-            </li>
-          </ul>
+            <ul class="list_">
+              <li class="pr-2">
+                <span class="text-black-50 font_a">Project Title</span><br>
+                <span class="font_b">ABC Private Limited</span>
+              </li>
+              <li class="">
+                <span class="text-black-50 font_a">Client Name</span><br>
+                <span class="font_b">Charlie Bergson</span>
+              </li>
+              <li class="">
+                <span class="text-black-50 font_a">Project Status</span><br>
+                <span class="font_b">Completed</span>
+              </li>
+              <li class="">
+                <span class="text-black-50 font_a">Duration</span><br>
+                <span class="font_b">1 Year 6 Months</span>
+              </li>
+              <li class="">
+                <span class="text-black-50 font_a">Start Date</span><br>
+                <span class="font_b">Jun - 2019</span>
+              </li>
+              <li class="">
+                <span class="text-black-50 font_a">Finished on</span><br>
+                <span class="font_b">Dec - 2020</span>
+              </li>
+
+            </ul>
         </div>
         </div>
         <div class="row">
@@ -143,8 +137,12 @@ export default {
 }
 .list_ {
   list-style: none;
-  display: inline;
-  margin-left: -38px;
+  /*display: inline;*/
+  /*margin-left: -38px;*/
+  padding-left: 0;
+  display:flex;
+  justify-content: space-between;
+  width: 100%;
 }
 .list_ li {
   display: inline-block;
@@ -155,5 +153,20 @@ export default {
 .font_b {
   font-size: 14px;
   font-weight: bold;
+}
+.btn{
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  color: #FFFFFF;
+}
+
+@media (max-width: 768px) {
+
+  .list_{
+    flex-direction: column;
+  }
 }
 </style>

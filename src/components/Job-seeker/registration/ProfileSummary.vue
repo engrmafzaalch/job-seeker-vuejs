@@ -90,8 +90,11 @@ export default {
       this.nextStep();
       this.form.validateFields((err, values) => {
         if (!err) {
-          console.log("Received values of form: ", values);
+          // console.log("Received values of form: ", values);
+          this.$emit('stepSuccess',{summary: values.summary} )
+          alert('emit')
         }
+
       });
     },
   },

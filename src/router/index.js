@@ -22,7 +22,6 @@ import Payments_2 from "../components/Payments-2/Payments_2";
 import AdminJobSeekerDetailedPage from '../components/admin-job-seeker/job-seeker-detailed-view'
 import {store} from '../store/store'
 Vue.use(Router)
-
 let router = new Router({
   mode: 'history',
   routes: [
@@ -93,7 +92,7 @@ let router = new Router({
       }
     },
     {
-      path: '/my-account',
+      path: '/profile-data',
       name: 'Steps',
       component: Steps,
       meta: {
@@ -109,11 +108,12 @@ let router = new Router({
       }
     },
     {
-      path: '/tabs',
+      path: '/profile',
       name: 'tabs',
       component: tabs,
       meta: {
-        requiresAuth: true
+        requiresAuth: true,
+        requiresProfileData: true
       }
     },
     {
@@ -183,15 +183,16 @@ let router = new Router({
   ]
 })
 
-// router.beforeEach((to, from, next) => {
-//   if (to.matched.some(record => record.meta.requiresAuth)) {
-//     if (store.getters.isLoggedIn) {
-//       next()
-//       return
-//     }
-//     next('/job-seeker/login')
-//   } else {
-//     next()
-//   }
-// })
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresProfileData)) {
+    if (store.getters.isProfileCompleted) {
+      next()
+      return
+    }
+    next('/profile-data')
+  } else {
+    next()
+  }
+
+})
 export default router

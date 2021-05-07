@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <!-- <img src="./assets/logo.png" /> -->
     <Header />
     <router-view />
     <!-- <Footer /> -->
@@ -30,7 +29,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
 
 }
-@media screen and (min-width:768px){
+@media screen and (min-width:769px){
   #app{
     padding-top: 80px;
   }

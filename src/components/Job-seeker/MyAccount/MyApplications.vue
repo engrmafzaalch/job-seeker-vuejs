@@ -171,8 +171,6 @@
 
       </div>
     </div>
-<!--    <div class="col-1">-->
-<!--    </div>-->
     <div class="col-md-6 ml-3">
       <hr>
       <div class="row ">
@@ -372,4 +370,5 @@ export default {
   font-size: 18px;
   font-weight: bold;
 }
+
 </style>

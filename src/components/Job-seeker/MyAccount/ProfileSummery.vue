@@ -1,8 +1,8 @@
 <template>
-<div class="container pt-5">
-  <div class="row mt-5">
+<div class="mx-4 ">
+  <div class="row">
     <div class="col-12 card">
-      <div class="card-body">
+      <div class="card-body px-0 px-sm-3">
         <div class="row pt-3">
           <div class="col-12">
             <span class="text-black-50 about">About</span>
@@ -76,4 +76,13 @@ name: "ProfileSummery"
 .ny {
   font-weight: bold;
 }
+.btn{
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  color: #FFFFFF;
+}
+
 </style>

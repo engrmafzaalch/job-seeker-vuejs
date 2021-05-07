@@ -1,6 +1,6 @@
 <template>
   <div class="row hero-section">
-    <div class="left-side-search-box col-md-7 child1">
+    <div class="left-side-search-box col-lg-8 child1">
       <div class="title-font">
         <span> Aenean euismod bibendum laoreet </span>
       </div>
@@ -123,11 +123,11 @@
       </div>
     </div>
     <!-- display-non-tablet -->
-    <div class="profile-box-parent col-md-5 child2">
+    <div class="profile-box-parent col-lg-4 child2">
       <div class="ml-auto profile-box">
         <div class="display-flex align-item-center">
           <div>
-            <img src="../../assets/Ellipse5.png" />
+            <img src="@/assets/user.png" />
           </div>
           <div>
             <div class="profile-name">Jaydon Lipshutz</div>
@@ -232,6 +232,9 @@ export default {
         }
       });
     },
+    handleChange(e){
+      console.log(e)
+    },
   },
 };
 </script>
@@ -320,6 +323,7 @@ export default {
   border: 1px solid #f0f1f3;
   background: rgba(255, 255, 255, 0.2);
   border-radius: 4px;
+  max-width: 840px;
 }
 .no-of-opening {
   font-family: Open Sans;
@@ -444,6 +448,7 @@ hr {
   font-weight: 500;
   font-size: 20px;
   color: #ffffff;
+  max-width: 760px;
 }
 .color-green {
   color: #01e37e;
@@ -580,7 +585,7 @@ input[type="range"]::-ms-fill-upper {
     font-size: 12px;
   }
   .profile-box {
-    width: 280px;
+    /*width: 280px;*/
     /*height: 390px;*/
   }
   .left-side-search-box {
@@ -724,7 +729,7 @@ input[type="range"]::-ms-fill-upper {
 
 @media only screen and (max-width: 767px) {
   .hero-section {
-    padding: 0;
+    padding: 40px 10px;
     background-size: cover;
     height: unset;
   }
@@ -772,7 +777,7 @@ input[type="range"]::-ms-fill-upper {
 
 @media only screen and (max-width: 991px) {
   .hero-section {
-    padding: 40px 10px;
+
   }
   .profile-box {
     margin: 0 auto;

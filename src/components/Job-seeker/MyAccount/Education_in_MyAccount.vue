@@ -1,8 +1,8 @@
 <template>
-<div class="container vh-100">
-  <div class="row py-4">
+<div class="mx-4  vh-100">
+  <div class="row ">
     <div class="col-12 card">
-      <div class="card-body">
+      <div class="card-body px-0 px-sm-3">
         <div class="row py-2">
           <div class="col-md-4">
             <div>
@@ -129,4 +129,13 @@ name: "Education_in_MyAccount"
 .font-a {
   font-size: 14px;
 }
+.btn{
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  color: #FFFFFF;
+}
+
 </style>

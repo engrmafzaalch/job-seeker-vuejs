@@ -2,7 +2,7 @@
   <div class="border-box-profile-information">
     <div class="display-flex align-item-center">
       <div>
-        <img src="../../../assets/Ellipse5.png" alt="" />
+        <img src="@/assets/user.png" alt="" />
       </div>
       <div class="ml-20">
         <span class="job-seeker-detailed-profile-text">Desirae Dias</span>

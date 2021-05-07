@@ -1,5 +1,5 @@
 <template>
-<div class="container vh-100">
+<div class="container-fluid vh-100">
   <index_myAccount/>
   <div class="tab_bar py-4">
      <a-tabs :default-active-key="tab"  @change="changetab" >
@@ -82,5 +82,17 @@ export default {
 <style scoped>
 .ant-tabs-content-animated{
   display:none!important;
+}
+.progression-content{
+  width:100%;
+}
+.container-fluid{
+  padding-left: 100px;
+  padding-right: 100px;
+}
+@media (max-width: 991px){
+  .container-fluid{
+    padding: 0 20px;
+  }
 }
 </style>

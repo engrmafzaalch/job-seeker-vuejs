@@ -84,7 +84,7 @@
       <a-form-item>
         <div class="row float-right">
           <div class="col-12">
-            <a-button class="btn btn-light mr-3 px-5">
+            <a-button class="btn btn-light mr-3 px-5" @click="$emit('prevStep')">
               Go Back
             </a-button>
             <a-button
@@ -126,6 +126,7 @@ export default {
       this.form.validateFields((err, values) => {
         if (!err) {
           console.log("Received values of form: ", values);
+          this.$emit('stepSuccess', values)
         }
       });
     },

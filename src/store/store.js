@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import router from '../router'
 //then you use Vuex
 Vue.use(Vuex);
 
@@ -9,7 +10,8 @@ export const store = new Vuex.Store({
         tab:'1',
         status: '',
         token: localStorage.getItem('token') || '',
-        user: {}
+        user: {},
+      profileData: {}
     },
     mutations: {
         auth_request(state) {
@@ -33,6 +35,16 @@ export const store = new Vuex.Store({
       CHANGE_TAB(state,tab){
           state.tab = tab
         console.log(tab)
+      },
+      NEXT_STEP(state){
+          state.step +=1
+      },
+      PREV_STEP(state){
+          state.step-=1
+      },
+      SAVE_PROFILE_DATA(state, data){
+          state.profileData = data
+        router.push('/profile')
       }
     },
     actions: {
@@ -55,8 +67,17 @@ export const store = new Vuex.Store({
                 // })
             })
         },
+      SAVE_PROFILE_DATA({commit}, data){
+          commit('SAVE_PROFILE_DATA', data)
+      },
       CHANGE_TAB({commit}, tab){
         commit('CHANGE_TAB', tab)
+      },
+      NEXT_STEP({commit}){
+        commit('NEXT_STEP')
+      },
+      PREV_STEP({commit}){
+          commit('PREV_STEP')
       },
         logout({ commit }) {
             return new Promise((resolve, reject) => {
@@ -71,6 +92,7 @@ export const store = new Vuex.Store({
         isLoggedIn: state => !!state.token,
         authStatus: state => state.status,
         steps: state => state.step,
-        tab: state => state.tab
+        tab: state => state.tab,
+      isProfileCompleted: state => Object.keys(state.profileData).length
     }
 });
