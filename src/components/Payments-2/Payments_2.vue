@@ -1,4 +1,5 @@
 <template>
+<div class="payment-container">
   <div class="box">
     <div class="select-otr child">
       <select>
@@ -23,6 +24,7 @@
       </div>
     </div>
   </div>
+</div>
 </template>
 
 <script>
@@ -32,13 +34,11 @@ name: "Payments_2"
 </script>
 
 <style scoped>
-
-
-
-.box{
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+.payment-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 a:hover{
@@ -64,7 +64,7 @@ h1,h2,h3,h4,h5,h6{
   margin: 0;
 }
 .box{
-  margin: 100px auto;
+  margin: 130px 20px;
   width: 576px;
   background-color: white;
   border-radius: 8px;
@@ -168,5 +168,11 @@ h1,h2,h3,h4,h5,h6{
 
 .box .last-li .action .action-btn{
 
+}
+@media screen and (max-width:576px){
+  .box{
+    width:80%;
+    
+  }    
 }
 </style>

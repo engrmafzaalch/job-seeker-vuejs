@@ -80,5 +80,7 @@ export default {
 </script>
 
 <style scoped>
-
+.ant-tabs-content-animated{
+  display:none!important;
+}
 </style>

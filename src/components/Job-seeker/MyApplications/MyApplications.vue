@@ -1,179 +1,180 @@
 <template>
-<div class="container-fluid vh-100">
-  <div class="row py-3">
-    <div class="col-5">
-      <div class="row pt-3 pl-3">
-        <div class="col-md-3 border border-light rounded mr-2 border_a">
-          <div>
-            <span class="font_c">25</span>
+<div>
+  <div class="container-fluid" style="margin-bottom:30px;">
+    <div class="row py-3">    
+        <div class=" pt-3 tab-p tab-flex">
+          <div class="box border border-light">
+            <div>
+              <span class="font_c">25</span>
+            </div>
+            <div>
+              <span class="text-black-50 font_b">Applications</span>
+            </div>
           </div>
-          <div>
-            <span class="text-black-50 font_b">Applications</span>
+          <div class="box border border-light">
+            <div>
+              <span class="font_c">05</span>
+            </div>
+            <div>
+              <span class="text-black-50 font_b">Shortlisted</span>
+            </div>
+          </div>
+          <div class="box border border-light">
+            <div>
+              <span class="font_c">15</span>
+            </div>
+            <div>
+              <span class="text-black-50 font_b">Not Seen Yet</span>
+            </div>
           </div>
         </div>
-        <div class="col-md-3 border border-light rounded mr-2 border_a">
-          <div>
-            <span class="font_c">05</span>
-          </div>
-          <div>
-            <span class="text-black-50 font_b">Shortlisted</span>
-          </div>
-        </div>
-        <div class="col-md-4 border border-light rounded border_a">
-          <div>
-            <span class="font_c">15</span>
-          </div>
-          <div>
-            <span class="text-black-50 font_b">Not Seen Yet</span>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
-  <div class="row pl-2">
-    <div class="col-md-4 font_c">
-      <h3>My Applications</h3>
-    </div>
-    <div class="col-md-3 font_c">
-      <h3>Job Application Status</h3>
-    </div>
-    <div class="col-2 border border-light rounded border_a">
-      <div class="row">
-        <div class="col-md-2 mt-2">
-          <img src="./info.png" height="24" width="24">
-        </div>
-        <div class="col-md-10 font_a">
-          <div>
-            <span>Not getting views on your CV?</span>
+  <div class="card-flex">    
+    <div class="flex-child1" >
+      <h3 class="heading-margin">My Applications</h3>
+      <div class="card">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-12">
+              <div>
+                <span class="font_d">Business Development Manager</span>
+              </div>
+              <div>
+                <span class="text-black-50 font_a">Google India Private Limited</span>
+              </div>
+            </div>
           </div>
-          <div>
-            <span>Keep your profile updated</span>
+          <div class="row py-3">
+            <div class="col-md-7">
+              <img src="./map-pin.png" height="20" width="22"/>
+              <span class="text-black-50 font_a">Ibadan & Oyo State</span>
+            </div>
+            <div class="col-md-5 border border-light rounded">
+              <span class="text-primary font_b">Recruiter last online 24 mins ago</span>
+            </div>
           </div>
+
+          <hr>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div>
+                <span class="font_d">Business Development Manager</span>
+              </div>
+              <div>
+                <span class="text-black-50 font_a">Google India Private Limited</span>
+              </div>
+            </div>
+          </div>
+          <div class="row py-3">
+            <div class="col-md-7">
+              <img src="./map-pin.png" height="20" width="22"/>
+              <span class="text-black-50 font_a">Ibadan & Oyo State</span>
+            </div>
+            <div class="col-md-5 border border-light rounded">
+              <span class="text-primary font_b">Recruiter last online 24 mins ago</span>
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div>
+                <span class="font_d">Business Development Manager</span>
+              </div>
+              <div>
+                <span class="text-black-50 font_a">Google India Private Limited</span>
+              </div>
+            </div>
+          </div>
+          <div class="row py-3">
+            <div class="col-md-7">
+              <img src="./map-pin.png" height="20" width="22"/>
+              <span class="text-black-50 font_a">Ibadan & Oyo State</span>
+            </div>
+            <div class="col-md-5 border border-light rounded">
+              <span class="text-primary font_b">Recruiter last online 24 mins ago</span>
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div>
+                <span class="font_d">Business Development Manager</span>
+              </div>
+              <div>
+                <span class="text-black-50 font_a">Google India Private Limited</span>
+              </div>
+            </div>
+          </div>
+          <div class="row py-3">
+            <div class="col-md-7">
+              <img src="./map-pin.png" height="20" width="22"/>
+              <span class="text-black-50 font_a">Ibadan & Oyo State</span>
+            </div>
+            <div class="col-md-5 border border-light rounded">
+              <span class="text-primary font_b">Recruiter last online 24 mins ago</span>
+            </div>
+          </div>
+
+          <hr>
+
+          <div class="row">
+            <div class="col-md-12">
+              <div>
+                <span class="font_d">Business Development Manager</span>
+              </div>
+              <div>
+                <span class="text-black-50 font_a">Google India Private Limited</span>
+              </div>
+            </div>
+          </div>
+          <div class="row pt-3">
+            <div class="col-md-7">
+              <img src="./map-pin.png" height="20" width="22"/>
+              <span class="text-black-50 font_a">Ibadan & Oyo State</span>
+            </div>
+            <div class="col-md-5 border border-light rounded">
+              <span class="text-primary font_b">Recruiter last online 24 mins ago</span>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
-    <div class="col-md-2">
-      <button class="btn btn-primary">
-        Update Profile
-      </button>
-    </div>
-  </div>
-  <div class="row pt-2 pl-3">
-    <div class="col-md-4 mt-3 card">
-      <div class="card-body">
-        <div class="row">
-          <div class="col-12">
-            <div>
-              <span class="font_d">Business Development Manager</span>
-            </div>
-            <div>
-              <span class="text-black-50 font_a">Google India Private Limited</span>
-            </div>
-          </div>
+
+    <div class="flex-child2">
+      <div class="job-status-container">
+        <div class="job-status">
+          <h3 class="font_c">Job Application Status</h3>
         </div>
-        <div class="row py-3">
-          <div class="col-md-7">
-            <img src="./map-pin.png" height="20" width="22"/>
-            <span class="text-black-50 font_a">Ibadan & Oyo State</span>
-          </div>
-          <div class="col-md-5 border border-light rounded">
-            <span class="text-primary font_b">Recruiter last online 24 mins ago</span>
+
+        <div class="job-status border border-light rounded border_a">
+          <div class="row">
+            <div class="col-md-2 mt-2">
+              <img src="./info.png" height="24" width="24">
+            </div>
+            <div class="col-md-10 font_a">
+              <div>
+                <span>Not getting views on your CV?</span>
+              </div>
+              <div>
+                <span>Keep your profile updated</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        <hr>
-
-        <div class="row">
-          <div class="col-12">
-            <div>
-              <span class="font_d">Business Development Manager</span>
-            </div>
-            <div>
-              <span class="text-black-50 font_a">Google India Private Limited</span>
-            </div>
-          </div>
+        <div class="job-status">
+          <button class="btn btn-primary">
+            Update Profile
+          </button>
         </div>
-        <div class="row py-3">
-          <div class="col-md-7">
-            <img src="./map-pin.png" height="20" width="22"/>
-            <span class="text-black-50 font_a">Ibadan & Oyo State</span>
-          </div>
-          <div class="col-md-5 border border-light rounded">
-            <span class="text-primary font_b">Recruiter last online 24 mins ago</span>
-          </div>
-        </div>
-
-        <hr>
-
-        <div class="row">
-          <div class="col-12">
-            <div>
-              <span class="font_d">Business Development Manager</span>
-            </div>
-            <div>
-              <span class="text-black-50 font_a">Google India Private Limited</span>
-            </div>
-          </div>
-        </div>
-        <div class="row py-3">
-          <div class="col-md-7">
-            <img src="./map-pin.png" height="20" width="22"/>
-            <span class="text-black-50 font_a">Ibadan & Oyo State</span>
-          </div>
-          <div class="col-md-5 border border-light rounded">
-            <span class="text-primary font_b">Recruiter last online 24 mins ago</span>
-          </div>
-        </div>
-
-        <hr>
-
-        <div class="row">
-          <div class="col-12">
-            <div>
-              <span class="font_d">Business Development Manager</span>
-            </div>
-            <div>
-              <span class="text-black-50 font_a">Google India Private Limited</span>
-            </div>
-          </div>
-        </div>
-        <div class="row py-3">
-          <div class="col-md-7">
-            <img src="./map-pin.png" height="20" width="22"/>
-            <span class="text-black-50 font_a">Ibadan & Oyo State</span>
-          </div>
-          <div class="col-md-5 border border-light rounded">
-            <span class="text-primary font_b">Recruiter last online 24 mins ago</span>
-          </div>
-        </div>
-
-        <hr>
-
-        <div class="row">
-          <div class="col-12">
-            <div>
-              <span class="font_d">Business Development Manager</span>
-            </div>
-            <div>
-              <span class="text-black-50 font_a">Google India Private Limited</span>
-            </div>
-          </div>
-        </div>
-        <div class="row pt-3">
-          <div class="col-md-7">
-            <img src="./map-pin.png" height="20" width="22"/>
-            <span class="text-black-50 font_a">Ibadan & Oyo State</span>
-          </div>
-          <div class="col-md-5 border border-light rounded">
-            <span class="text-primary font_b">Recruiter last online 24 mins ago</span>
-          </div>
-        </div>
-
       </div>
-    </div>
-<!--    <div class="col-1">-->
-<!--    </div>-->
-    <div class="col-md-6 ml-3">
       <hr>
       <div class="row ">
         <div class="col-md-6">
@@ -184,7 +185,7 @@
             <span class="text-black-50 font_a">Google India Private Limited</span>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 mt-4 mb-4">
           <button type="button" class="btn border border-primary text-primary float-right">
             View Similar Jobs
           </button>
@@ -201,12 +202,12 @@
       </div>
       <hr>
       <div class="row">
-        <div class="col-12">
+        <div class="col-md-12">
           <span class="text-black-50 font_d">Application Status</span>
         </div>
       </div>
       <div class="row py-2">
-        <div class="col-12">
+        <div class="col-md-12">
           <ul class="progressbar">
             <li class="active">
               <div>
@@ -237,12 +238,12 @@
       </div>
       <hr>
       <div class="row py-4">
-        <div class="col-12">
+        <div class="col-md-12">
           <span class="text-black-50 font_d">Activity on this Job</span>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-2 pr-2">
+      <div class="tab-flex">
+        <div class="box pr-2">
           <div class="font_c">
             <span>150</span>
           </div>
@@ -250,7 +251,7 @@
             <span class="text-black-50">Total Applications</span>
           </div>
         </div>
-        <div class="col-md-2 pr-2">
+        <div class="box pr-2">
           <div class="font_c">
             <span>150</span>
           </div>
@@ -258,7 +259,7 @@
             <span class="text-black-50">Applications Viewed</span>
           </div>
         </div>
-        <div class="col-md-3">
+        <div class="box">
           <div class="font_c">
             <span>8</span>
           </div>
@@ -296,10 +297,13 @@ export default {
 
 .progressbar {
   counter-reset: step;
-  width: 800px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .progressbar li {
+  flex:0 1 225px;
   position: relative;
   list-style: none;
   float: left;
@@ -372,4 +376,85 @@ export default {
   font-size: 18px;
   font-weight: bold;
 }
+.tab-flex{
+  width:100%;
+  display:flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.tab-flex .box{
+  flex:0 1 188px;
+  width :200px;
+  height:96px;
+  padding :20px;  
+  margin:5px;
+  background: #FAFDFF;
+/* 8px */
+}
+
+.card-flex{
+  margin-left:50px;
+  display:flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;  
+}
+.flex-child1{
+  flex:0 1 491px;
+  margin-right: 50px;
+}
+.flex-child2{
+  flex:0 1 720px;
+}
+.job-status-container{
+  margin-left:20px;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;  
+}
+.job-status{
+  flex:0 1 auto;
+}
+.tab-p{
+  padding-left: 40px;
+}
+@media screen and (max-width:1268px){
+  .flex-child2{
+    margin-top:40px;
+  }
+  .tab-p{
+    padding-left: 1rem !important;
+  }
+}
+@media screen and (max-width:768px){
+.card-flex{
+    margin:10px 20px;
+  }  
+  .flex-child1{
+    
+    margin-right:auto;
+  }
+  .flex-child2{
+    margin-top:40px;
+  }
+  .progressbar li {
+    flex:0 1 150px;
+  }
+  .progressbar li {
+    margin:20px 0px;
+  }
+  .progressbar li:after {
+    display:none
+  }
+  .job-status{
+    margin:10px 0px;
+  }
+}
+  .heading-margin{
+    margin-bottom:25px;
+  }
 </style>
