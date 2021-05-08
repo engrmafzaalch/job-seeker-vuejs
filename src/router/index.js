@@ -20,6 +20,7 @@ import MyApplications from "../components/Job-seeker/MyApplications/MyApplicatio
 import modal from "../components/Job/job-detail/modal";
 import Payments_2 from "../components/Payments-2/Payments_2";
 import AdminJobSeekerDetailedPage from '../components/admin-job-seeker/job-seeker-detailed-view'
+import JobDetail from '../components/Job/job-detail/JobDetail';
 import {store} from '../store/store'
 Vue.use(Router)
 let router = new Router({
@@ -56,6 +57,14 @@ let router = new Router({
       name: 'AdminJobSeeker',
       component: AdminJobSeeker,
       meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/job-detail',
+      name:'JobDetail',
+      component: JobDetail,
+      meta:{
         requiresAuth: true
       }
     },

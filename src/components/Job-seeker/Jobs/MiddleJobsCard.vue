@@ -1,5 +1,5 @@
 <template>
-  <router-link class="box-main-jobs-feature mtb-25 position-relative" to="/jobs/job_id">
+  <router-link class="box-main-jobs-feature mtb-25 position-relative" to="/job-detail">
     <div v-if="isFeatured" class="position-absolute new-featured-box-main-jobs">
       <div><span class="color-new-featured-job-text">Featured</span></div>
     </div>
