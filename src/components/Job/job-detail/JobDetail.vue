@@ -1,5 +1,6 @@
 <template>
-  <div class="job-details">
+<div>
+  <div class="job-details mb-5">
     <div class="row">
       <div class="container-fluid text-align-initial mt-5 mb-4">
         <a-breadcrumb>
@@ -344,6 +345,7 @@
       </div>
     </div>
   </div>
+</div>
 </template>
 <script>
 
@@ -507,7 +509,7 @@ export default {
   flex-wrap: wrap;
 }
 .tick-container li{
-  flex:1 1 150px;
+  flex:1 1 175px;
 }
 @media screen and (max-width:768px){
   .job-details{
