@@ -114,7 +114,7 @@
             </h3>
           </div>
           <div>
-            <div class="row">
+            <div class="skill-container">
               <div class="col-lg-1 skill border border-light rounded mr-2 ml-3 mt-2">C</div>
               <div class="col-lg-2 skill border border-light rounded mr-2 mt-2">C++</div>
               <div class="col-lg-2 skill border border-light rounded mr-2 mt-2">Jave</div>
@@ -139,12 +139,10 @@
           <div style="text-align: left">
             <h3 class="description_heading">Perks and Benefits</h3>
             <ul class="vector2 description_sub_text tick-container" style="padding-left: 28px">
-              <li>Lunch</li>
-              <li class="ml-5">Healthcare</li>
-              <li class="ml-5">Vacation/PaidTime Off</li>
-            </ul>
-            <ul class="vector2 description_sub_text" style="padding-left: 28px">
-              <li>Gym Membership</li>
+              <li class="m-2">Lunch</li>
+              <li class="m-2">Healthcare</li>
+              <li class="m-2">Vacation/PaidTime Off</li>
+              <li class="m-2">Gym Membership</li>
             </ul>
 
           </div>
@@ -417,13 +415,19 @@ export default {
 .vector{
   list-style-image: url('Vector.svg');
 }
+.skill-container{
+  display: flex;
+  flex-wrap: wrap;
+}
 .skill{
+
   /*line-height: 44px;*/
   /*text-align: center;*/
   /*min-width: 73px;*/
   /*min-height: 44px;*/
   /*background: #FAFAFC;*/
   /*border: 1px solid #F0F1F3;*/
+  flex:1 1 100px;
   border-radius: 24px;
   background: #FAFAFC;
 }
@@ -495,9 +499,10 @@ export default {
 .tick-container{
   display:flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
 }
 .tick-container li{
-  flex:1 1 auto;
+  flex:1 1 150px;
 }
 @media screen and (max-width:768px){
   .job-details{
