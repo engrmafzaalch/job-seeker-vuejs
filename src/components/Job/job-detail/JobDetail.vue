@@ -43,7 +43,7 @@
           <hr class="mt-4" />
           <div class="tag-container mt-4">
             <div class="tag-child1">
-              <span class="sub_title">Opening:<span style="color: #0385F3; font-size: 16px"> 12 </span></span>
+              <span class="sub_title" style="width: 181px;">Opening:<span style="color: #0385F3; font-size: 16px"> 12 </span></span>
               <span class="sub_title pl-5">Job Applicants:<span style="color: #0385F3; font-size: 16px">1258 </span></span>
             </div>
             <div class="tag-child2">
@@ -485,15 +485,20 @@ export default {
 .tag-container{
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 .tag-container .tag-child1{
   flex:0 1 50%;
   display:flex;
+  width:100%;
+  margin:10px;
   justify-content: flex-start;
 }
 .tag-container .tag-child2{
-  flex:0 1 50%;
+  flex:0 1 150px;
   display:flex;
+  margin:10px;
   justify-content: flex-end;
 }
 .tick-container{
