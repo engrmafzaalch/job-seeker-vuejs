@@ -1,21 +1,20 @@
 <template>
-  <div id="app">
-    <!-- <Header /> -->
-    <router-view />
-    <!-- <Footer /> -->
+  <div>
+    <Header />
+        <router-view />
+
   </div>
 </template>
 
 <script>
 
-import Header from "./components/Job-seeker/Header.vue";
-import Footer from "./components/Job-seeker/Jobs/Footer.vue";
-import { store } from './store/store'
+import Header from "../components/Job-seeker/Header.vue";
+import { store } from '../store/store'
 
 export default {
   name: "App",
   store,
-  components: { Header, Footer },
+  components: { Header},
 };
 
 </script>

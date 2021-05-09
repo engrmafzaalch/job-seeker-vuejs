@@ -1,6 +1,6 @@
 <template>
 <div>
-  <div class="job-details mb-5">
+  <div class="job-details mb-5" style="font-family: 'Open sans', sans-serif">
     <div class="row">
       <div class="container-fluid text-align-initial mt-5 mb-4">
         <a-breadcrumb>
@@ -21,21 +21,21 @@
                   <h2 class="float-left busy-head">Business Analyst</h2>
                 
                 <div class="float-right" style="margin-left: auto;">
-                  <button class="btn btn-primary">Part Time</button>
+                  <button class="btn btn-primary" style="border-radius: 2px;font-family: 'Open sans', sans-serif;font-size: 14px;">Part Time</button>
                 </div>
               </div>
-              <div class="flex-items">
-                <div class="item">
-                  <img src="./map-pin.svg" alt="map pin">
+              <div class="flex-items row">
+                <div class="item mr-3">
+                  <img src="./map-pin.svg" alt="map pin" class="mr-1">
                   <span class="text-black-50"> Abuja , Nigeria</span>
                 </div>
                 <div class="item">
-                  <img src="./clock.svg" alt="map pin">
+                  <img src="./clock.svg" alt="map pin" class="mr-1">
                   <span class="text-black-50"> 2 Hours Ago</span>
                 </div>
                 <div class="item">
-                  <img src="./dollar-sign.svg" alt="map pin">
-                  <span class="text-black-50"> 2000-6000</span>
+                  <img src="./dollar-sign.svg" alt="map pin" class="mr-1">
+                  <span class="text-black-50"> 2000 - 6000</span>
                 </div>
               </div>
             </div>
@@ -54,8 +54,8 @@
           <hr />
           <div class="text-left">
             <h3 class="description_heading py-2 ml-3" style="font-weight:700;">Description</h3>
-            <h4 class="description_sub_text ml-3" style="font-weight:700;">The roles and responsibilities for Business Analyst :</h4>
-            <ul class="text text-left" style="line-height: 32px;">
+            <h4 class="description_sub_text ml-3 " style="font-weight:700;">The roles and responsibilities for Business Analyst :</h4>
+            <ul class="text text-left lists" style="line-height: 38px;">
               <li>Review, analyse, evaluate and prioritize business requirements</li>
               <li>Document requirements, define scope, create impactful presentations as well as insightful spreadsheets
               </li>
@@ -72,7 +72,7 @@
             <h4 class="description_sub_text mt-4 ml-3 text-left" style="font-weight:700">
               Should have knowledge of :
             </h4>
-            <ul class="text text-left" style="line-height: 32px;">
+            <ul class="text text-left" style="line-height: 38px;">
               <li>Knowledge of Agile development</li>
               <li>Knowledge of Finance processes and financial enterprise systems</li>
               <li>Well versed with tools such as JIRA</li>
@@ -87,11 +87,11 @@
           <hr />
 
           <div style="text-align: left">
-            <h3 class="description_heading">
+            <h3 class="description_heading mb-4">
               Education
             </h3>
-            <h4 class="description_sub_text">UD: <span style="color: #8B90A0">B.Tech</span></h4>
-            <h4 class="description_sub_text">PG: <span style="color: #8B90A0">Post Graduation Not Required</span></h4>
+            <h4 class="description_sub_text mb-3">UD: <span style="color: #8B90A0">B.Tech</span></h4>
+            <h4 class="description_sub_text mb-3">PG: <span style="color: #8B90A0">Post Graduation Not Required</span></h4>
           </div>
 
           <hr />
@@ -100,7 +100,7 @@
             <h3 class="description_heading">Requirement</h3>
             <p class="text" style="line-height: 32px;">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
               laudantium, totam rem aperiam.</p>
-            <ul class="vector text" style="line-height: 32px;">
+            <ul class="vector text" style="line-height: 38px;">
               <li>Laboris laboris nostrud consect etur magna.</li>
               <li>Laboris laboris nostrud consect etur magna. Aliqua sint dolore esse ut occaecat do.</li>
               <li>Laboris laboris nostrud consect etur magna.</li>
@@ -116,12 +116,11 @@
           </div>
           <div>
             <div class="skill-container">
-              <div class="col-lg-1 skill border border-light rounded mr-2 ml-3 mt-2">C</div>
-              <div class="col-lg-2 skill border border-light rounded mr-2 mt-2">C++</div>
-              <div class="col-lg-2 skill border border-light rounded mr-2 mt-2">Jave</div>
-              <div class="col-lg-2 skill border border-light rounded mr-2 mt-2">SQL</div>
-              <div class="col-lg-4 skill window_server border border-light rounded mr-2 mt-2">
-                Windows server-2008
+              <div class="skill">C</div>
+              <div class="skill">C++</div>
+              <div class="skill">Jave</div>
+              <div class="skill">SQL</div>
+              <div class="skill">Windows server-2008
               </div>
             </div>
           </div>
@@ -152,7 +151,7 @@
 
       <div class="col-md-4 mt-4" style="text-align: left">
 
-        <a-button @click="showModal" class="button_ my-5">Apply For This Position Now</a-button>
+        <a-button @click="showModal" class="button_ btn btn-sucess my-5">Apply For This Position Now</a-button>
         <a-modal v-model="visible" @ok="handleOk" :footer="null">
           <div class="row pl-4">
             <div class="col-12">
@@ -404,10 +403,13 @@ export default {
 .description_heading{
   font-size: 24px;
   color: #505565;
+  font-family: "Open sans", sans-serif !important;
 }
 .description_sub_text{
   font-size: 18px;
   color: #505565;
+  font-weight: 400;
+  font-family: "Open sans", sans-serif !important;
 }
 .text{
   font-size: 16px;
@@ -419,19 +421,23 @@ export default {
 }
 .skill-container{
   display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 .skill{
-
-  /*line-height: 44px;*/
-  /*text-align: center;*/
-  /*min-width: 73px;*/
-  /*min-height: 44px;*/
-  /*background: #FAFAFC;*/
-  /*border: 1px solid #F0F1F3;*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius :24px;
+  border: 1px solid #F0F1F3;
+  padding:3px 20px;
   flex:1 1 100px;
-  border-radius: 24px;
+  line-height: 20px;
   background: #FAFAFC;
+  border-radius: 24px;
+  margin-right:16px;
 }
 .window_server{
   padding-left: 30px;
@@ -445,6 +451,8 @@ export default {
   background: #FAFAFC;
   border-radius: 4px;
   padding: 8px 20px;
+  color: #222222;
+  cursor:pointer;
 }
 .card{
   text-align: center;
@@ -475,13 +483,14 @@ export default {
   flex-wrap:wrap;
 }
 .flex-items .item{
-  flex:0 1 134px;
+  flex:0 1 158px;
   display: flex;
-  margin:5px 10px;
+  margin:5px 1px;
 }
 .flex-items .item span{
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 600;
+  font-family: "Open sans", sans-serif !important;
   color:#8B90A0;
 }
 .tag-container{
@@ -509,7 +518,17 @@ export default {
   flex-wrap: wrap;
 }
 .tick-container li{
-  flex:1 1 175px;
+  flex:1 1 200px;
+  font-family: "Open sans", sans-serif !important;
+}
+ul{
+  font-family: "Open sans", sans-serif !important;
+}
+ul li{
+  font-family: "Open sans", sans-serif !important;
+}
+p{
+  font-family: "Open sans", sans-serif !important;
 }
 @media screen and (max-width:768px){
   .job-details{

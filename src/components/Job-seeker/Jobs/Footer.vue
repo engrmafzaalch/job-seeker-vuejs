@@ -14,7 +14,7 @@
     </div>
     <div class="background-footer container-fluid padding-20px">
       <div
-        class="footer-main display-flex  justify-content-space-between align-item-center"
+        class="footer-main"
       >
         <div>
           <div>
@@ -27,7 +27,7 @@
         <div>
           <span class="ml-100px copy-right-text">© Copyright 2020 Infohob</span>
         </div>
-        <div class="display-flex justify-content-space-between mr-50px">
+        <div class="display-flex justify-content-space-between mr-50px ">
           <div class="border-box-images">
             <img src="../../../assets/Shape.png" />
           </div>
@@ -141,6 +141,11 @@ export default {
 }
 .footer-main {
   padding: 10px 10px;
+  display:flex;
+  justify-content:space-between; 
+  align-items:center;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 .logo-font-footer {
   color: #ffffff;
@@ -185,5 +190,37 @@ export default {
 }
 .align-item-center {
   align-items: center;
+}
+@media only screen and (max-width: 767px) {
+  .header{
+    display: none;
+  }
+  .footer-main {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;                                                                        
+  }
+  .footer-main div{
+    margin:5px 2px;
+  }
+  .mr-50px{
+    margin-right: 0px;
+  }
+  .padding-20px {
+    padding: 5px 0px 5px 0px!important;                                           
+  }
+  .border-box-images {
+    padding: 5px;
+    margin-right: px;
+  }
+  .ml-100px {
+    margin-left: 0px;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .border-box-images {
+    padding: 2px;
+    margin: 3px;
+  }
 }
 </style>
