@@ -151,7 +151,7 @@
 
       <div class="col-md-4 mt-4" style="text-align: left">
 
-        <a-button @click="showModal" class="button_ btn btn-sucess my-5">Apply For This Position Now</a-button>
+        <a-button @click="showModal" class="button_ btn btn-success my-5 py-2" style='border-radius: 2px; font-family: "Open sans", sans-serif; font-size: 14px;height:40px;'>Apply For This Position Now</a-button>
         <a-modal v-model="visible" @ok="handleOk" :footer="null">
           <div class="row pl-4">
             <div class="col-12">
