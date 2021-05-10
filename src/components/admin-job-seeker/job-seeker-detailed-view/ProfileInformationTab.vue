@@ -1,7 +1,7 @@
 <template>
   <div class="border-box-profile-information">
-    <div class="display-flex align-item-center">
-      <div>
+    <div class="d-flex align-items-md-center main-profile justify-content-between flex-column flex-md-row">
+      <div class="mb-2 mb-md-0">
         <img src="@/assets/user.png" alt="" />
       </div>
       <div class="ml-20">
@@ -105,13 +105,11 @@
       </div>
     </div>
     <hr />
-    <div class="button-class display-flex">
-      <div>
+    <div class="button-class d-flex justify-content-end">
         <a-button type="primary" class="go-back-button-style"> Cancle</a-button>
         <a-button type="primary" html-type="submit" class="login-button-style">
           Approve Account
         </a-button>
-      </div>
     </div>
   </div>
 </template>
@@ -121,29 +119,16 @@ export default {};
 </script>
 
 <style scoped>
-.go-back-button-style {
-  background: #fafafa;
-  border-radius: 4px;
-  /* width: 100%; */
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  color: #8b90a0;
-  height: 48px;
-  border: 1px solid #fafafa;
+.main-profile{
+  flex-wrap: wrap;
 }
-.login-button-style {
-  background: #0385f3;
-  border-radius: 4px;
-  /* width: 100%; */
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: 600;
-  height: 48px;
-  font-size: 14px;
-  color: #ffffff;
+
+.main-profile img{
+  height: 120px;
+  width: 120px;
+  object-fit: cover;
 }
+
 .display-info-title-job-seeker-detailed {
   font-family: Open Sans;
   font-style: normal;

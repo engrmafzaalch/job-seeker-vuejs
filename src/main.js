@@ -14,6 +14,7 @@ Vue.config.productionTip = false
 
 import 'bootstrap/dist/css/bootstrap.css'
 /* eslint-disable no-new */
+
 new Vue({
   el: '#app',
   router,
