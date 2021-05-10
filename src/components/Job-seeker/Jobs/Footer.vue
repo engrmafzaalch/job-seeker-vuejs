@@ -55,6 +55,9 @@ export default {
 </script>
 
 <style scoped>
+.mt-100{
+  margin-top:100px;
+}
 .text-align-iniital {
   text-align: initial;
 }

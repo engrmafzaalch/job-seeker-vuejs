@@ -9,7 +9,7 @@
             <a href="" style="color:#0385F3">BUSSINESS ANALYST JOBS</a></a-breadcrumb-item>
         </a-breadcrumb>
       </div>
-      <div class="col-md-8 card">
+      <div class="col-lg-8 card">
         <div class="card-body">
           <div class="row">
             <div class="col-md-2 text-left mt-2 mb-2" >
@@ -21,7 +21,7 @@
                   <h2 class="float-left busy-head">Business Analyst</h2>
                 
                 <div class="float-right" style="margin-left: auto;">
-                  <button class="btn btn-primary" style="border-radius: 2px;font-family: 'Open sans', sans-serif;font-size: 14px;">Part Time</button>
+                  <span class="part-time">Part Time</span>
                 </div>
               </div>
               <div class="flex-items row">
@@ -149,9 +149,9 @@
         </div>
       </div>
 
-      <div class="col-md-4 mt-4" style="text-align: left">
+      <div class="col-lg-4 mt-4" style="text-align: left;padding: 0px 30px;">
 
-        <a-button @click="showModal" class="button_ btn btn-success my-5 py-2" style='border-radius: 2px; font-family: "Open sans", sans-serif; font-size: 14px;height:40px;'>Apply For This Position Now</a-button>
+        <a-button @click="showModal" class="button_ btn btn-success my-5 py-2 text-center" >Apply For This Position Now</a-button>
         <a-modal v-model="visible" @ok="handleOk" :footer="null">
           <div class="row pl-4">
             <div class="col-12">
@@ -199,12 +199,12 @@
         </a-modal>
 
         <p >or apply via Email</p>
-        <a style="color: #00C87A;text-decoration:underline" href="Career@gmail.com">Career@gmail.com</a>
+        <a style="color: #00C87A;text-decoration:underline;font-weight:600" class="career-email" href="Career@gmail.com">Career@gmail.com</a>
 
-        <div class=" mt-4" style="display: flex">
-          <div class="btn_menu"><img src="./share.svg" />Share</div>
-          <div class="btn_menu ml-3"><img src="./tweeter.svg" /> Tweet</div>
-          <div class="btn_menu ml-3"><img src="./save.svg" /> Save</div>
+        <div class=" mt-4" style="display:flex" >
+          <div class="btn_menu text-center"><img class="mr-1" src="./share.svg" /> Share</div>
+          <div class="btn_menu text-center ml-3"><img class="mr-1" src="./tweeter.svg" /> Tweet</div>
+          <div class="btn_menu text-center ml-3"><img class="mr-1" src="./save.svg" /> Save</div>
         </div>
         <h3 class="description_heading mt-5" style="font-size: 24px">Jobs you might be interested in</h3>
 
@@ -376,7 +376,7 @@ export default {
 
 <style scoped>
 .job-details{
-  margin:0px 60px;
+  margin:0px 74px;
 }
 .container-fluid {
   font-family: Open Sans;
@@ -403,13 +403,13 @@ export default {
 .description_heading{
   font-size: 24px;
   color: #505565;
-  font-family: "Open sans", sans-serif !important;
+  font-family: 'Open sans', sans-serif !important;
 }
 .description_sub_text{
   font-size: 18px;
   color: #505565;
   font-weight: 400;
-  font-family: "Open sans", sans-serif !important;
+  font-family: 'Open sans', sans-serif !important;
 }
 .text{
   font-size: 16px;
@@ -432,12 +432,13 @@ export default {
   justify-content: center;
   border-radius :24px;
   border: 1px solid #F0F1F3;
-  padding:3px 20px;
+  padding:1px 20px;
   flex:1 1 100px;
-  line-height: 20px;
+  line-height: 18px;
   background: #FAFAFC;
   border-radius: 24px;
   margin-right:16px;
+  margin-top: 10px;
 }
 .window_server{
   padding-left: 30px;
@@ -474,6 +475,10 @@ export default {
 .button_ {
   background-color: #00C87A;
   color: white;
+  border-radius: 4px;
+  font-family: 'Open sans', sans-serif;
+  font-size: 14px;
+  height:40px;
 }
 .flex-items{
   display:flex;
@@ -490,7 +495,7 @@ export default {
 .flex-items .item span{
   font-size: 17px;
   font-weight: 600;
-  font-family: "Open sans", sans-serif !important;
+  font-family: 'Open sans', sans-serif !important;
   color:#8B90A0;
 }
 .tag-container{
@@ -519,16 +524,26 @@ export default {
 }
 .tick-container li{
   flex:1 1 200px;
-  font-family: "Open sans", sans-serif !important;
+  font-family: 'Open sans', sans-serif !important;
 }
-ul{
-  font-family: "Open sans", sans-serif !important;
+ul,p,ul li{
+  font-family: 'Open sans', sans-serif !important;
 }
-ul li{
-  font-family: "Open sans", sans-serif !important;
+.part-time{
+  background-color:#007BFF;
+  border-radius: 2px;
+  font-family: 'Open sans', sans-serif;
+  font-size: 14px;
+  color:white;
+  padding: 8px 10px;
+  font-size: 14px;
+  line-height: 24px;
 }
-p{
-  font-family: "Open sans", sans-serif !important;
+.career-email{
+    color: rgb(0, 200, 122);
+    text-decoration: underline;
+    font-weight: 500;
+    font-size: 16px;
 }
 @media screen and (max-width:768px){
   .job-details{
