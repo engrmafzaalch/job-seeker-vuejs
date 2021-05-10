@@ -5,7 +5,7 @@
 
         <div class="flex-x">
           <router-link to="/" class="logo">
-            <img src="../../assets/Frame 1376 1.png" />
+            <img src="/static/images/Frame 1376 1.png" />
           </router-link>
         </div>
 
@@ -15,6 +15,7 @@
           <router-link to="/jobs"  active-class="active">Jobs</router-link>
           <router-link to="/my-applications"  active-class="active">My application</router-link>
           <router-link to="/profile"  active-class="active">My Account</router-link>
+          
           <a class="bell-icon-header" href="#my-account"
             ><i class="fas fa-bell"></i></a>
           <a class="logout-button" href="#">Logout</a>

@@ -50,4 +50,17 @@ export default {
 .padding-job-seeker-detailed-page {
   padding: 50px 21px 50px 50px;
 }
+
+@media only screen and (max-width: 767px) {
+ .padding-job-seeker-detailed-page {
+    padding: 0px 20px;
+    padding-top:40px;
+  } 
+}
+@media only screen and (max-width: 380px) {
+  .padding-job-seeker-detailed-page {
+    padding: 0px 10px;
+    padding-top:20px;
+  } 
+}
 </style>
