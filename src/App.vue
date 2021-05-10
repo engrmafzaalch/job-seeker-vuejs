@@ -109,5 +109,36 @@ export default {
     overflow-x: scroll!important;
   }
 }
+.btn-primary{
+  background: #0385F3 !important;
+}
+.btn{
+  font-family: 'Open sans', sans-serif;
+}
+.ant-modal-content{
+  border-radius: 8px;
+}
+.button-class{
+  column-gap: 10px;
+}
+.login-button-style,
+.go-back-button-style {
+  background: #fafafa;
+  border-radius: 4px;
+  max-width: 235px;
+  width: 100%;
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 1px;
+  font-size: 14px;
+  color: #8b90a0;
+  height: 48px;
+  border: 1px solid #fafafa;
+}
+.login-button-style {
+  background: #0385f3;
+  color: #fff;
+}
 @import "~bootstrap/dist/css/bootstrap.css";
 </style>

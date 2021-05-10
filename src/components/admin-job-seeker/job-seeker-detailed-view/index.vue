@@ -66,7 +66,6 @@ export default {
     padding: 50px 20px 50px 20px;
   }
 }
-<<<<<<< HEAD
 
 @media only screen and (max-width: 767px) {
  .padding-job-seeker-detailed-page {
@@ -81,6 +80,4 @@ export default {
   } 
 }
 </style>
-=======
-</style>
->>>>>>> e97f7546252459088f006c6e1dcaa1e015abdb01
+

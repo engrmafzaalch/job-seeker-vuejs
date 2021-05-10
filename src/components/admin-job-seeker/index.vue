@@ -201,7 +201,6 @@ const data = [
     tags: ["loser"],
   },
   {
-    is_approved: "yes",
     key: "3",
     id: "3",
     name: "Joe Black",
