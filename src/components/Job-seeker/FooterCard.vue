@@ -92,15 +92,16 @@
         </div>
       </div>
     </div>
-    <footer-main />
+    <footer-main/>
   </div>
 </template>
 
 <script>
-import FooterMain from "./FooterMain.vue";
-import JobCards from "./JobCards.vue";
+import FooterMain from './FooterMain.vue';
+import JobCards from './JobCards.vue';
+
 export default {
-  components: { JobCards, FooterMain },
+  components: {JobCards, FooterMain},
 };
 </script>
 
@@ -108,12 +109,15 @@ export default {
 .text-align-iniital {
   text-align: initial;
 }
+
 .border-bottom {
   border-bottom: 1px solid #ffffff;
 }
+
 .mt-24 {
   margin-top: 24px;
 }
+
 .finds-job-footer-text {
   font-family: Open Sans;
   font-style: normal;
@@ -124,6 +128,7 @@ export default {
 
   color: #5aaadf;
 }
+
 .post-finds-jobs-in {
   font-family: Open Sans;
   font-style: normal;
@@ -138,21 +143,27 @@ export default {
 
   color: #ffffff;
 }
+
 .background-grey {
   background: #354255;
 }
+
 .pt-48px {
   padding: 48px 0;
 }
+
 .mt-5 {
-  margin-top: 10px!important;
+  margin-top: 10px !important;
 }
+
 .justify-content-space-between {
   justify-content: space-between;
 }
+
 .justify-content-space-around {
   justify-content: space-around;
 }
+
 .header {
   display: flex;
   align-items: center;
@@ -162,6 +173,7 @@ export default {
   height: 80px;
   background: #232c3a;
 }
+
 .header a {
   float: left;
   color: #ffffff;
@@ -172,58 +184,71 @@ export default {
   font-weight: 600;
   font-size: 18px;
 }
-.footer-container{
-  padding:30px 80px;
-  display:flex;
+
+.footer-container {
+  padding: 30px 80px;
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
 }
-.footer-section{
-  flex:0 1 400px;
-  margin:10px 40px;
+
+.footer-section {
+  flex: 0 1 400px;
+  margin: 10px 40px;
 }
-.footer-text{
-  display:flex;
+
+.footer-text {
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
 }
-.city{
-  flex:1 1 auto;
+
+.city {
+  flex: 1 1 auto;
 }
+
 @media only screen and (max-width: 1024px) {
-  .header{
+  .header {
     background: #354255;
     height: unset;
     padding: 30px 16px 0 16px;
   }
-  .header-right{
-    display:flex;
+
+  .header-right {
+    display: flex;
     flex-direction: column;
 
   }
-  .header-right a{
+
+  .header-right a {
     text-align: left;
     padding-left: 0;
   }
-  .footer-text{
+
+  .footer-text {
     display: block;
   }
-  .footer-text.mt-24{
+
+  .footer-text.mt-24 {
     margin-top: 12px;
   }
-  .footer-text>div{
+
+  .footer-text > div {
     display: block;
     margin-top: 12px;
   }
-  .footer-section{
+
+  .footer-section {
     margin: 16px 0;
   }
-  .footer-container{
+
+  .footer-container {
     padding: 30px 16px;
   }
 }
+
 @media only screen and (max-width: 767px) {
 
 

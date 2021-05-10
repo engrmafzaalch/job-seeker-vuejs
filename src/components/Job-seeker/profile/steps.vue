@@ -73,9 +73,9 @@ export default {
         this.profileData[key] = data[key];
       }
 
-      if (this.currentStep == 7){
-        this.saveProfileData()
-      }else{
+      if (this.currentStep == 7) {
+        this.saveProfileData();
+      } else {
         this.nextStep();
       }
     },
@@ -86,9 +86,9 @@ export default {
     prevStep() {
       this.$store.dispatch('PREV_STEP');
     },
-    saveProfileData(){
+    saveProfileData() {
       this.$store.dispatch('SAVE_PROFILE_DATA', this.profileData);
-    }
+    },
   },
   computed: {
     ...mapGetters({
@@ -98,7 +98,7 @@ export default {
   watch: {
     currentStep(newValue) {
 
-    }
+    },
   },
 };
 </script>

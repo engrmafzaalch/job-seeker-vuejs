@@ -1,79 +1,79 @@
 <template>
 
-      <div class="compainy-container">
-            <div class="jobs-cards">
-              <div
-                class=" align-item-center justify-content-space-around text-center"
-              >
-                <div class="text-align-left padding-right-20px">
-                  <img src="../../assets/Vector.png" />
-                </div>
-                <div>
-                  <img
-                    class="image-tablet-height"
-                    src="../../assets/Rectangle 11 (4).png"
-                  />
-                </div>
-                <div class="pb-15">
-                  <span class="companies-name-logo"> Google Inc. </span>
-                </div>
-              </div>
-            </div>
-
-            <div class="jobs-cards">
-              <div
-                class="align-item-center justify-content-space-around text-center"
-              >
-                <div class="text-align-left padding-right-20px">
-                  <img src="../../assets/Vector.png" />
-                </div>
-                <div>
-                  <img
-                    class="image-tablet-height"
-                    src="../../assets/Rectangle 11 (5).png"
-                  />
-                </div>
-                <div class="pb-15">
-                  <span class="companies-name-logo"> AT&T Inc. </span>
-                </div>
-              </div>
-            </div>
-
-            <div class="jobs-cards">
-              <div
-                class=" align-item-center justify-content-space-around text-center"
-              >
-                <div class="text-align-left padding-right-20px">
-                  <img src="../../assets/Vector.png" />
-                </div>
-                <div>
-                  <img src="../../assets/Rectangle 11 (6).png" />
-                </div>
-                <div class="pb-15">
-                  <span class="companies-name-logo"> Dell </span>
-                </div>
-              </div>
-            </div>
-
-            <div class="jobs-cards">
-              <div
-                class=" align-item-center justify-content-space-around text-center"
-              >
-                <div class="text-align-left padding-right-20px">
-                  <img src="../../assets/Vector.png" />
-                </div>
-                <div>
-                  <img
-                    class="image-tablet-height"
-                    src="../../assets/Rectangle 11 (4).png"
-                  />
-                </div>
-                <div class="pb-15">
-                  <span class="companies-name-logo"> Google Inc. </span>
-                </div>
-              </div>
-            </div>
+  <div class="compainy-container">
+    <div class="jobs-cards">
+      <div
+        class=" align-item-center justify-content-space-around text-center"
+      >
+        <div class="text-align-left padding-right-20px">
+          <img src="../../assets/Vector.png"/>
+        </div>
+        <div>
+          <img
+            class="image-tablet-height"
+            src="../../assets/Rectangle 11 (4).png"
+          />
+        </div>
+        <div class="pb-15">
+          <span class="companies-name-logo"> Google Inc. </span>
+        </div>
       </div>
+    </div>
+
+    <div class="jobs-cards">
+      <div
+        class="align-item-center justify-content-space-around text-center"
+      >
+        <div class="text-align-left padding-right-20px">
+          <img src="../../assets/Vector.png"/>
+        </div>
+        <div>
+          <img
+            class="image-tablet-height"
+            src="../../assets/Rectangle 11 (5).png"
+          />
+        </div>
+        <div class="pb-15">
+          <span class="companies-name-logo"> AT&T Inc. </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="jobs-cards">
+      <div
+        class=" align-item-center justify-content-space-around text-center"
+      >
+        <div class="text-align-left padding-right-20px">
+          <img src="../../assets/Vector.png"/>
+        </div>
+        <div>
+          <img src="../../assets/Rectangle 11 (6).png"/>
+        </div>
+        <div class="pb-15">
+          <span class="companies-name-logo"> Dell </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="jobs-cards">
+      <div
+        class=" align-item-center justify-content-space-around text-center"
+      >
+        <div class="text-align-left padding-right-20px">
+          <img src="../../assets/Vector.png"/>
+        </div>
+        <div>
+          <img
+            class="image-tablet-height"
+            src="../../assets/Rectangle 11 (4).png"
+          />
+        </div>
+        <div class="pb-15">
+          <span class="companies-name-logo"> Google Inc. </span>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -84,12 +84,15 @@ export default {};
 .text-align-left {
   text-align: end;
 }
+
 .pading-top-20px-right-80px {
   padding-top: 20px;
 }
+
 .padding-right-20px {
   padding-right: 20px;
 }
+
 .align-item-center {
   align-items: center;
 }
@@ -97,6 +100,7 @@ export default {};
 .justify-content-space-around {
   justify-content: space-around;
 }
+
 .companies-name-logo {
   font-family: Larsseit;
   font-style: normal;
@@ -105,16 +109,17 @@ export default {};
   color: #505565;
 }
 
-.compainy-container{
-  margin:0px 80px;
-  display:flex;
+.compainy-container {
+  margin: 0px 80px;
+  display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
 }
+
 .jobs-cards {
-  margin:10px;
-  flex:1 1 250px;
+  margin: 10px;
+  flex: 1 1 250px;
   background-color: #ffffff;
   border: 1px solid #f0f1f3;
   box-sizing: border-box;
@@ -122,15 +127,16 @@ export default {};
   border-radius: 10px;
   padding: 22px;
 }
+
 @media only screen and (max-width: 530px) {
-  .compainy-container{
-    margin:0px 30px;
+  .compainy-container {
+    margin: 0px 30px;
   }
 }
 
 @media only screen and (max-width: 480px) {
-  .compainy-container{
-    margin:0px 20px;
+  .compainy-container {
+    margin: 0px 20px;
   }
 }
 
@@ -138,21 +144,25 @@ export default {};
   .tablet-margin-10 {
     margin-top: 10px;
   }
+
   .companies-name-logo {
     font-size: 22px;
   }
+
   .image-tablet-height {
     height: 90px;
   }
 }
+
 @media only screen and (min-width: 992px) and (max-width: 1025px) {
   .tablet-margin-10 {
     margin-top: 10px;
   }
 }
-@media only screen and (max-width: 768px)  {
-  .compainy-container{
-    margin:0px
+
+@media only screen and (max-width: 768px) {
+  .compainy-container {
+    margin: 0px
   }
 }
 </style>

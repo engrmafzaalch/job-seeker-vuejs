@@ -12,6 +12,7 @@
             <div class="col-6">
               <a-input
 
+                id="degree"
                 v-decorator="[
                           `degree`,
                           {
@@ -23,11 +24,11 @@
                               },
                             ],
                           },
-                        ]"
-                type="text" class="form-control" id="degree" placeholder="Degree/Certification"></a-input>
+                        ]" class="form-control" placeholder="Degree/Certification" type="text"></a-input>
             </div>
             <div class="col-6">
-              <a-input v-decorator="[
+              <a-input id="college"
+                       v-decorator="[
                           `college`,
                           {
                             rules: [
@@ -38,23 +39,22 @@
                               },
                             ],
                           },
-                        ]"
-                       type="text" class="form-control" id="college" placeholder="College/University/Academy"></a-input>
+                        ]" class="form-control" placeholder="College/University/Academy" type="text"></a-input>
             </div>
           </div>
           <div class="row my-4">
             <div class="col-6">
-              <a-date-picker class="w-100 date-picker" @change="onChange" placeholder="End Date" />
+              <a-date-picker class="w-100 date-picker" placeholder="End Date" @change="onChange"/>
             </div>
             <div class="col-6">
-              <a-date-picker class="w-100 date-picker" @change="onChange" placeholder="Start Date"/>
+              <a-date-picker class="w-100 date-picker" placeholder="Start Date" @change="onChange"/>
             </div>
           </div>
           <div class="row my-4">
             <div class="col-md-6">
               <a-textarea
 
-                v-decorator="[
+                id="education_details" v-decorator="[
                           `educationDetail`,
                           {
                             rules: [
@@ -65,15 +65,15 @@
                               },
                             ],
                           },
-                        ]"  name="text" id="education_details"rows="6" placeholder="Education Details"></a-textarea>
+                        ]" name="text" placeholder="Education Details" rows="6"></a-textarea>
             </div>
           </div>
           <div class="row justify-content-center text-center my-4">
             <div class="col-12">
-              <a-button type="primary"
-                        html-type="submit"
+              <a-button :disabled="hasErrors(form.getFieldsError())"
                         class="login-button-style btn btn-light"
-                        :disabled="hasErrors(form.getFieldsError())">
+                        html-type="submit"
+                        type="primary">
                 Add More Education
               </a-button>
             </div>
@@ -88,10 +88,10 @@
               Go Back
             </a-button>
             <a-button
-              type="primary"
-              html-type="submit"
+              :disabled="hasErrors(form.getFieldsError())"
               class="login-button-style btn btn-primary px-5"
-              :disabled="hasErrors(form.getFieldsError())">
+              html-type="submit"
+              type="primary">
               Proceed
             </a-button>
           </div>
@@ -105,28 +105,29 @@
 function hasErrors(fieldsError) {
   return Object.keys(fieldsError).some((field) => fieldsError[field]);
 }
+
 export default {
-  name: "education",
+  name: 'education',
 
   data() {
     return {
       hasErrors,
-      form: this.$form.createForm(this, { name: "degree college endDate stratdate educationDetail" }),
+      form: this.$form.createForm(this, {name: 'degree college endDate stratdate educationDetail'}),
     };
   },
 
   methods: {
     userNameError() {
-      const { getFieldError, isFieldTouched } = this.form;
-      return isFieldTouched("userName") && getFieldError("userName");
+      const {getFieldError, isFieldTouched} = this.form;
+      return isFieldTouched('userName') && getFieldError('userName');
     },
     // Only show error after a field is touched.
     handleSubmit(e) {
       e.preventDefault();
       this.form.validateFields((err, values) => {
         if (!err) {
-          console.log("Received values of form: ", values);
-          this.$emit('stepSuccess', values)
+          console.log('Received values of form: ', values);
+          this.$emit('stepSuccess', values);
         }
       });
     },
@@ -135,11 +136,11 @@ export default {
     },
   },
 
-}
+};
 </script>
 
 <style scoped>
-.form-control{
+.form-control {
   height: 48px;
 }
 

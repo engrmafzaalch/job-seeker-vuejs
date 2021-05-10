@@ -8,7 +8,7 @@
     <div class="jumbotron">
       <div class="row mb-2">
         <div class="col-12 text-center">
-          <img src="./upload.png" class="h-40 w-auto"/>
+          <img class="h-40 w-auto" src="./upload.png"/>
         </div>
       </div>
       <div class="row py-2">
@@ -34,13 +34,13 @@
 
 <script>
 export default {
-  name: "Documents",
+  name: 'Documents',
   methods: {
-    uploadFile(){
-      this.$emit('stepSuccess', {fileUrl: 'file url'})
-    }
-    }
-}
+    uploadFile() {
+      this.$emit('stepSuccess', {fileUrl: 'file url'});
+    },
+  },
+};
 </script>
 
 <style scoped>
@@ -49,11 +49,13 @@ export default {
   font-style: normal;
   font-size: 16px;
 }
+
 .support {
   font-family: Open Sans;
   font-style: normal;
   font-size: 14px;
 }
+
 .container {
   font-family: Open Sans;
   font-style: normal;

@@ -34,6 +34,7 @@ export default {};
   left: 50%;
 
 }
+
 .get-started-now {
   height: 48px;
   width: 260px;
@@ -52,24 +53,31 @@ export default {};
 
   color: #ffffff;
 }
+
 .mt-30 {
   margin-top: 30px;
 }
+
 .display-flex {
   display: flex;
 }
+
 .justtify-content-space-around {
   justify-content: space-around;
 }
+
 .mt-60 {
   margin-top: 97px;
 }
+
 .mb-100 {
   margin-bottom: 100px;
 }
+
 .mt-40 {
   margin-top: 40px;
 }
+
 .need-talent-text {
   font-family: Larsseit;
   font-style: normal;
@@ -83,6 +91,7 @@ export default {};
 
   color: #222222;
 }
+
 .category-box {
   background: rgba(90, 170, 223, 0.1);
   border-radius: 2px;
@@ -100,50 +109,60 @@ export default {};
 
   color: #0084f4;
 }
+
 @media only screen and (min-width: 320px) and (max-width: 479px) {
 }
-.card-container{
+
+.card-container {
   padding: 60px 0;
-  margin:20px 80px;
-  display:flex;
+  margin: 20px 80px;
+  display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
 }
-.card-child{
-  margin:10px;
-  flex:1 1 250px;
+
+.card-child {
+  margin: 10px;
+  flex: 1 1 250px;
 }
+
 @media only screen and (max-width: 767px) {
-  .vertical{
+  .vertical {
     display: none;
   }
 }
 
 @media only screen and (max-width: 768px) and (max-width: 991px) {
-  .need-talent-text span{
+  .need-talent-text span {
     font-size: 20px;
   }
+
   .get-started-now {
     width: 144px;
     font-size: 12px;
   }
+
   .category-box {
     font-size: 13px;
   }
 }
+
 @media only screen and (max-width: 992px) and (max-width: 1025px) {
   .need-talent-text {
     font-size: 20px;
   }
+
   .get-started-now {
     width: 144px;
     font-size: 12px;
   }
+
   .category-box {
     font-size: 13px;
   }
 }
+
 @media only screen and (min-width: 68px) {
 
 }

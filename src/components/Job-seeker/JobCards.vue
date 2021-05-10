@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-lg-4 col-md-6" v-for="n in 9 " :key="n">
+      <div v-for="n in 9 " :key="n" class="col-lg-4 col-md-6">
         <JobCard/>
       </div>
     </div>
@@ -10,10 +10,11 @@
 
 <script>
 import JobCard from './JobCard';
+
 export default {
   components: {
-    JobCard
-  }
+    JobCard,
+  },
 };
 </script>
 
@@ -21,10 +22,12 @@ export default {
 .container-fluid {
   padding: 0 80px
 }
+
 @media only screen and  (max-width: 767px) {
-  .col-md-4{
+  .col-md-4 {
     padding: 0;
   }
+
   .container-fluid {
     padding: 0 20px
   }

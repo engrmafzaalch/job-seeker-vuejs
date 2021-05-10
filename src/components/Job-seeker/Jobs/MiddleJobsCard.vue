@@ -295,14 +295,17 @@ export default {
 .text-align-center {
   text-align: center;
 }
-@media (max-width: 550px){
-  .job-content-wrapper{
+
+@media (max-width: 550px) {
+  .job-content-wrapper {
     flex-direction: column;
   }
+
   .job-content-wrapper .display-flex {
     flex-direction: column-reverse;
   }
-  .job-content-wrapper img{
+
+  .job-content-wrapper img {
     padding-bottom: 20px;
   }
 }

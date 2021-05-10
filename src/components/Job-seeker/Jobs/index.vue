@@ -6,28 +6,29 @@
           <h6 class="mt-3 show-filter" @click="filters=!filters">
             Show Filters
           </h6>
-          <LeftSideMenu :show-filters="filters" />
+          <LeftSideMenu :show-filters="filters"/>
         </div>
         <div class="col-lg-6">
-          <middle-jobs-section />
+          <middle-jobs-section/>
         </div>
         <div class="col-lg-3">
-          <right-side-featured-jobs />
+          <right-side-featured-jobs/>
         </div>
-        <div class="overlay" v-if="filters" @click="filters=!filters"></div>
+        <div v-if="filters" class="overlay" @click="filters=!filters"></div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Footer from "./Footer";
-import Header from "../Header.vue";
-import LeftSideMenu from "./LeftSideFilterMenu";
-import RightSideFeaturedJobs from "./RightSideFeaturedJobs.vue";
-import MiddleJobsSection from "./MiddleJobsSection.vue";
+import Footer from './Footer';
+import Header from '../Header.vue';
+import LeftSideMenu from './LeftSideFilterMenu';
+import RightSideFeaturedJobs from './RightSideFeaturedJobs.vue';
+import MiddleJobsSection from './MiddleJobsSection.vue';
+
 export default {
-  name: "JobsIndex",
+  name: 'JobsIndex',
   components: {
     Footer,
     Header,
@@ -54,16 +55,19 @@ export default {
 
 <style scoped>
 .ant-steps-item-finish
-  > .ant-steps-item-container
-  > .ant-steps-item-tail::after {
+> .ant-steps-item-container
+> .ant-steps-item-tail::after {
   background-color: red !important;
 }
+
 .ant-steps-item-finish .ant-steps-item-icon > .ant-steps-icon {
   color: #ffffff;
 }
+
 .p-0 {
   padding: 0;
 }
+
 .steps-content {
   /* margin-top: 16px; */
   /* border: 1px dashed #e9e9e9; */
@@ -78,16 +82,20 @@ export default {
 .steps-action {
   margin-top: 24px;
 }
+
 .display-flex {
   display: flex;
 }
+
 .main-height {
   min-height: calc(100vh - 110px);
 }
+
 .show-filter {
   display: none;
 }
-.overlay{
+
+.overlay {
   position: fixed;
   top: 0;
   left: 0;
@@ -95,8 +103,9 @@ export default {
   height: 100%;
   z-index: 3;
 }
-@media  (max-width: 991px){
-  .show-filter{
+
+@media (max-width: 991px) {
+  .show-filter {
     display: block;
     cursor: pointer;
     width: 150px;

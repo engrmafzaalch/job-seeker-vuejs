@@ -1,6 +1,7 @@
 <template>
   <div class="jobs-cards">
-    <div class="display-flex flex-column flex-sm-row pading-top-20px-right-80px align-item-center justify-content-space-around text-center ">
+    <div
+      class="display-flex flex-column flex-sm-row pading-top-20px-right-80px align-item-center justify-content-space-around text-center ">
       <div>
         <img src="../../assets/Rectangle 11.png"/>
       </div>
@@ -146,6 +147,7 @@ hr {
   border-radius: 10px;
   padding-bottom: 20px;
 }
+
 .jobs-cards:hover {
   box-shadow: 0 4px 10px 2px #e2effb;
 }

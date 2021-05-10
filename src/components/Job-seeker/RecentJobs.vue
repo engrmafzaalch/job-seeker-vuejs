@@ -4,36 +4,37 @@
       <div
         v-for="type in types"
         :key="type"
-        class="job-type"
         :class="{active: active === type}"
+        class="job-type"
         @click="active=type"
       >
-        {{type}}
+        {{ type }}
       </div>
     </div>
 
     <div class="mb-50">
-      <job-cards />
+      <job-cards/>
     </div>
   </div>
 </template>
 
 <script>
-import JobCards from "./JobCards.vue";
+import JobCards from './JobCards.vue';
+
 export default {
-  components: { JobCards },
+  components: {JobCards},
   data() {
-    return{
+    return {
       active: 'Recent Jobs',
-      types: ['Recent Jobs', 'Featured Jobs']
-    }
+      types: ['Recent Jobs', 'Featured Jobs'],
+    };
   },
 
 };
 </script>
 
 <style scoped>
-.job-type-selection{
+.job-type-selection {
   max-width: 550px;
   width: 100%;
   height: 70px;
@@ -43,7 +44,8 @@ export default {
   flex-wrap: wrap;
 
 }
-.job-type{
+
+.job-type {
   width: 50%;
   font-style: normal;
   font-weight: 500;
@@ -58,17 +60,21 @@ export default {
   transition: all .3s ease-in-out;
 
 }
-.job-type.active{
+
+.job-type.active {
   background: #0385F3;
   color: #fff;
 
 }
-.job-type.active:hover{
-   background: #0575d4;
-  }
+
+.job-type.active:hover {
+  background: #0575d4;
+}
+
 .mb-50 {
   margin-bottom: 50px;
 }
+
 hr {
   display: block;
   height: 1px;
@@ -83,6 +89,7 @@ hr {
 .mt-100 {
   margin-top: 100px;
 }
+
 /* Toggle text */
 p {
   font-family: Arial, Helvetica, sans-serif;
@@ -98,14 +105,16 @@ p {
 .checkbox:checked + .toggle {
   background-color: #ffffff;
 }
+
 @media only screen and (max-width: 550px) {
-  .job-type-selection{
+  .job-type-selection {
     display: flex;
     flex-direction: column;
     height: unset;
     border-radius: 8px
   }
-  .job-type{
+
+  .job-type {
     width: 100%;
     border-radius: 8px;
   }
