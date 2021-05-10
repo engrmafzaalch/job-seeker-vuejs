@@ -1,5 +1,5 @@
 <template>
-<div class="container-fluid vh-100">
+<div class="container-fluid ">
   <index_myAccount/>
   <div class="tab_bar py-4">
      <a-tabs :default-active-key="tab"  @change="changetab" >

@@ -297,7 +297,12 @@ export default {
 /*  font-family: 'Roboto', sans-serif;*/
 /*  margin-top: 20%;*/
 /*}*/
-
+.btn{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+}
 .progressbar {
   counter-reset: step;
   width: 100%;

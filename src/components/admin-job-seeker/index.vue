@@ -259,7 +259,6 @@ const data = [
     tags: ["loser"],
   },
   {
-    is_approved: "yes",
     key: "3",
     id: "3",
     name: "Joe Black",
@@ -442,6 +441,9 @@ export default {
 <style scoped>
 .main-div-height-job-seeker-list {
   min-height: calc(100vh - 240px);
+  margin-top: 60px;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 .add-more-text-admin-job-seeker {
   background: #0385f3;
@@ -456,6 +458,7 @@ export default {
   font-size: 14px;
   color: #8b90a0;
   column-gap: 10px;
+  display: flex;
 }
 .action-box-job-seeker {
   background: #fafafc;
@@ -532,7 +535,7 @@ export default {
 }
 .number-card-container{
   display:flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   margin:15px 0px;
 }

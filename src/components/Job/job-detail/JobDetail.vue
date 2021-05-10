@@ -1,5 +1,5 @@
 <template>
-<div>
+<div >
   <div class="job-details mb-5" style="font-family: 'Open sans', sans-serif">
     <div class="row">
       <div class="container-fluid text-align-initial mt-5 mb-4">
@@ -17,9 +17,9 @@
             </div>
             <div class="col-md-10">
               <div class="row " style="display:flex">
-                
+
                   <h2 class="float-left busy-head">Business Analyst</h2>
-                
+
                 <div class="float-right" style="margin-left: auto;">
                   <span class="part-time">Part Time</span>
                 </div>
@@ -152,11 +152,13 @@
       <div class="col-lg-4 mt-4" style="text-align: left;padding: 0px 30px;">
 
         <a-button @click="showModal" class="button_ btn btn-success my-5 py-2 text-center" >Apply For This Position Now</a-button>
-        <a-modal v-model="visible" @ok="handleOk" :footer="null">
+        <a-modal v-model="visible" @ok="handleOk" :footer="null" class=" modal-cv">
           <div class="row pl-4">
             <div class="col-12">
+              <label>
               <input type="checkbox" class="form-check-input" value="" />
               <h5>Continue with my CV</h5>
+              </label>
             </div>
           </div>
           <hr>
@@ -165,32 +167,57 @@
               <h3>Apply with new CV</h3>
             </div>
           </div>
-          <div class="jumbotron justify-content-center text-center">
-            <div class="row">
-              <div class="col-12">
-                <!-- <img src="../../Login/upload.png" height="40" width="42"/> -->
+          <div class="jumbotron justify-content-center text-center" @click="trigerFile" @dragover="dragover" @dragleave="dragleave" @drop="drop">
+            <input type="file" ref="file" @change="onChange">
+            <div v-if="file">
+              <div class="selected-file">
+                <span>
+                  <svg width="20" height="24" viewBox="0 0 20 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M13.0577 7.2C12.5775 7.2 12.1875 6.7428 12.1875 6.18V2.3736L16.7481 7.2H13.0577ZM12.1875 15.6H10.9688V16.8C10.9688 17.4624 10.424 18 9.75 18C9.07603 18 8.53125 17.4624 8.53125 16.8V15.6H7.3125C6.63853 15.6 6.09375 15.0624 6.09375 14.4C6.09375 13.7376 6.63853 13.2 7.3125 13.2H8.53125V12C8.53125 11.3376 9.07603 10.8 9.75 10.8C10.424 10.8 10.9688 11.3376 10.9688 12V13.2H12.1875C12.8615 13.2 13.4062 13.7376 13.4062 14.4C13.4062 15.0624 12.8615 15.6 12.1875 15.6ZM19.1831 6.3936L13.767 0.3936C13.5367 0.1428 13.2088 0 12.8651 0H3.11512C1.39791 0 0 1.3464 0 3V21C0 22.6536 1.39791 24 3.11512 24H16.3849C18.1033 24 19.5 22.6536 19.5 21V7.2C19.5 6.9012 19.3867 6.6144 19.1831 6.3936Z" fill="#273238"/>
+<mask id="mask0" mask-type="alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="20" height="24">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M13.0577 7.2C12.5775 7.2 12.1875 6.7428 12.1875 6.18V2.3736L16.7481 7.2H13.0577ZM12.1875 15.6H10.9688V16.8C10.9688 17.4624 10.424 18 9.75 18C9.07603 18 8.53125 17.4624 8.53125 16.8V15.6H7.3125C6.63853 15.6 6.09375 15.0624 6.09375 14.4C6.09375 13.7376 6.63853 13.2 7.3125 13.2H8.53125V12C8.53125 11.3376 9.07603 10.8 9.75 10.8C10.424 10.8 10.9688 11.3376 10.9688 12V13.2H12.1875C12.8615 13.2 13.4062 13.7376 13.4062 14.4C13.4062 15.0624 12.8615 15.6 12.1875 15.6ZM19.1831 6.3936L13.767 0.3936C13.5367 0.1428 13.2088 0 12.8651 0H3.11512C1.39791 0 0 1.3464 0 3V21C0 22.6536 1.39791 24 3.11512 24H16.3849C18.1033 24 19.5 22.6536 19.5 21V7.2C19.5 6.9012 19.3867 6.6144 19.1831 6.3936Z" fill="white"/>
+</mask>
+<g mask="url(#mask0)">
+</g>
+</svg>
+
+                </span>
+                <div class="file-details">
+                  <h4>{{file.name}}</h4>
+                  <span>{{fileSize}}</span>
+                </div>
               </div>
             </div>
-            <div class="row">
-              <div class="col-12">
-                <div>
-                  <span>Drop your CV here , or <a href="#">browse</a></span>
-                </div>
-                <div>
-                  <span>Support: PDF, JPGS, DOCS</span>
+            <template v-else>
+              <div >
+                <div >
+                  <img src="./upload.png" height="60" width="60"/>
                 </div>
               </div>
-            </div>
+              <div class="row">
+                <div class="col-12">
+                  <div>
+                    <span>Drop your CV here , or <a href="#">browse</a></span>
+                  </div>
+                  <div>
+                    <span class="extensions">Support: PDF, JPGS, DOCS</span>
+                  </div>
+                </div>
+              </div>
+            </template>
+          </div>
+          <div class="err">
+            {{err}}
           </div>
           <div class="row">
             <div class="col-6">
-              <button class="btn btn-light btn-block">
+              <button @click="visible=false" class="btn btn-light btn-block">
                 Cancel
               </button>
             </div>
             <div class="col-6">
 
-              <button class="btn btn-primary btn-block">
+              <button @click="handleOk" class="btn btn-primary btn-block">
                 Apply
               </button>
 
@@ -298,68 +325,27 @@
 
 
     </div>
-    <!-- The Modal -->
-    <div class="modal" id="myModal">
-      <div class="modal-dialog">
-        <div class="modal-content">
-
-          <!-- Modal Header -->
-          <div class="modal-header">
-            <h4 class="modal-title">Continue with my CV</h4>
-          </div>
-
-          <!-- Modal body -->
-          <div class="modal-body">
-            <div class="row">
-              <div class="col-12">
-                <span>Apply with new CV</span>
-              </div>
-            </div>
-            <div class="jumbotron">
-              <div class="row">
-                <div class="col-12">
-                  <!-- <img src="../../Login/upload.png" height="40" width="42"/> -->
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-12">
-                  <h5>Drop your CV here , or <a href="#">browse</a></h5>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-12">
-                  <h6>Support: PDF, JPGS, DOCS</h6>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Modal footer -->
-          <div class="modal-footer">
-            <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
-            <button type="button" class="btn btn-primary">Apply</button>
-          </div>
-
-        </div>
-      </div>
-    </div>
+    <Modal :visible="uploaded" @closeMe="uploaded=false" />
   </div>
 </div>
 </template>
 <script>
 
 import Footer from "../../../components/Job-seeker/Jobs/Footer.vue";
-// import Header from "../Header.vue";
+import Modal from './modal'
 
 export default {
   name: "JobDetail",
   components: {
     Footer,
-  //   Header,
+    Modal
   },
   data() {
     return {
       visible: false,
+      file: undefined,
+      uploaded: false,
+      err: ''
     };
   },
   methods: {
@@ -368,33 +354,124 @@ export default {
     },
     handleOk(e) {
       console.log(e);
-      this.visible = false;
+
+      if (this.file){
+        this.visible = false;
+        this.uploaded = true
+      }else{
+        this.err = 'Please Select your CV'
+      }
+    },
+    trigerFile(){
+      this.$refs.file.click()
+    },
+    dragover(event) {
+      event.preventDefault();
+      // Add some visual fluff to show the user can drop its files
+        event.currentTarget.classList.add('drag-over');
+    },
+    dragleave(event) {
+      // Clean up
+      event.currentTarget.classList.remove('drag-over');
+    },
+    drop(event) {
+      event.preventDefault();
+      this.$refs.file.files = event.dataTransfer.files;
+      this.onChange();
+      // Clean up
+      event.currentTarget.classList.add('file-selected');
+      event.currentTarget.classList.remove('drag-over');
+    },
+    onChange() {
+      console.log(this.$refs.file.files[0])
+      this.file = this.$refs.file.files[0]
+      this.err = ''
     },
   },
+  computed: {
+    fileSize(){
+      if(!this.file) return ''
+      var fSExt = new Array('Bytes', 'KB', 'MB', 'GB');
+      let fSize = this.file.size;
+      let i=0;
+      while(fSize>900){fSize/=1024;i++;}
+
+      return (Math.round(fSize*100)/100)+' '+fSExt[i]
+    }
+  },
+  watch: {
+    visible(){
+      this.file=undefined
+      this.err = ''
+    }
+  }
 };
 </script>
 
 <style scoped>
 .job-details{
-  margin:0px 74px;
+  margin:0px 100px;
 }
 .container-fluid {
-  font-family: Open Sans;
+  font-family: 'Open Sans';
 }
-.wrapper{
-  border-radius: 8px;
-  border: 1px solid #F0F1F3;;
-}
-.buisness_heading{
-  padding-top: 25px;
-  text-align: left;
-  font-width: bold;
+.busy-head{
+  color: #505565;
+  font-style: normal;
+  font-weight: 600;
   font-size: 32px;
+  line-height: 48px;
+}
+.selected-file>span{
+  display: inline-block;
+  margin-bottom: 20px;
+}
+.file-details h4{
+  font-size: 16px;
+}
+.modal-cv h5{
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: #505565;
+
+}
+.modal-cv h3{
+  margin-bottom: 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
   color: #505565;
 }
-.title_text{
+span{
+  /* Heading / H5 */
+
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: 600;
   font-size: 16px;
+  line-height: 24px;
+  color: #505565;
+}
+span.extensions{
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+  text-transform: uppercase;
   color: #8B90A0;
+}
+.btn{
+  font-size: 14px;
+  font-weight: 600;
+  min-height: 48px;
+  letter-spacing: 1px;
+
 }
 .sub_title{
   font-size: 14px;
@@ -410,6 +487,30 @@ export default {
   color: #505565;
   font-weight: 400;
   font-family: 'Open sans', sans-serif !important;
+}
+.jumbotron{
+  background: #FAFDFF;
+  border: 1px solid #F0F1F3;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 40px 0;
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='8' ry='8' stroke='%23F0F1F3FF' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='3' stroke-linecap='square'/%3e%3c/svg%3e");
+  transition: all .2s ease-in-out;
+  margin-bottom: 10px;
+}
+.err{
+  margin-bottom: 10px;
+  color: #ff4c68;
+}
+.jumbotron.drag-over{
+  transform: scale(1.02);
+}
+.jumbotron input{
+  opacity: 0;
+  position: absolute;
+}
+.jumbotron img{
+  margin-bottom: 30px;
 }
 .text{
   font-size: 16px;
@@ -432,11 +533,9 @@ export default {
   justify-content: center;
   border-radius :24px;
   border: 1px solid #F0F1F3;
-  padding:1px 20px;
-  flex:1 1 100px;
+  padding:10px 32px;
   line-height: 18px;
   background: #FAFAFC;
-  border-radius: 24px;
   margin-right:16px;
   margin-top: 10px;
 }
@@ -478,7 +577,10 @@ export default {
   border-radius: 4px;
   font-family: 'Open sans', sans-serif;
   font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
   height:40px;
+  min-height: 48px;
 }
 .flex-items{
   display:flex;
@@ -535,6 +637,7 @@ ul,p,ul li{
   font-family: 'Open sans', sans-serif;
   font-size: 14px;
   color:white;
+  font-weight: 600;
   padding: 8px 10px;
   font-size: 14px;
   line-height: 24px;
@@ -548,7 +651,7 @@ ul,p,ul li{
 @media screen and (max-width:768px){
   .job-details{
    margin:0px 20px;
-  }  
+  }
 }
 @media screen and (max-width:380px){
   /* .busy-head{

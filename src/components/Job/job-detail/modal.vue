@@ -1,9 +1,6 @@
 <template>
   <div class="container justify-content-center vh-100">
-    <a-button type="primary" @click="showModal" class="button_ my-5 px-5">
-      Apply
-    </a-button>
-    <a-modal v-model="visible" @ok="handleOk" :footer="null">
+    <a-modal v-model="visible" @cancel="closeMe" @ok="handleOk" :footer="null">
       <div class="row my-2">
         <div class="col-12 text-center">
           <img src="./tick mark.png" height="64" width="65"/>
@@ -28,18 +25,20 @@
 <script>
 export default {
   name: "model",
+  props: [
+    'visible'
+  ],
   data() {
     return {
-      visible: false,
+
     };
   },
   methods: {
-    showModal() {
-      this.visible = true;
-    },
     handleOk(e) {
-      console.log(e);
-      this.visible = false;
+      this.$emit('closeMe')
+    },
+    closeMe(e) {
+      this.$emit('closeMe')
     },
   },
 };
