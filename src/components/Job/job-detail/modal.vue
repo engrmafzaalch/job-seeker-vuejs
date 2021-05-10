@@ -1,5 +1,5 @@
 <template>
-  <div class="container justify-content-center vh-100">
+
     <a-modal v-model="visible" :footer="null" @cancel="closeMe" @ok="handleOk">
       <div class="row my-2">
         <div class="col-12 text-center">
@@ -19,7 +19,7 @@
         </div>
       </div>
     </a-modal>
-  </div>
+
 </template>
 
 <script>
