@@ -7,9 +7,9 @@
 </template>
 
 <script>
-import FooterMain from "../components/Job-seeker/FooterMain.vue";
-import Header from "../components/Job-seeker/Header.vue";
-import Footer from "../components/Job-seeker/Jobs/Footer.vue";
+import FooterMain from "../pages/components/FooterMain.vue";
+import Header from "../pages/components/Header.vue";
+import Footer from "../pages/components/Footer.vue";
 import { store } from '../store/store'
 
 export default {
