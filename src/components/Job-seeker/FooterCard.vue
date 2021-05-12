@@ -6,7 +6,6 @@
         <a href="#jobs">Terms & Conditions</a>
         <a href="#my-application">Privacy Policy</a>
         <a href="#my-account">Blog</a>
-        <a href="#my-account">Blog</a>
         <a href="#my-account">Reviews</a>
         <a href="#my-account">Careers</a>
         <a href="#my-account">Contact us</a>
@@ -15,82 +14,110 @@
     <div
       class="border-bottom pt-48px background-grey footer-container"
     >
-      <div class="footer-section">
-        <div class="text-align-iniital">
-          <span class="finds-job-footer-text">Find Jobs in</span>
-        </div>
-        <div class="footer-text mt-24">
-          <div>
-            <span class="post-finds-jobs-in"> Business Analyst </span>
-          </div>
-          <div>
-            <span class="mt-5 post-finds-jobs-in"> Sr. Sales Manager </span>
-          </div>
-        </div>
-        <div class="footer-text mt-24">
-          <div>
-            <span class="post-finds-jobs-in"> Java Developer </span>
-          </div>
-          <div>
-            <span class="mt-5 post-finds-jobs-in"> Fashion Designer </span>
-          </div>
-        </div>
-        <div class="footer-text mt-24">
-          <div>
-            <span class="post-finds-jobs-in"> Sr. Sales Executive </span>
-          </div>
-          <div>
-            <span class="mt-5 post-finds-jobs-in"> Sr. Admin </span>
-          </div>
-        </div>
-        <div class="footer-text mt-24">
-          <div>
-            <span class="post-finds-jobs-in"> Product Manager </span>
-          </div>
-          <div>
-            <span class="mt-5 post-finds-jobs-in">
+      <div class="row justify-content-between">
+        <div class="col-md-6">
+          <div class="footer-section">
+            <div class="text-align-iniital">
+              <span class="finds-job-footer-text">Find Jobs in</span>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="footer-text mt-24">
+                  <router-link to="/"><span class="post-finds-jobs-in"> Business Analyst </span></router-link>
+                </div>
+                <div class="footer-text mt-24">
+                  <router-link to="/"><span class="post-finds-jobs-in"> Java Developer </span></router-link>
+                </div>
+                <div class="footer-text mt-24">
+                  <router-link to="/"><span class="post-finds-jobs-in"> Sr. Sales Executive </span></router-link>
+
+                </div>
+                <div class="footer-text mt-24">
+
+                  <router-link to="/"><span class="post-finds-jobs-in"> Product Manager </span></router-link>
+
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="footer-text mt-24">
+                  <router-link to="/"><span class="post-finds-jobs-in"> Sr. Sales Manager </span></router-link>
+                </div>
+                <div class="footer-text mt-24">
+                  <router-link to="/"><span class="post-finds-jobs-in"> Fashion Designer </span></router-link>
+                </div>
+                <div class="footer-text mt-24">
+                  <router-link to="/"><span class="post-finds-jobs-in"> Sr. Admin </span></router-link>
+                </div>
+                <div class="footer-text mt-24">
+                  <router-link to="/">      <span class="post-finds-jobs-in">
               Sr. Marketing Executive
-            </span>
+              </span></router-link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="footer-section">
+
+            <div class="row justify-content-end">
+              <div class="col-8">
+                <div class="text-align-iniital">
+                  <span class="finds-job-footer-text">Find Jobs in</span>
+                </div>
+              </div>
+              </div>
+            <div class="row justify-content-end">
+
+              <div class="col-md-4">
+                <div class="footer-text mt-24">
+
+                  <router-link to="/"><span class="post-finds-jobs-in"> Nairobi </span></router-link>
+
+                </div>
+                <div class="footer-text mt-24">
+
+                  <router-link to="/"><span class="post-finds-jobs-in"> Lagos </span></router-link>
+
+
+                </div>
+                <div class="footer-text mt-24">
+
+                  <router-link to="/"><span class="post-finds-jobs-in"> Cape Town </span></router-link>
+
+
+                </div>
+                <div class="footer-text mt-24">
+                  <router-link to="/">                  <span class="post-finds-jobs-in"> Accra </span></router-link>
+
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="footer-text mt-24">
+
+                  <router-link to="/"><span class="post-finds-jobs-in"> Kampala </span></router-link>
+
+                </div>
+                <div class="footer-text mt-24">
+                  <router-link to="/"><span class="post-finds-jobs-in"> Maputo </span></router-link>
+                </div>
+                <div class="footer-text mt-24">
+                  <router-link to="/"><span class="post-finds-jobs-in"> Casablanca </span></router-link>
+
+                </div>
+                <div class="footer-text mt-24">
+                  <router-link to="/"><span class=" post-finds-jobs-in"> Port Elizabeth </span></router-link>
+
+                </div>
+              </div>
+            </div>
+
+
           </div>
         </div>
       </div>
-      <div class="footer-section">
-        <div class="text-align-iniital">
-          <span class="finds-job-footer-text">Find Jobs in</span>
-        </div>
-        <div class="footer-text mt-24">
-          <div class="city">
-            <span class="post-finds-jobs-in"> Nairobi </span>
-          </div>
-          <div class="city">
-            <span class="mt-5 post-finds-jobs-in"> Kampala </span>
-          </div>
-        </div>
-        <div class="footer-text mt-24">
-          <div class="city">
-            <span class="post-finds-jobs-in"> Lagos </span>
-          </div>
-          <div class="city">
-            <span class="mt-5 post-finds-jobs-in"> Maputo </span>
-          </div>
-        </div>
-        <div class="footer-text mt-24">
-          <div class="city">
-            <span class="post-finds-jobs-in"> Cape Town </span>
-          </div>
-          <div class="city">
-            <span class="mt-5 post-finds-jobs-in"> Casablanca </span>
-          </div>
-        </div>
-        <div class="footer-text mt-24">
-          <div class="city">
-            <span class="post-finds-jobs-in"> Accra </span>
-          </div>
-          <div class="city">
-            <span class=" post-finds-jobs-in"> Port Elizabeth </span>
-          </div>
-        </div>
-      </div>
+
+
     </div>
     <footer-main/>
   </div>
@@ -187,15 +214,20 @@ export default {
 
 .footer-container {
   padding: 30px 80px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+  /*display: flex;*/
+  /*justify-content: space-between;*/
+  /*align-items: center;*/
+  /*flex-wrap: wrap;*/
 }
 
 .footer-section {
-  flex: 0 1 400px;
+  /*flex: 0 1 400px;*/
   margin: 10px 40px;
+}
+
+.footer-section:first-child {
+  /*flex: 0 1 500px;*/
+
 }
 
 .footer-text {
