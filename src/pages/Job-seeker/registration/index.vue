@@ -64,7 +64,7 @@
 <script>
 
 import ProfileSummary from './ProfileSummary';
-import Header from '../../common-components/Header.vue';
+import Header from '../../components/Header.vue';
 import EducationDetails from './EducationDetails.vue';
 import ExperienceDetails from './ExperienceDetails.vue';
 import Projects from './Projects.vue';

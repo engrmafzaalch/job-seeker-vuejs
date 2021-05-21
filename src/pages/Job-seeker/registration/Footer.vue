@@ -46,7 +46,7 @@
 </template>
 
 <script>
-import FooterMain from '../../common-components/FooterMain.vue';
+import FooterMain from '../../components/FooterMain.vue';
 
 export default {
   components: {FooterMain},

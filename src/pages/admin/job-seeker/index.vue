@@ -220,7 +220,7 @@
   </div>
 </template>
 <script>
-import AddJobSeeker from './AddJobSeeker';
+import AddJobSeeker from './components/AddJobSeeker';
 
 const columns = [
   {
