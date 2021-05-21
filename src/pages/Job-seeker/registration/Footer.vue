@@ -67,7 +67,6 @@ export default {
 }
 
 .fixed-footer {
-  /* position: fixed; */
   left: 0;
   bottom: 0;
   width: 100%;
@@ -201,7 +200,6 @@ export default {
   font-size: 14px;
   line-height: 24px;
   /* identical to box height, or 171% */
-
   text-align: center;
 
   color: #ffffff;

@@ -213,20 +213,10 @@ export default {
 
 .footer-container {
   padding: 30px 80px;
-  /*display: flex;*/
-  /*justify-content: space-between;*/
-  /*align-items: center;*/
-  /*flex-wrap: wrap;*/
 }
 
 .footer-section {
-  /*flex: 0 1 400px;*/
   margin: 10px 40px;
-}
-
-.footer-section:first-child {
-  /*flex: 0 1 500px;*/
-
 }
 
 .footer-text {
