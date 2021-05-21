@@ -131,6 +131,25 @@ export default {
   height: 48px;
   border: 1px solid #fafafa;
 }
+.add-more-text-admin-job-seeker {
+  background: #0385f3;
+  border-radius: 4px;
+  align-items: center;
+  cursor: pointer;
+  color: #ffffff;
+  position: absolute;
+  right: 20px;
+  top: 128px;
+  height: 42px;
+}
+@media only screen and (max-width: 767px) {
+  .ant-table-content{
+    overflow-x: scroll!important;
+  }
+  .add-more-text-admin-job-seeker {
+    top: 94px;
+  }
+}
 .login-button-style {
   background: #0385f3;
   color: #fff;
