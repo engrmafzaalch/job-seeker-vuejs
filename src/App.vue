@@ -103,6 +103,43 @@ export default {
 .button-class {
   column-gap: 10px;
 }
+.ant-tabs-bar ,.ant-tabs-bar ,.ant-tabs-top-bar ,.ant-tabs-small-bar{
+  width:245px!important;
+  margin-left: 40px;
+}
+.ant-table-thead tr{
+  border: 1px solid #F0F1F3!important;
+  border-radius: 8px!important;
+  z-index: 1000000000!important;
+}
+.ant-table-thead tr th{
+  background-color: #fafdff;
+  border-bottom: none;
+}
+.ant-table-column-title {
+  font-family: 'Open Sans',sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 14px;
+  color: #8b90a0;
+}
+@media only screen and (max-width: 767px) {
+  .ant-table-content{
+    overflow-x: scroll!important;
+  }
+}
+.btn-primary{
+  background: #0385F3 !important;
+}
+.btn{
+  font-family: 'Open sans', sans-serif;
+}
+.ant-modal-content{
+  border-radius: 8px;
+}
+.button-class{
+  column-gap: 10px;
+}
 
 .login-button-style,
 .go-back-button-style {
