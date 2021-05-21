@@ -195,7 +195,6 @@ export default {
   display: flex;
   align-items: center;
   overflow: hidden;
-  /*background-color: "#FAFAFA";*/
   padding: 10px 100px;
   height: 80px;
   background: #232c3a;
