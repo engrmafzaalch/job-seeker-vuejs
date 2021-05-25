@@ -24,9 +24,14 @@ let router = new Router({
       component: () => import('../layouts/authLayout.vue'),
       children: [
         {
-          path: '/job-seeker/login',
+          path: '/login',
           name: 'LoginIndex',
           component: () => import('../pages/Login/index'),
+        },
+        {
+          path: '/job-seeker/signup',
+          name: 'signup',
+          component: () => import('../pages/Job-seeker/signup'),
         },
         {
           path: '/job-seeker/forgot-password',
