@@ -14,20 +14,26 @@
             <div class="separator">
               <span>OR</span>
             </div>
-            <div class="input-field">
-              <input placeholder="Email Address *" autocomplete="off" type="email">
+            <div class="input-field mb-2">
+              <input placeholder="Email Address*" autocomplete="off" type="email" v-model="email">
+            </div>
+            <div class="mb-3">
+              <span class="red-c" v-show="msg.email">{{msg.email}}</span>
             </div>
             <div class="input-field mb-2">
-              <input placeholder="Password *" :type="show?'text':'password'">
-              <span class="show" @click="show=!show">Show</span>
+              <input placeholder="Password *" :type="show?'text':'password'" v-model="password">
             </div>
+            <div class="mb-3">
+              <span class="red-c" v-show="msg.password">{{msg.password}}</span>
+            </div>
+            <span class="show" @click="show=!show">Show</span>
             <div class=" forgot-pswd d-flex justify-content-end">
               <router-link to="/">Forget Password ?</router-link>
             </div>
             <div>
               <div class="actions">
                 <button class="btn-cancel">Cancel</button>
-                <button class="btn-proceed">Login</button>
+                <button class="btn-proceed" @click="submitForm">Login</button>
               </div>
             </div>
           </div>
@@ -49,8 +55,52 @@ export default {
   },
   data() {
     return {
-      show: false
+      show: false,
+      msg: [],
+      email:'',
+      password:'',
+      error:true
     };
+  },
+  methods:{
+    submitForm(){
+      if(!this.error){
+
+      }
+    },
+    
+    validateEmail(value){
+      console.log(value);
+      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value))
+      {
+        this.msg['email'] = '';
+        this.error=true;
+      } else{
+        this.msg['email'] = 'Invalid Email Address';
+        this.error=false;
+      } 
+    },
+    validatePassword(value){
+      let difference = 8 - value.length;
+      if (value.length<8) {
+        this.msg['password'] = 'Must be 8 characters! '+ difference + ' characters left' ;
+        this.error=true;
+      } else {
+         this.msg['password'] = '';
+          this.error=false;
+      }
+    }
+  },
+  watch: {
+    email(value){
+      // binding this to the data value in the email input
+      this.email = value;
+      this.validateEmail(value);
+    },
+    password(value){
+      this.password = value;
+      this.validatePassword(value);
+    }
   },
 };
 </script>
@@ -280,7 +330,9 @@ export default {
 .actions .btn-proceed:hover {
   background: #ce3b52;
 }
-
+.red-c{
+  color:#FF4C68;
+}
 @media (max-width: 768px) {
   .login-card {
     padding: 18px;

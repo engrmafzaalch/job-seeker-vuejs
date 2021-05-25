@@ -17,6 +17,17 @@ let router = new Router({
             requiresAuth: true,
           },
         },
+        
+        {
+          path: '/contact-us',
+          name: 'contact-us',
+          component: () => import('../pages/contact-us'),
+        },
+        {
+          path: '/reset-password',
+          name: 'reset-password',
+          component: () => import('../pages/reset-password/index'),
+        },
       ],
     },
     {
@@ -29,12 +40,17 @@ let router = new Router({
           component: () => import('../pages/Login/index'),
         },
         {
+          path: '/loginOld',
+          name: 'LoginIndex',
+          component: () => import('../pages/Login/indexOld'),
+        },
+        {
           path: '/job-seeker/signup',
           name: 'signup',
           component: () => import('../pages/Job-seeker/signup'),
         },
         {
-          path: '/job-seeker/forgot-password',
+          path: '/forgot-password',
           name: 'ForgotPasswordIndex',
           component: () => import('../pages/forgot-password'),
         },
