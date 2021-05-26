@@ -1,36 +1,62 @@
 <template>
   <nav ref="nav" class="">
-    <div class=" nav-top">
-      <div class="background-header" :class="{'auth-header':isLogin,'guest-header':!isLogin}">
+    <div class="nav-top">
+      <div
+        class="background-header"
+        :class="{ 'auth-header': isLogin, 'guest-header': !isLogin }"
+      >
         <div class="logo-c">
           <router-link class="logo" to="/">
-            <img src="@/assets/logo.png"/>
+            <img src="@/assets/logo.png" />
           </router-link>
         </div>
 
-        <div ref="navLinks" :class="{'opened': nav_state}" class="nav-links-c">
-          <router-link active-class="active" exact to="/" v-if="isLogin">Home</router-link>
+        <div ref="navLinks" :class="{ opened: nav_state }" class="nav-links-c">
+          <router-link active-class="active" exact to="/" v-if="isLogin"
+            >Home</router-link
+          >
           <router-link active-class="active" to="/jobs">Jobs</router-link>
-          <router-link active-class="active" to="/my-applications" v-if="isLogin">My application</router-link>
-          <router-link active-class="active" to="/profile" v-if="isLogin">My Account</router-link>
-          <a class="bell-icon-header" href="#my-account" v-if="isLogin"><i class="fas fa-bell"></i></a>
+          <router-link
+            active-class="active"
+            to="/my-applications"
+            v-if="isLogin"
+            >My application</router-link
+          >
+          <router-link active-class="active" to="/profile" v-if="isLogin"
+            >My Account</router-link
+          >
+          <a class="bell-icon-header" href="#my-account" v-if="isLogin"
+            ><i class="fas fa-bell"></i
+          ></a>
           <a class="logout-button" href="#" v-if="isLogin">Logout</a>
 
-          
-          <router-link active-class="active" to="/job-seeker/signup" v-if="!isLogin">Become a Recruiter</router-link>
-          <router-link active-class="active" to="/job-seeker/signup" v-if="!isLogin">Become a Jobseeker</router-link>
-          <router-link class="login-button" to="/login" v-if="!isLogin">Log in</router-link>
-
+          <router-link
+            active-class="active"
+            to="/job-seeker/signup"
+            v-if="!isLogin"
+            >Become a Recruiter</router-link
+          >
+          <router-link
+            active-class="active"
+            to="/job-seeker/signup"
+            v-if="!isLogin"
+            >Become a Jobseeker</router-link
+          >
+          <router-link class="login-button" to="/login" v-if="!isLogin"
+            >Log in</router-link
+          >
         </div>
 
-
-
-        <div ref="burger" :class="{nav_state:'toggle'}" class="burger" @click="navCollapse()">
+        <div
+          ref="burger"
+          :class="{ nav_state: 'toggle' }"
+          class="burger"
+          @click="navCollapse()"
+        >
           <div class="line1"></div>
           <div class="line2"></div>
           <div class="line3"></div>
         </div>
-
       </div>
     </div>
   </nav>
@@ -38,35 +64,24 @@
 
 <script>
 export default {
-  name: 'Header',
-  
+  name: "Header",
+
   data() {
     return {
-      msg: 'Welcome to Your Vue.js App',
+      msg: "Welcome to Your Vue.js App",
       nav_state: false,
-      isLogin:false
-    }
+      isLogin: true,
+    };
   },
   watch: {
-    '$route.path'() {
+    "$route.path"() {
       this.nav_state = false;
     },
   },
   methods: {
-    changeRoute() {
-
-    },
+    changeRoute() {},
     navCollapse() {
-
-      if (!this.nav_state) {
-        // this.$refs.nav.style.height='250px';
-        // this.$refs.navLinks.style.transform = 'translate(-10px,68%)';
-        // this.$refs.navLinks.style.display = 'flex';
-      } else {
-        // this.$refs.navLinks.style.transform = 'none';
-        // this.$refs.nav.style.height='85px';
-      }
-      this.$refs.burger.classList.toggle('toggle');
+      this.$refs.burger.classList.toggle("toggle");
       this.nav_state = !this.nav_state;
     },
   },
@@ -83,7 +98,6 @@ export default {
   z-index: 9;
   box-shadow: 0px 4px 8px 0 #bebebe;
   background-color: "#FAFAFA";
-
 }
 
 .auth-header {
@@ -94,7 +108,7 @@ export default {
   padding: 10px 100px;
 }
 
-.guest-header{
+.guest-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -125,7 +139,7 @@ a {
 
 .auth-header a:hover,
 .auth-header a.active {
-  color: #0385F3;
+  color: #0385f3;
 }
 
 .headera.logo {
@@ -161,7 +175,7 @@ a {
 
 .guest-header .login-button {
   text-align: center;
-  background-color: #0385F3;
+  background-color: #0385f3;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -176,21 +190,17 @@ a {
 
 .auth-header .nav-links-c {
   float: right;
-  display: flex;
+  /* display: flex; */
   align-items: center;
 }
-.guest-header .nav-links-c{
+.guest-header .nav-links-c {
   display: flex;
   align-items: center;
   justify-content: center;
-  width:100%;
+  width: 100%;
 }
 
 @media screen and (max-width: 500px) {
-  .guest-header .login-button {
-    position:static!important;
-    right: auto!important;    
-  }
   a {
     float: none;
     display: block;
@@ -240,14 +250,29 @@ a {
 
 .burger div {
   height: 3px;
-  background-color: #3F4B6B;
+  background-color: #3f4b6b;
   width: 32px;
   margin: 4px 3px;
   transition: all 0.3s ease;
 }
-
+@media (max-width: 991px) {
+  .guest-header,
+  .auth-header {
+    padding: 10px;
+    width: 100%;
+  }
+  .guest-header .login-button {
+    right: 0 !important;
+  }
+}
 @media screen and (max-width: 768px) {
-
+  .guest-header .login-button {
+    position: static !important;
+    right: auto !important;
+  }
+  .login-button {
+    width: calc(100% - 46px);
+  }
   nav {
     display: flex;
     flex-direction: column;
@@ -273,31 +298,26 @@ a {
   .nav-links-c {
     position: absolute;
     top: 80px;
-
     left: 0;
-    /*transform: translate(-24px,-100%);*/
+    transform: translate(0, -200%);
     padding: 9px 0px;
     width: 100%;
     z-index: 8;
     border: 1px solid #f0f1f3;
-    background-color: #FAFAFA;
+    background-color: #fafafa;
     display: none;
     justify-content: flex-start;
-    align-items: flex-start;
+    align-items: flex-start !important;
     flex-direction: column;
-    transition: transform 0.3s ease-in;
+    /* transition: transform 0.2s ease-in; */
   }
 
   .nav-links-c.opened {
     display: flex !important;
+    transform: translate(0, 0);
   }
 
   .nav-top > div {
-    width: 100%;
-  }
-
-  .auth-header {
-    padding: 10px;
     width: 100%;
   }
 
@@ -328,7 +348,6 @@ a {
   }
 }
 
-
 @keyframes navLinkFade {
   0% {
     opacity: 0;
@@ -336,7 +355,6 @@ a {
 
   1% {
     opacity: 0;
-
   }
 
   100% {

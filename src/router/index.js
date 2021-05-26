@@ -28,6 +28,11 @@ let router = new Router({
           name: 'reset-password',
           component: () => import('../pages/reset-password/index'),
         },
+        {
+          path: '/otp',
+          name: 'otp',
+          component: () => import('../pages/reset-password/index'),
+        },
       ],
     },
     {

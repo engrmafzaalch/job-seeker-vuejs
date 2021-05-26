@@ -22,13 +22,14 @@
             </div>
             <div class="input-field mb-2">
               <input placeholder="Password *" :type="show?'text':'password'" v-model="password">
+            <span class="show" @click="show=!show">Show</span>
+
             </div>
-            <div class="mb-3">
+            <div class="mb-1">
               <span class="red-c" v-show="msg.password">{{msg.password}}</span>
             </div>
-            <span class="show" @click="show=!show">Show</span>
             <div class=" forgot-pswd d-flex justify-content-end">
-              <router-link to="/">Forget Password ?</router-link>
+              <router-link to="/reset-password">Forget Password ?</router-link>
             </div>
             <div>
               <div class="actions">
